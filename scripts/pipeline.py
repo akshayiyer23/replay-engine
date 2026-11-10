@@ -4,11 +4,14 @@ scripts/pipeline.py — End-to-end webinar → clip candidates pipeline.
 
 Usage:
     python scripts/pipeline.py <youtube-url>
+    python scripts/pipeline.py <video-or-audio-file>  (mp4 mov mp3 m4a wav webm)
+    python scripts/pipeline.py <transcript.txt>       (plain text, no timestamps)
     python scripts/pipeline.py <sentences.json>
     python scripts/pipeline.py <url> --speakers "A=Alice,B=Bob" --slug my-webinar
 """
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -33,6 +36,9 @@ CACHE_FILE = DATA_DIR / ".transcript_cache.json"
 
 MODEL = "claude-sonnet-5-5"
 CHUNK_MS = 600_000  # 10 minutes
+WPM = 150           # words per minute for estimated timestamps (txt input)
+
+AUDIO_VIDEO_EXTS = {".mp4", ".mov", ".mp3", ".m4a", ".wav", ".webm"}
 
 load_dotenv(ROOT / ".env")
 
@@ -53,6 +59,54 @@ def slugify(text: str) -> str:
     text = re.sub(r"[\s_]+", "-", text)
     text = re.sub(r"-+", "-", text)
     return text.strip("-")[:60]
+
+
+def detect_input_type(s: str) -> str:
+    """Return 'youtube' | 'file' | 'txt' | 'json'."""
+    if s.startswith(("http://", "https://")) or "youtube.com" in s or "youtu.be" in s:
+        return "youtube"
+    p = Path(s)
+    if p.exists():
+        if p.suffix.lower() in AUDIO_VIDEO_EXTS:
+            return "file"
+        if p.suffix.lower() == ".txt":
+            return "txt"
+        if p.suffix.lower() == ".json":
+            return "json"
+    return "unknown"
+
+
+def file_hash(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(65536), b""):
+            h.update(block)
+    return h.hexdigest()[:16]
+
+
+def parse_txt_transcript(path: Path) -> list[dict]:
+    """Split a plain-text transcript into sentences with estimated timestamps."""
+    text = path.read_text(encoding="utf-8", errors="replace")
+    text = re.sub(r"\r\n", "\n", text)
+    # Split on sentence-ending punctuation + whitespace, or on paragraph breaks
+    parts = re.split(r"(?<=[.!?])\s+|\n{2,}", text)
+    sentences = []
+    current_ms = 0
+    for raw in parts:
+        raw = raw.strip()
+        if not raw:
+            continue
+        word_count = max(1, len(raw.split()))
+        duration_ms = int(word_count / WPM * 60 * 1000)
+        sentences.append({
+            "speaker": "A",
+            "start": current_ms,
+            "end": current_ms + duration_ms,
+            "text": raw,
+            "estimated": True,
+        })
+        current_ms += duration_ms + 500  # 0.5 s pause between sentences
+    return sentences
 
 
 def get_video_id(url: str) -> str:
@@ -112,10 +166,26 @@ def migrate_legacy_cache() -> None:
 
 def download_audio(url: str, out_dir: str) -> str:
     out_template = os.path.join(out_dir, "audio.%(ext)s")
-    subprocess.run(
-        ["yt-dlp", "-f", "bestaudio", "--no-post-overwrites", "-o", out_template, url],
-        check=True,
-    )
+    base_cmd = ["yt-dlp", "-f", "bestaudio", "--no-post-overwrites", "-o", out_template]
+
+    # Up to 2 normal attempts
+    for attempt in range(1, 3):
+        result = subprocess.run(base_cmd + [url], capture_output=True, text=True)
+        if result.returncode == 0:
+            break
+        if attempt < 2:
+            print(f"   ⚠️  Download attempt {attempt} failed, retrying…")
+    else:
+        # Both normal attempts failed — try once with Chrome cookies
+        print("   ⚠️  Standard download blocked, trying with Chrome cookies…")
+        result = subprocess.run(
+            base_cmd + ["--cookies-from-browser", "chrome", url],
+            capture_output=True, text=True,
+        )
+        if result.returncode != 0:
+            print("YouTube blocked the download — upload the file instead.")
+            sys.exit(1)
+
     matches = list(Path(out_dir).glob("audio.*"))
     if not matches:
         raise FileNotFoundError("yt-dlp produced no audio file")
@@ -165,6 +235,57 @@ def get_sentences_for_url(url: str) -> tuple[list[dict], str]:
         "slug": slug,
         "sentences_file": str(sentences_path),
     }
+    save_cache(cache)
+    return sentences, slug
+
+
+def get_sentences_for_file(file_path: Path) -> tuple[list[dict], str]:
+    """Transcribe an uploaded audio/video file. Caches by file hash."""
+    cache = load_cache()
+    key = f"file:{file_hash(file_path)}"
+
+    if key in cache:
+        entry = cache[key]
+        sp = Path(entry["sentences_file"])
+        if sp.exists():
+            print(f"📋 Reusing cached transcript for {file_path.name}…")
+            return json.loads(sp.read_text()), entry["slug"]
+
+    slug = slugify(file_path.stem)
+    print(f"✍️  Transcribing {file_path.name}…")
+    sentences, n_speakers, tid = transcribe_file(str(file_path))
+    print(f"   → {n_speakers} speakers detected")
+
+    sp = DATA_DIR / f"{slug}-sentences.json"
+    sp.write_text(json.dumps(sentences, indent=2))
+    cache[key] = {"transcript_id": tid, "slug": slug, "sentences_file": str(sp),
+                  "source": str(file_path)}
+    save_cache(cache)
+    return sentences, slug
+
+
+def get_sentences_for_txt(txt_path: Path) -> tuple[list[dict], str]:
+    """Parse a plain-text transcript, estimate timestamps. Caches by file hash."""
+    cache = load_cache()
+    key = f"txt:{file_hash(txt_path)}"
+
+    if key in cache:
+        entry = cache[key]
+        sp = Path(entry["sentences_file"])
+        if sp.exists():
+            print(f"📋 Reusing cached transcript for {txt_path.name}…")
+            return json.loads(sp.read_text()), entry["slug"]
+
+    slug = slugify(txt_path.stem)
+    print(f"📝 Parsing plain-text transcript (timestamps estimated at {WPM} wpm)…")
+    sentences = parse_txt_transcript(txt_path)
+    duration_min = sentences[-1]["end"] / 60_000 if sentences else 0
+    print(f"   → {len(sentences)} sentences · {duration_min:.1f} min (estimated)")
+
+    sp = DATA_DIR / f"{slug}-sentences.json"
+    sp.write_text(json.dumps(sentences, indent=2))
+    cache[key] = {"slug": slug, "sentences_file": str(sp), "source": str(txt_path),
+                  "estimated_timestamps": True}
     save_cache(cache)
     return sentences, slug
 
@@ -475,16 +596,27 @@ def main() -> None:
         trim_note = f" + {len(sentences)} sentences (trim enabled)" if sentences else " (no sentences file — trim disabled)"
         print(f"📄 Loaded {len(candidates)} candidates{trim_note}")
     else:
-        # ── 1. sentences ──
+        # ── 1. detect input type and get sentences ──
+        input_type = detect_input_type(args.input)
         input_path = Path(args.input)
-        if input_path.exists():
+
+        if input_type == "youtube":
+            sentences, slug = get_sentences_for_url(args.input)
+        elif input_type == "file":
+            sentences, slug = get_sentences_for_file(input_path)
+        elif input_type == "txt":
+            sentences, slug = get_sentences_for_txt(input_path)
+        elif input_type == "json":
             print(f"📄 Loading transcript from {input_path}…")
             sentences = json.loads(input_path.read_text())
             slug = args.slug or input_path.stem.removesuffix("-sentences")
         else:
-            sentences, slug = get_sentences_for_url(args.input)
-            if args.slug:
-                slug = args.slug
+            sys.exit(f"❌  Cannot determine input type for: {args.input!r}\n"
+                     "    Accepted: YouTube URL, .mp4/.mov/.mp3/.m4a/.wav/.webm, "
+                     ".txt transcript, or -sentences.json")
+
+        if args.slug:
+            slug = args.slug
 
         n_speakers = len({s["speaker"] for s in sentences})
         duration_min = sentences[-1]["end"] / 60_000
