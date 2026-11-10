@@ -278,10 +278,9 @@ def _rubric_to_table(rubric: dict) -> str:
             rows.append(f"  - true: {sign}{w} pts (lift {feat['lift']:.2f}×)")
             rows.append("  - false: 0 pts")
         rows.append("")
-    rows.append(
-        f"**Anti-pattern penalty**: −{rubric['anti_pattern_penalty']} pts each "
-        "(see the anti-patterns section above)."
-    )
+    each = rubric.get("anti_pattern_penalty_each", rubric.get("anti_pattern_penalty", 8))
+    cap = rubric.get("anti_pattern_penalty_max", 15)
+    rows.append(f"**Anti-pattern penalty**: −{each} pts each, total cap −{cap} pts.")
     return "\n".join(rows)
 
 
@@ -295,7 +294,72 @@ def build_judge_prompt() -> str:
     return f"{prompt}\n\n---\n\n{anti}\n\n---\n\n{hooks}"
 
 
-def judge_candidates(candidates: list[dict]) -> dict:
+def _find_hook_sentence(
+    start_hook: str, search_from: int, end_i: int, sentences: list[dict]
+) -> int | None:
+    """Return the index of the sentence matching start_hook, or None."""
+    if not start_hook or not start_hook.strip():
+        return None
+    needle = start_hook.lower().strip()[:60]
+    for i in range(search_from, min(end_i + 1, len(sentences))):
+        sent = sentences[i]["text"].lower().strip()
+        if sent.startswith(needle[:40]) or needle[:40] in sent[:100]:
+            return i
+    return None
+
+
+def _apply_trims(
+    score_items: list[dict], candidates: list[dict], sentences: list[dict]
+) -> None:
+    """Validate start_hook suggestions and trim candidates in-place."""
+    id_to_cand = {c["id"]: c for c in candidates}
+
+    for item in score_items:
+        start_hook = item.get("start_hook")
+        if not start_hook:
+            continue
+
+        c = id_to_cand.get(item["id"])
+        if not c:
+            continue
+
+        start_i = c.get("start_i", 0)
+        end_i = c.get("end_i", len(sentences) - 1)
+
+        # Search from sentence AFTER current start (we need to actually move forward)
+        trim_i = _find_hook_sentence(start_hook, start_i + 1, end_i, sentences)
+
+        if trim_i is None:
+            # Claude expected a trim but we can't locate the sentence
+            item["score"] = max(0, item["score"] - 8)
+            item["why"] += "; trim sentence not found (−8)"
+            item["start_hook"] = None
+            continue
+
+        new_start_ms = sentences[trim_i]["start"]
+        new_duration_s = (sentences[end_i]["end"] - new_start_ms) / 1000
+
+        if not (30 <= new_duration_s <= 90):
+            # Trim puts clip out of valid range
+            item["score"] = max(0, item["score"] - 8)
+            item["why"] += f"; trim out of range {new_duration_s:.0f}s (−8)"
+            item["start_hook"] = None
+            continue
+
+        # Valid trim — update candidate fields
+        c["trimmed"] = True
+        c["pre_trim_start_ms"] = c["start_ms"]
+        c["start_i"] = trim_i
+        c["start_ms"] = new_start_ms
+        c["duration_s"] = new_duration_s
+        c["duration_flag"] = "OK"
+        c["hook_line"] = sentences[trim_i]["text"]
+        c["transcript"] = " ".join(s["text"] for s in sentences[trim_i : end_i + 1])
+
+
+def judge_candidates(
+    candidates: list[dict], sentences: list[dict] | None = None
+) -> dict:
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     system = build_judge_prompt()
 
@@ -304,8 +368,8 @@ def judge_candidates(candidates: list[dict]) -> dict:
             "id": c["id"],
             "moment_type": c["moment_type"],
             "speaker_name": c["speaker_name"],
-            "hook_line": c["hook_line"],
-            "transcript": c["transcript"][:600],
+            "angle": c.get("angle", ""),
+            "transcript": c["transcript"][:700],
             "duration_s": round(c["duration_s"]),
         }
         for c in candidates
@@ -313,7 +377,9 @@ def judge_candidates(candidates: list[dict]) -> dict:
 
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=8000,
+        max_tokens=16000,
+        thinking={"type": "adaptive"},
+        extra_body={"output_config": {"effort": "low"}},
         system=system,
         messages=[{
             "role": "user",
@@ -327,15 +393,24 @@ def judge_candidates(candidates: list[dict]) -> dict:
         None,
     )
     if text_block is None:
-        raise ValueError(f"No text block in response (blocks: {[getattr(b,'type','?') for b in resp.content]})")
+        raise ValueError(
+            f"No text block in response "
+            f"(blocks: {[getattr(b, 'type', '?') for b in resp.content]})"
+        )
     raw = strip_fences(text_block.text)
     try:
-        return json.loads(raw)
+        result = json.loads(raw)
     except json.JSONDecodeError:
         m = re.search(r"\{.*\}", raw, re.DOTALL)
         if m:
-            return json.loads(m.group(0))
-        raise
+            result = json.loads(m.group(0))
+        else:
+            raise
+
+    if sentences is not None:
+        _apply_trims(result.get("scores", []), candidates, sentences)
+
+    return result
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
@@ -367,7 +442,11 @@ def main() -> None:
             sys.exit(f"❌  File not found: {input_path}")
         candidates = json.loads(input_path.read_text())
         slug = args.slug or input_path.stem.removesuffix("-candidates")
-        print(f"📄 Loaded {len(candidates)} candidates from {input_path}")
+        # Try loading sentences for trim support
+        sentences_path = DATA_DIR / f"{slug}-sentences.json"
+        sentences = json.loads(sentences_path.read_text()) if sentences_path.exists() else None
+        trim_note = f" + {len(sentences)} sentences (trim enabled)" if sentences else " (no sentences file — trim disabled)"
+        print(f"📄 Loaded {len(candidates)} candidates{trim_note}")
     else:
         # ── 1. sentences ──
         input_path = Path(args.input)
@@ -418,9 +497,12 @@ def main() -> None:
         print(f"💾 Saved → {out_path}")
 
     # ── 6. judge ──
+    old_scores = {c["id"]: c.get("score") for c in candidates}
+    # In judge-only mode `sentences` is set above; in pipeline mode it's from step 1
+    judge_sentences = sentences if args.judge_only else (locals().get("sentences"))
     print(f"⚖️  Judging {len(candidates)} candidates…")
     try:
-        judgment = judge_candidates(candidates)
+        judgment = judge_candidates(candidates, judge_sentences)
         score_map = {s["id"]: s for s in judgment.get("scores", [])}
         top8_ids = set(judgment.get("top8", []))
         for c in candidates:
@@ -429,7 +511,9 @@ def main() -> None:
             c["why"] = s.get("why", "")
             c["top8"] = c["id"] in top8_ids
         n_top8 = sum(1 for c in candidates if c.get("top8"))
-        print(f"✅ Judged — {n_top8} selected for top 8")
+        n_trimmed = sum(1 for c in candidates if c.get("trimmed"))
+        trim_note = f", {n_trimmed} trimmed" if n_trimmed else ""
+        print(f"✅ Judged — {n_top8} selected for top 8{trim_note}")
     except Exception as exc:
         print(f"⚠️  Judge failed: {exc} — continuing without scores")
         for c in candidates:
@@ -442,7 +526,7 @@ def main() -> None:
     out_path.write_text(json.dumps(candidates, indent=2))
     print(f"💾 Saved → {out_path}")
 
-    # ── results table: top 8 ──
+    # ── results: top 8 plain list ──
     top8 = sorted(
         [c for c in candidates if c.get("top8")],
         key=lambda c: -c.get("score", 0),
@@ -451,14 +535,13 @@ def main() -> None:
         top8 = sorted(candidates, key=lambda c: -c.get("score", 0))[:8]
 
     print()
-    print(f"{'id':<5}  {'score':>5}  {'dur':>4}  {'speaker':<16}  {'type':<12}  {'angle':<36}  why")
-    print("─" * 110)
     for c in top8:
-        why = c.get("why", "")[:48]
+        old = old_scores.get(c["id"])
+        score_str = f"{old}→{c['score']}" if old is not None else str(c["score"])
+        trimmed = "yes" if c.get("trimmed") else "no"
         print(
-            f"{c['id']:<5}  {c.get('score', 0):>5}  {c['duration_s']:>3.0f}s  "
-            f"{c['speaker_name']:<16}  {c['moment_type']:<12}  "
-            f"{c['angle'][:36]:<36}  {why}"
+            f"{c['id']}  {score_str}  trimmed={trimmed}  "
+            f"{c['moment_type']}  {c['angle']}  //  {c.get('why', '')}"
         )
 
 

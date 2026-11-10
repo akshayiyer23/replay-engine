@@ -3,7 +3,6 @@
   "generated_from": "data/lift.json",
   "note": "score = 50 + sum(weights for features present), clamped 0-100. Applies to clip content (hook wording, topic, specificity). post_type excluded (LinkedIn format feature, N/A for clips).",
   "base_score": 50,
-  "anti_pattern_penalty": 15,
   "features": [
     {
       "name": "hook_type",
@@ -149,5 +148,7 @@
       "pct_winners": 64.8,
       "pct_normals": 60.9
     }
-  ]
+  ],
+  "anti_pattern_penalty_each": 8,
+  "anti_pattern_penalty_max": 15
 }
