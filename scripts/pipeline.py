@@ -133,6 +133,48 @@ def strip_fences(text: str) -> str:
     return text.strip()
 
 
+def _extract_json_array(text: str) -> list | None:
+    """Find the outermost [...] block in text using bracket-depth tracking."""
+    # Try the whole text first (fastest path)
+    try:
+        result = json.loads(text)
+        if isinstance(result, list):
+            return result
+        if isinstance(result, dict):
+            return result.get("candidates", [])
+    except json.JSONDecodeError:
+        pass
+
+    # Walk forward to find the first '[', then track depth to find its matching ']'
+    start = text.find("[")
+    if start == -1:
+        return None
+
+    depth, in_str, escape = 0, False, False
+    for i, ch in enumerate(text[start:], start):
+        if escape:
+            escape = False
+            continue
+        if ch == "\\" and in_str:
+            escape = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == "[":
+            depth += 1
+        elif ch == "]":
+            depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(text[start : i + 1])
+                except json.JSONDecodeError:
+                    return None
+    return None
+
+
 # ── transcript cache (per-URL) ────────────────────────────────────────────────
 
 def load_cache() -> dict:
@@ -329,14 +371,9 @@ def mine_chunk(
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     speaker_map_str = ", ".join(f"{k} = {v}" for k, v in speaker_map.items())
-    sentences_payload = json.dumps(
-        [{"i": i, **s} for i, s in chunk], indent=2
-    )
+    sentences_payload = json.dumps([{"i": i, **s} for i, s in chunk], indent=2)
 
-    user_msg = (
-        f"Speaker map: {speaker_map_str}\n\n"
-        f"Sentences (each has an absolute index 'i' into the full transcript):\n"
-        f"{sentences_payload}\n\n"
+    base_instruction = (
         "Find 5–8 strong clip candidates from these sentences only.\n\n"
         "Return a JSON array where each element has EXACTLY these fields — "
         "no transcript, no hook_line, no timestamps:\n"
@@ -345,41 +382,43 @@ def mine_chunk(
         "start_i and end_i must be the 'i' values from the sentences above.\n"
         "Output only the JSON array — no prose, no markdown fences."
     )
-
-    response = client.messages.create(
-        model=MODEL,
-        max_tokens=4096,
-        system=skill_prompt,
-        messages=[{"role": "user", "content": user_msg}],
+    strict_suffix = (
+        "\n\nCRITICAL: Your entire response must be valid JSON. "
+        "Start with [ and end with ]. No text before or after the array."
     )
 
-    text_block = next(
-        (b for b in response.content if getattr(b, "type", None) == "text"),
-        None,
-    )
-    if text_block is None:
-        print("   ⚠️  No text block in response — skipping chunk")
-        return []
-    raw = strip_fences(text_block.text)
+    def _call(extra: str = "") -> list | None:
+        user_msg = (
+            f"Speaker map: {speaker_map_str}\n\n"
+            f"Sentences (each has an absolute index 'i' into the full transcript):\n"
+            f"{sentences_payload}\n\n"
+            f"{base_instruction}{extra}"
+        )
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=16000,
+            thinking={"type": "adaptive"},
+            extra_body={"output_config": {"effort": "low"}},
+            system=skill_prompt,
+            messages=[{"role": "user", "content": user_msg}],
+        )
+        tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+        if tb is None:
+            return None
+        return _extract_json_array(strip_fences(tb.text))
 
-    try:
-        parsed = json.loads(raw)
-    except json.JSONDecodeError:
-        m = re.search(r"\[.*?\]", raw, re.DOTALL)
-        if m:
-            try:
-                parsed = json.loads(m.group(0))
-            except json.JSONDecodeError:
-                print("   ⚠️  Could not parse Claude response — skipping chunk")
-                return []
-        else:
-            print("   ⚠️  No JSON array found in Claude response — skipping chunk")
+    result = _call()
+    if result is None:
+        print("   ⚠️  Parse failed — retrying with stricter prompt…")
+        result = _call(strict_suffix)
+        if result is None:
+            print("   ⚠️  Retry failed — skipping chunk")
             return []
 
-    if isinstance(parsed, list):
-        return parsed
-    if isinstance(parsed, dict):
-        return parsed.get("candidates", [])
+    if isinstance(result, list):
+        return result
+    if isinstance(result, dict):
+        return result.get("candidates", [])
     return []
 
 
@@ -556,6 +595,82 @@ def judge_candidates(
     return result
 
 
+# ── judge + content (shared by judge-only and full-pipeline paths) ───────────
+
+def _run_judge_and_content(
+    candidates: list[dict],
+    sentences: list[dict] | None,
+    slug: str,
+    old_scores: dict,
+    args,
+) -> None:
+    # ── judge ──
+    print(f"⚖️  Judging {len(candidates)} candidates…")
+    try:
+        judgment = judge_candidates(candidates, sentences)
+        score_map = {s["id"]: s for s in judgment.get("scores", [])}
+        top8_ids = set(judgment.get("top8", []))
+        for c in candidates:
+            s = score_map.get(c["id"], {})
+            c["score"] = s.get("score", 0)
+            c["why"] = s.get("why", "")
+            c["top8"] = c["id"] in top8_ids
+        n_top8 = sum(1 for c in candidates if c.get("top8"))
+        n_trimmed = sum(1 for c in candidates if c.get("trimmed"))
+        trim_note = f", {n_trimmed} trimmed" if n_trimmed else ""
+        print(f"✅ Judged — {n_top8} selected for top 8{trim_note}")
+    except Exception as exc:
+        print(f"⚠️  Judge failed: {exc} — continuing without scores")
+        for c in candidates:
+            c["score"] = 0
+            c["why"] = ""
+            c["top8"] = False
+
+    # Save candidates with scores
+    out_path = DATA_DIR / f"{slug}-candidates.json"
+    out_path.write_text(json.dumps(candidates, indent=2))
+    print(f"💾 Saved → {out_path}")
+
+    _print_top8(candidates, old_scores)
+
+    # ── content ──
+    if not args.skip_content:
+        from generate_content import generate_for_candidates, print_content_summary
+        content_results = generate_for_candidates(candidates, slug)
+        print_content_summary(content_results)
+
+
+# ── pipeline-level cache helpers ─────────────────────────────────────────────
+
+def _derive_cache_key(input_str: str) -> str:
+    """Canonical cache key: URL for YouTube, '{type}:{hash16}' for files."""
+    itype = detect_input_type(input_str)
+    if itype == "youtube":
+        return input_str
+    p = Path(input_str)
+    if p.exists():
+        return f"{itype}:{file_hash(p)}"
+    return input_str
+
+
+def _print_top8(candidates: list[dict], old_scores: dict) -> None:
+    top8 = sorted(
+        [c for c in candidates if c.get("top8")],
+        key=lambda c: -c.get("score", 0),
+    )
+    if not top8:
+        top8 = sorted(candidates, key=lambda c: -c.get("score", 0))[:8]
+    print()
+    for c in top8:
+        old = old_scores.get(c["id"])
+        score_str = f"{old}→{c['score']}" if old is not None else str(c["score"])
+        trimmed = "yes" if c.get("trimmed") else "no"
+        print(
+            f"{c['id']}  {score_str}  trimmed={trimmed}  "
+            f"{c['moment_type']}  {c['angle']}  //  {c.get('why', '')}"
+        )
+
+
 # ── main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
@@ -578,137 +693,147 @@ def main() -> None:
         action="store_true",
         help="Skip the content-generation step (LinkedIn post, carousel, lesson, caption)",
     )
+    parser.add_argument(
+        "--fresh",
+        action="store_true",
+        help="Ignore full-pipeline cache and re-run mining/judging/content (transcript still cached)",
+    )
     args = parser.parse_args()
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     speaker_map = parse_speakers(args.speakers)
 
     if args.judge_only:
-        # ── judge-only mode: load existing candidates and skip to judge step ──
+        # ── judge-only mode ──
         input_path = Path(args.input)
         if not input_path.exists():
             sys.exit(f"❌  File not found: {input_path}")
         candidates = json.loads(input_path.read_text())
         slug = args.slug or input_path.stem.removesuffix("-candidates")
-        # Try loading sentences for trim support
         sentences_path = DATA_DIR / f"{slug}-sentences.json"
         sentences = json.loads(sentences_path.read_text()) if sentences_path.exists() else None
         trim_note = f" + {len(sentences)} sentences (trim enabled)" if sentences else " (no sentences file — trim disabled)"
         print(f"📄 Loaded {len(candidates)} candidates{trim_note}")
+        old_scores: dict = {c["id"]: c.get("score") for c in candidates}
+        _run_judge_and_content(candidates, sentences, slug, old_scores, args)
+        return
+
+    # ── non-judge-only path ──
+
+    # Determine cache key; YouTube needs migration first
+    input_type = detect_input_type(args.input)
+    if input_type == "youtube":
+        migrate_legacy_cache()
+    cache_key = _derive_cache_key(args.input)
+    cache = load_cache()
+
+    # --fresh: wipe pipeline fields (keeps transcript)
+    if args.fresh and cache_key in cache:
+        for field in ("pipeline_complete", "candidates_file", "content_file"):
+            cache[cache_key].pop(field, None)
+        save_cache(cache)
+        print("🔄 --fresh: pipeline cache cleared (transcript reused)")
+
+    # Full pipeline cache hit?
+    entry = cache.get(cache_key, {})
+    cf = entry.get("candidates_file", "")
+    if entry.get("pipeline_complete") and cf and Path(cf).exists() and not args.fresh:
+        import time as _time
+        t0 = _time.monotonic()
+        print(f"⚡ Pipeline cache hit — loading results instantly")
+        candidates = json.loads(Path(cf).read_text())
+        slug = entry.get("slug", args.slug or "output")
+        _print_top8(candidates, {})
+        if not args.skip_content:
+            content_cf = entry.get("content_file", "")
+            if content_cf and Path(content_cf).exists():
+                from generate_content import print_content_summary
+                content_results = json.loads(Path(content_cf).read_text())
+                print_content_summary(content_results)
+            else:
+                from generate_content import generate_for_candidates, print_content_summary
+                content_results = generate_for_candidates(candidates, slug)
+                print_content_summary(content_results)
+                cache = load_cache()
+                cache.setdefault(cache_key, {})["content_file"] = \
+                    str(DATA_DIR / f"{slug}-content.json")
+                save_cache(cache)
+        elapsed = _time.monotonic() - t0
+        print(f"\n⏱  Finished in {elapsed:.1f}s (cached)")
+        return
+
+    # ── 1. sentences ──
+    input_path = Path(args.input)
+    if input_type == "youtube":
+        sentences, slug = get_sentences_for_url(args.input)
+    elif input_type == "file":
+        sentences, slug = get_sentences_for_file(input_path)
+    elif input_type == "txt":
+        sentences, slug = get_sentences_for_txt(input_path)
+    elif input_type == "json":
+        print(f"📄 Loading transcript from {input_path}…")
+        sentences = json.loads(input_path.read_text())
+        slug = args.slug or input_path.stem.removesuffix("-sentences")
     else:
-        # ── 1. detect input type and get sentences ──
-        input_type = detect_input_type(args.input)
-        input_path = Path(args.input)
+        sys.exit(f"❌  Cannot determine input type for: {args.input!r}\n"
+                 "    Accepted: YouTube URL, .mp4/.mov/.mp3/.m4a/.wav/.webm, "
+                 ".txt transcript, or -sentences.json")
 
-        if input_type == "youtube":
-            sentences, slug = get_sentences_for_url(args.input)
-        elif input_type == "file":
-            sentences, slug = get_sentences_for_file(input_path)
-        elif input_type == "txt":
-            sentences, slug = get_sentences_for_txt(input_path)
-        elif input_type == "json":
-            print(f"📄 Loading transcript from {input_path}…")
-            sentences = json.loads(input_path.read_text())
-            slug = args.slug or input_path.stem.removesuffix("-sentences")
-        else:
-            sys.exit(f"❌  Cannot determine input type for: {args.input!r}\n"
-                     "    Accepted: YouTube URL, .mp4/.mov/.mp3/.m4a/.wav/.webm, "
-                     ".txt transcript, or -sentences.json")
+    if args.slug:
+        slug = args.slug
 
-        if args.slug:
-            slug = args.slug
+    n_speakers = len({s["speaker"] for s in sentences})
+    duration_min = sentences[-1]["end"] / 60_000
+    print(f"📊 {len(sentences)} sentences · {n_speakers} speakers · {duration_min:.1f} min")
 
-        n_speakers = len({s["speaker"] for s in sentences})
-        duration_min = sentences[-1]["end"] / 60_000
-        print(f"📊 {len(sentences)} sentences · {n_speakers} speakers · {duration_min:.1f} min")
+    # ── 2. chunk ──
+    chunks = chunk_sentences(sentences, CHUNK_MS)
+    print(f"📦 Split into {len(chunks)} chunk(s) (~10 min each)")
 
-        # ── 2. chunk ──
-        chunks = chunk_sentences(sentences, CHUNK_MS)
-        print(f"📦 Split into {len(chunks)} chunk(s) (~10 min each)")
+    # ── 3. mine moments ──
+    skill_prompt = build_skill_prompt()
+    all_labels: list[dict] = []
+    for i, chunk in enumerate(chunks):
+        chunk_start = chunk[0][1]["start"] / 60_000
+        chunk_end = chunk[-1][1]["end"] / 60_000
+        print(f"🔍 Scanning chunk {i + 1}/{len(chunks)} ({chunk_start:.0f}–{chunk_end:.0f} min)…")
+        labels = mine_chunk(chunk, speaker_map, skill_prompt)
+        all_labels.extend(labels)
+        print(f"   → {len(labels)} candidates")
 
-        # ── 3. mine moments ──
-        skill_prompt = build_skill_prompt()
-        all_labels: list[dict] = []
-        for i, chunk in enumerate(chunks):
-            chunk_start = chunk[0][1]["start"] / 60_000
-            chunk_end = chunk[-1][1]["end"] / 60_000
-            print(f"🔍 Scanning chunk {i + 1}/{len(chunks)} "
-                  f"({chunk_start:.0f}–{chunk_end:.0f} min)…")
-            labels = mine_chunk(chunk, speaker_map, skill_prompt)
-            all_labels.extend(labels)
-            print(f"   → {len(labels)} candidates")
+    # ── 4. build & sort ──
+    print(f"🏗️  Building candidates from {len(all_labels)} labels…")
+    candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map)
+    candidates.sort(key=lambda c: c["start_ms"])
+    for idx, c in enumerate(candidates, 1):
+        c["id"] = f"m{idx:02d}"
 
-        # ── 4. build & sort ──
-        print(f"🏗️  Building candidates from {len(all_labels)} labels…")
-        candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map)
-        candidates.sort(key=lambda c: c["start_ms"])
-        for idx, c in enumerate(candidates, 1):
-            c["id"] = f"m{idx:02d}"
+    n_ok = sum(1 for c in candidates if c["duration_flag"] == "OK")
+    n_flagged = len(candidates) - n_ok
+    flag_note = f" ({n_flagged} flagged out-of-range)" if n_flagged else ""
+    print(f"✅ Found {len(candidates)} moments{flag_note}")
 
-        n_ok = sum(1 for c in candidates if c["duration_flag"] == "OK")
-        n_flagged = len(candidates) - n_ok
-        flag_note = f" ({n_flagged} flagged out-of-range)" if n_flagged else ""
-        print(f"✅ Found {len(candidates)} moments{flag_note}")
-
-        # ── 5. save candidates ──
-        out_path = DATA_DIR / f"{slug}-candidates.json"
-        out_path.write_text(json.dumps(candidates, indent=2))
-        print(f"💾 Saved → {out_path}")
-
-    # ── 6. judge ──
-    old_scores = {c["id"]: c.get("score") for c in candidates}
-    # In judge-only mode `sentences` is set above; in pipeline mode it's from step 1
-    judge_sentences = sentences if args.judge_only else (locals().get("sentences"))
-    print(f"⚖️  Judging {len(candidates)} candidates…")
-    try:
-        judgment = judge_candidates(candidates, judge_sentences)
-        score_map = {s["id"]: s for s in judgment.get("scores", [])}
-        top8_ids = set(judgment.get("top8", []))
-        for c in candidates:
-            s = score_map.get(c["id"], {})
-            c["score"] = s.get("score", 0)
-            c["why"] = s.get("why", "")
-            c["top8"] = c["id"] in top8_ids
-        n_top8 = sum(1 for c in candidates if c.get("top8"))
-        n_trimmed = sum(1 for c in candidates if c.get("trimmed"))
-        trim_note = f", {n_trimmed} trimmed" if n_trimmed else ""
-        print(f"✅ Judged — {n_top8} selected for top 8{trim_note}")
-    except Exception as exc:
-        print(f"⚠️  Judge failed: {exc} — continuing without scores")
-        for c in candidates:
-            c["score"] = 0
-            c["why"] = ""
-            c["top8"] = False
-
-    # ── 7. save with scores ──
+    # ── 5. preliminary save (before judge) ──
     out_path = DATA_DIR / f"{slug}-candidates.json"
     out_path.write_text(json.dumps(candidates, indent=2))
-    print(f"💾 Saved → {out_path}")
 
-    # ── results: top 8 plain list ──
-    top8 = sorted(
-        [c for c in candidates if c.get("top8")],
-        key=lambda c: -c.get("score", 0),
-    )
-    if not top8:
-        top8 = sorted(candidates, key=lambda c: -c.get("score", 0))[:8]
+    old_scores = {c["id"]: c.get("score") for c in candidates}
+    _run_judge_and_content(candidates, sentences, slug, old_scores, args)
 
-    print()
-    for c in top8:
-        old = old_scores.get(c["id"])
-        score_str = f"{old}→{c['score']}" if old is not None else str(c["score"])
-        trimmed = "yes" if c.get("trimmed") else "no"
-        print(
-            f"{c['id']}  {score_str}  trimmed={trimmed}  "
-            f"{c['moment_type']}  {c['angle']}  //  {c.get('why', '')}"
-        )
-
-
-    # ── 8. generate content ──
-    if not args.skip_content:
-        from generate_content import generate_for_candidates, print_content_summary
-        content_results = generate_for_candidates(candidates, slug)
-        print_content_summary(content_results)
+    # ── update pipeline cache with scored candidates ──
+    out_path.write_text(json.dumps(candidates, indent=2))
+    cache = load_cache()
+    cache.setdefault(cache_key, {}).update({
+        "pipeline_complete": True,
+        "slug": slug,
+        "candidates_file": str(out_path),
+    })
+    # Carry forward content_file if content just ran
+    content_path = DATA_DIR / f"{slug}-content.json"
+    if content_path.exists():
+        cache[cache_key]["content_file"] = str(content_path)
+    save_cache(cache)
+    print(f"💾 Pipeline cached → re-runs will be instant")
 
 
 if __name__ == "__main__":
