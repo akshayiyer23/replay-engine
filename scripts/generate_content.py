@@ -99,6 +99,84 @@ Schema: {{"hook_type": "contrarian"|"stat"|"story"|"how_to"|"prediction"|"other"
 """
 
 
+# ── QA accumulator ───────────────────────────────────────────────────────────
+
+_QA_ENTRIES: list[dict] = []
+
+
+def get_and_clear_qa() -> list[dict]:
+    global _QA_ENTRIES
+    entries = _QA_ENTRIES[:]
+    _QA_ENTRIES.clear()
+    return entries
+
+
+# ── editor pass ───────────────────────────────────────────────────────────────
+
+_PITCH_RE = re.compile(
+    r'\b(sign\s+up|book\s+a\s+demo|try\s+unify|check\s+out|get\s+started|click\s+here)\b',
+    re.I,
+)
+_FILLER_RE = re.compile(
+    r'\b(and so,?|you know,?|right\?|i mean,?|sort of,?|pretty much|essentially,?'
+    r'|obviously,?|basically,?)\b',
+    re.I,
+)
+_REWRITE_USER = """\
+This LinkedIn post needs editing. Fix ALL issues listed below:
+{issues}
+
+Original post:
+{post}
+
+Context (angle and transcript excerpt):
+{context}
+
+Rules: hook ≤ 8 words; no product pitch; no filler phrases; ≤ 1,300 chars total; \
+end with exactly one question (≤ 10 words).
+Return ONLY the rewritten post text — no JSON, no preamble.\
+"""
+
+
+def _editor_check(post: str) -> list[str]:
+    """Return list of issue strings. Empty list = passes all checks."""
+    issues = []
+    lines = [ln for ln in post.split("\n") if ln.strip()]
+    if lines:
+        n_w = len(lines[0].split())
+        if n_w > 8:
+            issues.append(f"hook too long: {n_w} words (max 8)")
+    m = _PITCH_RE.search(post)
+    if m:
+        issues.append(f"product pitch: '{m.group()}'")
+    m = _FILLER_RE.search(post)
+    if m:
+        issues.append(f"filler phrase: '{m.group()}'")
+    if len(post) > 1300:
+        issues.append(f"too long: {len(post)} chars (max 1,300)")
+    last = next((ln for ln in reversed(post.split("\n")) if ln.strip()), "")
+    if not last.strip().endswith("?"):
+        issues.append(f"doesn't end with a question (last: '…{last.strip()[-30:]}')")
+    return issues
+
+
+def _editor_rewrite(post: str, issues: list[str], context: str,
+                    client: anthropic.Anthropic) -> str:
+    resp = client.messages.create(
+        model=MODEL,
+        max_tokens=4096,
+        thinking={"type": "adaptive"},
+        extra_body={"output_config": {"effort": "low"}},
+        messages=[{"role": "user", "content": _REWRITE_USER.format(
+            issues="\n".join(f"- {i}" for i in issues),
+            post=post,
+            context=context[:500],
+        )}],
+    )
+    tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+    return tb.text.strip() if tb else post
+
+
 # ── helpers ───────────────────────────────────────────────────────────────────
 
 def _strip_fences(text: str) -> str:
@@ -237,13 +315,52 @@ def generate_for_candidates(
                 "first_line_words": len(post_first_line.split()),
             }
 
-        # ── 4. before → after hook score (displayed max 95) ──
+        # ── 4. editor pass (check + one rewrite if needed) ──
+        post = content["linkedin_post"]
+        issues = _editor_check(post)
+        editor_fixed = False
+        if issues:
+            print(f"\n      ✍️  editor rewrites ({len(issues)} issue(s)): {issues[0][:60]}…", end=" ", flush=True)
+            post = _editor_rewrite(
+                post, issues,
+                f"Angle: {c.get('angle','')}\nTranscript: {c.get('transcript','')[:300]}",
+                client,
+            )
+            content["linkedin_post"] = post
+            remaining = _editor_check(post)
+            editor_fixed = len(remaining) == 0
+            _QA_ENTRIES.append({
+                "gate": "editor", "item_id": cid,
+                "passed": editor_fixed,
+                "details": f"issues={issues}; remaining={remaining}",
+                "fixed": editor_fixed,
+            })
+            # Re-tag first line after rewrite
+            post_first_line = post.split("\n")[0].strip()
+            try:
+                post_tag = _tag_line(post_first_line, client)
+            except Exception:
+                pass
+            print("✓" if editor_fixed else f"⚠️ still: {remaining}")
+        else:
+            _QA_ENTRIES.append({
+                "gate": "editor", "item_id": cid,
+                "passed": True, "details": "all checks passed", "fixed": False,
+            })
+
+        # ── 5. before → after hook score (displayed max 95) ──
+        post_first_line = content["linkedin_post"].split("\n")[0].strip()
+        try:
+            post_tag = _tag_line(post_first_line, client)
+        except Exception:
+            pass  # keep existing post_tag
         before_hook_w = _hook_weight(angle_tag, rubric)
         after_hook_w = _hook_weight(post_tag, rubric)
         score_before = min(95, c.get("score", 0))
         score_after = max(0, min(95, score_before - before_hook_w + after_hook_w))
 
-        print(f"hook {score_before}→{score_after} [{post_tag.get('hook_type','?')}] ✓")
+        if not issues:
+            print(f"hook {score_before}→{score_after} [{post_tag.get('hook_type','?')}] ✓")
 
         results.append({
             "id": cid,

@@ -801,7 +801,11 @@ def _run_judge_and_content(
     slug: str,
     old_scores: dict,
     args,
+    qa_entries: list | None = None,
 ) -> None:
+    if qa_entries is None:
+        qa_entries = []
+
     # ── judge ──
     print(f"⚖️  Judging {len(candidates)} candidates…")
     try:
@@ -824,6 +828,10 @@ def _run_judge_and_content(
             c["why"] = ""
             c["top8"] = False
 
+    # ── post-judge QA gates ──
+    _gate_diversity(candidates, qa_entries)
+    _fallback_min3(candidates, qa_entries)
+
     # Save candidates with scores
     out_path = DATA_DIR / f"{slug}-candidates.json"
     out_path.write_text(json.dumps(candidates, indent=2))
@@ -833,9 +841,18 @@ def _run_judge_and_content(
 
     # ── content ──
     if not args.skip_content:
-        from generate_content import generate_for_candidates, print_content_summary
+        from generate_content import (
+            generate_for_candidates, print_content_summary, get_and_clear_qa as _gcq,
+        )
         content_results = generate_for_candidates(candidates, slug)
+        qa_entries.extend(_gcq())
         print_content_summary(content_results)
+
+    # ── save QA log ──
+    qa_path = DATA_DIR / f"{slug}-qa.json"
+    qa_path.write_text(json.dumps(qa_entries, indent=2))
+    _print_qa_summary(qa_entries)
+    print(f"💾 QA log → {qa_path}")
 
 
 # ── pipeline-level cache helpers ─────────────────────────────────────────────
@@ -867,6 +884,151 @@ def _print_top8(candidates: list[dict], old_scores: dict) -> None:
             f"{c['id']}  {score_str}  trimmed={trimmed}  "
             f"{c['moment_type']}  {c['angle']}  //  {c.get('why', '')}"
         )
+
+
+# ── QA logging ───────────────────────────────────────────────────────────────
+
+def _qa_record(entries: list, gate: str, item_id: str, passed: bool,
+               details: str = "", fixed: bool = False) -> None:
+    entries.append({
+        "gate": gate, "item_id": str(item_id),
+        "passed": passed, "details": details, "fixed": fixed,
+    })
+
+
+def _print_qa_summary(qa_entries: list) -> None:
+    from collections import defaultdict
+    counts: dict = defaultdict(lambda: {"passed": 0, "failed": 0, "fixed": 0})
+    for e in qa_entries:
+        g = e["gate"]
+        if e.get("fixed"):
+            counts[g]["fixed"] += 1
+        elif e["passed"]:
+            counts[g]["passed"] += 1
+        else:
+            counts[g]["failed"] += 1
+    print("\n📋 QA gate summary:")
+    for gate, c in sorted(counts.items()):
+        p, f, x = c["passed"], c["failed"], c["fixed"]
+        icon = "✅" if f == 0 and x == 0 else ("🔧" if x > 0 else "❌")
+        parts = [f"pass={p}"]
+        if f:
+            parts.append(f"fail={f}")
+        if x:
+            parts.append(f"fixed={x}")
+        print(f"   {icon} {gate}: {', '.join(parts)}")
+
+
+# ── QA gate functions ─────────────────────────────────────────────────────────
+
+REQUIRED_LABEL_FIELDS = {"start_i", "end_i", "moment_type", "post_for", "angle"}
+
+
+def _gate_label_fields(labels: list[dict], qa: list) -> list[dict]:
+    """Drop labels missing required fields; log each."""
+    valid = []
+    for lab in labels:
+        missing = REQUIRED_LABEL_FIELDS - set(lab.keys())
+        lid = lab.get("id", f"s{lab.get('start_i', '?')}")
+        if missing:
+            _qa_record(qa, "label_fields", lid, False, f"missing: {sorted(missing)}")
+        else:
+            _qa_record(qa, "label_fields", lid, True)
+            valid.append(lab)
+    return valid
+
+
+def _gate_numbers_in_transcript(candidates: list[dict], qa: list) -> None:
+    """Warn if numbers in angle don't appear in clip's transcript."""
+    for c in candidates:
+        angle = c.get("angle", "")
+        transcript = c.get("transcript", "")
+        nums = re.findall(r'\b\d[\d,]*\b', angle)
+        bad = [n for n in nums if n.replace(",", "") not in transcript.replace(",", "")]
+        if bad:
+            c.setdefault("qa_warnings", []).append(f"numbers not in transcript: {bad}")
+            _qa_record(qa, "numbers_in_transcript", c["id"], False, f"not found: {bad}")
+        else:
+            _qa_record(qa, "numbers_in_transcript", c["id"], True)
+
+
+def _gate_duration(candidates: list[dict], qa: list) -> None:
+    """Log duration-range check for every candidate."""
+    for c in candidates:
+        passed = c.get("duration_flag") == "OK"
+        _qa_record(qa, "duration", c["id"], passed,
+                   f"{c.get('duration_s', 0):.0f}s [{c.get('duration_flag', '?')}]")
+
+
+def _gate_diversity(candidates: list[dict], qa: list) -> None:
+    """Ensure top set has ≥3 moment types and ≤2 of any one type. Fix by swapping."""
+    top = sorted([c for c in candidates if c.get("top8")],
+                 key=lambda c: -c.get("score", 0))
+    if not top:
+        return
+
+    type_counts: dict[str, int] = {}
+    for c in top:
+        type_counts[c["moment_type"]] = type_counts.get(c["moment_type"], 0) + 1
+
+    n_types = len(type_counts)
+    max_cnt = max(type_counts.values())
+    details = f"types={n_types}, max_per_type={max_cnt}"
+
+    if n_types >= 3 and max_cnt <= 2:
+        _qa_record(qa, "diversity", "top_set", True, details)
+        return
+
+    # Fix: demote excess, promote replacements
+    bench = sorted([c for c in candidates if not c.get("top8")],
+                   key=lambda c: -c.get("score", 0))
+    removed_ids, added_ids = [], []
+
+    for mtype, cnt in list(type_counts.items()):
+        if cnt > 2:
+            excess = sorted(
+                [c for c in top if c["moment_type"] == mtype],
+                key=lambda c: c.get("score", 0),
+            )[:cnt - 2]
+            for c in excess:
+                c["top8"] = False
+                removed_ids.append(c["id"])
+
+    current_types = {c["moment_type"] for c in candidates if c.get("top8")}
+    for c in bench:
+        if not removed_ids:
+            break
+        if len(current_types) < 3 or c["moment_type"] not in current_types:
+            c["top8"] = True
+            current_types.add(c["moment_type"])
+            added_ids.append(c["id"])
+            removed_ids.pop(0)
+
+    new_top = [c for c in candidates if c.get("top8")]
+    nc: dict[str, int] = {}
+    for c in new_top:
+        nc[c["moment_type"]] = nc.get(c["moment_type"], 0) + 1
+    fixed = len(nc) >= 3 and max(nc.values(), default=0) <= 2
+    fix_note = f"removed {removed_ids}, added {added_ids}"
+    _qa_record(qa, "diversity", "top_set", fixed,
+               f"{details} → {fix_note}", fixed=fixed)
+
+
+def _fallback_min3(candidates: list[dict], qa: list) -> None:
+    """If fewer than 3 candidates score ≥45, mark best 3 lower_confidence."""
+    high = [c for c in candidates if c.get("score", 0) >= 45]
+    if len(high) >= 3:
+        _qa_record(qa, "min3", "top_set", True, f"{len(high)} candidates ≥ 45")
+        return
+    best3 = sorted(candidates, key=lambda c: -c.get("score", 0))[:3]
+    _qa_record(qa, "min3", "top_set", False,
+               f"only {len(high)} ≥ 45 — marking best 3 lower_confidence", fixed=True)
+    for c in best3:
+        if c.get("score", 0) < 45:
+            c["lower_confidence"] = True
+            c["lower_confidence_reason"] = (
+                f"best available (score={c['score']}, threshold=45)"
+            )
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
@@ -1015,6 +1177,7 @@ def main() -> None:
     speaker_map_simple, speaker_map_enriched = _build_speaker_maps(speaker_detections)
     post_for_map = {d["label"]: d["post_for"] for d in speaker_detections}
 
+    qa_entries: list[dict] = []
     t_pipeline_start = time.monotonic()
 
     # ── 2. housekeeping detection ──
@@ -1059,10 +1222,14 @@ def main() -> None:
     for i in range(n_chunks):
         all_labels_raw.extend(all_labels_by_chunk.get(i, []))
 
-    # ── 5. dedup ──
+    # ── 5. dedup + label field gate ──
     all_labels, n_dupes = _dedup_labels(all_labels_raw)
     if n_dupes:
         print(f"🔁 Removed {n_dupes} duplicate label(s) ({len(all_labels_raw)} → {len(all_labels)})")
+    all_labels = _gate_label_fields(all_labels, qa_entries)
+    n_dropped = len(all_labels_raw) - n_dupes - len(all_labels)
+    if n_dropped:
+        print(f"⚠️  Dropped {n_dropped} label(s) with missing required fields")
 
     # ── 6. build & sort ──
     print(f"🏗️  Building candidates from {len(all_labels)} labels…")
@@ -1080,12 +1247,16 @@ def main() -> None:
     flag_note = f" ({n_flagged} flagged out-of-range)" if n_flagged else ""
     print(f"✅ Found {len(candidates)} moments{flag_note}")
 
-    # ── 5. preliminary save (before judge) ──
+    # ── 7. pre-judge QA gates ──
+    _gate_numbers_in_transcript(candidates, qa_entries)
+    _gate_duration(candidates, qa_entries)
+
+    # ── 8. preliminary save (before judge) ──
     out_path = DATA_DIR / f"{slug}-candidates.json"
     out_path.write_text(json.dumps(candidates, indent=2))
 
     old_scores = {c["id"]: c.get("score") for c in candidates}
-    _run_judge_and_content(candidates, sentences, slug, old_scores, args)
+    _run_judge_and_content(candidates, sentences, slug, old_scores, args, qa_entries)
 
     # ── update pipeline cache with scored candidates ──
     out_path.write_text(json.dumps(candidates, indent=2))
