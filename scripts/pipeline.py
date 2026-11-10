@@ -59,11 +59,11 @@ _T0: float = 0.0   # set in main() before first emit
 _ETA: int = 0      # estimated total seconds, set in main()
 
 
-def _emit(step: str, message: str, percent: int) -> None:
+def _emit(step: str, message: str, percent: int, **extra) -> None:
     """Emit a structured progress event as a JSON line to stderr."""
     elapsed = time.monotonic() - _T0 if _T0 else 0
     remaining = max(0, int(_ETA - elapsed))
-    evt = {"step": step, "message": message, "percent": percent, "eta_seconds": remaining}
+    evt = {"step": step, "message": message, "percent": percent, "eta_seconds": remaining, **extra}
     print(json.dumps(evt), file=sys.stderr, flush=True)
 
 
@@ -1427,7 +1427,7 @@ def _run_main(args) -> None:
                     str(DATA_DIR / f"{slug}-content.json")
                 save_cache(cache)
         elapsed = time.monotonic() - t0
-        _emit("done", f"✅ Loaded {sum(1 for c in candidates if c.get('top8')) } viral-ready moments", 100)
+        _emit("done", f"✅ Loaded {sum(1 for c in candidates if c.get('top8')) } viral-ready moments", 100, slug=slug)
         print(f"\n⏱  Finished in {elapsed:.1f}s (cached)")
         if args.lock:
             _lock_golden(slug, cache_key)
@@ -1616,7 +1616,7 @@ def _run_main(args) -> None:
 
     t_elapsed = time.monotonic() - t_pipeline_start
     n_final = sum(1 for c in candidates if c.get("top8"))
-    _emit("done", f"✅ Found {n_final} viral-ready moments", 100)
+    _emit("done", f"✅ Found {n_final} viral-ready moments", 100, slug=slug)
     print(f"💾 Pipeline cached → re-runs will be instant")
     print(f"\n⏱  Pipeline finished in {t_elapsed:.1f}s  "
           f"(hk_skipped={n_hk}, dupes_removed={n_dupes}, final_moments={len(candidates)})")
