@@ -1,1 +1,29 @@
+# Unify team (current)
 linkedin.com/in/austin-t-hughes
+linkedin.com/in/ethandursht
+linkedin.com/in/hassan-irshad-5b0a6840
+linkedin.com/in/owen-polk
+linkedin.com/in/kyletymo
+
+# GTM / outbound community
+linkedin.com/in/jordancrawford
+linkedin.com/in/outboundphd
+# VERIFY: search returned /yashtekriwal/ but couldn't confirm vs /tekriwalyash/ (Meesho)
+linkedin.com/in/yashtekriwal
+linkedin.com/in/garrettawolfe
+linkedin.com/in/noemiejacquemin
+linkedin.com/in/thegtmauditguy
+linkedin.com/in/jaccovanderkooij
+linkedin.com/in/aaron-reeves-sales
+linkedin.com/in/patrickspychalski
+linkedin.com/in/timyakubson
+linkedin.com/in/jacob-dietle
+linkedin.com/in/josh-braun
+linkedin.com/in/kyletcoleman
+
+# Clay
+linkedin.com/in/kareemamin
+linkedin.com/in/vaanand
+
+# NOT FOUND — confirm before adding:
+# Graham Robertson — multiple matches, none clearly GTM/outbound; need more info

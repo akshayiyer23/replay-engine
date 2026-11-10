@@ -1,0 +1,153 @@
+{
+  "version": "1.0",
+  "generated_from": "data/lift.json",
+  "note": "score = 50 + sum(weights for features present), clamped 0-100. Applies to clip content (hook wording, topic, specificity). post_type excluded (LinkedIn format feature, N/A for clips).",
+  "base_score": 50,
+  "anti_pattern_penalty": 15,
+  "features": [
+    {
+      "name": "hook_type",
+      "description": "Style of the opening sentence/hook",
+      "type": "categorical",
+      "values": {
+        "stat": {
+          "weight": 15,
+          "lift": 1.606,
+          "pct_winners": 20.4,
+          "pct_normals": 12.7
+        },
+        "story": {
+          "weight": 13,
+          "lift": 1.535,
+          "pct_winners": 37.0,
+          "pct_normals": 24.1
+        },
+        "contrarian": {
+          "weight": -2,
+          "lift": 0.908,
+          "pct_winners": 16.7,
+          "pct_normals": 18.4
+        },
+        "other": {
+          "weight": -5,
+          "lift": 0.81,
+          "pct_winners": 11.1,
+          "pct_normals": 13.7
+        },
+        "how_to": {
+          "weight": -13,
+          "lift": 0.481,
+          "pct_winners": 11.1,
+          "pct_normals": 23.1
+        }
+      }
+    },
+    {
+      "name": "hook_length",
+      "description": "Word count of the very first sentence",
+      "type": "categorical",
+      "values": {
+        "1-5w": {
+          "weight": 9,
+          "lift": 1.369,
+          "pct_winners": 24.1,
+          "pct_normals": 17.6
+        },
+        "6-10w": {
+          "weight": 0,
+          "lift": 1.013,
+          "pct_winners": 63.0,
+          "pct_normals": 62.2
+        },
+        "11+w": {
+          "weight": -9,
+          "lift": 0.65,
+          "pct_winners": 13.0,
+          "pct_normals": 20.0
+        }
+      }
+    },
+    {
+      "name": "topic",
+      "description": "Primary subject of the clip",
+      "type": "categorical",
+      "values": {
+        "career": {
+          "weight": 9,
+          "lift": 1.354,
+          "pct_winners": 11.1,
+          "pct_normals": 8.2
+        },
+        "ai_agents": {
+          "weight": 8,
+          "lift": 1.321,
+          "pct_winners": 22.2,
+          "pct_normals": 16.8
+        },
+        "other": {
+          "weight": 4,
+          "lift": 1.154,
+          "pct_winners": 27.8,
+          "pct_normals": 24.1
+        },
+        "hiring_sdrs": {
+          "weight": -1,
+          "lift": 0.977,
+          "pct_winners": 13.0,
+          "pct_normals": 13.3
+        },
+        "cold_email": {
+          "weight": -10,
+          "lift": 0.614,
+          "pct_winners": 16.7,
+          "pct_normals": 27.2
+        }
+      }
+    },
+    {
+      "name": "word_count",
+      "description": "Transcript word count bucket (short <100, medium 100-300, long 300+)",
+      "type": "categorical",
+      "values": {
+        "medium": {
+          "weight": 2,
+          "lift": 1.074,
+          "pct_winners": 59.3,
+          "pct_normals": 55.2
+        },
+        "short": {
+          "weight": 0,
+          "lift": 0.99,
+          "pct_winners": 29.6,
+          "pct_normals": 29.9
+        },
+        "long": {
+          "weight": -6,
+          "lift": 0.745,
+          "pct_winners": 11.1,
+          "pct_normals": 14.9
+        }
+      }
+    },
+    {
+      "name": "names_a_tool_or_company",
+      "description": "Names a tool or company",
+      "type": "boolean",
+      "weight_true": 5,
+      "weight_false": 0,
+      "lift": 1.201,
+      "pct_winners": 77.8,
+      "pct_normals": 64.8
+    },
+    {
+      "name": "has_specific_number",
+      "description": "Has specific number",
+      "type": "boolean",
+      "weight_true": 2,
+      "weight_false": 0,
+      "lift": 1.064,
+      "pct_winners": 64.8,
+      "pct_normals": 60.9
+    }
+  ]
+}

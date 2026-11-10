@@ -28,6 +28,7 @@ from build_candidates import build_candidates
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
 SKILLS_DIR = ROOT / "skills" / "unify-moment-miner"
+JUDGE_DIR = ROOT / "skills" / "gtm-viral-judge"
 CACHE_FILE = DATA_DIR / ".transcript_cache.json"
 
 MODEL = "claude-sonnet-5-5"
@@ -231,7 +232,14 @@ def mine_chunk(
         messages=[{"role": "user", "content": user_msg}],
     )
 
-    raw = strip_fences(response.content[0].text)
+    text_block = next(
+        (b for b in response.content if getattr(b, "type", None) == "text"),
+        None,
+    )
+    if text_block is None:
+        print("   ⚠️  No text block in response — skipping chunk")
+        return []
+    raw = strip_fences(text_block.text)
 
     try:
         parsed = json.loads(raw)
@@ -254,11 +262,87 @@ def mine_chunk(
     return []
 
 
+# ── viral judge ──────────────────────────────────────────────────────────────
+
+def _rubric_to_table(rubric: dict) -> str:
+    rows = ["## Scoring weights (base = 50)\n"]
+    for feat in rubric["features"]:
+        rows.append(f"### {feat['name']} — {feat['description']}")
+        if feat["type"] == "categorical":
+            for val, d in feat["values"].items():
+                sign = "+" if d["weight"] >= 0 else ""
+                rows.append(f"  - `{val}`: {sign}{d['weight']} pts (lift {d['lift']:.2f}×)")
+        else:
+            w = feat["weight_true"]
+            sign = "+" if w >= 0 else ""
+            rows.append(f"  - true: {sign}{w} pts (lift {feat['lift']:.2f}×)")
+            rows.append("  - false: 0 pts")
+        rows.append("")
+    rows.append(
+        f"**Anti-pattern penalty**: −{rubric['anti_pattern_penalty']} pts each "
+        "(see the anti-patterns section above)."
+    )
+    return "\n".join(rows)
+
+
+def build_judge_prompt() -> str:
+    skill_md = (JUDGE_DIR / "SKILL.md").read_text()
+    rubric = json.loads((JUDGE_DIR / "rubric.json").read_text())
+    anti = (JUDGE_DIR / "anti-patterns.md").read_text()
+    hooks = (JUDGE_DIR / "hooks.md").read_text()
+    table = _rubric_to_table(rubric)
+    prompt = skill_md.replace("{{RUBRIC_TABLE}}", table)
+    return f"{prompt}\n\n---\n\n{anti}\n\n---\n\n{hooks}"
+
+
+def judge_candidates(candidates: list[dict]) -> dict:
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    system = build_judge_prompt()
+
+    slim = [
+        {
+            "id": c["id"],
+            "moment_type": c["moment_type"],
+            "speaker_name": c["speaker_name"],
+            "hook_line": c["hook_line"],
+            "transcript": c["transcript"][:600],
+            "duration_s": round(c["duration_s"]),
+        }
+        for c in candidates
+    ]
+
+    resp = client.messages.create(
+        model=MODEL,
+        max_tokens=8000,
+        system=system,
+        messages=[{
+            "role": "user",
+            "content": f"Score these {len(slim)} candidates:\n{json.dumps(slim, indent=2)}",
+        }],
+    )
+
+    # sonnet-5-5 may include ThinkingBlock(s) before the TextBlock
+    text_block = next(
+        (b for b in resp.content if getattr(b, "type", None) == "text"),
+        None,
+    )
+    if text_block is None:
+        raise ValueError(f"No text block in response (blocks: {[getattr(b,'type','?') for b in resp.content]})")
+    raw = strip_fences(text_block.text)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        m = re.search(r"\{.*\}", raw, re.DOTALL)
+        if m:
+            return json.loads(m.group(0))
+        raise
+
+
 # ── main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Webinar → clip candidates pipeline")
-    parser.add_argument("input", help="YouTube URL or path to sentences JSON file")
+    parser.add_argument("input", help="YouTube URL, sentences JSON, or (with --judge-only) candidates JSON")
     parser.add_argument(
         "--speakers",
         default="A=Quintin Smith,B=Ethan Dursht",
@@ -266,70 +350,115 @@ def main() -> None:
         help="Speaker map (default: A=Quintin Smith, B=Ethan Dursht)",
     )
     parser.add_argument("--slug", help="Output slug override")
+    parser.add_argument(
+        "--judge-only",
+        action="store_true",
+        help="Skip transcript/mining — load existing candidates JSON and run only the judge step",
+    )
     args = parser.parse_args()
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     speaker_map = parse_speakers(args.speakers)
 
-    # ── 1. sentences ──
-    input_path = Path(args.input)
-    if input_path.exists():
-        print(f"📄 Loading transcript from {input_path}…")
-        sentences = json.loads(input_path.read_text())
-        slug = args.slug or input_path.stem.removesuffix("-sentences")
+    if args.judge_only:
+        # ── judge-only mode: load existing candidates and skip to judge step ──
+        input_path = Path(args.input)
+        if not input_path.exists():
+            sys.exit(f"❌  File not found: {input_path}")
+        candidates = json.loads(input_path.read_text())
+        slug = args.slug or input_path.stem.removesuffix("-candidates")
+        print(f"📄 Loaded {len(candidates)} candidates from {input_path}")
     else:
-        sentences, slug = get_sentences_for_url(args.input)
-        if args.slug:
-            slug = args.slug
+        # ── 1. sentences ──
+        input_path = Path(args.input)
+        if input_path.exists():
+            print(f"📄 Loading transcript from {input_path}…")
+            sentences = json.loads(input_path.read_text())
+            slug = args.slug or input_path.stem.removesuffix("-sentences")
+        else:
+            sentences, slug = get_sentences_for_url(args.input)
+            if args.slug:
+                slug = args.slug
 
-    n_speakers = len({s["speaker"] for s in sentences})
-    duration_min = sentences[-1]["end"] / 60_000
-    print(f"📊 {len(sentences)} sentences · {n_speakers} speakers · {duration_min:.1f} min")
+        n_speakers = len({s["speaker"] for s in sentences})
+        duration_min = sentences[-1]["end"] / 60_000
+        print(f"📊 {len(sentences)} sentences · {n_speakers} speakers · {duration_min:.1f} min")
 
-    # ── 2. chunk ──
-    chunks = chunk_sentences(sentences, CHUNK_MS)
-    print(f"📦 Split into {len(chunks)} chunk(s) (~10 min each)")
+        # ── 2. chunk ──
+        chunks = chunk_sentences(sentences, CHUNK_MS)
+        print(f"📦 Split into {len(chunks)} chunk(s) (~10 min each)")
 
-    # ── 3. mine moments ──
-    skill_prompt = build_skill_prompt()
-    all_labels: list[dict] = []
-    for i, chunk in enumerate(chunks):
-        chunk_start = chunk[0][1]["start"] / 60_000
-        chunk_end = chunk[-1][1]["end"] / 60_000
-        print(f"🔍 Scanning chunk {i + 1}/{len(chunks)} "
-              f"({chunk_start:.0f}–{chunk_end:.0f} min)…")
-        labels = mine_chunk(chunk, speaker_map, skill_prompt)
-        all_labels.extend(labels)
-        print(f"   → {len(labels)} candidates")
+        # ── 3. mine moments ──
+        skill_prompt = build_skill_prompt()
+        all_labels: list[dict] = []
+        for i, chunk in enumerate(chunks):
+            chunk_start = chunk[0][1]["start"] / 60_000
+            chunk_end = chunk[-1][1]["end"] / 60_000
+            print(f"🔍 Scanning chunk {i + 1}/{len(chunks)} "
+                  f"({chunk_start:.0f}–{chunk_end:.0f} min)…")
+            labels = mine_chunk(chunk, speaker_map, skill_prompt)
+            all_labels.extend(labels)
+            print(f"   → {len(labels)} candidates")
 
-    # ── 4. build & sort ──
-    print(f"🏗️  Building candidates from {len(all_labels)} labels…")
-    candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map)
-    candidates.sort(key=lambda c: c["start_ms"])
-    for idx, c in enumerate(candidates, 1):
-        c["id"] = f"m{idx:02d}"
+        # ── 4. build & sort ──
+        print(f"🏗️  Building candidates from {len(all_labels)} labels…")
+        candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map)
+        candidates.sort(key=lambda c: c["start_ms"])
+        for idx, c in enumerate(candidates, 1):
+            c["id"] = f"m{idx:02d}"
 
-    n_ok = sum(1 for c in candidates if c["duration_flag"] == "OK")
-    n_flagged = len(candidates) - n_ok
-    flag_note = f" ({n_flagged} flagged out-of-range)" if n_flagged else ""
-    print(f"✅ Found {len(candidates)} moments{flag_note}")
+        n_ok = sum(1 for c in candidates if c["duration_flag"] == "OK")
+        n_flagged = len(candidates) - n_ok
+        flag_note = f" ({n_flagged} flagged out-of-range)" if n_flagged else ""
+        print(f"✅ Found {len(candidates)} moments{flag_note}")
 
-    # ── 5. save ──
+        # ── 5. save candidates ──
+        out_path = DATA_DIR / f"{slug}-candidates.json"
+        out_path.write_text(json.dumps(candidates, indent=2))
+        print(f"💾 Saved → {out_path}")
+
+    # ── 6. judge ──
+    print(f"⚖️  Judging {len(candidates)} candidates…")
+    try:
+        judgment = judge_candidates(candidates)
+        score_map = {s["id"]: s for s in judgment.get("scores", [])}
+        top8_ids = set(judgment.get("top8", []))
+        for c in candidates:
+            s = score_map.get(c["id"], {})
+            c["score"] = s.get("score", 0)
+            c["why"] = s.get("why", "")
+            c["top8"] = c["id"] in top8_ids
+        n_top8 = sum(1 for c in candidates if c.get("top8"))
+        print(f"✅ Judged — {n_top8} selected for top 8")
+    except Exception as exc:
+        print(f"⚠️  Judge failed: {exc} — continuing without scores")
+        for c in candidates:
+            c["score"] = 0
+            c["why"] = ""
+            c["top8"] = False
+
+    # ── 7. save with scores ──
     out_path = DATA_DIR / f"{slug}-candidates.json"
     out_path.write_text(json.dumps(candidates, indent=2))
     print(f"💾 Saved → {out_path}")
 
-    # ── results table ──
+    # ── results table: top 8 ──
+    top8 = sorted(
+        [c for c in candidates if c.get("top8")],
+        key=lambda c: -c.get("score", 0),
+    )
+    if not top8:
+        top8 = sorted(candidates, key=lambda c: -c.get("score", 0))[:8]
+
     print()
-    header = f"{'id':<5}  {'dur':>5}  {'speaker':<16}  {'type':<12}  angle"
-    print(header)
-    print("─" * 90)
-    for c in candidates:
-        flag = " ⚠" if c["duration_flag"] != "OK" else ""
+    print(f"{'id':<5}  {'score':>5}  {'dur':>4}  {'speaker':<16}  {'type':<12}  {'angle':<36}  why")
+    print("─" * 110)
+    for c in top8:
+        why = c.get("why", "")[:48]
         print(
-            f"{c['id']:<5}  {c['duration_s']:>4.0f}s  "
+            f"{c['id']:<5}  {c.get('score', 0):>5}  {c['duration_s']:>3.0f}s  "
             f"{c['speaker_name']:<16}  {c['moment_type']:<12}  "
-            f"{c['angle'][:54]}{flag}"
+            f"{c['angle'][:36]:<36}  {why}"
         )
 
 
