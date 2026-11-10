@@ -29,7 +29,9 @@
     ],
     "pipeline_complete": true,
     "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-candidates.json",
-    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-content.json"
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-content.golden.json"
   },
   "txt:1db47a79029d4c15": {
     "slug": "test-transcript",

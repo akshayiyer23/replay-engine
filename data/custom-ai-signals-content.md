@@ -1,47 +1,45 @@
 # custom-ai-signals — Generated Content
 
-## m0565 · score 80 · story
-**Post for:** Ethan Dursht  **Hook score:** 80 → 95 [story]
+## m0565 · score 78 · story
+**Post for:** Ethan Dursht  **Hook score:** 78 → 79 [contrarian]
 
 ### LinkedIn Post
 ```
-We thought we knew our ICP.
+Our ICP was wrong.
 
-Then we looked at the data and it told a different story.
+Not completely. But our closed-won data told a different story than our assumptions.
 
-We assumed our ICP was fairly standard: the usual top segments and the businesses we typically sell into.
+We assumed our ICP was pretty standard: the usual top segments and the businesses we typically sell into.
 
-So we went back through our closed-won customers. We paired that with conversational intelligence, pulling call transcripts and looking for specific moments.
+Then we looked back at our closed-won customers and ran our conversational intelligence across those call transcripts, searching for particular moments.
 
-Two patterns stood out.
+One stood out: product launches.
 
-First, product launches. Companies with a recent product launch were looking at Unify at a higher clip.
+If a company had a recent product launch, they were looking at Unify at a higher clip.
 
-Second, industry. Our closed-won customers included a disproportionate number of fintech companies.
+That's not a firmographic. You won't find it in a segment list or a standard filter. It's a moment, and it only showed up because we went back to what actually happened in the deals we won.
 
-Neither showed up in our assumptions. Both were sitting in our own deals and calls the whole time.
+The ICP on the slide was our assumption. The transcripts showed the real pattern.
 
-Your ICP isn't a slide you wrote two years ago. It's what your closed-won data and call recordings say it is.
-
-What's one thing your closed-won data surprised you with?
+What's the most surprising pattern in your closed-won data?
 ```
 
 ### Carousel
 - Slide 1: We thought we knew our ICP. The data disagreed.
-- Slide 2: Our assumption: standard top segments and the usual businesses.
-- Slide 3: So we reviewed our closed-won customers.
-- Slide 4: Then we mined call transcripts for specific moments.
-- Slide 5: Finding one: recent product launches meant higher interest in Unify.
-- Slide 6: Finding two: a disproportionate number of fintech companies.
-- Slide 7: Neither pattern was in our original ICP.
-- Slide 8: Your ICP lives in your closed-won deals and calls.
+- Slide 2: We assumed our ICP was standard top segments.
+- Slide 3: Then we looked back at our closed-won customers.
+- Slide 4: We ran conversational intelligence across those call transcripts.
+- Slide 5: We searched for particular moments, not just company traits.
+- Slide 6: Recent product launches stood out as a buying trigger.
+- Slide 7: Companies with a recent launch looked at Unify at a higher clip.
+- Slide 8: Your ICP isn't a segment. It's a segment plus a moment.
 
-### Unify University — Let closed-won data rewrite your ICP
-- Assumed ICPs often miss patterns hidden in your own closed-won deals.
-- Call transcripts reveal trigger moments, like a recent product launch, that signal buying interest.
-- Industry skews in closed-won customers, such as fintech, can point to segments worth prioritizing.
+### Unify University — Your closed-won calls know your ICP better than you do
+- Assumed ICPs tend to be firmographic; real buying patterns often show up as moments.
+- Conversational intelligence on closed-won transcripts surfaces triggers no filter will give you.
+- A trigger like a recent product launch can signal higher interest than segment fit alone.
 
-**Exercise:** Pull your closed-won customers and list their industries. Then scan five call transcripts for repeated trigger moments. Compare both against your current ICP and note what's missing.
+**Exercise:** Pull transcripts from your last 10 closed-won deals and highlight every recent event the buyer mentioned (launch, hire, funding, etc.). Count which events repeat, then add the top one as a targeting signal.
 
 ### Caption
 `Our ICP was wrong`
@@ -49,233 +47,237 @@ What's one thing your closed-won data surprised you with?
 ---
 
 ## m1665 · score 69 · how_to
-**Post for:** Ethan Dursht  **Hook score:** 69 → 70 [how_to]
+**Post for:** Ethan Dursht  **Hook score:** 69 → 72 [how_to]
 
 ### LinkedIn Post
 ```
-Delay the send by 10 minutes.
+Delay the launch by 10 minutes.
 
-That one setting is how we QA every automated play before it goes live.
+That one setting keeps most automated outbound plays from going wrong.
 
-Before launch, we test the agents and snippets at a smaller scale. That part is table stakes.
+We test the agents and snippets at a smaller scale first. But the first real launch is a different test.
 
-Then, when the play goes live, I delay the sequence. You can do this natively in Unify. During that window, I read through the sample emails and check accuracy. The goal is to make sure nothing wacky is going out.
+So when a play goes live, I delay the sequence by 10 minutes, or 20 minutes. You can do this natively in Unify.
 
-Sometimes a sample reply or draft exposes a problem. Something like "we didn't launch this product" or a reference to an event from X months ago. When that happens, I tweak the agent and keep testing.
+Then I read through the sample emails and check for accuracy. I'm looking for anything wacky.
 
-There will also be edge cases. We'll probably get one every few thousand.
+Sometimes a sample reply exposes a problem. Someone says we didn't launch this product, or the reference is from X months ago.
 
-It's well worth it, based on the success we've seen.
+When that happens, I tweak the agent and keep testing.
 
-The point of QA isn't perfection. It's catching the obvious misses before your buyers do.
+Edge cases will still slip through. We'll probably get one every few thousand.
 
-What's your QA step before an automated play goes live?
+It's well worth it, based on the success.
+
+The goal isn't a perfect launch. It's catching the embarrassing stuff before it reaches your buyers.
+
+What's the worst automated email you've ever seen sent?
 ```
 
 ### Carousel
-- Slide 1: Delay the send by 10 minutes.
-- Slide 2: Test agents and snippets at smaller scale first.
-- Slide 3: At launch, delay the sequence before anything sends.
-- Slide 4: Read the sample emails and check accuracy.
-- Slide 5: Look for wrong product claims or outdated references.
-- Slide 6: Found a miss? Tweak the agent and keep testing.
-- Slide 7: Expect an edge case every few thousand.
-- Slide 8: QA catches the obvious misses before buyers do.
+- Slide 1: Delay your outbound launch by 10 minutes.
+- Slide 2: Test agents and snippets at a smaller scale first.
+- Slide 3: Then delay the live sequence before anything sends.
+- Slide 4: Read the sample emails and check for accuracy.
+- Slide 5: Look for anything wacky before buyers see it.
+- Slide 6: Bad reply? Tweak the agent and keep testing.
+- Slide 7: Expect an edge case every few thousand emails.
+- Slide 8: Catch the embarrassing stuff, accept the rare miss.
 
-### Unify University — QA an automated outbound play before it goes live
-- Small-scale testing comes first, but a delayed launch is your final checkpoint.
-- Reading real sample emails exposes errors like wrong product claims or stale references.
-- Edge cases will happen, roughly one every few thousand, and the results justify that tradeoff.
+### Unify University — Launching automated outbound without embarrassment
+- Small-scale testing comes first, but the live launch needs its own check.
+- Delay the sequence 10 to 20 minutes so you can review sample emails for accuracy.
+- Use replies as feedback: tweak the agent and keep testing.
 
-**Exercise:** On your next automated play, delay the first send by 10-20 minutes. Read every sample email you can, note any factual errors, and tweak the agent before releasing the rest.
+**Exercise:** On your next outbound play, add a 10 to 20 minute send delay. Read every sample email in that window and write down one thing to fix in the agent.
 
 ### Caption
-`Delay the send. Read the samples.`
+`Delay the send. Check everything.`
 
 ---
 
-## m1224 · score 63 · how_to
-**Post for:** Ethan Dursht  **Hook score:** 63 → 66 [how_to]
+## m0252 · score 67 · stat
+**Post for:** Ethan Dursht  **Hook score:** 67 → 62 [stat]
 
 ### LinkedIn Post
 ```
-Write the template first. Let AI fill blanks.
+20+ meetings last month from one signal.
 
-That's the safest way to personalize cold email at scale.
+It's not the one most teams are chasing.
 
-Most teams skip this step and let the model write the whole email.
+Someone sitting on your pricing page. That's it. High intent on the website is still a very successful signal for us.
 
-The better approach is deterministic. You write the snippets yourself, which are pieces of the email copy. The agent only supplies the one variable that changes.
+The meetings came from website intent and prospecting within those accounts. Not just the visitor, but the people around them.
 
-Take a product launch signal. The agent outputs the exact product name, based on criteria you give it. The template around it is already written: "Saw Unify just launched PLG Signals. Congrats."
+There are other first-party signals worth working too:
 
-The AI never improvises the sentence. It only fills the blank.
+- MQLs from gated content
+- Product tour views
+- CRM data
+- Closed lost opportunities, segmented by loss reason
 
-That gives you a reliable way to set guidance for your tone. You work backwards from what you would actually send, then give the agent only the piece it needs to find.
+Everyone wants a new, clever signal. The boring ones sitting in your own systems are still booking the meetings.
 
-The result is personalization you can trust at volume, because you've already approved every possible version of the line.
-
-Where do you draw the line on AI-written outreach?
+Which first-party signal works best for your team?
 ```
 
 ### Carousel
-- Slide 1: Write the template first. Let AI fill the blank.
-- Slide 2: Most teams let the model write the whole email.
-- Slide 3: Safer approach: deterministic snippets you write yourself.
-- Slide 4: Snippets are pieces of your email copy.
-- Slide 5: The agent only outputs the variable, like a product name.
-- Slide 6: Example: "Saw Unify just launched PLG Signals. Congrats."
-- Slide 7: Work backwards from the email you'd actually send.
-- Slide 8: You approve every version of the line before it ships.
+- Slide 1: 20+ meetings last month from one boring signal.
+- Slide 2: Someone sitting on your pricing page. That's the signal.
+- Slide 3: We prospect within those accounts, not just the visitor.
+- Slide 4: Gated content MQLs are another first-party signal.
+- Slide 5: So are product tour views and CRM data.
+- Slide 6: Closed lost opportunities can be worked by loss reason.
+- Slide 7: Your own data is still booking the meetings.
 
-### Unify University — Deterministic personalization: templates first, AI second
-- Snippets are pieces of email copy you write in advance.
-- Give the agent criteria to find only the variable, like the exact product name.
-- Working backwards from the email you'd send sets your tone and keeps output reliable.
+### Unify University — First-party signals still win
+- Pricing page intent is still a very successful signal, with over 20 meetings last month from website intent and prospecting.
+- Work the whole account, not only the person who visited.
+- Gated content, product tour views, CRM data and closed lost reasons are all usable first-party signals.
 
-**Exercise:** Pick one signal, like a product launch. Write the one-sentence template with a blank, then give an AI agent criteria to fill only that blank.
+**Exercise:** Pull a list of accounts that hit your pricing page this week. Identify two other contacts at each account and reach out to them.
 
 ### Caption
-`Templates first, AI second`
+`20+ meetings from one signal`
 
 ---
 
-## m1482 · score 63 · how_to
-**Post for:** Unify company page  **Hook score:** 63 → 66 [how_to]
+## m0995 · score 65 · mistake
+**Post for:** Ethan Dursht  **Hook score:** 65 → 50 [other]
 
 ### LinkedIn Post
 ```
-30 days. Four steps. One real experiment.
+Our AI signal flagged pricing changes as launches.
 
-Most teams skip the first step entirely.
+The fix took one change to the prompt.
 
-If you want to start signal-based outbound, here is the plan we recommend for your next 30 days.
+While testing it early on, I noticed it was pulling in lighter launches we would never consider launches. Pricing changes. Internal tools. Internal hiring news.
 
-Step 1: Audit your ICP. Go back through your data. Set your hypotheses aside and look at what is working, what is not, and what is actually resonating.
+The model wasn't broken. I just hadn't told it what "major" meant.
 
-Step 2: Identify 3 triggers. Pick signals specific to your business that indicate buying readiness.
+So I gave it specific criteria and a structure to work from.
 
-Step 3: Run one play. Choose the trigger you have the most conviction behind and build the play around it.
+A major launch is a major feature, a significant go-to-market shift, or a net new customer-facing product.
 
-Step 4: Measure the results. Treat it as an initial experiment, not a full rollout.
+And it should ignore things like pricing-only announcements.
 
-The order matters. The foundational work of identifying who the play is for comes before any outreach goes out.
+Vague definitions get vague outputs. The model fills the gap with its own guess, and its guess is usually broader than yours.
 
-Which of these four steps does your team skip most?
+Spelling out what counts, and what doesn't, did more than any other tweak.
+
+What's the noisiest signal in your GTM stack right now?
 ```
 
 ### Carousel
-- Slide 1: Your 30-day plan for signal-based outbound
-- Slide 2: Start with the foundation, not the outreach
-- Slide 3: Step 1: Audit your ICP using real data
-- Slide 4: Look at what's working, what's not, what resonates
-- Slide 5: Step 2: Identify 3 business-specific buying triggers
-- Slide 6: Step 3: Run one play on your highest-conviction trigger
-- Slide 7: Step 4: Measure the results of that first experiment
-- Slide 8: Know who it's for before you run anything
+- Slide 1: Our AI signal kept flagging pricing changes as major launches.
+- Slide 2: In early testing, it pulled in launches we wouldn't count.
+- Slide 3: Pricing changes, internal tools, internal hiring news. All flagged.
+- Slide 4: The model wasn't broken. Our definition of major was missing.
+- Slide 5: We defined it: major feature, GTM shift, net new customer-facing product.
+- Slide 6: Then we told it what to ignore, like pricing-only announcements.
+- Slide 7: Vague definitions get vague outputs. Be specific about what counts.
+- Slide 8: What's the noisiest signal in your GTM stack right now?
 
-### Unify University — A 30-day plan to start signal-based outbound
-- Audit your ICP against real data before choosing any signals, and let results override your hypotheses.
-- Identify 3 triggers specific to your business that indicate buying readiness.
-- Run one play on the trigger you have the most conviction in, then measure it as an initial experiment.
+### Unify University — Define "major" before your AI signal does
+- AI signals over-flag when a term like "major launch" is left undefined.
+- Give the model positive criteria: what counts and what qualifies.
+- Add explicit exclusions: tell it what to ignore, such as pricing-only announcements.
 
-**Exercise:** Pull your recent outbound data and note what is working, what is not, and what resonates. Then write down 3 business-specific buying triggers and circle the one you believe in most.
+**Exercise:** Pick one AI signal you run today. Review its last 20 outputs, mark the false positives, then rewrite the prompt with 3 inclusion criteria and 3 explicit exclusions.
 
 ### Caption
-`Your 30-day signal plan`
+`Pricing changes aren't launches`
 
 ---
 
-## m0434 · score 61 · how_to
-**Post for:** Unify company page  **Hook score:** 61 → 64 [how_to]
+## m1540 · score 65 · how_to
+**Post for:** Ethan Dursht  **Hook score:** 65 → 71 [contrarian]
 
 ### LinkedIn Post
 ```
-Skip step one and the whole initiative fails.
+Hiring heavily for BD? That's a pipeline problem.
 
-Most teams jump straight to the tooling. That's where it breaks.
+Most teams never look at the signal hiding inside that job posting.
 
-Here's the order that works for custom signal plays:
+When the real pain isn't public, nobody announces it. You have to infer it from what's external.
 
-1. Get clear on your ICP. You need specifics on exactly who you're going after. Without that clarity, nothing downstream holds.
+If a company is hiring a ton for the BD team, they probably need more pipeline.
 
-2. Define the signals that trigger that ICP. This is one of the most critical pieces. Find the urgency triggers that create buying potential.
+Then read the JD itself. It gives you a sense of their tech stack, which tells you about their current workflow and the potential pains to go after.
 
-3. Spec your experiments. What are we trying to get out of this test? What are we testing? What are the hypotheses?
+Headcount growth is one signal. Divestment in certain areas is another.
 
-4. Operationalize it. Build the agent, automate the personalization into copy, and weave it into an end-to-end play.
+What counts as a signal will look different depending on the type of business. The skill is the same everywhere: take external signals and infer what's going on inside.
 
-5. Monitor performance. See how it's performing, then tweak and optimize.
-
-The automation comes last, not first.
-
-Which step does your team usually skip?
+Which external signal do you trust most when pain isn't public?
 ```
 
 ### Carousel
-- Slide 1: Skip this first step and your signal play fails
-- Slide 2: Step one: get specific on exactly who your ICP is
-- Slide 3: Step two: find the urgency triggers that create buying potential
-- Slide 4: Step three: spec your experiments before you build anything
-- Slide 5: Write down what you're testing and your hypotheses
-- Slide 6: Step four: build the agent and automate personalization into copy
-- Slide 7: Weave it into an end-to-end play
-- Slide 8: Step five: monitor performance, then tweak and optimize
+- Slide 1: The real pain is rarely public. Infer it.
+- Slide 2: Hiring a ton for BD? They likely need pipeline.
+- Slide 3: Don't stop at the headcount. Read the job description.
+- Slide 4: The JD reveals their tech stack.
+- Slide 5: Tech stack shows current workflow and potential pains.
+- Slide 6: Divestment in certain areas is a signal too.
+- Slide 7: Signals look different for every type of business.
+- Slide 8: Watch external signals. Infer what's happening inside.
 
-### Unify University — From zero to automated custom signal plays
-- Clarity on your ICP is the foundation; without it the initiative fails.
-- Signals should be urgency triggers tied to buying potential for that specific ICP.
-- Spec experiments with clear hypotheses before you automate, then monitor and optimize.
+### Unify University — Reading buying signals when pain isn't public
+- Hiring patterns, like a big BD push, point to needs such as more pipeline.
+- Job descriptions reveal tech stack, which hints at workflow and potential pains.
+- Headcount growth and divestment are external signals you can infer from; which ones matter depends on the business.
 
-**Exercise:** Write one paragraph defining your ICP, list three urgency triggers for them, then draft one experiment with a hypothesis and a success measure before building any automation.
+**Exercise:** Pick one target account, read its open job descriptions, and write down the tech stack, the likely workflow, and one pain you could reach out about.
 
 ### Caption
-`Automate signal plays in order`
+`Signals when pain isn't public`
 
 ---
 
-## m1432 · score 61 · how_to
-**Post for:** Unify company page  **Hook score:** 61 → 61 [contrarian]
+## m1432 · score 56 · contrarian
+**Post for:** Unify company page  **Hook score:** 56 → 62 [contrarian]
 
 ### LinkedIn Post
 ```
-The trigger is only half the play.
+Most teams only automate half the play.
 
-Most teams miss the other half entirely.
+The other half is where the results come from.
 
-Signal-based outbound gets talked about as a targeting problem. Spot the signal, fire the play, and move on.
+Spotting an intent signal is the easy part. Plenty of tools will surface one.
 
-But the real power comes from two pieces working together. You take action based on a specific trigger, with always-on monitoring behind it. Then that same signal personalizes the outreach itself.
+The real power comes from using that signal as a trigger for a specific play, with always-on monitoring behind it.
 
-That makes the message hyper relevant at scale.
+But the trigger alone isn't enough. The copy has to be customized too.
 
-No one customizes copy every single time. No seller has to review the intent signals and then build the message by hand.
+So the outreach is hyper relevant at scale, without anyone rewriting it every single time.
 
-Both pieces are automated: the action and the copy.
+Without that, a seller looks at the intent signal, then goes off and builds the message manually.
 
-If your signals still end with a rep writing every email from scratch, you've automated the trigger and left the bottleneck in place.
+Both pieces need to be automated: the action taken on the trigger, and the personalization of the message.
 
-Where does your signal workflow still depend on manual copy?
+That's the part that makes it really powerful.
+
+Where does your signal-to-message workflow still depend on a manual step?
 ```
 
 ### Carousel
-- Slide 1: The trigger is only half of signal-based outbound.
-- Slide 2: Most teams use signals to decide who to contact.
-- Slide 3: The real edge is that the copy personalizes itself too.
-- Slide 4: Piece one: always-on monitoring triggers a specific play.
-- Slide 5: Piece two: the signal shapes the message itself.
-- Slide 6: No manual seller building copy from intent signals.
-- Slide 7: Both pieces automated means relevance at scale.
-- Slide 8: Automate the trigger and the copy, or the bottleneck stays.
+- Slide 1: Spotting the signal is only half the job.
+- Slide 2: The other half is the message you send.
+- Slide 3: Intent signals should trigger specific plays automatically.
+- Slide 4: Always-on monitoring means no signal gets missed.
+- Slide 5: Personalized copy makes outreach hyper relevant at scale.
+- Slide 6: No seller rebuilding the message every single time.
+- Slide 7: Automate both the trigger and the copy.
+- Slide 8: That combination is what makes it really powerful.
 
-### Unify University — Automate the Trigger and the Copy
-- Signals should do two jobs: trigger a specific play and inform the message.
-- Always-on monitoring removes the need to manually check intent signals.
-- If a seller still writes the copy by hand, the bottleneck remains.
+### Unify University — Signals Need Messages: Automate Both Halves
+- An intent signal is most useful as a trigger for a specific play, backed by always-on monitoring.
+- Triggering the action isn't enough; the copy must be customized to the signal.
+- Automating both the trigger and the personalization removes manual seller work and keeps outreach relevant at scale.
 
-**Exercise:** Map one signal-based play you run today. Mark each step as automated or manual, then find where copy is written by hand and draft a template that pulls in the signal.
+**Exercise:** Map one intent signal you track today. Write down each step from signal to sent message, and mark every step where a person manually intervenes. Pick one to automate this week.
 
 ### Caption
-`Automate the trigger and the copy`
+`Signal is only half the job`
 
 ---

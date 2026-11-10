@@ -16,6 +16,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -44,6 +45,54 @@ WPM = 150           # words per minute for estimated timestamps (txt input)
 AUDIO_VIDEO_EXTS = {".mp4", ".mov", ".mp3", ".m4a", ".wav", ".webm"}
 
 load_dotenv(ROOT / ".env")
+
+
+# ── pipeline errors ───────────────────────────────────────────────────────────
+
+class PipelineError(Exception):
+    """Known, user-friendly pipeline error — printed without a stack trace."""
+
+
+# ── progress events ───────────────────────────────────────────────────────────
+
+_T0: float = 0.0   # set in main() before first emit
+_ETA: int = 0      # estimated total seconds, set in main()
+
+
+def _emit(step: str, message: str, percent: int) -> None:
+    """Emit a structured progress event as a JSON line to stderr."""
+    elapsed = time.monotonic() - _T0 if _T0 else 0
+    remaining = max(0, int(_ETA - elapsed))
+    evt = {"step": step, "message": message, "percent": percent, "eta_seconds": remaining}
+    print(json.dumps(evt), file=sys.stderr, flush=True)
+
+
+def _fmt_duration(seconds: int) -> str:
+    m, s = divmod(int(seconds), 60)
+    h, m = divmod(m, 60)
+    return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
+
+
+def _estimate_eta(duration_min: float, has_transcript: bool = False) -> int:
+    if has_transcript:
+        mine_s = max(30, int((duration_min / 10) * 20))
+        return mine_s + 20 + 70   # mine + judge + content
+    download_s = 30
+    transcribe_s = max(60, int(duration_min * 6))
+    mine_s = max(30, int((duration_min / 10) * 20))
+    return download_s + transcribe_s + mine_s + 20 + 70
+
+
+def _count_gtm_posts() -> int:
+    """Return number of GTM posts used in judge training, or 0 if unavailable."""
+    for name in ("posts.json", ".raw_posts_cache.json"):
+        p = DATA_DIR / name
+        if p.exists():
+            try:
+                return len(json.loads(p.read_text()))
+            except Exception:
+                pass
+    return 0
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
@@ -128,17 +177,38 @@ def get_video_id(url: str) -> str:
     return m.group(1) if m else "unknown"
 
 
-def get_title_slug(url: str) -> str:
+def get_video_info(url: str) -> tuple[str, int]:
+    """Return (slug, duration_seconds) via a fast yt-dlp metadata call.
+    duration_seconds is 0 if unavailable or the video is private.
+    Raises PipelineError for private/unavailable/blocked URLs.
+    """
     try:
         result = subprocess.run(
-            ["yt-dlp", "--get-title", "--no-playlist", url],
-            capture_output=True, text=True, timeout=30,
+            ["yt-dlp", "--print", "%(title)s", "--print", "%(duration)s",
+             "--no-playlist", url],
+            capture_output=True, text=True, timeout=20,
         )
-        if result.returncode == 0 and result.stdout.strip():
-            return slugify(result.stdout.strip())
-    except Exception:
-        pass
-    return get_video_id(url)
+    except FileNotFoundError:
+        raise PipelineError("yt-dlp not found — install it with: pip install yt-dlp")
+    except subprocess.TimeoutExpired:
+        return get_video_id(url), 0
+
+    if result.returncode != 0:
+        err = (result.stderr or "").lower()
+        if "private" in err or "not available" in err or "unavailable" in err:
+            raise PipelineError("Video is private or unavailable — check the URL and permissions.")
+        if "sign in" in err or "403" in err:
+            raise PipelineError("YouTube requires sign-in for this video — upload the file directly.")
+        # Non-fatal: fall back to ID-based slug
+        return get_video_id(url), 0
+
+    lines = result.stdout.strip().split("\n")
+    slug = slugify(lines[0]) if lines[0].strip() else get_video_id(url)
+    try:
+        dur_s = int(lines[1].strip()) if len(lines) > 1 else 0
+    except (ValueError, IndexError):
+        dur_s = 0
+    return slug, dur_s
 
 
 def strip_fences(text: str) -> str:
@@ -201,6 +271,19 @@ def save_cache(cache: dict) -> None:
     CACHE_FILE.write_text(json.dumps(cache, indent=2))
 
 
+def _lock_golden(slug: str, cache_key: str) -> None:
+    """Copy the current run's output files to golden (stable demo) versions."""
+    cache = load_cache()
+    for suffix in ("candidates", "content"):
+        src = DATA_DIR / f"{slug}-{suffix}.json"
+        dst = DATA_DIR / f"{slug}-{suffix}.golden.json"
+        if src.exists():
+            shutil.copy2(src, dst)
+            cache.setdefault(cache_key, {})[f"golden_{suffix}_file"] = str(dst)
+            print(f"🔒 Locked → {dst.name}")
+    save_cache(cache)
+
+
 def migrate_legacy_cache() -> None:
     """Migrate the old single .transcript_id file to the per-URL cache."""
     legacy = DATA_DIR / ".transcript_id"
@@ -239,8 +322,10 @@ def download_audio(url: str, out_dir: str) -> str:
             capture_output=True, text=True,
         )
         if result.returncode != 0:
-            print("YouTube blocked the download — upload the file instead.")
-            sys.exit(1)
+            err = (result.stderr or "").lower()
+            if "private" in err or "not available" in err:
+                raise PipelineError("Video is private or unavailable — check the URL.")
+            raise PipelineError("YouTube blocked the download — upload the .webm or .mp4 directly instead.")
 
     matches = list(Path(out_dir).glob("audio.*"))
     if not matches:
@@ -249,20 +334,33 @@ def download_audio(url: str, out_dir: str) -> str:
 
 
 def transcribe_file(audio_path: str) -> tuple[list[dict], int, str]:
+    size_mb = Path(audio_path).stat().st_size / (1024 * 1024)
+    if size_mb > 2000:
+        raise PipelineError(f"File is {size_mb:.0f} MB — max 2 GB. Compress or trim before uploading.")
     aai.settings.api_key = os.environ["ASSEMBLYAI_API_KEY"]
-    config = aai.TranscriptionConfig(speaker_labels=True)
+    config = aai.TranscriptionConfig(speaker_labels=True, language_detection=True)
     transcript = aai.Transcriber().transcribe(audio_path, config=config)
     if transcript.status == aai.TranscriptStatus.error:
+        err_msg = (transcript.error or "").lower()
+        if "no speech" in err_msg or "no audio" in err_msg:
+            raise PipelineError("No speech detected — confirm the file contains a voice track.")
         raise RuntimeError(f"Transcription failed: {transcript.error}")
     sentences = [
         {"speaker": s.speaker, "start": s.start, "end": s.end, "text": s.text}
         for s in transcript.get_sentences()
     ]
+    if not sentences:
+        raise PipelineError("No speech detected — confirm the file contains a voice track.")
+    lang = getattr(transcript, "language_code", None) or ""
+    if lang and not lang.startswith("en"):
+        raise PipelineError(f"Audio appears to be {lang} — this pipeline is built for English content.")
     n_speakers = len({s["speaker"] for s in sentences})
     return sentences, n_speakers, transcript.id
 
 
-def get_sentences_for_url(url: str) -> tuple[list[dict], str]:
+def get_sentences_for_url(
+    url: str, slug: str | None = None
+) -> tuple[list[dict], str]:
     migrate_legacy_cache()
     cache = load_cache()
 
@@ -270,18 +368,19 @@ def get_sentences_for_url(url: str) -> tuple[list[dict], str]:
         entry = cache[url]
         sentences_path = Path(entry["sentences_file"])
         if sentences_path.exists():
+            _emit("transcript_cache", "📋 Reusing cached transcript…", 10)
             print(f"📋 Reusing cached transcript {entry['transcript_id'][:8]}…")
             return json.loads(sentences_path.read_text()), entry["slug"]
 
+    slug = slug or get_video_info(url)[0]
+    _emit("download", f"🎧 Downloading audio…", 5)
     print("🎧 Downloading audio…")
-    slug = get_title_slug(url)
 
     with tempfile.TemporaryDirectory() as tmp:
         audio_path = download_audio(url, tmp)
+        _emit("transcribe", "✍️  Transcribing…", 15)
         print("✍️  Transcribing…")
         sentences, n_speakers, tid = transcribe_file(audio_path)
-
-    print(f"✍️  Transcribing… found {n_speakers} speakers")
 
     sentences_path = DATA_DIR / f"{slug}-sentences.json"
     sentences_path.write_text(json.dumps(sentences, indent=2))
@@ -949,6 +1048,8 @@ def _run_judge_and_content(
         from generate_content import (
             generate_for_candidates, print_content_summary, get_and_clear_qa as _gcq,
         )
+        n_top_content = sum(1 for c in candidates if c.get("top8"))
+        _emit("content", f"✍️  Writing posts for the top {min(n_top_content, 6)}…", 80)
         content_results = generate_for_candidates(candidates, slug)
         qa_entries.extend(_gcq())
         print_content_summary(content_results)
@@ -1178,6 +1279,8 @@ def _fallback_min3(candidates: list[dict], qa: list) -> None:
 # ── main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
+    global _T0, _ETA
+
     parser = argparse.ArgumentParser(description="Webinar → clip candidates pipeline")
     parser.add_argument("input", help="YouTube URL, sentences JSON, or (with --judge-only) candidates JSON")
     parser.add_argument(
@@ -1202,9 +1305,40 @@ def main() -> None:
         action="store_true",
         help="Ignore full-pipeline cache and re-run mining/judging/content (transcript still cached)",
     )
+    parser.add_argument(
+        "--lock",
+        action="store_true",
+        help="Save the current results as the golden demo version for this video. "
+             "The landing page always loads the golden version. "
+             "Only --lock overwrites it; --fresh alone never does.",
+    )
     args = parser.parse_args()
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    _T0 = time.monotonic()
+
+    try:
+        _run_main(args)
+    except PipelineError as exc:
+        _emit("error", f"❌  {exc}", 0)
+        sys.exit(f"❌  {exc}")
+    except anthropic.AuthenticationError:
+        _emit("error", "❌  Anthropic API key is invalid — check ANTHROPIC_API_KEY in .env.", 0)
+        sys.exit("❌  Anthropic API key is invalid — check ANTHROPIC_API_KEY in .env.")
+    except anthropic.PermissionDeniedError as exc:
+        msg = str(exc).lower()
+        if "credit" in msg or "billing" in msg or "quota" in msg:
+            _emit("error", "❌  Anthropic API out of credits — top up at console.anthropic.com.", 0)
+            sys.exit("❌  Anthropic API out of credits — top up at console.anthropic.com.")
+        _emit("error", f"❌  Anthropic API permission denied: {exc}", 0)
+        sys.exit(f"❌  Anthropic API permission denied: {exc}")
+    except anthropic.RateLimitError:
+        _emit("error", "❌  Anthropic rate limit hit — wait a moment and retry.", 0)
+        sys.exit("❌  Anthropic rate limit hit — wait a moment and retry.")
+
+
+def _run_main(args) -> None:
+    global _T0, _ETA
 
     if args.judge_only:
         # ── judge-only mode ──
@@ -1223,32 +1357,59 @@ def main() -> None:
 
     # ── non-judge-only path ──
 
-    # Determine cache key; YouTube needs migration first
     input_type = detect_input_type(args.input)
     if input_type == "youtube":
         migrate_legacy_cache()
     cache_key = _derive_cache_key(args.input)
     cache = load_cache()
 
-    # --fresh: wipe pipeline fields (keeps transcript)
+    # For YouTube: get title + duration quickly for ETA, before any download
+    video_slug_hint: str | None = None
+    if input_type == "youtube":
+        video_slug_hint, dur_s = get_video_info(args.input)
+        dur_min = dur_s / 60
+        # Check if transcript is already cached (no download needed)
+        transcript_cached = (
+            cache_key in cache and
+            Path(cache.get(cache_key, {}).get("sentences_file", "")).exists()
+        )
+        _ETA = _estimate_eta(dur_min, has_transcript=transcript_cached)
+        dur_str = _fmt_duration(dur_s) if dur_s else "unknown length"
+        dur_min_note = f" (~{int(dur_min)} min)" if dur_min >= 5 else ""
+        if transcript_cached:
+            _emit("start", f"📋 Transcript cached · re-mining ({dur_str}{dur_min_note})… ~{_ETA//60} min", 2)
+        else:
+            _emit("start", f"🎧 Downloading audio ({dur_str}{dur_min_note})… ~{_ETA//60} min", 2)
+        print(f"\n⏱  ETA: ~{_ETA//60} min  ({dur_str})")
+        if dur_s and dur_s < 300:
+            raise PipelineError(f"Video is {dur_min:.1f} min — too short to find multiple clip moments (min 5 min).")
+
+    # --fresh: wipe pipeline fields but never the golden version
     if args.fresh and cache_key in cache:
         for field in ("pipeline_complete", "candidates_file", "content_file"):
             cache[cache_key].pop(field, None)
         save_cache(cache)
-        print("🔄 --fresh: pipeline cache cleared (transcript reused)")
+        print("🔄 --fresh: pipeline cache cleared (transcript reused, golden preserved)")
 
-    # Full pipeline cache hit?
+    # Full pipeline cache hit? Prefer golden version for the landing page.
     entry = cache.get(cache_key, {})
-    cf = entry.get("candidates_file", "")
+    golden_cf = entry.get("golden_candidates_file", "")
+    regular_cf = entry.get("candidates_file", "")
+    cf = golden_cf if (golden_cf and Path(golden_cf).exists()) else regular_cf
+
     if entry.get("pipeline_complete") and cf and Path(cf).exists() and not args.fresh:
-        import time as _time
-        t0 = _time.monotonic()
-        print(f"⚡ Pipeline cache hit — loading results instantly")
+        t0 = time.monotonic()
+        is_golden = bool(golden_cf and Path(golden_cf).exists())
+        label = "🔒 golden" if is_golden else "⚡ cached"
+        _emit("cache", f"{label} — loading results instantly", 95)
+        print(f"{label} — loading results instantly")
         candidates = json.loads(Path(cf).read_text())
         slug = entry.get("slug", args.slug or "output")
         _print_top8(candidates, {})
         if not args.skip_content:
-            content_cf = entry.get("content_file", "")
+            golden_content = entry.get("golden_content_file", "")
+            content_cf = golden_content if (golden_content and Path(golden_content).exists()) \
+                else entry.get("content_file", "")
             if content_cf and Path(content_cf).exists():
                 from generate_content import print_content_summary
                 content_results = json.loads(Path(content_cf).read_text())
@@ -1261,14 +1422,17 @@ def main() -> None:
                 cache.setdefault(cache_key, {})["content_file"] = \
                     str(DATA_DIR / f"{slug}-content.json")
                 save_cache(cache)
-        elapsed = _time.monotonic() - t0
+        elapsed = time.monotonic() - t0
+        _emit("done", f"✅ Loaded {sum(1 for c in candidates if c.get('top8')) } viral-ready moments", 100)
         print(f"\n⏱  Finished in {elapsed:.1f}s (cached)")
+        if args.lock:
+            _lock_golden(slug, cache_key)
         return
 
     # ── 1. sentences ──
     input_path = Path(args.input)
     if input_type == "youtube":
-        sentences, slug = get_sentences_for_url(args.input)
+        sentences, slug = get_sentences_for_url(args.input, slug=video_slug_hint)
     elif input_type == "file":
         sentences, slug = get_sentences_for_file(input_path)
     elif input_type == "txt":
@@ -1278,22 +1442,34 @@ def main() -> None:
         sentences = json.loads(input_path.read_text())
         slug = args.slug or input_path.stem.removesuffix("-sentences")
     else:
-        sys.exit(f"❌  Cannot determine input type for: {args.input!r}\n"
-                 "    Accepted: YouTube URL, .mp4/.mov/.mp3/.m4a/.wav/.webm, "
-                 ".txt transcript, or -sentences.json")
+        raise PipelineError(
+            f"Cannot determine input type for: {args.input!r}\n"
+            "    Accepted: YouTube URL, .mp4/.mov/.mp3/.m4a/.wav/.webm, "
+            ".txt transcript, or -sentences.json"
+        )
 
     if args.slug:
         slug = args.slug
 
+    if len(sentences) == 0:
+        raise PipelineError("No speech detected — confirm the file contains a voice track.")
+
     n_speakers = len({s["speaker"] for s in sentences})
     duration_min = sentences[-1]["end"] / 60_000
+
+    if duration_min < 5 and input_type != "json":
+        raise PipelineError(f"Video is {duration_min:.1f} min — too short to find multiple clip moments (min 5 min).")
+
+    # Recalibrate ETA now that we have the real duration
+    if not _ETA:
+        _ETA = _estimate_eta(duration_min)
+
     print(f"📊 {len(sentences)} sentences · {n_speakers} speakers · {duration_min:.1f} min")
 
     # ── 1b. speaker detection ──
     cache = load_cache()
     entry = cache.get(cache_key, {})
     if args.speakers:
-        # Manual override: build detections from provided map
         raw_map = parse_speakers(args.speakers)
         speaker_detections = [
             {
@@ -1318,6 +1494,13 @@ def main() -> None:
         save_cache(cache)
         _print_speaker_map(speaker_detections)
 
+    # Emit speaker event with real names
+    speaker_names = ", ".join(
+        d["display_name"] for d in speaker_detections
+        if d.get("confidence", 0) >= 0.7
+    ) or f"{n_speakers} speakers"
+    _emit("speakers", f"✍️  Transcribing… found {n_speakers} speakers: {speaker_names}", 30)
+
     speaker_map_simple, speaker_map_enriched = _build_speaker_maps(speaker_detections)
     post_for_map = {d["label"]: d["post_for"] for d in speaker_detections}
 
@@ -1329,12 +1512,14 @@ def main() -> None:
     hk_indices = mark_housekeeping(sentences)
     n_hk = len(hk_indices)
     print(f"   → {n_hk} sentence(s) marked as housekeeping and excluded from mining")
+    _emit("housekeeping", f"🧹 Skipped {n_hk} housekeeping sentences", 37)
 
     # ── 3. chunk ──
     chunks = chunk_sentences(sentences, CHUNK_MS)
     n_chunks = len(chunks)
     workers = min(4, n_chunks)
     print(f"📦 {n_chunks} chunk(s), mining up to {workers} in parallel…")
+    _emit("mining", f"🔍 Scanning {len(sentences)} sentences across {n_chunks} chunks…", 40)
 
     # ── 4. mine moments (parallel) ──
     skill_prompt = build_skill_prompt()
@@ -1388,7 +1573,6 @@ def main() -> None:
     for c in candidates:
         c["id"] = f"m{c['start_ms'] // 1000:04d}"
 
-    # Enforce routing rules deterministically (overrides whatever Claude set in mine_chunk)
     for c in candidates:
         c["post_for"] = post_for_map.get(c["speaker"], "Unify company page")
 
@@ -1405,6 +1589,11 @@ def main() -> None:
     out_path = DATA_DIR / f"{slug}-candidates.json"
     out_path.write_text(json.dumps(candidates, indent=2))
 
+    # Judge emit with real post count
+    n_posts = _count_gtm_posts()
+    post_ref = f"{n_posts} real GTM posts" if n_posts else "GTM post benchmarks"
+    _emit("judge", f"⚖️  Scoring {len(candidates)} moments against {post_ref}…", 65)
+
     old_scores = {c["id"]: c.get("score") for c in candidates}
     _run_judge_and_content(candidates, sentences, slug, old_scores, args, qa_entries)
 
@@ -1416,15 +1605,20 @@ def main() -> None:
         "slug": slug,
         "candidates_file": str(out_path),
     })
-    # Carry forward content_file if content just ran
     content_path = DATA_DIR / f"{slug}-content.json"
     if content_path.exists():
         cache[cache_key]["content_file"] = str(content_path)
     save_cache(cache)
+
     t_elapsed = time.monotonic() - t_pipeline_start
+    n_final = sum(1 for c in candidates if c.get("top8"))
+    _emit("done", f"✅ Found {n_final} viral-ready moments", 100)
     print(f"💾 Pipeline cached → re-runs will be instant")
     print(f"\n⏱  Pipeline finished in {t_elapsed:.1f}s  "
           f"(hk_skipped={n_hk}, dupes_removed={n_dupes}, final_moments={len(candidates)})")
+
+    if args.lock:
+        _lock_golden(slug, cache_key)
 
 
 if __name__ == "__main__":

@@ -255,16 +255,21 @@ def generate_for_candidates(
     if out_dir is None:
         out_dir = DATA_DIR
 
-    qualifying = sorted(
-        [c for c in candidates if c.get("score", 0) >= SCORE_THRESHOLD],
-        key=lambda c: -c["score"],
-    )[:MAX_MOMENTS]
+    # Use the judged top set (top8=True); fall back to score-based if no top8 flags present
+    top8_set = [c for c in candidates if c.get("top8", False)]
+    if top8_set:
+        qualifying = sorted(top8_set, key=lambda c: -c.get("score", 0))[:MAX_MOMENTS]
+    else:
+        qualifying = sorted(
+            [c for c in candidates if c.get("score", 0) >= SCORE_THRESHOLD],
+            key=lambda c: -c["score"],
+        )[:MAX_MOMENTS]
 
     if not qualifying:
-        print("💡 No moments with score ≥ 45 — content generation skipped")
+        print("💡 No moments in judged top set — content generation skipped")
         return []
 
-    print(f"💡 Generating content for {len(qualifying)} moments (score ≥ {SCORE_THRESHOLD})…")
+    print(f"💡 Generating content for {len(qualifying)} moments (judged top set)…")
 
     hooks_md = (JUDGE_DIR / "hooks.md").read_text()
     rubric = json.loads((JUDGE_DIR / "rubric.json").read_text())
