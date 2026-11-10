@@ -1,0 +1,11 @@
+{
+  "title": "Claude for RevOps: How to leverage AI to take RevOps from tactical to strategic",
+  "date": "2026-03-31",
+  "youtube_id": "7UUXmRhy-g8",
+  "duration": "46:24",
+  "speakers": ["Quintin Smith", "Jeff Ignacio", "Hassan Irshad"],
+  "top_score": 80,
+  "slug": "claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac",
+  "golden_candidates": "../../claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-candidates.golden.json",
+  "golden_content": "../../claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-content.golden.json"
+}

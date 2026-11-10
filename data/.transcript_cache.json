@@ -40,5 +40,207 @@
     "estimated_timestamps": true,
     "pipeline_complete": true,
     "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-transcript-candidates.json"
+  },
+  "https://www.youtube.com/watch?v=MUJb8_EScMc": {
+    "transcript_id": "1e766517-73d6-4322-89e2-77c3d0a10766",
+    "slug": "winning-on-linkedin-in-2026-founder-led-content-pipeline-gro",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Tommy Clark",
+        "role": "Host / LinkedIn content strategist (agency side)",
+        "company": "Compound Content Studio",
+        "is_current_unify_team": false,
+        "confidence": 0.75,
+        "proof_sentence": "So getting into the trends, there's 3 main ones that I'm going to want to go over here.",
+        "display_name": "Tommy Clark",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Austin Hughes",
+        "role": "Co-founder & CEO",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.85,
+        "proof_sentence": "But I'll pause there, Austin. You want to hop in?",
+        "display_name": "Austin Hughes",
+        "post_for": "Austin Hughes"
+      },
+      {
+        "label": "C",
+        "name": null,
+        "role": "unknown",
+        "company": "unknown",
+        "is_current_unify_team": false,
+        "confidence": 0.0,
+        "proof_sentence": "",
+        "display_name": "Speaker C",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=51GS5O52sQI": {
+    "transcript_id": "8396babc-bce9-4a3e-9840-f6357c4b3095",
+    "slug": "cold-email-deliverability-the-hidden-infrastructure-behind-o",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/cold-email-deliverability-the-hidden-infrastructure-behind-o-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Alexandra Starr",
+        "role": "Growth, community partnerships, and events (self-described; host)",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.55,
+        "proof_sentence": "I'm Alex. I work on growth, community partnerships, and events here at Unify.",
+        "display_name": "Speaker A",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Kyle Tymo",
+        "role": "GM, Email Deliverability",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "I'm joined today by my colleague Kyle Tymo, our GM of Email Deliverability.",
+        "display_name": "Kyle Tymo",
+        "post_for": "Kyle Tymo"
+      },
+      {
+        "label": "C",
+        "name": null,
+        "role": "unknown",
+        "company": "unknown",
+        "is_current_unify_team": false,
+        "confidence": 0.0,
+        "proof_sentence": "No speech from speaker C appears in the first 5 minutes of the transcript.",
+        "display_name": "Speaker C",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/cold-email-deliverability-the-hidden-infrastructure-behind-o-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/cold-email-deliverability-the-hidden-infrastructure-behind-o-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/cold-email-deliverability-the-hidden-infrastructure-behind-o-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/cold-email-deliverability-the-hidden-infrastructure-behind-o-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=7UUXmRhy-g8": {
+    "transcript_id": "1300b4d8-1955-4d84-9179-62c2fb12f550",
+    "slug": "claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Quintin Smith",
+        "role": "Webinar host / moderator",
+        "company": "Juicebox",
+        "is_current_unify_team": false,
+        "confidence": 0.8,
+        "proof_sentence": "Yeah, thanks, Quinton.",
+        "display_name": "Quintin Smith",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Jeff Ignacio",
+        "role": "Founder, go-to-market advisory firm",
+        "company": "RevOps Impact",
+        "is_current_unify_team": false,
+        "confidence": 0.95,
+        "proof_sentence": "I run a go-to-market advisory firm called RevOps Impact.",
+        "display_name": "Jeff Ignacio",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": "Hassan Irshad",
+        "role": "Head of RevOps",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.9,
+        "proof_sentence": "and now leading the charge with AI-powered RevOps at Unify.",
+        "display_name": "Hassan Irshad",
+        "post_for": "Hassan Irshad"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=64fC3BdDMYk": {
+    "transcript_id": "bb5cbe2d-7476-4257-a32b-f1a0da2ee3c6",
+    "slug": "outbound-email-masterclass-webinar",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/outbound-email-masterclass-webinar-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": null,
+        "role": "Webinar moderator (role not stated; appears to be Unify host)",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.4,
+        "proof_sentence": "I'm going to be moderating today.",
+        "display_name": "Speaker A",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Cole Courson",
+        "role": "Head of Professional Services (self-described at time of webinar)",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.95,
+        "proof_sentence": "I am currently leading up our Professional Services team here at Unify, where I'll deliver a more white glove, hands-on support to our customers and current prospects.",
+        "display_name": "Cole Courson",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": "Bobby Foose",
+        "role": "Business Development Representative (BDR)",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.9,
+        "proof_sentence": "Yeah, I'm Bobby. This is actually my first sales role.",
+        "display_name": "Bobby Foose",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/outbound-email-masterclass-webinar-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/outbound-email-masterclass-webinar-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/outbound-email-masterclass-webinar-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/outbound-email-masterclass-webinar-content.golden.json"
+  },
+  "txt:5288d537f3ceffac": {
+    "slug": "test-no-timestamps",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-no-timestamps-sentences.json",
+    "source": "/private/tmp/claude-501/-Users-akshay-iyer23-Downloads-Resumes--replay-engine/b0a1e686-441e-4418-b4ef-4559c34f7a84/scratchpad/test-no-timestamps.txt",
+    "estimated_timestamps": true,
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Sarah Chen",
+        "role": "VP of Sales",
+        "company": "GrowthStack",
+        "is_current_unify_team": false,
+        "confidence": 0.95,
+        "proof_sentence": "I'm Sarah Chen, VP of Sales at GrowthStack.",
+        "display_name": "Sarah Chen",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-no-timestamps-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-no-timestamps-content.json"
   }
 }

@@ -1,0 +1,499 @@
+[
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m07",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "s130",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m07",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0072",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0174",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0270",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0318",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0398",
+    "passed": false,
+    "details": "not found: [3]",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0472",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0573",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0642",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0761",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0812",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0902",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1013",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1077",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1183",
+    "passed": false,
+    "details": "not found: [5]",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1256",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1321",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1410",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1609",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1676",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1771",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1869",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0072",
+    "passed": true,
+    "details": "60s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0174",
+    "passed": true,
+    "details": "46s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0270",
+    "passed": true,
+    "details": "45s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0318",
+    "passed": true,
+    "details": "63s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0398",
+    "passed": true,
+    "details": "44s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0472",
+    "passed": true,
+    "details": "38s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0573",
+    "passed": true,
+    "details": "36s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0642",
+    "passed": true,
+    "details": "46s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0761",
+    "passed": true,
+    "details": "30s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0812",
+    "passed": true,
+    "details": "38s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0902",
+    "passed": true,
+    "details": "44s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1013",
+    "passed": true,
+    "details": "63s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1077",
+    "passed": true,
+    "details": "79s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1183",
+    "passed": true,
+    "details": "36s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1256",
+    "passed": true,
+    "details": "63s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1321",
+    "passed": true,
+    "details": "86s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1410",
+    "passed": true,
+    "details": "40s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1609",
+    "passed": true,
+    "details": "52s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1676",
+    "passed": true,
+    "details": "83s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1771",
+    "passed": true,
+    "details": "49s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1869",
+    "passed": true,
+    "details": "44s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "diversity",
+    "item_id": "top_set",
+    "passed": true,
+    "details": "types=4, max_per_type=5 \u2192 removed ['m0398', 'm1183'], added ['m0174']",
+    "fixed": true
+  },
+  {
+    "gate": "min3",
+    "item_id": "top_set",
+    "passed": true,
+    "details": "21 candidates \u2265 45",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m1077",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m0902",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m1256",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m1013",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m1410",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m0174",
+    "passed": false,
+    "details": "issues=[\"filler phrase: 'you know'\"]; remaining=[\"filler phrase: 'you know'\"]",
+    "fixed": false
+  }
+]

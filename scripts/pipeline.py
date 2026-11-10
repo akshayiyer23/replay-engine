@@ -972,11 +972,15 @@ def judge_candidates(
     try:
         result = json.loads(raw)
     except json.JSONDecodeError:
-        m = re.search(r"\{.*\}", raw, re.DOTALL)
-        if m:
-            result = json.loads(m.group(0))
-        else:
-            raise
+        try:
+            # handles "Extra data" — trailing text after valid JSON
+            result, _ = json.decoder.JSONDecoder().raw_decode(raw.lstrip())
+        except json.JSONDecodeError:
+            m = re.search(r"\{.*\}", raw, re.DOTALL)
+            if m:
+                result = json.loads(m.group(0))
+            else:
+                raise
 
     if sentences is not None:
         _apply_trims(result.get("scores", []), candidates, sentences)

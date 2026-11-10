@@ -1,0 +1,11 @@
+{
+  "title": "Outbound Email Masterclass",
+  "date": "2026-05-20",
+  "youtube_id": "64fC3BdDMYk",
+  "duration": "42:13",
+  "speakers": ["Cole Courson", "Bobby Foose"],
+  "top_score": 72,
+  "slug": "outbound-email-masterclass-webinar",
+  "golden_candidates": "../../outbound-email-masterclass-webinar-candidates.golden.json",
+  "golden_content": "../../outbound-email-masterclass-webinar-content.golden.json"
+}

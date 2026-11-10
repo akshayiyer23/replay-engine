@@ -1,0 +1,2918 @@
+[
+  {
+    "speaker": "A",
+    "start": 104,
+    "end": 3494,
+    "text": "I think everyone knows outbound email is harder than it's ever been before."
+  },
+  {
+    "speaker": "A",
+    "start": 3879,
+    "end": 18530,
+    "text": "Being an outbound AI platform, we've really focused in and looked at our proprietary 25 million plus emails to see what is actually working in today's kind of age of AI and all the slop that's out there, what really cuts through the noise and can be impactful."
+  },
+  {
+    "speaker": "A",
+    "start": 19348,
+    "end": 25407,
+    "text": "Today, we are lucky to be joined by 2 of the best in the business at the outbound email craft."
+  },
+  {
+    "speaker": "A",
+    "start": 25744,
+    "end": 27203,
+    "text": "I'm going to be moderating today."
+  },
+  {
+    "speaker": "A",
+    "start": 27299,
+    "end": 39305,
+    "text": "So kind of serving as your Oprah Winfrey in the room, but chatting with some of our experts on the phone from Unify, the first of which is Cole Corson, who is our Head of Professional Services but has a lot of other background too."
+  },
+  {
+    "speaker": "A",
+    "start": 39402,
+    "end": 41598,
+    "text": "So Cole, I'll let you introduce yourself."
+  },
+  {
+    "speaker": "B",
+    "start": 42896,
+    "end": 43073,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "B",
+    "start": 43153,
+    "end": 43602,
+    "text": "Hey, what's up guys?"
+  },
+  {
+    "speaker": "B",
+    "start": 43938,
+    "end": 44996,
+    "text": "As mentioned, happy Wednesday."
+  },
+  {
+    "speaker": "B",
+    "start": 45076,
+    "end": 47673,
+    "text": "Super excited to see everyone on today's call."
+  },
+  {
+    "speaker": "B",
+    "start": 48026,
+    "end": 57243,
+    "text": "I am currently leading up our Professional Services team here at Unify, where I'll deliver a more white glove, hands-on support to our customers and current prospects."
+  },
+  {
+    "speaker": "B",
+    "start": 57900,
+    "end": 63767,
+    "text": "In a prior life, I used to deliver kind of post-sales experience in the past 12 months here at Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 64024,
+    "end": 69660,
+    "text": "So onboarding clients, doing implementation, activation, all things go-to-market, signals, orchestration."
+  },
+  {
+    "speaker": "B",
+    "start": 70270,
+    "end": 75456,
+    "text": "I was a prior customer at Unify as a founding account executive, ultimately asked to come build out some of the post-sales team."
+  },
+  {
+    "speaker": "B",
+    "start": 75633,
+    "end": 79968,
+    "text": "And so have that founding account executive background, and I was one of the first SDRs at Snowflake."
+  },
+  {
+    "speaker": "B",
+    "start": 80594,
+    "end": 84351,
+    "text": "So in terms of writing far too many emails, I've done a lot of them."
+  },
+  {
+    "speaker": "B",
+    "start": 84399,
+    "end": 86165,
+    "text": "So super excited to meet everyone."
+  },
+  {
+    "speaker": "A",
+    "start": 87498,
+    "end": 87803,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 87980,
+    "end": 94386,
+    "text": "I was talking with Cole earlier, and I think he's probably in the 99.9 percentile of people who've sent outbound emails in the world."
+  },
+  {
+    "speaker": "A",
+    "start": 94515,
+    "end": 97742,
+    "text": "So if you want some expertise, here's your guy."
+  },
+  {
+    "speaker": "A",
+    "start": 98096,
+    "end": 108967,
+    "text": "And then we have a young gun in the BDR world who's really blowing out his numbers on every front and kind of bringing new craft in this world that's proving incredibly successful."
+  },
+  {
+    "speaker": "A",
+    "start": 109031,
+    "end": 112740,
+    "text": "So Bobby, you have some amazing stats here, but I'll let you introduce yourself."
+  },
+  {
+    "speaker": "C",
+    "start": 113832,
+    "end": 114731,
+    "text": "Yeah, I'm Bobby."
+  },
+  {
+    "speaker": "C",
+    "start": 114876,
+    "end": 116530,
+    "text": "This is actually my first sales role."
+  },
+  {
+    "speaker": "C",
+    "start": 116819,
+    "end": 126814,
+    "text": "It's been interesting to come at this with a new lens, but I think Overall, couple months in here, still rewriting subject lines like 6 times."
+  },
+  {
+    "speaker": "C",
+    "start": 127022,
+    "end": 131336,
+    "text": "So, uh, happy to walk through what I've found the most success with today."
+  },
+  {
+    "speaker": "A",
+    "start": 133004,
+    "end": 141118,
+    "text": "Yeah, a fun stat with Bobby is he was out of office in Japan for 2 weeks last month and still hit 150% of quota."
+  },
+  {
+    "speaker": "A",
+    "start": 141278,
+    "end": 148734,
+    "text": "So, um, he also has been known, you'll see a little bit later, for some of the most well-personalized emails I've ever seen in my entire life."
+  },
+  {
+    "speaker": "A",
+    "start": 148879,
+    "end": 157790,
+    "text": "So, uh, yeah, we'll get into much more of that lately, but 2 guys who know outbound email backwards and forwards and have a lot to share here."
+  },
+  {
+    "speaker": "A",
+    "start": 157990,
+    "end": 160530,
+    "text": "So with that, let's dive in."
+  },
+  {
+    "speaker": "A",
+    "start": 160530,
+    "end": 164830,
+    "text": "So today we're going to be talking kind of front to back of all the different components of an email."
+  },
+  {
+    "speaker": "A",
+    "start": 164830,
+    "end": 172290,
+    "text": "And from our analysis, from our anatomy of what an outbound email looks like, the data, what actually is going to be most impactful in each of those sections."
+  },
+  {
+    "speaker": "A",
+    "start": 172290,
+    "end": 179370,
+    "text": "And then Bobby and Cole are going to kind of speak to some of the traits, characteristics that make these most powerful from across the board."
+  },
+  {
+    "speaker": "A",
+    "start": 179490,
+    "end": 182030,
+    "text": "We'll also go and do a live demo of how you can automate a lot of these pieces from Cole."
+  },
+  {
+    "speaker": "A",
+    "start": 184182,
+    "end": 189059,
+    "text": "Towards the end as well to see how you can do this really well at scale with Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 189686,
+    "end": 195048,
+    "text": "So with that in mind, I'm going to continue to poke through the slides."
+  },
+  {
+    "speaker": "A",
+    "start": 196124,
+    "end": 196381,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 196926,
+    "end": 205596,
+    "text": "So what we're seeing as we come through the data is that overall you're hearing this on all fronts, right, is that reply rates are at all-time lows, outbound email is harder than ever."
+  },
+  {
+    "speaker": "A",
+    "start": 205676,
+    "end": 219041,
+    "text": "And there's really, really starting to be this valley between the top performers and folks who are just kind of doing mundane AI swap repeatable outbound, cold outbound, the way they used to in a spray and pray fashion."
+  },
+  {
+    "speaker": "A",
+    "start": 219810,
+    "end": 230743,
+    "text": "So really what we're seeing is like there's a lot of commonalities in what's maybe not working today and also what really can produce top performers in these small micro decisions."
+  },
+  {
+    "speaker": "A",
+    "start": 230791,
+    "end": 240104,
+    "text": "So Cole, maybe I'll start with you, like from your work with some of the most interesting customers out there like Perplexity, Airwallex, Cursor, different folks."
+  },
+  {
+    "speaker": "A",
+    "start": 241178,
+    "end": 246854,
+    "text": "What have you seen as maybe the most, some of the most common mistakes folks are making today when it comes to outbound email?"
+  },
+  {
+    "speaker": "B",
+    "start": 248313,
+    "end": 250077,
+    "text": "Yeah, totally appreciate the tee-up."
+  },
+  {
+    "speaker": "B",
+    "start": 250734,
+    "end": 260756,
+    "text": "So I'll break the kind of\u2014 there's a lot of mistakes that people can make from what Bobby mentioned, subject lines all the way to call to actions, from tiering accounts, looking at accounts, right, framing up lists."
+  },
+  {
+    "speaker": "B",
+    "start": 261173,
+    "end": 269416,
+    "text": "I'll break them down into how I simply like to think about them in terms of kind of downmarket, let's call it the founder-led sales common mistakes."
+  },
+  {
+    "speaker": "B",
+    "start": 269496,
+    "end": 272029,
+    "text": "And then you have more mid-market to upper market."
+  },
+  {
+    "speaker": "B",
+    "start": 272999,
+    "end": 282609,
+    "text": "On the downmarket kind of founder-led sales, I typically think that what people run into is they like to scale really, really bad behaviors, and that just leads to a bunch of outreach scaled really poorly."
+  },
+  {
+    "speaker": "B",
+    "start": 283283,
+    "end": 288653,
+    "text": "And so an exercise that I typically like to frame people through are like level 1 of like where to start."
+  },
+  {
+    "speaker": "B",
+    "start": 289037,
+    "end": 294920,
+    "text": "And I think typically everyone on this call should look at their individual personas that they would want to go after and define them, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 294968,
+    "end": 296395,
+    "text": "Who are the target personas?"
+  },
+  {
+    "speaker": "B",
+    "start": 296588,
+    "end": 302535,
+    "text": "There is a book by Skip Miller called Above the Line, Below the Line Selling, and that would be a good way to bifurcate it, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 302583,
+    "end": 308129,
+    "text": "So you have like the decision makers the C-suite, the VPs, the directors, and that would be the above the line kind of tree."
+  },
+  {
+    "speaker": "B",
+    "start": 308610,
+    "end": 316208,
+    "text": "And then the below the line, you have the end users, some people that might have some more tactical information for you going to craft that next email or going to do that next cold call."
+  },
+  {
+    "speaker": "B",
+    "start": 317186,
+    "end": 322925,
+    "text": "Within those above the line, below the line splits, what are the pains and the challenges that each of those personas have, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 322973,
+    "end": 333184,
+    "text": "So at Unify, when Bobby goes and outreaches to, let's call it a BDR manager, to a VP of RevOps, they might have tool consolidation issues, they might have, you know, low speed to lead, they might have conversion issues."
+  },
+  {
+    "speaker": "B",
+    "start": 333842,
+    "end": 342418,
+    "text": "And so it's important to really hone in on on the above-the-line pains and the below-the-line pains, and those are often very different, and you should bifurcate the message that way."
+  },
+  {
+    "speaker": "B",
+    "start": 343700,
+    "end": 349022,
+    "text": "Typically, it's good within that email body or within the structure to have what outcomes are they measured on, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 349086,
+    "end": 350305,
+    "text": "What metrics are they looking at?"
+  },
+  {
+    "speaker": "B",
+    "start": 350369,
+    "end": 354585,
+    "text": "You look at a VP of RevOps, it's much different than a CFO or, you know, a CIO or something."
+  },
+  {
+    "speaker": "B",
+    "start": 355739,
+    "end": 360933,
+    "text": "And then typically in like an email framework, you'd have what type of story have we helped draw away from them?"
+  },
+  {
+    "speaker": "B",
+    "start": 361045,
+    "end": 370121,
+    "text": "So if you look at a company like Guru or a company like Spellbook, Guru in specific, right, I work with one POC, they send about 300 400K emails a month, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 370170,
+    "end": 373493,
+    "text": "With one orchestrator and just myself, we're able to make that like really, really clean."
+  },
+  {
+    "speaker": "B",
+    "start": 373541,
+    "end": 377073,
+    "text": "And so we can save time, we can save energy, we can still drive marketing results."
+  },
+  {
+    "speaker": "B",
+    "start": 377555,
+    "end": 379690,
+    "text": "And that clearly becomes kind of a good case study."
+  },
+  {
+    "speaker": "B",
+    "start": 379803,
+    "end": 385293,
+    "text": "And so I think before even getting to like email one for founder-led sales, you're going to want to know where you want to start."
+  },
+  {
+    "speaker": "B",
+    "start": 385486,
+    "end": 389098,
+    "text": "And that's really the personas, the splits, some of the pains and some of the stories there."
+  },
+  {
+    "speaker": "B",
+    "start": 389741,
+    "end": 393674,
+    "text": "I think once you really hone in on your persona, then you're going to dive into the companies, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 394060,
+    "end": 399200,
+    "text": "A lot of people start setting up website intent and they'll have every industry bucketed into the same type of messaging."
+  },
+  {
+    "speaker": "B",
+    "start": 399200,
+    "end": 404260,
+    "text": "Well, you might have different value props to different industries and you might have different value props to different CFOs at different industries."
+  },
+  {
+    "speaker": "B",
+    "start": 404260,
+    "end": 405820,
+    "text": "And so it's good to split those out."
+  },
+  {
+    "speaker": "B",
+    "start": 405820,
+    "end": 409120,
+    "text": "So let's try to do an exercise of which companies we can sell into."
+  },
+  {
+    "speaker": "B",
+    "start": 409120,
+    "end": 411300,
+    "text": "What are the companies we actually should sell into?"
+  },
+  {
+    "speaker": "B",
+    "start": 411300,
+    "end": 413730,
+    "text": "I think people think their TAM is a lot bigger than what it actually is."
+  },
+  {
+    "speaker": "B",
+    "start": 414240,
+    "end": 415920,
+    "text": "What verticals do you really spike in?"
+  },
+  {
+    "speaker": "B",
+    "start": 415920,
+    "end": 417240,
+    "text": "And let's start a little bit small there."
+  },
+  {
+    "speaker": "B",
+    "start": 417700,
+    "end": 424060,
+    "text": "And then at those different verticals, at those different industries, does our brand, does our tone, does our messaging, does it look a little bit different, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 424060,
+    "end": 427340,
+    "text": "The ways in which we reach out to sales, leaders, they're pretty direct."
+  },
+  {
+    "speaker": "B",
+    "start": 427340,
+    "end": 428550,
+    "text": "They kind of know the bullshit."
+  },
+  {
+    "speaker": "B",
+    "start": 428560,
+    "end": 430360,
+    "text": "They like to cut through the BS."
+  },
+  {
+    "speaker": "B",
+    "start": 430360,
+    "end": 435580,
+    "text": "And so I think you can be a little bit more direct when Bobby sends out an email or does a cold call because they've done sales for 20 years."
+  },
+  {
+    "speaker": "B",
+    "start": 435580,
+    "end": 437380,
+    "text": "And so they kind of understand the craft there."
+  },
+  {
+    "speaker": "B",
+    "start": 438640,
+    "end": 440320,
+    "text": "So that's kind of where I'd start there."
+  },
+  {
+    "speaker": "B",
+    "start": 440320,
+    "end": 446920,
+    "text": "I think a good exercise for trying to leverage sales is I would pick 3 accounts per day, 5 contacts per account, and do that every single day."
+  },
+  {
+    "speaker": "B",
+    "start": 446920,
+    "end": 454230,
+    "text": "And then you have 1 manual personalized email across the week, and that's 75 contacts, you know, 75 good touchpoints."
+  },
+  {
+    "speaker": "B",
+    "start": 454935,
+    "end": 458342,
+    "text": "I think as we move upmarket, some of the issues I run into are just really data collection."
+  },
+  {
+    "speaker": "B",
+    "start": 458663,
+    "end": 459804,
+    "text": "You want to be iterating quickly."
+  },
+  {
+    "speaker": "B",
+    "start": 459965,
+    "end": 469333,
+    "text": "You want to be running engineering sprints, campaigns 2 to 3 weeks, running things, A/B tests, looking at spend tax more on the deliverability side if you're sending hundreds of thousands of emails."
+  },
+  {
+    "speaker": "B",
+    "start": 470650,
+    "end": 473816,
+    "text": "Yeah, hopefully that covers some common mistakes."
+  },
+  {
+    "speaker": "A",
+    "start": 474828,
+    "end": 475278,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 475535,
+    "end": 484347,
+    "text": "I think that's a great way to start thinking about it, the above the line, below the line pain and starting to be more tailored and more precise while still scaling out outbound is super impactful."
+  },
+  {
+    "speaker": "A",
+    "start": 485726,
+    "end": 494366,
+    "text": "With that in mind, I kind of want to break right and jump right into what are some of the like components of different emails that we found in the data to be most impactful."
+  },
+  {
+    "speaker": "A",
+    "start": 494414,
+    "end": 499624,
+    "text": "So I want to start on the subject line font and maybe Bobby, I'll punt this one to you."
+  },
+  {
+    "speaker": "A",
+    "start": 500474,
+    "end": 508713,
+    "text": "From what we see, it's like connector formats and short, short specific hooks are really the most impactful in driving actual replies."
+  },
+  {
+    "speaker": "A",
+    "start": 509050,
+    "end": 512240,
+    "text": "I want to hear from your side, what have you seen as the most impactful."
+  },
+  {
+    "speaker": "C",
+    "start": 515766,
+    "end": 526603,
+    "text": "Yeah, I think first and foremost, I mean, if I'm sending something sequenced, like a little bit of what Cole was talking about, I think connector is what I most typically go for, potentially adding like my name to it."
+  },
+  {
+    "speaker": "C",
+    "start": 528218,
+    "end": 537637,
+    "text": "Whereas if it's someone I've reached out to on another platform or through another method, I always try and throw in something that makes someone want to at least open the email and read the first 2 lines."
+  },
+  {
+    "speaker": "C",
+    "start": 537685,
+    "end": 538153,
+    "text": "Yeah, I think that's a great point."
+  },
+  {
+    "speaker": "C",
+    "start": 538798,
+    "end": 557546,
+    "text": "Uh, whether that be like, just gave you a ring, Bobby from Unify, something like that, or, um, a question about, um, part of their outbound process specific to Unify, or also potentially, um, saw you're hiring for a BDR, saw you're hiring for this, uh, saw you just did a recent funding round."
+  },
+  {
+    "speaker": "C",
+    "start": 557915,
+    "end": 565485,
+    "text": "So I'd say either a connector or keeping it short and something that shows you did your homework and you're not just spraying and praying."
+  },
+  {
+    "speaker": "C",
+    "start": 566886,
+    "end": 576042,
+    "text": "I think that gets people to the first or second line of the email, and that is where I think you win a meeting."
+  },
+  {
+    "speaker": "A",
+    "start": 577838,
+    "end": 578340,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 578987,
+    "end": 583451,
+    "text": "Yeah, like that pretty well resonates with kind of what we've seen in the data as well."
+  },
+  {
+    "speaker": "A",
+    "start": 584241,
+    "end": 588046,
+    "text": "Cole, on your side, you know, we have seen like a lot of the trends in the formats."
+  },
+  {
+    "speaker": "A",
+    "start": 588433,
+    "end": 593875,
+    "text": "They have these kind of 4 that popped up with the connector format, having this like name, first name framing."
+  },
+  {
+    "speaker": "A",
+    "start": 594542,
+    "end": 597459,
+    "text": "Maybe a more competitive angle, and even this fun emoji lift."
+  },
+  {
+    "speaker": "A",
+    "start": 597812,
+    "end": 602701,
+    "text": "Here's what's like: What have you seen as like the default that like works best for for you?"
+  },
+  {
+    "speaker": "A",
+    "start": 602798,
+    "end": 605571,
+    "text": "And like what do you push towards a lot of your the emails that you're sending?"
+  },
+  {
+    "speaker": "B",
+    "start": 607029,
+    "end": 608120,
+    "text": "Yeah, it's a good question."
+  },
+  {
+    "speaker": "B",
+    "start": 608168,
+    "end": 615990,
+    "text": "So if I'm doing larger campaigns, let's call for the guru example 200, 300, 400k emails a month, and it's maybe a more broad campaign."
+  },
+  {
+    "speaker": "B",
+    "start": 616103,
+    "end": 617770,
+    "text": "I do like to have dynamic snippets."
+  },
+  {
+    "speaker": "B",
+    "start": 617866,
+    "end": 623444,
+    "text": "So product slash company, first name dash last name, or the sender name, I think is a really good one."
+  },
+  {
+    "speaker": "B",
+    "start": 624663,
+    "end": 626089,
+    "text": "One thing that Google will flag: There's a couple."
+  },
+  {
+    "speaker": "B",
+    "start": 626270,
+    "end": 628946,
+    "text": "Different things, but the variability within one email to the next email."
+  },
+  {
+    "speaker": "B",
+    "start": 629010,
+    "end": 638350,
+    "text": "And so finding small ways to drive that variability, right, with the first name, with the company name, with the sender name, with the spin tax snippet, it makes it really effective to landing at large scale."
+  },
+  {
+    "speaker": "B",
+    "start": 639441,
+    "end": 649343,
+    "text": "And then also there's a small nugget for you guys here that Google will also flag that if a subject line disconnects from what the body of what the message actually is, it will also flag that as spam."
+  },
+  {
+    "speaker": "B",
+    "start": 649856,
+    "end": 656195,
+    "text": "So for whatever reason, in the subject line you're talking about going to the farmer's market to buy tomatoes, and then in the body you're talking about buying B2B SaaS."
+  },
+  {
+    "speaker": "B",
+    "start": 656340,
+    "end": 658040,
+    "text": "Google will flag that as weird."
+  },
+  {
+    "speaker": "B",
+    "start": 658040,
+    "end": 664620,
+    "text": "And so that's something just to call out there as well to make sure that, you know, to Bobby's point, you really want to connect what you're trying to get to to the actual body of the message."
+  },
+  {
+    "speaker": "A",
+    "start": 665240,
+    "end": 667300,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 667300,
+    "end": 667330,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "A",
+    "start": 667330,
+    "end": 671620,
+    "text": "And I think that like having those tied together is why these aren't just lifts in open rates."
+  },
+  {
+    "speaker": "A",
+    "start": 671620,
+    "end": 675670,
+    "text": "These are lift in reply rates across the board that are directly coming from those subject lines."
+  },
+  {
+    "speaker": "A",
+    "start": 675760,
+    "end": 677170,
+    "text": "So totally hear you there."
+  },
+  {
+    "speaker": "A",
+    "start": 677920,
+    "end": 680660,
+    "text": "Bobby, when we were chatting earlier, you had an interesting anecdote."
+  },
+  {
+    "speaker": "A",
+    "start": 680660,
+    "end": 688312,
+    "text": "Like we see this kind of surprising emoji lifts of 38% in reply rates when those are included in the subject line."
+  },
+  {
+    "speaker": "A",
+    "start": 688665,
+    "end": 690124,
+    "text": "You had kind of an interesting anecdote here."
+  },
+  {
+    "speaker": "A",
+    "start": 690204,
+    "end": 692434,
+    "text": "I'd be curious, is this something you've tried out?"
+  },
+  {
+    "speaker": "C",
+    "start": 693460,
+    "end": 697774,
+    "text": "Yeah, I mean, I feel like I try and incorporate emojis into every message."
+  },
+  {
+    "speaker": "C",
+    "start": 698303,
+    "end": 704381,
+    "text": "It's something I learned early on from some people who were teaching me the playbook and honestly sales in general."
+  },
+  {
+    "speaker": "C",
+    "start": 705263,
+    "end": 707300,
+    "text": "But I think it just makes you appear as more human."
+  },
+  {
+    "speaker": "C",
+    "start": 708374,
+    "end": 716686,
+    "text": "I think it adds to a message that you maybe don't want to read and Yeah, I think it just makes you want to engage with that person."
+  },
+  {
+    "speaker": "A",
+    "start": 718310,
+    "end": 725903,
+    "text": "Yeah, it was pretty surprising for one for us to see, but I think like when so much is just like automated via text, like it really makes you come across as more human here."
+  },
+  {
+    "speaker": "A",
+    "start": 726675,
+    "end": 732236,
+    "text": "So, yeah, just some of the traits, definitely things to be trying out in the subject line world with these different angles."
+  },
+  {
+    "speaker": "A",
+    "start": 733910,
+    "end": 737356,
+    "text": "Alright, moving into the actual email copy and body now."
+  },
+  {
+    "speaker": "A",
+    "start": 738332,
+    "end": 755315,
+    "text": "One thing we saw in terms of like email openers, The biggest, uh, the biggest driver, the biggest lever that's been pulled by a lot of our, uh, different customers is having a signal-driven opener and that, that 2x's reply rates, uh, across the board versus other, uh, standard opener styles."
+  },
+  {
+    "speaker": "A",
+    "start": 755652,
+    "end": 758846,
+    "text": "However, this is used in less than 4% of all outbound emails."
+  },
+  {
+    "speaker": "A",
+    "start": 758943,
+    "end": 763806,
+    "text": "So this could be something like a website visit, a funding round, a role change, they're hiring for someone."
+  },
+  {
+    "speaker": "A",
+    "start": 764400,
+    "end": 767979,
+    "text": "Uh, so, um, Cole, maybe we'll start with you on this one."
+  },
+  {
+    "speaker": "A",
+    "start": 768091,
+    "end": 772694,
+    "text": "How do you even think about like What signals to use for a signal-driven operator layer?"
+  },
+  {
+    "speaker": "A",
+    "start": 772758,
+    "end": 774329,
+    "text": "How do you approach this with customers?"
+  },
+  {
+    "speaker": "B",
+    "start": 775948,
+    "end": 776974,
+    "text": "Yeah, 2 great questions."
+  },
+  {
+    "speaker": "B",
+    "start": 777246,
+    "end": 783081,
+    "text": "What we do primarily here at Unify, I break out the signals into really 3 buckets."
+  },
+  {
+    "speaker": "B",
+    "start": 783338,
+    "end": 786367,
+    "text": "There could be maybe more, but really I like to simplify into 3."
+  },
+  {
+    "speaker": "B",
+    "start": 786945,
+    "end": 809275,
+    "text": "First is kind of the out-of-the-box signals, and I would think of anything that Unify, a Clay, a SixSense, a number of providers in the space will provide you, you know, website intent tracking, persona-level tracking, champion tracking, new hires, job changes, some of those ones we've flip the switch and you have some really cool signals that at a layer 1 are interesting, but I think are compounded in a different way, a little bit more interesting."
+  },
+  {
+    "speaker": "B",
+    "start": 809788,
+    "end": 811182,
+    "text": "We then move to custom signals."
+  },
+  {
+    "speaker": "B",
+    "start": 811230,
+    "end": 820576,
+    "text": "So I think of like technographics, job scraping, you know, like hiring for specific roles, like social listening on Reddit, GitHub, maybe Glassdoor, like pain making."
+  },
+  {
+    "speaker": "B",
+    "start": 821169,
+    "end": 824872,
+    "text": "And so you have kind of the custom signals that I think are really, really important to dive into."
+  },
+  {
+    "speaker": "B",
+    "start": 825802,
+    "end": 832246,
+    "text": "And I think you get an interesting flavor of like having 10 to 12 of those set up and then you have all these like looped plays running."
+  },
+  {
+    "speaker": "B",
+    "start": 832310,
+    "end": 838500,
+    "text": "So anytime someone mentioning hiring, anytime there's a bad Yelp review, right, it triggers the specific company to flow through."
+  },
+  {
+    "speaker": "B",
+    "start": 838500,
+    "end": 841560,
+    "text": "You trigger a specific message and it lands really, really nicely."
+  },
+  {
+    "speaker": "B",
+    "start": 841660,
+    "end": 846880,
+    "text": "And then I think the last bucket you have, which are really, really strong, are like first-party intent, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 846880,
+    "end": 851110,
+    "text": "So you have like your closed lost, you have your PLG data."
+  },
+  {
+    "speaker": "B",
+    "start": 851300,
+    "end": 854580,
+    "text": "You know, for a company like Perplexity, maybe it's user count, maybe it's feature adoption."
+  },
+  {
+    "speaker": "B",
+    "start": 854580,
+    "end": 857560,
+    "text": "For a company like Cursor, maybe it's growth of like Cursor tabs."
+  },
+  {
+    "speaker": "B",
+    "start": 857980,
+    "end": 860200,
+    "text": "And so how do we layer that piece?"
+  },
+  {
+    "speaker": "B",
+    "start": 860200,
+    "end": 863160,
+    "text": "Then what I think gets really interesting into these custom, into these out-of-the-box signals."
+  },
+  {
+    "speaker": "B",
+    "start": 864765,
+    "end": 864821,
+    "text": "Right?"
+  },
+  {
+    "speaker": "B",
+    "start": 864869,
+    "end": 867325,
+    "text": "How do we look at closed lost with also website intent?"
+  },
+  {
+    "speaker": "B",
+    "start": 867373,
+    "end": 870311,
+    "text": "How do we look at closed lost with new hires or with champion tracking?"
+  },
+  {
+    "speaker": "B",
+    "start": 870825,
+    "end": 875287,
+    "text": "How do we look at PLG data also using an LLM to like scrape for specifics, mentionings?"
+  },
+  {
+    "speaker": "B",
+    "start": 876203,
+    "end": 883844,
+    "text": "And so I think how I typically like to think about this is like an axis of you have like fit, you have intent, you have timing and relationship."
+  },
+  {
+    "speaker": "B",
+    "start": 884454,
+    "end": 888258,
+    "text": "And the more of those buckets that you can get, the stronger your message is going to be."
+  },
+  {
+    "speaker": "B",
+    "start": 888338,
+    "end": 890425,
+    "text": "So if you have fit and you have intent, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 890473,
+    "end": 893636,
+    "text": "So the fit is within your ICP and they're showing intent on your website, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 893700,
+    "end": 894037,
+    "text": "That's really great."
+  },
+  {
+    "speaker": "B",
+    "start": 894490,
+    "end": 898830,
+    "text": "Let's say the timing is really perfect because they just got off a Salesloft contract and they're ready to sign with Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 898970,
+    "end": 899310,
+    "text": "Okay, cool."
+  },
+  {
+    "speaker": "B",
+    "start": 899310,
+    "end": 900480,
+    "text": "Now we have 3 of the 4 buckets."
+  },
+  {
+    "speaker": "B",
+    "start": 900990,
+    "end": 908010,
+    "text": "And then let's call it, right, you have a relationship, you have a champion that moved over to a new company that's viewing you guys, that's within your fit, and the timing makes sense."
+  },
+  {
+    "speaker": "B",
+    "start": 908850,
+    "end": 915030,
+    "text": "And so I plan to share a big presentation after this call on some of these like takeaways and some of these nuances that I'm super excited to share with everyone."
+  },
+  {
+    "speaker": "B",
+    "start": 915790,
+    "end": 916710,
+    "text": "So hopefully that's helpful."
+  },
+  {
+    "speaker": "C",
+    "start": 917070,
+    "end": 919210,
+    "text": "Well, there's a tiny bit."
+  },
+  {
+    "speaker": "C",
+    "start": 919210,
+    "end": 936210,
+    "text": "I think it's like not to shamelessly pitch Unify, but I think one of the biggest value adds with it is, you know, you can get\u2014 if you go to Nike and you're looking at a pair of shoes and you don't quite check out or something, you'll get an email saying, hey, saw you didn't check out."
+  },
+  {
+    "speaker": "C",
+    "start": 936659,
+    "end": 939883,
+    "text": "But that alone is something that someone can do."
+  },
+  {
+    "speaker": "C",
+    "start": 940091,
+    "end": 941487,
+    "text": "They could have made that decision already."
+  },
+  {
+    "speaker": "C",
+    "start": 941551,
+    "end": 943796,
+    "text": "They could have bought Unify or scheduled a demo."
+  },
+  {
+    "speaker": "C",
+    "start": 944758,
+    "end": 950275,
+    "text": "Following up with, hey, saw you hit our website, also saw you just did a recent Series B, or you're hiring for this role."
+  },
+  {
+    "speaker": "C",
+    "start": 950709,
+    "end": 962089,
+    "text": "It shows that you're a human, you know their pain point, you know that they could, that you could contribute actual value to them, and they're willing to then take that website visit and schedule time to talk with you."
+  },
+  {
+    "speaker": "A",
+    "start": 963517,
+    "end": 963918,
+    "text": "I love that."
+  },
+  {
+    "speaker": "A",
+    "start": 964015,
+    "end": 970933,
+    "text": "I think like the, to both of your guys' points, and we saw this, we're doing analysis ahead of our upcoming like State of Outbound."
+  },
+  {
+    "speaker": "A",
+    "start": 970981,
+    "end": 979183,
+    "text": "And part of that, one of the really key insights is that stacking signals to what both of you guys are talking about is one of those biggest levers that you can pull right now."
+  },
+  {
+    "speaker": "A",
+    "start": 979279,
+    "end": 993709,
+    "text": "So by having multiple different signals rather than just Oh, you were on our website or, oh, you just are hiring or started a new role, but like combining those and really making it impactful and even custom to your business as Cole was hinting at, that can be incredibly valuable."
+  },
+  {
+    "speaker": "A",
+    "start": 995881,
+    "end": 1000180,
+    "text": "Bobby, you had a couple of these that had great actual signal-driven openers."
+  },
+  {
+    "speaker": "A",
+    "start": 1000245,
+    "end": 1004803,
+    "text": "Anything you'd want to add to these on like how you think about just weaving these into your emails?"
+  },
+  {
+    "speaker": "C",
+    "start": 1005792,
+    "end": 1006439,
+    "text": "Yeah, definitely."
+  },
+  {
+    "speaker": "C",
+    "start": 1006601,
+    "end": 1009711,
+    "text": "And I think there's like a case which Cole will definitely talk more about later."
+  },
+  {
+    "speaker": "C",
+    "start": 1009776,
+    "end": 1022845,
+    "text": "There's definitely a case for Shorter versus longer body emails, and I think when you're when you see someone like for example on the left someone checking out how we compare to other intent providers."
+  },
+  {
+    "speaker": "C",
+    "start": 1022958,
+    "end": 1029303,
+    "text": "You know Unify provides a lot of value because we use a number of them and we're able to like waterfall through that stack."
+  },
+  {
+    "speaker": "C",
+    "start": 1030363,
+    "end": 1038282,
+    "text": "So not only is the intent data like best in class, but something you want to expand on is that it's a system of action on top of that."
+  },
+  {
+    "speaker": "C",
+    "start": 1038362,
+    "end": 1049539,
+    "text": "You can if you have 5, 6 contracts with different orgs that are doing different parts of outbound, you want to explain to them how we can replace each part, like feasibly."
+  },
+  {
+    "speaker": "C",
+    "start": 1050171,
+    "end": 1059193,
+    "text": "And then for the person that you're trying to reach out to specifically here is a VP of sales, you want to hit their pain point."
+  },
+  {
+    "speaker": "C",
+    "start": 1059305,
+    "end": 1063846,
+    "text": "You know, they're trying to drive pipeline and that's most important to them."
+  },
+  {
+    "speaker": "C",
+    "start": 1064313,
+    "end": 1069267,
+    "text": "Whereas if you're talking to someone else, That's not necessarily something you need to do."
+  },
+  {
+    "speaker": "C",
+    "start": 1069672,
+    "end": 1085453,
+    "text": "And on the right, I guess, I would say someone was on the website wondering if you have questions or thoughts, like showing how you can feasibly bring in like case studies in another email."
+  },
+  {
+    "speaker": "C",
+    "start": 1086245,
+    "end": 1087489,
+    "text": "And then a PS."
+  },
+  {
+    "speaker": "C",
+    "start": 1087780,
+    "end": 1091735,
+    "text": "I love to leave a PS at the end just to like show you're human, show you've looked at their page."
+  },
+  {
+    "speaker": "C",
+    "start": 1092876,
+    "end": 1099593,
+    "text": "Relate a bit, and something I think that's really important is you know put yourself in the other person's shoes."
+  },
+  {
+    "speaker": "C",
+    "start": 1100187,
+    "end": 1101489,
+    "text": "Why would they want to talk to you?"
+  },
+  {
+    "speaker": "C",
+    "start": 1101778,
+    "end": 1104767,
+    "text": "And a very valid reason could be they don't."
+  },
+  {
+    "speaker": "C",
+    "start": 1105249,
+    "end": 1115404,
+    "text": "And so you got to find a way to make someone want to talk to you outside of just saw you on our website because that's lazy, and it doesn't really show you did any homework at all."
+  },
+  {
+    "speaker": "C",
+    "start": 1116481,
+    "end": 1117509,
+    "text": "Whereas even saying like."
+  },
+  {
+    "speaker": "C",
+    "start": 1118158,
+    "end": 1119513,
+    "text": "Hey, you're from my hometown."
+  },
+  {
+    "speaker": "C",
+    "start": 1120090,
+    "end": 1123729,
+    "text": "I'm out in San Francisco now working at a startup called Unify."
+  },
+  {
+    "speaker": "C",
+    "start": 1123857,
+    "end": 1124531,
+    "text": "Here's what we do."
+  },
+  {
+    "speaker": "C",
+    "start": 1126278,
+    "end": 1127111,
+    "text": "Yeah, stuff like that."
+  },
+  {
+    "speaker": "A",
+    "start": 1128506,
+    "end": 1129099,
+    "text": "Yeah, I love that."
+  },
+  {
+    "speaker": "A",
+    "start": 1129163,
+    "end": 1136537,
+    "text": "It's the layering of not only a signal-driven opener, but really layering in the what matters to them and also just like the personal touches on top."
+  },
+  {
+    "speaker": "A",
+    "start": 1136617,
+    "end": 1138621,
+    "text": "So super powerful here and great work."
+  },
+  {
+    "speaker": "A",
+    "start": 1139968,
+    "end": 1140785,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 1141026,
+    "end": 1156381,
+    "text": "We're a little tight on time, but I'm going to quickly breeze through and call out that like what we've seen in the data is that for email length itself, The most impactful emails are either really short and concise or over 150 words, really like long."
+  },
+  {
+    "speaker": "A",
+    "start": 1156477,
+    "end": 1158464,
+    "text": "So there's almost this valley in between."
+  },
+  {
+    "speaker": "A",
+    "start": 1158801,
+    "end": 1164602,
+    "text": "Cole, I'd be curious on your side, you know, what have you, what are you biased towards in kind of this length of an email world?"
+  },
+  {
+    "speaker": "B",
+    "start": 1167134,
+    "end": 1169362,
+    "text": "Yeah, I generally like to be mobile friendly."
+  },
+  {
+    "speaker": "B",
+    "start": 1169955,
+    "end": 1175243,
+    "text": "I think less than 75 words is really where messages typically land."
+  },
+  {
+    "speaker": "B",
+    "start": 1175788,
+    "end": 1180019,
+    "text": "Now, I think it depends on the campaign though, which is where I think thought should be more constructively given."
+  },
+  {
+    "speaker": "B",
+    "start": 1180210,
+    "end": 1187880,
+    "text": "So if you have a lead list of 100,000 leads, it's more likely that the message needs to be once again very, very varied."
+  },
+  {
+    "speaker": "B",
+    "start": 1187880,
+    "end": 1188730,
+    "text": "You're going to have a ton of emails."
+  },
+  {
+    "speaker": "B",
+    "start": 1189100,
+    "end": 1191270,
+    "text": "There's going to be a ton of deliverability things that you need to think through."
+  },
+  {
+    "speaker": "B",
+    "start": 1191860,
+    "end": 1196140,
+    "text": "The personalization is going to be important and the campaign is generally really, really broad."
+  },
+  {
+    "speaker": "B",
+    "start": 1196140,
+    "end": 1205380,
+    "text": "What I would rather prefer is if you can have a lead list of 100 to 150 people that can be very dedicated CFOs and then the messaging, right, you're only sending 100 emails."
+  },
+  {
+    "speaker": "B",
+    "start": 1205380,
+    "end": 1206871,
+    "text": "It's less likely to be as spam."
+  },
+  {
+    "speaker": "B",
+    "start": 1207223,
+    "end": 1209772,
+    "text": "The variability is not as important on that piece."
+  },
+  {
+    "speaker": "B",
+    "start": 1210269,
+    "end": 1214854,
+    "text": "And I think it's okay to have a bit of a longer message where you're actually getting the meat of the bones."
+  },
+  {
+    "speaker": "B",
+    "start": 1215302,
+    "end": 1221811,
+    "text": "I think to Bobby's earlier point, like the goal of writing a good email is to like write thoughtfully and that's really to like think thoughtfully."
+  },
+  {
+    "speaker": "B",
+    "start": 1221891,
+    "end": 1226139,
+    "text": "And so like the subject line should beg the question of how do I get to the first\u2014 them to read the first personalization?"
+  },
+  {
+    "speaker": "B",
+    "start": 1226203,
+    "end": 1231910,
+    "text": "And the personalization should get them to some type of observation you've made about the customer or the prospect."
+  },
+  {
+    "speaker": "B",
+    "start": 1231974,
+    "end": 1235244,
+    "text": "And the observation should get you to the story that you're sharing and why you're here to solve that."
+  },
+  {
+    "speaker": "B",
+    "start": 1235837,
+    "end": 1249088,
+    "text": "And so generally less than 75 words, I would more so focus on the quality of the lead list and how do we go run micro campaigns for 2 to 3 to 4 weeks to really prove out personas and then understand our messaging and understand our brand and iterate from there."
+  },
+  {
+    "speaker": "A",
+    "start": 1250983,
+    "end": 1251514,
+    "text": "I love that."
+  },
+  {
+    "speaker": "A",
+    "start": 1251933,
+    "end": 1262170,
+    "text": "I think like that is like, while like there is a slight start to be a drop-off at that point, being really concise can be really compelling, especially with the way that folks answer emails on their phone."
+  },
+  {
+    "speaker": "A",
+    "start": 1263184,
+    "end": 1269011,
+    "text": "Bobby has like a great example of some of like both shorter form emails that have been effective and longer form."
+  },
+  {
+    "speaker": "A",
+    "start": 1269252,
+    "end": 1273985,
+    "text": "Bobby, anything to add to these on like, how do you think about like length in an email and what's gonna be most effective?"
+  },
+  {
+    "speaker": "C",
+    "start": 1274870,
+    "end": 1291597,
+    "text": "Yeah, I think if I'm trying to relate this to how other people can apply it in a shorter email, if there's a new hire, they've stepped into a role within a month or 2, you kind of want to hit them before, like they're probably implementing their stack."
+  },
+  {
+    "speaker": "C",
+    "start": 1292151,
+    "end": 1295782,
+    "text": "As it goes, so like that in real time you're hitting them when they're evaluating tools."
+  },
+  {
+    "speaker": "C",
+    "start": 1296446,
+    "end": 1298926,
+    "text": "You want to say congrats, be a human."
+  },
+  {
+    "speaker": "C",
+    "start": 1301207,
+    "end": 1309759,
+    "text": "Maybe mention like I did here, like this guy worked at Gong and we're also customers of another one of his old companies."
+  },
+  {
+    "speaker": "C",
+    "start": 1310161,
+    "end": 1312490,
+    "text": "So shows I'm a human, did my research."
+  },
+  {
+    "speaker": "C",
+    "start": 1313020,
+    "end": 1315238,
+    "text": "Also puts Unify on the map without being too long."
+  },
+  {
+    "speaker": "C",
+    "start": 1315366,
+    "end": 1317969,
+    "text": "This guy is one to two months into his role."
+  },
+  {
+    "speaker": "C",
+    "start": 1318081,
+    "end": 1321228,
+    "text": "He's not going to have time to read a bunch of paragraphs, whereas on the left."
+  },
+  {
+    "speaker": "C",
+    "start": 1321774,
+    "end": 1328081,
+    "text": "Read through a job description, got alerted that there was that job description through Unify."
+  },
+  {
+    "speaker": "C",
+    "start": 1330079,
+    "end": 1347395,
+    "text": "In a world you could blast outbound, say, saw you're hiring for XYZ, better way to do it in my opinion, scrape like through the research, look through essentially like what that person is going to be asked to do, what tools they're going to be asked to use."
+  },
+  {
+    "speaker": "C",
+    "start": 1348207,
+    "end": 1352098,
+    "text": "Um, you know, maybe add like I did a couple pictures."
+  },
+  {
+    "speaker": "C",
+    "start": 1352371,
+    "end": 1353541,
+    "text": "I, I love photography."
+  },
+  {
+    "speaker": "C",
+    "start": 1354118,
+    "end": 1356571,
+    "text": "Um, this person was based in, in SF."
+  },
+  {
+    "speaker": "C",
+    "start": 1357164,
+    "end": 1359600,
+    "text": "Um, and yeah, go through."
+  },
+  {
+    "speaker": "C",
+    "start": 1361091,
+    "end": 1361716,
+    "text": "I'm a human."
+  },
+  {
+    "speaker": "C",
+    "start": 1362614,
+    "end": 1367872,
+    "text": "I actually read through this and I know what you do and here's how I could add value."
+  },
+  {
+    "speaker": "C",
+    "start": 1368240,
+    "end": 1368641,
+    "text": "Let's talk."
+  },
+  {
+    "speaker": "A",
+    "start": 1370789,
+    "end": 1373803,
+    "text": "Yeah, this email was on the right here especially was like amazing."
+  },
+  {
+    "speaker": "A",
+    "start": 1373851,
+    "end": 1379285,
+    "text": "Just like the level of depth about the role they're hiring for, what the business case is, uh, the relatability of the photographer."
+  },
+  {
+    "speaker": "A",
+    "start": 1379942,
+    "end": 1381000,
+    "text": "The German soccer player."
+  },
+  {
+    "speaker": "A",
+    "start": 1381049,
+    "end": 1384639,
+    "text": "This is just like A+ personalization at a human-to-human level."
+  },
+  {
+    "speaker": "A",
+    "start": 1385232,
+    "end": 1388038,
+    "text": "You even added some screenshots of those images, which was amazing to see."
+  },
+  {
+    "speaker": "A",
+    "start": 1388134,
+    "end": 1389849,
+    "text": "So great work again here, Bobby."
+  },
+  {
+    "speaker": "A",
+    "start": 1391869,
+    "end": 1392061,
+    "text": "Cool."
+  },
+  {
+    "speaker": "A",
+    "start": 1392125,
+    "end": 1399836,
+    "text": "I'm working through\u2014 as you go to the bottom of the email, always having like a clear CTA is something that can be really impactful."
+  },
+  {
+    "speaker": "A",
+    "start": 1399900,
+    "end": 1410111,
+    "text": "We actually saw that in terms of pipeline generation, adding calendar links can create 1.6x spike in reply rates, which is really powerful here."
+  },
+  {
+    "speaker": "A",
+    "start": 1411426,
+    "end": 1419297,
+    "text": "On the CTA front, just in general, Cole, maybe on your side, how do you advise customers on how to approach this on the CTA front?"
+  },
+  {
+    "speaker": "B",
+    "start": 1422299,
+    "end": 1422412,
+    "text": "Yep."
+  },
+  {
+    "speaker": "B",
+    "start": 1422476,
+    "end": 1426096,
+    "text": "My advice would be, I think, who asked the question in the channel?"
+  },
+  {
+    "speaker": "B",
+    "start": 1426256,
+    "end": 1428348,
+    "text": "I answered somewhere, but there's a couple of different things here."
+  },
+  {
+    "speaker": "B",
+    "start": 1428412,
+    "end": 1435709,
+    "text": "I think down the funnel where you're more closely to the intent, the fit, the timing, it makes sense to really just send a direct message."
+  },
+  {
+    "speaker": "B",
+    "start": 1435757,
+    "end": 1436615,
+    "text": "Hey, I'm looking to book time."
+  },
+  {
+    "speaker": "B",
+    "start": 1436679,
+    "end": 1440109,
+    "text": "It makes sense for us to have a conversation because you have a problem that I can go solve today."
+  },
+  {
+    "speaker": "B",
+    "start": 1440662,
+    "end": 1445170,
+    "text": "I think if it's more up the funnel or I guess down the funnel there, you have, they don't know as much about you."
+  },
+  {
+    "speaker": "B",
+    "start": 1445234,
+    "end": 1447255,
+    "text": "It maybe makes more sense to send a landing page."
+  },
+  {
+    "speaker": "B",
+    "start": 1448105,
+    "end": 1452629,
+    "text": "I typically try to think about like what the success metric that you're actually looking for."
+  },
+  {
+    "speaker": "B",
+    "start": 1452773,
+    "end": 1456960,
+    "text": "So for example, like Quentin setting up this webinar, he may just want click-through rates, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1457008,
+    "end": 1464210,
+    "text": "He wants people to sign up to this webinar and that's going to yield a less of a reply rate because people can just click, they can sign up, they can input their information."
+  },
+  {
+    "speaker": "B",
+    "start": 1464659,
+    "end": 1467691,
+    "text": "And so I think if you have a webinar, you may want to drive CTR really high."
+  },
+  {
+    "speaker": "B",
+    "start": 1468281,
+    "end": 1471968,
+    "text": "I think if it's more of a rep-focused use case, you're probably going to want to include a booking link."
+  },
+  {
+    "speaker": "B",
+    "start": 1472611,
+    "end": 1476997,
+    "text": "Now, if you include a booking link, right, which shows here, you're maybe going to get less responses."
+  },
+  {
+    "speaker": "B",
+    "start": 1477093,
+    "end": 1480072,
+    "text": "So the positive response rate is down because they're booking directly on your calendar."
+  },
+  {
+    "speaker": "B",
+    "start": 1480652,
+    "end": 1484694,
+    "text": "If you're looking to drive maybe a specific CD idea like, hey, can you meet on Tuesday at 2 PM?"
+  },
+  {
+    "speaker": "B",
+    "start": 1484759,
+    "end": 1489775,
+    "text": "That's probably going to yield the highest results as it's personalized, it's specific, and there is kind of no other option there."
+  },
+  {
+    "speaker": "A",
+    "start": 1492177,
+    "end": 1492622,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 1494101,
+    "end": 1496935,
+    "text": "And I think like, that's exactly it on like the CTA front, right?"
+  },
+  {
+    "speaker": "A",
+    "start": 1496983,
+    "end": 1501380,
+    "text": "Is you want to like, really think about at the end of the day, taking a step back, what is your goal?"
+  },
+  {
+    "speaker": "A",
+    "start": 1501637,
+    "end": 1507493,
+    "text": "And how are you like, how was your CTA like driving towards that objective that you have when thinking about including a link or not?"
+  },
+  {
+    "speaker": "A",
+    "start": 1509139,
+    "end": 1525638,
+    "text": "The last piece we want to touch on, and a lot of this is going to be done in the product itself, but that we saw like a huge lift in how AI personalization can really lead to a Massive 50% jump in reply rate over emails without AI personalization."
+  },
+  {
+    "speaker": "A",
+    "start": 1526186,
+    "end": 1532209,
+    "text": "Obviously, we know personalization is going to make emails more effective, but with done with AI with taste and care, this can be really impactful."
+  },
+  {
+    "speaker": "A",
+    "start": 1533014,
+    "end": 1537678,
+    "text": "So, Cole, maybe to let you speak to how you approach this and actually show it live here as well."
+  },
+  {
+    "speaker": "B",
+    "start": 1540108,
+    "end": 1540500,
+    "text": "Yeah, absolutely."
+  },
+  {
+    "speaker": "B",
+    "start": 1540613,
+    "end": 1544635,
+    "text": "So before I dive in, I typically think about the OPP."
+  },
+  {
+    "speaker": "B",
+    "start": 1546245,
+    "end": 1546723,
+    "text": "Type framework."
+  },
+  {
+    "speaker": "B",
+    "start": 1546803,
+    "end": 1551651,
+    "text": "So you have an observation, you have a pain point, you have a PS statement."
+  },
+  {
+    "speaker": "B",
+    "start": 1551700,
+    "end": 1553321,
+    "text": "Some people like them, some people don't."
+  },
+  {
+    "speaker": "B",
+    "start": 1553369,
+    "end": 1555585,
+    "text": "It's just more so just for another flavor of personalization."
+  },
+  {
+    "speaker": "B",
+    "start": 1556259,
+    "end": 1558490,
+    "text": "A simple call to action, which we just kind of discussed."
+  },
+  {
+    "speaker": "B",
+    "start": 1558587,
+    "end": 1562022,
+    "text": "Maybe it's click-through, maybe it's a webinar signup, something like that."
+  },
+  {
+    "speaker": "B",
+    "start": 1562118,
+    "end": 1563660,
+    "text": "And then you have a story of how you solve those things."
+  },
+  {
+    "speaker": "B",
+    "start": 1564366,
+    "end": 1567705,
+    "text": "So I'll share my\u2014 I just requested to share my screen."
+  },
+  {
+    "speaker": "A",
+    "start": 1567898,
+    "end": 1569439,
+    "text": "There you are."
+  },
+  {
+    "speaker": "B",
+    "start": 1569503,
+    "end": 1571943,
+    "text": "And try to dive into some examples."
+  },
+  {
+    "speaker": "B",
+    "start": 1576400,
+    "end": 1577458,
+    "text": "Can everyone see my screen?"
+  },
+  {
+    "speaker": "B",
+    "start": 1577522,
+    "end": 1577682,
+    "text": "Okay."
+  },
+  {
+    "speaker": "B",
+    "start": 1580167,
+    "end": 1581626,
+    "text": "We can see the sequence that's up."
+  },
+  {
+    "speaker": "A",
+    "start": 1582331,
+    "end": 1582491,
+    "text": "Yep."
+  },
+  {
+    "speaker": "B",
+    "start": 1583309,
+    "end": 1583661,
+    "text": "Okay, cool."
+  },
+  {
+    "speaker": "B",
+    "start": 1583709,
+    "end": 1584447,
+    "text": "So I'll go through."
+  },
+  {
+    "speaker": "B",
+    "start": 1584960,
+    "end": 1593247,
+    "text": "This is kind of the final result, which I think is really powerful, where we can take write an observation, a spin text, a snippet, and output all one customized email."
+  },
+  {
+    "speaker": "B",
+    "start": 1594754,
+    "end": 1600525,
+    "text": "Typically, where I like to start is doing some type of research, breaking that down into an agent."
+  },
+  {
+    "speaker": "B",
+    "start": 1600685,
+    "end": 1603875,
+    "text": "So hey, I would like to go research Cole or a person."
+  },
+  {
+    "speaker": "B",
+    "start": 1604148,
+    "end": 1610565,
+    "text": "On this call, I would like to frame out, you know, 1 to 2 sentences to show you understand their situation, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1610629,
+    "end": 1616100,
+    "text": "What are some common challenges that they're working through for X solution area, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1616388,
+    "end": 1618057,
+    "text": "Use a reasonable professional tone."
+  },
+  {
+    "speaker": "B",
+    "start": 1618329,
+    "end": 1627730,
+    "text": "And so generally when you start to frame these out, again, it's really important, right, that step 1 we talked about for the founder-led sales motion\u2014 what are the pains, what are the people, right, who are you actually going after that you need to go do research on?"
+  },
+  {
+    "speaker": "B",
+    "start": 1628500,
+    "end": 1630409,
+    "text": "Once you kind of understand those, let's go do some research."
+  },
+  {
+    "speaker": "B",
+    "start": 1632368,
+    "end": 1643951,
+    "text": "From there, within our platform, we like to input these things we call snippets, which is basically taking that agent prompt saying, hey, okay, cool, you've done some research on what I'm trying to go deliver on."
+  },
+  {
+    "speaker": "B",
+    "start": 1644528,
+    "end": 1648759,
+    "text": "As a co-founder now, I realize that you're probably juggling a couple different issues."
+  },
+  {
+    "speaker": "B",
+    "start": 1648871,
+    "end": 1651932,
+    "text": "Maybe you're doing founder-led sales, you have 10 initiatives, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1652140,
+    "end": 1655986,
+    "text": "That's exactly where a company like Mesmo could come help you, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1656066,
+    "end": 1658262,
+    "text": "Drew on our team is a founding account executive."
+  },
+  {
+    "speaker": "B",
+    "start": 1658342,
+    "end": 1659944,
+    "text": "It's great to surface the role, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1660008,
+    "end": 1661819,
+    "text": "Maybe navigating some challenges that we can help solve."
+  },
+  {
+    "speaker": "B",
+    "start": 1663054,
+    "end": 1673411,
+    "text": "So generally, I start with an agent studying the person, the company, the space, breaking that out into the bodies of the email, and then we bring that all together into a nice framed sequence."
+  },
+  {
+    "speaker": "B",
+    "start": 1673957,
+    "end": 1678654,
+    "text": "So we have a generalized greeting, the persona hook, so some type of persona message."
+  },
+  {
+    "speaker": "B",
+    "start": 1679552,
+    "end": 1681444,
+    "text": "At quick glance, I did this quick this morning, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1681492,
+    "end": 1685308,
+    "text": "I would want to tailor this down a little bit more, probably have a little bit smaller language."
+  },
+  {
+    "speaker": "B",
+    "start": 1686447,
+    "end": 1689445,
+    "text": "You have value props, so how we've worked with those similar teams, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1689493,
+    "end": 1690679,
+    "text": "That story that you're telling."
+  },
+  {
+    "speaker": "B",
+    "start": 1691433,
+    "end": 1694369,
+    "text": "A call to action, a quick snippet there, and then a sign-off snippet."
+  },
+  {
+    "speaker": "B",
+    "start": 1695588,
+    "end": 1700641,
+    "text": "My selfish plug for the generalized greeting and for the sign-off snippet: there's a tool called Spintax."
+  },
+  {
+    "speaker": "B",
+    "start": 1700737,
+    "end": 1704122,
+    "text": "We do it also native in the platform, but I would encourage everyone to do that."
+  },
+  {
+    "speaker": "B",
+    "start": 1704170,
+    "end": 1707394,
+    "text": "And that's basically rotating like hey, hi, howdy, what's up, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1707459,
+    "end": 1713426,
+    "text": "What are ways in which a single email you can rotate from the next email to make sure that it's not landing in spam, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1713474,
+    "end": 1714822,
+    "text": "Same thing with the sign-off snippet."
+  },
+  {
+    "speaker": "B",
+    "start": 1714918,
+    "end": 1718014,
+    "text": "You have with respect, warm regards, best, thanks, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1718062,
+    "end": 1720404,
+    "text": "There's a number of common ones that most people use, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1720452,
+    "end": 1721559,
+    "text": "How do we rotate those?"
+  },
+  {
+    "speaker": "B",
+    "start": 1722078,
+    "end": 1723315,
+    "text": "To make sure that it's easy to do."
+  },
+  {
+    "speaker": "B",
+    "start": 1723363,
+    "end": 1726717,
+    "text": "And it's also easy to do with a PS statement if you're saying the same thing over and over."
+  },
+  {
+    "speaker": "B",
+    "start": 1729303,
+    "end": 1731173,
+    "text": "That's one great example I like to show."
+  },
+  {
+    "speaker": "B",
+    "start": 1732896,
+    "end": 1735302,
+    "text": "The next one I think is really cool to layer on."
+  },
+  {
+    "speaker": "B",
+    "start": 1735415,
+    "end": 1742989,
+    "text": "You kind of both have the closed lost or you have PLG data and you also have a sequence layered on top of it."
+  },
+  {
+    "speaker": "B",
+    "start": 1743572,
+    "end": 1747175,
+    "text": "So in this, we've done some research on Connor, the co-founder at Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 1748066,
+    "end": 1750378,
+    "text": "We put them into a snippet for Perplexity."
+  },
+  {
+    "speaker": "B",
+    "start": 1751085,
+    "end": 1753991,
+    "text": "And basically this is where you can kind of tailor some things together."
+  },
+  {
+    "speaker": "B",
+    "start": 1754200,
+    "end": 1756335,
+    "text": "So we can say, okay, cool, we have the spintax greeting."
+  },
+  {
+    "speaker": "B",
+    "start": 1756624,
+    "end": 1758792,
+    "text": "We're going to rotate hi versus how versus hey."
+  },
+  {
+    "speaker": "B",
+    "start": 1759739,
+    "end": 1762822,
+    "text": "We are going to share some relevant context of why we're reaching out."
+  },
+  {
+    "speaker": "B",
+    "start": 1763769,
+    "end": 1771524,
+    "text": "The agent actually goes and researches Bobby or Quentin or Connor and surfaces a question that that person would actually ask Perplexity."
+  },
+  {
+    "speaker": "B",
+    "start": 1771957,
+    "end": 1773643,
+    "text": "And so every message is hyperlinked."
+  },
+  {
+    "speaker": "B",
+    "start": 1773868,
+    "end": 1774783,
+    "text": "It's\u2014 which is still fine."
+  },
+  {
+    "speaker": "B",
+    "start": 1774847,
+    "end": 1775923,
+    "text": "I would do one hyperlink per email."
+  },
+  {
+    "speaker": "B",
+    "start": 1777494,
+    "end": 1780155,
+    "text": "And then you have a dynamic snippet, which is great."
+  },
+  {
+    "speaker": "B",
+    "start": 1780700,
+    "end": 1787401,
+    "text": "And then as you can also see here, they're layering on, right, distinct users, company names, some other first-party data that makes this email really, really strong."
+  },
+  {
+    "speaker": "B",
+    "start": 1787513,
+    "end": 1793893,
+    "text": "And so how do we think about layering the out-of-the-box signals with PLG signals with some like really, really good copy that lands?"
+  },
+  {
+    "speaker": "B",
+    "start": 1794887,
+    "end": 1796666,
+    "text": "And then again, we have kind of a sign-off snippet there."
+  },
+  {
+    "speaker": "B",
+    "start": 1796746,
+    "end": 1799022,
+    "text": "So kind regards, thanks, warm regards."
+  },
+  {
+    "speaker": "B",
+    "start": 1800096,
+    "end": 1802645,
+    "text": "And this gets like an 80 to 82% open rate."
+  },
+  {
+    "speaker": "B",
+    "start": 1803535,
+    "end": 1804392,
+    "text": "Lands really, really well."
+  },
+  {
+    "speaker": "B",
+    "start": 1804505,
+    "end": 1812719,
+    "text": "And so not everyone will be PLG, but it's more so how do we take a couple different signals, layer them on top of building lists, but also layer them into the actual message themselves?"
+  },
+  {
+    "speaker": "B",
+    "start": 1817757,
+    "end": 1819311,
+    "text": "Those would be my my guiding points."
+  },
+  {
+    "speaker": "B",
+    "start": 1819658,
+    "end": 1820717,
+    "text": "Happy to answer any and all questions."
+  },
+  {
+    "speaker": "A",
+    "start": 1822570,
+    "end": 1822796,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 1822909,
+    "end": 1823587,
+    "text": "Thanks for that, Cole."
+  },
+  {
+    "speaker": "A",
+    "start": 1823861,
+    "end": 1831269,
+    "text": "And yeah, I think there's so much power when you can actually start to layer in that like level of personalization that."
+  },
+  {
+    "speaker": "A",
+    "start": 1831742,
+    "end": 1835617,
+    "text": "Bobby is showing with his individual emails, but like in an automated fashion."
+  },
+  {
+    "speaker": "A",
+    "start": 1835666,
+    "end": 1845155,
+    "text": "So rather than just like, oh, saw you're based here, or saw you work at this company, it's really like a sophisticated level of personalization that can be built out programmatically."
+  },
+  {
+    "speaker": "A",
+    "start": 1846614,
+    "end": 1847592,
+    "text": "Alright."
+  },
+  {
+    "speaker": "A",
+    "start": 1848939,
+    "end": 1854757,
+    "text": "Well, I know we're a little over on time, and I appreciate the folks that are still here and were patient with us as we've gone through this."
+  },
+  {
+    "speaker": "A",
+    "start": 1855367,
+    "end": 1869012,
+    "text": "We have more assets, and we'll be sharing out both the recording as well as some written assets that will be helpful that tie to both the to me of an outbound email and some best practice that Cole's pulled together that I think will be really valuable."
+  },
+  {
+    "speaker": "A",
+    "start": 1869156,
+    "end": 1881235,
+    "text": "But to close, really what we think folks should be thinking about here is writing like you did your homework, do the actual research or have that use AI to supplement that and really make it personalized."
+  },
+  {
+    "speaker": "A",
+    "start": 1881813,
+    "end": 1885358,
+    "text": "Focus on you-focused messaging, making it about them, not about yourself."
+  },
+  {
+    "speaker": "A",
+    "start": 1885983,
+    "end": 1890667,
+    "text": "And then the last piece is closing with the right CTA based on the goal that you're trying to drive."
+  },
+  {
+    "speaker": "A",
+    "start": 1892995,
+    "end": 1897993,
+    "text": "So the last, so the question, so we're starting to see some questions come in."
+  },
+  {
+    "speaker": "A",
+    "start": 1898907,
+    "end": 1902001,
+    "text": "Maybe we'll start with you, Cole, on this one."
+  },
+  {
+    "speaker": "A",
+    "start": 1902417,
+    "end": 1906233,
+    "text": "Have you guys seen with growth equity VC firms using Unify?"
+  },
+  {
+    "speaker": "A",
+    "start": 1906521,
+    "end": 1909310,
+    "text": "We do a lot of cold outreach and think this would be super valuable."
+  },
+  {
+    "speaker": "B",
+    "start": 1912757,
+    "end": 1918752,
+    "text": "I don't do a ton of outreach to VCs or to founders, but if I were a founder, I think that it's the same type of kind of game you're playing."
+  },
+  {
+    "speaker": "B",
+    "start": 1919666,
+    "end": 1925070,
+    "text": "You have to write an email, you have to be thoughtful about it, you're trying to get them time on your books, you're trying to pitch them of your product."
+  },
+  {
+    "speaker": "B",
+    "start": 1925198,
+    "end": 1927091,
+    "text": "Similar, how do we try to sell B2B products?"
+  },
+  {
+    "speaker": "B",
+    "start": 1927139,
+    "end": 1930187,
+    "text": "And so one, the fit has to make sense, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1930252,
+    "end": 1936941,
+    "text": "Like whether you're like a growth, the seed, the Series A, Series B, wherever you're living at, the investors and the fit is going to make sense."
+  },
+  {
+    "speaker": "B",
+    "start": 1936990,
+    "end": 1938562,
+    "text": "So like what's your ICP of investors?"
+  },
+  {
+    "speaker": "B",
+    "start": 1939316,
+    "end": 1941257,
+    "text": "Do you have any champions at those investors, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1941321,
+    "end": 1945236,
+    "text": "Can you leverage your network on LinkedIn or cold calls to like get in, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1945316,
+    "end": 1952541,
+    "text": "I don't know what the equivalent of like champion tracking for the VC world is, but there's probably a lot of like connections, and I would try to leverage those in the body of emails."
+  },
+  {
+    "speaker": "B",
+    "start": 1954943,
+    "end": 1957239,
+    "text": "And then I think I would start really, really small."
+  },
+  {
+    "speaker": "B",
+    "start": 1957530,
+    "end": 1961346,
+    "text": "Like, I think, you know, get a CRM, get a platform that you can send."
+  },
+  {
+    "speaker": "B",
+    "start": 1961410,
+    "end": 1965191,
+    "text": "Again, like, I would pick 5 VCs, I would find 3 contacts at those VCs."
+  },
+  {
+    "speaker": "B",
+    "start": 1965449,
+    "end": 1968831,
+    "text": "That's 15 contacts per day, that's 75 contacts per week."
+  },
+  {
+    "speaker": "B",
+    "start": 1969314,
+    "end": 1971955,
+    "text": "I would send them 1 message, right, to start off that day."
+  },
+  {
+    "speaker": "B",
+    "start": 1972068,
+    "end": 1981770,
+    "text": "So you have whatever the 15 per day, and then you have 15 really personalized notes per day, 75 per week, and then you can automate the rest of the body body, and I think you'd be in a really, really good place."
+  },
+  {
+    "speaker": "A",
+    "start": 1984140,
+    "end": 1984600,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 1984600,
+    "end": 1985960,
+    "text": "I love that, Cole."
+  },
+  {
+    "speaker": "A",
+    "start": 1985960,
+    "end": 1991340,
+    "text": "Another one that came up, and Cole, you're probably our resident expert on this one too, but there's just been a lot of questions on deliverability."
+  },
+  {
+    "speaker": "A",
+    "start": 1991860,
+    "end": 2000700,
+    "text": "Do you wanna just share a few tactics, like maybe like 2, 3 things that you're always trying to replicate for folks when it comes to optimizing deliverability?"
+  },
+  {
+    "speaker": "B",
+    "start": 2002000,
+    "end": 2004400,
+    "text": "Yeah, absolutely."
+  },
+  {
+    "speaker": "B",
+    "start": 2004420,
+    "end": 2005420,
+    "text": "So one, the variable."
+  },
+  {
+    "speaker": "B",
+    "start": 2005420,
+    "end": 2006940,
+    "text": "So Google will flag a couple different things."
+  },
+  {
+    "speaker": "B",
+    "start": 2006940,
+    "end": 2008940,
+    "text": "I think we talked about the subject line connecting to the body of the email, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 2008940,
+    "end": 2012060,
+    "text": "So Make sure that all aligns."
+  },
+  {
+    "speaker": "B",
+    "start": 2013200,
+    "end": 2017000,
+    "text": "Google will flag the consistent volume of send from day to day."
+  },
+  {
+    "speaker": "B",
+    "start": 2017000,
+    "end": 2025380,
+    "text": "So let's say you're sending 50 emails a day, 50 emails a day, 50 emails a day, and then for whatever reason you decide to do a webinar of 100,000, they will flag all those."
+  },
+  {
+    "speaker": "B",
+    "start": 2025380,
+    "end": 2028150,
+    "text": "They'll cancel the mailboxes, they'll shut down the domains, and it'll be really bad."
+  },
+  {
+    "speaker": "B",
+    "start": 2028560,
+    "end": 2031020,
+    "text": "It takes typically 2 to 3 weeks to warm up domains."
+  },
+  {
+    "speaker": "B",
+    "start": 2031020,
+    "end": 2037260,
+    "text": "And so not only do you like really ruin the chances of like landing in spam, those messages going to the ether, but you have to spend a month warming those back up."
+  },
+  {
+    "speaker": "B",
+    "start": 2037260,
+    "end": 2038440,
+    "text": "That's really, really painful process."
+  },
+  {
+    "speaker": "B",
+    "start": 2038440,
+    "end": 2039710,
+    "text": "I've had to go through it."
+  },
+  {
+    "speaker": "B",
+    "start": 2040220,
+    "end": 2047060,
+    "text": "So, right, the number of emails, let's keep Now, if you want to start pushing to larger volumes, right, let's just like scale that out, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 2047060,
+    "end": 2049920,
+    "text": "And that's where you get working with a platform like Unify or me on professional services."
+  },
+  {
+    "speaker": "B",
+    "start": 2050260,
+    "end": 2053280,
+    "text": "Let's ramp that out, let's scale that out, let's discuss the campaigns."
+  },
+  {
+    "speaker": "B",
+    "start": 2053280,
+    "end": 2057130,
+    "text": "So just be thoughtful about those, just like going to the gym or planning out any type of activity."
+  },
+  {
+    "speaker": "B",
+    "start": 2058130,
+    "end": 2060340,
+    "text": "And then generally the variability that we talked about."
+  },
+  {
+    "speaker": "B",
+    "start": 2060340,
+    "end": 2062070,
+    "text": "So how can we use SpinTax?"
+  },
+  {
+    "speaker": "B",
+    "start": 2062980,
+    "end": 2068440,
+    "text": "I would encourage everyone to go Google that company, or we do it here within Unify, but rotating, hey, hi, howdy, what's up?"
+  },
+  {
+    "speaker": "B",
+    "start": 2068440,
+    "end": 2069720,
+    "text": "Same thing with warm regards."
+  },
+  {
+    "speaker": "B",
+    "start": 2069720,
+    "end": 2075931,
+    "text": "Or let's say you have 2 to 3 value props that you use every single email, well, then you could just rotate those."
+  },
+  {
+    "speaker": "B",
+    "start": 2076837,
+    "end": 2078924,
+    "text": "And then again, using like actual personalized snippets."
+  },
+  {
+    "speaker": "B",
+    "start": 2078972,
+    "end": 2084098,
+    "text": "So if you do a snippet that's like do an agent on Bobby or an SDR, right, every SDR is a little bit different."
+  },
+  {
+    "speaker": "B",
+    "start": 2084164,
+    "end": 2085874,
+    "text": "And so that message is going to look a little bit different."
+  },
+  {
+    "speaker": "A",
+    "start": 2088094,
+    "end": 2088610,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 2089447,
+    "end": 2097313,
+    "text": "I think we have an interesting one here that relates to kind of both of your roles, Cole on the scale side and Bobby on personalization."
+  },
+  {
+    "speaker": "A",
+    "start": 2097426,
+    "end": 2098768,
+    "text": "So maybe Bobby, I'll start with you."
+  },
+  {
+    "speaker": "A",
+    "start": 2098865,
+    "end": 2109512,
+    "text": "How do you think about balancing seen the benefits of like true personal deep personalization and the time, the cost of it when you think about sending thousands of generic email sequences versus 10 like high quality ones?"
+  },
+  {
+    "speaker": "C",
+    "start": 2110367,
+    "end": 2111157,
+    "text": "Yeah, 100%."
+  },
+  {
+    "speaker": "C",
+    "start": 2111512,
+    "end": 2112270,
+    "text": "It's a great question."
+  },
+  {
+    "speaker": "C",
+    "start": 2112480,
+    "end": 2117659,
+    "text": "I touched on it a tiny bit, like we started to a little bit with like rewriting the subject line a bunch over and over again."
+  },
+  {
+    "speaker": "C",
+    "start": 2117723,
+    "end": 2123113,
+    "text": "But I think the way I break it down is essentially what we call sniper shots here."
+  },
+  {
+    "speaker": "C",
+    "start": 2124137,
+    "end": 2150603,
+    "text": "When a signal is so like clearly gonna translate to buyer intent towards whatever your company is, I almost always go prospect into that company, check who their like decision makers are, who they could be, spend like 15 minutes on a really, really well-written email rather than just sending something because then your shot's gone in my opinion."
+  },
+  {
+    "speaker": "C",
+    "start": 2150668,
+    "end": 2156384,
+    "text": "If you just send something templated random doesn't make any sense to a decision maker."
+  },
+  {
+    "speaker": "C",
+    "start": 2156802,
+    "end": 2194382,
+    "text": "However, if you're trying to like really expand within your TAM and run a bunch of different plays to act on signals that you think are maybe a little bit more loose and you want to generate intent from that, it makes a lot of sense to send out plays with with like snippets, for example, in Unify that touch on a specific signal and/or generate a custom signal for someone that is shorter in nature and can generate interest."
+  },
+  {
+    "speaker": "C",
+    "start": 2194687,
+    "end": 2197363,
+    "text": "However, you're not spending as much time on it."
+  },
+  {
+    "speaker": "C",
+    "start": 2197491,
+    "end": 2203677,
+    "text": "You're using kind of like technology or like leveraging technology to generate that interest."
+  },
+  {
+    "speaker": "C",
+    "start": 2204820,
+    "end": 2206947,
+    "text": "Rather than spending a lot of time on it."
+  },
+  {
+    "speaker": "C",
+    "start": 2207012,
+    "end": 2222380,
+    "text": "But I think if that makes sense as an answer to your question, I almost always spend about 10 to 15 minutes on a really quality email if I know it would be\u2014 if I'm looking at someone who I know would be a really, really good position to buy."
+  },
+  {
+    "speaker": "A",
+    "start": 2224484,
+    "end": 2224985,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 2225292,
+    "end": 2225971,
+    "text": "Thanks for that, Bobby."
+  },
+  {
+    "speaker": "A",
+    "start": 2226020,
+    "end": 2241360,
+    "text": "And I think that's a great way to think about it is like high-intent focus, like really hyper-personalized versus is how do you scale out outbound and more to kind of that remainder of your TAM or things that you can't hit with that like level of 10 to 15 minutes of personalization there."
+  },
+  {
+    "speaker": "A",
+    "start": 2241424,
+    "end": 2244221,
+    "text": "So use signals as your really your guide."
+  },
+  {
+    "speaker": "C",
+    "start": 2245062,
+    "end": 2245353,
+    "text": "Totally."
+  },
+  {
+    "speaker": "C",
+    "start": 2245450,
+    "end": 2250978,
+    "text": "And Cole also like touched on, on like the PLG use case earlier is specific to something like Unify."
+  },
+  {
+    "speaker": "C",
+    "start": 2251027,
+    "end": 2261023,
+    "text": "And I think Unify can even sometimes generate really, really valuable interest based on how can you turn your free users into paid users."
+  },
+  {
+    "speaker": "C",
+    "start": 2261754,
+    "end": 2265349,
+    "text": "And that's something that I'm even doing when I spend 10 to 15 minutes on personalizing an email."
+  },
+  {
+    "speaker": "C",
+    "start": 2265575,
+    "end": 2274190,
+    "text": "I think specific use cases like that, Unify, like tools like Unify and some of the other ones Cole mentioned can be really, really useful."
+  },
+  {
+    "speaker": "A",
+    "start": 2274351,
+    "end": 2275851,
+    "text": "Love it."
+  },
+  {
+    "speaker": "A",
+    "start": 2277415,
+    "end": 2285378,
+    "text": "Last one we have here, Cole, you wanna, anything that's to think about differently from sending to Google, Microsoft versus other inbox providers?"
+  },
+  {
+    "speaker": "B",
+    "start": 2290399,
+    "end": 2290448,
+    "text": "Yes."
+  },
+  {
+    "speaker": "B",
+    "start": 2290728,
+    "end": 2292276,
+    "text": "So I just put a little response in there."
+  },
+  {
+    "speaker": "B",
+    "start": 2293520,
+    "end": 2297950,
+    "text": "There's just different landing mechanisms."
+  },
+  {
+    "speaker": "B",
+    "start": 2298063,
+    "end": 2303349,
+    "text": "I mean, you're gonna have to spend some time taking them out of it, how they track pixels, how they track opening, how they track IP reputation."
+  },
+  {
+    "speaker": "B",
+    "start": 2304011,
+    "end": 2310608,
+    "text": "Obviously, Google's rules that were changed back in 2024 are different than how other platforms handle things."
+  },
+  {
+    "speaker": "B",
+    "start": 2310883,
+    "end": 2314875,
+    "text": "And so I would just spend some time tinkering with that there's like 7 to 8 different nuances."
+  },
+  {
+    "speaker": "B",
+    "start": 2317439,
+    "end": 2321992,
+    "text": "I would say from like what you should try to practice in terms of writing a really good email, no, not at all, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 2322041,
+    "end": 2325512,
+    "text": "Like still good subject lines, still good variability, still managing good lists."
+  },
+  {
+    "speaker": "A",
+    "start": 2331105,
+    "end": 2336548,
+    "text": "Yeah, I think that's a great call out is like, don't try and overthink the providers."
+  },
+  {
+    "speaker": "A",
+    "start": 2336661,
+    "end": 2341927,
+    "text": "Like there's the best practices are still best practices and like focus on getting those right as your first place."
+  },
+  {
+    "speaker": "A",
+    "start": 2342290,
+    "end": 2343185,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "B",
+    "start": 2343907,
+    "end": 2345929,
+    "text": "And it's more sort of like org size too."
+  },
+  {
+    "speaker": "B",
+    "start": 2346010,
+    "end": 2349813,
+    "text": "Like emailing into large organizations is just tougher."
+  },
+  {
+    "speaker": "B",
+    "start": 2350006,
+    "end": 2352349,
+    "text": "Like they have like spam checkers, they have blockers."
+  },
+  {
+    "speaker": "B",
+    "start": 2352414,
+    "end": 2355399,
+    "text": "Sometimes they pay for platforms that don't allow your emails to get through."
+  },
+  {
+    "speaker": "B",
+    "start": 2356362,
+    "end": 2358176,
+    "text": "And so I'd worry more about those nuances."
+  },
+  {
+    "speaker": "B",
+    "start": 2358994,
+    "end": 2360856,
+    "text": "But that's like where multichannel comes in, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 2360904,
+    "end": 2366137,
+    "text": "Like how do we get signals and intent and send out a good email and then refer to that in a cold call so Bobby can really get a good opportunity?"
+  },
+  {
+    "speaker": "B",
+    "start": 2367020,
+    "end": 2368175,
+    "text": "You know, there's 3 channels."
+  },
+  {
+    "speaker": "B",
+    "start": 2368287,
+    "end": 2370807,
+    "text": "I would\u2014 I know this is an email course, but I would highly recommend all channels."
+  },
+  {
+    "speaker": "C",
+    "start": 2372286,
+    "end": 2372383,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "C",
+    "start": 2373006,
+    "end": 2378912,
+    "text": "Yeah, Nita just asked a really good question that I can answer super quickly too, like best practices for writing AI personalization prompts."
+  },
+  {
+    "speaker": "C",
+    "start": 2379363,
+    "end": 2386075,
+    "text": "I would say take a collection of your best emails that have converted typically and prompt that."
+  },
+  {
+    "speaker": "C",
+    "start": 2386481,
+    "end": 2398763,
+    "text": "Say these convert well, you know, enter really, really personalized information about the prospect and then go from there."
+  },
+  {
+    "speaker": "A",
+    "start": 2398988,
+    "end": 2399422,
+    "text": "I love that."
+  },
+  {
+    "speaker": "A",
+    "start": 2399471,
+    "end": 2407964,
+    "text": "And I think like one thing that we're seeing folks start to do now is like leverage, like we have like an anatomy report of like what makes a good email out there."
+  },
+  {
+    "speaker": "A",
+    "start": 2408157,
+    "end": 2416806,
+    "text": "There's like Jason Bay or people from Outbound Squad, like adding those to like a skill in Claude in addition to like your best performing emails."
+  },
+  {
+    "speaker": "A",
+    "start": 2416855,
+    "end": 2424988,
+    "text": "So they have like, hey, here's what's successful for our business layered in with what's most impactful as like industry best practice and kind of combining those can be."
+  },
+  {
+    "speaker": "C",
+    "start": 2428630,
+    "end": 2428886,
+    "text": "Totally."
+  },
+  {
+    "speaker": "C",
+    "start": 2429064,
+    "end": 2446431,
+    "text": "And I've seen really good success from like creating a Unify sequence based on a, like a very highly personalized email that I've used, maybe Claude to help generate some like deep research in addition to the Unify research and then creating follow-up emails or call tasks."
+  },
+  {
+    "speaker": "C",
+    "start": 2446673,
+    "end": 2448485,
+    "text": "And those follow-up emails all have snippets in them."
+  },
+  {
+    "speaker": "C",
+    "start": 2448549,
+    "end": 2453884,
+    "text": "So it's adding more personalized information, but I'm not actually, it's automatically sending as a second or third email."
+  },
+  {
+    "speaker": "A",
+    "start": 2456293,
+    "end": 2457458,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 2457636,
+    "end": 2460256,
+    "text": "Alrighty, well, looks like we've covered all the questions."
+  },
+  {
+    "speaker": "A",
+    "start": 2460337,
+    "end": 2464413,
+    "text": "If you're still with us, you're a real trooper and we appreciate you staying online."
+  },
+  {
+    "speaker": "A",
+    "start": 2464688,
+    "end": 2487864,
+    "text": "The last things I'll say before we close out here today, yeah, if you're interested and if you kind of liked what you saw, either as a Unify customer or non-Unify customer, feel free to click the demo link to understand a little bit more about how what Cole showed you, how you can really scale AI personalization in your outbound emails and use best practices there via snippets."
+  },
+  {
+    "speaker": "A",
+    "start": 2488778,
+    "end": 2492240,
+    "text": "If you would like something like this built out for you, Cole is your resource."
+  },
+  {
+    "speaker": "A",
+    "start": 2492304,
+    "end": 2499486,
+    "text": "So Cole, as I've said, is probably in the 99.9 percentile of outbound email creation sequence building."
+  },
+  {
+    "speaker": "A",
+    "start": 2499999,
+    "end": 2505625,
+    "text": "So he's sending\u2014 building out a program here at Unify to build those out for different folks."
+  },
+  {
+    "speaker": "A",
+    "start": 2505673,
+    "end": 2508895,
+    "text": "So if that's of interest, connect with Cole directly and work with him there."
+  },
+  {
+    "speaker": "A",
+    "start": 2509697,
+    "end": 2514737,
+    "text": "Yeah, and we'll be sending out a follow-up of the recording as well as the report on all of this with all the data."
+  },
+  {
+    "speaker": "A",
+    "start": 2514978,
+    "end": 2521311,
+    "text": "Highly recommend even uploading that into your Claude skill for outbound emails and leverage it to guide your email copywriting."
+  },
+  {
+    "speaker": "A",
+    "start": 2521423,
+    "end": 2524477,
+    "text": "So thanks everybody so much for joining us today."
+  },
+  {
+    "speaker": "A",
+    "start": 2524718,
+    "end": 2529540,
+    "text": "Cole, Bobby, thanks for making time and sharing some of your great insights and hope everyone has a great rest of your day."
+  },
+  {
+    "speaker": "B",
+    "start": 2530456,
+    "end": 2531999,
+    "text": "Thanks everyone."
+  },
+  {
+    "speaker": "B",
+    "start": 2532048,
+    "end": 2532465,
+    "text": "Appreciate it."
+  }
+]
