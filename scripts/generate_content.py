@@ -421,20 +421,25 @@ def generate_for_candidates(
 def print_content_summary(results: list[dict]) -> None:
     if not results:
         return
-    print()
-    print("Hook score (angle → LinkedIn post first line):")
-    for r in results:
-        tag = r.get("post_tag", {})
-        print(
-            f"  {r['id']}  {r['hook_score_before']} → {r['hook_score_after']}  "
-            f"[{tag.get('hook_type','?')}]  {r['post_first_line'][:55]}"
-        )
 
-    m14 = next((r for r in results if r["id"] == "m14"), None)
-    if m14:
-        print(f"\n{'─'*60}")
-        print(f"m14 — full LinkedIn post (for {m14['post_for']}):\n")
-        print(m14["linkedin_post"])
+    # ── top 6 plain list ──
+    print(f"\n{'─'*62}")
+    print(f"{'ID':<8} {'Score':>5}  {'Speaker':<22} {'Type':<12}  Post first line")
+    print(f"{'─'*62}")
+    for r in results[:6]:
+        speaker = (r.get("speaker_name") or "?")[:22]
+        mtype = (r.get("moment_type") or "?")[:12]
+        score = r.get("judge_score", 0)
+        first = r.get("post_first_line", "")[:45]
+        lc = " [lower-conf]" if r.get("lower_confidence") else ""
+        print(f"{r['id']:<8} {score:>5}  {speaker:<22} {mtype:<12}  \"{first}\"{lc}")
+    print(f"{'─'*62}")
+
+    # ── full post for the highest-scoring moment ──
+    top = results[0] if results else None
+    if top:
+        print(f"\n{top['id']} — full LinkedIn post (for {top['post_for']}):\n")
+        print(top["linkedin_post"])
 
 
 # ── standalone entry point ────────────────────────────────────────────────────

@@ -839,6 +839,19 @@ def _run_judge_and_content(
 
     _print_top8(candidates, old_scores)
 
+    # Check for the "50,000 accounts" moment across all candidates
+    fifty_k = next(
+        (c for c in sorted(candidates, key=lambda x: -x.get("score", 0))
+         if "50,000" in c.get("transcript", "") or "50000" in c.get("transcript", "")
+         or "50,000" in c.get("angle", "")),
+        None,
+    )
+    if fifty_k:
+        in_top = "✅ in top set" if fifty_k.get("top8") else "not in top set"
+        print(f"\n  50k-accounts moment: {fifty_k['id']}  score={fifty_k.get('score',0)}  {in_top}")
+    else:
+        print("\n  → '50,000 accounts in under an hour' not found in any candidate")
+
     # ── content ──
     if not args.skip_content:
         from generate_content import (
@@ -938,13 +951,52 @@ def _gate_label_fields(labels: list[dict], qa: list) -> list[dict]:
     return valid
 
 
+# Number word ↔ digit equivalence (five = 5, thirty = 30, fifty thousand = 50,000)
+_WORD_NUM: dict[str, int] = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+    "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+    "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+    "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50,
+    "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+    "hundred": 100, "thousand": 1000, "million": 1_000_000,
+}
+_MULT_WORDS = {"hundred", "thousand", "million"}
+
+
+def _all_nums(text: str) -> set[int]:
+    """Return all numbers (digit or word form) as ints ≥ 2. 'percent' treated as '%'."""
+    text = re.sub(r'\bpercent\b', '%', text, flags=re.I)
+    nums: set[int] = set()
+    # Digit forms: 5, 30, 50,000
+    for m in re.finditer(r'\b\d[\d,]*\b', text):
+        try:
+            nums.add(int(m.group().replace(",", "")))
+        except ValueError:
+            pass
+    # Word forms — including two-word compounds like "fifty thousand"
+    words = re.findall(r'\b[a-z]+\b', text.lower())
+    i = 0
+    while i < len(words):
+        v = _WORD_NUM.get(words[i])
+        if v is not None:
+            if i + 1 < len(words) and words[i + 1] in _MULT_WORDS:
+                nums.add(v * _WORD_NUM[words[i + 1]])
+                i += 2
+            else:
+                nums.add(v)
+                i += 1
+        else:
+            i += 1
+    return {n for n in nums if n >= 2}  # skip 0/1 (often used as concepts, not stats)
+
+
 def _gate_numbers_in_transcript(candidates: list[dict], qa: list) -> None:
-    """Warn if numbers in angle don't appear in clip's transcript."""
+    """Warn if numbers in angle don't appear in clip's transcript (digit = word form)."""
     for c in candidates:
-        angle = c.get("angle", "")
-        transcript = c.get("transcript", "")
-        nums = re.findall(r'\b\d[\d,]*\b', angle)
-        bad = [n for n in nums if n.replace(",", "") not in transcript.replace(",", "")]
+        angle_nums = _all_nums(c.get("angle", ""))
+        transcript_nums = _all_nums(c.get("transcript", ""))
+        bad = sorted(angle_nums - transcript_nums)
         if bad:
             c.setdefault("qa_warnings", []).append(f"numbers not in transcript: {bad}")
             _qa_record(qa, "numbers_in_transcript", c["id"], False, f"not found: {bad}")
@@ -1235,8 +1287,8 @@ def main() -> None:
     print(f"🏗️  Building candidates from {len(all_labels)} labels…")
     candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map_simple)
     candidates.sort(key=lambda c: c["start_ms"])
-    for idx, c in enumerate(candidates, 1):
-        c["id"] = f"m{idx:02d}"
+    for c in candidates:
+        c["id"] = f"m{c['start_ms'] // 1000:04d}"
 
     # Enforce routing rules deterministically (overrides whatever Claude set in mine_chunk)
     for c in candidates:
