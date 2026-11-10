@@ -1,0 +1,1868 @@
+[
+  {
+    "speaker": "A",
+    "start": 132,
+    "end": 833,
+    "text": "Welcome in everybody."
+  },
+  {
+    "speaker": "A",
+    "start": 994,
+    "end": 8018,
+    "text": "Excited to dig into a very relevant topic that I know a lot of folks are thinking about, which is custom AI signals."
+  },
+  {
+    "speaker": "A",
+    "start": 8194,
+    "end": 19002,
+    "text": "So how can you go beyond just generic intent, kind of the historical framework here to really drive hyper-relevant, really high-touch outbound that's going to be specific to your buyers?"
+  },
+  {
+    "speaker": "A",
+    "start": 20093,
+    "end": 22546,
+    "text": "So I am, my name is Quinton Smith."
+  },
+  {
+    "speaker": "A",
+    "start": 22787,
+    "end": 25641,
+    "text": "I'm leading product marketing here at Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 25769,
+    "end": 30083,
+    "text": "And today I'm joined by our internal subject matter expert on this topic."
+  },
+  {
+    "speaker": "A",
+    "start": 31242,
+    "end": 31350,
+    "text": "Ethan."
+  },
+  {
+    "speaker": "A",
+    "start": 31478,
+    "end": 33083,
+    "text": "So Ethan, you want to introduce yourself?"
+  },
+  {
+    "speaker": "B",
+    "start": 34013,
+    "end": 34960,
+    "text": "Yeah, what's going on guys?"
+  },
+  {
+    "speaker": "B",
+    "start": 35216,
+    "end": 38858,
+    "text": "Seeing some familiar faces in the attendees list."
+  },
+  {
+    "speaker": "B",
+    "start": 39788,
+    "end": 41842,
+    "text": "But yeah, work on the growth team here at Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 43253,
+    "end": 45740,
+    "text": "Part of my job is using Unify to grow Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 45852,
+    "end": 49477,
+    "text": "So at this point, probably use Unify more than anyone in the world."
+  },
+  {
+    "speaker": "B",
+    "start": 50376,
+    "end": 54210,
+    "text": "Also onboarded Unify previously at my last 2 companies."
+  },
+  {
+    "speaker": "B",
+    "start": 54418,
+    "end": 58496,
+    "text": "So I've seen a couple different environments and yeah, looking forward to Chat interact."
+  },
+  {
+    "speaker": "A",
+    "start": 59528,
+    "end": 65702,
+    "text": "One of Ethan's fun facts is that he sold me on joining Unify before he was even a part of Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 66529,
+    "end": 69653,
+    "text": "So excited to be\u2014 he's the right man for the job here today."
+  },
+  {
+    "speaker": "A",
+    "start": 69750,
+    "end": 70775,
+    "text": "So excited to dig in."
+  },
+  {
+    "speaker": "A",
+    "start": 72698,
+    "end": 78978,
+    "text": "All right, so just quickly, today we're going to be talking about kind of the shortcomings of generic intent and really what custom signals are."
+  },
+  {
+    "speaker": "A",
+    "start": 79658,
+    "end": 81885,
+    "text": "Then we'll talk to\u2014 we want to give you the tactical playbook."
+  },
+  {
+    "speaker": "A",
+    "start": 81951,
+    "end": 84265,
+    "text": "So how do you identify and operationalize these insights?"
+  },
+  {
+    "speaker": "A",
+    "start": 85276,
+    "end": 93073,
+    "text": "Ethan's then going to spend most of the time walking through what this looks like in practice, and then we'll spend time, the last bit here, on Q&A."
+  },
+  {
+    "speaker": "A",
+    "start": 95021,
+    "end": 100777,
+    "text": "So with that in mind, I want to talk a little bit just before we dig in about how this has been for Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 100971,
+    "end": 105590,
+    "text": "It's really been a massive gain for us on the Unify automated outbound side."
+  },
+  {
+    "speaker": "A",
+    "start": 105722,
+    "end": 107487,
+    "text": "So Ethan, you want to talk a little bit about this?"
+  },
+  {
+    "speaker": "B",
+    "start": 109101,
+    "end": 109931,
+    "text": "Yeah, 100%."
+  },
+  {
+    "speaker": "B",
+    "start": 110220,
+    "end": 120520,
+    "text": "So A few months ago, I'd say probably like 3, 4 months ago, we really started leaning into custom sort of AI signals that we're checking for."
+  },
+  {
+    "speaker": "B",
+    "start": 120809,
+    "end": 125944,
+    "text": "So what these are, are essentially signals that we're checking across a segment of our TAM."
+  },
+  {
+    "speaker": "B",
+    "start": 126056,
+    "end": 132009,
+    "text": "So that may be, you know, 40,000 accounts where we're checking for things like product launches, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 132202,
+    "end": 136823,
+    "text": "So the, the middle reply right there, that's coming from a product launch signal."
+  },
+  {
+    "speaker": "B",
+    "start": 137016,
+    "end": 138669,
+    "text": "We're calling it out in the email copy."
+  },
+  {
+    "speaker": "B",
+    "start": 140467,
+    "end": 144833,
+    "text": "So these are great because you can tailor it specific to your ICP, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 144978,
+    "end": 148783,
+    "text": "It's not the same as just, you know, a new hire, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 148879,
+    "end": 155012,
+    "text": "Obviously, like website intent, all those things are great, but this one's really tailored to your business."
+  },
+  {
+    "speaker": "B",
+    "start": 155478,
+    "end": 164388,
+    "text": "And we really like to work backwards from, you know, what we would send manually, what we would send like one-to-one, our research, and really try to scale that out."
+  },
+  {
+    "speaker": "B",
+    "start": 165624,
+    "end": 174014,
+    "text": "So yeah, we're continuing to sort of build this program, but last month saw close to 30 meetings just from a few AI signals that we've rolled out."
+  },
+  {
+    "speaker": "B",
+    "start": 174190,
+    "end": 175538,
+    "text": "So really exciting stuff."
+  },
+  {
+    "speaker": "B",
+    "start": 175602,
+    "end": 184618,
+    "text": "And, you know, on, on the screen are a couple example replies that we're getting and really trying to make it sound, you know, as human as possible."
+  },
+  {
+    "speaker": "A",
+    "start": 186029,
+    "end": 190826,
+    "text": "Yeah, pretty astounding when you see better cold call emails, impressive personalization."
+  },
+  {
+    "speaker": "A",
+    "start": 191018,
+    "end": 191804,
+    "text": "All this is great to see."
+  },
+  {
+    "speaker": "A",
+    "start": 191981,
+    "end": 192141,
+    "text": "So."
+  },
+  {
+    "speaker": "A",
+    "start": 193347,
+    "end": 201712,
+    "text": "All right, Ethan, you kind of alluded to this a little bit, but want to just make the quick delineation between generic intent and custom signals."
+  },
+  {
+    "speaker": "A",
+    "start": 201760,
+    "end": 208526,
+    "text": "So do you mind talking a little bit about, you know, what makes up these 2 different concepts and, you know, where\u2014 why custom signals might be so valuable?"
+  },
+  {
+    "speaker": "B",
+    "start": 209936,
+    "end": 210706,
+    "text": "Yeah, 100%."
+  },
+  {
+    "speaker": "B",
+    "start": 211780,
+    "end": 222329,
+    "text": "I think overall, when thinking about go-to-market, right, one of the most exciting parts about it and also like one of the biggest challenges is you have to continue adapting."
+  },
+  {
+    "speaker": "B",
+    "start": 222698,
+    "end": 226297,
+    "text": "So every few months or every 6 months, things change, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 226377,
+    "end": 229477,
+    "text": "People will get access to a lot of the same signals."
+  },
+  {
+    "speaker": "B",
+    "start": 230650,
+    "end": 237783,
+    "text": "So with that, it's really trying to find more and better ways and more relevant ways to reach out."
+  },
+  {
+    "speaker": "B",
+    "start": 238490,
+    "end": 249479,
+    "text": "I think outbound in general, stepping back, is a great way to sort of outreach to a wide range and number of customers or potential customers and prospects."
+  },
+  {
+    "speaker": "B",
+    "start": 250876,
+    "end": 251646,
+    "text": "But yeah, it's great."
+  },
+  {
+    "speaker": "B",
+    "start": 252000,
+    "end": 260397,
+    "text": "I think when looking at the first-party stuff, if someone's already on your website showing high intent on the pricing page, that's a very successful signal for us still."
+  },
+  {
+    "speaker": "B",
+    "start": 260830,
+    "end": 267092,
+    "text": "That will\u2014 I think last month, over 20 meetings just from website intent and prospecting within those accounts."
+  },
+  {
+    "speaker": "B",
+    "start": 268216,
+    "end": 277786,
+    "text": "There are different MQLs that come in from gated content if they're viewing our product tour and other sort of first-party signals like CRM data."
+  },
+  {
+    "speaker": "B",
+    "start": 278320,
+    "end": 283129,
+    "text": "Close lost opportunities based on the loss reason, we can do that in Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 284574,
+    "end": 286724,
+    "text": "And then there are the third-party signals, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 286772,
+    "end": 288713,
+    "text": "So these are getting extremely popular."
+  },
+  {
+    "speaker": "B",
+    "start": 289901,
+    "end": 304454,
+    "text": "So we're talking about social signals, so people interacting on LinkedIn, so engaging with Austin, our CEO's post on LinkedIn, engaging with Unify, potentially competitor engagement on LinkedIn, job openings."
+  },
+  {
+    "speaker": "B",
+    "start": 304807,
+    "end": 310925,
+    "text": "So if a new hire, for us, if it's a new sales leader, a new marketing hire, We're going after that."
+  },
+  {
+    "speaker": "B",
+    "start": 312778,
+    "end": 321403,
+    "text": "Same thing with job openings, funding data, a lot of like the external sort of standard signals, which still works very well for us."
+  },
+  {
+    "speaker": "B",
+    "start": 322613,
+    "end": 334084,
+    "text": "But as we're sort of moving on and a lot of people are getting access to the same sort of signals, so inbox, you know, inboxes are more and more crowded, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 334182,
+    "end": 338669,
+    "text": "And so it's how can we sort of get more personalized and relevant at scale."
+  },
+  {
+    "speaker": "B",
+    "start": 339118,
+    "end": 341538,
+    "text": "And so that's where custom signals enter, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 341618,
+    "end": 352487,
+    "text": "So a couple examples on the screen, basically on what you can do, and we'll go into, you know, the live demo aspect and what this sort of looks like in practice."
+  },
+  {
+    "speaker": "B",
+    "start": 353465,
+    "end": 361399,
+    "text": "But an example of this is, you know, if someone has a geographic, you know, expansion, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 361544,
+    "end": 363243,
+    "text": "That might be a good signal to reach out."
+  },
+  {
+    "speaker": "B",
+    "start": 364349,
+    "end": 378450,
+    "text": "If they're mentioning certain AI initiatives in, you know, earnings reports or JDs, you can pull that out with an agent and then tee it up in email copy for outreach."
+  },
+  {
+    "speaker": "B",
+    "start": 379325,
+    "end": 383571,
+    "text": "And so also you can get pretty specific on your type of business."
+  },
+  {
+    "speaker": "B",
+    "start": 383701,
+    "end": 393569,
+    "text": "So if you're a cybersecurity company, maybe you want to go after companies that have SOC 2 audit prep and have mentions of that on LinkedIn or anywhere within the news."
+  },
+  {
+    "speaker": "B",
+    "start": 394350,
+    "end": 408514,
+    "text": "So the beauty of it is really it's a unique signal where you're sort of getting away and giving you better chances at that to bring on meetings, which in turn will hopefully turn into closed won revenue."
+  },
+  {
+    "speaker": "A",
+    "start": 410185,
+    "end": 410475,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 411230,
+    "end": 411712,
+    "text": "Thanks, Ethan."
+  },
+  {
+    "speaker": "A",
+    "start": 411808,
+    "end": 415112,
+    "text": "Yeah, I can't emphasize enough like the dynamic nature of these, right?"
+  },
+  {
+    "speaker": "A",
+    "start": 415193,
+    "end": 420807,
+    "text": "Like you're always going to be changing and thinking about different ways you can go out and find the right people at the right time."
+  },
+  {
+    "speaker": "A",
+    "start": 420855,
+    "end": 423553,
+    "text": "And custom signals allow you to be really dynamic in that nature."
+  },
+  {
+    "speaker": "A",
+    "start": 424170,
+    "end": 429510,
+    "text": "All right, so with that in mind, we want to talk a little bit about, you know, what is the actual framework?"
+  },
+  {
+    "speaker": "A",
+    "start": 429510,
+    "end": 431110,
+    "text": "How do you actually operationalize this?"
+  },
+  {
+    "speaker": "A",
+    "start": 431110,
+    "end": 434490,
+    "text": "Everyone's talking about it, but how do you\u2014 what does this look like in practice?"
+  },
+  {
+    "speaker": "A",
+    "start": 434830,
+    "end": 445230,
+    "text": "So we're going to show you what this can actually look like in a framework to walk through from getting from zero to fully automated up custom plays."
+  },
+  {
+    "speaker": "A",
+    "start": 445230,
+    "end": 452210,
+    "text": "So, so the framework that we were thinking of, and I'm going to go over these really lightly, I really want to spend most of the time showing you in product."
+  },
+  {
+    "speaker": "A",
+    "start": 453260,
+    "end": 457253,
+    "text": "There's first\u2014 your first few steps are really for foundation and directional."
+  },
+  {
+    "speaker": "A",
+    "start": 457301,
+    "end": 460090,
+    "text": "So defining and getting clarity on your ICP."
+  },
+  {
+    "speaker": "A",
+    "start": 460235,
+    "end": 463458,
+    "text": "If you don't do this upfront, your initiative is going to fail at the end of the day."
+  },
+  {
+    "speaker": "A",
+    "start": 463602,
+    "end": 466183,
+    "text": "You need that clarity on the specifics of who you're going after."
+  },
+  {
+    "speaker": "A",
+    "start": 466889,
+    "end": 472196,
+    "text": "Next, and one of the most critical pieces is what are the signals that are going to trigger your specific ICP?"
+  },
+  {
+    "speaker": "A",
+    "start": 472292,
+    "end": 478224,
+    "text": "So find those urgency triggers that trigger buying potential, then spec your experiments."
+  },
+  {
+    "speaker": "A",
+    "start": 478273,
+    "end": 479651,
+    "text": "So hey, what are the specifics?"
+  },
+  {
+    "speaker": "A",
+    "start": 479796,
+    "end": 482073,
+    "text": "What are we trying to get out of this, this test?"
+  },
+  {
+    "speaker": "A",
+    "start": 482137,
+    "end": 484189,
+    "text": "What are we testing and have the hypotheses?"
+  },
+  {
+    "speaker": "A",
+    "start": 484654,
+    "end": 488293,
+    "text": "And then you get into actually operationalizing it in Unify, for example."
+  },
+  {
+    "speaker": "A",
+    "start": 488373,
+    "end": 498938,
+    "text": "So building your agent, automating that personalization into copy, weaving this into an actual end-to-end play, and then monitoring how is this performing and how can we tweak and optimize this."
+  },
+  {
+    "speaker": "A",
+    "start": 500509,
+    "end": 503956,
+    "text": "So I'm just going to go through some of these foundational items quickly."
+  },
+  {
+    "speaker": "A",
+    "start": 504180,
+    "end": 505879,
+    "text": "But first, defining your ICP."
+  },
+  {
+    "speaker": "A",
+    "start": 506200,
+    "end": 511266,
+    "text": "This is really looking at who are our best-fit customers, who's been most successful, what are their characteristics."
+  },
+  {
+    "speaker": "A",
+    "start": 511314,
+    "end": 517007,
+    "text": "So problems that we're solving, who are the personas we're engaging, are the value props they're chasing after?"
+  },
+  {
+    "speaker": "A",
+    "start": 517151,
+    "end": 522543,
+    "text": "And then some of the firmographic data, technographic data that you're probably used to with a typical ICP."
+  },
+  {
+    "speaker": "A",
+    "start": 523009,
+    "end": 537034,
+    "text": "One tip here, if you can be really segmented within your ICP of like, okay, this is what our enterprise ICP looks like, or here's what our SaaS ICP looks like versus manufacturing, that allows you to be even more tailored with these signals."
+  },
+  {
+    "speaker": "A",
+    "start": 537210,
+    "end": 538542,
+    "text": "So something you can apply there."
+  },
+  {
+    "speaker": "A",
+    "start": 540019,
+    "end": 545776,
+    "text": "The next piece, which is the only one we'll spend a little bit more time on here is identifying these key signals."
+  },
+  {
+    "speaker": "A",
+    "start": 545824,
+    "end": 547171,
+    "text": "So that really critical part."
+  },
+  {
+    "speaker": "A",
+    "start": 547571,
+    "end": 549190,
+    "text": "Ethan, I may ping you on this one."
+  },
+  {
+    "speaker": "A",
+    "start": 549238,
+    "end": 554320,
+    "text": "You know, what have you taken into practice on finding out what those key signals that you should leverage are?"
+  },
+  {
+    "speaker": "B",
+    "start": 555266,
+    "end": 564563,
+    "text": "Yeah, I would say, you know, when thinking about step 1 and 2 together, right, I think there's actually a lot of surprises that come out when you look at the data."
+  },
+  {
+    "speaker": "B",
+    "start": 565766,
+    "end": 574117,
+    "text": "So, you know, we assume our ICP is, you know, pretty standard and, you know, these are sort of top segments and like businesses we sell into."
+  },
+  {
+    "speaker": "B",
+    "start": 574815,
+    "end": 584937,
+    "text": "But actually when we did, you know, our sort of look back at our closed-won customers, looked at our, again, like conversational sort of intelligence with those transcripts, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 585258,
+    "end": 588067,
+    "text": "We're looking for particular moments, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 588147,
+    "end": 589881,
+    "text": "Like we mentioned product launches."
+  },
+  {
+    "speaker": "B",
+    "start": 589993,
+    "end": 596896,
+    "text": "So if they met, they had a recent product launch, then they're looking at Unify at a higher clip."
+  },
+  {
+    "speaker": "B",
+    "start": 597779,
+    "end": 599063,
+    "text": "Also based on industry."
+  },
+  {
+    "speaker": "B",
+    "start": 599159,
+    "end": 606558,
+    "text": "So we found when looking back at our closed-won customers, we actually had like a disproportionate number of fintech companies, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 607176,
+    "end": 610899,
+    "text": "So I think really trying the first step is to look back at the data."
+  },
+  {
+    "speaker": "B",
+    "start": 612350,
+    "end": 622834,
+    "text": "And from there, depending on how robust or limited your data is, again, like going back to the concept of working backwards from one-to-one outreach, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 622915,
+    "end": 631629,
+    "text": "I think it's very easy with all these sort of tools to get very fancy in workflows and sort of build these complex agents and workflows."
+  },
+  {
+    "speaker": "B",
+    "start": 632842,
+    "end": 637419,
+    "text": "But you really just want to focus on what drives meetings and drives pipeline and revenue."
+  },
+  {
+    "speaker": "B",
+    "start": 638530,
+    "end": 644866,
+    "text": "So really working backwards from, okay, if you were writing this person one-to-one, what would be a good signal, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 645351,
+    "end": 650633,
+    "text": "What would be a good research point if your BDR is calling them, if they're emailing as well?"
+  },
+  {
+    "speaker": "B",
+    "start": 652279,
+    "end": 654959,
+    "text": "And how would you bring it out in email copy, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 655362,
+    "end": 658370,
+    "text": "So don't necessarily try to reinvent the wheel, I'd say."
+  },
+  {
+    "speaker": "B",
+    "start": 658700,
+    "end": 662923,
+    "text": "Just really try to sort of work backwards and do it in that system."
+  },
+  {
+    "speaker": "B",
+    "start": 664390,
+    "end": 669018,
+    "text": "Along with that, right, you want to prioritize urgency."
+  },
+  {
+    "speaker": "B",
+    "start": 669690,
+    "end": 675170,
+    "text": "So like, that signal might be great, but why would they be interested in your product, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 675235,
+    "end": 676905,
+    "text": "Like, what problem does it solve?"
+  },
+  {
+    "speaker": "B",
+    "start": 678130,
+    "end": 685621,
+    "text": "Okay, even think about basics or signals with, okay, if they raise funding, right, what problems might come, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 685718,
+    "end": 687106,
+    "text": "Okay, they're hiring a ton of people."
+  },
+  {
+    "speaker": "B",
+    "start": 688707,
+    "end": 691421,
+    "text": "And sort of again, looking at the earnings reports, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 691969,
+    "end": 695641,
+    "text": "What sort of problems emerge from that and how can your business solve that?"
+  },
+  {
+    "speaker": "B",
+    "start": 696910,
+    "end": 703781,
+    "text": "That's really just the first step of everything, especially with these AI signals that are running."
+  },
+  {
+    "speaker": "B",
+    "start": 704298,
+    "end": 708175,
+    "text": "You want to run on, you know, thousands and thousands of accounts in your TAM."
+  },
+  {
+    "speaker": "A",
+    "start": 711158,
+    "end": 711513,
+    "text": "Love that."
+  },
+  {
+    "speaker": "A",
+    "start": 711642,
+    "end": 720428,
+    "text": "And yeah, I think that's really the power here is you can take always-on monitoring, seeing what's working, what are those triggers, and then like continuously look for them."
+  },
+  {
+    "speaker": "A",
+    "start": 720476,
+    "end": 721792,
+    "text": "So you have these evergreen plays."
+  },
+  {
+    "speaker": "A",
+    "start": 723172,
+    "end": 729078,
+    "text": "All right, just for the last couple pieces of this foundation, then digging into product, you're going to want to next spec your experiment."
+  },
+  {
+    "speaker": "A",
+    "start": 729126,
+    "end": 730891,
+    "text": "So what are we actually going to test?"
+  },
+  {
+    "speaker": "A",
+    "start": 731212,
+    "end": 737904,
+    "text": "What is the hypothesis we're looking to expect here and like the expected impact we're trying to drive to see if this is going to have success or failure?"
+  },
+  {
+    "speaker": "A",
+    "start": 738033,
+    "end": 744613,
+    "text": "So you want to set those benchmarks and then estimate Basically understand, hey, what does success look like?"
+  },
+  {
+    "speaker": "A",
+    "start": 744757,
+    "end": 754853,
+    "text": "And understand within that small pocket or that small experiment if this is successful and either optimize it, go away from it, or scale it up depending on how it performs."
+  },
+  {
+    "speaker": "B",
+    "start": 756233,
+    "end": 763119,
+    "text": "Yeah, so like the screenshot, you know, Quinton has on screen too, that is like part of an actual spec we had internally."
+  },
+  {
+    "speaker": "B",
+    "start": 763937,
+    "end": 769731,
+    "text": "So that's really just defining the base experiment and like the sort of base filters and companies we want to test it on."
+  },
+  {
+    "speaker": "B",
+    "start": 770968,
+    "end": 781362,
+    "text": "And try to have some sort of hypothesis or assumption that's going to come out of it and really try to math it out of\u2014 we like to start on a seed sort of criteria list."
+  },
+  {
+    "speaker": "B",
+    "start": 781924,
+    "end": 788495,
+    "text": "So whether that's testing it on 100 companies, okay, 15 qualify for this signal, then mapping it out."
+  },
+  {
+    "speaker": "B",
+    "start": 788752,
+    "end": 794166,
+    "text": "If you're running it on 1,000 companies or 10,000, how many companies is that going to be?"
+  },
+  {
+    "speaker": "B",
+    "start": 794776,
+    "end": 796592,
+    "text": "How many people are you prospecting for?"
+  },
+  {
+    "speaker": "B",
+    "start": 797122,
+    "end": 798773,
+    "text": "At each of these companies, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 799125,
+    "end": 801530,
+    "text": "And then you can think about the volume, okay?"
+  },
+  {
+    "speaker": "B",
+    "start": 801610,
+    "end": 803309,
+    "text": "Like, how many emails am I going to send?"
+  },
+  {
+    "speaker": "B",
+    "start": 803998,
+    "end": 807942,
+    "text": "Do I want to layer in any manual touches for the higher fit accounts?"
+  },
+  {
+    "speaker": "B",
+    "start": 808807,
+    "end": 811853,
+    "text": "For the screenshot, we just did\u2014 it was super simple."
+  },
+  {
+    "speaker": "B",
+    "start": 812029,
+    "end": 817768,
+    "text": "We just did 20 accounts and we went through manually, first off, to find signals."
+  },
+  {
+    "speaker": "B",
+    "start": 817880,
+    "end": 822464,
+    "text": "But with this product launch one, how many had a major product launch?"
+  },
+  {
+    "speaker": "B",
+    "start": 822753,
+    "end": 829112,
+    "text": "So we can then estimate how many people are going to be entering this flow every month or whatever cadence you're running it on."
+  },
+  {
+    "speaker": "A",
+    "start": 830952,
+    "end": 831049,
+    "text": "Love it."
+  },
+  {
+    "speaker": "A",
+    "start": 832069,
+    "end": 832409,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 833461,
+    "end": 838462,
+    "text": "The last piece of this, which we'll take a look at more in the product, but just building your specific agents."
+  },
+  {
+    "speaker": "A",
+    "start": 838818,
+    "end": 846922,
+    "text": "Taking the exact event, the constrained resources you want to pull from, what you want to include, and then how to structure the actual output of your agent."
+  },
+  {
+    "speaker": "A",
+    "start": 847388,
+    "end": 851136,
+    "text": "Ethan will go to more of this live and then automating that into messaging."
+  },
+  {
+    "speaker": "A",
+    "start": 852145,
+    "end": 856514,
+    "text": "Weaving that actually into a live play, and then monitoring your performance over time."
+  },
+  {
+    "speaker": "A",
+    "start": 856724,
+    "end": 861775,
+    "text": "And I'm shuffling through these because I think the best way to understand them is actually seeing that in the product."
+  },
+  {
+    "speaker": "A",
+    "start": 861872,
+    "end": 866983,
+    "text": "So with that in mind, Ethan, I'm going to pass it over to you to show what this looks like in Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 867932,
+    "end": 868189,
+    "text": "Sweet."
+  },
+  {
+    "speaker": "B",
+    "start": 871004,
+    "end": 875892,
+    "text": "Okay, some of you may be familiar with the platform, some may not."
+  },
+  {
+    "speaker": "B",
+    "start": 875973,
+    "end": 876439,
+    "text": "This is Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 877994,
+    "end": 884444,
+    "text": "Hopefully at this point, about half of you are just juiced up as me about AI signals."
+  },
+  {
+    "speaker": "B",
+    "start": 884797,
+    "end": 892311,
+    "text": "But yeah, we could dive into a few and what that looks like, how you're prompting the agents, and again, what the end result is."
+  },
+  {
+    "speaker": "B",
+    "start": 893804,
+    "end": 899888,
+    "text": "So first, I copied over a few that we are running internally, or at least that we've tried out."
+  },
+  {
+    "speaker": "B",
+    "start": 900691,
+    "end": 903677,
+    "text": "And I also added a couple that we mentioned earlier."
+  },
+  {
+    "speaker": "B",
+    "start": 904146,
+    "end": 909562,
+    "text": "In the presentation just so we can get a sample of the research done and how to structure these."
+  },
+  {
+    "speaker": "B",
+    "start": 912770,
+    "end": 920727,
+    "text": "So again, as the product launch one mentioned here, we actually started off with the last 7 days."
+  },
+  {
+    "speaker": "B",
+    "start": 921742,
+    "end": 924630,
+    "text": "And so it was a big success."
+  },
+  {
+    "speaker": "B",
+    "start": 924727,
+    "end": 932281,
+    "text": "And then another way to double down as we were booking more and more meetings through this signal, we expanded it to 30 days."
+  },
+  {
+    "speaker": "B",
+    "start": 933310,
+    "end": 935071,
+    "text": "But first, that's the first part."
+  },
+  {
+    "speaker": "B",
+    "start": 935731,
+    "end": 945155,
+    "text": "If they've launched a major new product in the past 30 days and to return that product name, which I'll then show you how that's used in email copy."
+  },
+  {
+    "speaker": "B",
+    "start": 947430,
+    "end": 952866,
+    "text": "But with the guidance of an agent, there are a couple of things I like to do."
+  },
+  {
+    "speaker": "B",
+    "start": 953449,
+    "end": 957335,
+    "text": "And so the number one thing is I like to give it sort of a role, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 958635,
+    "end": 961688,
+    "text": "So in this case, product launch analysts helping go-to-market teams."
+  },
+  {
+    "speaker": "B",
+    "start": 963111,
+    "end": 969416,
+    "text": "And then their task, like what their job is to do, and then where to find the information."
+  },
+  {
+    "speaker": "B",
+    "start": 969707,
+    "end": 975278,
+    "text": "I think it's important to specify the sources you want to look at, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 975343,
+    "end": 991437,
+    "text": "So here I'm given the order of check their official blog first, the press releases, changelog, and just to really specify where you want it to check because it could check the whole entire internet."
+  },
+  {
+    "speaker": "B",
+    "start": 991517,
+    "end": 994039,
+    "text": "And that's, the more specific, the better."
+  },
+  {
+    "speaker": "B",
+    "start": 995680,
+    "end": 1004390,
+    "text": "Also, through testing it initially, I noticed it was pulling in a lot of sort of lighter launches or things we wouldn't really consider launches, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1004535,
+    "end": 1008493,
+    "text": "Things like pricing change or internal tools, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1008589,
+    "end": 1012402,
+    "text": "Like internal sort of hiring news, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1012467,
+    "end": 1021481,
+    "text": "So just specifying what counts as a major launch and giving it again more specific criteria and structure to go off of."
+  },
+  {
+    "speaker": "B",
+    "start": 1022620,
+    "end": 1036831,
+    "text": "So here we're identifying, you know, a major feature, you know, could be significant go-to-market shift, a net new customer-facing product, and to ignore things like, you know, the repos pricing only announcements."
+  },
+  {
+    "speaker": "B",
+    "start": 1039205,
+    "end": 1040588,
+    "text": "And so we have a couple of these."
+  },
+  {
+    "speaker": "B",
+    "start": 1040934,
+    "end": 1047960,
+    "text": "Another cool one is where we're checking updates to an integration or compliance page."
+  },
+  {
+    "speaker": "B",
+    "start": 1050217,
+    "end": 1052826,
+    "text": "So this one, we did it based on specific industries."
+  },
+  {
+    "speaker": "B",
+    "start": 1053180,
+    "end": 1060747,
+    "text": "So we were targeting fintech and healthtech buyers and sort of working backwards from what might be a good signal for them based on our platform."
+  },
+  {
+    "speaker": "B",
+    "start": 1062169,
+    "end": 1070588,
+    "text": "So if they are updating their compliance page, we could, you know, we're mentioning, hey, like, if people checking out that page, like, how are you targeting them?"
+  },
+  {
+    "speaker": "B",
+    "start": 1071502,
+    "end": 1072467,
+    "text": "Bringing on the unified pitch."
+  },
+  {
+    "speaker": "B",
+    "start": 1074610,
+    "end": 1076111,
+    "text": "And so you can go into an example."
+  },
+  {
+    "speaker": "B",
+    "start": 1076466,
+    "end": 1079615,
+    "text": "Here's one just made, geographic expansion."
+  },
+  {
+    "speaker": "B",
+    "start": 1081036,
+    "end": 1084330,
+    "text": "So let's test on a company, Uber."
+  },
+  {
+    "speaker": "B",
+    "start": 1087141,
+    "end": 1090705,
+    "text": "And you can see the research that's being done and sort of fact-check it as well."
+  },
+  {
+    "speaker": "B",
+    "start": 1093752,
+    "end": 1105199,
+    "text": "And as we're waiting for the agent, right, Again, the beauty of it is you can not only qualify companies based on this research, but you can pull it into email copy."
+  },
+  {
+    "speaker": "B",
+    "start": 1105488,
+    "end": 1118912,
+    "text": "So again, it's like that power of, you can do research on 50,000 accounts in less than an hour and outreach to all of them or queue up for your sales team to go after."
+  },
+  {
+    "speaker": "B",
+    "start": 1120405,
+    "end": 1121898,
+    "text": "That's really the beauty of it."
+  },
+  {
+    "speaker": "B",
+    "start": 1123903,
+    "end": 1132020,
+    "text": "So here you can see what it's searching for, the different sites it's going after, different tools it's using."
+  },
+  {
+    "speaker": "B",
+    "start": 1133602,
+    "end": 1135526,
+    "text": "So the primary one here would be internet search."
+  },
+  {
+    "speaker": "A",
+    "start": 1136540,
+    "end": 1136652,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "A",
+    "start": 1136797,
+    "end": 1139712,
+    "text": "And it's always nice to have this, like, auditability with Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 1139792,
+    "end": 1141821,
+    "text": "Like, the AI piece isn't really a black box."
+  },
+  {
+    "speaker": "A",
+    "start": 1141869,
+    "end": 1152189,
+    "text": "You're getting full visibility into what it's searching, how it's thinking about this so that you can help\u2014 that can inform your future prompting and also help clarify, like, what needs to be further refined."
+  },
+  {
+    "speaker": "B",
+    "start": 1153680,
+    "end": 1169396,
+    "text": "Yeah, so here it's talking about Uber Eats expanding into different countries, when it was reported, you know, when the launches are planned, and you can sort of take that information again with human reps or tie it into automatic email copy."
+  },
+  {
+    "speaker": "B",
+    "start": 1173197,
+    "end": 1183253,
+    "text": "So from there, again, you can do a sort of manual test for the spec and experiment, Or you could actually do it based on, you know, a set of 100 companies."
+  },
+  {
+    "speaker": "B",
+    "start": 1184730,
+    "end": 1190748,
+    "text": "And this for mapping out, you know, how many projected companies, how many people you're gonna prospect for, emails sent."
+  },
+  {
+    "speaker": "B",
+    "start": 1192032,
+    "end": 1199703,
+    "text": "So here my colleague Charlie tested a signal we were trying on specific for health tech on close to 100 companies."
+  },
+  {
+    "speaker": "B",
+    "start": 1200136,
+    "end": 1213815,
+    "text": "And so we saw about 15% there and then could sort of estimate if we're running this on 5,000, 10,000 accounts, Um, how many, around how many are going to be qualified for this signal every month."
+  },
+  {
+    "speaker": "B",
+    "start": 1218160,
+    "end": 1221871,
+    "text": "So now going into the snippets, I think this is really unique as well."
+  },
+  {
+    "speaker": "B",
+    "start": 1222160,
+    "end": 1224120,
+    "text": "And so there are a couple of ways you can do this."
+  },
+  {
+    "speaker": "B",
+    "start": 1224795,
+    "end": 1228638,
+    "text": "And for context, snippets are, you know, pieces of the email copy."
+  },
+  {
+    "speaker": "B",
+    "start": 1230023,
+    "end": 1233421,
+    "text": "Um, but one way you can do it is more in a deterministic way."
+  },
+  {
+    "speaker": "B",
+    "start": 1234910,
+    "end": 1235007,
+    "text": "Right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1235071,
+    "end": 1244572,
+    "text": "So for the product launch one, it's outputting, you know, the exact product name, and I'll give it, you know, criteria to go off of in the agent."
+  },
+  {
+    "speaker": "B",
+    "start": 1245390,
+    "end": 1252435,
+    "text": "Here, I'm just giving it templates of, hey, saw, you know, Unify just launched PLG Signals."
+  },
+  {
+    "speaker": "B",
+    "start": 1252708,
+    "end": 1253158,
+    "text": "Congrats."
+  },
+  {
+    "speaker": "B",
+    "start": 1254297,
+    "end": 1254634,
+    "text": "Right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1254714,
+    "end": 1263685,
+    "text": "And so this is like a very deterministic, reliable way you can sort of set guidance for your tone and really sort of work backwards from what you would put."
+  },
+  {
+    "speaker": "B",
+    "start": 1265217,
+    "end": 1268260,
+    "text": "And so what does that look like in practice, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1268324,
+    "end": 1270868,
+    "text": "So this is one of the initial screenshots we had."
+  },
+  {
+    "speaker": "B",
+    "start": 1272387,
+    "end": 1292464,
+    "text": "Here's a sequence, and it's pulling in a different one for the email 3, but it's calling out the new product they had and basically keeping it short, going into how Unify can act on that and really make\u2014 trying to make it as relevant and as human as possible."
+  },
+  {
+    "speaker": "B",
+    "start": 1292730,
+    "end": 1293289,
+    "text": "So it's 1-to-1."
+  },
+  {
+    "speaker": "B",
+    "start": 1296526,
+    "end": 1307216,
+    "text": "Another way you can do it is more so having it generate the full sort of sentence, so not in a deterministic way."
+  },
+  {
+    "speaker": "B",
+    "start": 1307314,
+    "end": 1309705,
+    "text": "And so you can give it sort of guidance and rules to go after."
+  },
+  {
+    "speaker": "B",
+    "start": 1311190,
+    "end": 1315584,
+    "text": "So no em dashes, output should make sense, and example outputs."
+  },
+  {
+    "speaker": "B",
+    "start": 1317895,
+    "end": 1318737,
+    "text": "So similar here."
+  },
+  {
+    "speaker": "B",
+    "start": 1320155,
+    "end": 1321557,
+    "text": "Basically the goal of the snippet."
+  },
+  {
+    "speaker": "B",
+    "start": 1323042,
+    "end": 1324221,
+    "text": "Then we get wrong examples."
+  },
+  {
+    "speaker": "B",
+    "start": 1324399,
+    "end": 1328193,
+    "text": "It will have a fallback if none of them qualify."
+  },
+  {
+    "speaker": "B",
+    "start": 1337385,
+    "end": 1341024,
+    "text": "Taking a little while there, so I'll move on to the plays."
+  },
+  {
+    "speaker": "B",
+    "start": 1343580,
+    "end": 1346850,
+    "text": "And so within the plays, I'm sure many of you all are familiar."
+  },
+  {
+    "speaker": "B",
+    "start": 1348317,
+    "end": 1354695,
+    "text": "As you are, many are Unify customers, but you get pretty specific on what you want in the desired workflow."
+  },
+  {
+    "speaker": "B",
+    "start": 1355760,
+    "end": 1359539,
+    "text": "So I know we're running up on time, but here is our product launch one."
+  },
+  {
+    "speaker": "B",
+    "start": 1359635,
+    "end": 1363559,
+    "text": "So we're doing it on, again, a set criteria for companies."
+  },
+  {
+    "speaker": "B",
+    "start": 1363960,
+    "end": 1369586,
+    "text": "So maybe that's, you know, 15 to 500 employees within B2B SaaS."
+  },
+  {
+    "speaker": "B",
+    "start": 1371451,
+    "end": 1378041,
+    "text": "And we're also we can prospect for different people based on the employee size."
+  },
+  {
+    "speaker": "B",
+    "start": 1378875,
+    "end": 1384071,
+    "text": "And so we might wanna prospect for, you know, C-suite and founders if it's under 50 employees, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1384552,
+    "end": 1386220,
+    "text": "And sort of go after that."
+  },
+  {
+    "speaker": "B",
+    "start": 1387278,
+    "end": 1393276,
+    "text": "Also just trying out different personas for smaller companies, might wanna prospect for more if it's a larger company."
+  },
+  {
+    "speaker": "B",
+    "start": 1394671,
+    "end": 1399049,
+    "text": "But you can really get as granular or as simple as you want within these flows."
+  },
+  {
+    "speaker": "B",
+    "start": 1401280,
+    "end": 1406049,
+    "text": "And again, more\u2014 here's another example of what it looks like in practice, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1406306,
+    "end": 1410529,
+    "text": "So this was one based on if a company published a recent case study."
+  },
+  {
+    "speaker": "B",
+    "start": 1410802,
+    "end": 1421496,
+    "text": "So within the past, you know, 30 days, and it's calling it out in the copy, saying how we use, you know, case studies to generate, you know, new business for our team within the product as well."
+  },
+  {
+    "speaker": "B",
+    "start": 1422668,
+    "end": 1424691,
+    "text": "And, you know, can just open up the dialogue."
+  },
+  {
+    "speaker": "B",
+    "start": 1425290,
+    "end": 1427168,
+    "text": "And turned into opportunities for the sales team."
+  },
+  {
+    "speaker": "A",
+    "start": 1431897,
+    "end": 1432205,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 1432625,
+    "end": 1445920,
+    "text": "I think like the thing to call\u2014 one more thing to call out here, the power comes from not only being able to take these signals and use them as intent triggers to like trigger specific plays, but also that level of customization in the copy."
+  },
+  {
+    "speaker": "A",
+    "start": 1446033,
+    "end": 1458312,
+    "text": "So you're both taking action based on a specific trigger and always-on monitoring for that, and then leveraging that to actually personalize those, that outreach and make it hyper relevant at scale."
+  },
+  {
+    "speaker": "A",
+    "start": 1458505,
+    "end": 1467145,
+    "text": "So you're not having to customize that every single time or look at your intent signals and then take that to have a manual seller go out and build the copy themselves."
+  },
+  {
+    "speaker": "A",
+    "start": 1467257,
+    "end": 1469870,
+    "text": "Like both of those pieces are automated, which is really powerful."
+  },
+  {
+    "speaker": "A",
+    "start": 1471409,
+    "end": 1471826,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 1471970,
+    "end": 1472996,
+    "text": "Thanks for taking us through that, Ethan."
+  },
+  {
+    "speaker": "A",
+    "start": 1474086,
+    "end": 1482389,
+    "text": "We have a couple of questions in the chat, so we're going to go into Q&A in just a second here, but I just want to give one takeaway before we move next."
+  },
+  {
+    "speaker": "A",
+    "start": 1482470,
+    "end": 1489957,
+    "text": "So for folks looking to get started here, what we recommend in your next 30 days is to Ethan's point of auditing your ICP."
+  },
+  {
+    "speaker": "A",
+    "start": 1490118,
+    "end": 1491465,
+    "text": "So take a look back at the data."
+  },
+  {
+    "speaker": "A",
+    "start": 1491625,
+    "end": 1498408,
+    "text": "Don't, you know, have your hypotheses, but also go in and delve in to understand, you know, what's working, what's not, what are you seeing resonating."
+  },
+  {
+    "speaker": "A",
+    "start": 1498841,
+    "end": 1503331,
+    "text": "Then identify 3 triggers that might be business-specific to indicate buying readiness."
+  },
+  {
+    "speaker": "A",
+    "start": 1503893,
+    "end": 1509601,
+    "text": "Then run a play based on, based on one of those that you have the most conviction behind, and then measure those results."
+  },
+  {
+    "speaker": "A",
+    "start": 1509666,
+    "end": 1511349,
+    "text": "So run that initial experiment."
+  },
+  {
+    "speaker": "A",
+    "start": 1511830,
+    "end": 1515306,
+    "text": "But first do the foundational work to identify who it might be for."
+  },
+  {
+    "speaker": "A",
+    "start": 1517700,
+    "end": 1521837,
+    "text": "Also, with that, would love to jump into Q&A here."
+  },
+  {
+    "speaker": "A",
+    "start": 1523280,
+    "end": 1524340,
+    "text": "Ethan, we had a couple come up."
+  },
+  {
+    "speaker": "A",
+    "start": 1524758,
+    "end": 1534515,
+    "text": "The first one, in core infrastructure sales, what intent signals seem to correlate with buying windows, especially when the real pain, like pipeline instability, isn't publicly visible?"
+  },
+  {
+    "speaker": "B",
+    "start": 1537692,
+    "end": 1540164,
+    "text": "Yeah, I think it's dependent on you know, the company."
+  },
+  {
+    "speaker": "B",
+    "start": 1540357,
+    "end": 1549990,
+    "text": "I think like ways what we like to look for, like specific for Unify is like, okay, like where are they investing in, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1550458,
+    "end": 1552766,
+    "text": "So like with funding, sure."
+  },
+  {
+    "speaker": "B",
+    "start": 1552847,
+    "end": 1556914,
+    "text": "But, you know, in the earnings report, okay, like where, what areas are they investing in?"
+  },
+  {
+    "speaker": "B",
+    "start": 1557043,
+    "end": 1558287,
+    "text": "Okay, like who are they hiring for?"
+  },
+  {
+    "speaker": "B",
+    "start": 1559313,
+    "end": 1563984,
+    "text": "If they're hiring a ton for the BD team, right, they probably need more pipeline, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1564114,
+    "end": 1577062,
+    "text": "And then within that JD, Okay, getting a sense of their tech stack where you can get an idea of like their current workflow and potential pains to go after."
+  },
+  {
+    "speaker": "B",
+    "start": 1577255,
+    "end": 1589598,
+    "text": "So I think that's going to look different for, you know, depending on the type of business, but headcount growth, divestment in certain areas, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1592186,
+    "end": 1596221,
+    "text": "Yeah, I think a lot of like external signals and just inferring from there."
+  },
+  {
+    "speaker": "A",
+    "start": 1598089,
+    "end": 1604513,
+    "text": "Yeah, the only thing I would add here is a lot of this, you know, it's going to be\u2014 it's exactly\u2014 it's the reason it's custom signals."
+  },
+  {
+    "speaker": "A",
+    "start": 1604561,
+    "end": 1605988,
+    "text": "Like, it's going to be unique to your business."
+  },
+  {
+    "speaker": "A",
+    "start": 1606340,
+    "end": 1615493,
+    "text": "An easy way to get this, if you're using a conversational intelligence tool, for example, or if you just want to go talk, go out and talk to your customers, what are some of those ways?"
+  },
+  {
+    "speaker": "A",
+    "start": 1615718,
+    "end": 1618315,
+    "text": "What are some of those triggers that are bringing folks to you today?"
+  },
+  {
+    "speaker": "A",
+    "start": 1618443,
+    "end": 1620062,
+    "text": "So ask them, you know, what brought you?"
+  },
+  {
+    "speaker": "A",
+    "start": 1620190,
+    "end": 1621857,
+    "text": "What are your ongoing initiatives?"
+  },
+  {
+    "speaker": "A",
+    "start": 1621906,
+    "end": 1633590,
+    "text": "And then work backwards from that insight to see, hey, what can we identify from a market signal perspective that shows us that, you know, pipeline instability is the reason we're going\u2014 it's what's not working here."
+  },
+  {
+    "speaker": "A",
+    "start": 1636724,
+    "end": 1637338,
+    "text": "Next one."
+  },
+  {
+    "speaker": "A",
+    "start": 1637596,
+    "end": 1639243,
+    "text": "This is a good one for you, Ethan."
+  },
+  {
+    "speaker": "A",
+    "start": 1639291,
+    "end": 1642552,
+    "text": "How do you evaluate signal accuracy over time through scale of volume?"
+  },
+  {
+    "speaker": "A",
+    "start": 1642779,
+    "end": 1645924,
+    "text": "Do you track precision or false positives from the agent outputs?"
+  },
+  {
+    "speaker": "B",
+    "start": 1646953,
+    "end": 1647901,
+    "text": "Yeah, that's a good question."
+  },
+  {
+    "speaker": "B",
+    "start": 1648013,
+    "end": 1650793,
+    "text": "I think it depends on the specific agent."
+  },
+  {
+    "speaker": "B",
+    "start": 1651083,
+    "end": 1659509,
+    "text": "So, you know, occasionally with product launches, I think when we first rolled it out, the timeframe was broader, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1659830,
+    "end": 1665016,
+    "text": "And so from there, just tweaking the prompt, whether that's spot checking a few."
+  },
+  {
+    "speaker": "B",
+    "start": 1665129,
+    "end": 1677202,
+    "text": "So when we first launch play, I always like to delay it a little bit, like 10 minutes, you know, 20 minutes, whatever it is, just check through a lot of the sample sequences, right?"
+  },
+  {
+    "speaker": "B",
+    "start": 1677395,
+    "end": 1683127,
+    "text": "Obviously we'd already done the testing with the actual agents and with the snippets at a smaller scale."
+  },
+  {
+    "speaker": "B",
+    "start": 1683689,
+    "end": 1698343,
+    "text": "And so when it's initially launched, I like to delay the sequence, which you can do natively in Unify, and then check all the emails and sort of check the accuracy there, make sure it's not doing anything wacky."
+  },
+  {
+    "speaker": "B",
+    "start": 1699740,
+    "end": 1713806,
+    "text": "And then if you get a sample sort of reply here and there that says, we didn't launch this product, or this is from like X months ago, I would just, again, tweak the agent and keep on testing it."
+  },
+  {
+    "speaker": "B",
+    "start": 1714871,
+    "end": 1717019,
+    "text": "And also, there will be edge cases here and there."
+  },
+  {
+    "speaker": "B",
+    "start": 1717213,
+    "end": 1724234,
+    "text": "We'll probably get one every few thousand, but it's well worth it, I think, based on the success."
+  },
+  {
+    "speaker": "B",
+    "start": 1724429,
+    "end": 1736376,
+    "text": "And so I think that zooming out, it's not going to be 100% perfect, but if it's 95% to 98% accurate, makes complete sense, especially in terms of ROI."
+  },
+  {
+    "speaker": "A",
+    "start": 1739494,
+    "end": 1740060,
+    "text": "Thanks, Eastman."
+  },
+  {
+    "speaker": "A",
+    "start": 1740807,
+    "end": 1741668,
+    "text": "I know we're out of time here."
+  },
+  {
+    "speaker": "A",
+    "start": 1742448,
+    "end": 1746329,
+    "text": "The last question is, what are Infinity Signals, which I'm happy to take."
+  },
+  {
+    "speaker": "A",
+    "start": 1746410,
+    "end": 1748504,
+    "text": "It's Unify's branding for these custom AI signals."
+  },
+  {
+    "speaker": "A",
+    "start": 1748617,
+    "end": 1755365,
+    "text": "So your ability to identify and monitor the market for any which signal that's gonna be relevant for your business."
+  },
+  {
+    "speaker": "A",
+    "start": 1756204,
+    "end": 1759636,
+    "text": "So everything we've talked about today is branded under Unify's Infinity Signals."
+  },
+  {
+    "speaker": "A",
+    "start": 1761543,
+    "end": 1761689,
+    "text": "Alright."
+  },
+  {
+    "speaker": "A",
+    "start": 1763372,
+    "end": 1765740,
+    "text": "Well, with that in mind, thank you everyone so much."
+  },
+  {
+    "speaker": "A",
+    "start": 1766206,
+    "end": 1768775,
+    "text": "Thank you, Ethan, for walking us through a demo today."
+  },
+  {
+    "speaker": "A",
+    "start": 1768919,
+    "end": 1769995,
+    "text": "Great to see this live."
+  },
+  {
+    "speaker": "A",
+    "start": 1770204,
+    "end": 1777237,
+    "text": "If you're a customer, go out there, start building your agents, and, you know, work with your PGS team to further get started there."
+  },
+  {
+    "speaker": "A",
+    "start": 1777831,
+    "end": 1779693,
+    "text": "And if you're not a customer, feel free to book a demo."
+  },
+  {
+    "speaker": "A",
+    "start": 1779758,
+    "end": 1782214,
+    "text": "Happy to have a conversation or reach out to Ethan or I."
+  },
+  {
+    "speaker": "A",
+    "start": 1782407,
+    "end": 1783868,
+    "text": "Happy to provide more context."
+  },
+  {
+    "speaker": "A",
+    "start": 1783948,
+    "end": 1787160,
+    "text": "But thanks everyone so much for joining, and hope you have a great rest of your day."
+  },
+  {
+    "speaker": "B",
+    "start": 1788048,
+    "end": 1791515,
+    "text": "Yeah, if anyone has like additional questions, feel free to ping me on LinkedIn too."
+  },
+  {
+    "speaker": "B",
+    "start": 1792080,
+    "end": 1792581,
+    "text": "Happy to answer."
+  },
+  {
+    "speaker": "A",
+    "start": 1793694,
+    "end": 1793920,
+    "text": "Awesome."
+  },
+  {
+    "speaker": "A",
+    "start": 1794259,
+    "end": 1794744,
+    "text": "Thanks, everybody."
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "m01",
+    "start_i": 26,
+    "end_i": 35,
+    "moment_type": "stat",
+    "pillar": "Custom AI signals",
+    "connects_to": "Signals & Intent",
+    "persona": "sales leader",
+    "post_for": "Ethan Dursht",
+    "angle": "We ran 3 custom AI signals last month and booked 30 meetings. Here is exactly what we checked for.",
+    "standalone_check": "Opens with a timeline and defines what custom AI signals are before citing the result.",
+    "risks": "Sentence 29 references an on-screen reply example ('the middle reply right there'); visual context lost in audio-only clip."
+  },
+  {
+    "id": "m02",
+    "start_i": 44,
+    "end_i": 51,
+    "moment_type": "contrarian",
+    "pillar": "Custom AI signals",
+    "connects_to": "Signals & Intent",
+    "persona": "AE",
+    "post_for": "Ethan Dursht",
+    "angle": "Everyone is using the same intent signals now. First-party signals still booked us 20 meetings last month — here is why they still win.",
+    "standalone_check": "Frames the signal-commoditization problem fresh, then lands a concrete stat as proof that first-party still works.",
+    "risks": "Sentences 48-49 are generic filler ('outbound is great', 'but yeah, it's great') that weaken the pacing."
+  },
+  {
+    "id": "m03",
+    "start_i": 81,
+    "end_i": 95,
+    "moment_type": "how_to",
+    "pillar": "Sellers becoming GTM engineers",
+    "connects_to": "Signals & Intent",
+    "persona": "AE",
+    "post_for": "Unify company page",
+    "angle": "Skip ICP clarity and your whole signal program will fail. The five-step framework to go from zero to running custom plays.",
+    "standalone_check": "Opens with a consequence that grabs attention; the next two sentences define what 'this' refers to before moving into steps.",
+    "risks": "Opening 'this' refers to ICP clarity established in the sentence just before the clip; mild dangling reference resolved within two sentences."
+  },
+  {
+    "id": "m04",
+    "start_i": 101,
+    "end_i": 108,
+    "moment_type": "story",
+    "pillar": "Custom AI signals",
+    "connects_to": "B2B Data",
+    "persona": "RevOps",
+    "post_for": "Ethan Dursht",
+    "angle": "We assumed we knew our ICP. We were wrong. Here is what the closed-won data actually showed.",
+    "standalone_check": "Signals upfront that there is a data surprise coming; delivers a concrete finding (product-launch correlation, fintech over-index) before the clip ends.",
+    "risks": "Ends on 'right?' mid-discovery; the downstream actions taken on this finding are in later sentences not in this clip."
+  },
+  {
+    "id": "m05",
+    "start_i": 65,
+    "end_i": 68,
+    "moment_type": "how_to",
+    "pillar": "Custom AI signals",
+    "connects_to": "Agent / chat",
+    "persona": "SDR",
+    "post_for": "Ethan Dursht",
+    "angle": "AI mentions in earnings reports and JDs are a signal your competitors are not pulling yet. Here is the exact play.",
+    "standalone_check": "Gives a concrete, copy-paste signal idea with the extraction method and the downstream email play in one breath.",
+    "risks": "Opening 'they' refers to target companies — slightly vague without prior context, though inferrable; sentence 68 has garbled phrase ('getting away' likely means 'getting ahead')."
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "m01",
+    "start_i": 0,
+    "end_i": 12,
+    "moment_type": "stat",
+    "pillar": "Custom AI signals",
+    "connects_to": "Signals & Intent",
+    "persona": "SDR",
+    "post_for": "Unify company page",
+    "angle": "How one custom signal, a new VP of Sales, turned a list of under 400 accounts into 23 meetings",
+    "standalone_check": "It opens with a clear result, explains the signal and why timing matters, and ends with the meeting-rate payoff, with no references to slides or other parts of the webinar.",
+    "risks": "Only one candidate passes. The transcript is a single 74s speaker block on one idea, and every other cut fails the 30s minimum, starts on a dangling reference (\"They are...\", \"We layered on a second signal\"), or overlaps by more than one sentence. All timestamps are marked estimated. The '10x industry average' claim is unsourced. Quintin Smith is a former Unify speaker (now at Juicebox), so frame it as 'from our webinar'. The last stretch drifts slightly toward 'they need a platform', which is a mild product pitch.",
+    "speaker": "A",
+    "speaker_name": "Quintin Smith",
+    "start_ms": 0,
+    "end_ms": 73997,
+    "duration_s": 74.0,
+    "hook_line": "We closed 12 deals last quarter entirely through outbound.",
+    "transcript": "We closed 12 deals last quarter entirely through outbound. No paid ads, no inbound leads \u2014 just signals and sequences. The secret was custom intent signals. Instead of watching generic job-change alerts, we built our own signal around one specific trigger: companies that added a VP of Sales in the last 30 days. That one signal converted at 4\u00d7 our baseline. The reason is timing. A new VP of Sales has 90 days to prove they can build pipeline. They are actively looking for tools, and they have budget authority right away. We layered on a second signal: companies that posted an open SDR role in the same 30-day window. That doubled the confidence score. If a company is hiring sellers and just brought in a new VP, they are building a team and they need a platform. The result was 23 meetings in one month from a list of under 400 accounts. That is a 5.75 percent meeting rate on cold outbound, which is about 10\u00d7 the industry average.",
+    "duration_flag": "OK",
+    "score": 60,
+    "why": "specific number (1.15\u00d7) + other topic (1.38\u00d7); stat hook (0.81\u00d7) pulls down; standalone clean",
+    "top8": true
+  }
+]

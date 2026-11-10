@@ -1,0 +1,42 @@
+{
+  "https://www.youtube.com/watch?v=2u4ERdJiEcg": {
+    "transcript_id": "0a04db2f-4e93-475b-a824-215c76346d2e",
+    "slug": "custom-ai-signals",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Quintin Smith",
+        "role": "Product Marketing Lead (leading product marketing)",
+        "company": "Unify (at time of webinar; now at Juicebox)",
+        "is_current_unify_team": false,
+        "confidence": 0.95,
+        "proof_sentence": "So I am, my name is Quinton Smith.",
+        "display_name": "Quintin Smith",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Ethan Dursht",
+        "role": "Growth",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "But yeah, work on the growth team here at Unify.",
+        "display_name": "Ethan Dursht",
+        "post_for": "Ethan Dursht"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/custom-ai-signals-content.json"
+  },
+  "txt:1db47a79029d4c15": {
+    "slug": "test-transcript",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-transcript-sentences.json",
+    "source": "/private/tmp/claude-501/-Users-akshay-iyer23-Downloads-Resumes--replay-engine/b0a1e686-441e-4418-b4ef-4559c34f7a84/scratchpad/test-transcript.txt",
+    "estimated_timestamps": true,
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-transcript-candidates.json"
+  }
+}

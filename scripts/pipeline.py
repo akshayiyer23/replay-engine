@@ -483,12 +483,23 @@ def mark_housekeeping(sentences: list[dict]) -> set[int]:
     items = [{"i": i, "text": s["text"][:120]} for i, s in enumerate(sentences)]
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     user = (
-        "Identify sentences that are HOUSEKEEPING — to be excluded from content mining.\n"
-        "Housekeeping: introductions/welcomes, agenda reviews, 'can you hear me' checks, "
-        "poll questions/answers, Q&A logistics (how to submit questions), demo sign-up "
-        "pitches, sponsor mentions, sign-off/goodbye.\n\n"
-        "Return a JSON array of ranges to EXCLUDE:\n"
-        '[{"start_i": 0, "end_i": 5, "reason": "intro"}, ...]\n'
+        "Identify sentences that are pure LOGISTICS — to be excluded from content mining.\n\n"
+        "SKIP only these exact categories:\n"
+        "  • Opening welcomes and 'thank you for joining' sentences\n"
+        "  • Agenda announcements ('today we'll cover...')\n"
+        "  • 'Can you hear me', 'is the audio working', tech-check sentences\n"
+        "  • Poll questions and their answer options\n"
+        "  • Instructions for how to submit Q&A questions ('type in the chat box...')\n"
+        "  • Explicit 'book a demo' / 'sign up at...' / 'check out our website' pitches\n"
+        "  • Closing sign-offs and goodbyes\n\n"
+        "NEVER SKIP sentences that contain:\n"
+        "  • Any specific number, stat, or metric (e.g. '50,000 accounts', '4x', '15%')\n"
+        "  • A claim, insight, opinion, or lesson learned\n"
+        "  • A workflow description or how-something-works explanation\n"
+        "  → This includes sentences inside live demos or product walkthroughs.\n"
+        "    A sentence in a demo that states a number or makes a claim is CONTENT, not logistics.\n\n"
+        "Return a JSON array of integer ranges to EXCLUDE:\n"
+        '[{"start_i": 0, "end_i": 5, "reason": "opening welcome"}, ...]\n'
         "Return [] if there is nothing to exclude. Return only the JSON array.\n\n"
         f"Transcript ({len(items)} sentences):\n"
         + json.dumps(items, separators=(",", ":"))
@@ -496,6 +507,7 @@ def mark_housekeeping(sentences: list[dict]) -> set[int]:
     resp = client.messages.create(
         model="claude-haiku-5-5",
         max_tokens=4096,
+        temperature=1,
         thinking={"type": "adaptive"},
         extra_body={"output_config": {"effort": "low"}},
         messages=[{"role": "user", "content": user}],
@@ -547,6 +559,84 @@ def _dedup_labels(labels: list[dict]) -> tuple[list[dict], int]:
     return kept, len(labels) - len(kept)
 
 
+# ── stat rescue ───────────────────────────────────────────────────────────────
+
+def _rescue_stat_moments(
+    sentences: list[dict],
+    existing_labels: list[dict],
+    hk_indices: set[int],
+    min_number: int = 10_000,
+) -> list[dict]:
+    """Add stat candidates for any uncovered sentence with a scale number ≥ min_number."""
+    covered: set[int] = set()
+    for lab in existing_labels:
+        for i in range(lab["start_i"], lab["end_i"] + 1):
+            covered.add(i)
+
+    rescued: list[dict] = []
+    for anchor_i, s in enumerate(sentences):
+        if anchor_i in hk_indices or anchor_i in covered:
+            continue
+        nums = _all_nums(s["text"])
+        if not any(n >= min_number for n in nums):
+            continue
+
+        # Build window: up to 30s before anchor, extend forward to 30-75s
+        anchor_start_ms = s["start"]
+        start_i = anchor_i
+        for j in range(anchor_i - 1, max(0, anchor_i - 15) - 1, -1):
+            if j in hk_indices:
+                break
+            if anchor_start_ms - sentences[j]["start"] > 30_000:
+                break
+            start_i = j
+
+        end_i = anchor_i
+        for j in range(anchor_i + 1, min(len(sentences), anchor_i + 30)):
+            if j in hk_indices:
+                break
+            if sentences[j]["end"] - sentences[start_i]["start"] > 75_000:
+                break
+            end_i = j
+
+        # Ensure at least 30s
+        if sentences[end_i]["end"] - sentences[start_i]["start"] < 30_000:
+            for j in range(end_i + 1, min(len(sentences), end_i + 20)):
+                if j in hk_indices:
+                    break
+                end_i = j
+                if sentences[end_i]["end"] - sentences[start_i]["start"] >= 30_000:
+                    break
+
+        # Build angle from the stat sentence, stripping filler prefix
+        text = re.sub(
+            r'^(so\s+|and\s+|yeah\s+|well\s+|um\s+|uh\s+|right\s+|like\s+|'
+            r'i mean\s+|again\s+|it\'s like\s+|that\s+|)+',
+            '', s["text"], flags=re.I,
+        ).strip()
+        text = text[:1].upper() + text[1:] if text else s["text"]
+
+        for j in range(start_i, end_i + 1):
+            covered.add(j)
+
+        rescued.append({
+            "id": f"m{sentences[start_i]['start'] // 1000:04d}",
+            "start_i": start_i,
+            "end_i": end_i,
+            "moment_type": "stat",
+            "pillar": "results",
+            "connects_to": "proof",
+            "persona": "AE/SDR",
+            "post_for": "",
+            "angle": text,
+            "standalone_check": "auto-rescued: large-number scale claim",
+            "risks": "",
+            "rescued": True,
+        })
+
+    return rescued
+
+
 # ── Claude moment mining ──────────────────────────────────────────────────────
 
 def build_skill_prompt() -> str:
@@ -591,6 +681,7 @@ def mine_chunk(
         resp = client.messages.create(
             model=MODEL,
             max_tokens=16000,
+            temperature=1,
             thinking={"type": "adaptive"},
             extra_body={"output_config": {"effort": "low"}},
             extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
@@ -756,6 +847,7 @@ def judge_candidates(
     resp = client.messages.create(
         model=MODEL,
         max_tokens=16000,
+        temperature=1,
         thinking={"type": "adaptive"},
         extra_body={"output_config": {"effort": "low"}},
         extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
@@ -1273,6 +1365,12 @@ def main() -> None:
     all_labels_raw: list[dict] = []
     for i in range(n_chunks):
         all_labels_raw.extend(all_labels_by_chunk.get(i, []))
+
+    # ── 4b. stat rescue: catch any large-number scale claims the miner missed ──
+    rescued = _rescue_stat_moments(sentences, all_labels_raw, hk_indices)
+    if rescued:
+        print(f"🔢 Rescued {len(rescued)} stat moment(s) with large-number scale claims")
+        all_labels_raw.extend(rescued)
 
     # ── 5. dedup + label field gate ──
     all_labels, n_dupes = _dedup_labels(all_labels_raw)

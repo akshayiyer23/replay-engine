@@ -1,282 +1,281 @@
 # custom-ai-signals — Generated Content
 
-## m14 · score 71 · stat
-**Post for:** Ethan Dursht  **Hook score:** 71 → 89 [other]
+## m0565 · score 80 · story
+**Post for:** Ethan Dursht  **Hook score:** 80 → 95 [story]
 
 ### LinkedIn Post
 ```
-50,000 accounts. Under an hour.
+We thought we knew our ICP.
 
-Most teams don't realize research at this scale is even possible.
+Then we looked at the data and it told a different story.
 
-That's the real power of AI signals: you can research 50,000 accounts in less than an hour, then run outreach to all of them or queue them up for your sales team.
+We assumed our ICP was fairly standard: the usual top segments and the businesses we typically sell into.
 
-But speed isn't the part I care about most.
+So we went back through our closed-won customers. We paired that with conversational intelligence, pulling call transcripts and looking for specific moments.
 
-It's seeing exactly how the research gets done. You can watch what the AI is searching for, which sites it's going after, and which tools it's using. The primary one is internet search.
+Two patterns stood out.
 
-That auditability matters. The AI piece isn't a black box.
+First, product launches. Companies with a recent product launch were looking at Unify at a higher clip.
 
-When your reps can see where an insight came from, they trust it. When they trust it, they actually use it.
+Second, industry. Our closed-won customers included a disproportionate number of fintech companies.
 
-Speed without visibility is just a faster way to send bad outreach.
+Neither showed up in our assumptions. Both were sitting in our own deals and calls the whole time.
 
-When AI researches your accounts, do you check its sources?
+Your ICP isn't a slide you wrote two years ago. It's what your closed-won data and call recordings say it is.
+
+What's one thing your closed-won data surprised you with?
 ```
 
 ### Carousel
-- Slide 1: 50,000 accounts researched in under an hour
-- Slide 2: That used to take a team weeks of manual work
-- Slide 3: Then outreach goes to all of them, or to your reps
-- Slide 4: Speed is only half the story
-- Slide 5: You can see what the AI is searching for
-- Slide 6: You can see the sites and tools it uses
-- Slide 7: Auditability means the AI isn't a black box
-- Slide 8: Trust in the research drives rep adoption
+- Slide 1: We thought we knew our ICP. The data disagreed.
+- Slide 2: Our assumption: standard top segments and the usual businesses.
+- Slide 3: So we reviewed our closed-won customers.
+- Slide 4: Then we mined call transcripts for specific moments.
+- Slide 5: Finding one: recent product launches meant higher interest in Unify.
+- Slide 6: Finding two: a disproportionate number of fintech companies.
+- Slide 7: Neither pattern was in our original ICP.
+- Slide 8: Your ICP lives in your closed-won deals and calls.
 
-### Unify University — Fast AI research only works if you can audit it
-- AI signals can research 50,000 accounts in less than an hour, then feed outreach or your sales team's queue.
-- Visibility into searches, sites, and tools keeps the AI from being a black box.
-- Reps act on research they can trace back to a source.
+### Unify University — Let closed-won data rewrite your ICP
+- Assumed ICPs often miss patterns hidden in your own closed-won deals.
+- Call transcripts reveal trigger moments, like a recent product launch, that signal buying interest.
+- Industry skews in closed-won customers, such as fintech, can point to segments worth prioritizing.
 
-**Exercise:** Pick one AI-generated account insight from this week and trace it to its source. If you can't, write down what visibility your workflow is missing.
+**Exercise:** Pull your closed-won customers and list their industries. Then scan five call transcripts for repeated trigger moments. Compare both against your current ICP and note what's missing.
 
 ### Caption
-`50,000 accounts. One hour.`
+`Our ICP was wrong`
 
 ---
 
-## m01 · score 60 · stat
-**Post for:** Ethan Dursht  **Hook score:** 60 → 78 [other]
+## m1665 · score 69 · how_to
+**Post for:** Ethan Dursht  **Hook score:** 69 → 70 [how_to]
 
 ### LinkedIn Post
 ```
-40,000 accounts. One custom signal.
+Delay the send by 10 minutes.
 
-Most teams don't know how much better this works than generic intent.
+That one setting is how we QA every automated play before it goes live.
 
-A few months ago, we started leaning into custom AI signals. We check them across a segment of our TAM, around 40,000 accounts, looking for things like product launches.
+Before launch, we test the agents and snippets at a smaller scale. That part is table stakes.
 
-When an account trips the signal, we call it out directly in the email copy. One of our replies came from exactly that: a product launch signal.
+Then, when the play goes live, I delay the sequence. You can do this natively in Unify. During that window, I read through the sample emails and check accuracy. The goal is to make sure nothing wacky is going out.
 
-New hires, website intent and the rest are all useful. But they're the same signals everyone else is watching.
+Sometimes a sample reply or draft exposes a problem. Something like "we didn't launch this product" or a reference to an event from X months ago. When that happens, I tweak the agent and keep testing.
 
-A custom signal is tailored to your ICP and your business.
+There will also be edge cases. We'll probably get one every few thousand.
 
-The way we build them: work backwards from what we would send manually, one-to-one. Look at the research we'd do by hand. Then scale that out.
+It's well worth it, based on the success we've seen.
 
-The signal isn't the point. The point is to automate the research you'd already trust enough to put in a personal email.
+The point of QA isn't perfection. It's catching the obvious misses before your buyers do.
 
-What signal would you check across your TAM first?
+What's your QA step before an automated play goes live?
 ```
 
 ### Carousel
-- Slide 1: 40,000 accounts. One custom signal.
-- Slide 2: Generic intent is what everyone else is watching.
-- Slide 3: Custom AI signals are tailored to your ICP.
-- Slide 4: Example: checking for product launches across your TAM.
-- Slide 5: Call the signal out directly in the email copy.
-- Slide 6: Start with what you'd send manually, one-to-one.
-- Slide 7: Take that research and scale it out.
-- Slide 8: What signal would you check first?
+- Slide 1: Delay the send by 10 minutes.
+- Slide 2: Test agents and snippets at smaller scale first.
+- Slide 3: At launch, delay the sequence before anything sends.
+- Slide 4: Read the sample emails and check accuracy.
+- Slide 5: Look for wrong product claims or outdated references.
+- Slide 6: Found a miss? Tweak the agent and keep testing.
+- Slide 7: Expect an edge case every few thousand.
+- Slide 8: QA catches the obvious misses before buyers do.
 
-### Unify University — Build custom signals by working backwards from manual outreach
-- Generic signals like new hires and website intent are useful, but they aren't tailored to your business.
-- Custom AI signals can be checked across a large segment of your TAM, such as 40,000 accounts.
-- The best signals come from scaling the research you'd do for a one-to-one email.
+### Unify University — QA an automated outbound play before it goes live
+- Small-scale testing comes first, but a delayed launch is your final checkpoint.
+- Reading real sample emails exposes errors like wrong product claims or stale references.
+- Edge cases will happen, roughly one every few thousand, and the results justify that tradeoff.
 
-**Exercise:** Write down the one piece of research you'd do before manually emailing a top account. Turn it into a signal you can check across a segment of your TAM, and reference it in the email copy.
+**Exercise:** On your next automated play, delay the first send by 10-20 minutes. Read every sample email you can, note any factual errors, and tweak the agent before releasing the rest.
 
 ### Caption
-`Custom signals beat generic intent`
+`Delay the send. Read the samples.`
 
 ---
 
-## m12 · score 60 · story
-**Post for:** Ethan Dursht  **Hook score:** 60 → 78 [other]
+## m1224 · score 63 · how_to
+**Post for:** Ethan Dursht  **Hook score:** 63 → 66 [how_to]
 
 ### LinkedIn Post
 ```
-7 days to 30 days.
+Write the template first. Let AI fill blanks.
 
-That one change came from watching a signal book meetings.
+That's the safest way to personalize cold email at scale.
 
-Most teams never make this move.
+Most teams skip this step and let the model write the whole email.
 
-We started with a product launch signal that looked at the last 7 days. It worked well.
+The better approach is deterministic. You write the snippets yourself, which are pieces of the email copy. The agent only supplies the one variable that changes.
 
-As it booked more and more meetings, we doubled down and expanded the window to 30 days.
+Take a product launch signal. The agent outputs the exact product name, based on criteria you give it. The template around it is already written: "Saw Unify just launched PLG Signals. Congrats."
 
-The signal now asks one thing: has this company launched a major new product in the past 30 days? If yes, it returns the product name.
+The AI never improvises the sentence. It only fills the blank.
 
-That product name then goes straight into the email copy.
+That gives you a reliable way to set guidance for your tone. You work backwards from what you would actually send, then give the agent only the piece it needs to find.
 
-The signal does two jobs. It finds the account, and it gives you something specific to say to them.
+The result is personalization you can trust at volume, because you've already approved every possible version of the line.
 
-The lesson for me: when a signal books meetings, don't leave it alone. Widen it, then see what else it can feed.
-
-Which of your signals deserves a wider window?
+Where do you draw the line on AI-written outreach?
 ```
 
 ### Carousel
-- Slide 1: We started with a 7-day product launch signal
-- Slide 2: It worked, and it started booking meetings
-- Slide 3: So we doubled down instead of moving on
-- Slide 4: We expanded the window from 7 days to 30
-- Slide 5: The question: did they launch a major product in 30 days?
-- Slide 6: If yes, the signal returns the product name
-- Slide 7: That product name goes straight into the email copy
-- Slide 8: When a signal books meetings, widen it
+- Slide 1: Write the template first. Let AI fill the blank.
+- Slide 2: Most teams let the model write the whole email.
+- Slide 3: Safer approach: deterministic snippets you write yourself.
+- Slide 4: Snippets are pieces of your email copy.
+- Slide 5: The agent only outputs the variable, like a product name.
+- Slide 6: Example: "Saw Unify just launched PLG Signals. Congrats."
+- Slide 7: Work backwards from the email you'd actually send.
+- Slide 8: You approve every version of the line before it ships.
 
-### Unify University — Double down on signals that book meetings
-- Start with a narrow signal window, then expand once it proves it works.
-- A good signal does two jobs: it finds the account and gives you something specific to say.
-- Returning a detail like the product name lets the signal feed directly into email copy.
+### Unify University — Deterministic personalization: templates first, AI second
+- Snippets are pieces of email copy you write in advance.
+- Give the agent criteria to find only the variable, like the exact product name.
+- Working backwards from the email you'd send sets your tone and keeps output reliable.
 
-**Exercise:** Pick the one signal in your outbound that has booked the most meetings. Widen its window or scope, and note which new detail it could return for your email copy.
+**Exercise:** Pick one signal, like a product launch. Write the one-sentence template with a blank, then give an AI agent criteria to fill only that blank.
 
 ### Caption
-`7 days to 30 days`
+`Templates first, AI second`
 
 ---
 
-## m07 · score 57 · story
-**Post for:** Ethan Dursht  **Hook score:** 57 → 66 [other]
+## m1482 · score 63 · how_to
+**Post for:** Unify company page  **Hook score:** 63 → 66 [how_to]
 
 ### LinkedIn Post
 ```
-We guessed our ICP. The data disagreed.
+30 days. Four steps. One real experiment.
 
-The closed-won transcripts told a different story than our assumptions.
+Most teams skip the first step entirely.
 
-We assumed our ICP was pretty standard: the usual top segments and the businesses we typically sell into.
+If you want to start signal-based outbound, here is the plan we recommend for your next 30 days.
 
-Then we looked back at our closed-won customers and ran conversational intelligence on the call transcripts. We were looking for particular moments.
+Step 1: Audit your ICP. Go back through your data. Set your hypotheses aside and look at what is working, what is not, and what is actually resonating.
 
-One of them was a product launch. If a company had a recent product launch, they were looking at Unify at a higher clip.
+Step 2: Identify 3 triggers. Pick signals specific to your business that indicate buying readiness.
 
-Industry was the other surprise. Among our closed-won customers, we had a disproportionate number of fintech companies.
+Step 3: Run one play. Choose the trigger you have the most conviction behind and build the play around it.
 
-Neither of those signals came from a brainstorm. Both came from the data we already had.
+Step 4: Measure the results. Treat it as an initial experiment, not a full rollout.
 
-The lesson: your best signals are probably sitting in calls you've already recorded. You just have to go looking for them.
+The order matters. The foundational work of identifying who the play is for comes before any outreach goes out.
 
-What's the last assumption your data proved wrong?
+Which of these four steps does your team skip most?
 ```
 
 ### Carousel
-- Slide 1: We assumed our ICP was standard. We were wrong.
-- Slide 2: So we looked back at our closed-won customers.
-- Slide 3: We ran conversational intelligence on the call transcripts.
-- Slide 4: We searched for specific moments, not general patterns.
-- Slide 5: Recent product launch meant higher interest in Unify.
-- Slide 6: Industry surprised us: a disproportionate number of fintech companies.
-- Slide 7: Neither signal came from guessing. Both came from the data.
-- Slide 8: Your best signal is probably in calls you already have.
+- Slide 1: Your 30-day plan for signal-based outbound
+- Slide 2: Start with the foundation, not the outreach
+- Slide 3: Step 1: Audit your ICP using real data
+- Slide 4: Look at what's working, what's not, what resonates
+- Slide 5: Step 2: Identify 3 business-specific buying triggers
+- Slide 6: Step 3: Run one play on your highest-conviction trigger
+- Slide 7: Step 4: Measure the results of that first experiment
+- Slide 8: Know who it's for before you run anything
 
-### Unify University — Mine Closed-Won Transcripts for Signals, Don't Guess Them
-- Your assumed ICP and your actual ICP can differ. Closed-won data shows which is which.
-- Look for specific moments in transcripts, like product launches, rather than just firmographics.
-- Check for industry skew in your wins. A disproportionate segment can point you to where to focus.
+### Unify University — A 30-day plan to start signal-based outbound
+- Audit your ICP against real data before choosing any signals, and let results override your hypotheses.
+- Identify 3 triggers specific to your business that indicate buying readiness.
+- Run one play on the trigger you have the most conviction in, then measure it as an initial experiment.
 
-**Exercise:** Pull your last closed-won deals and review the call transcripts. List the recurring moments or triggers buyers mention, then count which industries show up most. Compare that list to your current ICP.
+**Exercise:** Pull your recent outbound data and note what is working, what is not, and what resonates. Then write down 3 business-specific buying triggers and circle the one you believe in most.
 
 ### Caption
-`Data beat our ICP guess`
+`Your 30-day signal plan`
 
 ---
 
-## m21 · score 56 · contrarian
-**Post for:** Ethan Dursht  **Hook score:** 56 → 65 [other]
+## m0434 · score 61 · how_to
+**Post for:** Unify company page  **Hook score:** 61 → 64 [how_to]
 
 ### LinkedIn Post
 ```
-95% to 98% accurate beats 100% manual.
+Skip step one and the whole initiative fails.
 
-Most teams still won't ship AI outreach because of that last 2%.
+Most teams jump straight to the tooling. That's where it breaks.
 
-Here's the process I use when a new sequence launches: delay it first. You can do this natively in Unify.
+Here's the order that works for custom signal plays:
 
-Then read the emails before they go out and check accuracy. Make sure the agent isn't doing anything wacky.
+1. Get clear on your ICP. You need specifics on exactly who you're going after. Without that clarity, nothing downstream holds.
 
-If a reply comes back saying "we didn't launch this product" or "this is from X months ago," don't panic. Tweak the agent and keep testing.
+2. Define the signals that trigger that ICP. This is one of the most critical pieces. Find the urgency triggers that create buying potential.
 
-Edge cases will happen. We'll probably get one every few thousand emails.
+3. Spec your experiments. What are we trying to get out of this test? What are we testing? What are the hypotheses?
 
-Based on the results, that trade is well worth it.
+4. Operationalize it. Build the agent, automate the personalization into copy, and weave it into an end-to-end play.
 
-Zoom out and the math is simple. It won't be 100% perfect, but at 95% to 98% accuracy the ROI makes complete sense.
+5. Monitor performance. See how it's performing, then tweak and optimize.
 
-Waiting for perfect means you never launch. Meanwhile, the team sending imperfect-but-tested outreach is already booking the meetings.
+The automation comes last, not first.
 
-What accuracy rate would you accept for AI outreach?
+Which step does your team usually skip?
 ```
 
 ### Carousel
-- Slide 1: 95% accurate AI outreach beats 100% manual.
-- Slide 2: Waiting for perfect means you never launch.
-- Slide 3: Delay the sequence when you first launch it.
-- Slide 4: Read the emails and check accuracy before sending.
-- Slide 5: Bad reply? Tweak the agent and keep testing.
-- Slide 6: Expect an edge case every few thousand emails.
-- Slide 7: At 95% to 98% accuracy, the ROI makes sense.
+- Slide 1: Skip this first step and your signal play fails
+- Slide 2: Step one: get specific on exactly who your ICP is
+- Slide 3: Step two: find the urgency triggers that create buying potential
+- Slide 4: Step three: spec your experiments before you build anything
+- Slide 5: Write down what you're testing and your hypotheses
+- Slide 6: Step four: build the agent and automate personalization into copy
+- Slide 7: Weave it into an end-to-end play
+- Slide 8: Step five: monitor performance, then tweak and optimize
 
-### Unify University — Ship AI outreach at 95%, Not 100%
-- Delay the sequence at launch so you can review emails and check accuracy before anything sends.
-- When a reply exposes an error, tweak the agent and keep testing instead of pulling the plug.
-- Edge cases are real but rare, about one every few thousand, and 95% to 98% accuracy still delivers strong ROI.
+### Unify University — From zero to automated custom signal plays
+- Clarity on your ICP is the foundation; without it the initiative fails.
+- Signals should be urgency triggers tied to buying potential for that specific ICP.
+- Spec experiments with clear hypotheses before you automate, then monitor and optimize.
 
-**Exercise:** Pick one outreach sequence. Delay it, review a sample of the emails for accuracy, and write down the one agent tweak that would fix the most obvious error before you launch.
+**Exercise:** Write one paragraph defining your ICP, list three urgency triggers for them, then draft one experiment with a hypothesis and a success measure before building any automation.
 
 ### Caption
-`95% accurate beats 100% manual`
+`Automate signal plays in order`
 
 ---
 
-## m03 · score 52 · contrarian
-**Post for:** Ethan Dursht  **Hook score:** 52 → 61 [other]
+## m1432 · score 61 · how_to
+**Post for:** Unify company page  **Hook score:** 61 → 61 [contrarian]
 
 ### LinkedIn Post
 ```
-20 meetings. One month. Zero cold lists.
+The trigger is only half the play.
 
-Most teams are missing what drove it.
+Most teams miss the other half entirely.
 
-Last month, we booked over 20 meetings from website intent and prospecting within those accounts. The signal that mattered most was someone sitting on our pricing page.
+Signal-based outbound gets talked about as a targeting problem. Spot the signal, fire the play, and move on.
 
-First-party intent still works for us. It's a very successful signal.
+But the real power comes from two pieces working together. You take action based on a specific trigger, with always-on monitoring behind it. Then that same signal personalizes the outreach itself.
 
-But it isn't one signal. It's a stack:
+That makes the message hyper relevant at scale.
 
-Pricing page visits. Product tour views. MQLs from gated content. CRM data, including close lost opportunities based on the loss reason.
+No one customizes copy every single time. No seller has to review the intent signals and then build the message by hand.
 
-Then there are third-party signals, which are getting extremely popular. Social signals like people engaging with our CEO Austin's posts on LinkedIn, engaging with Unify, or engaging with competitors. Job openings, like a new sales leader or a new marketing hire.
+Both pieces are automated: the action and the copy.
 
-The point is that no single signal is the play. The advantage comes from combining them and acting on the ones closest to buying intent first.
+If your signals still end with a rep writing every email from scratch, you've automated the trigger and left the bottleneck in place.
 
-When everyone buys the same third-party feed, your edge shrinks fast. Your own website and your own CRM are data nobody else has.
-
-Which signal drives the most pipeline for your team?
+Where does your signal workflow still depend on manual copy?
 ```
 
 ### Carousel
-- Slide 1: 20 meetings in one month from website intent
-- Slide 2: Pricing page visits are still a very successful signal
-- Slide 3: First-party signals include product tour views and gated content MQLs
-- Slide 4: Close lost opportunities by loss reason are worth revisiting
-- Slide 5: Third-party signals are getting extremely popular
-- Slide 6: Social engagement, competitor engagement and job openings all count
-- Slide 7: Your own data is the one nobody else has
-- Slide 8: Which signal drives the most pipeline for you?
+- Slide 1: The trigger is only half of signal-based outbound.
+- Slide 2: Most teams use signals to decide who to contact.
+- Slide 3: The real edge is that the copy personalizes itself too.
+- Slide 4: Piece one: always-on monitoring triggers a specific play.
+- Slide 5: Piece two: the signal shapes the message itself.
+- Slide 6: No manual seller building copy from intent signals.
+- Slide 7: Both pieces automated means relevance at scale.
+- Slide 8: Automate the trigger and the copy, or the bottleneck stays.
 
-### Unify University — Start with the signals only you can see
-- Pricing page intent still drives meetings: over 20 last month from website intent and prospecting within those accounts.
-- First-party data goes beyond visits: product tours, gated content MQLs, and CRM close lost reasons.
-- Third-party signals like LinkedIn engagement and new hires add context, but they're increasingly popular.
+### Unify University — Automate the Trigger and the Copy
+- Signals should do two jobs: trigger a specific play and inform the message.
+- Always-on monitoring removes the need to manually check intent signals.
+- If a seller still writes the copy by hand, the bottleneck remains.
 
-**Exercise:** List every first-party signal you can track today (pricing page, product tour, gated content, close lost reasons). Rank them by closeness to a buying decision, then build outreach around the top one this week.
+**Exercise:** Map one signal-based play you run today. Mark each step as automated or manual, then find where copy is written by hand and draft a template that pulls in the signal.
 
 ### Caption
-`Intent signals still work`
+`Automate the trigger and the copy`
 
 ---
