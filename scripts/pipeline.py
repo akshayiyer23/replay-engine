@@ -11,6 +11,7 @@ Usage:
 """
 
 import argparse
+import difflib
 import hashlib
 import json
 import os
@@ -18,6 +19,8 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import anthropic
@@ -44,6 +47,17 @@ load_dotenv(ROOT / ".env")
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
+
+def _normalize_name(detected: str, known_names: list[str]) -> str:
+    """Return canonical spelling from known_names if detected name is very close."""
+    if not detected:
+        return detected
+    for n in known_names:
+        if n.lower() == detected.lower():
+            return n
+    matches = difflib.get_close_matches(detected, known_names, n=1, cutoff=0.85)
+    return matches[0] if matches else detected
+
 
 def parse_speakers(s: str) -> dict:
     result = {}
@@ -385,6 +399,9 @@ def detect_speakers(sentences: list[dict], title: str) -> list[dict]:
         '}\n\n'
         "Confidence guide: 0.9+ = name explicitly stated or introduced; "
         "0.7–0.89 = strong context match; below 0.7 = uncertain.\n"
+        "IMPORTANT: Use the EXACT name spelling from the company context above, "
+        "not the phonetic transcription. Example: use 'Quintin Smith' (from context), "
+        "not 'Quinton Smith' (from audio).\n"
         "Return only the JSON array."
     )
 
@@ -401,7 +418,13 @@ def detect_speakers(sentences: list[dict], title: str) -> list[dict]:
         raise ValueError("No text block from speaker detection")
     result = _extract_json_array(strip_fences(tb.text))
     if result is None:
-        raise ValueError(f"Could not parse speaker detection response")
+        raise ValueError("Could not parse speaker detection response")
+
+    # Normalize names to canonical spelling from unify_context
+    known_names = re.findall(r'\b([A-Z][a-z]+ [A-Z][a-z]+)\b', unify_context)
+    for d in result:
+        if d.get("name"):
+            d["name"] = _normalize_name(d["name"], known_names)
 
     # Apply routing rules
     for d in result:
@@ -422,7 +445,6 @@ def detect_speakers(sentences: list[dict], title: str) -> list[dict]:
 
 
 def _print_speaker_map(detections: list[dict]) -> None:
-    print("🎙️  Speaker map:")
     for d in detections:
         conf_pct = int(float(d.get("confidence", 0)) * 100)
         name = d.get("display_name", f"Speaker {d['label']}")
@@ -452,6 +474,77 @@ def _build_speaker_maps(detections: list[dict]) -> tuple[dict, dict]:
             note = "unknown — post for Unify company page"
         enriched[label] = f"{name} ({note})"
     return simple, enriched
+
+
+# ── housekeeping detection ───────────────────────────────────────────────────
+
+def mark_housekeeping(sentences: list[dict]) -> set[int]:
+    """Call Haiku to identify sentences to skip during mining (intros, polls, logistics)."""
+    items = [{"i": i, "text": s["text"][:120]} for i, s in enumerate(sentences)]
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    user = (
+        "Identify sentences that are HOUSEKEEPING — to be excluded from content mining.\n"
+        "Housekeeping: introductions/welcomes, agenda reviews, 'can you hear me' checks, "
+        "poll questions/answers, Q&A logistics (how to submit questions), demo sign-up "
+        "pitches, sponsor mentions, sign-off/goodbye.\n\n"
+        "Return a JSON array of ranges to EXCLUDE:\n"
+        '[{"start_i": 0, "end_i": 5, "reason": "intro"}, ...]\n'
+        "Return [] if there is nothing to exclude. Return only the JSON array.\n\n"
+        f"Transcript ({len(items)} sentences):\n"
+        + json.dumps(items, separators=(",", ":"))
+    )
+    resp = client.messages.create(
+        model="claude-haiku-5-5",
+        max_tokens=4096,
+        thinking={"type": "adaptive"},
+        extra_body={"output_config": {"effort": "low"}},
+        messages=[{"role": "user", "content": user}],
+    )
+    tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+    if tb is None:
+        return set()
+    result = _extract_json_array(strip_fences(tb.text)) or []
+    excluded: set[int] = set()
+    for r in result:
+        for i in range(int(r["start_i"]), int(r["end_i"]) + 1):
+            if 0 <= i < len(sentences):
+                excluded.add(i)
+    return excluded
+
+
+# ── label deduplication ───────────────────────────────────────────────────────
+
+def _dedup_labels(labels: list[dict]) -> tuple[list[dict], int]:
+    """Remove duplicate labels (overlapping ranges or near-identical angles)."""
+    if not labels:
+        return labels, 0
+    kept: list[dict] = []
+    for lab in sorted(labels, key=lambda l: l["start_i"]):
+        s, e = lab["start_i"], lab["end_i"]
+        angle = (lab.get("angle") or "").lower()[:100]
+        is_dup = False
+        for kept_lab in kept:
+            ks, ke = kept_lab["start_i"], kept_lab["end_i"]
+            overlap = max(0, min(e, ke) - max(s, ks) + 1)
+            len_a, len_b = e - s + 1, ke - ks + 1
+            if overlap / max(1, min(len_a, len_b)) >= 0.5:
+                is_dup = True
+                if len_a > len_b:
+                    kept.remove(kept_lab)
+                    kept.append(lab)
+                break
+            kept_angle = (kept_lab.get("angle") or "").lower()[:100]
+            if angle and kept_angle:
+                ratio = difflib.SequenceMatcher(None, angle, kept_angle).ratio()
+                if ratio >= 0.75:
+                    is_dup = True
+                    if len_a > len_b:
+                        kept.remove(kept_lab)
+                        kept.append(lab)
+                    break
+        if not is_dup:
+            kept.append(lab)
+    return kept, len(labels) - len(kept)
 
 
 # ── Claude moment mining ──────────────────────────────────────────────────────
@@ -500,7 +593,9 @@ def mine_chunk(
             max_tokens=16000,
             thinking={"type": "adaptive"},
             extra_body={"output_config": {"effort": "low"}},
-            system=skill_prompt,
+            extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
+            system=[{"type": "text", "text": skill_prompt,
+                     "cache_control": {"type": "ephemeral"}}],
             messages=[{"role": "user", "content": user_msg}],
         )
         tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
@@ -663,7 +758,9 @@ def judge_candidates(
         max_tokens=16000,
         thinking={"type": "adaptive"},
         extra_body={"output_config": {"effort": "low"}},
-        system=system,
+        extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
+        system=[{"type": "text", "text": system,
+                 "cache_control": {"type": "ephemeral"}}],
         messages=[{
             "role": "user",
             "content": f"Score these {len(slim)} candidates:\n{json.dumps(slim, indent=2)}",
@@ -918,22 +1015,56 @@ def main() -> None:
     speaker_map_simple, speaker_map_enriched = _build_speaker_maps(speaker_detections)
     post_for_map = {d["label"]: d["post_for"] for d in speaker_detections}
 
-    # ── 2. chunk ──
+    t_pipeline_start = time.monotonic()
+
+    # ── 2. housekeeping detection ──
+    print("🧹 Detecting housekeeping sentences to skip…")
+    hk_indices = mark_housekeeping(sentences)
+    n_hk = len(hk_indices)
+    print(f"   → {n_hk} sentence(s) marked as housekeeping and excluded from mining")
+
+    # ── 3. chunk ──
     chunks = chunk_sentences(sentences, CHUNK_MS)
-    print(f"📦 Split into {len(chunks)} chunk(s) (~10 min each)")
+    n_chunks = len(chunks)
+    workers = min(4, n_chunks)
+    print(f"📦 {n_chunks} chunk(s), mining up to {workers} in parallel…")
 
-    # ── 3. mine moments ──
+    # ── 4. mine moments (parallel) ──
     skill_prompt = build_skill_prompt()
-    all_labels: list[dict] = []
-    for i, chunk in enumerate(chunks):
-        chunk_start = chunk[0][1]["start"] / 60_000
-        chunk_end = chunk[-1][1]["end"] / 60_000
-        print(f"🔍 Scanning chunk {i + 1}/{len(chunks)} ({chunk_start:.0f}–{chunk_end:.0f} min)…")
-        labels = mine_chunk(chunk, speaker_map_enriched, skill_prompt)
-        all_labels.extend(labels)
-        print(f"   → {len(labels)} candidates")
+    all_labels_by_chunk: dict[int, list[dict]] = {}
 
-    # ── 4. build & sort ──
+    def _mine(i: int) -> tuple[int, list[dict]]:
+        chunk = chunks[i]
+        filtered = [(idx, s) for idx, s in chunk if idx not in hk_indices]
+        labels = mine_chunk(filtered, speaker_map_enriched, skill_prompt) if filtered else []
+        return i, labels
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(_mine, i): i for i in range(n_chunks)}
+        for future in as_completed(futures):
+            try:
+                i, labels = future.result()
+            except Exception as exc:
+                i = futures[future]
+                print(f"⚠️  Chunk {i + 1} failed: {exc} — skipping")
+                labels = []
+            all_labels_by_chunk[i] = labels
+            chunk = chunks[i]
+            cs = chunk[0][1]["start"] / 60_000
+            ce = chunk[-1][1]["end"] / 60_000
+            n_mined = sum(1 for idx, _ in chunk if idx not in hk_indices)
+            print(f"🔍 Chunk {i + 1}/{n_chunks} ({cs:.0f}–{ce:.0f} min, {n_mined} sentences) → {len(labels)} candidates")
+
+    all_labels_raw: list[dict] = []
+    for i in range(n_chunks):
+        all_labels_raw.extend(all_labels_by_chunk.get(i, []))
+
+    # ── 5. dedup ──
+    all_labels, n_dupes = _dedup_labels(all_labels_raw)
+    if n_dupes:
+        print(f"🔁 Removed {n_dupes} duplicate label(s) ({len(all_labels_raw)} → {len(all_labels)})")
+
+    # ── 6. build & sort ──
     print(f"🏗️  Building candidates from {len(all_labels)} labels…")
     candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map_simple)
     candidates.sort(key=lambda c: c["start_ms"])
@@ -969,7 +1100,10 @@ def main() -> None:
     if content_path.exists():
         cache[cache_key]["content_file"] = str(content_path)
     save_cache(cache)
+    t_elapsed = time.monotonic() - t_pipeline_start
     print(f"💾 Pipeline cached → re-runs will be instant")
+    print(f"\n⏱  Pipeline finished in {t_elapsed:.1f}s  "
+          f"(hk_skipped={n_hk}, dupes_removed={n_dupes}, final_moments={len(candidates)})")
 
 
 if __name__ == "__main__":
