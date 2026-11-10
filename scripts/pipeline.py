@@ -353,6 +353,107 @@ def chunk_sentences(sentences: list[dict], chunk_ms: int) -> list[list[tuple[int
     return chunks
 
 
+# ── speaker auto-detection ───────────────────────────────────────────────────
+
+def detect_speakers(sentences: list[dict], title: str) -> list[dict]:
+    """Identify speaker labels via Haiku. Returns one detection dict per label."""
+    unify_context = (SKILLS_DIR / "unify-context.md").read_text()
+    cutoff_ms = 5 * 60 * 1000
+    first5 = [s for s in sentences if s.get("start", 0) < cutoff_ms] or sentences[:60]
+    labels = sorted({s["speaker"] for s in sentences})
+    snippet = "\n".join(f"[{s['speaker']}] {s['text']}" for s in first5[:120])
+
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    system = (
+        "You are identifying speakers in a webinar transcript.\n"
+        "Use the Unify company context below to match speaker labels to known people.\n\n"
+        + unify_context
+    )
+    user = (
+        f"Video title: {title}\n"
+        f"Speaker labels present: {', '.join(labels)}\n\n"
+        f"First 5 minutes of transcript:\n{snippet}\n\n"
+        "For EACH speaker label, return a JSON array with one object per label:\n"
+        '{\n'
+        '  "label": "A",\n'
+        '  "name": "Full Name (or null if unknown)",\n'
+        '  "role": "their role/title",\n'
+        '  "company": "their company",\n'
+        '  "is_current_unify_team": true or false,\n'
+        '  "confidence": 0.0 to 1.0,\n'
+        '  "proof_sentence": "verbatim sentence from the transcript that proves identity"\n'
+        '}\n\n'
+        "Confidence guide: 0.9+ = name explicitly stated or introduced; "
+        "0.7–0.89 = strong context match; below 0.7 = uncertain.\n"
+        "Return only the JSON array."
+    )
+
+    resp = client.messages.create(
+        model="claude-haiku-5-5",
+        max_tokens=4096,
+        thinking={"type": "adaptive"},
+        extra_body={"output_config": {"effort": "low"}},
+        system=system,
+        messages=[{"role": "user", "content": user}],
+    )
+    tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+    if tb is None:
+        raise ValueError("No text block from speaker detection")
+    result = _extract_json_array(strip_fences(tb.text))
+    if result is None:
+        raise ValueError(f"Could not parse speaker detection response")
+
+    # Apply routing rules
+    for d in result:
+        name = (d.get("name") or "").strip()
+        conf = float(d.get("confidence", 0.0))
+        is_current = bool(d.get("is_current_unify_team", False))
+        if conf < 0.7 or not name:
+            d["display_name"] = f"Speaker {d['label']}"
+            d["post_for"] = "Unify company page"
+        elif is_current:
+            d["display_name"] = name
+            d["post_for"] = name
+        else:
+            d["display_name"] = name
+            d["post_for"] = "Unify company page"
+
+    return result
+
+
+def _print_speaker_map(detections: list[dict]) -> None:
+    print("🎙️  Speaker map:")
+    for d in detections:
+        conf_pct = int(float(d.get("confidence", 0)) * 100)
+        name = d.get("display_name", f"Speaker {d['label']}")
+        post = d.get("post_for", "Unify company page")
+        proof = (d.get("proof_sentence") or "").strip()
+        print(f"   {d['label']} → {name}  (conf={conf_pct}%,  post_for={post!r})")
+        if proof:
+            print(f"      proof: \"{proof[:110]}\"")
+
+
+def _build_speaker_maps(detections: list[dict]) -> tuple[dict, dict]:
+    """Return (simple_map, enriched_map).
+    simple_map  : label → display_name   (for build_candidates)
+    enriched_map: label → 'name (routing note)'  (for mine_chunk prompt)
+    """
+    simple, enriched = {}, {}
+    for d in detections:
+        label = d["label"]
+        name = d["display_name"]
+        post = d["post_for"]
+        simple[label] = name
+        if post == name:
+            note = "current Unify team, post for their account"
+        elif d.get("confidence", 0) >= 0.7 and d.get("name"):
+            note = f"not current Unify team — post for Unify company page, credit {name} by name"
+        else:
+            note = "unknown — post for Unify company page"
+        enriched[label] = f"{name} ({note})"
+    return simple, enriched
+
+
 # ── Claude moment mining ──────────────────────────────────────────────────────
 
 def build_skill_prompt() -> str:
@@ -678,9 +779,9 @@ def main() -> None:
     parser.add_argument("input", help="YouTube URL, sentences JSON, or (with --judge-only) candidates JSON")
     parser.add_argument(
         "--speakers",
-        default="A=Quintin Smith,B=Ethan Dursht",
+        default="",
         metavar="A=Name,B=Name",
-        help="Speaker map (default: A=Quintin Smith, B=Ethan Dursht)",
+        help="Override speaker map (auto-detected by default)",
     )
     parser.add_argument("--slug", help="Output slug override")
     parser.add_argument(
@@ -701,7 +802,6 @@ def main() -> None:
     args = parser.parse_args()
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    speaker_map = parse_speakers(args.speakers)
 
     if args.judge_only:
         # ── judge-only mode ──
@@ -786,6 +886,38 @@ def main() -> None:
     duration_min = sentences[-1]["end"] / 60_000
     print(f"📊 {len(sentences)} sentences · {n_speakers} speakers · {duration_min:.1f} min")
 
+    # ── 1b. speaker detection ──
+    cache = load_cache()
+    entry = cache.get(cache_key, {})
+    if args.speakers:
+        # Manual override: build detections from provided map
+        raw_map = parse_speakers(args.speakers)
+        speaker_detections = [
+            {
+                "label": k, "name": v, "display_name": v,
+                "post_for": "Unify company page",
+                "confidence": 1.0, "is_current_unify_team": False,
+                "role": "", "company": "", "proof_sentence": "(manual override)",
+            }
+            for k, v in raw_map.items()
+        ]
+        print("🎙️  Speaker map (manual override):")
+        _print_speaker_map(speaker_detections)
+    elif "speaker_detections" in entry:
+        speaker_detections = entry["speaker_detections"]
+        print("🎙️  Speaker map (cached):")
+        _print_speaker_map(speaker_detections)
+    else:
+        print("🎙️  Detecting speakers…")
+        title = slug.replace("-", " ")
+        speaker_detections = detect_speakers(sentences, title)
+        cache.setdefault(cache_key, {})["speaker_detections"] = speaker_detections
+        save_cache(cache)
+        _print_speaker_map(speaker_detections)
+
+    speaker_map_simple, speaker_map_enriched = _build_speaker_maps(speaker_detections)
+    post_for_map = {d["label"]: d["post_for"] for d in speaker_detections}
+
     # ── 2. chunk ──
     chunks = chunk_sentences(sentences, CHUNK_MS)
     print(f"📦 Split into {len(chunks)} chunk(s) (~10 min each)")
@@ -797,16 +929,20 @@ def main() -> None:
         chunk_start = chunk[0][1]["start"] / 60_000
         chunk_end = chunk[-1][1]["end"] / 60_000
         print(f"🔍 Scanning chunk {i + 1}/{len(chunks)} ({chunk_start:.0f}–{chunk_end:.0f} min)…")
-        labels = mine_chunk(chunk, speaker_map, skill_prompt)
+        labels = mine_chunk(chunk, speaker_map_enriched, skill_prompt)
         all_labels.extend(labels)
         print(f"   → {len(labels)} candidates")
 
     # ── 4. build & sort ──
     print(f"🏗️  Building candidates from {len(all_labels)} labels…")
-    candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map)
+    candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map_simple)
     candidates.sort(key=lambda c: c["start_ms"])
     for idx, c in enumerate(candidates, 1):
         c["id"] = f"m{idx:02d}"
+
+    # Enforce routing rules deterministically (overrides whatever Claude set in mine_chunk)
+    for c in candidates:
+        c["post_for"] = post_for_map.get(c["speaker"], "Unify company page")
 
     n_ok = sum(1 for c in candidates if c["duration_flag"] == "OK")
     n_flagged = len(candidates) - n_ok

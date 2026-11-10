@@ -18,11 +18,6 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-SPEAKER_MAP = {
-    "A": "Quintin Smith",
-    "B": "Ethan Dursht",
-}
-
 DURATION_MIN_S = 30
 DURATION_MAX_S = 90
 
@@ -33,7 +28,7 @@ def build_candidates(
     speaker_map: dict | None = None,
 ) -> list[dict]:
     if speaker_map is None:
-        speaker_map = SPEAKER_MAP
+        speaker_map = {}
     candidates = []
     for label in labels:
         start_i = label["start_i"]
