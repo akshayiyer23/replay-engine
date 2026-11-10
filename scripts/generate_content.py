@@ -44,8 +44,20 @@ Write like a sharp practitioner sharing real insight — no corporate tone, no m
 
 ## Rules
 - LinkedIn post first line: ≤ 8 words. Never start with "I". Direct. No question marks.
+- STAT/STORY/CONTRARIAN openers: If the transcript contains a specific number (accounts,
+  meetings, days, dollars, percent), LEAD WITH IT as a stat hook. That is the highest-
+  performing opener type. Only fall back to contrarian or story if no strong number exists.
+  Example stat: "30 meetings. One month. Three AI signals." or "40,000 accounts checked in a week."
+- Line 2 (second paragraph, 1 sentence): open loop — tease the insight without delivering it.
+  Create curiosity that makes the reader scroll. No payoff yet. No "Here's what I mean."
+  Examples: "Most teams don't know this is even possible." / "That number surprised us too."
 - Short paragraphs (1–3 sentences). Blank line between paragraphs. Plain text only.
+- Written prose, not spoken transcript: cut all filler and asides — "and so", "you know",
+  "right?", "I mean", "sort of", "pretty much", "essentially", "obviously". Rewrite each
+  sentence so it reads like a polished post, never like someone talking.
 - Zero product pitches. Never: "sign up", "try X", "book a demo", "check out".
+- End every post with one short question (≤ 10 words) that invites a real comment.
+  Not rhetorical — ask something the reader can actually answer.
 - HARD RULE: Only use numbers and claims that appear WORD FOR WORD in the transcript.
   Do not round, extrapolate, or invent any figures. If a transcript says "50,000 accounts
   in under an hour", write exactly that — not "tens of thousands" or "60 minutes".
@@ -218,11 +230,11 @@ def generate_for_candidates(
                 "first_line_words": len(post_first_line.split()),
             }
 
-        # ── 4. before → after hook score ──
+        # ── 4. before → after hook score (displayed max 95) ──
         before_hook_w = _hook_weight(angle_tag, rubric)
         after_hook_w = _hook_weight(post_tag, rubric)
-        score_before = c.get("score", 0)
-        score_after = max(0, min(100, score_before - before_hook_w + after_hook_w))
+        score_before = min(95, c.get("score", 0))
+        score_after = max(0, min(95, score_before - before_hook_w + after_hook_w))
 
         print(f"hook {score_before}→{score_after} [{post_tag.get('hook_type','?')}] ✓")
 

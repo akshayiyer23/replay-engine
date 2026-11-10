@@ -1,0 +1,364 @@
+{
+  "spearman_rho": 0.2162,
+  "p_value": 0.2511,
+  "top10_overlap": 2,
+  "n": 30,
+  "biggest_misses": [
+    {
+      "first_line": "There's a $40K gap between the median entry-level SDR base and the median across AE roles. If you're an SDR trying to maximize your comp, reaching the AE title is only step one.",
+      "reactions": 220,
+      "real_rank": 2,
+      "judge_rank": 30,
+      "rank_delta": 28,
+      "hook_type": "other"
+    },
+    {
+      "first_line": "I bought a 6-figure piece of software a few months ago, and the AE was one of the best sellers I've ever worked with. What stood out was just how insanely consultative he was.",
+      "reactions": 110,
+      "real_rank": 7,
+      "judge_rank": 29,
+      "rank_delta": 22,
+      "hook_type": "other"
+    },
+    {
+      "first_line": "We analyzed 4,161 SDR/BDR job postings from the last 60 days to see what companies are actually looking for. If you're trying to land your next SDR gig, here's what you should know:",
+      "reactions": 20,
+      "real_rank": 28,
+      "judge_rank": 7,
+      "rank_delta": 21,
+      "hook_type": "other"
+    }
+  ],
+  "posts": [
+    {
+      "date": "2026-11-06",
+      "first_line": "Haley figured out how to go viral on X by studying the platform like a science. Now she's applying that same approach to our launches at Unify.",
+      "reactions": 65,
+      "hook_type": "other",
+      "first_line_words": 27,
+      "judge_score": 36,
+      "real_rank": 13,
+      "judge_rank": 3,
+      "rank_delta": 10
+    },
+    {
+      "date": "2026-11-05",
+      "first_line": "Our sales team absolutely crushed October. AEs were 184% to quota, with a few reps putting up some INSANE numbers:",
+      "reactions": 65,
+      "hook_type": "other",
+      "first_line_words": 20,
+      "judge_score": 36,
+      "real_rank": 14,
+      "judge_rank": 4,
+      "rank_delta": 10
+    },
+    {
+      "date": "2026-11-03",
+      "first_line": "October was a hell of a month at Unify. We set another record and grew revenue on our new product experience 53% month over month.",
+      "reactions": 63,
+      "hook_type": "other",
+      "first_line_words": 25,
+      "judge_score": 36,
+      "real_rank": 15,
+      "judge_rank": 5,
+      "rank_delta": 10
+    },
+    {
+      "date": "2026-11-02",
+      "first_line": "I'm deeply saddened to hear about the passing of Adam Robinson.",
+      "reactions": 153,
+      "hook_type": "other",
+      "first_line_words": 11,
+      "judge_score": 36,
+      "real_rank": 5,
+      "judge_rank": 6,
+      "rank_delta": 1
+    },
+    {
+      "date": "2026-10-27",
+      "first_line": "We analyzed 4,161 SDR/BDR job postings from the last 60 days to see what companies are actually looking for. If you're trying to land your next SDR gig, here's what you should know:",
+      "reactions": 20,
+      "hook_type": "other",
+      "first_line_words": 33,
+      "judge_score": 36,
+      "real_rank": 28,
+      "judge_rank": 7,
+      "rank_delta": 21
+    },
+    {
+      "date": "2026-10-26",
+      "first_line": "There are only 37 selling days left in 2026. If you're an AE behind on quota, here's exactly how I'd approach the rest of Q4:",
+      "reactions": 24,
+      "hook_type": "other",
+      "first_line_words": 25,
+      "judge_score": 36,
+      "real_rank": 27,
+      "judge_rank": 8,
+      "rank_delta": 19
+    },
+    {
+      "date": "2026-10-22",
+      "first_line": "Huge launch coming next week at Unify.",
+      "reactions": 61,
+      "hook_type": "other",
+      "first_line_words": 7,
+      "judge_score": 45,
+      "real_rank": 16,
+      "judge_rank": 1,
+      "rank_delta": 15
+    },
+    {
+      "date": "2026-10-21",
+      "first_line": "The Unify team is heading to Dallas today for Pipeline Conference. We have a few exciting plans on deck (including a $1500 giveaway). Here's the rundown:",
+      "reactions": 68,
+      "hook_type": "other",
+      "first_line_words": 26,
+      "judge_score": 36,
+      "real_rank": 11,
+      "judge_rank": 9,
+      "rank_delta": 2
+    },
+    {
+      "date": "2026-10-20",
+      "first_line": "We've promoted 8 SDRs to AE in the last 2 years at Unify.",
+      "reactions": 49,
+      "hook_type": "other",
+      "first_line_words": 13,
+      "judge_score": 36,
+      "real_rank": 20,
+      "judge_rank": 10,
+      "rank_delta": 10
+    },
+    {
+      "date": "2026-10-19",
+      "first_line": "Kyle Tymo, our GM of Email Deliverability at Unify, has overseen email deliverability across more than 25 million sends. Tomorrow, he's sharing everything he's learned about getting cold emails into prospects' primary inboxes.",
+      "reactions": 28,
+      "hook_type": "other",
+      "first_line_words": 33,
+      "judge_score": 36,
+      "real_rank": 26,
+      "judge_rank": 11,
+      "rank_delta": 15
+    },
+    {
+      "date": "2026-10-16",
+      "first_line": "I still think about this one interaction I had with an Account Executive 3.5 years ago because it was just that good.",
+      "reactions": 163,
+      "hook_type": "other",
+      "first_line_words": 22,
+      "judge_score": 36,
+      "real_rank": 4,
+      "judge_rank": 12,
+      "rank_delta": 8
+    },
+    {
+      "date": "2026-10-15",
+      "first_line": "Sales leaders wanting their AEs to source more of their own pipeline came up on 62 Unify sales calls in the last month. I expect this trend to continue.",
+      "reactions": 20,
+      "hook_type": "other",
+      "first_line_words": 29,
+      "judge_score": 36,
+      "real_rank": 29,
+      "judge_rank": 13,
+      "rank_delta": 16
+    },
+    {
+      "date": "2026-10-14",
+      "first_line": "Our sales team at Unify has been on an absolute tear. Across August and September, the team finished at 229% of quota.",
+      "reactions": 77,
+      "hook_type": "other",
+      "first_line_words": 22,
+      "judge_score": 36,
+      "real_rank": 9,
+      "judge_rank": 14,
+      "rank_delta": 5
+    },
+    {
+      "date": "2026-10-13",
+      "first_line": "I'm incredibly bullish on the future of SDRs. But I also think there are going to be a lot fewer of them in the next few years.",
+      "reactions": 52,
+      "hook_type": "other",
+      "first_line_words": 27,
+      "judge_score": 36,
+      "real_rank": 19,
+      "judge_rank": 15,
+      "rank_delta": 4
+    },
+    {
+      "date": "2026-10-12",
+      "first_line": "Today I'm excited to share that we've promoted Jackson Klein to Chief of Staff at Unify. Jack is a bar raiser in all things he does at Unify.",
+      "reactions": 174,
+      "hook_type": "other",
+      "first_line_words": 28,
+      "judge_score": 36,
+      "real_rank": 3,
+      "judge_rank": 16,
+      "rank_delta": 13
+    },
+    {
+      "date": "2026-10-09",
+      "first_line": "Last month, we shipped 161 Breakfast of Champion cereal boxes to sales reps.",
+      "reactions": 68,
+      "hook_type": "other",
+      "first_line_words": 13,
+      "judge_score": 36,
+      "real_rank": 12,
+      "judge_rank": 17,
+      "rank_delta": 5
+    },
+    {
+      "date": "2026-10-08",
+      "first_line": "In the last 5 years, the median time to promotion from SDR to AE was 12 months.",
+      "reactions": 18,
+      "hook_type": "other",
+      "first_line_words": 17,
+      "judge_score": 36,
+      "real_rank": 30,
+      "judge_rank": 18,
+      "rank_delta": 12
+    },
+    {
+      "date": "2026-10-07",
+      "first_line": "It\u2019s 2026, and getting on a plane to see your customers is still the most valuable thing you can do.",
+      "reactions": 53,
+      "hook_type": "other",
+      "first_line_words": 20,
+      "judge_score": 36,
+      "real_rank": 18,
+      "judge_rank": 19,
+      "rank_delta": 1
+    },
+    {
+      "date": "2026-10-06",
+      "first_line": "September was another record month at Unify. We beat August\u2019s (already record-high) numbers on our revenue harness, wrapping up the month with $1.2M in closed-won.",
+      "reactions": 109,
+      "hook_type": "other",
+      "first_line_words": 25,
+      "judge_score": 36,
+      "real_rank": 8,
+      "judge_rank": 20,
+      "rank_delta": 12
+    },
+    {
+      "date": "2026-10-01",
+      "first_line": "I was fortunate to join Bill Binch at 3 Battery CRO dinners over the past 4 weeks.",
+      "reactions": 41,
+      "hook_type": "other",
+      "first_line_words": 17,
+      "judge_score": 36,
+      "real_rank": 22,
+      "judge_rank": 21,
+      "rank_delta": 1
+    },
+    {
+      "date": "2026-09-30",
+      "first_line": "We just took Unify from a $20k/year starting point to $20/month.",
+      "reactions": 71,
+      "hook_type": "other",
+      "first_line_words": 11,
+      "judge_score": 36,
+      "real_rank": 10,
+      "judge_rank": 22,
+      "rank_delta": 12
+    },
+    {
+      "date": "2026-09-29",
+      "first_line": "Huge news: Unify now works in Claude, Codex, and Cursor.",
+      "reactions": 260,
+      "hook_type": "other",
+      "first_line_words": 10,
+      "judge_score": 45,
+      "real_rank": 1,
+      "judge_rank": 2,
+      "rank_delta": 1
+    },
+    {
+      "date": "2026-09-28",
+      "first_line": "We analyzed 197 Enterprise Account Executive roles posted across SF and NYC from May through July. When it comes to compensation, the rivalry has a clear winner.",
+      "reactions": 149,
+      "hook_type": "other",
+      "first_line_words": 27,
+      "judge_score": 36,
+      "real_rank": 6,
+      "judge_rank": 23,
+      "rank_delta": 17
+    },
+    {
+      "date": "2026-09-25",
+      "first_line": "At our quarterly board meeting last Friday, I was insanely proud to highlight the work of our EPD team.",
+      "reactions": 36,
+      "hook_type": "other",
+      "first_line_words": 19,
+      "judge_score": 36,
+      "real_rank": 24,
+      "judge_rank": 24,
+      "rank_delta": 0
+    },
+    {
+      "date": "2026-09-24",
+      "first_line": "As we've doubled down on selling to SDRs and AEs at Unify, our internal north star has become rep engagement. Stoked to share that product usage has been through the roof:",
+      "reactions": 44,
+      "hook_type": "other",
+      "first_line_words": 31,
+      "judge_score": 36,
+      "real_rank": 21,
+      "judge_rank": 25,
+      "rank_delta": 4
+    },
+    {
+      "date": "2026-09-23",
+      "first_line": "3 months ago, we relaunched Unify and went all-in on sellers. One of our biggest learnings: more flexibility doesn't always make the product easier to use.",
+      "reactions": 57,
+      "hook_type": "other",
+      "first_line_words": 26,
+      "judge_score": 36,
+      "real_rank": 17,
+      "judge_rank": 26,
+      "rank_delta": 9
+    },
+    {
+      "date": "2026-09-22",
+      "first_line": "For years, top 1% outbound systems depended on a RevOps or GTM engineer who knew how every workflow worked. That's finally starting to change.",
+      "reactions": 39,
+      "hook_type": "other",
+      "first_line_words": 24,
+      "judge_score": 36,
+      "real_rank": 23,
+      "judge_rank": 27,
+      "rank_delta": 4
+    },
+    {
+      "date": "2026-09-21",
+      "first_line": "In the last 10 weeks, we\u2019ve brought 200+ sellers together across 10+ events.",
+      "reactions": 32,
+      "hook_type": "other",
+      "first_line_words": 13,
+      "judge_score": 36,
+      "real_rank": 25,
+      "judge_rank": 28,
+      "rank_delta": 3
+    },
+    {
+      "date": "2026-09-18",
+      "first_line": "I bought a 6-figure piece of software a few months ago, and the AE was one of the best sellers I've ever worked with. What stood out was just how insanely consultative he was.",
+      "reactions": 110,
+      "hook_type": "other",
+      "first_line_words": 34,
+      "judge_score": 36,
+      "real_rank": 7,
+      "judge_rank": 29,
+      "rank_delta": 22
+    },
+    {
+      "date": "2026-09-16",
+      "first_line": "There's a $40K gap between the median entry-level SDR base and the median across AE roles. If you're an SDR trying to maximize your comp, reaching the AE title is only step one.",
+      "reactions": 220,
+      "hook_type": "other",
+      "first_line_words": 33,
+      "judge_score": 36,
+      "real_rank": 2,
+      "judge_rank": 30,
+      "rank_delta": 28
+    }
+  ]
+}

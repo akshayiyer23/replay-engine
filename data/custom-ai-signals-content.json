@@ -10,34 +10,34 @@
       "hook_type": "other",
       "first_line_words": 12
     },
-    "post_first_line": "50,000 accounts researched in under an hour.",
+    "post_first_line": "50,000 accounts. Under an hour.",
     "post_tag": {
-      "hook_type": "stat",
-      "first_line_words": 6
+      "hook_type": "other",
+      "first_line_words": 5
     },
     "hook_score_before": 71,
-    "hook_score_after": 100,
-    "linkedin_post": "50,000 accounts researched in under an hour.\n\nThat's the part of AI signals that changes how a GTM team works.\n\nYou can do research on 50,000 accounts in less than an hour and outreach to all of them, or queue them up for your sales team to go after.\n\nBut the speed isn't what I find most useful.\n\nIt's that you can see what the AI is doing. You can see what it's searching for, the different sites it's going after, and the different tools it's using. The primary one is internet search.\n\nThat auditability matters. The AI piece isn't really a black box.\n\nIf your reps can't see where a signal came from, they won't trust it. If they don't trust it, they won't act on it.\n\nSpeed gets the research done. Transparency gets it used.",
+    "hook_score_after": 89,
+    "linkedin_post": "50,000 accounts. Under an hour.\n\nMost teams don't realize research at this scale is even possible.\n\nThat's the real power of AI signals: you can research 50,000 accounts in less than an hour, then run outreach to all of them or queue them up for your sales team.\n\nBut speed isn't the part I care about most.\n\nIt's seeing exactly how the research gets done. You can watch what the AI is searching for, which sites it's going after, and which tools it's using. The primary one is internet search.\n\nThat auditability matters. The AI piece isn't a black box.\n\nWhen your reps can see where an insight came from, they trust it. When they trust it, they actually use it.\n\nSpeed without visibility is just a faster way to send bad outreach.\n\nWhen AI researches your accounts, do you check its sources?",
     "carousel": [
       "Slide 1: 50,000 accounts researched in under an hour",
-      "Slide 2: Then outreach to all of them, or queue them for sales",
-      "Slide 3: Speed is the obvious win with AI signals",
-      "Slide 4: The quieter win is seeing what the AI searches",
-      "Slide 5: You can see the sites and tools it uses",
-      "Slide 6: The AI piece isn't really a black box",
-      "Slide 7: Reps act on signals they can trust",
-      "Slide 8: Speed gets research done. Transparency gets it used."
+      "Slide 2: That used to take a team weeks of manual work",
+      "Slide 3: Then outreach goes to all of them, or to your reps",
+      "Slide 4: Speed is only half the story",
+      "Slide 5: You can see what the AI is searching for",
+      "Slide 6: You can see the sites and tools it uses",
+      "Slide 7: Auditability means the AI isn't a black box",
+      "Slide 8: Trust in the research drives rep adoption"
     ],
     "lesson": {
-      "title": "Auditable AI research beats black-box research",
+      "title": "Fast AI research only works if you can audit it",
       "takeaways": [
-        "AI can research 50,000 accounts in less than an hour, then feed outreach or your sales team's queue.",
-        "Being able to see which sites and tools the AI uses, like internet search, builds trust in the output.",
-        "The AI piece shouldn't be a black box, because auditability is what lets a team act on the research."
+        "AI signals can research 50,000 accounts in less than an hour, then feed outreach or your sales team's queue.",
+        "Visibility into searches, sites, and tools keeps the AI from being a black box.",
+        "Reps act on research they can trace back to a source."
       ],
-      "exercise": "Pick one AI-generated account research output your team uses today. Trace where each signal came from (which site or tool). If you can't trace it, write down what you'd need to see before a rep would confidently act on it."
+      "exercise": "Pick one AI-generated account insight from this week and trace it to its source. If you can't, write down what visibility your workflow is missing."
     },
-    "caption": "50,000 accounts. Under an hour."
+    "caption": "50,000 accounts. One hour."
   },
   {
     "id": "m01",
@@ -50,34 +50,34 @@
       "hook_type": "other",
       "first_line_words": 15
     },
-    "post_first_line": "Generic intent data is not enough.",
+    "post_first_line": "40,000 accounts. One custom signal.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 6
+      "first_line_words": 5
     },
     "hook_score_before": 60,
-    "hook_score_after": 69,
-    "linkedin_post": "Generic intent data is not enough.\n\nA few months ago, we started leaning into custom AI signals.\n\nThe idea is simple. We check a segment of our TAM, something like 40,000 accounts, for signals that are specific to our ICP.\n\nProduct launches are a good example. When an account launches a product, we call it out directly in the email copy. One of our replies came straight from that signal.\n\nThis is different from a new hire alert or website intent. Those are useful. But this one is tailored to our business.\n\nHere's how we build them:\n\nWe work backwards from what we would send manually, one-to-one. We look at the research we would do by hand. Then we figure out how to scale it.\n\nThe signal isn't the point. The point is turning your best manual outreach into something that runs across your whole TAM.\n\nStart with what you would send to one account if you had unlimited time. Then build the system to do that at scale.",
+    "hook_score_after": 78,
+    "linkedin_post": "40,000 accounts. One custom signal.\n\nMost teams don't know how much better this works than generic intent.\n\nA few months ago, we started leaning into custom AI signals. We check them across a segment of our TAM, around 40,000 accounts, looking for things like product launches.\n\nWhen an account trips the signal, we call it out directly in the email copy. One of our replies came from exactly that: a product launch signal.\n\nNew hires, website intent and the rest are all useful. But they're the same signals everyone else is watching.\n\nA custom signal is tailored to your ICP and your business.\n\nThe way we build them: work backwards from what we would send manually, one-to-one. Look at the research we'd do by hand. Then scale that out.\n\nThe signal isn't the point. The point is to automate the research you'd already trust enough to put in a personal email.\n\nWhat signal would you check across your TAM first?",
     "carousel": [
-      "Slide 1: Generic intent data won't win your ICP",
-      "Slide 2: We built custom AI signals around our own business",
-      "Slide 3: We check a segment of our TAM, like 40,000 accounts",
-      "Slide 4: One signal we track: product launches",
-      "Slide 5: We call the launch out directly in the email copy",
-      "Slide 6: New hire and website intent are fine, but not tailored",
-      "Slide 7: Work backwards from what you'd send one-to-one",
-      "Slide 8: Then scale that research across your whole TAM"
+      "Slide 1: 40,000 accounts. One custom signal.",
+      "Slide 2: Generic intent is what everyone else is watching.",
+      "Slide 3: Custom AI signals are tailored to your ICP.",
+      "Slide 4: Example: checking for product launches across your TAM.",
+      "Slide 5: Call the signal out directly in the email copy.",
+      "Slide 6: Start with what you'd send manually, one-to-one.",
+      "Slide 7: Take that research and scale it out.",
+      "Slide 8: What signal would you check first?"
     ],
     "lesson": {
-      "title": "Build signals from your manual outreach, not from a vendor list",
+      "title": "Build custom signals by working backwards from manual outreach",
       "takeaways": [
-        "Custom AI signals can be tailored to your ICP in a way generic intent can't.",
-        "A signal like a product launch can be referenced directly in the email copy.",
-        "Start from what you would send one-to-one, then scale that research."
+        "Generic signals like new hires and website intent are useful, but they aren't tailored to your business.",
+        "Custom AI signals can be checked across a large segment of your TAM, such as 40,000 accounts.",
+        "The best signals come from scaling the research you'd do for a one-to-one email."
       ],
-      "exercise": "Pick one account you'd love to land. Write down the research you'd do and the first line you'd send by hand. Turn that research into one signal you could check across a segment of your TAM."
+      "exercise": "Write down the one piece of research you'd do before manually emailing a top account. Turn it into a signal you can check across a segment of your TAM, and reference it in the email copy."
     },
-    "caption": "Stop relying on generic intent"
+    "caption": "Custom signals beat generic intent"
   },
   {
     "id": "m12",
@@ -90,32 +90,32 @@
       "hook_type": "other",
       "first_line_words": 16
     },
-    "post_first_line": "Our best signal started as a 7-day window.",
+    "post_first_line": "7 days to 30 days.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 8
+      "first_line_words": 5
     },
     "hook_score_before": 60,
-    "hook_score_after": 69,
-    "linkedin_post": "Our best signal started as a 7-day window.\n\nThe signal: has this company launched a major new product recently? If yes, return the product name.\n\nWe started off with the last 7 days. It was a big success.\n\nThen we booked more and more meetings through it, so we doubled down and expanded it to 30 days.\n\nThe product name it returns is what makes it work. We then use it in the email copy, so the outreach references something real about the prospect.\n\nThe lesson: when a signal books meetings, don't leave it alone. Widen the window and see how much more it can catch.\n\nStart narrow, prove it works, then expand.",
+    "hook_score_after": 78,
+    "linkedin_post": "7 days to 30 days.\n\nThat one change came from watching a signal book meetings.\n\nMost teams never make this move.\n\nWe started with a product launch signal that looked at the last 7 days. It worked well.\n\nAs it booked more and more meetings, we doubled down and expanded the window to 30 days.\n\nThe signal now asks one thing: has this company launched a major new product in the past 30 days? If yes, it returns the product name.\n\nThat product name then goes straight into the email copy.\n\nThe signal does two jobs. It finds the account, and it gives you something specific to say to them.\n\nThe lesson for me: when a signal books meetings, don't leave it alone. Widen it, then see what else it can feed.\n\nWhich of your signals deserves a wider window?",
     "carousel": [
-      "Slide 1: We expanded one signal from 7 days to 30",
-      "Slide 2: The signal: did they launch a major new product?",
-      "Slide 3: We started with just the last 7 days",
-      "Slide 4: It was a big success",
-      "Slide 5: It kept booking more and more meetings",
-      "Slide 6: So we doubled down and expanded it to 30 days",
-      "Slide 7: The signal returns the product name for use in email copy",
-      "Slide 8: Prove a signal works, then widen the window"
+      "Slide 1: We started with a 7-day product launch signal",
+      "Slide 2: It worked, and it started booking meetings",
+      "Slide 3: So we doubled down instead of moving on",
+      "Slide 4: We expanded the window from 7 days to 30",
+      "Slide 5: The question: did they launch a major product in 30 days?",
+      "Slide 6: If yes, the signal returns the product name",
+      "Slide 7: That product name goes straight into the email copy",
+      "Slide 8: When a signal books meetings, widen it"
     ],
     "lesson": {
-      "title": "Expand the signals that book meetings",
+      "title": "Double down on signals that book meetings",
       "takeaways": [
-        "Start with a tight time window, then widen it once the signal proves itself.",
-        "Let meeting results tell you which signals deserve more investment.",
-        "Return a specific data point, like the product name, so the email copy can use it."
+        "Start with a narrow signal window, then expand once it proves it works.",
+        "A good signal does two jobs: it finds the account and gives you something specific to say.",
+        "Returning a detail like the product name lets the signal feed directly into email copy."
       ],
-      "exercise": "Pick the one signal in your outbound that has booked the most meetings. Check its time window, widen it, and compare meetings booked before and after."
+      "exercise": "Pick the one signal in your outbound that has booked the most meetings. Widen its window or scope, and note which new detail it could return for your email copy."
     },
     "caption": "7 days to 30 days"
   },
@@ -130,34 +130,34 @@
       "hook_type": "other",
       "first_line_words": 13
     },
-    "post_first_line": "Our ICP wasn't what we assumed.",
+    "post_first_line": "We guessed our ICP. The data disagreed.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 6
+      "first_line_words": 7
     },
     "hook_score_before": 57,
     "hook_score_after": 66,
-    "linkedin_post": "Our ICP wasn't what we assumed.\n\nWe thought we knew our top segments. Pretty standard, the businesses we sell into.\n\nThen we looked back at our closed-won customers and ran the conversation transcripts through conversational intelligence.\n\nWe weren't reading for vibes. We were looking for particular moments.\n\nOne of them: a recent product launch. If a company had one, they were looking at Unify at a higher clip.\n\nThen industry. Looking back at closed-won, we had a disproportionate number of fintech companies.\n\nNobody on the team had called that out. It only showed up when we looked at the data.\n\nMost teams build their signals from gut feel and a whiteboard. The better source is already sitting in your call recordings.\n\nYour closed-won deals are telling you who buys and why. Most of us just never go back and listen.",
+    "linkedin_post": "We guessed our ICP. The data disagreed.\n\nThe closed-won transcripts told a different story than our assumptions.\n\nWe assumed our ICP was pretty standard: the usual top segments and the businesses we typically sell into.\n\nThen we looked back at our closed-won customers and ran conversational intelligence on the call transcripts. We were looking for particular moments.\n\nOne of them was a product launch. If a company had a recent product launch, they were looking at Unify at a higher clip.\n\nIndustry was the other surprise. Among our closed-won customers, we had a disproportionate number of fintech companies.\n\nNeither of those signals came from a brainstorm. Both came from the data we already had.\n\nThe lesson: your best signals are probably sitting in calls you've already recorded. You just have to go looking for them.\n\nWhat's the last assumption your data proved wrong?",
     "carousel": [
-      "Slide 1: We thought our ICP was pretty standard.",
-      "Slide 2: Then we went back through closed-won customers.",
-      "Slide 3: We ran their call transcripts through conversational intelligence.",
-      "Slide 4: We looked for particular moments, not vibes.",
-      "Slide 5: Recent product launch meant they looked at Unify at a higher clip.",
+      "Slide 1: We assumed our ICP was standard. We were wrong.",
+      "Slide 2: So we looked back at our closed-won customers.",
+      "Slide 3: We ran conversational intelligence on the call transcripts.",
+      "Slide 4: We searched for specific moments, not general patterns.",
+      "Slide 5: Recent product launch meant higher interest in Unify.",
       "Slide 6: Industry surprised us: a disproportionate number of fintech companies.",
-      "Slide 7: Nobody guessed that. The data showed it.",
-      "Slide 8: Your best signals are already in your call recordings."
+      "Slide 7: Neither signal came from guessing. Both came from the data.",
+      "Slide 8: Your best signal is probably in calls you already have."
     ],
     "lesson": {
-      "title": "Mine closed-won transcripts for signals, don't guess them",
+      "title": "Mine Closed-Won Transcripts for Signals, Don't Guess Them",
       "takeaways": [
-        "Your assumed ICP and your actual ICP can differ. Closed-won data shows the gap.",
-        "Look for particular moments in transcripts, like a recent product launch, instead of only firmographics.",
-        "Industry patterns can hide in plain sight: we found a disproportionate number of fintech companies."
+        "Your assumed ICP and your actual ICP can differ. Closed-won data shows which is which.",
+        "Look for specific moments in transcripts, like product launches, rather than just firmographics.",
+        "Check for industry skew in your wins. A disproportionate segment can point you to where to focus."
       ],
-      "exercise": "Pull your last closed-won customers and their call transcripts. List the moments and industries that repeat across them, then compare that list to your current ICP definition."
+      "exercise": "Pull your last closed-won deals and review the call transcripts. List the recurring moments or triggers buyers mention, then count which industries show up most. Compare that list to your current ICP."
     },
-    "caption": "Stop guessing your ICP"
+    "caption": "Data beat our ICP guess"
   },
   {
     "id": "m21",
@@ -170,33 +170,33 @@
       "hook_type": "other",
       "first_line_words": 11
     },
-    "post_first_line": "Perfect outreach doesn't exist.",
+    "post_first_line": "95% to 98% accurate beats 100% manual.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 4
+      "first_line_words": 7
     },
     "hook_score_before": 56,
-    "hook_score_after": 74,
-    "linkedin_post": "Perfect outreach doesn't exist.\n\nWhen we launch an AI outreach agent, I delay the sequence first. You can do this natively in Unify.\n\nThen I read the emails and check the accuracy. I'm making sure it's not doing anything wacky.\n\nIf a reply comes in saying \"we didn't launch this product,\" or the reference is from X months ago, I tweak the agent and keep testing.\n\nAnd yes, there will be edge cases. We'll probably get one every few thousand.\n\nIt's well worth it, based on the success.\n\nZooming out, it's not going to be 100% perfect. But if it's 95% to 98% accurate, that makes complete sense, especially in terms of ROI.\n\nMost teams stall because they're chasing a standard that manual outreach never met either.\n\nThe real question isn't whether the agent makes mistakes. It's whether you catch the pattern, fix the agent, and keep shipping.\n\nDelay. Audit. Tweak. Repeat.",
+    "hook_score_after": 65,
+    "linkedin_post": "95% to 98% accurate beats 100% manual.\n\nMost teams still won't ship AI outreach because of that last 2%.\n\nHere's the process I use when a new sequence launches: delay it first. You can do this natively in Unify.\n\nThen read the emails before they go out and check accuracy. Make sure the agent isn't doing anything wacky.\n\nIf a reply comes back saying \"we didn't launch this product\" or \"this is from X months ago,\" don't panic. Tweak the agent and keep testing.\n\nEdge cases will happen. We'll probably get one every few thousand emails.\n\nBased on the results, that trade is well worth it.\n\nZoom out and the math is simple. It won't be 100% perfect, but at 95% to 98% accuracy the ROI makes complete sense.\n\nWaiting for perfect means you never launch. Meanwhile, the team sending imperfect-but-tested outreach is already booking the meetings.\n\nWhat accuracy rate would you accept for AI outreach?",
     "carousel": [
-      "Slide 1: 100% accurate AI outreach is a myth worth dropping",
-      "Slide 2: Launch the sequence delayed, never straight to send",
-      "Slide 3: Read the emails and check for anything wacky",
-      "Slide 4: A reply says wrong product? Tweak the agent, keep testing",
-      "Slide 5: Edge cases happen. Probably one every few thousand",
-      "Slide 6: 95% to 98% accurate makes complete sense for ROI",
-      "Slide 7: Delay. Audit. Tweak. Repeat. Then let it run"
+      "Slide 1: 95% accurate AI outreach beats 100% manual.",
+      "Slide 2: Waiting for perfect means you never launch.",
+      "Slide 3: Delay the sequence when you first launch it.",
+      "Slide 4: Read the emails and check accuracy before sending.",
+      "Slide 5: Bad reply? Tweak the agent and keep testing.",
+      "Slide 6: Expect an edge case every few thousand emails.",
+      "Slide 7: At 95% to 98% accuracy, the ROI makes sense."
     ],
     "lesson": {
-      "title": "Ship AI outreach at 95%, not never at 100%",
+      "title": "Ship AI outreach at 95%, Not 100%",
       "takeaways": [
-        "Delay the sequence at launch so you can check every email's accuracy before anything sends.",
-        "Treat bad replies as feedback: tweak the agent and keep testing instead of scrapping it.",
-        "Edge cases are the cost of doing business. At 95% to 98% accuracy, the ROI still makes complete sense."
+        "Delay the sequence at launch so you can review emails and check accuracy before anything sends.",
+        "When a reply exposes an error, tweak the agent and keep testing instead of pulling the plug.",
+        "Edge cases are real but rare, about one every few thousand, and 95% to 98% accuracy still delivers strong ROI."
       ],
-      "exercise": "Set up your next AI outreach sequence with a send delay. Review the drafted emails, list every error type you spot, and update your agent's instructions to fix the top one before launch."
+      "exercise": "Pick one outreach sequence. Delay it, review a sample of the emails for accuracy, and write down the one agent tweak that would fix the most obvious error before you launch."
     },
-    "caption": "95% accurate beats never shipping"
+    "caption": "95% accurate beats 100% manual"
   },
   {
     "id": "m03",
@@ -209,33 +209,33 @@
       "hook_type": "other",
       "first_line_words": 18
     },
-    "post_first_line": "Pricing page visits still convert.",
+    "post_first_line": "20 meetings. One month. Zero cold lists.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 5
+      "first_line_words": 7
     },
     "hook_score_before": 52,
-    "hook_score_after": 70,
-    "linkedin_post": "Pricing page visits still convert.\n\nThe angle here is that first-party intent still works. But the transcript only supports part of that story, so I'll stick to what we actually see.\n\nIf someone's already on your website showing high intent on the pricing page, that's a very successful signal for us still.\n\nLast month, over 20 meetings just from website intent and prospecting within those accounts.\n\nFirst-party signals aren't just pricing page views. They include:\n\n- MQLs from gated content\n- Product tour views\n- CRM data\n- Close lost opportunities, based on the loss reason\n\nThen there are third-party signals, which are getting extremely popular:\n\n- Social signals, like people engaging with Austin's (our CEO) LinkedIn posts\n- People engaging with Unify on LinkedIn\n- Potentially competitor engagement on LinkedIn\n- Job openings, like a new sales leader or a new marketing hire\n\nThe signal list is easy to build. The harder part is deciding which signals you trust enough to act on.\n\nFor us, the one that keeps working is the person already on our site, looking at pricing.\n\nWhich signal is quietly carrying your pipeline right now?",
+    "hook_score_after": 61,
+    "linkedin_post": "20 meetings. One month. Zero cold lists.\n\nMost teams are missing what drove it.\n\nLast month, we booked over 20 meetings from website intent and prospecting within those accounts. The signal that mattered most was someone sitting on our pricing page.\n\nFirst-party intent still works for us. It's a very successful signal.\n\nBut it isn't one signal. It's a stack:\n\nPricing page visits. Product tour views. MQLs from gated content. CRM data, including close lost opportunities based on the loss reason.\n\nThen there are third-party signals, which are getting extremely popular. Social signals like people engaging with our CEO Austin's posts on LinkedIn, engaging with Unify, or engaging with competitors. Job openings, like a new sales leader or a new marketing hire.\n\nThe point is that no single signal is the play. The advantage comes from combining them and acting on the ones closest to buying intent first.\n\nWhen everyone buys the same third-party feed, your edge shrinks fast. Your own website and your own CRM are data nobody else has.\n\nWhich signal drives the most pipeline for your team?",
     "carousel": [
-      "Slide 1: Pricing page intent still works",
-      "Slide 2: Over 20 meetings last month from website intent and prospecting",
-      "Slide 3: First-party goes beyond pricing: product tour views, gated content MQLs",
-      "Slide 4: CRM data counts too, including close lost loss reasons",
+      "Slide 1: 20 meetings in one month from website intent",
+      "Slide 2: Pricing page visits are still a very successful signal",
+      "Slide 3: First-party signals include product tour views and gated content MQLs",
+      "Slide 4: Close lost opportunities by loss reason are worth revisiting",
       "Slide 5: Third-party signals are getting extremely popular",
-      "Slide 6: Social signals: engaging with the CEO's LinkedIn posts",
-      "Slide 7: Job openings matter: a new sales leader, a new marketing hire",
-      "Slide 8: Pick the signal you trust, then act on it"
+      "Slide 6: Social engagement, competitor engagement and job openings all count",
+      "Slide 7: Your own data is the one nobody else has",
+      "Slide 8: Which signal drives the most pipeline for you?"
     ],
     "lesson": {
-      "title": "Stack first-party and third-party signals",
+      "title": "Start with the signals only you can see",
       "takeaways": [
-        "A visit to the pricing page is still a very successful signal for us.",
-        "First-party signals include gated content MQLs, product tour views, CRM data and close lost reasons.",
-        "Third-party signals include LinkedIn engagement, competitor engagement and job openings like new sales or marketing hires."
+        "Pricing page intent still drives meetings: over 20 last month from website intent and prospecting within those accounts.",
+        "First-party data goes beyond visits: product tours, gated content MQLs, and CRM close lost reasons.",
+        "Third-party signals like LinkedIn engagement and new hires add context, but they're increasingly popular."
       ],
-      "exercise": "List every signal you currently act on and tag each one first-party or third-party. Then pull last month's meetings and note which signal sourced each one. Double down on the top signal and cut the ones that sourced nothing."
+      "exercise": "List every first-party signal you can track today (pricing page, product tour, gated content, close lost reasons). Rank them by closeness to a buying decision, then build outreach around the top one this week."
     },
-    "caption": "Pricing page intent still wins"
+    "caption": "Intent signals still work"
   }
 ]
