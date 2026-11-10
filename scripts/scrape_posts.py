@@ -24,71 +24,76 @@ DATA_DIR = ROOT / "data"
 load_dotenv(ROOT / ".env")
 
 ACTOR_ID = "harvestapi/linkedin-profile-posts"
+# Pricing: $0.002 per post = $2.00 / 1,000 posts (pay-per-event model, Nov 2026)
 
 
 # ── normalisation ─────────────────────────────────────────────────────────────
 
 def infer_post_type(item: dict) -> str:
-    t = (item.get("type") or item.get("postType") or "").lower()
-    if "video" in t:
-        return "video"
-    if "article" in t:
-        return "article"
-    if "document" in t or "carousel" in t:
-        return "carousel"
-    if "image" in t or item.get("images"):
-        return "image"
-    if "share" in t or item.get("resharedPost") or item.get("isRepost"):
+    """Infer post type from harvestapi/linkedin-profile-posts schema."""
+    # Repost: has a reshared post object
+    if item.get("resharedPost"):
         return "repost"
+    # Video: has a video field or videoUrl
+    if item.get("video") or item.get("videoUrl"):
+        return "video"
+    # Carousel / document
+    if item.get("document") or item.get("carousel"):
+        return "carousel"
+    # Image: postImages array is non-empty
+    if item.get("postImages"):
+        return "image"
     return "text"
 
 
-def _int(val) -> int:
-    if isinstance(val, dict):
-        return int(val.get("count", 0) or sum(v for v in val.values() if isinstance(v, int)))
+def _parse_date(item: dict) -> datetime | None:
+    """Extract post datetime from postedAt field."""
+    posted_at = item.get("postedAt")
+    if not posted_at:
+        return None
     try:
-        return int(val or 0)
-    except (TypeError, ValueError):
-        return 0
+        if isinstance(posted_at, dict):
+            # Prefer ISO string; fall back to ms timestamp
+            iso = posted_at.get("date")
+            ts = posted_at.get("timestamp")
+            if iso:
+                return datetime.fromisoformat(str(iso).replace("Z", "+00:00"))
+            if ts:
+                return datetime.fromtimestamp(int(ts) / 1000, tz=timezone.utc)
+        if isinstance(posted_at, (int, float)):
+            return datetime.fromtimestamp(posted_at / 1000, tz=timezone.utc)
+        if isinstance(posted_at, str):
+            return datetime.fromisoformat(posted_at.replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        pass
+    return None
 
 
 def normalize(item: dict, author: str, cutoff: datetime) -> dict | None:
-    raw_date = (
-        item.get("publishedAt")
-        or item.get("date")
-        or item.get("postedAt")
-        or item.get("timestamp")
-    )
-    if not raw_date:
+    post_dt = _parse_date(item)
+    if post_dt is None or post_dt < cutoff:
         return None
 
-    try:
-        if isinstance(raw_date, (int, float)):
-            post_dt = datetime.fromtimestamp(raw_date / 1000, tz=timezone.utc)
-        else:
-            post_dt = datetime.fromisoformat(str(raw_date).replace("Z", "+00:00"))
-    except (ValueError, TypeError):
-        return None
-
-    if post_dt < cutoff:
-        return None
+    eng = item.get("engagement") or {}
+    # reactions = sum of all reaction counts, or fallback to eng.likes
+    raw_reactions = eng.get("reactions") or []
+    if isinstance(raw_reactions, list):
+        total_reactions = sum(r.get("count", 0) for r in raw_reactions) or eng.get("likes", 0)
+    else:
+        total_reactions = int(raw_reactions or eng.get("likes", 0))
 
     return {
         "author": author,
         "date": post_dt.strftime("%Y-%m-%d"),
-        "text": (item.get("text") or item.get("content") or "").strip(),
-        "reactions": _int(item.get("reactionsCount") or item.get("reactions")),
-        "comments": _int(item.get("commentsCount") or item.get("comments")),
-        "reposts": _int(
-            item.get("repostsCount")
-            or item.get("reposts")
-            or item.get("sharesCount")
-        ),
+        "text": (item.get("content") or item.get("text") or "").strip(),
+        "reactions": int(total_reactions),
+        "comments": int(eng.get("comments", 0)),
+        "reposts": int(eng.get("shares", 0)),
         "post_type": infer_post_type(item),
         "url": (
-            item.get("url")
-            or item.get("postUrl")
-            or item.get("link")
+            item.get("linkedinUrl")
+            or item.get("shareLinkedinUrl")
+            or item.get("url")
             or ""
         ),
     }
@@ -100,7 +105,8 @@ def fetch_profile_posts(client: ApifyClient, profile_url: str, max_posts: int) -
     if not profile_url.startswith("http"):
         profile_url = "https://www.linkedin.com/in/" + profile_url.split("/in/")[-1].strip("/")
 
-    run = client.actor(ACTOR_ID).call(
+    # Start the run (returns a Run Pydantic model — use attribute access, not dict)
+    run = client.actor(ACTOR_ID).start(
         run_input={
             "profileUrls": [profile_url],
             "maxPosts": max_posts,
@@ -108,13 +114,20 @@ def fetch_profile_posts(client: ApifyClient, profile_url: str, max_posts: int) -
             "scrapeComments": False,
             "includeReposts": True,
         },
-        timeout_secs=300,
     )
 
-    if run["status"] != "SUCCEEDED":
-        raise RuntimeError(f"Actor run ended with status: {run['status']}")
+    run_id = run.id
+    terminal = {"SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"}
 
-    return list(client.dataset(run["defaultDatasetId"]).iterate_items())
+    # Poll until done
+    while run.status not in terminal:
+        time.sleep(5)
+        run = client.run(run_id).get()
+
+    if run.status != "SUCCEEDED":
+        raise RuntimeError(f"Actor run {run_id} ended with status: {run.status}")
+
+    return list(client.dataset(run.default_dataset_id).iterate_items())
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
@@ -146,11 +159,22 @@ def main() -> None:
 
     all_posts: list[dict] = []
 
+    # One raw-cache file per profile to avoid re-billing on reruns
+    cache_dir = DATA_DIR / ".post_cache"
+    cache_dir.mkdir(exist_ok=True)
+
     for profile in profiles:
         author = profile.split("/in/")[-1].strip("/")
-        print(f"🔍 Fetching posts for {author}  (actor: {ACTOR_ID})…")
+        cache_file = cache_dir / f"{author}.json"
 
-        raw = fetch_profile_posts(client, profile, max_posts=args.max_posts)
+        if cache_file.exists():
+            print(f"📋 Loading cached raw posts for {author}…")
+            raw = json.loads(cache_file.read_text())
+        else:
+            print(f"🔍 Fetching posts for {author}  (actor: {ACTOR_ID})…")
+            raw = fetch_profile_posts(client, profile, max_posts=args.max_posts)
+            cache_file.write_text(json.dumps(raw, indent=2, default=str))
+
         print(f"   raw items returned: {len(raw)}")
 
         kept = [p for item in raw if (p := normalize(item, author, cutoff))]
