@@ -21,7 +21,6 @@ MIN_POSTS = 20
 WINNER_THRESHOLD = 3.0
 TOP_HOOKS = 20
 
-# Features that apply to clip content (exclude post_type which is a LinkedIn format feature)
 CLIP_FEATURES = {
     "hook_type",
     "hook_length",
@@ -29,6 +28,10 @@ CLIP_FEATURES = {
     "has_specific_number",
     "names_a_tool_or_company",
     "wc_bucket",
+    "post_type",
+    "announcement_milestone",
+    "salary_money_topic",
+    "personal_story",
 }
 
 
@@ -40,11 +43,12 @@ def build_rubric(lift_data: dict) -> dict:
     features_raw = lift_data["features"]
 
     # Group into categories
-    hook_type_vals = {}
-    hook_length_vals = {}
-    topic_vals = {}
-    booleans = {}
-    wc_vals = {}
+    hook_type_vals: dict = {}
+    hook_length_vals: dict = {}
+    topic_vals: dict = {}
+    post_type_vals: dict = {}
+    booleans: dict = {}
+    wc_vals: dict = {}
 
     for feat, stats in features_raw.items():
         if stats["low_confidence"]:
@@ -52,80 +56,80 @@ def build_rubric(lift_data: dict) -> dict:
         lift = stats["lift"]
         raw_lift = stats["raw_lift"]
         weight = lift_to_weight(lift)
+        entry = {"weight": weight, "lift": raw_lift,
+                 "pct_winners": stats["pct_winners"],
+                 "pct_normals": stats["pct_normals"]}
 
         if feat.startswith("hook_type:"):
-            val = feat.split(":", 1)[1]
-            hook_type_vals[val] = {"weight": weight, "lift": raw_lift,
-                                   "pct_winners": stats["pct_winners"],
-                                   "pct_normals": stats["pct_normals"]}
+            hook_type_vals[feat.split(":", 1)[1]] = entry
         elif feat.startswith("hook_"):  # hook_1-5w, hook_6-10w, hook_11+w
-            val = feat.replace("hook_", "")
-            hook_length_vals[val] = {"weight": weight, "lift": raw_lift,
-                                     "pct_winners": stats["pct_winners"],
-                                     "pct_normals": stats["pct_normals"]}
+            hook_length_vals[feat.replace("hook_", "")] = entry
         elif feat.startswith("topic:"):
-            val = feat.split(":", 1)[1]
-            topic_vals[val] = {"weight": weight, "lift": raw_lift,
-                               "pct_winners": stats["pct_winners"],
-                               "pct_normals": stats["pct_normals"]}
+            topic_vals[feat.split(":", 1)[1]] = entry
         elif feat.startswith("wc_bucket:"):
-            val = feat.split(":", 1)[1]
-            wc_vals[val] = {"weight": weight, "lift": raw_lift,
-                            "pct_winners": stats["pct_winners"],
-                            "pct_normals": stats["pct_normals"]}
-        elif feat in ("has_specific_number", "names_a_tool_or_company"):
+            wc_vals[feat.split(":", 1)[1]] = entry
+        elif feat.startswith("post_type:"):
+            post_type_vals[feat.split(":", 1)[1]] = entry
+        elif ":" not in feat:
+            # Boolean features: has_specific_number, names_a_tool_or_company,
+            # announcement_milestone, salary_money_topic, personal_story, etc.
             booleans[feat] = {"weight_true": weight, "weight_false": 0,
                               "lift": raw_lift,
                               "pct_winners": stats["pct_winners"],
                               "pct_normals": stats["pct_normals"]}
 
+    categorical_features = [
+        {
+            "name": "hook_type",
+            "description": "Style of the opening sentence/hook",
+            "type": "categorical",
+            "values": dict(sorted(hook_type_vals.items(), key=lambda x: -x[1]["weight"])),
+        },
+        {
+            "name": "hook_length",
+            "description": "Word count of the very first sentence",
+            "type": "categorical",
+            "values": dict(sorted(hook_length_vals.items(), key=lambda x: -x[1]["weight"])),
+        },
+        {
+            "name": "topic",
+            "description": "Primary subject of the clip",
+            "type": "categorical",
+            "values": dict(sorted(topic_vals.items(), key=lambda x: -x[1]["weight"])),
+        },
+        {
+            "name": "word_count",
+            "description": "Post/transcript word count bucket (short <100, medium 100-300, long 300+)",
+            "type": "categorical",
+            "values": dict(sorted(wc_vals.items(), key=lambda x: -x[1]["weight"])),
+        },
+    ]
+    if post_type_vals:
+        categorical_features.append({
+            "name": "post_type",
+            "description": "LinkedIn post format (video/image/text)",
+            "type": "categorical",
+            "values": dict(sorted(post_type_vals.items(), key=lambda x: -x[1]["weight"])),
+        })
+
+    boolean_features = [
+        {
+            "name": feat,
+            "description": feat.replace("_", " ").capitalize(),
+            "type": "boolean",
+            **vals,
+        }
+        for feat, vals in sorted(booleans.items(), key=lambda x: -x[1]["weight_true"])
+    ]
+
     rubric = {
-        "version": "1.0",
+        "version": "1.1",
         "generated_from": "data/lift.json",
-        "note": "score = 50 + sum(weights for features present), clamped 0-100. "
-                "Applies to clip content (hook wording, topic, specificity). "
-                "post_type excluded (LinkedIn format feature, N/A for clips).",
+        "note": "score = 50 + sum(weights for features present), clamped 0-100.",
         "base_score": 50,
-        "anti_pattern_penalty": 15,
-        "features": [
-            {
-                "name": "hook_type",
-                "description": "Style of the opening sentence/hook",
-                "type": "categorical",
-                "values": dict(sorted(hook_type_vals.items(),
-                                      key=lambda x: -x[1]["weight"])),
-            },
-            {
-                "name": "hook_length",
-                "description": "Word count of the very first sentence",
-                "type": "categorical",
-                "values": dict(sorted(hook_length_vals.items(),
-                                      key=lambda x: -x[1]["weight"])),
-            },
-            {
-                "name": "topic",
-                "description": "Primary subject of the clip",
-                "type": "categorical",
-                "values": dict(sorted(topic_vals.items(),
-                                      key=lambda x: -x[1]["weight"])),
-            },
-            {
-                "name": "word_count",
-                "description": "Transcript word count bucket (short <100, medium 100-300, long 300+)",
-                "type": "categorical",
-                "values": dict(sorted(wc_vals.items(),
-                                      key=lambda x: -x[1]["weight"])),
-            },
-            *[
-                {
-                    "name": feat,
-                    "description": feat.replace("_", " ").capitalize(),
-                    "type": "boolean",
-                    **vals,
-                }
-                for feat, vals in sorted(booleans.items(), key=lambda x: -x[1]["weight_true"])
-            ],
-        ],
+        "anti_pattern_penalty_each": 8,
+        "anti_pattern_penalty_max": 15,
+        "features": categorical_features + boolean_features,
     }
     return rubric
 
@@ -193,7 +197,8 @@ def rubric_to_table(rubric: dict) -> str:
             rows.append(f"  - false: 0 pts")
         rows.append("")
     rows.append(
-        f"**Anti-pattern penalty**: −{rubric['anti_pattern_penalty']} pts each "
+        f"**Anti-pattern penalty**: −{rubric['anti_pattern_penalty_each']} pts each, "
+        f"−{rubric['anti_pattern_penalty_max']} pts max "
         "(see anti-patterns.md for the list)."
     )
     return "\n".join(rows)

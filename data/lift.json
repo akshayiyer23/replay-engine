@@ -3,59 +3,59 @@
   "normals": 489,
   "model": "claude-haiku-5-5",
   "features": {
-    "hook_type:stat": {
-      "lift": 1.606,
-      "raw_lift": 1.606,
+    "salary_money_topic": {
+      "lift": 2.233,
+      "raw_lift": 2.233,
       "low_confidence": false,
-      "pct_winners": 20.4,
-      "pct_normals": 12.7,
-      "winner_count": 11,
-      "normal_count": 62
+      "pct_winners": 33.3,
+      "pct_normals": 14.9,
+      "winner_count": 18,
+      "normal_count": 73
+    },
+    "personal_story": {
+      "lift": 1.741,
+      "raw_lift": 1.741,
+      "low_confidence": false,
+      "pct_winners": 18.5,
+      "pct_normals": 10.6,
+      "winner_count": 10,
+      "normal_count": 52
     },
     "hook_type:story": {
-      "lift": 1.535,
-      "raw_lift": 1.535,
-      "low_confidence": false,
-      "pct_winners": 37.0,
-      "pct_normals": 24.1,
-      "winner_count": 20,
-      "normal_count": 118
-    },
-    "hook_1-5w": {
-      "lift": 1.369,
-      "raw_lift": 1.369,
-      "low_confidence": false,
-      "pct_winners": 24.1,
-      "pct_normals": 17.6,
-      "winner_count": 13,
-      "normal_count": 86
-    },
-    "topic:career": {
-      "lift": 1.354,
-      "raw_lift": 1.354,
-      "low_confidence": false,
-      "pct_winners": 11.1,
-      "pct_normals": 8.2,
-      "winner_count": 6,
-      "normal_count": 40
-    },
-    "topic:ai_agents": {
-      "lift": 1.321,
-      "raw_lift": 1.321,
+      "lift": 1.698,
+      "raw_lift": 1.698,
       "low_confidence": false,
       "pct_winners": 22.2,
-      "pct_normals": 16.8,
+      "pct_normals": 13.1,
       "winner_count": 12,
-      "normal_count": 82
+      "normal_count": 64
     },
-    "names_a_tool_or_company": {
-      "lift": 1.201,
-      "raw_lift": 1.201,
+    "topic:career": {
+      "lift": 1.637,
+      "raw_lift": 1.637,
       "low_confidence": false,
-      "pct_winners": 77.8,
-      "pct_normals": 64.8,
-      "winner_count": 42,
-      "normal_count": 317
+      "pct_winners": 27.8,
+      "pct_normals": 17.0,
+      "winner_count": 15,
+      "normal_count": 83
+    },
+    "announcement_milestone": {
+      "lift": 1.493,
+      "raw_lift": 1.493,
+      "low_confidence": false,
+      "pct_winners": 27.8,
+      "pct_normals": 18.6,
+      "winner_count": 15,
+      "normal_count": 91
+    },
+    "topic:other": {
+      "lift": 1.383,
+      "raw_lift": 1.383,
+      "low_confidence": false,
+      "pct_winners": 40.7,
+      "pct_normals": 29.4,
+      "winner_count": 22,
+      "normal_count": 144
     },
     "post_type:image": {
       "lift": 1.165,
@@ -66,68 +66,95 @@
       "winner_count": 35,
       "normal_count": 272
     },
-    "topic:other": {
-      "lift": 1.154,
-      "raw_lift": 1.154,
+    "names_a_tool_or_company": {
+      "lift": 1.152,
+      "raw_lift": 1.152,
       "low_confidence": false,
-      "pct_winners": 27.8,
-      "pct_normals": 24.1,
-      "winner_count": 15,
-      "normal_count": 118
+      "pct_winners": 81.5,
+      "pct_normals": 70.8,
+      "winner_count": 44,
+      "normal_count": 346
+    },
+    "has_specific_number": {
+      "lift": 1.147,
+      "raw_lift": 1.147,
+      "low_confidence": false,
+      "pct_winners": 70.4,
+      "pct_normals": 61.3,
+      "winner_count": 38,
+      "normal_count": 300
+    },
+    "hook_type:contrarian": {
+      "lift": 1.132,
+      "raw_lift": 1.132,
+      "low_confidence": false,
+      "pct_winners": 16.7,
+      "pct_normals": 14.7,
+      "winner_count": 9,
+      "normal_count": 72
     },
     "wc_bucket:medium": {
-      "lift": 1.074,
-      "raw_lift": 1.074,
+      "lift": 1.073,
+      "raw_lift": 1.073,
       "low_confidence": false,
       "pct_winners": 59.3,
       "pct_normals": 55.2,
       "winner_count": 32,
       "normal_count": 270
     },
-    "has_specific_number": {
-      "lift": 1.064,
-      "raw_lift": 1.064,
-      "low_confidence": false,
-      "pct_winners": 64.8,
-      "pct_normals": 60.9,
-      "winner_count": 35,
-      "normal_count": 298
-    },
     "hook_6-10w": {
-      "lift": 1.013,
-      "raw_lift": 1.013,
+      "lift": 1.071,
+      "raw_lift": 1.071,
       "low_confidence": false,
-      "pct_winners": 63.0,
-      "pct_normals": 62.2,
-      "winner_count": 34,
-      "normal_count": 304
+      "pct_winners": 20.4,
+      "pct_normals": 19.0,
+      "winner_count": 11,
+      "normal_count": 93
     },
-    "topic:LinkedIn": {
+    "hook_type:other": {
+      "lift": 1.006,
+      "raw_lift": 1.006,
+      "low_confidence": false,
+      "pct_winners": 44.4,
+      "pct_normals": 44.2,
+      "winner_count": 24,
+      "normal_count": 216
+    },
+    "hook_1-5w": {
       "lift": 1.0,
-      "raw_lift": 1.194,
+      "raw_lift": 1.132,
       "low_confidence": true,
       "pct_winners": 3.7,
-      "pct_normals": 3.1,
+      "pct_normals": 3.3,
       "winner_count": 2,
-      "normal_count": 15
+      "normal_count": 16
     },
-    "topic:signals": {
+    "hook_type:how_to": {
       "lift": 1.0,
-      "raw_lift": 0.8,
+      "raw_lift": 0.307,
       "low_confidence": true,
-      "pct_winners": 5.6,
-      "pct_normals": 7.0,
-      "winner_count": 3,
-      "normal_count": 34
+      "pct_winners": 3.7,
+      "pct_normals": 12.1,
+      "winner_count": 2,
+      "normal_count": 59
+    },
+    "hook_type:mistake": {
+      "lift": 1.0,
+      "raw_lift": 0.0,
+      "low_confidence": true,
+      "pct_winners": 0.0,
+      "pct_normals": 2.0,
+      "winner_count": 0,
+      "normal_count": 10
     },
     "hook_type:prediction": {
       "lift": 1.0,
-      "raw_lift": 0.787,
+      "raw_lift": 1.509,
       "low_confidence": true,
       "pct_winners": 3.7,
-      "pct_normals": 4.7,
+      "pct_normals": 2.5,
       "winner_count": 2,
-      "normal_count": 23
+      "normal_count": 12
     },
     "post_type:article": {
       "lift": 1.0,
@@ -138,59 +165,77 @@
       "winner_count": 2,
       "normal_count": 24
     },
-    "hook_type:mistake": {
+    "topic:LinkedIn": {
+      "lift": 1.0,
+      "raw_lift": 0.823,
+      "low_confidence": true,
+      "pct_winners": 3.7,
+      "pct_normals": 4.5,
+      "winner_count": 2,
+      "normal_count": 22
+    },
+    "topic:cold_email": {
+      "lift": 1.0,
+      "raw_lift": 0.162,
+      "low_confidence": true,
+      "pct_winners": 3.7,
+      "pct_normals": 22.9,
+      "winner_count": 2,
+      "normal_count": 112
+    },
+    "topic:hiring_sdrs": {
       "lift": 1.0,
       "raw_lift": 0.0,
       "low_confidence": true,
       "pct_winners": 0.0,
-      "pct_normals": 3.1,
+      "pct_normals": 3.5,
       "winner_count": 0,
+      "normal_count": 17
+    },
+    "topic:signals": {
+      "lift": 1.0,
+      "raw_lift": 1.811,
+      "low_confidence": true,
+      "pct_winners": 5.6,
+      "pct_normals": 3.1,
+      "winner_count": 3,
       "normal_count": 15
     },
-    "topic:prediction": {
-      "lift": 1.0,
-      "raw_lift": 0.0,
-      "low_confidence": true,
-      "pct_winners": 0.0,
-      "pct_normals": 0.2,
-      "winner_count": 0,
-      "normal_count": 1
-    },
     "wc_bucket:short": {
-      "lift": 0.99,
-      "raw_lift": 0.99,
+      "lift": 0.992,
+      "raw_lift": 0.992,
       "low_confidence": false,
       "pct_winners": 29.6,
       "pct_normals": 29.9,
       "winner_count": 16,
       "normal_count": 146
     },
-    "topic:hiring_sdrs": {
+    "hook_11+w": {
       "lift": 0.977,
       "raw_lift": 0.977,
       "low_confidence": false,
-      "pct_winners": 13.0,
-      "pct_normals": 13.3,
-      "winner_count": 7,
-      "normal_count": 65
+      "pct_winners": 75.9,
+      "pct_normals": 77.7,
+      "winner_count": 41,
+      "normal_count": 380
     },
-    "hook_type:contrarian": {
-      "lift": 0.908,
-      "raw_lift": 0.908,
+    "topic:ai_agents": {
+      "lift": 0.943,
+      "raw_lift": 0.943,
       "low_confidence": false,
-      "pct_winners": 16.7,
-      "pct_normals": 18.4,
-      "winner_count": 9,
-      "normal_count": 90
+      "pct_winners": 18.5,
+      "pct_normals": 19.6,
+      "winner_count": 10,
+      "normal_count": 96
     },
-    "hook_type:other": {
-      "lift": 0.81,
-      "raw_lift": 0.81,
+    "hook_type:stat": {
+      "lift": 0.809,
+      "raw_lift": 0.809,
       "low_confidence": false,
-      "pct_winners": 11.1,
-      "pct_normals": 13.7,
-      "winner_count": 6,
-      "normal_count": 67
+      "pct_winners": 9.3,
+      "pct_normals": 11.5,
+      "winner_count": 5,
+      "normal_count": 56
     },
     "post_type:video": {
       "lift": 0.807,
@@ -211,40 +256,13 @@
       "normal_count": 92
     },
     "wc_bucket:long": {
-      "lift": 0.745,
-      "raw_lift": 0.745,
+      "lift": 0.744,
+      "raw_lift": 0.744,
       "low_confidence": false,
       "pct_winners": 11.1,
       "pct_normals": 14.9,
       "winner_count": 6,
       "normal_count": 73
-    },
-    "hook_11+w": {
-      "lift": 0.65,
-      "raw_lift": 0.65,
-      "low_confidence": false,
-      "pct_winners": 13.0,
-      "pct_normals": 20.0,
-      "winner_count": 7,
-      "normal_count": 98
-    },
-    "topic:cold_email": {
-      "lift": 0.614,
-      "raw_lift": 0.614,
-      "low_confidence": false,
-      "pct_winners": 16.7,
-      "pct_normals": 27.2,
-      "winner_count": 9,
-      "normal_count": 133
-    },
-    "hook_type:how_to": {
-      "lift": 0.481,
-      "raw_lift": 0.481,
-      "low_confidence": false,
-      "pct_winners": 11.1,
-      "pct_normals": 23.1,
-      "winner_count": 6,
-      "normal_count": 113
     }
   }
 }

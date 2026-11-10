@@ -94,8 +94,17 @@ Given a JSON array of posts, return a JSON array of the same length (same order)
   "first_line_words": <integer — word count of the very first line>,
   "has_specific_number": true|false,
   "names_a_tool_or_company": true|false,
-  "topic": "signals"|"cold_email"|"LinkedIn"|"ai_agents"|"hiring_sdrs"|"career"|"other"
+  "topic": "signals"|"cold_email"|"LinkedIn"|"ai_agents"|"hiring_sdrs"|"career"|"other",
+  "announcement_milestone": true|false,
+  "salary_money_topic": true|false,
+  "personal_story": true|false
 }
+
+Definitions:
+- announcement_milestone: post is about a job change, funding round, product launch, promotion, company news, or personal achievement
+- salary_money_topic: post explicitly mentions a specific salary figure, compensation range, revenue number, or money amount in the context of career/business advice
+- personal_story: post is primarily a first-person narrative about a personal experience, journey, or specific event the author lived through
+
 Output only the JSON array. No prose, no markdown fences."""
 
 
@@ -103,11 +112,16 @@ def tag_batch(client: anthropic.Anthropic, batch: list[dict]) -> list[dict]:
     items = [{"i": idx, "text": p["text"][:800]} for idx, p in enumerate(batch)]
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=2048,
+        max_tokens=16000,
+        thinking={"type": "adaptive"},
+        extra_body={"output_config": {"effort": "low"}},
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": f"Tag these {len(items)} posts:\n{json.dumps(items, indent=2)}"}],
     )
-    raw = resp.content[0].text.strip()
+    text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+    if text_block is None:
+        raise ValueError(f"No text block in response (blocks: {[getattr(b,'type','?') for b in resp.content]})")
+    raw = text_block.text.strip()
     raw = re.sub(r"^```(?:json)?\s*\n?", "", raw)
     raw = re.sub(r"\n?```\s*$", "", raw.strip())
     return json.loads(raw)
@@ -126,10 +140,15 @@ def extract_features(p: dict) -> set[str]:
             feats.add(f"{field}:{v}")
 
     # Boolean
-    if tags.get("has_specific_number"):
-        feats.add("has_specific_number")
-    if tags.get("names_a_tool_or_company"):
-        feats.add("names_a_tool_or_company")
+    for bool_feat in (
+        "has_specific_number",
+        "names_a_tool_or_company",
+        "announcement_milestone",
+        "salary_money_topic",
+        "personal_story",
+    ):
+        if tags.get(bool_feat):
+            feats.add(bool_feat)
 
     # first_line_words → bucket
     flw = tags.get("first_line_words")

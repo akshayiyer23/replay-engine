@@ -61,6 +61,8 @@ Write like a sharp practitioner sharing real insight — no corporate tone, no m
 - HARD RULE: Only use numbers and claims that appear WORD FOR WORD in the transcript.
   Do not round, extrapolate, or invent any figures. If a transcript says "50,000 accounts
   in under an hour", write exactly that — not "tens of thousands" or "60 minutes".
+  Preserve qualifiers: if the transcript says "close to 30 meetings" or "around 40%",
+  do NOT drop "close to" or "around". Write the qualifier as it appears.
 - Carousel: each slide = one punchy line (8–12 words). No bullets inside a slide.
 - Caption: 3–6 words max for the on-screen text that appears first 3 seconds.
 {voice_block}\
@@ -141,10 +143,15 @@ def _call_sonnet(system: str, user: str, client: anthropic.Anthropic) -> str:
 def _tag_line(line: str, client: anthropic.Anthropic) -> dict:
     resp = client.messages.create(
         model=HAIKU,
-        max_tokens=80,
+        max_tokens=4096,
+        thinking={"type": "adaptive"},
+        extra_body={"output_config": {"effort": "low"}},
         messages=[{"role": "user", "content": _TAG_USER.format(line=line[:200])}],
     )
-    raw = _strip_fences(resp.content[0].text)
+    text_block = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+    if text_block is None:
+        raise ValueError(f"No text block from haiku (blocks: {[getattr(b,'type','?') for b in resp.content]})")
+    raw = _strip_fences(text_block.text)
     return json.loads(raw)
 
 
