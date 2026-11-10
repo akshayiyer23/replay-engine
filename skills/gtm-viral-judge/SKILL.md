@@ -32,7 +32,9 @@ For **"slow start"** or **"needs context"** issues only, attempt a trim BEFORE s
 
 1. Scan the `transcript` for the first sentence that works as a strong standalone hook —
    no setup, no dangling pronouns, makes immediate sense cold.
-2. Set `start_hook` to that sentence's **verbatim text** (copied exactly from the transcript).
+2. Set `start_hook` to that sentence's **verbatim text** — copy the exact words from the
+   transcript, character-for-character. **Never describe it** ("the surprising claim",
+   "the hook line") and never paraphrase. It must start with the same words as the sentence.
 3. **Assume the trim is applied**: do NOT penalise for whichever issue the trim fixes.
    The pipeline validates duration (30–90 s) and applies a −8 fallback if the trim fails.
 4. If the whole clip requires earlier context (no good sentence exists), or the opening

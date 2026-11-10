@@ -297,14 +297,30 @@ def build_judge_prompt() -> str:
 def _find_hook_sentence(
     start_hook: str, search_from: int, end_i: int, sentences: list[dict]
 ) -> int | None:
-    """Return the index of the sentence matching start_hook, or None."""
+    """Return the index of the sentence best matching start_hook, or None."""
     if not start_hook or not start_hook.strip():
         return None
-    needle = start_hook.lower().strip()[:60]
+    needle = start_hook.lower().strip()
+    needle_prefix = needle[:50]
+    # Significant words from first 10 tokens (skip very short words)
+    needle_words = [w for w in needle.split()[:10] if len(w) > 2]
+
+    best_i, best_overlap = None, 0
     for i in range(search_from, min(end_i + 1, len(sentences))):
         sent = sentences[i]["text"].lower().strip()
-        if sent.startswith(needle[:40]) or needle[:40] in sent[:100]:
+        # Exact prefix match (most reliable)
+        if sent.startswith(needle_prefix) or needle_prefix in sent:
             return i
+        # Word-overlap fallback: need ≥60 % of significant words
+        if needle_words:
+            sent_words = set(sent.split())
+            overlap = sum(1 for w in needle_words if w in sent_words)
+            if overlap > best_overlap:
+                best_overlap = overlap
+                best_i = i
+
+    if needle_words and best_overlap >= max(3, len(needle_words) * 0.6):
+        return best_i
     return None
 
 
@@ -326,23 +342,29 @@ def _apply_trims(
         start_i = c.get("start_i", 0)
         end_i = c.get("end_i", len(sentences) - 1)
 
-        # Search from sentence AFTER current start (we need to actually move forward)
+        # Search from sentence AFTER current start
         trim_i = _find_hook_sentence(start_hook, start_i + 1, end_i, sentences)
 
         if trim_i is None:
-            # Claude expected a trim but we can't locate the sentence
+            # Couldn't locate the sentence Claude referenced
             item["score"] = max(0, item["score"] - 8)
-            item["why"] += "; trim sentence not found (−8)"
+            item["why"] += "; trim not found (−8)"
             item["start_hook"] = None
             continue
 
         new_start_ms = sentences[trim_i]["start"]
         new_duration_s = (sentences[end_i]["end"] - new_start_ms) / 1000
 
-        if not (30 <= new_duration_s <= 90):
-            # Trim puts clip out of valid range
+        if new_duration_s > 90:
             item["score"] = max(0, item["score"] - 8)
-            item["why"] += f"; trim out of range {new_duration_s:.0f}s (−8)"
+            item["why"] += f"; trim too long {new_duration_s:.0f}s (−8)"
+            item["start_hook"] = None
+            continue
+
+        if new_duration_s < 30:
+            # Hook was found but clip would be too short to trim.
+            # The good-hook sentence exists → don't penalise, just don't physically trim.
+            item["why"] += f"; trim valid but clip too short ({new_duration_s:.0f}s) — kept original"
             item["start_hook"] = None
             continue
 
@@ -429,6 +451,11 @@ def main() -> None:
         "--judge-only",
         action="store_true",
         help="Skip transcript/mining — load existing candidates JSON and run only the judge step",
+    )
+    parser.add_argument(
+        "--skip-content",
+        action="store_true",
+        help="Skip the content-generation step (LinkedIn post, carousel, lesson, caption)",
     )
     args = parser.parse_args()
 
@@ -543,6 +570,13 @@ def main() -> None:
             f"{c['id']}  {score_str}  trimmed={trimmed}  "
             f"{c['moment_type']}  {c['angle']}  //  {c.get('why', '')}"
         )
+
+
+    # ── 8. generate content ──
+    if not args.skip_content:
+        from generate_content import generate_for_candidates, print_content_summary
+        content_results = generate_for_candidates(candidates, slug)
+        print_content_summary(content_results)
 
 
 if __name__ == "__main__":

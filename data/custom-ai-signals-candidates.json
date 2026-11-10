@@ -19,8 +19,8 @@
     "hook_line": "So A few months ago, I'd say probably like 3, 4 months ago, we really started leaning into custom sort of AI signals that we're checking for.",
     "transcript": "So A few months ago, I'd say probably like 3, 4 months ago, we really started leaning into custom sort of AI signals that we're checking for. So what these are, are essentially signals that we're checking across a segment of our TAM. So that may be, you know, 40,000 accounts where we're checking for things like product launches, right? So the, the middle reply right there, that's coming from a product launch signal. We're calling it out in the email copy. So these are great because you can tailor it specific to your ICP, right? It's not the same as just, you know, a new hire, right? Obviously, like website intent, all those things are great, but this one's really tailored to your business. And we really like to work backwards from, you know, what we would send manually, what we would send like one-to-one, our research, and really try to scale that out. So yeah, we're continuing to sort of build this program, but last month saw close to 30 meetings just from a few AI signals that we've rolled out. So really exciting stuff.",
     "duration_flag": "OK",
-    "score": 68,
-    "why": "stat hook (1.61\u00d7) + AI signals (1.32\u00d7); 11+ word angle (0.65\u00d7) drags",
+    "score": 60,
+    "why": "stat hook (1.61\u00d7) + AI/agents (1.32\u00d7); 'middle reply' needs context (\u22128)",
     "top8": true
   },
   {
@@ -43,8 +43,8 @@
     "hook_line": "People will get access to a lot of the same signals.",
     "transcript": "People will get access to a lot of the same signals. So with that, it's really trying to find more and better ways and more relevant ways to reach out. I think outbound in general, stepping back, is a great way to sort of outreach to a wide range and number of customers or potential customers and prospects. But yeah, it's great. I think when looking at the first-party stuff, if someone's already on your website showing high intent on the pricing page, that's a very successful signal for us still. That will\u2014 I think last month, over 20 meetings just from website intent and prospecting within those accounts. There are different MQLs that come in from gated content if they're viewing our product tour and other sort of first-party signals like CRM data. Close lost opportunities based on the loss reason, we can do that in Unify. And then there are the third-party signals, right? So these are getting extremely popular.",
     "duration_flag": "OK",
-    "score": 45,
-    "why": "contrarian (0.91\u00d7), long angle (0.65\u00d7); trimmed to skip slow setup",
+    "score": 47,
+    "why": "contrarian (0.91\u00d7) + 15-word angle (0.65\u00d7) drag it down",
     "top8": false,
     "trimmed": true,
     "pre_trim_start_ms": 211780
@@ -70,7 +70,7 @@
     "transcript": "I think when looking at the first-party stuff, if someone's already on your website showing high intent on the pricing page, that's a very successful signal for us still. That will\u2014 I think last month, over 20 meetings just from website intent and prospecting within those accounts. There are different MQLs that come in from gated content if they're viewing our product tour and other sort of first-party signals like CRM data. Close lost opportunities based on the loss reason, we can do that in Unify. And then there are the third-party signals, right? So these are getting extremely popular. So we're talking about social signals, so people interacting on LinkedIn, so engaging with Austin, our CEO's post on LinkedIn, engaging with Unify, potentially competitor engagement on LinkedIn, job openings. So if a new hire, for us, if it's a new sales leader, a new marketing hire, We're going after that. Same thing with job openings, funding data, a lot of like the external sort of standard signals, which still works very well for us. But as we're sort of moving on and a lot of people are getting access to the same sort of signals, so inbox, you know, inboxes are more and more crowded, right? And so it's how can we sort of get more personalized and relevant at scale.",
     "duration_flag": "OK",
     "score": 52,
-    "why": "contrarian (0.91\u00d7) + names Unify (1.20\u00d7); long angle (0.65\u00d7)",
+    "why": "contrarian (0.91\u00d7) + names Unify (1.20\u00d7); long 17-word angle",
     "top8": true
   },
   {
@@ -94,7 +94,7 @@
     "transcript": "And so that's where custom signals enter, right? So a couple examples on the screen, basically on what you can do, and we'll go into, you know, the live demo aspect and what this sort of looks like in practice. But an example of this is, you know, if someone has a geographic, you know, expansion, right? That might be a good signal to reach out. If they're mentioning certain AI initiatives in, you know, earnings reports or JDs, you can pull that out with an agent and then tee it up in email copy for outreach. And so also you can get pretty specific on your type of business. So if you're a cybersecurity company, maybe you want to go after companies that have SOC 2 audit prep and have mentions of that on LinkedIn or anywhere within the news. So the beauty of it is really it's a unique signal where you're sort of getting away and giving you better chances at that to bring on meetings, which in turn will hopefully turn into closed won revenue.",
     "duration_flag": "OK",
     "score": 30,
-    "why": "how-to hook (0.48\u00d7) + AI/agents (1.32\u00d7); trimmed to skip context gap; trim out of range 29s (\u22128)",
+    "why": "how-to hook (0.48\u00d7); opens mid-thought, needs context (\u22128)",
     "top8": false
   },
   {
@@ -118,7 +118,7 @@
     "transcript": "There's first\u2014 your first few steps are really for foundation and directional. So defining and getting clarity on your ICP. If you don't do this upfront, your initiative is going to fail at the end of the day. You need that clarity on the specifics of who you're going after. Next, and one of the most critical pieces is what are the signals that are going to trigger your specific ICP? So find those urgency triggers that trigger buying potential, then spec your experiments. So hey, what are the specifics? What are we trying to get out of this, this test? What are we testing and have the hypotheses? And then you get into actually operationalizing it in Unify, for example. So building your agent, automating that personalization into copy, weaving this into an actual end-to-end play, and then monitoring how is this performing and how can we tweak and optimize this.",
     "duration_flag": "OK",
     "score": 31,
-    "why": "how-to hook (0.48\u00d7); no standalone context (\u22128)",
+    "why": "how-to hook (0.48\u00d7); 'first few steps' lacks context (\u22128)",
     "top8": false
   },
   {
@@ -141,8 +141,8 @@
     "hook_line": "But first, defining your ICP.",
     "transcript": "But first, defining your ICP. This is really looking at who are our best-fit customers, who's been most successful, what are their characteristics. So problems that we're solving, who are the personas we're engaging, are the value props they're chasing after? And then some of the firmographic data, technographic data that you're probably used to with a typical ICP. One tip here, if you can be really segmented within your ICP of like, okay, this is what our enterprise ICP looks like, or here's what our SaaS ICP looks like versus manufacturing, that allows you to be even more tailored with these signals. So something you can apply there.",
     "duration_flag": "OK",
-    "score": 26,
-    "why": "how-to hook (0.48\u00d7), long angle; trimmed to a standalone tip; trim out of range 16s (\u22128)",
+    "score": 34,
+    "why": "how-to hook (0.48\u00d7) + long angle (0.65\u00d7)",
     "top8": false
   },
   {
@@ -166,7 +166,7 @@
     "transcript": "Yeah, I would say, you know, when thinking about step 1 and 2 together, right, I think there's actually a lot of surprises that come out when you look at the data. So, you know, we assume our ICP is, you know, pretty standard and, you know, these are sort of top segments and like businesses we sell into. But actually when we did, you know, our sort of look back at our closed-won customers, looked at our, again, like conversational sort of intelligence with those transcripts, right? We're looking for particular moments, right? Like we mentioned product launches. So if they met, they had a recent product launch, then they're looking at Unify at a higher clip. Also based on industry. So we found when looking back at our closed-won customers, we actually had like a disproportionate number of fintech companies, right?",
     "duration_flag": "OK",
     "score": 57,
-    "why": "story hook (1.53\u00d7) + names Unify (1.20\u00d7); trimmed to the surprise line; trim sentence not found (\u22128)",
+    "why": "story hook (1.53\u00d7) + names Unify; 'step 1 and 2' needs context (\u22128)",
     "top8": true
   },
   {
@@ -189,8 +189,8 @@
     "hook_line": "But you really just want to focus on what drives meetings and drives pipeline and revenue.",
     "transcript": "But you really just want to focus on what drives meetings and drives pipeline and revenue. So really working backwards from, okay, if you were writing this person one-to-one, what would be a good signal, right? What would be a good research point if your BDR is calling them, if they're emailing as well? And how would you bring it out in email copy, right? So don't necessarily try to reinvent the wheel, I'd say. Just really try to sort of work backwards and do it in that system.",
     "duration_flag": "OK",
-    "score": 38,
-    "why": "how-to hook (0.48\u00d7) + AI/agents (1.32\u00d7); trimmed to skip rambling start",
+    "score": 32,
+    "why": "how-to hook (0.48\u00d7) + long angle (0.65\u00d7)",
     "top8": false,
     "trimmed": true,
     "pre_trim_start_ms": 607176
@@ -215,8 +215,8 @@
     "hook_line": "So like, that signal might be great, but why would they be interested in your product, right?",
     "transcript": "So like, that signal might be great, but why would they be interested in your product, right? Like, what problem does it solve? Okay, even think about basics or signals with, okay, if they raise funding, right, what problems might come, right? Okay, they're hiring a ton of people. And sort of again, looking at the earnings reports, right? What sort of problems emerge from that and how can your business solve that? That's really just the first step of everything, especially with these AI signals that are running.",
     "duration_flag": "OK",
-    "score": 36,
-    "why": "how-to hook (0.48\u00d7) + AI/agents (1.32\u00d7); trimmed past 'along with that'",
+    "score": 32,
+    "why": "how-to hook (0.48\u00d7) + 11+ word angle (0.65\u00d7)",
     "top8": false,
     "trimmed": true,
     "pre_trim_start_ms": 664390
@@ -241,9 +241,9 @@
     "hook_line": "All right, just for the last couple pieces of this foundation, then digging into product, you're going to want to next spec your experiment.",
     "transcript": "All right, just for the last couple pieces of this foundation, then digging into product, you're going to want to next spec your experiment. So what are we actually going to test? What is the hypothesis we're looking to expect here and like the expected impact we're trying to drive to see if this is going to have success or failure? So you want to set those benchmarks and then estimate Basically understand, hey, what does success look like? And understand within that small pocket or that small experiment if this is successful and either optimize it, go away from it, or scale it up depending on how it performs.",
     "duration_flag": "OK",
-    "score": 33,
-    "why": "how-to hook (0.48\u00d7) but short 10-word angle; trimmed to skip context; trim out of range 26s (\u22128)",
-    "top8": true
+    "score": 41,
+    "why": "how-to hook (0.48\u00d7); short 9-word angle limits the damage",
+    "top8": false
   },
   {
     "id": "m11",
@@ -265,9 +265,9 @@
     "hook_line": "So whether that's testing it on 100 companies, okay, 15 qualify for this signal, then mapping it out.",
     "transcript": "So whether that's testing it on 100 companies, okay, 15 qualify for this signal, then mapping it out. If you're running it on 1,000 companies or 10,000, how many companies is that going to be? How many people are you prospecting for? At each of these companies, right? And then you can think about the volume, okay? Like, how many emails am I going to send? Do I want to layer in any manual touches for the higher fit accounts? For the screenshot, we just did\u2014 it was super simple. We just did 20 accounts and we went through manually, first off, to find signals. But with this product launch one, how many had a major product launch? So we can then estimate how many people are going to be entering this flow every month or whatever cadence you're running it on.",
     "duration_flag": "OK",
-    "score": 36,
-    "why": "how-to hook (0.48\u00d7) + specific numbers (1.06\u00d7); trimmed to the seed-list example",
-    "top8": false,
+    "score": 45,
+    "why": "specific numbers (1.06\u00d7); how-to hook (0.48\u00d7) pulls down",
+    "top8": true,
     "trimmed": true,
     "pre_trim_start_ms": 756233
   },
@@ -291,8 +291,8 @@
     "hook_line": "So again, as the product launch one mentioned here, we actually started off with the last 7 days.",
     "transcript": "So again, as the product launch one mentioned here, we actually started off with the last 7 days. And so it was a big success. And then another way to double down as we were booking more and more meetings through this signal, we expanded it to 30 days. But first, that's the first part. If they've launched a major new product in the past 30 days and to return that product name, which I'll then show you how that's used in email copy.",
     "duration_flag": "OK",
-    "score": 52,
-    "why": "story hook (1.53\u00d7) + specific numbers (1.06\u00d7); trimmed to the 30-day expansion; trim out of range 20s (\u22128)",
+    "score": 60,
+    "why": "story hook (1.53\u00d7) + specific numbers (7\u219230 days)",
     "top8": true
   },
   {
@@ -316,7 +316,7 @@
     "transcript": "I think it's important to specify the sources you want to look at, right? So here I'm given the order of check their official blog first, the press releases, changelog, and just to really specify where you want it to check because it could check the whole entire internet. And that's, the more specific, the better. Also, through testing it initially, I noticed it was pulling in a lot of sort of lighter launches or things we wouldn't really consider launches, right? Things like pricing change or internal tools, right? Like internal sort of hiring news, right? So just specifying what counts as a major launch and giving it again more specific criteria and structure to go off of. So here we're identifying, you know, a major feature, you know, could be significant go-to-market shift, a net new customer-facing product, and to ignore things like, you know, the repos pricing only announcements.",
     "duration_flag": "OK",
     "score": 38,
-    "why": "how-to hook (0.48\u00d7) + AI/agents (1.32\u00d7); trimmed to skip context gap",
+    "why": "AI/agents (1.32\u00d7) offset by how-to hook (0.48\u00d7)",
     "top8": false,
     "trimmed": true,
     "pre_trim_start_ms": 947430
@@ -341,8 +341,8 @@
     "hook_line": "So again, it's like that power of, you can do research on 50,000 accounts in less than an hour and outreach to all of them or queue up for your sales team to go after.",
     "transcript": "So again, it's like that power of, you can do research on 50,000 accounts in less than an hour and outreach to all of them or queue up for your sales team to go after. That's really the beauty of it. So here you can see what it's searching for, the different sites it's going after, different tools it's using. So the primary one here would be internet search. Yeah. And it's always nice to have this, like, auditability with Unify. Like, the AI piece isn't really a black box.",
     "duration_flag": "OK",
-    "score": 73,
-    "why": "stat hook (1.61\u00d7) + AI/agents (1.32\u00d7) + names Unify; trimmed to the 50,000 claim",
+    "score": 71,
+    "why": "stat hook (1.61\u00d7) + AI/agents (1.32\u00d7) + names Unify (1.20\u00d7)",
     "top8": true,
     "trimmed": true,
     "pre_trim_start_ms": 1093752
@@ -367,8 +367,8 @@
     "hook_line": "So from there, again, you can do a sort of manual test for the spec and experiment, Or you could actually do it based on, you know, a set of 100 companies.",
     "transcript": "So from there, again, you can do a sort of manual test for the spec and experiment, Or you could actually do it based on, you know, a set of 100 companies. And this for mapping out, you know, how many projected companies, how many people you're gonna prospect for, emails sent. So here my colleague Charlie tested a signal we were trying on specific for health tech on close to 100 companies. And so we saw about 15% there and then could sort of estimate if we're running this on 5,000, 10,000 accounts, Um, how many, around how many are going to be qualified for this signal every month.",
     "duration_flag": "OK",
-    "score": 26,
-    "why": "how-to hook (0.48\u00d7) + specific number; trimmed to the Charlie health-tech test; trim out of range 22s (\u22128)",
+    "score": 45,
+    "why": "specific number (1.06\u00d7); how-to hook (0.48\u00d7) pulls down",
     "top8": false
   },
   {
@@ -391,8 +391,8 @@
     "hook_line": "I think like the thing to call\u2014 one more thing to call out here, the power comes from not only being able to take these signals and use them as intent triggers to like trigger specific plays, but also that level of customization in the copy.",
     "transcript": "I think like the thing to call\u2014 one more thing to call out here, the power comes from not only being able to take these signals and use them as intent triggers to like trigger specific plays, but also that level of customization in the copy. So you're both taking action based on a specific trigger and always-on monitoring for that, and then leveraging that to actually personalize those, that outreach and make it hyper relevant at scale. So you're not having to customize that every single time or look at your intent signals and then take that to have a manual seller go out and build the copy themselves. Like both of those pieces are automated, which is really powerful.",
     "duration_flag": "OK",
-    "score": 30,
-    "why": "how-to hook (0.48\u00d7) + AI/agents (1.32\u00d7); trimmed to skip 'one more thing'; trim out of range 11s (\u22128)",
+    "score": 38,
+    "why": "AI/agents (1.32\u00d7) offset by how-to hook (0.48\u00d7)",
     "top8": false
   },
   {
@@ -415,8 +415,8 @@
     "hook_line": "So for folks looking to get started here, what we recommend in your next 30 days is to Ethan's point of auditing your ICP.",
     "transcript": "So for folks looking to get started here, what we recommend in your next 30 days is to Ethan's point of auditing your ICP. So take a look back at the data. Don't, you know, have your hypotheses, but also go in and delve in to understand, you know, what's working, what's not, what are you seeing resonating. Then identify 3 triggers that might be business-specific to indicate buying readiness. Then run a play based on, based on one of those that you have the most conviction behind, and then measure those results. So run that initial experiment. But first do the foundational work to identify who it might be for.",
     "duration_flag": "OK",
-    "score": 26,
-    "why": "how-to hook (0.48\u00d7), long angle; trimmed to the '3 triggers' step; trim out of range 16s (\u22128)",
+    "score": 36,
+    "why": "how-to hook (0.48\u00d7) + long angle (0.65\u00d7)",
     "top8": false
   },
   {
@@ -439,8 +439,8 @@
     "hook_line": "If they're hiring a ton for the BD team, right, they probably need more pipeline, right?",
     "transcript": "If they're hiring a ton for the BD team, right, they probably need more pipeline, right? And then within that JD, Okay, getting a sense of their tech stack where you can get an idea of like their current workflow and potential pains to go after. So I think that's going to look different for, you know, depending on the type of business, but headcount growth, divestment in certain areas, right? Yeah, I think a lot of like external signals and just inferring from there.",
     "duration_flag": "OK",
-    "score": 39,
-    "why": "how-to hook (0.48\u00d7) + names Unify (1.20\u00d7); trimmed to hiring-signal line",
+    "score": 32,
+    "why": "how-to hook (0.48\u00d7) + long angle (0.65\u00d7)",
     "top8": false,
     "trimmed": true,
     "pre_trim_start_ms": 1537692
@@ -465,8 +465,8 @@
     "hook_line": "Yeah, the only thing I would add here is a lot of this, you know, it's going to be\u2014 it's exactly\u2014 it's the reason it's custom signals.",
     "transcript": "Yeah, the only thing I would add here is a lot of this, you know, it's going to be\u2014 it's exactly\u2014 it's the reason it's custom signals. Like, it's going to be unique to your business. An easy way to get this, if you're using a conversational intelligence tool, for example, or if you just want to go talk, go out and talk to your customers, what are some of those ways? What are some of those triggers that are bringing folks to you today? So ask them, you know, what brought you? What are your ongoing initiatives? And then work backwards from that insight to see, hey, what can we identify from a market signal perspective that shows us that, you know, pipeline instability is the reason we're going\u2014 it's what's not working here.",
     "duration_flag": "OK",
-    "score": 26,
-    "why": "how-to hook (0.48\u00d7); trimmed to the 'ask customers' line; trim out of range 15s (\u22128)",
+    "score": 43,
+    "why": "how-to hook (0.48\u00d7); concise angle, standalone clean",
     "top8": false
   },
   {
@@ -490,7 +490,7 @@
     "transcript": "So when we first launch play, I always like to delay it a little bit, like 10 minutes, you know, 20 minutes, whatever it is, just check through a lot of the sample sequences, right? Obviously we'd already done the testing with the actual agents and with the snippets at a smaller scale. And so when it's initially launched, I like to delay the sequence, which you can do natively in Unify, and then check all the emails and sort of check the accuracy there, make sure it's not doing anything wacky. And then if you get a sample sort of reply here and there that says, we didn't launch this product, or this is from like X months ago, I would just, again, tweak the agent and keep on testing it. And also, there will be edge cases here and there. We'll probably get one every few thousand, but it's well worth it, I think, based on the success. And so I think that zooming out, it's not going to be 100% perfect, but if it's 95% to 98% accurate, makes complete sense, especially in terms of ROI.",
     "duration_flag": "OK",
     "score": 45,
-    "why": "how-to (0.48\u00d7) offset by AI/agents (1.32\u00d7) + Unify + numbers; trimmed",
+    "why": "AI/agents (1.32\u00d7) + names Unify (1.20\u00d7); how-to hook (0.48\u00d7)",
     "top8": true,
     "trimmed": true,
     "pre_trim_start_ms": 1648013
@@ -515,8 +515,8 @@
     "hook_line": "And so when it's initially launched, I like to delay the sequence, which you can do natively in Unify, and then check all the emails and sort of check the accuracy there, make sure it's not doing anything wacky.",
     "transcript": "And so when it's initially launched, I like to delay the sequence, which you can do natively in Unify, and then check all the emails and sort of check the accuracy there, make sure it's not doing anything wacky. And then if you get a sample sort of reply here and there that says, we didn't launch this product, or this is from like X months ago, I would just, again, tweak the agent and keep on testing it. And also, there will be edge cases here and there. We'll probably get one every few thousand, but it's well worth it, I think, based on the success. And so I think that zooming out, it's not going to be 100% perfect, but if it's 95% to 98% accurate, makes complete sense, especially in terms of ROI.",
     "duration_flag": "OK",
-    "score": 57,
-    "why": "contrarian (0.91\u00d7) + AI/agents (1.32\u00d7) + Unify + stats; trimmed past context; trim out of range 22s (\u22128)",
+    "score": 56,
+    "why": "contrarian (0.91\u00d7) + AI/agents (1.32\u00d7) + names Unify; 95% stat",
     "top8": true
   }
 ]
