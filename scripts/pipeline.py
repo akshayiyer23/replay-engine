@@ -1071,7 +1071,15 @@ def mine_chunk(
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     speaker_map_str = ", ".join(f"{k} = {v}" for k, v in speaker_map.items())
-    sentences_payload = json.dumps([{"i": i, **s} for i, s in chunk], indent=2)
+
+    # Build a 0-based relative payload so the model always sees indices 0…N
+    # regardless of which chunk of the transcript this is.  After mining we
+    # remap start_i / end_i back to absolute sentence indices.
+    abs_indices = [abs_i for abs_i, _ in chunk]
+    sentences_payload = json.dumps(
+        [{"i": rel_i, **s} for rel_i, (_, s) in enumerate(chunk)],
+        indent=2,
+    )
 
     base_instruction = (
         "Find 5–8 strong clip candidates from these sentences only.\n\n"
@@ -1079,7 +1087,8 @@ def mine_chunk(
         "no transcript, no hook_line, no timestamps:\n"
         "  id, start_i, end_i, moment_type, pillar, connects_to, "
         "persona, post_for, angle, standalone_check, risks\n\n"
-        "start_i and end_i must be the 'i' values from the sentences above.\n"
+        "start_i and end_i must be the 'i' values from the sentences above "
+        f"(0 to {len(chunk) - 1}).\n"
         "Output only the JSON array — no prose, no markdown fences."
     )
     strict_suffix = (
@@ -1128,11 +1137,27 @@ def mine_chunk(
             print("   ⚠️  Retry failed — skipping chunk")
             return []
 
-    if isinstance(result, list):
-        return result
     if isinstance(result, dict):
-        return result.get("candidates", [])
-    return []
+        result = result.get("candidates", [])
+    if not isinstance(result, list):
+        return []
+
+    # Remap relative indices → absolute indices
+    n = len(abs_indices)
+    remapped = []
+    for lab in result:
+        try:
+            si = int(lab["start_i"])
+            ei = int(lab["end_i"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        # Clamp to valid relative range then convert
+        si = max(0, min(si, n - 1))
+        ei = max(si, min(ei, n - 1))
+        lab["start_i"] = abs_indices[si]
+        lab["end_i"] = abs_indices[ei]
+        remapped.append(lab)
+    return remapped
 
 
 # ── viral judge ──────────────────────────────────────────────────────────────
