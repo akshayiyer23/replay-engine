@@ -127,11 +127,18 @@ def get_results(slug: str):
         {
             "id": c["id"],
             "score": min(c.get("score", 0), 95),
+            "_raw_score": c.get("score", 0),
             "speaker_name": c.get("speaker_name", ""),
             "post_for": c.get("post_for", ""),
             "moment_type": c.get("moment_type", ""),
             "angle": c.get("angle", ""),
             "top8": c.get("top8", False),
+            "why": c.get("why", ""),
+            "trimmed": c.get("trimmed", False),
+            "start_ms": c.get("start_ms", 0),
+            "end_ms": c.get("end_ms", 0),
+            "duration_s": c.get("duration_s", 0),
+            "hook_line": c.get("hook_line", ""),
         }
         for c in sorted(candidates, key=lambda c: -c.get("score", 0))
         if c.get("top8")
@@ -208,11 +215,18 @@ async def _stream_pipeline(
                     {
                         "id": c["id"],
                         "score": min(c.get("score", 0), 95),
+                        "_raw_score": c.get("score", 0),
                         "speaker_name": c.get("speaker_name", ""),
                         "post_for": c.get("post_for", ""),
                         "moment_type": c.get("moment_type", ""),
                         "angle": c.get("angle", ""),
                         "top8": c.get("top8", False),
+                        "why": c.get("why", ""),
+                        "trimmed": c.get("trimmed", False),
+                        "start_ms": c.get("start_ms", 0),
+                        "end_ms": c.get("end_ms", 0),
+                        "duration_s": c.get("duration_s", 0),
+                        "hook_line": c.get("hook_line", ""),
                     }
                     for c in sorted(candidates, key=lambda c: -c.get("score", 0))
                     if c.get("top8")

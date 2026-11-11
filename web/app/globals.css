@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFFDF6;
+  --color-charcoal: #1A1A1A;
+  --color-orange: #F15A24;
+  --color-orange-light: #FEF0EB;
+  --color-border: #E8E4DC;
+  --color-muted: #6B6560;
+
+  --font-serif: var(--font-instrument-serif), "Georgia", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFDF6;
+  color: #1A1A1A;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent dark mode from inverting the cream palette */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #FFFDF6;
+    color: #1A1A1A;
+  }
+}
