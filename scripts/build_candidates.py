@@ -66,8 +66,9 @@ def build_candidates(
         candidates.append(candidate)
 
         if out_of_range:
+            label_id = label.get("id") or f"m{start_ms // 1000:04d}"
             print(
-                f"[FLAG] label {label['id']}: duration {duration_s:.1f}s is outside "
+                f"[FLAG] label {label_id}: duration {duration_s:.1f}s is outside "
                 f"{DURATION_MIN_S}–{DURATION_MAX_S}s"
             )
 

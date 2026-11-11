@@ -1,20 +1,45 @@
 # Replay Engine — Test Report
-**Date:** 2026-11-10  
-**Pipeline version:** Step 6 batch run  
+**Last updated:** 2026-11-10  
 **Tester:** Claude Code
 
 ---
 
-## Summary
+## Totals (all runs)
 
-| # | Video | Status | Time | Top Score | Judge Parser Fix |
-|---|-------|--------|------|-----------|-----------------|
-| 1 | Winning on LinkedIn in 2026 | ✅ PASS | 2:00 | 99 | — |
-| 2 | Cold Email Deliverability | ✅ PASS (re-run) | 1:41 | 73 | ✅ Required fix |
-| 3 | Claude for RevOps | ✅ PASS | 2:16 | 80 | — |
-| 4 | Outbound Email Masterclass | ✅ PASS | 2:07 | 72 | — |
+**11 webinars processed · 82 top-set moments · 66 posts written**
 
-**Bug discovered and fixed:** Cold Email Deliverability initially FAILed because the judge JSON parser used a dict-only fallback regex that missed "Extra data" errors (trailing text after valid JSON). Fixed by adding `json.decoder.JSONDecoder().raw_decode()` as the first fallback step in `judge_candidates()` in `pipeline.py`.
+| Date | Title | Status | Time | Top Score | Top8 | Posts |
+|------|-------|--------|------|-----------|------|-------|
+| 2026-02-19 | The Power of Custom AI Signals | ✅ PASS | — (pre-existing) | 78 | 7 | 6 |
+| 2026-02-25 | Winning on LinkedIn in 2026 | ✅ PASS | 2:00 | 99 | 7 | 6 |
+| 2026-03-17 | The Outbound Sweet Spot | ✅ PASS | 2:04 | 66 | 6 | 6 |
+| 2026-03-31 | Claude for RevOps | ✅ PASS | 2:16 | 80 | 8 | 6 |
+| 2026-04-09 | The PLG Playbook | ✅ PASS | 2:09 | 72 | 8 | 6 |
+| 2026-04-24 | Vibe Coding for Marketers | ✅ PASS* | 2:37 | 68 | 8 | 6 |
+| 2026-05-07 | Vibe Coding for Sales | ✅ PASS | 2:42 | 91 | 8 | 6 |
+| 2026-05-20 | Outbound Email Masterclass | ✅ PASS | 2:07 | 72 | 8 | 6 |
+| 2026-07-01 | Introducing the New Unify (Next Chapter) | ✅ PASS | 2:44 | 85 | 8 | 6 |
+| 2026-07-16 | How AEs and SDRs Are Becoming GTM Engineers | ✅ PASS | 2:17 | 100 | 8 | 6 |
+| 2026-10-20 | Cold Email Deliverability | ✅ PASS† | 1:41 | 73 | 6 | 6 |
+
+*Required `KeyError: 'id'` fix in `build_candidates.py` — cached transcript reused, no re-download.  
+†Initially FAILED; required judge JSON parser fix (`raw_decode`); re-ran with cached transcript.
+
+---
+
+## Bugs Found and Fixed
+
+### Bug 1 — Judge JSON parser: "Extra data" (Cold Email Deliverability)
+**Symptom:** `JSONDecodeError: Extra data` when Claude included trailing text after the JSON response. All scores zeroed.  
+**Fix:** `judge_candidates()` now uses `json.decoder.JSONDecoder().raw_decode()` as first fallback.
+
+### Bug 2 — `KeyError: 'id'` in `build_candidates.py` (Vibe Coding for Marketers)
+**Symptom:** Miner returned a label without an `id` field on a 52-min video; crash in the out-of-range flag message.  
+**Fix:** `build_candidates.py` uses `label.get("id") or f"m{start_ms//1000:04d}"` for the flag message; `pipeline.py` defensively backfills missing IDs before calling `build_candidates`.
+
+---
+
+## Step 6 Detail — First 4 Webinars
 
 ---
 
@@ -236,13 +261,62 @@ Error fires before any download is attempted. Exit code 1. No stack trace.
 
 ---
 
-## Precomputed / Locked
+## Precomputed / Locked — All 11 Webinars
 
-All 4 webinars locked and saved to `data/precomputed/<slug>/index.json`.
+All webinars locked to golden and saved to `data/precomputed/<slug>/index.json`.
 
-| Webinar | Slug | Golden locked |
-|---------|------|--------------|
-| Winning on LinkedIn 2026 | `winning-on-linkedin-in-2026-founder-led-content-pipeline-gro` | ✅ |
-| Cold Email Deliverability | `cold-email-deliverability-the-hidden-infrastructure-behind-o` | ✅ |
-| Claude for RevOps | `claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac` | ✅ |
-| Outbound Email Masterclass | `outbound-email-masterclass-webinar` | ✅ |
+| Date | Webinar | Top Score | Golden |
+|------|---------|-----------|--------|
+| 2026-02-19 | Custom AI Signals | 78 | ✅ |
+| 2026-02-25 | Winning on LinkedIn 2026 | 99 | ✅ |
+| 2026-03-17 | The Outbound Sweet Spot | 66 | ✅ |
+| 2026-03-31 | Claude for RevOps | 80 | ✅ |
+| 2026-04-09 | The PLG Playbook | 72 | ✅ |
+| 2026-04-24 | Vibe Coding for Marketers | 68 | ✅ |
+| 2026-05-07 | Vibe Coding for Sales | 91 | ✅ |
+| 2026-05-20 | Outbound Email Masterclass | 72 | ✅ |
+| 2026-07-01 | Introducing the New Unify (Next Chapter) | 85 | ✅ |
+| 2026-07-16 | How AEs and SDRs → GTM Engineers | 100 | ✅ |
+| 2026-10-20 | Cold Email Deliverability | 73 | ✅ |
+
+---
+
+## Step 7 — Remaining 6 Webinars
+
+### PLG Playbook (2026-04-09, 38:41)
+- **Speakers:** Quintin Smith (former → company page), Dima Khlopkov (guest/Gumloop → company page), Jay Desai (guest/Navattic → company page)
+- **Moments:** 21 mined · 8 top-set · 6 posts
+- **Top 3:** "No seat limits. Purely usage-based." / "30 days inactive. Then a login." / "Three tiers. Three levels of automation."
+- **QA:** All 6 gates passed cleanly ✅
+
+### Vibe Coding for Marketers (2026-04-24, 52:39)
+- **Bug fixed:** `KeyError: 'id'` crash — miner label missing id field on 52-min video; fixed in `build_candidates.py` + `pipeline.py`
+- **Speakers:** Sarah Charlton (guest → company page), Austin Hughes (current → Austin Hughes)
+- **Moments:** 28 mined · 8 top-set · 6 posts
+- **Top 3:** "2 or 3 ideas. That's what you owe AI." / "Feeling behind on AI? That's the default." / "Under 30 seconds to build this page."
+- **QA:** editor fixed 2 (2 hooks still marginally long — non-blocking)
+
+### Vibe Coding for Sales (2026-05-07, 58:47)
+- **Speakers:** Neema Zarrabian (former → company page), Jeff Kirchick (guest/Zorro → company page), Matt Stinson (guest/Starbridge → company page)
+- **Moments:** 35 mined · 8 top-set · 6 posts
+- **Top 3:** "First session in February. Webinar host by May." / "10 minutes. One agent. One CEO question answe…" / "50 rules. 7 customer stories. All automatable…"
+- **QA:** 1 clip at 92.6s (too long), 1 numbers mismatch — non-blocking
+
+### Introducing the New Unify / Unify's Next Chapter (2026-07-01, 1:00:36)
+- **Speakers:** Quintin Smith (former → company page), Zach Herman (former → company page), Austin Hughes (current → Austin Hughes), Speaker D/E (unknown → company page)
+- **Moments:** 30 mined · 8 top-set · 6 posts
+- **Top 3:** "8 minutes. End to end." / "10, 12-hour days. Still worse results." / "17 titles. One Boolean search…"
+- **QA:** 1 clip at 29.9s (just below 30s floor), 1 editor flag, 1 numbers mismatch — non-blocking
+
+### The Outbound Sweet Spot (2026-03-17, 33:47)
+- **Speakers:** Ethan Dursht (current → Ethan Dursht), Skyler Mickunas (former → company page)
+- **Moments:** 20 mined · 6 top-set · 6 posts
+- **Top 3:** "The best outbound signals look weird on paper." / "Close to 100 signals. Zero one-size-fits-all…" / "Around 200 accounts per AE. 500 per MBR."
+- **QA:** editor auto-fixed 2, 1 numbers mismatch — non-blocking
+
+### How AEs and SDRs Are Becoming GTM Engineers (2026-07-16, 40:22)
+- **Speakers:** Austin Hughes (current → Austin Hughes), Neema Zarrabian (former → company page), Owen Polk (current → Owen Polk), Ethan Dursht (current → Ethan Dursht)
+- **Moments:** 24 mined · 8 top-set · 6 posts
+- **Top score:** 100 (two moments tied — m0935 + m1156, both story)
+- **Top 3:** "10 hours a month. Just to prioritize accounts." / "6 to 8 discovery calls. One account." / "50 tabs open. Every single day."
+- **QA:** 4 clips flagged short (<30s, non-blocking), 1 editor filler phrase persisted, 1 numbers mismatch

@@ -1,0 +1,11 @@
+{
+  "title": "The Power of Custom AI Signals: Go beyond generic intent to drive hyper-relevant outbound",
+  "date": "2026-02-19",
+  "youtube_id": "2u4ERdJiEcg",
+  "duration": "29:56",
+  "speakers": ["Ethan Dursht", "Quintin Smith"],
+  "top_score": 78,
+  "slug": "custom-ai-signals",
+  "golden_candidates": "../../custom-ai-signals-candidates.golden.json",
+  "golden_content": "../../custom-ai-signals-content.golden.json"
+}

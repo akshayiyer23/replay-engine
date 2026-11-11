@@ -1571,6 +1571,11 @@ def _run_main(args) -> None:
         print(f"⚠️  Dropped {n_dropped} label(s) with missing required fields")
 
     # ── 6. build & sort ──
+    # Ensure every label has an id (defensive — miner should always set one)
+    for lab in all_labels:
+        if not lab.get("id"):
+            start_ms = sentences[lab["start_i"]]["start"] if lab.get("start_i", 0) < len(sentences) else 0
+            lab["id"] = f"m{start_ms // 1000:04d}"
     print(f"🏗️  Building candidates from {len(all_labels)} labels…")
     candidates = build_candidates(sentences, all_labels, speaker_map=speaker_map_simple)
     candidates.sort(key=lambda c: c["start_ms"])

@@ -1,0 +1,2804 @@
+[
+  {
+    "speaker": "A",
+    "start": 3540,
+    "end": 4700,
+    "text": "Nima, I love the hat."
+  },
+  {
+    "speaker": "B",
+    "start": 4800,
+    "end": 7680,
+    "text": "Yeah, made it myself."
+  },
+  {
+    "speaker": "C",
+    "start": 7780,
+    "end": 13740,
+    "text": "Nima, I can't, I honestly find it a little hard to believe unless the hat was really expensive that you didn't order like 30 of them."
+  },
+  {
+    "speaker": "B",
+    "start": 13840,
+    "end": 15140,
+    "text": "No, no, no, no."
+  },
+  {
+    "speaker": "B",
+    "start": 15140,
+    "end": 16320,
+    "text": "I ordered, I ordered 2."
+  },
+  {
+    "speaker": "B",
+    "start": 16320,
+    "end": 17740,
+    "text": "We have this one and then a ball cap."
+  },
+  {
+    "speaker": "B",
+    "start": 17740,
+    "end": 22940,
+    "text": "'Cause you gotta get a sample before you ask the CEO for budget for 100 to 300 hats."
+  },
+  {
+    "speaker": "A",
+    "start": 23040,
+    "end": 24080,
+    "text": "Gotta get the compliments."
+  },
+  {
+    "speaker": "A",
+    "start": 24080,
+    "end": 24380,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "A",
+    "start": 24380,
+    "end": 25840,
+    "text": "Gotta screenshot the Slack messages."
+  },
+  {
+    "speaker": "A",
+    "start": 25840,
+    "end": 25980,
+    "text": "Wow."
+  },
+  {
+    "speaker": "A",
+    "start": 25980,
+    "end": 27140,
+    "text": "I wish I had one of those."
+  },
+  {
+    "speaker": "B",
+    "start": 27240,
+    "end": 28060,
+    "text": "Yeah, exactly."
+  },
+  {
+    "speaker": "B",
+    "start": 28897,
+    "end": 33335,
+    "text": "Although I've been on a lot of client calls and only a couple people have called it out, but that maybe it's cuz it's more saloonal."
+  },
+  {
+    "speaker": "A",
+    "start": 34870,
+    "end": 35047,
+    "text": "It's fair."
+  },
+  {
+    "speaker": "A",
+    "start": 35791,
+    "end": 39460,
+    "text": "It is, is definitely orange instead of being red-orange, which is our actual brand color."
+  },
+  {
+    "speaker": "A",
+    "start": 39686,
+    "end": 39832,
+    "text": "So."
+  },
+  {
+    "speaker": "B",
+    "start": 40139,
+    "end": 42466,
+    "text": "I like, I like orange as opposed to red-orange."
+  },
+  {
+    "speaker": "B",
+    "start": 42515,
+    "end": 43679,
+    "text": "It's more, it's more my speed."
+  },
+  {
+    "speaker": "A",
+    "start": 45170,
+    "end": 45813,
+    "text": "You do you, Nima."
+  },
+  {
+    "speaker": "A",
+    "start": 48590,
+    "end": 50992,
+    "text": "We'll give everybody else a few minutes to, to pop in."
+  },
+  {
+    "speaker": "C",
+    "start": 53960,
+    "end": 55687,
+    "text": "We should definitely get Mary one of those hats."
+  },
+  {
+    "speaker": "A",
+    "start": 56574,
+    "end": 57187,
+    "text": "We definitely should."
+  },
+  {
+    "speaker": "A",
+    "start": 58430,
+    "end": 59463,
+    "text": "Fairness, I like orange too."
+  },
+  {
+    "speaker": "A",
+    "start": 59559,
+    "end": 60382,
+    "text": "I've got an orange phone case."
+  },
+  {
+    "speaker": "A",
+    "start": 60463,
+    "end": 60770,
+    "text": "So."
+  },
+  {
+    "speaker": "B",
+    "start": 61173,
+    "end": 61738,
+    "text": "There we go."
+  },
+  {
+    "speaker": "A",
+    "start": 73559,
+    "end": 74697,
+    "text": "Ethan, we should have got you on the slides."
+  },
+  {
+    "speaker": "D",
+    "start": 76780,
+    "end": 77702,
+    "text": "Uh, yeah, I guess so."
+  },
+  {
+    "speaker": "D",
+    "start": 80024,
+    "end": 83026,
+    "text": "Guest appearance, then Quentin, put me in on the guest slide."
+  },
+  {
+    "speaker": "A",
+    "start": 83701,
+    "end": 83861,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "A",
+    "start": 86915,
+    "end": 92183,
+    "text": "All right, give everybody maybe one more minute and then we will get rolling."
+  },
+  {
+    "speaker": "A",
+    "start": 98170,
+    "end": 99853,
+    "text": "Owen, what's it like to be a go-to-market engineer now?"
+  },
+  {
+    "speaker": "C",
+    "start": 101150,
+    "end": 101861,
+    "text": "It's pretty awesome."
+  },
+  {
+    "speaker": "C",
+    "start": 101927,
+    "end": 104094,
+    "text": "I just don't get to interact with Ethan enough anymore."
+  },
+  {
+    "speaker": "A",
+    "start": 106657,
+    "end": 115011,
+    "text": "Don't worry, Ethan's got plenty of things cooking, so we'll figure out some good cross-collaboration."
+  },
+  {
+    "speaker": "C",
+    "start": 116739,
+    "end": 118967,
+    "text": "Any excuse to hang out and work with Ethan."
+  },
+  {
+    "speaker": "D",
+    "start": 120320,
+    "end": 122575,
+    "text": "Yeah, we're gonna get Chipotle lunches, man."
+  },
+  {
+    "speaker": "A",
+    "start": 126838,
+    "end": 131087,
+    "text": "All right, well, maybe while everyone joins, why don't we go ahead and kick off?"
+  },
+  {
+    "speaker": "A",
+    "start": 131152,
+    "end": 133877,
+    "text": "Maybe we can do quick intros around the horn."
+  },
+  {
+    "speaker": "A",
+    "start": 135363,
+    "end": 140610,
+    "text": "Excited to be here with y'all today talking just about how AEs and SDRs are becoming their own go-to-market engineers."
+  },
+  {
+    "speaker": "A",
+    "start": 142071,
+    "end": 146374,
+    "text": "On our side today, really quickly, Austin, co-founder and CEO here at Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 146615,
+    "end": 148766,
+    "text": "Maybe Nima, I'll kick it over to you."
+  },
+  {
+    "speaker": "B",
+    "start": 149312,
+    "end": 149569,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "B",
+    "start": 149633,
+    "end": 150757,
+    "text": "Hi everyone, I'm Nima."
+  },
+  {
+    "speaker": "B",
+    "start": 151062,
+    "end": 152861,
+    "text": "I'm one of the sales leaders here at Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 152925,
+    "end": 156088,
+    "text": "I oversee our BDR team and our SMB account executive team."
+  },
+  {
+    "speaker": "B",
+    "start": 156136,
+    "end": 158143,
+    "text": "Have been here for about 2 years now."
+  },
+  {
+    "speaker": "B",
+    "start": 158208,
+    "end": 159492,
+    "text": "Excited to chat with y'all."
+  },
+  {
+    "speaker": "B",
+    "start": 161749,
+    "end": 161821,
+    "text": "Owen."
+  },
+  {
+    "speaker": "C",
+    "start": 162159,
+    "end": 163428,
+    "text": "And I'm Owen."
+  },
+  {
+    "speaker": "C",
+    "start": 164006,
+    "end": 170658,
+    "text": "I'm an NBR here, which basically just means BDR, and I am on the West Coast."
+  },
+  {
+    "speaker": "C",
+    "start": 170706,
+    "end": 173614,
+    "text": "I'm in San Francisco, and I've been here coming up on a year now."
+  },
+  {
+    "speaker": "D",
+    "start": 175792,
+    "end": 176547,
+    "text": "And I'm Ethan."
+  },
+  {
+    "speaker": "D",
+    "start": 176629,
+    "end": 178434,
+    "text": "I'm on the Go team here at Unify."
+  },
+  {
+    "speaker": "D",
+    "start": 178500,
+    "end": 182883,
+    "text": "So a lot of the go-to-market engineering, outbound orchestration type work."
+  },
+  {
+    "speaker": "D",
+    "start": 183192,
+    "end": 184232,
+    "text": "So excited to chat."
+  },
+  {
+    "speaker": "A",
+    "start": 186818,
+    "end": 187132,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 187676,
+    "end": 188518,
+    "text": "We'll dive right in."
+  },
+  {
+    "speaker": "A",
+    "start": 190430,
+    "end": 203815,
+    "text": "So, uh, as a starting place, one of the core premises that, that we've always believed as a team is that if you are outbounding against signals and not just generic contact or company information, you're much more likely to succeed."
+  },
+  {
+    "speaker": "A",
+    "start": 204169,
+    "end": 214305,
+    "text": "And so what we've seen from our own data is that 73% higher response rates happen when your outbound is actually based off of a signal versus it just being a cold list or a cold outreach."
+  },
+  {
+    "speaker": "A",
+    "start": 215126,
+    "end": 221138,
+    "text": "And so this idea has been something that for many years we've believed in and have seen be true within our data."
+  },
+  {
+    "speaker": "A",
+    "start": 221618,
+    "end": 227774,
+    "text": "The biggest problem has always been, hey, these things are in acting on signals and building these workflows has always been super, super complicated."
+  },
+  {
+    "speaker": "A",
+    "start": 230547,
+    "end": 234907,
+    "text": "So the real question for us has always been, how do you give sellers access to these signals?"
+  },
+  {
+    "speaker": "A",
+    "start": 236126,
+    "end": 248854,
+    "text": "We've always found that sellers have had these amazing ideas, these like micro campaign ideas they want to go execute on, but actually making those come to life has been incredibly challenging because of the tech that it existed and where the state of AI actually was."
+  },
+  {
+    "speaker": "A",
+    "start": 251306,
+    "end": 258873,
+    "text": "So the old way that we've seen historically is typically what outbound looks like is you've got these 2 separate paths."
+  },
+  {
+    "speaker": "A",
+    "start": 259466,
+    "end": 265044,
+    "text": "The AE and SDR teams typically will be working out of Salesforce reports."
+  },
+  {
+    "speaker": "A",
+    "start": 265397,
+    "end": 267176,
+    "text": "They'll be working out of LinkedIn Sales Nav."
+  },
+  {
+    "speaker": "A",
+    "start": 267224,
+    "end": 271601,
+    "text": "They'll usually have Chrome extensions for a prospecting tool that you can pull contact information from."
+  },
+  {
+    "speaker": "A",
+    "start": 272049,
+    "end": 274726,
+    "text": "But usually the workflow that you see is extremely manual."
+  },
+  {
+    "speaker": "A",
+    "start": 274919,
+    "end": 281718,
+    "text": "It's very, I'm going to sift through each of these data points one by one, and I'm going to have like 50 tabs open that I'm going to be navigating across."
+  },
+  {
+    "speaker": "A",
+    "start": 282873,
+    "end": 298082,
+    "text": "On the other side of the spectrum, what we've seen is that go-to-market engineers had historically had to build these very, very complicated workflows in a tool like Unify or in a tool like Clay, where you've got to connect and decide what's going to happen with every data point, every column."
+  },
+  {
+    "speaker": "A",
+    "start": 298515,
+    "end": 304563,
+    "text": "And it just means that it's going to take you tens of hours to actually build a workflow that you trust and go execute on."
+  },
+  {
+    "speaker": "A",
+    "start": 305036,
+    "end": 306646,
+    "text": "So historically, this is what we saw."
+  },
+  {
+    "speaker": "A",
+    "start": 306999,
+    "end": 316565,
+    "text": "I'm curious, maybe starting place, like Owen, if you want to add like just any thoughts on the left-hand side, like if you could just describe sort of your workflow up until recently, I'm kind of curious to hear how you voice over it."
+  },
+  {
+    "speaker": "C",
+    "start": 317575,
+    "end": 317751,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "C",
+    "start": 317831,
+    "end": 323279,
+    "text": "So it's always been a little bit different at Unify because I think we have a fresh thesis on how to do outbound."
+  },
+  {
+    "speaker": "C",
+    "start": 323359,
+    "end": 335958,
+    "text": "It's always been more like the approach on the right, but the approach on the left is just like for anybody that's been a BDR in the last 5 or 10 years, it's excruciating switching between tools, manually adding people."
+  },
+  {
+    "speaker": "C",
+    "start": 336633,
+    "end": 344184,
+    "text": "And to be honest, like, I don't know if any of my old colleagues at Placer are here, but like, I wouldn't do fresh prospecting by the end of my time at Placer."
+  },
+  {
+    "speaker": "C",
+    "start": 344297,
+    "end": 353524,
+    "text": "Like, I would just prospect within the CRM because it was just such a huge lift to go into SalesNav or ZoomInfo, grab people, and then throw it back into Salesloft."
+  },
+  {
+    "speaker": "A",
+    "start": 356345,
+    "end": 356526,
+    "text": "Yep."
+  },
+  {
+    "speaker": "A",
+    "start": 357101,
+    "end": 357282,
+    "text": "Yep."
+  },
+  {
+    "speaker": "A",
+    "start": 357726,
+    "end": 358011,
+    "text": "100%."
+  },
+  {
+    "speaker": "A",
+    "start": 358348,
+    "end": 362665,
+    "text": "Um, and Ethan, do you want to talk a little bit about like the, the right-hand side and the world we lived in for the last couple years?"
+  },
+  {
+    "speaker": "D",
+    "start": 363725,
+    "end": 364864,
+    "text": "Uh, yeah, sure."
+  },
+  {
+    "speaker": "D",
+    "start": 365249,
+    "end": 372600,
+    "text": "Um, yeah, following up on what Owen was talking about, I remember in the early days, um, Owen would have everything organized on a Google Sheet as well."
+  },
+  {
+    "speaker": "D",
+    "start": 372793,
+    "end": 381010,
+    "text": "So watching him, you know, go across 5 different tools, um, now living in one chat, it's definitely, um, something that's nice to see."
+  },
+  {
+    "speaker": "D",
+    "start": 381540,
+    "end": 388804,
+    "text": "But yeah, um, Traditionally, for context, I've run like automated outbound and outbound orchestration at Unify."
+  },
+  {
+    "speaker": "D",
+    "start": 389317,
+    "end": 397861,
+    "text": "And so with that, we would pull in a ton of different signal sources and different data from other providers and also within Unify."
+  },
+  {
+    "speaker": "D",
+    "start": 399351,
+    "end": 401259,
+    "text": "But this takes time to build, right?"
+  },
+  {
+    "speaker": "D",
+    "start": 401355,
+    "end": 410766,
+    "text": "And I think the overall maintenance as you scale and add to the team and have to change the workflows definitely adds up, especially working in a lean growth team."
+  },
+  {
+    "speaker": "D",
+    "start": 410815,
+    "end": 411971,
+    "text": "We only have a few members here."
+  },
+  {
+    "speaker": "D",
+    "start": 413144,
+    "end": 427492,
+    "text": "But now what I like to think of the new Unify is really just enabling the high agency reps to go and build on their own because they are the ones who typically have the best ideas."
+  },
+  {
+    "speaker": "D",
+    "start": 427765,
+    "end": 429613,
+    "text": "They're on the ground floor every single day."
+  },
+  {
+    "speaker": "D",
+    "start": 429950,
+    "end": 436425,
+    "text": "So Owen's calling hundreds of people, he's on LinkedIn, he's emailing, and so he's getting live feedback."
+  },
+  {
+    "speaker": "D",
+    "start": 436862,
+    "end": 441299,
+    "text": "From that and also watching all the sort of AE calls and hopping on those."
+  },
+  {
+    "speaker": "D",
+    "start": 442453,
+    "end": 447791,
+    "text": "But we can't always build every single idea or hypothesis that Owen has."
+  },
+  {
+    "speaker": "D",
+    "start": 448560,
+    "end": 450836,
+    "text": "So now with chat, that enables it."
+  },
+  {
+    "speaker": "D",
+    "start": 451430,
+    "end": 457569,
+    "text": "It also enables him to sort of just go on his own where we don't have to roll it out to all of the reps necessarily."
+  },
+  {
+    "speaker": "D",
+    "start": 457713,
+    "end": 462859,
+    "text": "So it's really been a big difference, I think, in terms of maintenance and just speed."
+  },
+  {
+    "speaker": "D",
+    "start": 463953,
+    "end": 470165,
+    "text": "So with the new Unify and we're continuing to add data sources, I would say the possibilities are kind of endless."
+  },
+  {
+    "speaker": "D",
+    "start": 471997,
+    "end": 477221,
+    "text": "And yeah, I mean, Owen, feel free to speak more, but it's been really exciting watching the past month or so."
+  },
+  {
+    "speaker": "A",
+    "start": 480172,
+    "end": 482393,
+    "text": "Owen, I'm curious, were you in Clay at all before?"
+  },
+  {
+    "speaker": "C",
+    "start": 484944,
+    "end": 490704,
+    "text": "Very rarely, like maybe for one-off enrichment, but like It was so complicated."
+  },
+  {
+    "speaker": "C",
+    "start": 491012,
+    "end": 493298,
+    "text": "Nobody on the team could really use it except for Ethan."
+  },
+  {
+    "speaker": "C",
+    "start": 493509,
+    "end": 497221,
+    "text": "We would have to go to Ethan if we wanted to execute anything like he mentioned."
+  },
+  {
+    "speaker": "A",
+    "start": 499682,
+    "end": 499843,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "A",
+    "start": 500230,
+    "end": 500440,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "A",
+    "start": 500569,
+    "end": 507040,
+    "text": "I'm curious, Ethan, anything you touched on a little bit, but anything to double-click on there, just like the workflow around Clay and what we saw work internally?"
+  },
+  {
+    "speaker": "D",
+    "start": 508320,
+    "end": 508676,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "D",
+    "start": 508740,
+    "end": 511509,
+    "text": "I mean, we'd be pushing them out so the reps wouldn't be living in Clay."
+  },
+  {
+    "speaker": "D",
+    "start": 511655,
+    "end": 515265,
+    "text": "And so we'd be pushing them to either the CRM or another tool."
+  },
+  {
+    "speaker": "D",
+    "start": 516204,
+    "end": 518504,
+    "text": "And so or Unify."
+  },
+  {
+    "speaker": "D",
+    "start": 518585,
+    "end": 519819,
+    "text": "And so we'd be piping it in there."
+  },
+  {
+    "speaker": "D",
+    "start": 520107,
+    "end": 529549,
+    "text": "But yeah, again, I think now it's just really speed and getting to experiment and getting to know or yes, as fast as possible."
+  },
+  {
+    "speaker": "D",
+    "start": 529709,
+    "end": 533717,
+    "text": "And so I think now it's a lot easier for maintenance."
+  },
+  {
+    "speaker": "D",
+    "start": 533974,
+    "end": 543640,
+    "text": "And so even when we're building all these workflows before, it's not just the build, it's maintaining it and making sure every week it's working properly."
+  },
+  {
+    "speaker": "D",
+    "start": 544329,
+    "end": 554359,
+    "text": "If any changes are needed with the business and state of the world, But yeah, I would say just speed it and it's really saved us a ton of time."
+  },
+  {
+    "speaker": "A",
+    "start": 556130,
+    "end": 556259,
+    "text": "Cool."
+  },
+  {
+    "speaker": "A",
+    "start": 558591,
+    "end": 566962,
+    "text": "So a couple of weeks ago we introduced the next chapter of Unify, which is an outbound harness for prospecting."
+  },
+  {
+    "speaker": "A",
+    "start": 567075,
+    "end": 584725,
+    "text": "And so the idea that we started to gravitate towards was in, call it in like January-ish, we started to see just the raw powers of products like Claude and their ability to actually go out and navigate dozens of tools effectively without having to be told how to navigate those tools."
+  },
+  {
+    "speaker": "A",
+    "start": 585382,
+    "end": 592579,
+    "text": "And we immediately saw a parallel to our business and our space, which is that we've always dealt with these different signal providers."
+  },
+  {
+    "speaker": "A",
+    "start": 592772,
+    "end": 593750,
+    "text": "When do you use them?"
+  },
+  {
+    "speaker": "A",
+    "start": 593814,
+    "end": 594631,
+    "text": "What are they good at?"
+  },
+  {
+    "speaker": "A",
+    "start": 594679,
+    "end": 595641,
+    "text": "What are they not good at?"
+  },
+  {
+    "speaker": "A",
+    "start": 596042,
+    "end": 606526,
+    "text": "And for the longest time, that information had to be just codified in what our post-sales team's heads and when basically we had to have these ideas and these playbooks that we could go execute on with customers."
+  },
+  {
+    "speaker": "A",
+    "start": 607263,
+    "end": 616253,
+    "text": "And we saw it was an opportunity to actually have an agent understand what those behaviors were and understand how to navigate all these different sources so that reps don't have to."
+  },
+  {
+    "speaker": "A",
+    "start": 616797,
+    "end": 620210,
+    "text": "And what we saw over the past couple of weeks is we announced this product."
+  },
+  {
+    "speaker": "A",
+    "start": 620323,
+    "end": 621668,
+    "text": "We're super, super excited about it."
+  },
+  {
+    "speaker": "A",
+    "start": 622742,
+    "end": 626812,
+    "text": "The usage on it, I think last week was up something like 30% week over week."
+  },
+  {
+    "speaker": "A",
+    "start": 627004,
+    "end": 631667,
+    "text": "And so we're seeing more and more interesting use cases come through and lots more new stuff to come."
+  },
+  {
+    "speaker": "A",
+    "start": 632740,
+    "end": 636009,
+    "text": "But we're excited to reintroduce Unify as Claude for outbound sellers."
+  },
+  {
+    "speaker": "A",
+    "start": 639249,
+    "end": 644778,
+    "text": "So a big question we get often is like, what are the actual data sources that underlie this?"
+  },
+  {
+    "speaker": "A",
+    "start": 644892,
+    "end": 648125,
+    "text": "Like, what's actually\u2014 what can I do with Unify?"
+  },
+  {
+    "speaker": "A",
+    "start": 649657,
+    "end": 652126,
+    "text": "What you can see here on the slide is we've got a lot of different sources."
+  },
+  {
+    "speaker": "A",
+    "start": 652740,
+    "end": 654854,
+    "text": "They're good at different things and different nuggets."
+  },
+  {
+    "speaker": "A",
+    "start": 655144,
+    "end": 659107,
+    "text": "Lots more to come as well on the roadmap, but I'll at least highlight some of my personal favorites."
+  },
+  {
+    "speaker": "A",
+    "start": 659674,
+    "end": 671450,
+    "text": "So within the CRM, We find that Unify is really effective at grabbing closed lost contacts, finding champions that left, and being able to just navigate your CRM in the same way that you would."
+  },
+  {
+    "speaker": "A",
+    "start": 671547,
+    "end": 677257,
+    "text": "So you could ask it, hey, go find closed lost opportunities where XYZ was true, and chat will do that really effectively."
+  },
+  {
+    "speaker": "A",
+    "start": 677679,
+    "end": 679237,
+    "text": "That's been a really, really cool use case."
+  },
+  {
+    "speaker": "A",
+    "start": 680630,
+    "end": 689029,
+    "text": "We recently moved to being a PLG company, and so being able to use Unify around PQLs and signups has also been a really, really compelling and interesting workflow."
+  },
+  {
+    "speaker": "A",
+    "start": 690097,
+    "end": 691011,
+    "text": "Another one of my favorites."
+  },
+  {
+    "speaker": "A",
+    "start": 692543,
+    "end": 695959,
+    "text": "On the first-party side, that's where our bread and butter historically has been."
+  },
+  {
+    "speaker": "A",
+    "start": 696088,
+    "end": 696861,
+    "text": "It's where we started."
+  },
+  {
+    "speaker": "A",
+    "start": 697699,
+    "end": 701614,
+    "text": "But we also recently with this announcement added a ton of new third-party signals."
+  },
+  {
+    "speaker": "A",
+    "start": 702193,
+    "end": 710520,
+    "text": "And so among those, some of my personal favorites are Dealroom for fundraisers, being able to find, hey, who are the Series A companies that raised in the last couple of weeks?"
+  },
+  {
+    "speaker": "A",
+    "start": 710907,
+    "end": 711859,
+    "text": "Super trivial to do."
+  },
+  {
+    "speaker": "A",
+    "start": 713004,
+    "end": 713585,
+    "text": "The Swarm."
+  },
+  {
+    "speaker": "A",
+    "start": 713746,
+    "end": 716375,
+    "text": "So being able to find warm intros into accounts."
+  },
+  {
+    "speaker": "A",
+    "start": 717326,
+    "end": 718338,
+    "text": "Really, really powerful."
+  },
+  {
+    "speaker": "A",
+    "start": 718402,
+    "end": 725208,
+    "text": "So you can do things like, hey, you know, given that we're Unify, help me figure out a way that I can break into Anthropic."
+  },
+  {
+    "speaker": "A",
+    "start": 725353,
+    "end": 739864,
+    "text": "And what the Swarm will actually do is map the network connections and the\u2014 or sorry, it'll map the overlap of people's work and school experiences and find people that probably worked with each other."
+  },
+  {
+    "speaker": "A",
+    "start": 740234,
+    "end": 747409,
+    "text": "Super great way to build a list of 10, 20 people that you're like, okay, these people are actually credible intros that I could pull on from my organization."
+  },
+  {
+    "speaker": "A",
+    "start": 747618,
+    "end": 757396,
+    "text": "Another one, which I highlighted in a LinkedIn post today, is just going after niche verticals with, you know, one of my favorite examples is using OpenMart to find local business data."
+  },
+  {
+    "speaker": "A",
+    "start": 757493,
+    "end": 770049,
+    "text": "So HVAC companies, anybody basically that like plumbers, whoever it might be, anybody that lives on Google Maps, and that is their primary way of doing business, you're gonna be able to find via one of these providers."
+  },
+  {
+    "speaker": "A",
+    "start": 770306,
+    "end": 771655,
+    "text": "So some of my personal favorites."
+  },
+  {
+    "speaker": "A",
+    "start": 773452,
+    "end": 778550,
+    "text": "I'm curious, Nima, Owen, Ethan, any favorites on your end that are worth highlighting?"
+  },
+  {
+    "speaker": "B",
+    "start": 778887,
+    "end": 780986,
+    "text": "Yeah, I really like stacking these together."
+  },
+  {
+    "speaker": "B",
+    "start": 781083,
+    "end": 801284,
+    "text": "Like if, like right now, if we're going after closed loss from Q3 or from Q1 due to timing, I can easily query that data and then stack like which companies have grown in the last 6 months and have job openings or hired a new head of sales or sales leader, like stacking those all really together to like give those to the to the reps that will go after them."
+  },
+  {
+    "speaker": "B",
+    "start": 801461,
+    "end": 806821,
+    "text": "And then also when you don't find all that signal, being like, maybe I shouldn't prioritize that account, like they're probably least likely to close."
+  },
+  {
+    "speaker": "B",
+    "start": 806885,
+    "end": 809406,
+    "text": "It actually has like led to better results for our AE team too."
+  },
+  {
+    "speaker": "B",
+    "start": 810183,
+    "end": 815040,
+    "text": "So I really like tying these all together to like get the best outbound that you can."
+  },
+  {
+    "speaker": "B",
+    "start": 815526,
+    "end": 816174,
+    "text": "Owen, what do you think?"
+  },
+  {
+    "speaker": "C",
+    "start": 818298,
+    "end": 819352,
+    "text": "I think you hit the nail on the head."
+  },
+  {
+    "speaker": "C",
+    "start": 819400,
+    "end": 826110,
+    "text": "Like I was gonna say, one-off signals are great, but when you layer in signals, they actually tend to hit."
+  },
+  {
+    "speaker": "C",
+    "start": 826224,
+    "end": 831301,
+    "text": "When you think about emailing somebody and catching somebody's eye or catching somebody over the phone and getting their attention."
+  },
+  {
+    "speaker": "C",
+    "start": 831365,
+    "end": 833932,
+    "text": "Like anybody can do a one-off signal."
+  },
+  {
+    "speaker": "C",
+    "start": 834141,
+    "end": 836595,
+    "text": "When you layer it in, that's when you get people's attention."
+  },
+  {
+    "speaker": "D",
+    "start": 837494,
+    "end": 839275,
+    "text": "Yeah, another plus one to that too."
+  },
+  {
+    "speaker": "D",
+    "start": 839660,
+    "end": 844360,
+    "text": "It's just a lot easier to signal stack and build these micro campaigns now."
+  },
+  {
+    "speaker": "D",
+    "start": 845451,
+    "end": 865495,
+    "text": "So constantly like our MBRs like Owen are pulling in website intent, CRM closed loss like Nima said, and then Pairing that with, you know, funding, website analytics, and, you know, tech stack, and so pulling it into one and sort of getting that unique data that they're able to action on."
+  },
+  {
+    "speaker": "A",
+    "start": 868014,
+    "end": 868661,
+    "text": "Great callouts."
+  },
+  {
+    "speaker": "A",
+    "start": 871716,
+    "end": 875871,
+    "text": "All right, we're gonna go ahead and switch gears and dive straight into a demo."
+  },
+  {
+    "speaker": "A",
+    "start": 877067,
+    "end": 886003,
+    "text": "For folks that are on, on the call, We are actually giving away a free month of Unify's base plan if you sign up during this demo period."
+  },
+  {
+    "speaker": "A",
+    "start": 886132,
+    "end": 889423,
+    "text": "So what I recommend is just go to unifygtm.com right now."
+  },
+  {
+    "speaker": "A",
+    "start": 889552,
+    "end": 891141,
+    "text": "We can drop a link to that in the chat."
+  },
+  {
+    "speaker": "A",
+    "start": 891318,
+    "end": 893421,
+    "text": "Go ahead and just click try for free."
+  },
+  {
+    "speaker": "A",
+    "start": 893646,
+    "end": 894240,
+    "text": "You'll sign up there."
+  },
+  {
+    "speaker": "A",
+    "start": 894705,
+    "end": 900614,
+    "text": "And then what we'll do is actually go back and add on that free amount of credits retroactively."
+  },
+  {
+    "speaker": "A",
+    "start": 900887,
+    "end": 907261,
+    "text": "And so it's important that you do this right now because it's our way of understanding who came in via the webinar right now."
+  },
+  {
+    "speaker": "A",
+    "start": 907534,
+    "end": 911180,
+    "text": "And so please go to the website, sign up and follow along."
+  },
+  {
+    "speaker": "A",
+    "start": 911180,
+    "end": 917640,
+    "text": "Try this stuff while Nima's trying it and you'll be able to see sort of actually for your own business what's valuable, all that good stuff."
+  },
+  {
+    "speaker": "A",
+    "start": 917650,
+    "end": 919290,
+    "text": "So Nima, I'll kick it over to you."
+  },
+  {
+    "speaker": "B",
+    "start": 919660,
+    "end": 920080,
+    "text": "Yeah, yeah."
+  },
+  {
+    "speaker": "B",
+    "start": 920080,
+    "end": 922680,
+    "text": "I'm gonna go ahead and share my screen here in a second."
+  },
+  {
+    "speaker": "B",
+    "start": 922680,
+    "end": 927740,
+    "text": "But when you guys sign up, one thing that's really cool is you can just ask Unify, hey, I'm a BDR at this company."
+  },
+  {
+    "speaker": "B",
+    "start": 927740,
+    "end": 928920,
+    "text": "Hey, I'm head of sales at this company."
+  },
+  {
+    "speaker": "B",
+    "start": 928920,
+    "end": 931430,
+    "text": "How should I use this chat interface?"
+  },
+  {
+    "speaker": "B",
+    "start": 932000,
+    "end": 935240,
+    "text": "I actually, I'll walk you through a couple use cases and then I'll kick it to Owen."
+  },
+  {
+    "speaker": "B",
+    "start": 935240,
+    "end": 944756,
+    "text": "Like my history, I was originally a BDR 5, 6 years ago and I had an intent tool, a sequencing tool, a data tool, Sales Navigator, and a spreadsheet."
+  },
+  {
+    "speaker": "B",
+    "start": 944901,
+    "end": 948732,
+    "text": "I was doing all of those different things and I was combing through them every single day."
+  },
+  {
+    "speaker": "B",
+    "start": 948828,
+    "end": 954070,
+    "text": "I was like literally living in my parents' basement and first 2 hours a day I would go through to find data, write emails."
+  },
+  {
+    "speaker": "B",
+    "start": 954118,
+    "end": 957821,
+    "text": "Second and last 2 hours a day I would then like set up my call list for the next day."
+  },
+  {
+    "speaker": "B",
+    "start": 957885,
+    "end": 959825,
+    "text": "It was really, really manual and reprioritize accounts."
+  },
+  {
+    "speaker": "B",
+    "start": 959889,
+    "end": 964826,
+    "text": "It took me 10 hours every month to look through my new accounts and prioritize them."
+  },
+  {
+    "speaker": "B",
+    "start": 965339,
+    "end": 966862,
+    "text": "So you can really do anything in this canvas."
+  },
+  {
+    "speaker": "B",
+    "start": 966958,
+    "end": 976244,
+    "text": "I'll show a couple more like basic use cases now that I'm not like an expert prospector, but like even for this webinar, I don't have a ton of time to prospect and like be like, hey, let's go after all these people for this webinar."
+  },
+  {
+    "speaker": "B",
+    "start": 976790,
+    "end": 978025,
+    "text": "I did this for about 50 people."
+  },
+  {
+    "speaker": "B",
+    "start": 978073,
+    "end": 983497,
+    "text": "I'm just showing you an example here where I said, show me 10 BDRs who we're not reaching out to who would be great fits for the webinar."
+  },
+  {
+    "speaker": "B",
+    "start": 984187,
+    "end": 987894,
+    "text": "Did that in just a couple minutes while I was building out other chats and doing work on the side."
+  },
+  {
+    "speaker": "B",
+    "start": 987942,
+    "end": 989691,
+    "text": "It pulls in all these people automatically."
+  },
+  {
+    "speaker": "B",
+    "start": 990204,
+    "end": 992852,
+    "text": "It knows our ICP already, so I don't have to tell it our ICP."
+  },
+  {
+    "speaker": "B",
+    "start": 993718,
+    "end": 996173,
+    "text": "And from there, just write a very basic 2-step sequence."
+  },
+  {
+    "speaker": "B",
+    "start": 996542,
+    "end": 999383,
+    "text": "I did this on Monday, so I had a touchpoint go out Monday and Wednesday."
+  },
+  {
+    "speaker": "B",
+    "start": 1000397,
+    "end": 1002577,
+    "text": "And I was, I was generally happy with this."
+  },
+  {
+    "speaker": "B",
+    "start": 1002642,
+    "end": 1006447,
+    "text": "So I enrolled these folks into the sequence itself, but I was like, hey, let's make this a little bit better."
+  },
+  {
+    "speaker": "B",
+    "start": 1006816,
+    "end": 1010717,
+    "text": "Let's find the 10 people and let's make the personalization relevant to each individual."
+  },
+  {
+    "speaker": "B",
+    "start": 1010846,
+    "end": 1012451,
+    "text": "So it screened the folks even deeper."
+  },
+  {
+    "speaker": "B",
+    "start": 1012531,
+    "end": 1014827,
+    "text": "It rewrote the copy to be even more personalized."
+  },
+  {
+    "speaker": "B",
+    "start": 1015486,
+    "end": 1025825,
+    "text": "And I could go through if I wanted to live on this call and look at like Nathan here at Highwire, I could mark him as ready and he would start getting emails from me directly, straight from my inbox."
+  },
+  {
+    "speaker": "B",
+    "start": 1026579,
+    "end": 1027011,
+    "text": "Same with Vito."
+  },
+  {
+    "speaker": "B",
+    "start": 1027124,
+    "end": 1031820,
+    "text": "Like, these are all like very different emails based on the company that I'm reaching out to and the person that I'm reaching out to."
+  },
+  {
+    "speaker": "B",
+    "start": 1032349,
+    "end": 1034257,
+    "text": "So what it did for me is it found my ICP."
+  },
+  {
+    "speaker": "B",
+    "start": 1034481,
+    "end": 1039579,
+    "text": "I could have even targeted it to find like new hires, new SDRs, SDRs who had never been SDRs before."
+  },
+  {
+    "speaker": "B",
+    "start": 1039643,
+    "end": 1043891,
+    "text": "Like, even if you go to my LinkedIn yesterday, I posted on BDRs who've been promoted to AEs."
+  },
+  {
+    "speaker": "B",
+    "start": 1043939,
+    "end": 1050463,
+    "text": "We pulled that directly from UnifyChat so I could find any data point at the end of the day and push them into the sequence that I wanted to."
+  },
+  {
+    "speaker": "B",
+    "start": 1050768,
+    "end": 1052355,
+    "text": "And our reps are doing this every single day."
+  },
+  {
+    "speaker": "B",
+    "start": 1053341,
+    "end": 1061164,
+    "text": "I think people sometimes look at us as like only an outbound tool, but what's really cool with an AI tool is you can actually do anything."
+  },
+  {
+    "speaker": "B",
+    "start": 1061822,
+    "end": 1064775,
+    "text": "You can really go into your CRM, you can query data, you can query data on the web."
+  },
+  {
+    "speaker": "B",
+    "start": 1064823,
+    "end": 1066604,
+    "text": "So I'm about to hop on a call with Vanta."
+  },
+  {
+    "speaker": "B",
+    "start": 1066717,
+    "end": 1075366,
+    "text": "Like, I don't have time to go org chart them on LinkedIn, decide who the different verticals to go after are, who the CRO is, who the VP of sales, how many BDRs they have."
+  },
+  {
+    "speaker": "B",
+    "start": 1075812,
+    "end": 1078287,
+    "text": "I can be like, great, I'm about to hop on a call with them."
+  },
+  {
+    "speaker": "B",
+    "start": 1078512,
+    "end": 1083069,
+    "text": "Find me all the recent news that's relevant so I can come in with a point of view of where we can help out."
+  },
+  {
+    "speaker": "B",
+    "start": 1083480,
+    "end": 1088950,
+    "text": "So I can see like they're already launching identity trust platforms that aligns with how we think of it as a business."
+  },
+  {
+    "speaker": "B",
+    "start": 1089010,
+    "end": 1092650,
+    "text": "They just announced a Series D, they crossed $300 million ARR."
+  },
+  {
+    "speaker": "B",
+    "start": 1092650,
+    "end": 1095510,
+    "text": "So that means they're growing, they're investing more and more in growth."
+  },
+  {
+    "speaker": "B",
+    "start": 1095550,
+    "end": 1099640,
+    "text": "And this is great to know when I join a call with them, it gives me the exact timestamp."
+  },
+  {
+    "speaker": "B",
+    "start": 1099810,
+    "end": 1103600,
+    "text": "I can query it for like the exact sources so I can read the article if I want to."
+  },
+  {
+    "speaker": "B",
+    "start": 1103950,
+    "end": 1106370,
+    "text": "And it's good to know like, are they prioritizing enterprise?"
+  },
+  {
+    "speaker": "B",
+    "start": 1106370,
+    "end": 1108510,
+    "text": "Are they prioritizing SMB?"
+  },
+  {
+    "speaker": "B",
+    "start": 1108510,
+    "end": 1111630,
+    "text": "So it goes really deep on all the things that used to take me hours."
+  },
+  {
+    "speaker": "B",
+    "start": 1111670,
+    "end": 1113130,
+    "text": "And I could overlay this with like my CRM."
+  },
+  {
+    "speaker": "B",
+    "start": 1113130,
+    "end": 1116172,
+    "text": "I could then ask which customers do we have that are similar to Vanta?"
+  },
+  {
+    "speaker": "B",
+    "start": 1116285,
+    "end": 1121386,
+    "text": "Like, how should I position Unify based on our closed won deals to Vanta directly?"
+  },
+  {
+    "speaker": "B",
+    "start": 1121916,
+    "end": 1127691,
+    "text": "Can turn that into information directly on a call or turn that into information on a sequence."
+  },
+  {
+    "speaker": "B",
+    "start": 1127739,
+    "end": 1130065,
+    "text": "So I, I obviously go a little bit deeper."
+  },
+  {
+    "speaker": "B",
+    "start": 1130145,
+    "end": 1133097,
+    "text": "I want to focus more on outbound because I think that's the use case we can help them up with."
+  },
+  {
+    "speaker": "B",
+    "start": 1133145,
+    "end": 1138824,
+    "text": "It looks like they just hired upmarket and are investing in solutions engineering and EMEA."
+  },
+  {
+    "speaker": "B",
+    "start": 1139289,
+    "end": 1143733,
+    "text": "So I probably want to ask like, hey, where is this push around upmarket sales development coming from?"
+  },
+  {
+    "speaker": "B",
+    "start": 1143781,
+    "end": 1145385,
+    "text": "Like, what's the executive business vision about?"
+  },
+  {
+    "speaker": "B",
+    "start": 1145806,
+    "end": 1146685,
+    "text": "About around that."
+  },
+  {
+    "speaker": "B",
+    "start": 1147071,
+    "end": 1151181,
+    "text": "And I have all this data in front of me so I can just be really, really, really, really smart."
+  },
+  {
+    "speaker": "B",
+    "start": 1152449,
+    "end": 1156832,
+    "text": "The last one I'll show before I kick it to Owen is going deep on one specific account."
+  },
+  {
+    "speaker": "B",
+    "start": 1156944,
+    "end": 1164184,
+    "text": "Like say that you're given, that you have 30 enterprise accounts that you're supposed to break into in a quarter, or you have a named account list and like you just know this one account."
+  },
+  {
+    "speaker": "B",
+    "start": 1164265,
+    "end": 1166159,
+    "text": "Like for me, 5 years ago it was Boston Public Schools."
+  },
+  {
+    "speaker": "B",
+    "start": 1166416,
+    "end": 1167411,
+    "text": "I lived in the Boston area."
+  },
+  {
+    "speaker": "B",
+    "start": 1167459,
+    "end": 1168631,
+    "text": "I really wanted to break into them."
+  },
+  {
+    "speaker": "B",
+    "start": 1169225,
+    "end": 1179358,
+    "text": "I really wanted to know like why they needed us and what I eventually found out through discovery on 6 to 8 calls was that they were actually unintentionally breaking the law based on their teacher-to-student ratio."
+  },
+  {
+    "speaker": "B",
+    "start": 1179662,
+    "end": 1181857,
+    "text": "I probably could have found that with Unify Chats."
+  },
+  {
+    "speaker": "B",
+    "start": 1181905,
+    "end": 1182915,
+    "text": "It would've found that research."
+  },
+  {
+    "speaker": "B",
+    "start": 1182963,
+    "end": 1184085,
+    "text": "It would've found news about it."
+  },
+  {
+    "speaker": "B",
+    "start": 1184165,
+    "end": 1188122,
+    "text": "I couldn't find that online until I discovered that from their chief of human resources."
+  },
+  {
+    "speaker": "B",
+    "start": 1188779,
+    "end": 1191119,
+    "text": "So I could just ask, how should I break into Colab Software?"
+  },
+  {
+    "speaker": "B",
+    "start": 1191215,
+    "end": 1194243,
+    "text": "And we have the latest and greatest models within Unify."
+  },
+  {
+    "speaker": "B",
+    "start": 1194307,
+    "end": 1199419,
+    "text": "So I actually use 5.6 here, which OpenAI launched fairly recently, and it gives me a whole account read."
+  },
+  {
+    "speaker": "B",
+    "start": 1199515,
+    "end": 1201537,
+    "text": "It actually org charts and org maps for me."
+  },
+  {
+    "speaker": "B",
+    "start": 1201601,
+    "end": 1203945,
+    "text": "I know all the different stakeholders they can go after."
+  },
+  {
+    "speaker": "B",
+    "start": 1204106,
+    "end": 1205486,
+    "text": "I know like why they matter."
+  },
+  {
+    "speaker": "B",
+    "start": 1206674,
+    "end": 1213594,
+    "text": "I know like what tech stack they're using and I even am given guidance on like what outbound to run on these folks."
+  },
+  {
+    "speaker": "B",
+    "start": 1213642,
+    "end": 1222777,
+    "text": "Like obviously Michael Gugliotti, excuse my pronunciation, Michael, if you're on this call, MJ Smith, like they're gonna get different information."
+  },
+  {
+    "speaker": "B",
+    "start": 1222873,
+    "end": 1225073,
+    "text": "Like GTM enablement is more about speed."
+  },
+  {
+    "speaker": "B",
+    "start": 1225137,
+    "end": 1227112,
+    "text": "CMO is more about MQL, SQLs."
+  },
+  {
+    "speaker": "B",
+    "start": 1227224,
+    "end": 1229375,
+    "text": "So Unify is doing all this logic in the background."
+  },
+  {
+    "speaker": "B",
+    "start": 1229568,
+    "end": 1242434,
+    "text": "Around and it's allowing me to, to like prepare for my calls, do outreach in a very specific way on targeted accounts, and also do that bulk outreach for like a webinar or for a downmarket or for your tier 2 accounts."
+  },
+  {
+    "speaker": "B",
+    "start": 1242530,
+    "end": 1244808,
+    "text": "You can really target whichever way you want."
+  },
+  {
+    "speaker": "B",
+    "start": 1244888,
+    "end": 1253102,
+    "text": "It even pulls from the swarm here and sees that one of our investors actually worked together with one of their AI/ML software engineers and it tells me, hey, this is only a 2 out of 10."
+  },
+  {
+    "speaker": "B",
+    "start": 1253214,
+    "end": 1255829,
+    "text": "Like I wouldn't recommend that I actually go after this."
+  },
+  {
+    "speaker": "B",
+    "start": 1256410,
+    "end": 1259979,
+    "text": "If they had worked together for 6 years and this was the head of sales, it probably would've given me a higher score."
+  },
+  {
+    "speaker": "B",
+    "start": 1260060,
+    "end": 1264458,
+    "text": "So it's really doing all this research that I wouldn't be able to do, or I'd have to do really, really manual at the end."
+  },
+  {
+    "speaker": "B",
+    "start": 1266510,
+    "end": 1275207,
+    "text": "While Owen pulls up his screen and goes through, I'd love to like have some people drop in the chat, like their roles and the company they're at."
+  },
+  {
+    "speaker": "B",
+    "start": 1275272,
+    "end": 1277582,
+    "text": "We can even like run a live search for you all."
+  },
+  {
+    "speaker": "B",
+    "start": 1278269,
+    "end": 1281782,
+    "text": "I'd also just recommend signing up like Quentin, he just put the signup link in the chat."
+  },
+  {
+    "speaker": "B",
+    "start": 1282395,
+    "end": 1287361,
+    "text": "You can go into Unify and run all these use cases right now and be like, who are the top 10 prospects I should reach out to?"
+  },
+  {
+    "speaker": "A",
+    "start": 1291723,
+    "end": 1297525,
+    "text": "Real quick, Owen, before you dive in too, I'm curious, Nima, like you're obviously a heavy user of Claude as well."
+  },
+  {
+    "speaker": "A",
+    "start": 1298476,
+    "end": 1304653,
+    "text": "How do you\u2014 where do you find that Unify\u2014 you prefer using Unify versus where do you prefer using Claude?"
+  },
+  {
+    "speaker": "A",
+    "start": 1304702,
+    "end": 1305819,
+    "text": "Curious how you draw that distinction."
+  },
+  {
+    "speaker": "B",
+    "start": 1306366,
+    "end": 1307126,
+    "text": "Yeah, yeah."
+  },
+  {
+    "speaker": "B",
+    "start": 1307175,
+    "end": 1314406,
+    "text": "I've actually moved all my Salesforce reporting to Unify, like Win rates, conversion rates, metrics on the BDR team."
+  },
+  {
+    "speaker": "B",
+    "start": 1315335,
+    "end": 1316553,
+    "text": "I used to use Claude for that."
+  },
+  {
+    "speaker": "B",
+    "start": 1316681,
+    "end": 1327128,
+    "text": "I primarily am using Claude for like more bulk querying our call recorder on like what specifically was said on each call."
+  },
+  {
+    "speaker": "B",
+    "start": 1327337,
+    "end": 1332336,
+    "text": "I'm using\u2014 Unify has like 40 to 50 plus data providers, which you showed, like anything."
+  },
+  {
+    "speaker": "B",
+    "start": 1332384,
+    "end": 1336823,
+    "text": "If I'm trying to like slice and dice our TAM in different ways, look at the accounts we're not reaching out to."
+  },
+  {
+    "speaker": "B",
+    "start": 1338479,
+    "end": 1343244,
+    "text": "Queue up like good accounts or prospects for the BDRs, look at AE deals."
+  },
+  {
+    "speaker": "B",
+    "start": 1343293,
+    "end": 1344673,
+    "text": "Like I even use Unify once a week."
+  },
+  {
+    "speaker": "B",
+    "start": 1344722,
+    "end": 1348961,
+    "text": "I say, look at all of our evaluation deals, what's changed on them in the last 7 days?"
+  },
+  {
+    "speaker": "B",
+    "start": 1349217,
+    "end": 1353633,
+    "text": "And then I give that directly to reps and like I do dump that into Claude and send it via Slack."
+  },
+  {
+    "speaker": "B",
+    "start": 1353729,
+    "end": 1356507,
+    "text": "I just say, hey, hey, here is the new data on the reps."
+  },
+  {
+    "speaker": "B",
+    "start": 1356876,
+    "end": 1358691,
+    "text": "Send the Slack to my reps so I don't have to do that."
+  },
+  {
+    "speaker": "B",
+    "start": 1358787,
+    "end": 1360120,
+    "text": "But that only saved me like a minute."
+  },
+  {
+    "speaker": "B",
+    "start": 1360168,
+    "end": 1362320,
+    "text": "So I'm using Unify for like the data."
+  },
+  {
+    "speaker": "B",
+    "start": 1363123,
+    "end": 1369951,
+    "text": "Layer very, very like tactically with Salesforce and then for like outbound data or even like opportunity management data."
+  },
+  {
+    "speaker": "B",
+    "start": 1370497,
+    "end": 1382323,
+    "text": "And then I'm using like Claude for more of like the bulk, like, hey, like let me see based on our last, like pull all the objections from our last 500 calls on my team and put them into a document."
+  },
+  {
+    "speaker": "B",
+    "start": 1382483,
+    "end": 1382628,
+    "text": "Okay."
+  },
+  {
+    "speaker": "B",
+    "start": 1382708,
+    "end": 1383335,
+    "text": "What are the themes?"
+  },
+  {
+    "speaker": "B",
+    "start": 1383431,
+    "end": 1386275,
+    "text": "Like that sort of data obviously doesn't live in Unify today."
+  },
+  {
+    "speaker": "B",
+    "start": 1386436,
+    "end": 1389103,
+    "text": "So I'm using it for more of like the call transcription sort of stuff."
+  },
+  {
+    "speaker": "A",
+    "start": 1390239,
+    "end": 1390514,
+    "text": "Makes sense."
+  },
+  {
+    "speaker": "C",
+    "start": 1393225,
+    "end": 1393564,
+    "text": "Sweet."
+  },
+  {
+    "speaker": "C",
+    "start": 1394274,
+    "end": 1406233,
+    "text": "So as I kind of mentioned before, a lot of things that I can do in Unify today that I either couldn't do a year or two ago, my last role, or previously I had to beg Ethan to help me out with."
+  },
+  {
+    "speaker": "C",
+    "start": 1406863,
+    "end": 1410679,
+    "text": "So first example is just like, I do stuff like this every day."
+  },
+  {
+    "speaker": "C",
+    "start": 1411309,
+    "end": 1412877,
+    "text": "I love pitching against ZoomInfo."
+  },
+  {
+    "speaker": "C",
+    "start": 1412942,
+    "end": 1416530,
+    "text": "I think we have a very good clean value prop compared to them."
+  },
+  {
+    "speaker": "C",
+    "start": 1417096,
+    "end": 1419098,
+    "text": "And I want to pitch to people with BDRs."
+  },
+  {
+    "speaker": "C",
+    "start": 1420857,
+    "end": 1429606,
+    "text": "At my old job, if I wanted to do like a search like this, probably wasn't possible, honestly, like wouldn't have spun my wheels on this."
+  },
+  {
+    "speaker": "C",
+    "start": 1429977,
+    "end": 1437535,
+    "text": "And then a few months ago, I would've like, there are probably Slack messages of me bugging Ethan to set up more campaigns like this."
+  },
+  {
+    "speaker": "C",
+    "start": 1438763,
+    "end": 1441705,
+    "text": "And now this is just something that I can search into Unify right away."
+  },
+  {
+    "speaker": "C",
+    "start": 1443294,
+    "end": 1445544,
+    "text": "So pretty simple query or prompt."
+  },
+  {
+    "speaker": "C",
+    "start": 1446741,
+    "end": 1466699,
+    "text": "Then I wanted to expand it and then essentially just filter it down to people that are worth reaching out to within our ICP personas that we like, enriching their phone numbers and emails, and then writing a sequence."
+  },
+  {
+    "speaker": "C",
+    "start": 1470197,
+    "end": 1479157,
+    "text": "And great thing about Unify is you can, you can click into it, you can edit, you can also give feedback for suggestions."
+  },
+  {
+    "speaker": "C",
+    "start": 1479222,
+    "end": 1483111,
+    "text": "Like, for example, on this one, I'd love to call out that they use ZoomInfo."
+  },
+  {
+    "speaker": "C",
+    "start": 1483192,
+    "end": 1485209,
+    "text": "So I can go ahead in there and change it."
+  },
+  {
+    "speaker": "C",
+    "start": 1486282,
+    "end": 1493464,
+    "text": "And like I said, like these things tend to resonate quite a bit more over email, quite a bit more over the phone."
+  },
+  {
+    "speaker": "C",
+    "start": 1495301,
+    "end": 1498556,
+    "text": "The next prompt I wanted to show is closed lost prospecting."
+  },
+  {
+    "speaker": "C",
+    "start": 1498684,
+    "end": 1506873,
+    "text": "So I mentioned before at my old company, I prospected pretty much only within the CRM towards the end of my time there."
+  },
+  {
+    "speaker": "C",
+    "start": 1507017,
+    "end": 1507868,
+    "text": "It was just easiest."
+  },
+  {
+    "speaker": "C",
+    "start": 1508045,
+    "end": 1519877,
+    "text": "But if I wanted to find a good closed lost opportunity, I remember blocking off an hour or 2 of my night before I went to bed to manually go through these super complicated closed lost reports."
+  },
+  {
+    "speaker": "C",
+    "start": 1520207,
+    "end": 1520941,
+    "text": "In Salesforce."
+  },
+  {
+    "speaker": "C",
+    "start": 1521473,
+    "end": 1527990,
+    "text": "Now just click one by one and check the Salesforce history and then the Salesloft history and the AE notes."
+  },
+  {
+    "speaker": "C",
+    "start": 1529219,
+    "end": 1542339,
+    "text": "And now I don't have to do that anymore because Unify syncs with our Salesforce, syncs with all the data in Unify, and it gives me the best closed lost opportunities to reach out to."
+  },
+  {
+    "speaker": "C",
+    "start": 1542806,
+    "end": 1562285,
+    "text": "So filtering down for closed lost opportunities, Pretending that they were accounts owned by Austin, filtering down, like we said, layering signals to get companies that have raised quite a bit, grabbing the previous champion, throwing them into a sequence."
+  },
+  {
+    "speaker": "C",
+    "start": 1565260,
+    "end": 1570166,
+    "text": "And yeah, this is like really solid copy that will catch somebody's attention."
+  },
+  {
+    "speaker": "C",
+    "start": 1570423,
+    "end": 1572675,
+    "text": "This isn't just something that anybody could automate."
+  },
+  {
+    "speaker": "C",
+    "start": 1574517,
+    "end": 1582914,
+    "text": "And yeah, then this is another example of campaigns that we would run with Ethan."
+  },
+  {
+    "speaker": "C",
+    "start": 1583026,
+    "end": 1590729,
+    "text": "Like Ethan, I don't know if you remember how much we love the Claude Code interacting micro campaign that we did a few months ago."
+  },
+  {
+    "speaker": "C",
+    "start": 1591118,
+    "end": 1594824,
+    "text": "Every SDR on the team was like shouting out Ethan in all the chats."
+  },
+  {
+    "speaker": "C",
+    "start": 1594873,
+    "end": 1595906,
+    "text": "We were booking tons of meetings."
+  },
+  {
+    "speaker": "C",
+    "start": 1597232,
+    "end": 1601966,
+    "text": "And essentially that was just like finding people that were interacting with Claude Code or posting things about Claude Code on LinkedIn."
+  },
+  {
+    "speaker": "C",
+    "start": 1602637,
+    "end": 1603794,
+    "text": "Super successful for us."
+  },
+  {
+    "speaker": "C",
+    "start": 1605630,
+    "end": 1618166,
+    "text": "This is just an example of finding salespeople and then layering that with people that are hiring, layer that with people that are posting about AI in the job description, makes them prime for Unify."
+  },
+  {
+    "speaker": "C",
+    "start": 1618343,
+    "end": 1619051,
+    "text": "So it's the same workflow."
+  },
+  {
+    "speaker": "C",
+    "start": 1620017,
+    "end": 1625984,
+    "text": "Don't need to show it over and over again, but finds the people, enriches them, filters against our ICP."
+  },
+  {
+    "speaker": "C",
+    "start": 1630950,
+    "end": 1632051,
+    "text": "Enrolls them into a sequence."
+  },
+  {
+    "speaker": "C",
+    "start": 1632100,
+    "end": 1632544,
+    "text": "You can preview."
+  },
+  {
+    "speaker": "C",
+    "start": 1635250,
+    "end": 1646636,
+    "text": "We were doing evals on human writing earlier or yesterday, and it's like between the enterprise hiring and your position around this, somebody's gonna open this email and it's really gonna resonate."
+  },
+  {
+    "speaker": "C",
+    "start": 1648463,
+    "end": 1659820,
+    "text": "Last thing I'll show is another layered Prompt."
+  },
+  {
+    "speaker": "C",
+    "start": 1659820,
+    "end": 1673440,
+    "text": "So actively hiring, actively growing, finds it easily, enriches it easily, throws it into a sequence."
+  },
+  {
+    "speaker": "C",
+    "start": 1678637,
+    "end": 1679968,
+    "text": "So yeah, that's everything for me."
+  },
+  {
+    "speaker": "A",
+    "start": 1683927,
+    "end": 1692397,
+    "text": "Oh, and I'm curious, like, what's your, um, well, I think one of the comparisons we're hearing a lot of is just like the comparison versus like data that you would get off of LinkedIn."
+  },
+  {
+    "speaker": "A",
+    "start": 1692670,
+    "end": 1700473,
+    "text": "Curious for your sort of initial, like, last couple of weeks as you've been moving into this world of using, um, Unify for all this prospecting work."
+  },
+  {
+    "speaker": "A",
+    "start": 1701115,
+    "end": 1703139,
+    "text": "What, uh, what's your take on the data quality?"
+  },
+  {
+    "speaker": "C",
+    "start": 1708311,
+    "end": 1723104,
+    "text": "I think the main benefit of having the LinkedIn data through Unify is sort of what we were saying earlier, like manually copying and pasting, verifying, like that takes forever."
+  },
+  {
+    "speaker": "C",
+    "start": 1723411,
+    "end": 1735199,
+    "text": "And then searching in LinkedIn, combing through posts, letting your eyes glaze over that, like the lift on that is so serious that, like I said before, it's not something that I would even engage in previously."
+  },
+  {
+    "speaker": "C",
+    "start": 1735801,
+    "end": 1741815,
+    "text": "And now if I have a thought about it, I can do it and I can trust the data, which is super important as an SDR."
+  },
+  {
+    "speaker": "A",
+    "start": 1743403,
+    "end": 1744536,
+    "text": "Yeah, love that."
+  },
+  {
+    "speaker": "A",
+    "start": 1749297,
+    "end": 1752869,
+    "text": "All right, um, let's shift gears again."
+  },
+  {
+    "speaker": "A",
+    "start": 1757330,
+    "end": 1759146,
+    "text": "Um, yo, screen."
+  },
+  {
+    "speaker": "A",
+    "start": 1768338,
+    "end": 1768560,
+    "text": "Okay."
+  },
+  {
+    "speaker": "A",
+    "start": 1769347,
+    "end": 1777590,
+    "text": "So, um, as you just heard from Owen a bit, the, the beauty of the new experience with Unify is just the ability to have an idea and just try it out really quickly."
+  },
+  {
+    "speaker": "A",
+    "start": 1777863,
+    "end": 1785673,
+    "text": "And so just lets you be endlessly creative with how you want to go about prospecting and not have to think about, oh, how much work would this actually take?"
+  },
+  {
+    "speaker": "A",
+    "start": 1786926,
+    "end": 1791801,
+    "text": "And so I'd encourage you to just give it a go, try it out, throw in a couple ideas."
+  },
+  {
+    "speaker": "A",
+    "start": 1792073,
+    "end": 1796932,
+    "text": "Also, as part of onboarding, Unify will actually give you good ideas to go execute on."
+  },
+  {
+    "speaker": "A",
+    "start": 1797044,
+    "end": 1798792,
+    "text": "So take some of that mental burden off."
+  },
+  {
+    "speaker": "A",
+    "start": 1799770,
+    "end": 1813529,
+    "text": "But the ability to bridge between using a modern harness and being able to pull from these unique first and third-party data sources really seamlessly unlocks a ton of use cases that we are candidly still figuring out for ourselves."
+  },
+  {
+    "speaker": "A",
+    "start": 1814050,
+    "end": 1820633,
+    "text": "It's cool to see the team sort of organically pulling at all the nooks and crannies of the product and finding new use cases that we didn't fully anticipate or intend."
+  },
+  {
+    "speaker": "A",
+    "start": 1821258,
+    "end": 1827640,
+    "text": "As an example, Nima's use cases he was talking about, about just understanding performance across accounts and what's going on."
+  },
+  {
+    "speaker": "A",
+    "start": 1832403,
+    "end": 1832771,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 1834311,
+    "end": 1835770,
+    "text": "We'll move to, we'll move to Q&A."
+  },
+  {
+    "speaker": "A",
+    "start": 1836075,
+    "end": 1841863,
+    "text": "Any, lob any and all questions into, into the chat or into the Q&A."
+  },
+  {
+    "speaker": "A",
+    "start": 1842248,
+    "end": 1845359,
+    "text": "And we'll kind of go through and rattle off some of these."
+  },
+  {
+    "speaker": "A",
+    "start": 1847515,
+    "end": 1848521,
+    "text": "Looks like we already have some too."
+  },
+  {
+    "speaker": "A",
+    "start": 1848619,
+    "end": 1850533,
+    "text": "So let me just take a quick glance through."
+  },
+  {
+    "speaker": "A",
+    "start": 1854529,
+    "end": 1859380,
+    "text": "Maybe as a starting place, Rod, you asked a question about sequence-level custom reporting."
+  },
+  {
+    "speaker": "A",
+    "start": 1859687,
+    "end": 1864859,
+    "text": "So today we have a bulk API that lets you pull sequence data straight out of Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 1865020,
+    "end": 1873859,
+    "text": "And so what you could do is just create an API key in Unify, drop that into Claude or whatever system you're working out of, and build dashboards there."
+  },
+  {
+    "speaker": "A",
+    "start": 1874176,
+    "end": 1874554,
+    "text": "Off our data."
+  },
+  {
+    "speaker": "A",
+    "start": 1874940,
+    "end": 1876369,
+    "text": "We do have an MCP coming very soon."
+  },
+  {
+    "speaker": "A",
+    "start": 1876562,
+    "end": 1882249,
+    "text": "But the bulk API today, if you just create an API key and drop into Claude, also works exactly the same way."
+  },
+  {
+    "speaker": "A",
+    "start": 1882731,
+    "end": 1884512,
+    "text": "And so can give that a try today."
+  },
+  {
+    "speaker": "A",
+    "start": 1884757,
+    "end": 1886621,
+    "text": "It's a very, very powerful use case."
+  },
+  {
+    "speaker": "A",
+    "start": 1886670,
+    "end": 1888338,
+    "text": "It's actually how we do a lot of our reporting internally."
+  },
+  {
+    "speaker": "A",
+    "start": 1892020,
+    "end": 1897295,
+    "text": "Sonia's question is, how do you prioritize 20+ intent signals without overwhelming the reps?"
+  },
+  {
+    "speaker": "A",
+    "start": 1898359,
+    "end": 1904074,
+    "text": "Is there a scoring framework that consistently predicts meetings booked or pipeline creation across different ICPs?"
+  },
+  {
+    "speaker": "A",
+    "start": 1906240,
+    "end": 1907347,
+    "text": "It's a really good question."
+  },
+  {
+    "speaker": "A",
+    "start": 1907555,
+    "end": 1917405,
+    "text": "So this all comes down to just using the latest LLMs to be able to build account plans and be basically strategists."
+  },
+  {
+    "speaker": "A",
+    "start": 1917950,
+    "end": 1923389,
+    "text": "What you'll notice when you sign up for Unify is that it's not just an experience where we like take you through a traditional flow."
+  },
+  {
+    "speaker": "A",
+    "start": 1924046,
+    "end": 1931249,
+    "text": "The first thing that happens is we actually analyze your business and spot unique, interesting strategies that are one-to-one matched to your business."
+  },
+  {
+    "speaker": "A",
+    "start": 1931907,
+    "end": 1934798,
+    "text": "And that involves knowing which intent signals matter for you."
+  },
+  {
+    "speaker": "A",
+    "start": 1934894,
+    "end": 1942169,
+    "text": "And so, Sonia, to your question, the\u2014 it doesn't really actually\u2014 20, 40, whatever it is, signals doesn't actually matter to your business."
+  },
+  {
+    "speaker": "A",
+    "start": 1942586,
+    "end": 1945958,
+    "text": "But what matters is knowing the 3, 4, 5, 6 that really matter."
+  },
+  {
+    "speaker": "A",
+    "start": 1946119,
+    "end": 1950294,
+    "text": "And the onboarding experience for us actually just takes you through that yourself."
+  },
+  {
+    "speaker": "A",
+    "start": 1951177,
+    "end": 1958693,
+    "text": "Every piece of what you do in the product experience, especially if you're using a model like GPT-5.6, which is the latest and greatest from OpenAI."
+  },
+  {
+    "speaker": "A",
+    "start": 1959287,
+    "end": 1968580,
+    "text": "You'll notice that the models are incredibly good at understanding just the texture of your market, the texture of your prospects, and who to go after and who to prioritize."
+  },
+  {
+    "speaker": "A",
+    "start": 1968692,
+    "end": 1987695,
+    "text": "And so we're finding that we're\u2014 my bet is that we move away from the scoring frameworks that we've seen historically, where you've got a number and then you're weighting a certain criterion, maybe it's like employee count or tech stack, and you start moving towards giving raw data to agents that are purpose-built for this work."
+  },
+  {
+    "speaker": "A",
+    "start": 1988034,
+    "end": 1990768,
+    "text": "And then letting them make judgment calls across those data points."
+  },
+  {
+    "speaker": "A",
+    "start": 1991108,
+    "end": 1999393,
+    "text": "So some some some thoughts from Mary."
+  },
+  {
+    "speaker": "A",
+    "start": 2000458,
+    "end": 2001701,
+    "text": "New user question here."
+  },
+  {
+    "speaker": "A",
+    "start": 2001765,
+    "end": 2002234,
+    "text": "Curious."
+  },
+  {
+    "speaker": "A",
+    "start": 2002314,
+    "end": 2003184,
+    "text": "I know this isn't though."
+  },
+  {
+    "speaker": "A",
+    "start": 2003861,
+    "end": 2006920,
+    "text": "We're getting about sixty to seventy percent open rates, which is fantastic."
+  },
+  {
+    "speaker": "A",
+    "start": 2006985,
+    "end": 2009062,
+    "text": "But we've only had one reply to set a meeting."
+  },
+  {
+    "speaker": "A",
+    "start": 2009191,
+    "end": 2011381,
+    "text": "It's about two hundred fifty companies so far."
+  },
+  {
+    "speaker": "A",
+    "start": 2011735,
+    "end": 2012380,
+    "text": "One to three touches."
+  },
+  {
+    "speaker": "A",
+    "start": 2013308,
+    "end": 2019607,
+    "text": "At what At one point, do you change up the messaging and or does it take to get 7 plus touches?"
+  },
+  {
+    "speaker": "A",
+    "start": 2020343,
+    "end": 2028242,
+    "text": "Generally, I would say that internally we focus a lot less on open rates as a performance metric and really focus on reply rates."
+  },
+  {
+    "speaker": "A",
+    "start": 2028290,
+    "end": 2035980,
+    "text": "And so, Mary, I think your intuition there is right, is that let's really just focus on bringing up the reply rate in particular."
+  },
+  {
+    "speaker": "A",
+    "start": 2036525,
+    "end": 2044711,
+    "text": "What I would try to do is we are working a lot on the copywriting skills that the agent has access to, to continue to make that copy better and better."
+  },
+  {
+    "speaker": "A",
+    "start": 2045224,
+    "end": 2049096,
+    "text": "But usually what you wanna try to do is make it as specific as possible."
+  },
+  {
+    "speaker": "A",
+    "start": 2049726,
+    "end": 2054295,
+    "text": "Ethan actually wrote a really amazing guide about like how to write good copy."
+  },
+  {
+    "speaker": "A",
+    "start": 2054408,
+    "end": 2058776,
+    "text": "Ethan, I don't know if you wanna like mention a couple nuggets that you've seen work in our world."
+  },
+  {
+    "speaker": "D",
+    "start": 2060015,
+    "end": 2060913,
+    "text": "Yeah, yeah, sure."
+  },
+  {
+    "speaker": "D",
+    "start": 2061400,
+    "end": 2061448,
+    "text": "Yeah."
+  },
+  {
+    "speaker": "D",
+    "start": 2061513,
+    "end": 2067014,
+    "text": "Quentin also, I think, produced a report which we analyzed over 25 million emails, I think it was."
+  },
+  {
+    "speaker": "D",
+    "start": 2068417,
+    "end": 2071851,
+    "text": "Yeah, I'd say keeping things, you know, as human as possible."
+  },
+  {
+    "speaker": "D",
+    "start": 2071916,
+    "end": 2076218,
+    "text": "So I would say like, The list often informs the copy, right?"
+  },
+  {
+    "speaker": "D",
+    "start": 2076346,
+    "end": 2082003,
+    "text": "And so we talk about layering in different signals and what that sort of implies and means."
+  },
+  {
+    "speaker": "D",
+    "start": 2082211,
+    "end": 2084487,
+    "text": "I think all of that should inform the copy."
+  },
+  {
+    "speaker": "D",
+    "start": 2085384,
+    "end": 2089230,
+    "text": "And then also I would just keep it short, right?"
+  },
+  {
+    "speaker": "D",
+    "start": 2089551,
+    "end": 2096457,
+    "text": "And like, for what it's worth, I think about over 50% of people are reading these emails on their phone."
+  },
+  {
+    "speaker": "D",
+    "start": 2096634,
+    "end": 2098909,
+    "text": "So you have to align spacing correctly."
+  },
+  {
+    "speaker": "D",
+    "start": 2099707,
+    "end": 2102191,
+    "text": "Have a clear call to action at the end."
+  },
+  {
+    "speaker": "D",
+    "start": 2103130,
+    "end": 2113948,
+    "text": "And usually it's pairing some sort of insight into the value prop of your company and some sort of social proof throughout the sequence that's relevant to their business, I would say."
+  },
+  {
+    "speaker": "D",
+    "start": 2114044,
+    "end": 2117239,
+    "text": "And so relevance is the most important thing."
+  },
+  {
+    "speaker": "D",
+    "start": 2118469,
+    "end": 2122160,
+    "text": "I wouldn't try to call out every single detail from your research."
+  },
+  {
+    "speaker": "D",
+    "start": 2122451,
+    "end": 2141021,
+    "text": "I think we see that in AI CRs and Overall, a lot of people will try to compile all this sort of research to show they did it in the copy, but more so just taking, hey, like, what are the 1 or 2 tidbits that this means and how is it relevant to our business and our solution?"
+  },
+  {
+    "speaker": "A",
+    "start": 2145911,
+    "end": 2152235,
+    "text": "One other flag as well is that I would absolutely add LinkedIn messages and possibly phone calls to your sequences as well."
+  },
+  {
+    "speaker": "A",
+    "start": 2152906,
+    "end": 2157733,
+    "text": "Um, LinkedIn messages convert much, much higher than emails do."
+  },
+  {
+    "speaker": "A",
+    "start": 2158053,
+    "end": 2164419,
+    "text": "I think all strategies and all channels are important to touch, but would certainly move to having at least LinkedIn as well."
+  },
+  {
+    "speaker": "A",
+    "start": 2165012,
+    "end": 2175499,
+    "text": "Um, and, you know, I would say that, Owen, I'm curious for your take, but of the meetings we booked today, like, it seems like the majority of what the team spends their time on is LinkedIn and phone."
+  },
+  {
+    "speaker": "A",
+    "start": 2175611,
+    "end": 2176028,
+    "text": "Is that right?"
+  },
+  {
+    "speaker": "A",
+    "start": 2176413,
+    "end": 2180405,
+    "text": "And then a lot of the email is actually handled by the automation that we run."
+  },
+  {
+    "speaker": "C",
+    "start": 2182944,
+    "end": 2183826,
+    "text": "Definitely."
+  },
+  {
+    "speaker": "C",
+    "start": 2184501,
+    "end": 2195551,
+    "text": "I was talking about this with somebody at an event on Monday night where to really get somebody's attention in today's age of outbound, you need every channel."
+  },
+  {
+    "speaker": "C",
+    "start": 2195760,
+    "end": 2197881,
+    "text": "They need to listen to your voicemail."
+  },
+  {
+    "speaker": "C",
+    "start": 2198074,
+    "end": 2200227,
+    "text": "They need to hear your voice over the phone."
+  },
+  {
+    "speaker": "C",
+    "start": 2200340,
+    "end": 2203886,
+    "text": "They need that face-to-face LinkedIn message and they need the email."
+  },
+  {
+    "speaker": "C",
+    "start": 2203952,
+    "end": 2205868,
+    "text": "So all of it's equally as important."
+  },
+  {
+    "speaker": "C",
+    "start": 2206693,
+    "end": 2208328,
+    "text": "Personally, I'm a big phone person."
+  },
+  {
+    "speaker": "C",
+    "start": 2208585,
+    "end": 2216019,
+    "text": "When I can catch somebody on the phone on our dialer and ask them if they've seen our email and they say yes, it's the easiest pitch for me."
+  },
+  {
+    "speaker": "A",
+    "start": 2219590,
+    "end": 2220056,
+    "text": "Super helpful."
+  },
+  {
+    "speaker": "A",
+    "start": 2221084,
+    "end": 2222803,
+    "text": "Uh, got a question from Adam."
+  },
+  {
+    "speaker": "A",
+    "start": 2223092,
+    "end": 2226161,
+    "text": "How does Unify work with a unified context layer?"
+  },
+  {
+    "speaker": "A",
+    "start": 2226257,
+    "end": 2234199,
+    "text": "So you have info that you would use Claude Code to pull objections, pain points, what's working from transcripts, and then putting that feedback loop so it can persist in that context layer."
+  },
+  {
+    "speaker": "A",
+    "start": 2239043,
+    "end": 2245378,
+    "text": "So one thing that we are working on currently is this concept of centralized context within Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 2245586,
+    "end": 2258286,
+    "text": "So the ability to upload any sort of artifacts, data, MD files, you name it, directly into Unify to give us your sort of best in class, what you believe is true, how you want to approach go-to-market."
+  },
+  {
+    "speaker": "A",
+    "start": 2258414,
+    "end": 2265873,
+    "text": "And so this centralized context layer is something that today exists in some forms, but is not fully, fully built out in Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 2265953,
+    "end": 2267012,
+    "text": "So we have memories, right?"
+  },
+  {
+    "speaker": "A",
+    "start": 2267060,
+    "end": 2275435,
+    "text": "So if you say something about a specific style in which you like to approach a problem space or whatever it might be, that will be captured as a memory within Unify."
+  },
+  {
+    "speaker": "A",
+    "start": 2275820,
+    "end": 2281002,
+    "text": "And we also have company context as well, where you can edit and understand, okay, like, what are the details about my company?"
+  },
+  {
+    "speaker": "A",
+    "start": 2281114,
+    "end": 2283007,
+    "text": "Who are the relevant customers that I can be citing?"
+  },
+  {
+    "speaker": "A",
+    "start": 2283200,
+    "end": 2284499,
+    "text": "How do I\u2014 what's my ICP?"
+  },
+  {
+    "speaker": "A",
+    "start": 2285045,
+    "end": 2293655,
+    "text": "We will generate a lot of that for you, but soon you're gonna have the ability to update that with any sort of custom Basically any of your own resources internally that you have."
+  },
+  {
+    "speaker": "A",
+    "start": 2302302,
+    "end": 2312261,
+    "text": "And then Mary, on your question, LinkedIn messages today, the way that we do this in our product experience is that you\u2014 we have a task manager experience where you can create a LinkedIn task."
+  },
+  {
+    "speaker": "A",
+    "start": 2312470,
+    "end": 2320723,
+    "text": "And then what you do is there's a one-button click that you go to the LinkedIn platform, it copies Unify does the copywriting for you."
+  },
+  {
+    "speaker": "A",
+    "start": 2321047,
+    "end": 2322215,
+    "text": "It copies it to your clipboard."
+  },
+  {
+    "speaker": "A",
+    "start": 2322344,
+    "end": 2323576,
+    "text": "You just hit copy and paste and send."
+  },
+  {
+    "speaker": "A",
+    "start": 2323803,
+    "end": 2327435,
+    "text": "So it is a little bit more manual today, but it is still a streamlined workflow."
+  },
+  {
+    "speaker": "A",
+    "start": 2327990,
+    "end": 2331061,
+    "text": "We found the LinkedIn profile and made all that stuff super simple."
+  },
+  {
+    "speaker": "A",
+    "start": 2331274,
+    "end": 2332123,
+    "text": "So it's very fast."
+  },
+  {
+    "speaker": "A",
+    "start": 2336103,
+    "end": 2336733,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 2338123,
+    "end": 2339820,
+    "text": "We got a question from, from Jack."
+  },
+  {
+    "speaker": "A",
+    "start": 2341350,
+    "end": 2347396,
+    "text": "Uh, can Unify be used to create a saved continuously running signal or workflow rather than generating one-off lists?"
+  },
+  {
+    "speaker": "A",
+    "start": 2353882,
+    "end": 2354487,
+    "text": "That's a great question."
+  },
+  {
+    "speaker": "A",
+    "start": 2355889,
+    "end": 2358065,
+    "text": "We have something coming very soon, so stay tuned."
+  },
+  {
+    "speaker": "A",
+    "start": 2358871,
+    "end": 2365307,
+    "text": "Give us, give us a little bit more time, but it's a common thing that we've, we've heard from, from customers and users, and more to come very soon."
+  },
+  {
+    "speaker": "A",
+    "start": 2372775,
+    "end": 2373309,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 2377263,
+    "end": 2380651,
+    "text": "Any last-minute lingering questions on, on Q&A?"
+  },
+  {
+    "speaker": "A",
+    "start": 2387913,
+    "end": 2388218,
+    "text": "See."
+  },
+  {
+    "speaker": "A",
+    "start": 2388941,
+    "end": 2389343,
+    "text": "All right."
+  },
+  {
+    "speaker": "A",
+    "start": 2390949,
+    "end": 2393568,
+    "text": "Thank you everyone for joining."
+  },
+  {
+    "speaker": "A",
+    "start": 2394323,
+    "end": 2397542,
+    "text": "Hope this was helpful in just understanding, hey, how do you actually use the product?"
+  },
+  {
+    "speaker": "A",
+    "start": 2397607,
+    "end": 2398528,
+    "text": "What does this look like?"
+  },
+  {
+    "speaker": "A",
+    "start": 2398738,
+    "end": 2400290,
+    "text": "What are people getting value out of today?"
+  },
+  {
+    "speaker": "A",
+    "start": 2401742,
+    "end": 2406159,
+    "text": "Quick reminder, sign up now, get those free credits, get that free plan if you want to."
+  },
+  {
+    "speaker": "A",
+    "start": 2406224,
+    "end": 2411664,
+    "text": "So go to unifiedgtm.com, click sign up, and we'll make sure that we hook you up with that, that free month."
+  },
+  {
+    "speaker": "A",
+    "start": 2412260,
+    "end": 2413516,
+    "text": "But thanks everyone for joining."
+  },
+  {
+    "speaker": "A",
+    "start": 2413773,
+    "end": 2417517,
+    "text": "Really appreciate all the thoughtful questions and hope to see you next time."
+  },
+  {
+    "speaker": "B",
+    "start": 2420823,
+    "end": 2421337,
+    "text": "Thanks everyone."
+  }
+]

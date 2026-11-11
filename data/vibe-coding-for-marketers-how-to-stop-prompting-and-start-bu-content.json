@@ -1,0 +1,240 @@
+[
+  {
+    "id": "m2743",
+    "moment_type": "contrarian",
+    "speaker_name": "Austin Hughes",
+    "post_for": "Austin Hughes",
+    "angle": "AI can't brainstorm from nothing. Humans bring the first 2-3 ideas and Claude gets you to 10",
+    "judge_score": 68,
+    "angle_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 5
+    },
+    "post_first_line": "2 or 3 ideas. That's what you owe AI.",
+    "post_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 4
+    },
+    "hook_score_before": 68,
+    "hook_score_after": 68,
+    "linkedin_post": "2 or 3 ideas. That's what you owe AI.\n\nMost people skip this step and wonder why the output feels generic.\n\nSarah came by our office a couple weeks ago. We ran a brainstorming session on ways we could be betting more broadly as a team.\n\nWe covered a bunch of different parts of the business: all the channels we run today, where we're seeing success, and where we're not. We came away with a bunch of ideas for improving what we do today.\n\nAI can amplify a session like this. But the kernels of insight still need to come from people.\n\nYour first 2 or 3 ideas are what help Claude get you to the 7 through 10.\n\nWithout those starting points, the model has nothing real to build on.\n\nSo don't open a blank chat and ask for ideas. Bring your own first, then let AI stretch them.\n\nWhere does your team's best first idea usually come from?",
+    "carousel": [
+      "Slide 1: AI can't brainstorm from nothing",
+      "Slide 2: Sarah visited our office for a brainstorming session",
+      "Slide 3: We reviewed every channel: what works, what doesn't",
+      "Slide 4: AI can amplify brainstorming sessions like this",
+      "Slide 5: But the kernels of insight still come from people",
+      "Slide 6: Bring the first 2 or 3 ideas yourself",
+      "Slide 7: Those help Claude get you to ideas 7 through 10",
+      "Slide 8: Start with your own insight, then let AI stretch it"
+    ],
+    "lesson": {
+      "title": "Humans seed the ideas, AI scales them",
+      "takeaways": [
+        "AI amplifies brainstorming, but the kernels of insight still come from people.",
+        "The first 2 or 3 ideas are what help Claude reach 7 through 10.",
+        "Reviewing what's working and what isn't gives you the raw material for those first ideas."
+      ],
+      "exercise": "Before your next brainstorm with Claude, write down 2 or 3 ideas based on what's working and not working in your channels. Share them as context, then ask Claude to extend the list to 10."
+    },
+    "caption": "AI can't brainstorm from nothing"
+  },
+  {
+    "id": "m0533",
+    "moment_type": "how_to",
+    "speaker_name": "Austin Hughes",
+    "post_for": "Austin Hughes",
+    "angle": "Feeling behind on AI? Start with small chats, then build your first skill",
+    "judge_score": 65,
+    "angle_tag": {
+      "hook_type": "how_to",
+      "first_line_words": 13
+    },
+    "post_first_line": "Feeling behind on AI? That's the default.",
+    "post_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 7
+    },
+    "hook_score_before": 65,
+    "hook_score_after": 71,
+    "linkedin_post": "Feeling behind on AI? That's the default.\n\nThe fix is smaller than most people think.\n\nWe've been through this ourselves over the past few months of using these products. There's a lot of anxiety around them. People wonder what they should be doing and how it's all supposed to work.\n\nMy advice: start with small things. Don't force yourself into some complicated use case on day one.\n\nRun a few chats in Claude. Then move on to building your first skill.\n\nIt doesn't need to be perfect. Intuition comes from trying things, not from reading about them as a third party.\n\nWhat's the first thing you tried in Claude?",
+    "carousel": [
+      "Slide 1: Feeling behind on AI? You're not alone.",
+      "Slide 2: Most people are anxious about how to use these tools.",
+      "Slide 3: Don't dive into a crazy complicated use case.",
+      "Slide 4: Start by running a few chats in Claude.",
+      "Slide 5: Then move on to building your first skill.",
+      "Slide 6: It doesn't need to be perfect.",
+      "Slide 7: Intuition comes from trying, not from reading.",
+      "Slide 8: Stop being a third-party observer. Start trying."
+    ],
+    "lesson": {
+      "title": "Beat AI anxiety by starting small",
+      "takeaways": [
+        "Feeling behind on AI is common, and it often comes from overthinking where to start.",
+        "Begin with simple chats in Claude, then build your first skill.",
+        "Intuition comes from hands-on trying, not from reading about the tools as a third party."
+      ],
+      "exercise": "Open Claude today and run three small chats on real work tasks. Then pick one task you repeat and turn it into your first skill, imperfect is fine."
+    },
+    "caption": "Feel behind on AI?"
+  },
+  {
+    "id": "m1405",
+    "moment_type": "how_to",
+    "speaker_name": "Sarah Charlton",
+    "post_for": "Unify company page",
+    "angle": "Build the lead magnet, not a beautiful page: always include a CTA",
+    "judge_score": 65,
+    "angle_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 12
+    },
+    "post_first_line": "Under 30 seconds to build this page.",
+    "post_tag": {
+      "hook_type": "stat",
+      "first_line_words": 7
+    },
+    "hook_score_before": 65,
+    "hook_score_after": 60,
+    "linkedin_post": "Under 30 seconds to build this page.\n\nThe page isn't the interesting part. What's on it is.\n\nSarah Charlton built a lead magnet concept at Unify, and she started with the CTA. A talk to sales button went in first, because you've always got to have a CTA.\n\nHer framing: you're doing this to be a lead magnet, not to be a beautiful page.\n\nThen she added the rest:\n\n- A hero image\n- A toggle, because she wanted it to be a lot more fun\n- The inputs Quentin asked for\n- A headline and a bunch of detail\n- Customer quotes\n\nThe last piece is the one most people skip. At the end, visitors can email the results to themselves and hit another CTA.\n\nYou wouldn't know from looking at it that it took less than 30 seconds to build.\n\nWhen building is that fast, polish stops being the bottleneck. The real work is deciding what the page should make someone do.\n\nWhat's the first CTA on your lead magnet?",
+    "carousel": [
+      "Slide 1: This lead magnet took under 30 seconds to build.",
+      "Slide 2: Start with the CTA, not the design.",
+      "Slide 3: You're building a lead magnet, not a beautiful page.",
+      "Slide 4: Add a hero image, a fun toggle, and useful inputs.",
+      "Slide 5: Back it up with a headline, detail, and customer quotes.",
+      "Slide 6: End by letting people email themselves the results.",
+      "Slide 7: Then give them a second CTA right there."
+    ],
+    "lesson": {
+      "title": "Build the lead magnet, not a beautiful page",
+      "takeaways": [
+        "Put the CTA in first, because every lead magnet needs one.",
+        "Build the page around inputs, customer quotes, and a clear headline instead of visual polish.",
+        "Add an email-results option at the end, with another CTA, to keep the conversation going."
+      ],
+      "exercise": "Open your current lead magnet and find the CTA. If it's missing or buried, add a talk to sales button, then add an email-results step with a second CTA at the end."
+    },
+    "caption": "CTA first, polish later"
+  },
+  {
+    "id": "m0355",
+    "moment_type": "contrarian",
+    "speaker_name": "Austin Hughes",
+    "post_for": "Austin Hughes",
+    "angle": "We've never posted a LinkedIn post straight out of AI, and here's why",
+    "judge_score": 64,
+    "angle_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 13
+    },
+    "post_first_line": "Not one LinkedIn post has shipped straight from AI.",
+    "post_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 9
+    },
+    "hook_score_before": 64,
+    "hook_score_after": 67,
+    "linkedin_post": "Not one LinkedIn post has shipped straight from AI.\n\nThere's a reason, and it isn't what you'd expect.\n\nI've written on LinkedIn for the past couple years. In that time, we have never taken a post that came out of AI and published it as is.\n\nIt's just not good enough.\n\nAI doesn't have the taste or care that someone good at marketing has. The output isn't interesting.\n\nIt also doesn't understand the zeitgeist. It misses what's happening right now and how people feel about it.\n\nI'm not confident it will take a lot to close that gap. But today, this is the one area where I get no leverage out of it.\n\nWhere do you still refuse to let AI do the work?",
+    "carousel": [
+      "Slide 1: We've never posted straight out of AI.",
+      "Slide 2: Years of writing on LinkedIn. Zero raw AI posts.",
+      "Slide 3: AI lacks the taste a good marketer has.",
+      "Slide 4: It also lacks the care good marketers bring.",
+      "Slide 5: The output simply isn't interesting enough.",
+      "Slide 6: It misses the zeitgeist and how people feel.",
+      "Slide 7: The gap may not take much to close.",
+      "Slide 8: For now, writing is where AI gives no leverage."
+    ],
+    "lesson": {
+      "title": "Why Taste Still Beats AI in LinkedIn Writing",
+      "takeaways": [
+        "AI output lacks the taste and care a skilled marketer brings.",
+        "AI doesn't grasp the zeitgeist or how people feel right now.",
+        "The gap may close soon, but today writing is where AI gives no leverage."
+      ],
+      "exercise": "Take your last AI-drafted post and mark every line that feels generic or out of touch with current conversation. Rewrite those lines with your own take on what people are feeling right now."
+    },
+    "caption": "Never posted straight from AI"
+  },
+  {
+    "id": "m1441",
+    "moment_type": "mistake",
+    "speaker_name": "Sarah Charlton",
+    "post_for": "Unify company page",
+    "angle": "Don't ask AI to invent your ROI math. Bring the logic, let it build the page",
+    "judge_score": 58,
+    "angle_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 8
+    },
+    "post_first_line": "12 pages. Size 12 font.",
+    "post_tag": {
+      "hook_type": "other",
+      "first_line_words": 5
+    },
+    "hook_score_before": 58,
+    "hook_score_after": 53,
+    "linkedin_post": "12 pages. Size 12 font.\n\nThat's how detailed our ROI logic was before AI touched it.\n\nYou don't tell AI to figure out the ROI on Unify. That doesn't make sense, and it's not something you can delegate.\n\nThe math has to come from you. The reasoning behind it is yours.\n\nQuentin gave me a calculator that went with his diagram. It was 12 pages of very detailed instructions. We had 15 minutes, so I asked Claude to turn it into something much simpler that we could build in the session.\n\nClaude made a simple calculator, and that's the one we used.\n\nThe split is clear. You own the logic. AI builds the page.\n\nIf you hand over the logic too, you get a confident-looking tool built on numbers nobody can defend.\n\nWho owns the ROI logic on your team today?",
+    "carousel": [
+      "Slide 1: Don't ask AI to invent your ROI math.",
+      "Slide 2: The ROI logic is yours. It can't be delegated.",
+      "Slide 3: Our starting point: 12 pages of very detailed instructions.",
+      "Slide 4: We had 15 minutes, so we needed something simpler.",
+      "Slide 5: I asked Claude to simplify it into a calculator.",
+      "Slide 6: Claude built the page. The logic came from us.",
+      "Slide 7: You own the reasoning. AI owns the build.",
+      "Slide 8: Hand over the logic and nobody can defend the numbers."
+    ],
+    "lesson": {
+      "title": "Bring the ROI logic. Let AI build the page.",
+      "takeaways": [
+        "ROI logic can't be delegated to AI. It has to come from someone who understands the business.",
+        "Detailed source material is an asset. Ask AI to simplify it when time is short.",
+        "Use AI for the build: the calculator, the page, the interface."
+      ],
+      "exercise": "Write your ROI logic in plain language: inputs, formula, assumptions. Then give it to AI and ask for a simple calculator, without letting it change the math."
+    },
+    "caption": "Don't let AI invent ROI"
+  },
+  {
+    "id": "m0898",
+    "moment_type": "prediction",
+    "speaker_name": "Sarah Charlton",
+    "post_for": "Unify company page",
+    "angle": "Sales isn't AI vs. human anymore. AI is table stakes and selling stays human-to-human",
+    "judge_score": 56,
+    "angle_tag": {
+      "hook_type": "contrarian",
+      "first_line_words": 6
+    },
+    "post_first_line": "AI is table stakes now.",
+    "post_tag": {
+      "hook_type": "other",
+      "first_line_words": 5
+    },
+    "hook_score_before": 56,
+    "hook_score_after": 51,
+    "linkedin_post": "AI is table stakes now.\n\nThe real question is what happens after that.\n\nA year or two ago, the story was that AI would replace sales. That story is fading.\n\nThe new one is sales plus AI. AI absorbs the research and the administration.\n\nBut selling is inherently a human-to-human thing, and that is not going anywhere.\n\nThe interesting part is how the best sellers think about AI. They use it to get leverage, not to step out of the conversation.\n\nSo the split isn't AI versus human. AI handles the groundwork, and the human handles the relationship.\n\nWhere has AI given you the most leverage in selling?",
+    "carousel": [
+      "Slide 1: AI is table stakes in sales now.",
+      "Slide 2: The \"AI will replace sales\" story is fading.",
+      "Slide 3: The new story is sales plus AI.",
+      "Slide 4: AI should absorb the research and administration.",
+      "Slide 5: Selling is inherently a human-to-human thing.",
+      "Slide 6: The best sellers use AI to get leverage.",
+      "Slide 7: AI does the groundwork. Humans build the relationship."
+    ],
+    "lesson": {
+      "title": "Sales plus AI, not sales versus AI",
+      "takeaways": [
+        "The AI-replaces-sales narrative has given way to a sales-plus-AI model.",
+        "AI should absorb research and administration work.",
+        "Selling stays human-to-human, and the best sellers use AI for leverage."
+      ],
+      "exercise": "List your weekly tasks and mark each as research/admin or human conversation. Hand the research/admin ones to AI and reinvest that time in buyer conversations."
+    },
+    "caption": "AI is table stakes"
+  }
+]

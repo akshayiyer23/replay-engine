@@ -1,0 +1,793 @@
+[
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m07",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m07",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m01",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m02",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m03",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m04",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m05",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "label_fields",
+    "item_id": "m06",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0117",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0292",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0408",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0475",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0540",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0614",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0654",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0795",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0873",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m0968",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1060",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1161",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1353",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1423",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1490",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1558",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1665",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1748",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m1949",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2136",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2196",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2275",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2360",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2421",
+    "passed": false,
+    "details": "not found: [15]",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2584",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2674",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2745",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2836",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m2945",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m3072",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m3187",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m3286",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m3333",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m3372",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "numbers_in_transcript",
+    "item_id": "m3420",
+    "passed": true,
+    "details": "",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0117",
+    "passed": true,
+    "details": "33s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0292",
+    "passed": true,
+    "details": "44s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0408",
+    "passed": true,
+    "details": "33s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0475",
+    "passed": true,
+    "details": "63s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0540",
+    "passed": true,
+    "details": "56s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0614",
+    "passed": true,
+    "details": "35s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0654",
+    "passed": true,
+    "details": "38s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0795",
+    "passed": true,
+    "details": "60s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0873",
+    "passed": true,
+    "details": "77s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m0968",
+    "passed": true,
+    "details": "60s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1060",
+    "passed": true,
+    "details": "57s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1161",
+    "passed": true,
+    "details": "43s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1353",
+    "passed": true,
+    "details": "56s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1423",
+    "passed": true,
+    "details": "36s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1490",
+    "passed": true,
+    "details": "56s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1558",
+    "passed": true,
+    "details": "55s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1665",
+    "passed": true,
+    "details": "35s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1748",
+    "passed": true,
+    "details": "64s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m1949",
+    "passed": true,
+    "details": "52s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2136",
+    "passed": true,
+    "details": "37s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2196",
+    "passed": true,
+    "details": "57s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2275",
+    "passed": true,
+    "details": "63s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2360",
+    "passed": true,
+    "details": "61s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2421",
+    "passed": true,
+    "details": "48s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2584",
+    "passed": true,
+    "details": "69s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2674",
+    "passed": true,
+    "details": "40s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2745",
+    "passed": true,
+    "details": "31s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2836",
+    "passed": false,
+    "details": "93s [OUT_OF_RANGE]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m2945",
+    "passed": true,
+    "details": "70s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m3072",
+    "passed": true,
+    "details": "65s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m3187",
+    "passed": true,
+    "details": "75s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m3286",
+    "passed": true,
+    "details": "36s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m3333",
+    "passed": true,
+    "details": "36s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m3372",
+    "passed": true,
+    "details": "46s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "duration",
+    "item_id": "m3420",
+    "passed": true,
+    "details": "70s [OK]",
+    "fixed": false
+  },
+  {
+    "gate": "diversity",
+    "item_id": "top_set",
+    "passed": true,
+    "details": "types=5, max_per_type=2",
+    "fixed": false
+  },
+  {
+    "gate": "min3",
+    "item_id": "top_set",
+    "passed": true,
+    "details": "35 candidates \u2265 45",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m0117",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m1161",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m3072",
+    "passed": true,
+    "details": "issues=['hook too long: 9 words (max 8)']; remaining=[]",
+    "fixed": true
+  },
+  {
+    "gate": "editor",
+    "item_id": "m1949",
+    "passed": false,
+    "details": "issues=['hook too long: 11 words (max 8)']; remaining=['hook too long: 9 words (max 8)']",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m2136",
+    "passed": false,
+    "details": "issues=['hook too long: 11 words (max 8)']; remaining=['hook too long: 10 words (max 8)']",
+    "fixed": false
+  },
+  {
+    "gate": "editor",
+    "item_id": "m3372",
+    "passed": true,
+    "details": "all checks passed",
+    "fixed": false
+  }
+]

@@ -80,11 +80,11 @@
         "post_for": "Unify company page"
       }
     ],
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.golden.json",
     "pipeline_complete": true,
     "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-candidates.json",
-    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.json",
-    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-candidates.golden.json",
-    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.golden.json"
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.json"
   },
   "https://www.youtube.com/watch?v=51GS5O52sQI": {
     "transcript_id": "8396babc-bce9-4a3e-9840-f6357c4b3095",
@@ -242,5 +242,314 @@
     "pipeline_complete": true,
     "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-no-timestamps-candidates.json",
     "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/test-no-timestamps-content.json"
+  },
+  "txt:fa6e0032a5df0e35": {
+    "slug": "tmpeq1rdsh3",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/tmpeq1rdsh3-sentences.json",
+    "source": "/var/folders/zv/fh9nddzn3436zcpzrp05sl_r0000gn/T/tmpeq1rdsh3.txt",
+    "estimated_timestamps": true
+  },
+  "https://www.youtube.com/watch?v=FQ5WPz_MN5s": {
+    "transcript_id": "4be57a41-455a-40ce-8d10-7d415daeb5fd",
+    "slug": "the-plg-playbook-how-gumloop-and-navattic-are-turning-produc",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-plg-playbook-how-gumloop-and-navattic-are-turning-produc-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Quintin Smith",
+        "role": "Product Marketing Lead",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.9,
+        "proof_sentence": "I am our product marketing lead here at Unify, and I'm really grateful to be joined by 2 of the brightest minds in growth and go-to-market engineering with Jay and Dima here.",
+        "display_name": "Quintin Smith",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Dima Khlopkov",
+        "role": "Go-to-Market Engineer",
+        "company": "Gumloop",
+        "is_current_unify_team": false,
+        "confidence": 0.9,
+        "proof_sentence": "I'm a go-to-market engineer here at Gumloop.",
+        "display_name": "Dima Khlopkov",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": "Jay Desai",
+        "role": "Growth Lead",
+        "company": "Navattic",
+        "is_current_unify_team": false,
+        "confidence": 0.85,
+        "proof_sentence": "I'm a growth lead at Novatic.",
+        "display_name": "Jay Desai",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-plg-playbook-how-gumloop-and-navattic-are-turning-produc-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-plg-playbook-how-gumloop-and-navattic-are-turning-produc-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-plg-playbook-how-gumloop-and-navattic-are-turning-produc-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-plg-playbook-how-gumloop-and-navattic-are-turning-produc-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=dyrNls4jpEU": {
+    "transcript_id": "ac455530-b028-4b06-891c-f36bb1196617",
+    "slug": "vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Sarah Charlton",
+        "role": "AI GTM advisor",
+        "company": null,
+        "is_current_unify_team": false,
+        "confidence": 0.8,
+        "proof_sentence": "Well, like, yeah, hi, I'm Sarah.",
+        "display_name": "Sarah Charlton",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Austin Hughes",
+        "role": "Co-founder & CEO",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "Um, and for folks who don't know me, I'm Austin, co-founder and CEO here at Unify.",
+        "display_name": "Austin Hughes",
+        "post_for": "Austin Hughes"
+      },
+      {
+        "label": "C",
+        "name": null,
+        "role": null,
+        "company": null,
+        "is_current_unify_team": false,
+        "confidence": 0.0,
+        "proof_sentence": "",
+        "display_name": "Speaker C",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=J20Vbwry2Jw": {
+    "transcript_id": "72b24ffd-cd65-4ece-9f3f-454eaa6699bd",
+    "slug": "vibe-coding-for-sales-webinar-what-leaders-are-actually-buil",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-sales-webinar-what-leaders-are-actually-buil-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Neema Zarrabian",
+        "role": "Senior Sales Manager",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.85,
+        "proof_sentence": "I'm Nima.",
+        "display_name": "Neema Zarrabian",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Jeff Kirchick",
+        "role": "VP of Sales",
+        "company": "Zorro",
+        "is_current_unify_team": false,
+        "confidence": 0.95,
+        "proof_sentence": "My name is Jeff Kirchick.",
+        "display_name": "Jeff Kirchick",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": "Matt Stinson",
+        "role": "CRO",
+        "company": "Starbridge",
+        "is_current_unify_team": false,
+        "confidence": 0.95,
+        "proof_sentence": "Matt Stinson, I'm the CRO at a company called Starbridge.",
+        "display_name": "Matt Stinson",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-sales-webinar-what-leaders-are-actually-buil-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-sales-webinar-what-leaders-are-actually-buil-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-sales-webinar-what-leaders-are-actually-buil-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/vibe-coding-for-sales-webinar-what-leaders-are-actually-buil-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=loSNGQLVR-Y": {
+    "transcript_id": "24fd3ea4-3194-4d55-963a-51367a53b903",
+    "slug": "introducing-the-new-unify-ai-for-outbound-sellers",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/introducing-the-new-unify-ai-for-outbound-sellers-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Quintin Smith",
+        "role": "Product Marketing Lead (moderator)",
+        "company": "Unify at time of recording (now at Juicebox)",
+        "is_current_unify_team": false,
+        "confidence": 0.9,
+        "proof_sentence": "I'm Quinton. I'm our product marketing lead here at Unify.",
+        "display_name": "Quintin Smith",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "B",
+        "name": "Zach Herman",
+        "role": "Account Executive, also leads SMB sales team",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.8,
+        "proof_sentence": "I'm Zach. I'm an AE, also help lead our SMB sales team.",
+        "display_name": "Zach Herman",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": "Austin Hughes",
+        "role": "Co-founder & CEO",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "Austin, co-founder and CEO here.",
+        "display_name": "Austin Hughes",
+        "post_for": "Austin Hughes"
+      },
+      {
+        "label": "D",
+        "name": null,
+        "role": null,
+        "company": null,
+        "is_current_unify_team": false,
+        "confidence": 0.0,
+        "proof_sentence": "",
+        "display_name": "Speaker D",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "E",
+        "name": null,
+        "role": null,
+        "company": null,
+        "is_current_unify_team": false,
+        "confidence": 0.0,
+        "proof_sentence": "",
+        "display_name": "Speaker E",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/introducing-the-new-unify-ai-for-outbound-sellers-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/introducing-the-new-unify-ai-for-outbound-sellers-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/introducing-the-new-unify-ai-for-outbound-sellers-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/introducing-the-new-unify-ai-for-outbound-sellers-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=i3UBcXCZwXo": {
+    "transcript_id": "a93b415e-513e-43a0-b754-cd5434c56b86",
+    "slug": "the-outbound-sweet-spot-orchestrating-automation-and-human-t",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-outbound-sweet-spot-orchestrating-automation-and-human-t-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Ethan Dursht",
+        "role": "Growth (manages automated outbound program)",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "I'm Ethan.",
+        "display_name": "Ethan Dursht",
+        "post_for": "Ethan Dursht"
+      },
+      {
+        "label": "B",
+        "name": "Skyler Mickunas",
+        "role": "Leads new business (first go-to-market hire)",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.9,
+        "proof_sentence": "And yeah, excited to chat with Skyler who leads all things new business.",
+        "display_name": "Skyler Mickunas",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": null,
+        "role": "unknown",
+        "company": "unknown",
+        "is_current_unify_team": false,
+        "confidence": 0.1,
+        "proof_sentence": "",
+        "display_name": "Speaker C",
+        "post_for": "Unify company page"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-outbound-sweet-spot-orchestrating-automation-and-human-t-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-outbound-sweet-spot-orchestrating-automation-and-human-t-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-outbound-sweet-spot-orchestrating-automation-and-human-t-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/the-outbound-sweet-spot-orchestrating-automation-and-human-t-content.golden.json"
+  },
+  "https://www.youtube.com/watch?v=HsQcYW1u_us": {
+    "transcript_id": "d75255c9-2432-4323-9a85-b1b710034860",
+    "slug": "how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee",
+    "sentences_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee-sentences.json",
+    "speaker_detections": [
+      {
+        "label": "A",
+        "name": "Austin Hughes",
+        "role": "Co-founder & CEO",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.8,
+        "proof_sentence": "On our side today, really quickly, Austin, co-founder and CEO here at Unify.",
+        "display_name": "Austin Hughes",
+        "post_for": "Austin Hughes"
+      },
+      {
+        "label": "B",
+        "name": "Neema Zarrabian",
+        "role": "Sales leader (oversees BDR team and SMB account executive team)",
+        "company": "Unify",
+        "is_current_unify_team": false,
+        "confidence": 0.85,
+        "proof_sentence": "Hi everyone, I'm Nima. I'm one of the sales leaders here at Unify.",
+        "display_name": "Neema Zarrabian",
+        "post_for": "Unify company page"
+      },
+      {
+        "label": "C",
+        "name": "Owen Polk",
+        "role": "New Business Representative (NBR)",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "And I'm Owen. I'm an NBR here, which basically just means BDR, and I am on the West Coast.",
+        "display_name": "Owen Polk",
+        "post_for": "Owen Polk"
+      },
+      {
+        "label": "D",
+        "name": "Ethan Dursht",
+        "role": "Growth (Go team)",
+        "company": "Unify",
+        "is_current_unify_team": true,
+        "confidence": 0.95,
+        "proof_sentence": "And I'm Ethan. I'm on the Go team here at Unify.",
+        "display_name": "Ethan Dursht",
+        "post_for": "Ethan Dursht"
+      }
+    ],
+    "pipeline_complete": true,
+    "candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee-candidates.json",
+    "content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee-content.json",
+    "golden_candidates_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee-candidates.golden.json",
+    "golden_content_file": "/Users/akshay_iyer23/Downloads/Resumes./replay-engine/data/how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee-content.golden.json"
   }
 }
