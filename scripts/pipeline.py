@@ -2036,8 +2036,11 @@ def _run_main(args) -> None:
                 i, labels = future.result()
             except Exception as exc:
                 i = futures[future]
+                exc_type = type(exc).__name__
+                exc_short = str(exc)[:200]
                 print(f"⚠️  Chunk {i + 1} failed: {exc} — skipping")
                 print(f"[mining-error] chunk={i + 1} error={exc!r}", file=sys.stderr)
+                _emit("mining_error", f"Chunk {i + 1} error: {exc_type}: {exc_short[:120]}", 42)
                 labels = []
             all_labels_by_chunk[i] = labels
             chunk = chunks[i]
