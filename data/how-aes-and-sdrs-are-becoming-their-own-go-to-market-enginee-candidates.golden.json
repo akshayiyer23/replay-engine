@@ -67,7 +67,7 @@
     "hook_line": "So it's always been a little bit different at Unify because I think we have a fresh thesis on how to do outbound.",
     "transcript": "So it's always been a little bit different at Unify because I think we have a fresh thesis on how to do outbound. It's always been more like the approach on the right, but the approach on the left is just like for anybody that's been a BDR in the last 5 or 10 years, it's excruciating switching between tools, manually adding people. And to be honest, like, I don't know if any of my old colleagues at Placer are here, but like, I wouldn't do fresh prospecting by the end of my time at Placer. Like, I would just prospect within the CRM because it was just such a huge lift to go into SalesNav or ZoomInfo, grab people, and then throw it back into Salesloft.",
     "duration_flag": "OK",
-    "score": 98,
+    "score": 95,
     "why": "story (1.70\u00d7) + personal story (1.74\u00d7) + career (1.64\u00d7); trimmed past slide reference; trim valid but clip too short (9s) \u2014 kept original",
     "top8": false
   },
@@ -213,7 +213,7 @@
     "hook_line": "Like my history, I was originally a BDR 5, 6 years ago and I had an intent tool, a sequencing tool, a data tool, Sales Navigator, and a spreadsheet.",
     "transcript": "Like my history, I was originally a BDR 5, 6 years ago and I had an intent tool, a sequencing tool, a data tool, Sales Navigator, and a spreadsheet. I was doing all of those different things and I was combing through them every single day. I was like literally living in my parents' basement and first 2 hours a day I would go through to find data, write emails. Second and last 2 hours a day I would then like set up my call list for the next day. It was really, really manual and reprioritize accounts. It took me 10 hours every month to look through my new accounts and prioritize them. So you can really do anything in this canvas.",
     "duration_flag": "OK",
-    "score": 100,
+    "score": 95,
     "why": "story (1.70\u00d7) + personal story (1.74\u00d7) + career (1.64\u00d7); standalone clean",
     "top8": true
   },
@@ -288,14 +288,14 @@
     "hook_line": "Like say that you're given, that you have 30 enterprise accounts that you're supposed to break into in a quarter, or you have a named account list and like you just know this one account.",
     "transcript": "Like say that you're given, that you have 30 enterprise accounts that you're supposed to break into in a quarter, or you have a named account list and like you just know this one account. Like for me, 5 years ago it was Boston Public Schools. I lived in the Boston area. I really wanted to break into them. I really wanted to know like why they needed us and what I eventually found out through discovery on 6 to 8 calls was that they were actually unintentionally breaking the law based on their teacher-to-student ratio. I probably could have found that with Unify Chats. It would've found that research. It would've found news about it. I couldn't find that online until I discovered that from their chief of human resources.",
     "duration_flag": "OK",
-    "score": 100,
+    "score": 95,
     "why": "story (1.70\u00d7) + personal story (1.74\u00d7) + career (1.64\u00d7) + number",
     "top8": true
   },
   {
     "id": "m1307",
     "start_i": 277,
-    "end_i": 281,
+    "end_i": 282,
     "moment_type": "how_to",
     "pillar": "Claude / AI for RevOps and sellers",
     "connects_to": "Reporting",
@@ -307,11 +307,11 @@
     "speaker": "B",
     "speaker_name": "Neema Zarrabian",
     "start_ms": 1307175,
-    "end_ms": 1336823,
-    "duration_s": 29.65,
+    "end_ms": 1343244,
+    "duration_s": 36.07,
     "hook_line": "I've actually moved all my Salesforce reporting to Unify, like Win rates, conversion rates, metrics on the BDR team.",
-    "transcript": "I've actually moved all my Salesforce reporting to Unify, like Win rates, conversion rates, metrics on the BDR team. I used to use Claude for that. I primarily am using Claude for like more bulk querying our call recorder on like what specifically was said on each call. I'm using\u2014 Unify has like 40 to 50 plus data providers, which you showed, like anything. If I'm trying to like slice and dice our TAM in different ways, look at the accounts we're not reaching out to.",
-    "duration_flag": "OUT_OF_RANGE",
+    "transcript": "I've actually moved all my Salesforce reporting to Unify, like Win rates, conversion rates, metrics on the BDR team. I used to use Claude for that. I primarily am using Claude for like more bulk querying our call recorder on like what specifically was said on each call. I'm using\u2014 Unify has like 40 to 50 plus data providers, which you showed, like anything. If I'm trying to like slice and dice our TAM in different ways, look at the accounts we're not reaching out to. Queue up like good accounts or prospects for the BDRs, look at AE deals.",
+    "duration_flag": "OK",
     "score": 67,
     "why": "other topic (1.38\u00d7) + names Claude/Unify + number; plain hook",
     "top8": true
@@ -387,7 +387,7 @@
     "duration_flag": "OK",
     "trimmed": true,
     "pre_trim_start_ms": 1394274,
-    "score": 100,
+    "score": 95,
     "why": "story (1.70\u00d7) + personal story + career (1.64\u00d7); trimmed past 'mentioned before'",
     "top8": false
   },
@@ -413,7 +413,7 @@
     "duration_flag": "OK",
     "trimmed": true,
     "pre_trim_start_ms": 1495301,
-    "score": 100,
+    "score": 95,
     "why": "story (1.70\u00d7) + personal story + career (1.64\u00d7); trimmed past 'next prompt' context",
     "top8": false
   },

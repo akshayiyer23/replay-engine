@@ -126,7 +126,7 @@ def get_results(slug: str):
     top = [
         {
             "id": c["id"],
-            "score": c.get("score", 0),
+            "score": min(c.get("score", 0), 95),
             "speaker_name": c.get("speaker_name", ""),
             "post_for": c.get("post_for", ""),
             "moment_type": c.get("moment_type", ""),
@@ -207,7 +207,7 @@ async def _stream_pipeline(
                 result["top_moments"] = [
                     {
                         "id": c["id"],
-                        "score": c.get("score", 0),
+                        "score": min(c.get("score", 0), 95),
                         "speaker_name": c.get("speaker_name", ""),
                         "post_for": c.get("post_for", ""),
                         "moment_type": c.get("moment_type", ""),

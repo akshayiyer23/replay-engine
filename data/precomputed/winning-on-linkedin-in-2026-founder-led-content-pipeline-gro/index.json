@@ -3,8 +3,11 @@
   "date": "2026-02-25",
   "youtube_id": "MUJb8_EScMc",
   "duration": "34:22",
-  "speakers": ["Tommy Clark", "Austin Hughes"],
-  "top_score": 99,
+  "speakers": [
+    "Tommy Clark",
+    "Austin Hughes"
+  ],
+  "top_score": 95,
   "slug": "winning-on-linkedin-in-2026-founder-led-content-pipeline-gro",
   "golden_candidates": "../../winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-candidates.golden.json",
   "golden_content": "../../winning-on-linkedin-in-2026-founder-led-content-pipeline-gro-content.golden.json"
