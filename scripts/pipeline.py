@@ -177,9 +177,9 @@ def get_video_id(url: str) -> str:
     return m.group(1) if m else "unknown"
 
 
-def get_video_info(url: str) -> tuple[str, int]:
-    """Return (slug, duration_seconds) via a fast yt-dlp metadata call.
-    duration_seconds is 0 if unavailable or the video is private.
+def get_video_info(url: str) -> tuple[str, int, str]:
+    """Return (slug, duration_seconds, original_title) via a fast yt-dlp metadata call.
+    duration_seconds is 0 if unavailable. original_title is "" on failure.
     Raises PipelineError for private/unavailable/blocked URLs.
     """
     try:
@@ -191,7 +191,7 @@ def get_video_info(url: str) -> tuple[str, int]:
     except FileNotFoundError:
         raise PipelineError("yt-dlp not found — install it with: pip install yt-dlp")
     except subprocess.TimeoutExpired:
-        return get_video_id(url), 0
+        return get_video_id(url), 0, ""
 
     if result.returncode != 0:
         err = (result.stderr or "").lower()
@@ -200,15 +200,16 @@ def get_video_info(url: str) -> tuple[str, int]:
         if "sign in" in err or "403" in err:
             raise PipelineError("YouTube requires sign-in for this video — upload the file directly.")
         # Non-fatal: fall back to ID-based slug
-        return get_video_id(url), 0
+        return get_video_id(url), 0, ""
 
     lines = result.stdout.strip().split("\n")
-    slug = slugify(lines[0]) if lines[0].strip() else get_video_id(url)
+    original_title = lines[0].strip() if lines else ""
+    slug = slugify(original_title) if original_title else get_video_id(url)
     try:
         dur_s = int(lines[1].strip()) if len(lines) > 1 else 0
     except (ValueError, IndexError):
         dur_s = 0
-    return slug, dur_s
+    return slug, dur_s, original_title
 
 
 def strip_fences(text: str) -> str:
@@ -420,7 +421,7 @@ def get_sentences_for_url(
             print(f"📋 Reusing cached transcript {entry['transcript_id'][:8]}…")
             return json.loads(sentences_path.read_text()), entry["slug"]
 
-    slug = slug or get_video_info(url)[0]
+    slug = slug or get_video_info(url)[0]  # only the slug is needed here
     _emit("download", "🎧 Downloading audio…", 5)
     print("🎧 Downloading audio…")
 
@@ -451,11 +452,14 @@ def get_sentences_for_url(
     sentences_path = DATA_DIR / f"{slug}-sentences.json"
     sentences_path.write_text(json.dumps(sentences, indent=2))
 
-    cache[url] = {
+    cache_entry: dict = {
         "transcript_id": tid,
         "slug": slug,
         "sentences_file": str(sentences_path),
     }
+    if tid.startswith("captions:"):
+        cache_entry["source_type"] = "captions"
+    cache[url] = cache_entry
     save_cache(cache)
     return sentences, slug
 
@@ -534,7 +538,7 @@ def chunk_sentences(sentences: list[dict], chunk_ms: int) -> list[list[tuple[int
 
 # ── speaker auto-detection ───────────────────────────────────────────────────
 
-def detect_speakers(sentences: list[dict], title: str) -> list[dict]:
+def detect_speakers(sentences: list[dict], title: str, is_captions: bool = False) -> list[dict]:
     """Identify speaker labels via Haiku. Returns one detection dict per label."""
     unify_context = (SKILLS_DIR / "unify-context.md").read_text()
     cutoff_ms = 5 * 60 * 1000
@@ -597,7 +601,7 @@ def detect_speakers(sentences: list[dict], title: str) -> list[dict]:
         conf = float(d.get("confidence", 0.0))
         is_current = bool(d.get("is_current_unify_team", False))
         if conf < 0.7 or not name:
-            d["display_name"] = f"Speaker {d['label']}"
+            d["display_name"] = "Guest" if is_captions else f"Speaker {d['label']}"
             d["post_for"] = "Unify company page"
         elif is_current:
             d["display_name"] = name
@@ -639,6 +643,140 @@ def _build_speaker_maps(detections: list[dict]) -> tuple[dict, dict]:
             note = "unknown — post for Unify company page"
         enriched[label] = f"{name} ({note})"
     return simple, enriched
+
+
+# ── caption-mode: title-based speaker extraction + per-moment attribution ────
+
+def _speakers_from_title(title: str, unify_context: str, client) -> list[dict]:
+    """Extract named participants from video title using Haiku.
+    Returns [{name, role: 'guest'|'host', is_current_unify_team}].
+    """
+    system = (
+        "You extract speaker names from podcast/webinar titles.\n"
+        "Use the company context below to identify current Unify team members.\n\n"
+        + unify_context
+    )
+    user = (
+        f"Video title: {title}\n\n"
+        "Extract all named people mentioned. For each return a JSON array:\n"
+        '{"name": "Full Name", "role": "guest" or "host", "is_current_unify_team": true/false}\n\n'
+        "Rules:\n"
+        "- 'guest' = person featured/interviewed (after 'w/', 'with', 'ft.', 'featuring', or after '|')\n"
+        "- 'host' = show host (before 'w/' or the show brand's representative)\n"
+        "- is_current_unify_team = true only if they appear as current Unify team in the context above\n"
+        "- If you cannot find any names, return []\n"
+        "Return only the JSON array."
+    )
+    try:
+        resp = client.messages.create(
+            model="claude-haiku-5-5",
+            max_tokens=512,
+            system=system,
+            messages=[{"role": "user", "content": user}],
+        )
+        tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+        if tb is None:
+            return []
+        result = _extract_json_array(strip_fences(tb.text))
+        if not result:
+            return []
+    except Exception as exc:
+        print(f"⚠️  Title speaker extraction failed: {exc}")
+        return []
+
+    known_names = re.findall(r'\b([A-Z][a-z]+ [A-Z][a-z]+)\b', unify_context)
+    for d in result:
+        if d.get("name"):
+            d["name"] = _normalize_name(d["name"], known_names)
+    return result
+
+
+def _attribute_top_moments(
+    candidates: list[dict],
+    title_speakers: list[dict],
+    sentences: list[dict],
+) -> None:
+    """For each top-8 candidate, batch-call Haiku to attribute to a named speaker.
+    Mutates speaker_name and post_for in place. Skips on failure.
+    """
+    if not title_speakers:
+        return
+    top8 = [c for c in candidates if c.get("top8")]
+    if not top8:
+        return
+
+    unify_context = (SKILLS_DIR / "unify-context.md").read_text()
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+    speaker_lines = "\n".join(
+        f"- {p['name']} ({p['role']})"
+        + (" [current Unify team]" if p.get("is_current_unify_team") else "")
+        for p in title_speakers
+    )
+    moment_entries = [
+        {"id": c["id"], "transcript": c.get("transcript", "")[:600]}
+        for c in top8
+    ]
+
+    system = (
+        "You determine which speaker said each webinar moment.\n"
+        "Host patterns: asks questions, sets up topics, says 'great point', "
+        "re-phrases or summarises what a guest said.\n"
+        "Guest patterns: shares personal stories ('When I was at...', 'We did X'), "
+        "states their own opinions, cites their company's numbers or results.\n\n"
+        "Company context (to identify Unify team members):\n" + unify_context
+    )
+    user = (
+        f"Speakers in this video:\n{speaker_lines}\n\n"
+        "For EACH moment below, return a JSON array — one entry per moment:\n"
+        '{"id": "mXXXX", "speaker": "Full Name or Unknown", '
+        '"confidence": 0.0-1.0, "reason": "one sentence"}\n\n'
+        f"Moments:\n{json.dumps(moment_entries, indent=2)}\n\n"
+        "Return only the JSON array."
+    )
+    try:
+        resp = client.messages.create(
+            model="claude-haiku-5-5",
+            max_tokens=2048,
+            system=system,
+            messages=[{"role": "user", "content": user}],
+        )
+        tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
+        if tb is None:
+            return
+        attributions = _extract_json_array(strip_fences(tb.text))
+        if not attributions:
+            return
+    except Exception as exc:
+        print(f"⚠️  Per-moment attribution failed: {exc} — keeping existing routing")
+        return
+
+    attr_map = {a["id"]: a for a in attributions}
+    for c in top8:
+        attr = attr_map.get(c["id"])
+        if not attr:
+            continue
+        name = (attr.get("speaker") or "").strip()
+        conf = float(attr.get("confidence", 0.0))
+        reason = attr.get("reason", "")
+        matched = next(
+            (p for p in title_speakers if p["name"].lower() == name.lower()), None
+        )
+        if conf >= 0.8 and matched:
+            c["speaker_name"] = matched["name"]
+            c["post_for"] = matched["name"] if matched.get("is_current_unify_team") else "Unify company page"
+            print(f"   {c['id']} → {matched['name']} ({int(conf * 100)}%): {reason}")
+        elif conf >= 0.8 and name and name.lower() != "unknown":
+            c["speaker_name"] = name
+            c["post_for"] = "Unify company page"
+            print(f"   {c['id']} → {name} ({int(conf * 100)}%): {reason}")
+        else:
+            role = next(
+                (p["role"].capitalize() for p in title_speakers), "Guest"
+            )
+            c["speaker_name"] = role
+            c["post_for"] = "Unify company page"
+            print(f"   {c['id']} → {role} ({int(conf * 100)}%): {reason} — Unify company page")
 
 
 # ── housekeeping detection ───────────────────────────────────────────────────
@@ -1063,6 +1201,7 @@ def _run_judge_and_content(
     old_scores: dict,
     args,
     qa_entries: list | None = None,
+    post_judge_hook=None,
 ) -> None:
     if qa_entries is None:
         qa_entries = []
@@ -1092,6 +1231,10 @@ def _run_judge_and_content(
     # ── post-judge QA gates ──
     _gate_diversity(candidates, qa_entries)
     _fallback_min3(candidates, qa_entries)
+
+    # ── per-moment speaker attribution (captions path) ──
+    if post_judge_hook:
+        post_judge_hook(candidates)
 
     # Save candidates with scores
     out_path = DATA_DIR / f"{slug}-candidates.json"
@@ -1435,8 +1578,9 @@ def _run_main(args) -> None:
 
     # For YouTube: get title + duration quickly for ETA, before any download
     video_slug_hint: str | None = None
+    _video_title: str = ""
     if input_type == "youtube":
-        video_slug_hint, dur_s = get_video_info(args.input)
+        video_slug_hint, dur_s, _video_title = get_video_info(args.input)
         dur_min = dur_s / 60
         # Check if transcript is already cached (no download needed)
         transcript_cached = (
@@ -1539,6 +1683,10 @@ def _run_main(args) -> None:
     # ── 1b. speaker detection ──
     cache = load_cache()
     entry = cache.get(cache_key, {})
+    is_captions = (
+        entry.get("source_type") == "captions"
+        or entry.get("transcript_id", "").startswith("captions:")
+    )
     if args.speakers:
         raw_map = parse_speakers(args.speakers)
         speaker_detections = [
@@ -1558,8 +1706,8 @@ def _run_main(args) -> None:
         _print_speaker_map(speaker_detections)
     else:
         print("🎙️  Detecting speakers…")
-        title = slug.replace("-", " ")
-        speaker_detections = detect_speakers(sentences, title)
+        title = _video_title if _video_title else slug.replace("-", " ")
+        speaker_detections = detect_speakers(sentences, title, is_captions=is_captions)
         cache.setdefault(cache_key, {})["speaker_detections"] = speaker_detections
         save_cache(cache)
         _print_speaker_map(speaker_detections)
@@ -1573,6 +1721,16 @@ def _run_main(args) -> None:
 
     speaker_map_simple, speaker_map_enriched = _build_speaker_maps(speaker_detections)
     post_for_map = {d["label"]: d["post_for"] for d in speaker_detections}
+
+    # For captions: extract named speakers from video title for per-moment attribution
+    _title_speakers: list[dict] = []
+    if is_captions and _video_title:
+        _unify_ctx = (SKILLS_DIR / "unify-context.md").read_text()
+        _haiku = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        _title_speakers = _speakers_from_title(_video_title, _unify_ctx, _haiku)
+        if _title_speakers:
+            print(f"   Names from title: "
+                  f"{', '.join(p['name'] + ' (' + p['role'] + ')' for p in _title_speakers)}")
 
     qa_entries: list[dict] = []
     t_pipeline_start = time.monotonic()
@@ -1676,7 +1834,16 @@ def _run_main(args) -> None:
     _emit("judge", f"⚖️  Scoring {len(candidates)} moments against {post_ref}…", 65)
 
     old_scores = {c["id"]: c.get("score") for c in candidates}
-    _run_judge_and_content(candidates, sentences, slug, old_scores, args, qa_entries)
+
+    def _captions_attribution_hook(cands: list[dict]) -> None:
+        if _title_speakers:
+            print(f"🎤 Attributing top moments by content…")
+            _attribute_top_moments(cands, _title_speakers, sentences)
+
+    _run_judge_and_content(
+        candidates, sentences, slug, old_scores, args, qa_entries,
+        post_judge_hook=_captions_attribution_hook if is_captions else None,
+    )
 
     # ── update pipeline cache with scored candidates ──
     out_path.write_text(json.dumps(candidates, indent=2))
