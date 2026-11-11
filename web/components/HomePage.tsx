@@ -397,6 +397,8 @@ function Library({
 function friendlyError(raw: string): string {
   if (raw === "wrong_passcode") return "Wrong passcode — double-check and try again.";
   if (raw === "rate_limit") return "Daily limit reached (3 runs per day). Come back tomorrow.";
+  if (raw === "credits_exhausted")
+    return "The demo is temporarily paused — try one of the 11 webinars above.";
   if (raw.toLowerCase().includes("too short") || raw.toLowerCase().includes("minimum"))
     return "Video too short — needs at least 15 minutes of content.";
   return raw;

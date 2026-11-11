@@ -743,12 +743,18 @@ def _attribute_top_moments(
         )
         tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
         if tb is None:
+            for c in top8:
+                c["post_for"] = "Unify company page"
             return
         attributions = _extract_json_array(strip_fences(tb.text))
         if not attributions:
+            for c in top8:
+                c["post_for"] = "Unify company page"
             return
     except Exception as exc:
-        print(f"⚠️  Per-moment attribution failed: {exc} — keeping existing routing")
+        print(f"⚠️  Per-moment attribution failed: {exc} — defaulting all to Unify company page")
+        for c in top8:
+            c["post_for"] = "Unify company page"
         return
 
     attr_map = {a["id"]: a for a in attributions}
@@ -1538,11 +1544,20 @@ def main() -> None:
     except anthropic.AuthenticationError:
         _emit("error", "❌  Anthropic API key is invalid — check ANTHROPIC_API_KEY in .env.", 0)
         sys.exit("❌  Anthropic API key is invalid — check ANTHROPIC_API_KEY in .env.")
+    except anthropic.BadRequestError as exc:
+        msg = str(exc).lower()
+        if "credit" in msg or "billing" in msg or "balance" in msg or "quota" in msg:
+            print(f"[CREDITS_EXHAUSTED] {exc}", file=sys.stderr)
+            _emit("error", "credits_exhausted", 0)
+            sys.exit("❌  Anthropic API credits exhausted.")
+        _emit("error", f"❌  Anthropic API bad request: {exc}", 0)
+        sys.exit(f"❌  Anthropic API bad request: {exc}")
     except anthropic.PermissionDeniedError as exc:
         msg = str(exc).lower()
         if "credit" in msg or "billing" in msg or "quota" in msg:
-            _emit("error", "❌  Anthropic API out of credits — top up at console.anthropic.com.", 0)
-            sys.exit("❌  Anthropic API out of credits — top up at console.anthropic.com.")
+            print(f"[CREDITS_EXHAUSTED] {exc}", file=sys.stderr)
+            _emit("error", "credits_exhausted", 0)
+            sys.exit("❌  Anthropic API credits exhausted.")
         _emit("error", f"❌  Anthropic API permission denied: {exc}", 0)
         sys.exit(f"❌  Anthropic API permission denied: {exc}")
     except anthropic.RateLimitError:
@@ -1721,6 +1736,11 @@ def _run_main(args) -> None:
 
     speaker_map_simple, speaker_map_enriched = _build_speaker_maps(speaker_detections)
     post_for_map = {d["label"]: d["post_for"] for d in speaker_detections}
+
+    # For captions: safe default — per-moment attribution will upgrade to first-person where
+    # confident; if attribution fails or skips, every moment stays on the Unify company page
+    if is_captions:
+        post_for_map = {k: "Unify company page" for k in post_for_map}
 
     # For captions: extract named speakers from video title for per-moment attribution
     _title_speakers: list[dict] = []

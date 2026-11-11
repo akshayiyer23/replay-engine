@@ -209,6 +209,8 @@ async def _stream_pipeline(
                 slug = evt.get("slug")
             if evt.get("step") == "error":
                 saw_error = True
+                if evt.get("message") == "credits_exhausted":
+                    print("[CREDITS_EXHAUSTED] Anthropic credits exhausted — live run aborted", file=sys.stderr)
             collected_events.append({**evt, "ts": round(time.time() - start_time, 2)})
             yield f"data: {json.dumps(evt)}\n\n"
         except json.JSONDecodeError:
