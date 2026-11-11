@@ -511,8 +511,8 @@ def get_sentences_for_url(
 
     if url in cache:
         entry = cache[url]
-        sentences_path = Path(entry["sentences_file"])
-        if sentences_path.exists():
+        sentences_path = Path(entry.get("sentences_file", ""))
+        if sentences_path.name and sentences_path.exists():
             _emit("transcript_cache", "📋 Reusing cached transcript…", 10)
             print(f"📋 Reusing cached transcript {entry['transcript_id'][:8]}…")
             return json.loads(sentences_path.read_text()), entry["slug"]
