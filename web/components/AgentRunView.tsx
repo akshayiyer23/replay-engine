@@ -162,6 +162,8 @@ export default function AgentRunView({
     };
   }, []);
 
+  const gotTerminalRef = useRef(false);
+
   const processEvent = useCallback(
     (evt: AgentEvent) => {
       if (evt.step === "stream_done") return;
@@ -174,6 +176,7 @@ export default function AgentRunView({
       }
 
       if (evt.step === "done") {
+        gotTerminalRef.current = true;
         if (evt.slug) slugRef.current = evt.slug;
         setSteps((prev) => applyEvent(prev, evt));
         setIsDone(true);
@@ -187,6 +190,7 @@ export default function AgentRunView({
       }
 
       if (evt.step === "error") {
+        gotTerminalRef.current = true;
         onError(evt.message || "Pipeline error");
         return;
       }
@@ -255,12 +259,19 @@ export default function AgentRunView({
           const parts = buf.split("\n\n");
           buf = parts.pop() ?? "";
           for (const part of parts) {
+            // Skip SSE comments (keep-alive pings start with ":")
+            if (part.trimStart().startsWith(":")) continue;
             const line = part.split("\n").find((l) => l.startsWith("data: "));
             if (!line) continue;
             try {
               processEvent(JSON.parse(line.slice(6)));
             } catch {}
           }
+        }
+
+        // Stream ended without a done/error event — connection was dropped
+        if (!ctrl.signal.aborted && !gotTerminalRef.current) {
+          onError("stream_interrupted");
         }
       } catch (e: unknown) {
         const name = (e as Error)?.name;

@@ -1839,7 +1839,11 @@ def _run_main(args) -> None:
 
     # ── 2. housekeeping detection ──
     print("🧹 Detecting housekeeping sentences to skip…")
-    hk_indices = mark_housekeeping(sentences)
+    try:
+        hk_indices = mark_housekeeping(sentences)
+    except Exception as _hk_err:
+        print(f"⚠️  housekeeping detection failed ({_hk_err}) — skipping, continuing with all sentences")
+        hk_indices = set()
     n_hk = len(hk_indices)
     print(f"   → {n_hk} sentence(s) marked as housekeeping and excluded from mining")
     _emit("housekeeping", f"🧹 Skipped {n_hk} housekeeping sentences", 37)

@@ -209,9 +209,16 @@ async def _stream_pipeline(
     saw_error = False
     collected_events: list[dict] = []
 
-    # Read stderr (progress JSON events) line by line
+    # Read stderr (progress JSON events) line by line.
+    # Keep-alive: if no output for 15s, send an SSE comment so proxies don't
+    # drop the connection during long blocking steps (housekeeping, mining, etc.)
+    _KEEPALIVE = 15.0
     while True:
-        line = await proc.stderr.readline()
+        try:
+            line = await asyncio.wait_for(proc.stderr.readline(), timeout=_KEEPALIVE)
+        except asyncio.TimeoutError:
+            yield ": ping\n\n"  # SSE comment — ignored by parsers, keeps TCP alive
+            continue
         if not line:
             break
         text = line.decode("utf-8", errors="replace").strip()
@@ -234,13 +241,16 @@ async def _stream_pipeline(
 
     if proc.returncode != 0:
         if not saw_error:
-            # Unexpected crash — surface stdout for diagnosis
+            # Unexpected crash — log last stdout for diagnosis but never send a
+            # progress message as the error (it would appear in the error box).
             stdout_bytes = await proc.stdout.read()
             err_text = stdout_bytes.decode("utf-8", errors="replace").strip().splitlines()
-            err_msg = next(
-                (l for l in reversed(err_text) if "❌" in l),
-                err_text[-1] if err_text else "Pipeline failed with no output.",
-            )
+            err_msg = next((l for l in reversed(err_text) if "❌" in l), None)
+            if err_msg is None:
+                last_line = err_text[-1] if err_text else "(no output)"
+                print(f"[pipeline-crash] rc={proc.returncode} last_stdout={last_line!r}",
+                      file=sys.stderr)
+                err_msg = "run_interrupted"
             yield f"data: {json.dumps({'step': 'error', 'message': err_msg, 'percent': 0})}\n\n"
         yield "data: {\"step\": \"stream_done\"}\n\n"
         return

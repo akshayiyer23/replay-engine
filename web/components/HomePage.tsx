@@ -394,13 +394,22 @@ function Library({
 
 // ─── Error messages ───────────────────────────────────────────────────────────
 
+const INTERRUPTED_MSG =
+  "The run was interrupted — try again or pick one of the 11 webinars above.";
+
+// Emoji characters that only appear in pipeline progress prints, never in real errors
+const PROGRESS_EMOJI_RE = /^[\u{1F3A7}\u{270D}\u{1F465}\u{1F9F9}\u{1F50D}\u{2696}\u{2705}\u{1F4CB}\u{26A0}\u{1F4BE}\u{1F522}\u{1F3D7}\u{23F1}]/u;
+
 function friendlyError(raw: string): string {
   if (raw === "wrong_passcode") return "Wrong passcode — double-check and try again.";
   if (raw === "rate_limit") return "Daily limit reached (3 runs per day). Come back tomorrow.";
   if (raw === "credits_exhausted")
     return "The demo is temporarily paused — try one of the 11 webinars above.";
+  if (raw === "run_interrupted" || raw === "stream_interrupted") return INTERRUPTED_MSG;
   if (raw.toLowerCase().includes("too short") || raw.toLowerCase().includes("minimum"))
     return "Video too short — needs at least 15 minutes of content.";
+  // Safety net: progress prints that leaked through as error messages
+  if (PROGRESS_EMOJI_RE.test(raw)) return INTERRUPTED_MSG;
   return raw;
 }
 
