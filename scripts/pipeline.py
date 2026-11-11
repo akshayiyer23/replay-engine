@@ -1295,20 +1295,30 @@ def judge_candidates(
         for c in candidates
     ]
 
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=16000,
-        temperature=1,
-        thinking={"type": "adaptive"},
-        extra_body={"output_config": {"effort": "low"}},
-        extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
-        system=[{"type": "text", "text": system,
-                 "cache_control": {"type": "ephemeral"}}],
-        messages=[{
-            "role": "user",
-            "content": f"Score these {len(slim)} candidates:\n{json.dumps(slim, indent=2)}",
-        }],
-    )
+    for _attempt in range(3):
+        try:
+            resp = client.messages.create(
+                model=MODEL,
+                max_tokens=16000,
+                temperature=1,
+                thinking={"type": "adaptive"},
+                extra_body={"output_config": {"effort": "low"}},
+                extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
+                system=[{"type": "text", "text": system,
+                         "cache_control": {"type": "ephemeral"}}],
+                messages=[{
+                    "role": "user",
+                    "content": f"Score these {len(slim)} candidates:\n{json.dumps(slim, indent=2)}",
+                }],
+            )
+            break
+        except anthropic.RateLimitError:
+            if _attempt < 2:
+                wait = 20 * (_attempt + 1)
+                print(f"   ⏳ Judge rate limited — retrying in {wait}s…")
+                time.sleep(wait)
+                continue
+            raise
 
     # sonnet-5-5 may include ThinkingBlock(s) before the TextBlock
     text_block = next(
