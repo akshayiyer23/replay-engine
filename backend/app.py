@@ -38,15 +38,25 @@ DEMO_PASSCODE = os.environ.get("DEMO_PASSCODE", "")
 MAX_VIDEO_HOURS = 2.0
 MAX_RUNS_PER_IP_PER_DAY = 3
 
+_raw_origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:3000")
+ALLOWED_ORIGINS = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+
 app = FastAPI(title="Replay Engine API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# ── health check ──────────────────────────────────────────────────────────────
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 # In-memory rate limiter: ip → {date_str → run_count}
 _rate_limit: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
@@ -199,6 +209,10 @@ async def _stream_pipeline(
                 slug = evt.get("slug")
             if evt.get("step") == "error":
                 saw_error = True
+                # Rewrite the YouTube download-blocked message with cloud context
+                msg = evt.get("message", "")
+                if "YouTube blocked" in msg or "blocked the download" in msg:
+                    evt = {**evt, "message": "youtube_server_blocked"}
             collected_events.append({**evt, "ts": round(time.time() - start_time, 2)})
             yield f"data: {json.dumps(evt)}\n\n"
         except json.JSONDecodeError:

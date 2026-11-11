@@ -58,39 +58,48 @@ export type RunInput =
   | { type: "transcript"; text: string; passcode: string }
   | { type: "file"; file: File; passcode: string };
 
+// Backend is only called for live runs (POST /run). All precomputed data
+// is served from /data/* (baked into the Vercel build by scripts/bake_static.js).
 export const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export async function getWebinars(): Promise<Webinar[]> {
   try {
+    const res = await fetch("/data/webinars.json", { cache: "no-store" });
+    if (res.ok) return res.json();
+  } catch {}
+  // Fallback: backend (dev mode or first build before bake runs)
+  try {
     const res = await fetch(`${API_BASE}/webinars`, { cache: "no-store" });
-    if (!res.ok) return [];
-    return res.json();
-  } catch {
-    return [];
-  }
+    if (res.ok) return res.json();
+  } catch {}
+  return [];
 }
 
 export async function getResults(slug: string): Promise<WebinarResults | null> {
   try {
-    const res = await fetch(`${API_BASE}/results/${slug}`, {
-      cache: "no-store",
-    });
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
+    const res = await fetch(`/data/${slug}/results.json`, { cache: "no-store" });
+    if (res.ok) return res.json();
+  } catch {}
+  // Fallback: backend
+  try {
+    const res = await fetch(`${API_BASE}/results/${slug}`, { cache: "no-store" });
+    if (res.ok) return res.json();
+  } catch {}
+  return null;
 }
 
 export async function getEvents(slug: string): Promise<AgentEvent[]> {
   try {
+    const res = await fetch(`/data/${slug}/events.json`, { cache: "no-store" });
+    if (res.ok) return res.json();
+  } catch {}
+  // Fallback: backend
+  try {
     const res = await fetch(`${API_BASE}/events/${slug}`, { cache: "no-store" });
-    if (!res.ok) return [];
-    return res.json();
-  } catch {
-    return [];
-  }
+    if (res.ok) return res.json();
+  } catch {}
+  return [];
 }
 
 /** Parse "story hook (1.70×) + other topic (1.38×); names Unify" into chips */
