@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for The PLG Playbook: How Gumloop and Navattic are turning \u2026",
+    "percent": 2
+  },
+  {
+    "ts": 13.6,
+    "step": "download",
+    "message": "Audio downloaded (38:41)",
+    "percent": 5
+  },
+  {
+    "ts": 67.76,
+    "step": "transcribe",
+    "message": "Transcribed 381 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 72.76,
+    "step": "speakers",
+    "message": "Identified: Dima Khlopkov, Jay Desai, Quintin Smith",
+    "percent": 30
+  },
+  {
+    "ts": 74.76,
+    "step": "housekeeping",
+    "message": "Filtered 381 \u2192 236 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 75.76,
+    "step": "mining",
+    "message": "Scanning 236 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 81.76,
+    "step": "mining_hook",
+    "message": "The way I kind of think about it is, and especially in my role as a growth lead, I've got 2 kind of ",
+    "percent": 42
+  },
+  {
+    "ts": 90.76,
+    "step": "mining_hook",
+    "message": "We don't have any limits.",
+    "percent": 45
+  },
+  {
+    "ts": 99.76,
+    "step": "mining_hook",
+    "message": "But we noticed that companies above a certain size, let's say above 100 people, above 500 people, th",
+    "percent": 48
+  },
+  {
+    "ts": 108.76,
+    "step": "mining_hook",
+    "message": "Yeah, so I think it depends where you are in your like play building cycle.",
+    "percent": 51
+  },
+  {
+    "ts": 117.76,
+    "step": "mining_hook",
+    "message": "You know, if someone is doing an activity multiple times, like a key activity, like for us, like we ",
+    "percent": 54
+  },
+  {
+    "ts": 126.76,
+    "step": "mining_hook",
+    "message": "And like, the thing is, I do feel like we just in general, people like to overthink things.",
+    "percent": 57
+  },
+  {
+    "ts": 135.76,
+    "step": "mining_hook",
+    "message": "And yeah, and probably just some basic things when like you've been inactive for some time and then,",
+    "percent": 60
+  },
+  {
+    "ts": 144.76,
+    "step": "mining_hook",
+    "message": "This is like a play that we run Basically when someone hits an upgrade alert 5+ times.",
+    "percent": 60
+  },
+  {
+    "ts": 150.76,
+    "step": "judge",
+    "message": "Scoring 21 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 203.26,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 307.26,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 309.26,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 72.",
+    "percent": 100,
+    "slug": "the-plg-playbook-how-gumloop-and-navattic-are-turning-produc"
+  }
+]

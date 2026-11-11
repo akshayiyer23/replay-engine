@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Vibe Coding for Sales: What Leaders Are Actually Buildi\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 19.63,
+    "step": "download",
+    "message": "Audio downloaded (58:47)",
+    "percent": 5
+  },
+  {
+    "ts": 101.93,
+    "step": "transcribe",
+    "message": "Transcribed 744 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 106.93,
+    "step": "speakers",
+    "message": "Identified: Jeff Kirchick, Matt Stinson, Neema Zarrabian",
+    "percent": 30
+  },
+  {
+    "ts": 108.93,
+    "step": "housekeeping",
+    "message": "Filtered 744 \u2192 461 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 109.93,
+    "step": "mining",
+    "message": "Scanning 461 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 115.93,
+    "step": "mining_hook",
+    "message": "And I was thinking about joining this webinar.",
+    "percent": 42
+  },
+  {
+    "ts": 124.93,
+    "step": "mining_hook",
+    "message": "We actually live in what is maybe the lowest trust sales era in human history.",
+    "percent": 45
+  },
+  {
+    "ts": 133.93,
+    "step": "mining_hook",
+    "message": "I think, I think like the access to information has just gotten so much easier and so it's gotten ea",
+    "percent": 48
+  },
+  {
+    "ts": 142.93,
+    "step": "mining_hook",
+    "message": "Like there are, there is no reason that any AE or any person across the business for that matter sho",
+    "percent": 51
+  },
+  {
+    "ts": 151.93,
+    "step": "mining_hook",
+    "message": "Um, just like overall, for me, the biggest shift is like this idea that your own memory as a seller ",
+    "percent": 54
+  },
+  {
+    "ts": 160.93,
+    "step": "mining_hook",
+    "message": "Like, I can just like automate every single piece of my puzzle that I don't want to do.",
+    "percent": 57
+  },
+  {
+    "ts": 169.93,
+    "step": "mining_hook",
+    "message": "About like when someone joins an interview, you always say you're getting off the biggest deal of co",
+    "percent": 60
+  },
+  {
+    "ts": 178.93,
+    "step": "mining_hook",
+    "message": "But I reached a point recently where I decided I actually felt it was probably fiscally irresponsibl",
+    "percent": 60
+  },
+  {
+    "ts": 184.93,
+    "step": "judge",
+    "message": "Scoring 35 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 272.43,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 376.43,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 378.43,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 91.",
+    "percent": 100,
+    "slug": "vibe-coding-for-sales-webinar-what-leaders-are-actually-buil"
+  }
+]

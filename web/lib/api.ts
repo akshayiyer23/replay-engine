@@ -45,6 +45,19 @@ export type WebinarResults = {
   content: ContentItem[];
 };
 
+export type AgentEvent = {
+  ts: number;       // seconds since pipeline start
+  step: string;
+  message: string;
+  percent: number;
+  slug?: string;
+};
+
+export type RunInput =
+  | { type: "url"; url: string; passcode: string }
+  | { type: "transcript"; text: string; passcode: string }
+  | { type: "file"; file: File; passcode: string };
+
 export const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
@@ -67,6 +80,16 @@ export async function getResults(slug: string): Promise<WebinarResults | null> {
     return res.json();
   } catch {
     return null;
+  }
+}
+
+export async function getEvents(slug: string): Promise<AgentEvent[]> {
+  try {
+    const res = await fetch(`${API_BASE}/events/${slug}`, { cache: "no-store" });
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return [];
   }
 }
 

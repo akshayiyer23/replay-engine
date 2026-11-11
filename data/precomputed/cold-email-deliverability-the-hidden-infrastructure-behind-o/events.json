@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Cold Email Deliverability: The Hidden Infrastructure Be\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 12.01,
+    "step": "download",
+    "message": "Audio downloaded (33:22)",
+    "percent": 5
+  },
+  {
+    "ts": 58.72,
+    "step": "transcribe",
+    "message": "Transcribed 334 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 63.72,
+    "step": "speakers",
+    "message": "Speaker: Kyle Tymo",
+    "percent": 30
+  },
+  {
+    "ts": 65.72,
+    "step": "housekeeping",
+    "message": "Filtered 334 \u2192 207 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 66.72,
+    "step": "mining",
+    "message": "Scanning 207 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 72.72,
+    "step": "mining_hook",
+    "message": "And really, deliverability is this topic where if everything goes right, you almost don't notice and",
+    "percent": 42
+  },
+  {
+    "ts": 81.72,
+    "step": "mining_hook",
+    "message": "So when we think about like fewer emails in the inbox, really what this means is like fewer meetings",
+    "percent": 45
+  },
+  {
+    "ts": 90.72,
+    "step": "mining_hook",
+    "message": "Bounces are absolutely critical.",
+    "percent": 48
+  },
+  {
+    "ts": 99.72,
+    "step": "mining_hook",
+    "message": "And so the first question that I typically ask is, does your first email actually need that link?",
+    "percent": 51
+  },
+  {
+    "ts": 108.72,
+    "step": "mining_hook",
+    "message": "And so first, bottom, like bottom point here is just like, people want case studies if it's relevant",
+    "percent": 54
+  },
+  {
+    "ts": 117.72,
+    "step": "mining_hook",
+    "message": "And so you can write your outbound very generic and rely on more standard sort of measures of credib",
+    "percent": 57
+  },
+  {
+    "ts": 126.72,
+    "step": "mining_hook",
+    "message": "You might not get the reply that you're seeking in the first, second, or even third touch of a seque",
+    "percent": 60
+  },
+  {
+    "ts": 135.72,
+    "step": "mining_hook",
+    "message": "And I think about this testing like a scientist.",
+    "percent": 60
+  },
+  {
+    "ts": 141.72,
+    "step": "judge",
+    "message": "Scoring 21 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 194.22,
+    "step": "content",
+    "message": "Writing posts for 6 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 272.22,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 274.22,
+    "step": "done",
+    "message": "Done! Found 6 moments. Best score: 73.",
+    "percent": 100,
+    "slug": "cold-email-deliverability-the-hidden-infrastructure-behind-o"
+  }
+]

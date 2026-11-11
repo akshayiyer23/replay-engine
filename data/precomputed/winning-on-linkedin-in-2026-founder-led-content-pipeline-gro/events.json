@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Winning on LinkedIn in 2026\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 12.31,
+    "step": "download",
+    "message": "Audio downloaded (34:22)",
+    "percent": 5
+  },
+  {
+    "ts": 60.42,
+    "step": "transcribe",
+    "message": "Transcribed 418 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 65.42,
+    "step": "speakers",
+    "message": "Identified: Tommy Clark, Austin Hughes",
+    "percent": 30
+  },
+  {
+    "ts": 67.42,
+    "step": "housekeeping",
+    "message": "Filtered 418 \u2192 259 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 68.42,
+    "step": "mining",
+    "message": "Scanning 259 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 74.42,
+    "step": "mining_hook",
+    "message": "Um, because it's so easy for someone to just toss a prompt into Claude or ChatGPT and come up with a",
+    "percent": 42
+  },
+  {
+    "ts": 83.42,
+    "step": "mining_hook",
+    "message": "I think it's just super, super important more broadly to tell a sort of unique story.",
+    "percent": 45
+  },
+  {
+    "ts": 92.42,
+    "step": "mining_hook",
+    "message": "One of the consequences of AI-generated content is that it all kind of sounds the same and all sound",
+    "percent": 48
+  },
+  {
+    "ts": 101.42,
+    "step": "mining_hook",
+    "message": "The reason why this is so important is LinkedIn's relatively volume constrained.",
+    "percent": 51
+  },
+  {
+    "ts": 110.42,
+    "step": "mining_hook",
+    "message": "Ultimately, if I've got an audience, that's great, but if 10 people at our company have their own in",
+    "percent": 54
+  },
+  {
+    "ts": 119.42,
+    "step": "mining_hook",
+    "message": "What a lot of companies will try to do is make people post.",
+    "percent": 57
+  },
+  {
+    "ts": 128.42,
+    "step": "mining_hook",
+    "message": "So what's the story behind the start of your company?",
+    "percent": 60
+  },
+  {
+    "ts": 137.42,
+    "step": "mining_hook",
+    "message": "Um, but a contrarian opinion plus a narrative.",
+    "percent": 60
+  },
+  {
+    "ts": 143.42,
+    "step": "judge",
+    "message": "Scoring 22 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 198.42,
+    "step": "content",
+    "message": "Writing posts for 7 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 289.42,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 291.42,
+    "step": "done",
+    "message": "Done! Found 7 moments. Best score: 95.",
+    "percent": 100,
+    "slug": "winning-on-linkedin-in-2026-founder-led-content-pipeline-gro"
+  }
+]

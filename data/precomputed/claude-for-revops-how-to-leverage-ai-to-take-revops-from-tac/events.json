@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Claude for RevOps: How to leverage AI to take RevOps fr\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 15.92,
+    "step": "download",
+    "message": "Audio downloaded (46:24)",
+    "percent": 5
+  },
+  {
+    "ts": 80.88,
+    "step": "transcribe",
+    "message": "Transcribed 628 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 85.88,
+    "step": "speakers",
+    "message": "Identified: Quintin Smith, Jeff Ignacio, Hassan Irshad",
+    "percent": 30
+  },
+  {
+    "ts": 87.88,
+    "step": "housekeeping",
+    "message": "Filtered 628 \u2192 389 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 88.88,
+    "step": "mining",
+    "message": "Scanning 389 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 94.88,
+    "step": "mining_hook",
+    "message": "We're seeing a fundamental shift on how people are approaching AI as well.",
+    "percent": 42
+  },
+  {
+    "ts": 103.88,
+    "step": "mining_hook",
+    "message": "What AI does is takes that argument slightly away from the team and they're like, okay, now if AI is",
+    "percent": 45
+  },
+  {
+    "ts": 112.88,
+    "step": "mining_hook",
+    "message": "But I think some of the most interesting use cases I've seen, one is Someone that is a first line de",
+    "percent": 48
+  },
+  {
+    "ts": 121.88,
+    "step": "mining_hook",
+    "message": "Which is where I think, and Jeff, my view is I believe revenue operations sits in this like amazing ",
+    "percent": 51
+  },
+  {
+    "ts": 130.88,
+    "step": "mining_hook",
+    "message": "I'd push back a little bit.",
+    "percent": 54
+  },
+  {
+    "ts": 139.88,
+    "step": "mining_hook",
+    "message": "I think the first thing is not every model is created equal.",
+    "percent": 57
+  },
+  {
+    "ts": 148.88,
+    "step": "mining_hook",
+    "message": "If, if you think you're gonna get the same quality as using speaking into Claude.ai, the chat window",
+    "percent": 60
+  },
+  {
+    "ts": 157.88,
+    "step": "mining_hook",
+    "message": "Historically, how you would do a closed loss analysis is, and Jeff knows, like we'll pull a Salesfor",
+    "percent": 60
+  },
+  {
+    "ts": 163.88,
+    "step": "judge",
+    "message": "Scoring 27 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 231.38,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 335.38,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 337.38,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 80.",
+    "percent": 100,
+    "slug": "claude-for-revops-how-to-leverage-ai-to-take-revops-from-tac"
+  }
+]

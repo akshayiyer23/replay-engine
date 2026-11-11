@@ -15,6 +15,7 @@ import json
 import os
 import sys
 import tempfile
+import time
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -152,6 +153,17 @@ def get_results(slug: str):
     }
 
 
+# ── GET /events/{slug} ───────────────────────────────────────────────────────
+
+@app.get("/events/{slug}")
+def get_events(slug: str):
+    """Return precomputed replay events for a webinar."""
+    events_file = PRECOMPUTED_DIR / slug / "events.json"
+    if not events_file.exists():
+        raise HTTPException(status_code=404, detail=f"No replay events for '{slug}'.")
+    return json.loads(events_file.read_text())
+
+
 # ── POST /run (SSE) ───────────────────────────────────────────────────────────
 
 async def _stream_pipeline(
@@ -159,6 +171,7 @@ async def _stream_pipeline(
 ) -> AsyncGenerator[str, None]:
     """Run pipeline subprocess, yielding SSE-formatted events from stderr."""
     env = os.environ.copy()
+    start_time = time.time()
 
     proc = await asyncio.create_subprocess_exec(
         *cmd,
@@ -170,6 +183,7 @@ async def _stream_pipeline(
 
     slug = None
     saw_error = False
+    collected_events: list[dict] = []
 
     # Read stderr (progress JSON events) line by line
     while True:
@@ -185,6 +199,7 @@ async def _stream_pipeline(
                 slug = evt.get("slug")
             if evt.get("step") == "error":
                 saw_error = True
+            collected_events.append({**evt, "ts": round(time.time() - start_time, 2)})
             yield f"data: {json.dumps(evt)}\n\n"
         except json.JSONDecodeError:
             pass  # Non-JSON stderr lines are human-readable progress; skip
@@ -203,6 +218,15 @@ async def _stream_pipeline(
             yield f"data: {json.dumps({'step': 'error', 'message': err_msg, 'percent': 0})}\n\n"
         yield "data: {\"step\": \"stream_done\"}\n\n"
         return
+
+    # Persist replay events if this slug has a precomputed directory
+    if slug and not saw_error and collected_events:
+        slug_dir = PRECOMPUTED_DIR / slug
+        if slug_dir.exists():
+            try:
+                (slug_dir / "events.json").write_text(json.dumps(collected_events, indent=2))
+            except OSError:
+                pass
 
     # Success — read result files and emit as final event
     result: dict = {"slug": slug}

@@ -1590,6 +1590,12 @@ def _run_main(args) -> None:
     flag_note = f" ({n_flagged} flagged out-of-range)" if n_flagged else ""
     print(f"✅ Found {len(candidates)} moments{flag_note}")
 
+    # Emit a sample of hook lines so the UI can show a live "reading" feed
+    sample_hooks = [c["hook_line"][:120] for c in candidates[:6] if c.get("hook_line")]
+    for i, hook in enumerate(sample_hooks):
+        pct = 42 + i * 3
+        _emit("mining_hook", hook, min(pct, 60))
+
     # ── 7. pre-judge QA gates ──
     _gate_numbers_in_transcript(candidates, qa_entries)
     _gate_duration(candidates, qa_entries)

@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for The Outbound Sweet Spot: Orchestrating Automation and H\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 12.13,
+    "step": "download",
+    "message": "Audio downloaded (33:47)",
+    "percent": 5
+  },
+  {
+    "ts": 59.43,
+    "step": "transcribe",
+    "message": "Transcribed 330 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 64.43,
+    "step": "speakers",
+    "message": "Identified: Ethan Dursht, Skyler Mickunas",
+    "percent": 30
+  },
+  {
+    "ts": 66.43,
+    "step": "housekeeping",
+    "message": "Filtered 330 \u2192 204 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 67.43,
+    "step": "mining",
+    "message": "Scanning 204 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 73.43,
+    "step": "mining_hook",
+    "message": "So first, why automation in outbound, right?",
+    "percent": 42
+  },
+  {
+    "ts": 82.43,
+    "step": "mining_hook",
+    "message": "But the reality of the situation is there are hundreds of thousands of really good accounts for us t",
+    "percent": 45
+  },
+  {
+    "ts": 91.43,
+    "step": "mining_hook",
+    "message": "And I think the, at the core of like what we're talking about, it's just, it's naive to expect that ",
+    "percent": 48
+  },
+  {
+    "ts": 100.43,
+    "step": "mining_hook",
+    "message": "And so here's what the basic math sort of looks like in principle, right?",
+    "percent": 51
+  },
+  {
+    "ts": 109.43,
+    "step": "mining_hook",
+    "message": "Too much AI and automation and the conversion rate is gonna pay the price.",
+    "percent": 54
+  },
+  {
+    "ts": 118.43,
+    "step": "mining_hook",
+    "message": "And we don't want to just take shots just to take shots as well, right?",
+    "percent": 57
+  },
+  {
+    "ts": 127.43,
+    "step": "mining_hook",
+    "message": "So basically when we think of like high leverage activities, like what Ethan and I really try to hon",
+    "percent": 60
+  },
+  {
+    "ts": 136.43,
+    "step": "mining_hook",
+    "message": "So if a company hits a certain signal and we're tracking probably close to 100 signals, right, those",
+    "percent": 60
+  },
+  {
+    "ts": 142.43,
+    "step": "judge",
+    "message": "Scoring 20 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 192.43,
+    "step": "content",
+    "message": "Writing posts for 6 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 270.43,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 272.43,
+    "step": "done",
+    "message": "Done! Found 6 moments. Best score: 66.",
+    "percent": 100,
+    "slug": "the-outbound-sweet-spot-orchestrating-automation-and-human-t"
+  }
+]

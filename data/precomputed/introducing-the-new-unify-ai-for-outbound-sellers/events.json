@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Introducing the New Unify: AI for Outbound Sellers (Uni\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 20.18,
+    "step": "download",
+    "message": "Audio downloaded (1:00:36)",
+    "percent": 5
+  },
+  {
+    "ts": 105.02,
+    "step": "transcribe",
+    "message": "Transcribed 721 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 110.02,
+    "step": "speakers",
+    "message": "Identified: Austin Hughes, Quintin Smith, Zach Herman",
+    "percent": 30
+  },
+  {
+    "ts": 112.02,
+    "step": "housekeeping",
+    "message": "Filtered 721 \u2192 447 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 113.02,
+    "step": "mining",
+    "message": "Scanning 447 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 119.02,
+    "step": "mining_hook",
+    "message": "I think what we saw really unlock over the past 6 months is that agents got really good at just bein",
+    "percent": 42
+  },
+  {
+    "ts": 128.02,
+    "step": "mining_hook",
+    "message": "What we saw happen was that 2 sort of themes emerged among people who were building products.",
+    "percent": 45
+  },
+  {
+    "ts": 137.02,
+    "step": "mining_hook",
+    "message": "I remember when I was still in SDR, this is around 2022, '23, when it first came out, the first vers",
+    "percent": 48
+  },
+  {
+    "ts": 146.02,
+    "step": "mining_hook",
+    "message": "I found that consistently the way that we were drumming up our best ideas was just talking to our be",
+    "percent": 51
+  },
+  {
+    "ts": 155.02,
+    "step": "mining_hook",
+    "message": "We've seen so many of these tools pop up over the years for other personas.",
+    "percent": 54
+  },
+  {
+    "ts": 164.02,
+    "step": "mining_hook",
+    "message": "So rather than going to SalesNav or tabbing through another tool like Apollo or Clay, You can find y",
+    "percent": 57
+  },
+  {
+    "ts": 173.02,
+    "step": "mining_hook",
+    "message": "The job of an SDR, at least when I started, and honestly it's still true today, is you bounce betwee",
+    "percent": 60
+  },
+  {
+    "ts": 182.02,
+    "step": "mining_hook",
+    "message": "And it was definitely like a complaint of mine if you were like an SDR or an AE manager of mine in t",
+    "percent": 60
+  },
+  {
+    "ts": 188.02,
+    "step": "judge",
+    "message": "Scoring 30 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 263.02,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 367.02,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 369.02,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 85.",
+    "percent": 100,
+    "slug": "introducing-the-new-unify-ai-for-outbound-sellers"
+  }
+]

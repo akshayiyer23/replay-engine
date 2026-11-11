@@ -1,11 +1,20 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
-import type { Webinar, WebinarResults, ContentItem, Moment } from "@/lib/api";
-import { getResults, fmtDate } from "@/lib/api";
+import { useCallback, useRef, useState } from "react";
+import type {
+  AgentEvent,
+  Moment,
+  ContentItem,
+  RunInput,
+  Webinar,
+  WebinarResults,
+} from "@/lib/api";
+import { getEvents, getResults, fmtDate } from "@/lib/api";
 import MomentCard from "./MomentCard";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
+import RunPanel from "./RunPanel";
+import AgentRunView from "./AgentRunView";
 
 // Shared container — every section uses this so left edges align at all widths
 const CONTAINER = "max-w-6xl mx-auto px-6";
@@ -183,68 +192,84 @@ function WebinarCard({
   w,
   selected,
   onClick,
+  onReplay,
   pinned,
 }: {
   w: Webinar;
   selected: boolean;
   onClick: () => void;
+  onReplay: (slug: string) => void;
   pinned?: boolean;
 }) {
   const thumbUrl = `https://img.youtube.com/vi/${w.youtube_id}/hqdefault.jpg`;
   return (
-    <button
-      onClick={onClick}
-      className={`text-left w-full rounded-xl border overflow-hidden hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all ${
+    <div
+      className={`rounded-xl border overflow-hidden ${
         selected ? "border-[#F15A24] shadow-sm" : "border-[#E8E4DC] bg-white"
       }`}
     >
-      {/* Thumbnail */}
-      <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={thumbUrl}
-          alt={w.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* "Start here" badge */}
-        {pinned && (
-          <div className="absolute top-2 left-2 bg-[#F15A24] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide shadow">
-            Start here
-          </div>
-        )}
-        {/* Score badge with tooltip */}
-        <div className="absolute top-2 right-2 group/score">
-          <div className="w-9 h-9 rounded-full bg-[#F15A24] flex items-center justify-center shadow">
-            <span className="text-xs font-semibold text-white">
-              {w.top_score}
-            </span>
-          </div>
-          <div className="absolute right-0 top-full mt-1 hidden group-hover/score:block z-10">
-            <div className="bg-[#1A1A1A] text-white text-[10px] px-2 py-1 rounded whitespace-nowrap">
-              Top moment score
+      {/* Thumbnail (clickable) */}
+      <button
+        onClick={onClick}
+        className="text-left w-full hover:opacity-95 transition-opacity"
+      >
+        <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={thumbUrl}
+            alt={w.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* "Start here" badge */}
+          {pinned && (
+            <div className="absolute top-2 left-2 bg-[#F15A24] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide shadow">
+              Start here
+            </div>
+          )}
+          {/* Score badge with tooltip */}
+          <div className="absolute top-2 right-2 group/score">
+            <div className="w-9 h-9 rounded-full bg-[#F15A24] flex items-center justify-center shadow">
+              <span className="text-xs font-semibold text-white">
+                {w.top_score}
+              </span>
+            </div>
+            <div className="absolute right-0 top-full mt-1 hidden group-hover/score:block z-10">
+              <div className="bg-[#1A1A1A] text-white text-[10px] px-2 py-1 rounded whitespace-nowrap">
+                Top moment score
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </button>
 
       {/* Meta */}
       <div className="p-4">
-        <p className="text-xs text-[#6B6560] mb-1">{fmtDate(w.date)}</p>
-        <p className="text-sm font-medium text-[#1A1A1A] leading-snug line-clamp-2 mb-2">
-          {w.title}
-        </p>
-        <div className="flex flex-wrap gap-1">
-          {w.speakers.map((s) => (
-            <span
-              key={s}
-              className="text-xs px-2 py-0.5 rounded-full border border-[#E8E4DC] text-[#6B6560]"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
+        <button onClick={onClick} className="text-left w-full">
+          <p className="text-xs text-[#6B6560] mb-1">{fmtDate(w.date)}</p>
+          <p className="text-sm font-medium text-[#1A1A1A] leading-snug line-clamp-2 mb-2">
+            {w.title}
+          </p>
+          <div className="flex flex-wrap gap-1 mb-3">
+            {w.speakers.map((s) => (
+              <span
+                key={s}
+                className="text-xs px-2 py-0.5 rounded-full border border-[#E8E4DC] text-[#6B6560]"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </button>
+        {/* Replay link */}
+        <button
+          onClick={(e) => { e.stopPropagation(); onReplay(w.slug); }}
+          className="text-xs text-[#6B6560] hover:text-[#F15A24] transition-colors flex items-center gap-1"
+        >
+          <span>▶</span>
+          <span>Watch the agent run</span>
+        </button>
       </div>
-    </button>
+    </div>
   );
 }
 
@@ -329,12 +354,13 @@ function Library({
   webinars,
   selectedSlug,
   onSelect,
+  onReplay,
 }: {
   webinars: Webinar[];
   selectedSlug: string | null;
   onSelect: (slug: string) => void;
+  onReplay: (slug: string) => void;
 }) {
-  // Pin Custom AI Signals first; rest stay in backend order (newest first)
   const pinned = webinars.find((w) => w.slug === PINNED_SLUG);
   const rest = webinars.filter((w) => w.slug !== PINNED_SLUG);
   const ordered = pinned ? [pinned, ...rest] : rest;
@@ -357,6 +383,7 @@ function Library({
             w={w}
             selected={w.slug === selectedSlug}
             onClick={() => onSelect(w.slug)}
+            onReplay={onReplay}
             pinned={w.slug === PINNED_SLUG}
           />
         ))}
@@ -365,7 +392,21 @@ function Library({
   );
 }
 
+// ─── Error messages ───────────────────────────────────────────────────────────
+
+function friendlyError(raw: string): string {
+  if (raw === "wrong_passcode") return "Wrong passcode — double-check and try again.";
+  if (raw === "rate_limit") return "Daily limit reached (3 runs per day). Come back tomorrow.";
+  if (raw.toLowerCase().includes("too short") || raw.toLowerCase().includes("minimum"))
+    return "Video too short — needs at least 15 minutes of content.";
+  if (raw.toLowerCase().includes("download") || raw.toLowerCase().includes("blocked"))
+    return "Could not download that video. Try the \"Upload file\" tab instead.";
+  return raw;
+}
+
 // ─── HomePage (root client component) ────────────────────────────────────────
+
+type AppMode = "idle" | "running" | "replaying";
 
 export default function HomePage({
   webinars,
@@ -377,8 +418,17 @@ export default function HomePage({
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [results, setResults] = useState<WebinarResults | null>(null);
   const [loading, setLoading] = useState(false);
-  const resultsRef = useRef<HTMLDivElement>(null);
 
+  const [appMode, setAppMode] = useState<AppMode>("idle");
+  const [runInput, setRunInput] = useState<RunInput | null>(null);
+  const [replayEvents, setReplayEvents] = useState<AgentEvent[]>([]);
+  const [replaySlug, setReplaySlug] = useState<string | null>(null);
+  const [runError, setRunError] = useState<string | null>(null);
+
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const agentRef = useRef<HTMLDivElement>(null);
+
+  // ── Open a webinar's precomputed results ──────────────────────────────────
   const openWebinar = useCallback(
     async (slug: string) => {
       if (slug === selectedSlug && results) {
@@ -386,14 +436,12 @@ export default function HomePage({
         return;
       }
 
-      // If clicking the featured webinar and we already have its data, reuse it
       if (slug === PINNED_SLUG && featured) {
         setSelectedSlug(slug);
         setResults(featured);
         setLoading(false);
         setTimeout(
-          () =>
-            resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+          () => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
           50
         );
         return;
@@ -403,8 +451,7 @@ export default function HomePage({
       setResults(null);
       setLoading(true);
       setTimeout(
-        () =>
-          resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+        () => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
         50
       );
 
@@ -421,6 +468,78 @@ export default function HomePage({
     setLoading(false);
   }, []);
 
+  // ── Start a live run ──────────────────────────────────────────────────────
+  const handleRun = useCallback((input: RunInput) => {
+    setRunError(null);
+    setRunInput(input);
+    setAppMode("running");
+    setTimeout(
+      () => agentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      50
+    );
+  }, []);
+
+  // ── Start a replay ────────────────────────────────────────────────────────
+  const handleReplay = useCallback(async (slug: string) => {
+    setRunError(null);
+    const events = await getEvents(slug);
+    if (!events.length) {
+      // Fallback: just open the results normally
+      openWebinar(slug);
+      return;
+    }
+    setReplayEvents(events);
+    setReplaySlug(slug);
+    setAppMode("replaying");
+    setTimeout(
+      () => agentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      50
+    );
+  }, [openWebinar]);
+
+  // ── Agent run / replay done ───────────────────────────────────────────────
+  const handleAgentDone = useCallback(
+    async (agentResults: WebinarResults | null, slug: string | null) => {
+      setAppMode("idle");
+      setRunInput(null);
+
+      if (agentResults) {
+        // Live run returned results inline
+        const r = agentResults as unknown as WebinarResults & { slug?: string };
+        setResults(agentResults);
+        setSelectedSlug(slug ?? r.slug ?? null);
+        setLoading(false);
+        setTimeout(
+          () => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+          100
+        );
+      } else if (slug) {
+        // Replay ended — load the precomputed results
+        openWebinar(slug);
+      }
+    },
+    [openWebinar]
+  );
+
+  // ── Agent error ───────────────────────────────────────────────────────────
+  const handleAgentError = useCallback((msg: string) => {
+    setAppMode("idle");
+    setRunInput(null);
+    setRunError(friendlyError(msg));
+    // Scroll back to RunPanel
+    setTimeout(
+      () => agentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      50
+    );
+  }, []);
+
+  const closeAgent = useCallback(() => {
+    setAppMode("idle");
+    setRunInput(null);
+    setReplayEvents([]);
+    setReplaySlug(null);
+  }, []);
+
   return (
     <main className="flex-1 flex flex-col">
       <Hero onOpenWebinar={openWebinar} featured={featured} />
@@ -429,6 +548,7 @@ export default function HomePage({
         webinars={webinars}
         selectedSlug={selectedSlug}
         onSelect={openWebinar}
+        onReplay={handleReplay}
       />
 
       {/* Scroll anchor + results panel */}
@@ -441,6 +561,33 @@ export default function HomePage({
               onClose={closeResults}
             />
           </div>
+        )}
+      </div>
+
+      {/* Agent run panel / replay */}
+      <div ref={agentRef} className={`${CONTAINER} py-8`}>
+        {appMode === "idle" && (
+          <>
+            {runError && (
+              <div className="mb-4 px-4 py-3 rounded-lg bg-red-50 border border-red-200">
+                <p className="text-sm text-red-700 font-medium">{runError}</p>
+              </div>
+            )}
+            <RunPanel onRun={handleRun} />
+          </>
+        )}
+
+        {(appMode === "running" || appMode === "replaying") && (
+          <AgentRunView
+            mode={appMode === "running" ? "live" : "replay"}
+            input={runInput ?? undefined}
+            replayEvents={replayEvents}
+            replaySlug={replaySlug ?? undefined}
+            onDone={handleAgentDone}
+            onError={handleAgentError}
+            onClose={closeAgent}
+            isReplay={appMode === "replaying"}
+          />
         )}
       </div>
 

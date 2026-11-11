@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Outbound Email Masterclass\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 14.67,
+    "step": "download",
+    "message": "Audio downloaded (42:13)",
+    "percent": 5
+  },
+  {
+    "ts": 73.77,
+    "step": "transcribe",
+    "message": "Transcribed 486 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 78.77,
+    "step": "speakers",
+    "message": "Identified: Cole Courson, Bobby Foose",
+    "percent": 30
+  },
+  {
+    "ts": 80.77,
+    "step": "housekeeping",
+    "message": "Filtered 486 \u2192 301 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 81.77,
+    "step": "mining",
+    "message": "Scanning 301 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 87.77,
+    "step": "mining_hook",
+    "message": "I think everyone knows outbound email is harder than it's ever been before.",
+    "percent": 42
+  },
+  {
+    "ts": 96.77,
+    "step": "mining_hook",
+    "message": "So what we're seeing as we come through the data is that overall you're hearing this on all fronts, ",
+    "percent": 45
+  },
+  {
+    "ts": 105.77,
+    "step": "mining_hook",
+    "message": "On the downmarket kind of founder-led sales, I typically think that what people run into is they lik",
+    "percent": 48
+  },
+  {
+    "ts": 114.77,
+    "step": "mining_hook",
+    "message": "And then typically in like an email framework, you'd have what type of story have we helped draw awa",
+    "percent": 51
+  },
+  {
+    "ts": 123.77,
+    "step": "mining_hook",
+    "message": "I think people think their TAM is a lot bigger than what it actually is.",
+    "percent": 54
+  },
+  {
+    "ts": 132.77,
+    "step": "mining_hook",
+    "message": "Yeah, I think first and foremost, I mean, if I'm sending something sequenced, like a little bit of w",
+    "percent": 57
+  },
+  {
+    "ts": 141.77,
+    "step": "mining_hook",
+    "message": "So if I'm doing larger campaigns, let's call for the guru example 200, 300, 400k emails a month, and",
+    "percent": 60
+  },
+  {
+    "ts": 150.77,
+    "step": "mining_hook",
+    "message": "Like we see this kind of surprising emoji lifts of 38% in reply rates when those are included in the",
+    "percent": 60
+  },
+  {
+    "ts": 156.77,
+    "step": "judge",
+    "message": "Scoring 23 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 214.27,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 318.27,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 320.27,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 72.",
+    "percent": 100,
+    "slug": "outbound-email-masterclass-webinar"
+  }
+]

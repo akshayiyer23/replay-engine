@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for Vibe Coding for Marketers: How to stop prompting and st\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 17.79,
+    "step": "download",
+    "message": "Audio downloaded (52:39)",
+    "percent": 5
+  },
+  {
+    "ts": 91.5,
+    "step": "transcribe",
+    "message": "Transcribed 882 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 96.5,
+    "step": "speakers",
+    "message": "Identified: Austin Hughes, Sarah Charlton",
+    "percent": 30
+  },
+  {
+    "ts": 98.5,
+    "step": "housekeeping",
+    "message": "Filtered 882 \u2192 546 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 99.5,
+    "step": "mining",
+    "message": "Scanning 546 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 105.5,
+    "step": "mining_hook",
+    "message": "I find a lot of people say things like, oh, you can build it into a skill, like it's some strange my",
+    "percent": 42
+  },
+  {
+    "ts": 114.5,
+    "step": "mining_hook",
+    "message": "Like, I got this hat from a startup called Lightfield that says, like, ever since I was a young chil",
+    "percent": 45
+  },
+  {
+    "ts": 123.5,
+    "step": "mining_hook",
+    "message": "I think it has terrible thought leadership.",
+    "percent": 48
+  },
+  {
+    "ts": 132.5,
+    "step": "mining_hook",
+    "message": "I think where it's not good is it doesn't have the level of taste and like care that like somebody w",
+    "percent": 51
+  },
+  {
+    "ts": 141.5,
+    "step": "mining_hook",
+    "message": "As an example, some things that we do internally is we actually run an agent every week via Claude t",
+    "percent": 54
+  },
+  {
+    "ts": 150.5,
+    "step": "mining_hook",
+    "message": "And I feel like going through our own sort of journey internally of like using these products over t",
+    "percent": 57
+  },
+  {
+    "ts": 159.5,
+    "step": "mining_hook",
+    "message": "What do I mean by multimodal?",
+    "percent": 60
+  },
+  {
+    "ts": 168.5,
+    "step": "mining_hook",
+    "message": "And then it runs this cool tool called Understand Videos.",
+    "percent": 60
+  },
+  {
+    "ts": 174.5,
+    "step": "judge",
+    "message": "Scoring 28 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 244.5,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 348.5,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 350.5,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 68.",
+    "percent": 100,
+    "slug": "vibe-coding-for-marketers-how-to-stop-prompting-and-start-bu"
+  }
+]

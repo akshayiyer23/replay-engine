@@ -1,0 +1,111 @@
+[
+  {
+    "ts": 0.0,
+    "step": "start",
+    "message": "Starting pipeline for How AEs and SDRs Are Becoming Their Own Go-To-Market En\u2026",
+    "percent": 2
+  },
+  {
+    "ts": 14.11,
+    "step": "download",
+    "message": "Audio downloaded (40:22)",
+    "percent": 5
+  },
+  {
+    "ts": 70.62,
+    "step": "transcribe",
+    "message": "Transcribed 467 sentences",
+    "percent": 15
+  },
+  {
+    "ts": 75.62,
+    "step": "speakers",
+    "message": "Identified: Austin Hughes, Ethan Dursht, Neema Zarrabian",
+    "percent": 30
+  },
+  {
+    "ts": 77.62,
+    "step": "housekeeping",
+    "message": "Filtered 467 \u2192 289 substantive sentences",
+    "percent": 37
+  },
+  {
+    "ts": 78.62,
+    "step": "mining",
+    "message": "Scanning 289 sentences with Claude\u2026",
+    "percent": 40
+  },
+  {
+    "ts": 84.62,
+    "step": "mining_hook",
+    "message": "So, uh, as a starting place, one of the core premises that, that we've always believed as a team is ",
+    "percent": 42
+  },
+  {
+    "ts": 93.62,
+    "step": "mining_hook",
+    "message": "So the old way that we've seen historically is typically what outbound looks like is you've got thes",
+    "percent": 45
+  },
+  {
+    "ts": 102.62,
+    "step": "mining_hook",
+    "message": "So it's always been a little bit different at Unify because I think we have a fresh thesis on how to",
+    "percent": 48
+  },
+  {
+    "ts": 111.62,
+    "step": "mining_hook",
+    "message": "But now what I like to think of the new Unify is really just enabling the high agency reps to go and",
+    "percent": 51
+  },
+  {
+    "ts": 120.62,
+    "step": "mining_hook",
+    "message": "And so the idea that we started to gravitate towards was in, call it in like January-ish, we started",
+    "percent": 54
+  },
+  {
+    "ts": 129.62,
+    "step": "mining_hook",
+    "message": "The Swarm.",
+    "percent": 57
+  },
+  {
+    "ts": 138.62,
+    "step": "mining_hook",
+    "message": "Yeah, I really like stacking these together.",
+    "percent": 60
+  },
+  {
+    "ts": 147.62,
+    "step": "mining_hook",
+    "message": "Like I was gonna say, one-off signals are great, but when you layer in signals, they actually tend t",
+    "percent": 60
+  },
+  {
+    "ts": 153.62,
+    "step": "judge",
+    "message": "Scoring 24 candidates against 861 real GTM posts\u2026",
+    "percent": 65
+  },
+  {
+    "ts": 213.62,
+    "step": "content",
+    "message": "Writing posts for 8 moments\u2026",
+    "percent": 80
+  },
+  {
+    "ts": 317.62,
+    "step": "cache",
+    "message": "Results saved.",
+    "percent": 95
+  },
+  {
+    "ts": 319.62,
+    "step": "done",
+    "message": "Done! Found 8 moments. Best score: 95.",
+    "percent": 100,
+    "slug": "how-aes-and-sdrs-are-becoming-their-own-go-to-market-enginee"
+  }
+]
