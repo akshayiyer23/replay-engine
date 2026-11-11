@@ -87,9 +87,8 @@ function WhyChips({
   );
 }
 
-function LinkedInTab({ content }: { content: ContentItem | undefined }) {
+function LinkedInTab({ content }: { content: ContentItem }) {
   const [copied, setCopied] = useState(false);
-  if (!content) return <p className="text-sm text-[#6B6560]">No content generated.</p>;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(content.linkedin_post).then(() => {
@@ -113,9 +112,7 @@ function LinkedInTab({ content }: { content: ContentItem | undefined }) {
   );
 }
 
-function CarouselTab({ content }: { content: ContentItem | undefined }) {
-  if (!content?.carousel?.length)
-    return <p className="text-sm text-[#6B6560]">No carousel generated.</p>;
+function CarouselTab({ content }: { content: ContentItem }) {
   return (
     <ol className="space-y-2">
       {content.carousel.map((slide, i) => (
@@ -130,9 +127,7 @@ function CarouselTab({ content }: { content: ContentItem | undefined }) {
   );
 }
 
-function LessonTab({ content }: { content: ContentItem | undefined }) {
-  if (!content?.lesson)
-    return <p className="text-sm text-[#6B6560]">No lesson generated.</p>;
+function LessonTab({ content }: { content: ContentItem }) {
   const { lesson } = content;
   return (
     <div className="space-y-4 text-sm">
@@ -159,10 +154,8 @@ function LessonTab({ content }: { content: ContentItem | undefined }) {
   );
 }
 
-function CaptionTab({ content }: { content: ContentItem | undefined }) {
+function CaptionTab({ content }: { content: ContentItem }) {
   const [copied, setCopied] = useState(false);
-  if (!content?.caption)
-    return <p className="text-sm text-[#6B6560]">No caption generated.</p>;
   const handleCopy = () => {
     navigator.clipboard.writeText(content.caption).then(() => {
       setCopied(true);
@@ -248,7 +241,7 @@ export default function MomentCard({
   rank,
 }: {
   moment: Moment;
-  content: ContentItem | undefined;
+  content: ContentItem;
   youtubeId: string;
   rank: number;
 }) {

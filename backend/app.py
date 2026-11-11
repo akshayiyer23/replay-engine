@@ -123,6 +123,7 @@ def get_results(slug: str):
     content_file = DATA_DIR / f"{slug}-content.golden.json"
     content = json.loads(content_file.read_text()) if content_file.exists() else []
 
+    content_ids = {item["id"] for item in content}
     top = [
         {
             "id": c["id"],
@@ -141,7 +142,7 @@ def get_results(slug: str):
             "hook_line": c.get("hook_line", ""),
         }
         for c in sorted(candidates, key=lambda c: -c.get("score", 0))
-        if c.get("top8")
+        if c.get("top8") and c["id"] in content_ids
     ]
 
     return {

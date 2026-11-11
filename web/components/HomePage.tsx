@@ -198,7 +198,7 @@ function ResultsSection({
       {results && (
         <div className="space-y-6">
           {results.top_moments.map((moment, i) => {
-            const content = results.content?.find((c) => c.id === moment.id);
+            const content = results.content?.find((c) => c.id === moment.id)!;
             return (
               <MomentCard
                 key={moment.id}
