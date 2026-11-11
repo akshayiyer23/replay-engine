@@ -304,30 +304,83 @@ def migrate_legacy_cache() -> None:
 
 # ── download + transcribe ─────────────────────────────────────────────────────
 
+_SUPADATA_CACHE_FILE = DATA_DIR / ".supadata_cache.json"
+
+
+def _supadata_cache_load() -> dict:
+    try:
+        if _SUPADATA_CACHE_FILE.exists():
+            return json.loads(_SUPADATA_CACHE_FILE.read_text())
+    except Exception:
+        pass
+    return {}
+
+
+def _supadata_cache_save(video_id: str, sentences: list[dict]) -> None:
+    try:
+        cache = _supadata_cache_load()
+        cache[video_id] = sentences
+        _SUPADATA_CACHE_FILE.write_text(json.dumps(cache))
+    except Exception as exc:
+        print(f"[supadata] cache write failed (non-fatal): {exc}")
+
+
 def _fetch_supadata_captions(video_url: str) -> list[dict]:
-    """Fetch timestamped captions via Supadata API as a fallback when yt-dlp is blocked.
-    Returns sentences-format list with single speaker label 'A'.
+    """Fetch captions via Supadata API.
+
+    - Checks a disk cache keyed by video ID first (survives --fresh and
+      pipeline re-runs; costs zero quota calls).
+    - Retries once after 3 s on timeout, 429, or 5xx.
+    - Logs the real HTTP status/body so Railway logs show the root cause.
     """
     import urllib.request as _ureq
     import urllib.parse as _uparse
     import urllib.error as _uerr
 
+    video_id = get_video_id(video_url)
+
+    # ── disk cache hit ────────────────────────────────────────────────────────
+    cached = _supadata_cache_load()
+    if video_id in cached and cached[video_id]:
+        print(f"[supadata] cache hit for {video_id} ({len(cached[video_id])} segments)")
+        return cached[video_id]
+
+    # ── key check ─────────────────────────────────────────────────────────────
     api_key = os.environ.get("SUPADATA_API_KEY", "")
     if not api_key:
         raise PipelineError("SUPADATA_API_KEY not set — cannot fetch captions.")
 
+    # ── API call with one retry on transient failures ─────────────────────────
     encoded = _uparse.urlencode({"url": video_url})
     endpoint = f"https://api.supadata.ai/v1/youtube/transcript?{encoded}"
-    req = _ureq.Request(endpoint, headers={"x-api-key": api_key})
-    try:
-        with _ureq.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode())
-    except _uerr.HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")
-        raise PipelineError(f"Supadata API error {exc.code}: {body[:120]}")
-    except Exception as exc:
-        raise PipelineError(f"Supadata request failed: {exc}")
 
+    data: dict = {}
+    for attempt in range(2):
+        req = _ureq.Request(endpoint, headers={"x-api-key": api_key})
+        try:
+            with _ureq.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode())
+            break  # success
+        except _uerr.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            print(f"[supadata] attempt {attempt + 1} HTTP {exc.code}: {body[:200]}")
+            if attempt == 0 and exc.code in (429, 500, 502, 503, 504):
+                import time as _time
+                print("[supadata] retrying in 3 s…")
+                _time.sleep(3)
+                continue
+            raise PipelineError(f"Supadata API error {exc.code}: {body[:200]}")
+        except Exception as exc:
+            err_str = str(exc)
+            print(f"[supadata] attempt {attempt + 1} exception: {err_str}")
+            if attempt == 0 and ("timeout" in err_str.lower() or "timed out" in err_str.lower()):
+                import time as _time
+                print("[supadata] retrying in 3 s…")
+                _time.sleep(3)
+                continue
+            raise PipelineError(f"Supadata request failed: {exc}")
+
+    # ── parse segments ────────────────────────────────────────────────────────
     segments = data.get("content", [])
     if not segments:
         raise PipelineError("Supadata returned no captions for this video.")
@@ -348,6 +401,10 @@ def _fetch_supadata_captions(video_url: str) -> list[dict]:
 
     if not sentences:
         raise PipelineError("No usable captions found (Supadata returned empty segments).")
+
+    # ── save to disk cache (survives --fresh) ─────────────────────────────────
+    _supadata_cache_save(video_id, sentences)
+    print(f"[supadata] fetched {len(sentences)} segments, cached as {video_id}")
 
     return sentences
 
