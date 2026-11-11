@@ -325,6 +325,36 @@ def _supadata_cache_save(video_id: str, sentences: list[dict]) -> None:
         print(f"[supadata] cache write failed (non-fatal): {exc}")
 
 
+def _merge_caption_segments(
+    raw: list[dict],
+    target_words: int = 20,
+    max_gap_ms: int = 1500,
+) -> list[dict]:
+    """Merge short YouTube caption snippets into sentence-length chunks.
+
+    YouTube auto-captions arrive as 2-5 word fragments. Merging within a gap
+    threshold and stopping at ~20 words produces sentences the mining model
+    can reason about, dramatically increasing moment discovery.
+    """
+    if not raw:
+        return []
+    merged: list[dict] = []
+    current = dict(raw[0])
+    for seg in raw[1:]:
+        gap = seg["start"] - current["end"]
+        words_so_far = len(current["text"].split())
+        if gap <= max_gap_ms and words_so_far < target_words:
+            current["text"] = current["text"].rstrip() + " " + seg["text"].lstrip()
+            current["end"] = seg["end"]
+        else:
+            if current["text"].strip():
+                merged.append(current)
+            current = dict(seg)
+    if current["text"].strip():
+        merged.append(current)
+    return merged
+
+
 def _fetch_supadata_captions(video_url: str) -> list[dict]:
     """Fetch captions via Supadata API.
 
@@ -385,22 +415,28 @@ def _fetch_supadata_captions(video_url: str) -> list[dict]:
     if not segments:
         raise PipelineError("Supadata returned no captions for this video.")
 
-    sentences = []
+    raw = []
     for seg in segments:
         text = seg.get("text", "").replace("\n", " ").strip()
         if not text or re.match(r"^\[.+\]$", text):
             continue
         offset_ms = int(seg.get("offset", 0))
         duration_ms = int(seg.get("duration", 2000))
-        sentences.append({
+        raw.append({
             "speaker": "A",
             "start": offset_ms,
             "end": offset_ms + duration_ms,
             "text": text,
         })
 
-    if not sentences:
+    if not raw:
         raise PipelineError("No usable captions found (Supadata returned empty segments).")
+
+    # Merge short caption snippets into sentence-length chunks so the mining
+    # model has enough context. YouTube auto-captions are typically 2-5 words
+    # each; merging within a 1.5 s gap and targeting ~20 words per sentence
+    # reduces 1500+ fragments to ~200-300 proper sentences.
+    sentences = _merge_caption_segments(raw)
 
     # ── save to disk cache (survives --fresh) ─────────────────────────────────
     _supadata_cache_save(video_id, sentences)
