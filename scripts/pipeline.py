@@ -1370,7 +1370,13 @@ def _run_judge_and_content(
         trim_note = f", {n_trimmed} trimmed" if n_trimmed else ""
         print(f"✅ Judged — {n_top8} selected for top 8{trim_note}")
     except Exception as exc:
+        import traceback
+        exc_type = type(exc).__name__
+        exc_short = str(exc)[:200]
         print(f"⚠️  Judge failed: {exc} — continuing without scores")
+        print(f"[judge-error] {exc_type}: {exc_short}", file=sys.stderr)
+        print(f"[judge-traceback] {traceback.format_exc()[:500]}", file=sys.stderr)
+        _emit("judge_error", f"Judge error: {exc_type}: {exc_short[:120]}", 66)
         for c in candidates:
             c["score"] = 0
             c["why"] = ""
@@ -2070,6 +2076,7 @@ def _run_main(args) -> None:
     # Judge emit with real post count
     n_posts = _count_gtm_posts()
     post_ref = f"{n_posts} real GTM posts" if n_posts else "GTM post benchmarks"
+    print(f"[mining-summary] {len(candidates)} candidates before judge", file=sys.stderr)
     _emit("judge", f"⚖️  Scoring {len(candidates)} moments against {post_ref}…", 65)
 
     old_scores = {c["id"]: c.get("score") for c in candidates}
