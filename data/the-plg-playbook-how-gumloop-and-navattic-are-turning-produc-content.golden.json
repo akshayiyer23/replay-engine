@@ -10,31 +10,32 @@
       "hook_type": "contrarian",
       "first_line_words": 19
     },
-    "post_first_line": "No seat limits. Purely usage-based.",
+    "post_first_line": "A team of 20-something can't sell to everyone.",
     "post_tag": {
-      "hook_type": "other",
-      "first_line_words": 5
+      "hook_type": "contrarian",
+      "first_line_words": 8
     },
     "hook_score_before": 72,
-    "hook_score_after": 70,
-    "linkedin_post": "No seat limits. Purely usage-based.\n\nThere's a reason this pricing model exists, and it's not what you'd guess.\n\nWe changed our approach about 4 months ago, maybe 5. Today it's a hybrid.\n\nThe constraint was simple: a 20-something person team, and a volume of signups and leads far bigger than a team that size can handle.\n\nA full sales process on every signup is impossible.\n\nSo pricing had to do some of the work that a sales team normally does. Usage decides who needs a conversation, not a rep's calendar.\n\nMost teams treat pricing and sales capacity as separate decisions. When your team is lean and inbound is heavy, they're the same decision.\n\nHow does your pricing model account for your sales capacity?",
+    "hook_score_after": 75,
+    "linkedin_post": "A team of 20-something can't sell to everyone.\n\nDima Khlopkov explained why a full sales process on every signup breaks down, and what changed the pricing model.\n\nThe team runs a lean operation, 20-something people, against a high volume of incoming signups and leads. Running a full sales process on every one of them is impossible.\n\nSo the model has no limits. It's purely usage-based.\n\nThe approach today is a hybrid. It changed about 4 months ago, maybe 5.\n\nThe constraint wasn't the product or the market. It was headcount versus inbound volume.\n\nWhen the team can't touch everyone, the pricing model has to do part of the selling.\n\nWhere does your sales process break at volume?",
     "carousel": [
-      "Slide 1: No seat limits. Purely usage-based pricing.",
-      "Slide 2: We changed our approach about 4 months ago.",
-      "Slide 3: Our team is 20-something people.",
-      "Slide 4: Signups and leads far outpace what we can handle.",
-      "Slide 5: A full sales process on everybody is impossible.",
-      "Slide 6: So pricing has to do part of the sales work.",
-      "Slide 7: Lean team plus heavy inbound makes pricing a capacity decision."
+      "Slide 1: A team of 20-something can't sell to everyone.",
+      "Slide 2: Signups and leads keep coming in at high volume.",
+      "Slide 3: A full sales process on every signup is impossible.",
+      "Slide 4: So there are no limits. Pricing is purely usage-based.",
+      "Slide 5: The approach today is a hybrid, not all-or-nothing.",
+      "Slide 6: It changed about 4 months ago, maybe 5.",
+      "Slide 7: Headcount versus inbound volume forced the decision.",
+      "Slide 8: Where does your sales process break at volume?"
     ],
     "lesson": {
-      "title": "Let pricing absorb what your sales team can't",
+      "title": "Let your pricing model absorb what your team can't",
       "takeaways": [
-        "A lean team can't run a full sales process on every signup.",
-        "Usage-based pricing lets customers start without a sales touch.",
-        "Pricing and sales capacity are one decision when inbound outpaces headcount."
+        "A lean team of 20-something can't run a full sales process on every signup.",
+        "Usage-based pricing with no limits lets people get started without a sales touch.",
+        "A hybrid approach lets sales effort go where it's needed, and the model can change as you learn. This one changed about 4 months ago."
       ],
-      "exercise": "List last month's signups and mark how many your team could realistically run a full sales process on. Then decide which of the rest your pricing model should handle by itself."
+      "exercise": "Compare last month's inbound signups to the number of people your team can realistically work. Decide which signups get a full sales process and which get a usage-based path."
     },
     "caption": "Can't sell to everyone"
   },
@@ -49,34 +50,34 @@
       "hook_type": "other",
       "first_line_words": 23
     },
-    "post_first_line": "30 days inactive. Then a login.",
+    "post_first_line": "30 days inactive, then a login.",
     "post_tag": {
       "hook_type": "story",
       "first_line_words": 6
     },
     "hook_score_before": 69,
     "hook_score_after": 87,
-    "linkedin_post": "30 days inactive. Then a login.\n\nThat's the easiest PLG signal to catch, and the hardest ones look nothing like it.\n\nThe simple end of the spectrum: a user goes quiet, then logs in again after 30 days. Basic, but worth acting on.\n\nThe hard end: a power user switches jobs. They land in a new workspace and start trying out Gumloop, even on a free package.\n\nThat person already knows the product. They can champion you in the new org, and they'll be far more excited to hear from you.\n\nSignals run from very simple to very advanced and hard to get.\n\nBut overthinking them is a bad idea. Implement whatever comes to mind first, then iterate across more places and sequences.\n\nWhat's the first PLG signal you'd track?",
+    "linkedin_post": "30 days inactive, then a login.\n\nThat's the easiest PLG signal. The hardest one is much more valuable.\n\nDima Khlopkov laid out how signals range from very simple to advanced and hard to get.\n\nAt the simple end: a user goes inactive for some time, then logs in again after around 30 days.\n\nAt the hard end: a power user switches jobs, lands in a new workspace, and starts trying out Gumloop, even on a free package.\n\nThat second signal matters because the team can approach that person while they're excited. They can champion the product in the new org.\n\nBut Dima's advice is not to overthink signals. Implement whatever comes to mind first, then iterate across different places and sequences.\n\nStart with the obvious one. Get it live. Refine it later.\n\nWhich signal did you ship first?",
     "carousel": [
       "Slide 1: PLG signals run from simple to very hard to get.",
-      "Slide 2: Easiest one: a user logs in again after 30 days.",
-      "Slide 3: Hardest one: a power user switches jobs.",
-      "Slide 4: They land in a new workspace and try you out, even on free.",
-      "Slide 5: Reach out then, and they're more excited to hear from you.",
-      "Slide 6: A past power user can champion you in the new org.",
-      "Slide 7: Don't overthink signals. Implement whatever comes to mind first.",
-      "Slide 8: Then iterate across more places and sequences."
+      "Slide 2: Easy signal: a user returns after around 30 days inactive.",
+      "Slide 3: Hard signal: a power user changes jobs and joins a new workspace.",
+      "Slide 4: If they try the product on a free package, flag it.",
+      "Slide 5: They're excited, so reach out and they can champion you.",
+      "Slide 6: Don't overthink signals. Implement what comes to mind first.",
+      "Slide 7: Then iterate across different places and sequences.",
+      "Slide 8: Which signal did you ship first?"
     ],
     "lesson": {
-      "title": "Start Simple With PLG Signals, Then Climb to the Hard Ones",
+      "title": "Start simple, then climb the PLG signal ladder",
       "takeaways": [
-        "Easy signals, like logging in again after 30 days of inactivity, are still worth acting on.",
-        "The hardest signals, like a power user switching jobs and trying your product in a new workspace, can create champions in new orgs.",
-        "Overthinking signals is a bad idea. Implement the first thing that comes to mind, then iterate."
+        "PLG signals range from simple (a login after around 30 days of inactivity) to advanced and hard to get.",
+        "A power user who changes jobs and tries the product in a new workspace can become a champion in the new org.",
+        "Overthinking signals is a mistake; implement what comes to mind first and iterate across places and sequences."
       ],
-      "exercise": "List five PLG signals, from the simplest (re-login after 30 days) to the hardest (a power user appearing in a new workspace). Set up the easiest one this week and note what to improve next."
+      "exercise": "List five PLG signals you could track, ranked from easiest to hardest. Implement the easiest one this week, then add one harder signal after you see how it performs."
     },
-    "caption": "Start simple with PLG signals"
+    "caption": "Easy to hard PLG signals"
   },
   {
     "id": "m1365",
@@ -96,27 +97,27 @@
     },
     "hook_score_before": 69,
     "hook_score_after": 72,
-    "linkedin_post": "Three tiers. Three levels of automation.\n\nMost teams run one outbound motion for every account. That's the mistake.\n\nHere's the system Dima Khlopkov described for splitting outbound by account value.\n\nTier 1 is the most manual. The team writes or refines the email by hand. The reason is that a link between your head of sales or founders and that individual can't be found by an AI agent and a web search. Only a human knows to mention it.\n\nTier 2 is semi-automated. Emails run automatically, but the LinkedIn steps stay manual. That diversifies how you reach the account without burning hours on each one.\n\nTier 3 is a fully automated sequence. No manual steps.\n\nThe effort goes where the context is hardest to gather. The automation goes where volume matters more than personalization.\n\nWhich tier do most of your accounts sit in today?",
+    "linkedin_post": "Three tiers. Three levels of automation.\n\nDima Khlopkov doesn't run one outbound motion for every account. The split is where the system gets interesting.\n\nTier 1 is the most manual. The GTM team writes the email by hand and refines it. Sometimes there's a link between our head of sales or a founder and that individual. That's a detail worth mentioning, and it's impossible to gather with an AI agent and a web search.\n\nTier 2 is semi-automated. Emails run automatically, but the LinkedIn steps stay manual. The goal is to diversify how those accounts get touched.\n\nTier 3 is a fully automated sequence.\n\nThe point is to match the effort to the account instead of treating every account the same. Human time goes where human context actually changes the message.\n\nWhere do you draw the line between manual and automated?",
     "carousel": [
       "Slide 1: Stop running one outbound motion for every account.",
-      "Slide 2: Split your accounts into three tiers by value.",
-      "Slide 3: Tier 1: manual emails, refined by your team.",
-      "Slide 4: Founder connections are impossible for an AI agent to find.",
+      "Slide 2: Split your accounts into three tiers of automation.",
+      "Slide 3: Tier 1: manual steps, with hand-refined emails.",
+      "Slide 4: Use context an AI agent can't find, like a founder connection.",
       "Slide 5: Tier 2: automated emails, manual LinkedIn steps.",
-      "Slide 6: Mixing channels diversifies how you reach each account.",
-      "Slide 7: Tier 3: a fully automated sequence, no manual steps.",
-      "Slide 8: Spend human effort where context is hardest to gather."
+      "Slide 6: Mixing channels diversifies how those accounts get touched.",
+      "Slide 7: Tier 3: a fully automated sequence.",
+      "Slide 8: Spend human effort where human context changes the message."
     ],
     "lesson": {
-      "title": "Match outbound effort to account value",
+      "title": "Build a 3-tier outbound system",
       "takeaways": [
-        "Tier 1 stays manual because human relationships, like a founder connection, can't be found by an AI agent with a web search.",
-        "Tier 2 blends automated emails with manual LinkedIn steps to diversify touchpoints.",
-        "Tier 3 runs a fully automated sequence for the remaining accounts."
+        "Tier 1 is manual: hand-refined emails that use context an AI agent and a web search can't gather, like a link between your founders or head of sales and the contact.",
+        "Tier 2 is semi-automated: automated emails, with manual LinkedIn steps to diversify the touch.",
+        "Tier 3 is a fully automated sequence for the remaining accounts."
       ],
-      "exercise": "List your target accounts and sort them into three tiers. For each Tier 1 account, write down one personal connection or insight an AI agent couldn't find, then use it in a manual email."
+      "exercise": "Sort your target accounts into three tiers. For each tier, write down which steps stay manual and which are automated. Then, for tier 1, list any personal connections between your team and those contacts."
     },
-    "caption": "Three tiers of outbound"
+    "caption": "3 tiers of outbound"
   },
   {
     "id": "m1517",
@@ -129,32 +130,32 @@
       "hook_type": "contrarian",
       "first_line_words": 15
     },
-    "post_first_line": "Timing beats messaging. Every time.",
+    "post_first_line": "Timing beats messaging at every level.",
     "post_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 3
+      "first_line_words": 6
     },
     "hook_score_before": 68,
-    "hook_score_after": 69,
-    "linkedin_post": "Timing beats messaging. Every time.\n\nMost teams spend weeks polishing copy and almost no time on when it lands.\n\nDima Khlopkov's view: someone who just tried Gumloop is excited about the platform. That's the best state they'll ever be in for a conversation.\n\nSo the message can stay simple. Personalize by role. Tell GTM teams what other GTM teams are doing with Gumloop. Tell marketing teams what marketing teams are doing with it.\n\nThen add one more layer: name-drop a teammate.\n\nIn Dima's words, name-dropping people is a different level of personalization, because you can't really source that information from the internet.\n\nAnyone can scrape a job title or a funding round. Nobody can scrape who inside the account already uses your product.\n\nSo the order of operations is: catch the moment, keep the message light, and use the internal signal no one else has.\n\nWhat's your fastest follow-up after someone tries your product?",
+    "hook_score_after": 71,
+    "linkedin_post": "Timing beats messaging at every level.\n\nDima Khlopkov has a simple rule for who to reach out to first, and it has nothing to do with copy.\n\nIn Dima Khlopkov's view, the best moment to talk to someone is right after they try your product. They just signed up for Gumloop, they're excited about the platform, and they're in the best state possible to chat.\n\nThe message itself stays very simple. Personalize based on role: GTM teams are using Gumloop for this and that, or marketing teams are using Gumloop for this and that.\n\nThen name-drop people.\n\nDima Khlopkov's take: name-dropping is a different level of personalization, because you can't really source that information from the internet.\n\nSo the order of operations is: get the timing right, keep the message simple, and add the one detail nobody can scrape.\n\nWhat's the best trigger you've timed outreach around?",
     "carousel": [
       "Slide 1: Timing beats messaging at every level.",
-      "Slide 2: Someone who just tried your product is at peak excitement.",
-      "Slide 3: That week is the best window to start a conversation.",
+      "Slide 2: Reach people right after they try your product.",
+      "Slide 3: They're excited, and in the best state to chat.",
       "Slide 4: Keep the message simple. Personalize by role.",
-      "Slide 5: Tell GTM teams what GTM teams are doing with you.",
-      "Slide 6: Then name-drop a teammate who already uses the product.",
-      "Slide 7: You can't source that detail from the internet.",
-      "Slide 8: Catch the moment, keep it light, use the internal signal."
+      "Slide 5: GTM teams use us for this. Marketing teams, for that.",
+      "Slide 6: Then name-drop a teammate or a person they know.",
+      "Slide 7: That detail can't be sourced from the internet.",
+      "Slide 8: Right moment, simple message, one unscrapable detail."
     ],
     "lesson": {
-      "title": "Timing Beats Messaging",
+      "title": "Win on timing, then add the detail nobody can scrape",
       "takeaways": [
-        "Reach people when they have just tried your product, while they are excited.",
-        "A simple role-based message is enough when timing is right.",
-        "Naming a teammate who uses the product is personalization nobody can scrape."
+        "The best moment to reach someone is right after they try your product, while they're excited.",
+        "A simple message personalized by role is enough when timing is right.",
+        "Name-dropping people is a deeper level of personalization because the information can't be sourced from the internet."
       ],
-      "exercise": "List the last 10 people who tried your product. Write one role-based message for each that name-drops a teammate from their company, and send it within a week of their trial."
+      "exercise": "Pick one recent product-trial trigger. Write a two-sentence message personalized by role, add one real name of a teammate or peer, and send it within the same week."
     },
     "caption": "Timing beats messaging"
   },
@@ -169,34 +170,34 @@
       "hook_type": "stat",
       "first_line_words": 14
     },
-    "post_first_line": "10 to 12% reply rates. From one signal.",
+    "post_first_line": "10 to 12% reply rates. From outbound.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 8
+      "first_line_words": 4
     },
     "hook_score_before": 64,
-    "hook_score_after": 67,
-    "linkedin_post": "10 to 12% reply rates. From one signal.\n\nMost outbound teams ignore it completely.\n\nThe signal: a prospect recently viewed the founder's profile, viewed the company profile, or engaged with the company's content.\n\nThat person has Gumloop top of mind. It's the best time to reach out.\n\nThe goal is to combine inbound and outbound without being pushy, and to reach out at the right time.\n\nThe team found they can keep 10 to 12% reply rates by acting on LinkedIn-based signals and keeping inbound-led outbound flows.\n\nThe lesson: timing beats volume. Someone who just looked at your founder is already warmer than any cold list.\n\nWhich LinkedIn signal do you act on first?",
+    "hook_score_after": 65,
+    "linkedin_post": "10 to 12% reply rates. From outbound.\n\nIt came from acting on one kind of signal, and most teams ignore it.\n\nDima Khlopkov noticed that when a prospect recently viewed the founder's profile, viewed the company's profile, or engaged with the company's content, Gumloop was top of mind for them.\n\nThat is the best time to reach out.\n\nSo the team combined inbound and outbound. They act on LinkedIn-based signals and keep inbound-led outbound flows, without being too pushy and while still reaching out at the right time.\n\nThe result: they can keep reply rates at 10 to 12%.\n\nThe outreach isn't cold anymore. The prospect already raised a hand, just quietly.\n\nWhich LinkedIn signal does your team act on today?",
     "carousel": [
-      "Slide 1: 10 to 12% reply rates from one LinkedIn signal",
-      "Slide 2: The signal: someone viewed your founder's profile",
-      "Slide 3: Company profile views and content engagement count too",
-      "Slide 4: That prospect has you top of mind right now",
-      "Slide 5: Right now is the best time to reach out",
-      "Slide 6: Combine inbound and outbound without being pushy",
-      "Slide 7: Act on LinkedIn signals, keep inbound-led outbound flows",
-      "Slide 8: Timing beats volume every time"
+      "Slide 1: 10 to 12% reply rates from outbound",
+      "Slide 2: The trigger was a LinkedIn profile view",
+      "Slide 3: A prospect views the founder's profile",
+      "Slide 4: Or the company profile. Or engages with content.",
+      "Slide 5: That means your brand is top of mind right now",
+      "Slide 6: Reach out then, without being pushy",
+      "Slide 7: Combine inbound signals with outbound flows",
+      "Slide 8: Result: reply rates held at 10 to 12%"
     ],
     "lesson": {
-      "title": "Inbound-led outbound: reach out when they're already looking",
+      "title": "Inbound-led outbound: time outreach to LinkedIn signals",
       "takeaways": [
-        "Profile views and content engagement show a prospect has you top of mind.",
-        "The best time to reach out is right after those signals appear.",
-        "Acting on LinkedIn-based signals in inbound-led outbound flows kept reply rates at 10 to 12%."
+        "Profile views of the founder or company and content engagement show a prospect has your brand top of mind.",
+        "The best time to reach out is right after those signals, without being pushy.",
+        "Combining inbound signals with outbound flows kept reply rates at 10 to 12%."
       ],
-      "exercise": "List the three LinkedIn signals you can see today (founder profile views, company page views, post engagement). Pick one and write a short, non-pushy outreach message to send within a day of the signal."
+      "exercise": "List the LinkedIn signals you can see this week (founder profile views, company profile views, content engagement). Pick one, then message the people who triggered it within a day."
     },
-    "caption": "One signal. 10-12% replies."
+    "caption": "Timing beats volume"
   },
   {
     "id": "m2185",
@@ -209,32 +210,33 @@
       "hook_type": "stat",
       "first_line_words": 13
     },
-    "post_first_line": "4x higher reply rates from product signals.",
+    "post_first_line": "Product signals can drive 4x reply rates.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 6
+      "first_line_words": 7
     },
     "hook_score_before": 60,
     "hook_score_after": 63,
-    "linkedin_post": "4x higher reply rates from product signals.\n\nMost teams benchmark their replies against the wrong number.\n\nThe question we hear a lot: what's a good positive reply rate? The honest answer is \"it depends.\" It depends on the type of signal you're using, and the rate keeps climbing as you combine and layer signals.\n\nHere's the baseline from the data we're digging into:\n\nStandard positive replies: anywhere from 0.2 to 1%.\nStandard replies overall: 1 to 3%.\n\nProduct signals are a different story. In what we've seen, the reply rate can be 4x higher than a typical positive reply rate.\n\nThe reason is simple. These are your warmest accounts. They already know the product and are engaging with it.\n\nSo if your campaigns run on cold lists and you're comparing yourself to a signal-based benchmark, you'll misread your results. The reverse is also true.\n\nBenchmark by signal type, not by channel.\n\nWhich signal gets your best reply rate today?",
+    "linkedin_post": "Product signals can drive 4x reply rates.\n\nBut the answer to \"what's a good reply rate\" starts with \"it depends.\"\n\nQuintin Smith has been digging into this data at Unify. The most honest answer is that positive reply rate is determined by the type of signal you use. It keeps climbing as you combine and layer signals.\n\nHere's the range Quintin Smith shared:\n\nPositive replies on a standard motion: anywhere from 0.2 to 1%.\n\nReplies in general on a standard motion: 1 to 3%.\n\nProduct signals specifically: the reply rate can be 4x higher than a typical positive reply rate.\n\nThe reason is simple. Those are your warmest accounts.\n\nSo before you benchmark your numbers, check which signal is behind the outreach. A \"bad\" reply rate may just be a cold list, not bad messaging.\n\nWhat reply rate are you seeing on your best signal?",
     "carousel": [
       "Slide 1: What's a good positive reply rate? It depends.",
-      "Slide 2: Standard positive replies: anywhere from 0.2 to 1%.",
-      "Slide 3: Standard replies overall: 1 to 3%.",
-      "Slide 4: Product signals can run 4x higher than a typical positive reply rate.",
-      "Slide 5: Why? Those are your warmest accounts.",
-      "Slide 6: Layering signals pushes reply rates higher still.",
-      "Slide 7: Benchmark by signal type, not by channel."
+      "Slide 2: Signal type largely determines your reply rate.",
+      "Slide 3: Layering signals pushes the numbers even higher.",
+      "Slide 4: Standard positive replies: roughly 0.2 to 1%.",
+      "Slide 5: Standard replies overall: 1 to 3% is typical.",
+      "Slide 6: Product signals can hit 4x a typical positive reply rate.",
+      "Slide 7: Why? Those are your warmest accounts.",
+      "Slide 8: Benchmark by signal, not by one blended number."
     ],
     "lesson": {
       "title": "Benchmark reply rates by signal type",
       "takeaways": [
-        "Positive reply rate depends on the type of signal you use, and it climbs as you layer signals.",
-        "Standard positive replies run 0.2 to 1%, and standard replies overall run 1 to 3%.",
-        "Product signals can produce reply rates 4x higher than a typical positive reply rate, because those accounts are your warmest."
+        "Positive reply rate depends heavily on the type of signal behind the outreach, and it climbs as signals are layered.",
+        "Standard benchmarks: 0.2 to 1% positive replies, 1 to 3% for replies in general.",
+        "Product signals can produce a reply rate around 4x a typical positive reply rate because those accounts are the warmest."
       ],
-      "exercise": "Split your last campaigns' results by signal type (cold list, intent, product signal). Compare each positive reply rate to the ranges above and note where product signals outperform."
+      "exercise": "Split your last month of outbound by signal source (product signal, other signals, no signal). Calculate the positive reply rate for each and compare it to the 0.2 to 1% standard range."
     },
-    "caption": "Good reply rate? 4x with signals"
+    "caption": "Product signals: 4x reply rate"
   }
 ]

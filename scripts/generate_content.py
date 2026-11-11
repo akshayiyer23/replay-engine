@@ -42,30 +42,59 @@ Write like a sharp practitioner sharing real insight — no corporate tone, no m
 ## Winning hook patterns (high-performing GTM post openers)
 {hooks}
 
-## Rules
+{pov_block}
+
+## Pronouns — HARD RULE
+Never use gendered pronouns. Never write he, she, his, her, him.
+Use the person's name on first reference, then rewrite around it ("the approach", "that answer").
+
+## Sensitive claims — HARD RULE
+Never name a real company, school, or person in a negative, legal, or compliance context.
+If the transcript says a named org "was breaking the law" or "violated" something,
+anonymize: write "a large school district" / "one company" instead, or drop the detail entirely.
+If the moment can't stand without the sensitive claim, skip it and return a minimal placeholder.
+
+## Grounding — HARD RULE
+Every factual claim (not just numbers) must be directly in the transcript — no inference,
+no extrapolation. If a claim isn't supported by the transcript, remove it from the post.
+Numbers must preserve qualifiers exactly: "close to 30", "around 40%" — not "30" or "40%".
+
+## No feature pitches — HARD RULE
+Never describe Unify's product capabilities in a sales context.
+Wrong: "Unify has 40 to 50 data providers." "Unify connects every data point and signals."
+Right: Mention Unify by name as context ("a Unify workflow", "inside Unify") — never sell it.
+
+## Formatting rules
 - LinkedIn post first line: ≤ 8 words. Never start with "I". Direct. No question marks.
-- STAT/STORY/CONTRARIAN openers: If the transcript contains a specific number (accounts,
-  meetings, days, dollars, percent), LEAD WITH IT as a stat hook. That is the highest-
-  performing opener type. Only fall back to contrarian or story if no strong number exists.
-  Example stat: "30 meetings. One month. Three AI signals." or "40,000 accounts checked in a week."
+- STAT openers preferred: if the transcript has a specific number (accounts, meetings, days,
+  dollars, percent), LEAD WITH IT as a stat hook. Fall back to contrarian/story only if no
+  strong number exists.
 - Line 2 (second paragraph, 1 sentence): open loop — tease the insight without delivering it.
-  Create curiosity that makes the reader scroll. No payoff yet. No "Here's what I mean."
-  Examples: "Most teams don't know this is even possible." / "That number surprised us too."
+  No "Here's what I mean." Create curiosity. No payoff yet.
 - Short paragraphs (1–3 sentences). Blank line between paragraphs. Plain text only.
-- Written prose, not spoken transcript: cut all filler and asides — "and so", "you know",
-  "right?", "I mean", "sort of", "pretty much", "essentially", "obviously". Rewrite each
-  sentence so it reads like a polished post, never like someone talking.
-- Zero product pitches. Never: "sign up", "try X", "book a demo", "check out".
+- Zero explicit pitches: never "sign up", "try X", "book a demo", "check out".
 - End every post with one short question (≤ 10 words) that invites a real comment.
-  Not rhetorical — ask something the reader can actually answer.
-- HARD RULE: Only use numbers and claims that appear WORD FOR WORD in the transcript.
-  Do not round, extrapolate, or invent any figures. If a transcript says "50,000 accounts
-  in under an hour", write exactly that — not "tens of thousands" or "60 minutes".
-  Preserve qualifiers: if the transcript says "close to 30 meetings" or "around 40%",
-  do NOT drop "close to" or "around". Write the qualifier as it appears.
+- Written prose, not spoken transcript: cut all filler ("and so", "you know", "right?",
+  "I mean", "sort of", "pretty much", "essentially", "obviously").
 - Carousel: each slide = one punchy line (8–12 words). No bullets inside a slide.
 - Caption: 3–6 words max for the on-screen text that appears first 3 seconds.
 {voice_block}\
+"""
+
+_POV_THIRD_BLOCK = """\
+## Point of view: Unify company page post — HARD RULE
+Write in THIRD PERSON crediting the speaker by full name on first reference.
+Speaker: {speaker_name}
+Example opener: "{speaker_name} spent 10 hours a month just to prioritize accounts."
+NEVER use I, me, my, myself. Using "we" or "our" for Unify the company is fine.
+Never use the speaker's name in a first-person sentence structure.
+"""
+
+_POV_FIRST_BLOCK = """\
+## Point of view: {post_for}'s personal LinkedIn post — HARD RULE
+Write in FIRST PERSON — this is {post_for} speaking directly to their audience.
+NEVER refer to {post_for} in third person ("{last_name}'s answer", "{last_name} says",
+"their approach"). Use "I", "we", "my", "our" throughout. Write as if {post_for} is talking.
 """
 
 _VOICE_BLOCK = """\
@@ -122,6 +151,17 @@ _FILLER_RE = re.compile(
     r'|obviously,?|basically,?)\b',
     re.I,
 )
+_POV_FIRST_RE = re.compile(r'\bI\b|\bme\b|\bmy\b|\bmyself\b', re.I)
+_GENDER_RE = re.compile(r'\b(he|she|his|her|him)\b', re.I)
+_SENSITIVE_RE = re.compile(
+    r'\b(breaking the law|violat\w+ (?:the )?law|unintentionally breaking|discriminat\w+)\b',
+    re.I,
+)
+_UNIFY_PITCH_RE = re.compile(
+    r'\bUnify has\b|\d+\s*(?:to\s*\d+\s*)?\+?\s*data providers?\b',
+    re.I,
+)
+
 _REWRITE_USER = """\
 This LinkedIn post needs editing. Fix ALL issues listed below:
 {issues}
@@ -132,13 +172,17 @@ Original post:
 Context (angle and transcript excerpt):
 {context}
 
+Point of view rule:
+{pov_rule}
+
 Rules: hook ≤ 8 words; no product pitch; no filler phrases; ≤ 1,300 chars total; \
-end with exactly one question (≤ 10 words).
+end with exactly one question (≤ 10 words); no gendered pronouns (he/she/his/her/him); \
+no sensitive claims about real named entities in legal/compliance/negative context.
 Return ONLY the rewritten post text — no JSON, no preamble.\
 """
 
 
-def _editor_check(post: str) -> list[str]:
+def _editor_check(post: str, post_for: str = "", speaker_name: str = "") -> list[str]:
     """Return list of issue strings. Empty list = passes all checks."""
     issues = []
     lines = [ln for ln in post.split("\n") if ln.strip()]
@@ -157,11 +201,52 @@ def _editor_check(post: str) -> list[str]:
     last = next((ln for ln in reversed(post.split("\n")) if ln.strip()), "")
     if not last.strip().endswith("?"):
         issues.append(f"doesn't end with a question (last: '…{last.strip()[-30:]}')")
+
+    # POV: Unify company page → must be third person (no I/me/my)
+    if "unify company page" in post_for.lower():
+        m = _POV_FIRST_RE.search(post)
+        if m:
+            issues.append(f"POV: first-person '{m.group()}' on Unify company page (must be third person)")
+
+    # POV: speaker's own page → must NOT use speaker name in third-person
+    elif speaker_name and post_for and post_for.lower() not in ("", "unify company page"):
+        sp_last = speaker_name.split()[-1]
+        third_person_re = re.compile(
+            rf"\b{re.escape(sp_last)}'s (?:answer|approach|take|recommendation|strategy|method)\b"
+            rf"|\b{re.escape(sp_last)}\s+(?:says|explains|notes|learned|shared|recommends|believes|thinks)\b",
+            re.I,
+        )
+        m = third_person_re.search(post)
+        if m:
+            issues.append(f"POV: '{m.group()}' — speaker referred to in third person on own account")
+
+    # Gendered pronouns
+    m = _GENDER_RE.search(post)
+    if m:
+        issues.append(f"gendered pronoun: '{m.group()}' — use name instead")
+
+    # Sensitive claims
+    m = _SENSITIVE_RE.search(post)
+    if m:
+        issues.append(f"sensitive claim: '{m.group()}' — anonymize or drop")
+
+    # Unify feature pitch
+    m = _UNIFY_PITCH_RE.search(post)
+    if m:
+        issues.append(f"Unify feature pitch: '{m.group()[:60]}' — remove or reframe")
+
     return issues
 
 
 def _editor_rewrite(post: str, issues: list[str], context: str,
+                    post_for: str, speaker_name: str,
                     client: anthropic.Anthropic) -> str:
+    if "unify company page" in post_for.lower():
+        pov_rule = f"Write in THIRD PERSON. Speaker is {speaker_name}. Never use 'I', 'me', 'my'. Use speaker's full name or 'Unify'."
+    else:
+        last_name = speaker_name.split()[-1] if speaker_name else post_for
+        pov_rule = f"Write in FIRST PERSON as {post_for}. Never refer to them as '{last_name}' in third person."
+
     resp = client.messages.create(
         model=MODEL,
         max_tokens=4096,
@@ -171,6 +256,7 @@ def _editor_rewrite(post: str, issues: list[str], context: str,
             issues="\n".join(f"- {i}" for i in issues),
             post=post,
             context=context[:500],
+            pov_rule=pov_rule,
         )}],
     )
     tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
@@ -194,13 +280,21 @@ def _ethan_examples(posts_path: Path, n: int = 4) -> str:
     return "\n\n".join(f"---\n{p['text'][:400].strip()}\n---" for p in ethan[:n])
 
 
-def _build_system(hooks_md: str, post_for: str) -> str:
+def _build_system(hooks_md: str, post_for: str, speaker_name: str = "") -> str:
+    # Build POV block based on who the post is for
+    if "unify company page" in (post_for or "").lower():
+        pov = _POV_THIRD_BLOCK.format(speaker_name=speaker_name or "the speaker")
+    else:
+        last_name = (post_for or "").split()[-1] if post_for else "the speaker"
+        pov = _POV_FIRST_BLOCK.format(post_for=post_for or "the speaker", last_name=last_name)
+
     voice = ""
-    if "ethan" in post_for.lower():
+    if "ethan" in (post_for or "").lower():
         posts_path = DATA_DIR / "posts.json"
         if posts_path.exists():
             voice = _VOICE_BLOCK.format(examples=_ethan_examples(posts_path))
-    return _SYSTEM_BASE.format(hooks=hooks_md.strip(), voice_block=voice)
+
+    return _SYSTEM_BASE.format(hooks=hooks_md.strip(), pov_block=pov, voice_block=voice)
 
 
 def _call_sonnet(system: str, user: str, client: anthropic.Anthropic) -> str:
@@ -292,7 +386,8 @@ def generate_for_candidates(
             }
 
         # ── 2. generate content ──
-        system = _build_system(hooks_md, post_for)
+        speaker_name = c.get("speaker_name", "")
+        system = _build_system(hooks_md, post_for, speaker_name)
         slim = {
             "id": cid,
             "angle": c.get("angle", ""),
@@ -322,17 +417,18 @@ def generate_for_candidates(
 
         # ── 4. editor pass (check + one rewrite if needed) ──
         post = content["linkedin_post"]
-        issues = _editor_check(post)
+        issues = _editor_check(post, post_for, speaker_name)
         editor_fixed = False
         if issues:
             print(f"\n      ✍️  editor rewrites ({len(issues)} issue(s)): {issues[0][:60]}…", end=" ", flush=True)
             post = _editor_rewrite(
                 post, issues,
                 f"Angle: {c.get('angle','')}\nTranscript: {c.get('transcript','')[:300]}",
+                post_for, speaker_name,
                 client,
             )
             content["linkedin_post"] = post
-            remaining = _editor_check(post)
+            remaining = _editor_check(post, post_for, speaker_name)
             editor_fixed = len(remaining) == 0
             _QA_ENTRIES.append({
                 "gate": "editor", "item_id": cid,

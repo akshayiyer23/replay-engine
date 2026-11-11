@@ -10,34 +10,34 @@
       "hook_type": "contrarian",
       "first_line_words": 15
     },
-    "post_first_line": "10 employees. 10 audiences. One announcement.",
+    "post_first_line": "10 audiences beat one founder's audience.",
     "post_tag": {
-      "hook_type": "other",
+      "hook_type": "contrarian",
       "first_line_words": 6
     },
     "hook_score_before": 95,
     "hook_score_after": 95,
-    "linkedin_post": "10 employees. 10 audiences. One announcement.\n\nThat math beats any single founder's following.\n\nI've watched this play out twice, and the pattern holds.\n\nAn audience of my own is great. But if 10 people at our company each have their own independent audience, the reach we get is far larger.\n\nIt shows up most around fundraise announcements. We get the whole team posting their own unique stories, and we coach people on how to do it well. It makes a world of difference.\n\nI saw the same thing at Ramp in 2020 and 2021.\n\nX was the platform that worked there, and there was a lot of Twitter talk. But the presence didn't come mainly from the founders. It came from the early hires on the team.\n\nThe lesson for me: stop treating distribution as the founder's job. Build it across the team.\n\nWho on your team has an audience you're not using yet?",
+    "linkedin_post": "10 audiences beat one founder's audience.\n\nI saw this play out firsthand, and it changed how I think about reach.\n\nIf I have an audience, that's great. But if 10 people at our company each have their own independent audience, the reach we get is a huge amount bigger.\n\nIt shows up most around fundraise announcements. We get the whole team posting their own unique stories, and we coach people on how to do that well. It makes a world of difference.\n\nI saw the same thing at Ramp in 2020 and 2021. X was the platform that worked there, and there was a lot of Twitter talk.\n\nThe people with the presence were mostly the early hires on the team. It was less about the founder.\n\nA founder's voice is one channel. A team of people with their own stories is a network.\n\nWho on your team should be posting but isn't?",
     "carousel": [
-      "Slide 1: 10 employees with 10 audiences beat one founder.",
-      "Slide 2: One founder with one audience caps your reach fast.",
-      "Slide 3: Independent audiences multiply reach on every announcement.",
-      "Slide 4: For fundraises, we get the whole team posting their own stories.",
-      "Slide 5: Each person tells it differently. We coach them to do it well.",
-      "Slide 6: At Ramp in 2020 and 2021, early hires drove the presence.",
-      "Slide 7: X was the platform that worked there, and it wasn't founder-led.",
-      "Slide 8: Distribution isn't the founder's job. Build it across the team."
+      "Slide 1: One founder's audience is just one audience.",
+      "Slide 2: Ten teammates with their own audiences multiply your reach.",
+      "Slide 3: We saw it most clearly on fundraise announcements.",
+      "Slide 4: Everyone posted their own unique story, not a copy-paste.",
+      "Slide 5: We coach people on how to post effectively.",
+      "Slide 6: At Ramp in 2020-2021, X was the platform that worked.",
+      "Slide 7: The presence came from early hires, less from the founder.",
+      "Slide 8: Stop relying on one voice. Build a network of them."
     ],
     "lesson": {
-      "title": "Team-led distribution beats founder-led distribution",
+      "title": "Distribution comes from many voices, not one founder",
       "takeaways": [
-        "Independent audiences across the team create far more reach than one founder's following.",
-        "Announcements like fundraises land harder when the whole team posts their own unique stories.",
-        "At Ramp, early hires, not founders, were often the key content creators."
+        "Ten people with independent audiences give you far more reach than one founder alone.",
+        "Big announcements like fundraises work best when the whole team posts their own unique stories.",
+        "At Ramp, early hires were often the ones with the strongest presence on X, not the founders."
       ],
-      "exercise": "List five teammates who could share company news in their own voice. Pick your next announcement, then coach each of them on their own angle before it goes live."
+      "exercise": "Before your next company announcement, ask 5 teammates to each write a post from their own angle, and spend 15 minutes coaching each one on their story."
     },
-    "caption": "10 audiences beat one founder"
+    "caption": "10 audiences beat one"
   },
   {
     "id": "m1126",
@@ -50,32 +50,32 @@
       "hook_type": "contrarian",
       "first_line_words": 12
     },
-    "post_first_line": "The Dreamforce stunt lost to its LinkedIn post.",
+    "post_first_line": "The Dreamforce post beat the Dreamforce stunt.",
     "post_tag": {
-      "hook_type": "story",
-      "first_line_words": 8
+      "hook_type": "contrarian",
+      "first_line_words": 7
     },
     "hook_score_before": 95,
     "hook_score_after": 95,
-    "linkedin_post": "The Dreamforce stunt lost to its LinkedIn post.\n\nThe result surprised us, and it changed how we think about IRL marketing.\n\nWe've done a few of these. The most recent was the Super Bowl lead-up, where our signs showed up in the background of First Take. A few months back, we ran an in-real-life stunt at Dreamforce.\n\nThe social post about Dreamforce ended up driving more demos booked than the stunt itself, by quite a bit.\n\nSometimes the stunt works in person, and we have cases where it did. Sometimes it doesn't. Doing something a little different is still worth it.\n\nWith AI lowering the barrier to entry for content, the more you do IRL and translate to social, the better.\n\nThe stunt is the raw material. The post is where the reach comes from.\n\nBoth of these also came out of our team organically.\n\nWhat's the best IRL stunt you've seen turn into content?",
+    "linkedin_post": "The Dreamforce post beat the Dreamforce stunt.\n\nNot by a little. The LinkedIn post booked more demos than the in-person thing, by quite a bit.\n\nWe did an in real life stunt at Dreamforce a few months back. Before that, we got signs in the background of First Take leading up to the Super Bowl.\n\nSome of these work in person. We definitely have cases of that. Some don't.\n\nBut the stunt isn't only the event. It's the raw material for the social post.\n\nWith AI lowering the barrier to entry for content, anyone can crank out words. Almost no one can fake something that happened in the real world.\n\nSo do the thing IRL, then translate it to social.\n\nThe other part I like: both of these came organically from our team. Nobody handed us a campaign brief. Being outside the box and doing something a little different is just fun.\n\nWhat's your best IRL moment turned into content?",
     "carousel": [
-      "Slide 1: The Dreamforce stunt lost to its own LinkedIn post.",
-      "Slide 2: AI has lowered the barrier to entry for content.",
-      "Slide 3: Real-world moments are now the hardest thing to copy.",
-      "Slide 4: Our signs showed up in the background of First Take.",
-      "Slide 5: The Dreamforce social post booked more demos than the stunt.",
-      "Slide 6: Sometimes stunts work in person. Sometimes they don't.",
-      "Slide 7: Do the stunt, then translate it to social.",
-      "Slide 8: The best ideas came organically from our own team."
+      "Slide 1: The Dreamforce post booked more demos than the stunt.",
+      "Slide 2: Not by a little. By quite a bit.",
+      "Slide 3: AI made written content cheap to produce.",
+      "Slide 4: Real-world moments are hard to fake.",
+      "Slide 5: Some stunts work in person. Some don't.",
+      "Slide 6: The social post can win even when the stunt doesn't.",
+      "Slide 7: Our best ideas came organically from the team.",
+      "Slide 8: Do it IRL, then translate it to social."
     ],
     "lesson": {
-      "title": "Treat IRL stunts as content raw material",
+      "title": "The stunt is the raw material, not the result",
       "takeaways": [
-        "With AI lowering the barrier to entry for content, IRL moments stand out more.",
-        "The social post about a stunt can outperform the stunt itself on demos booked.",
-        "Stunts don't always work in person, but being outside the box is still worth it."
+        "AI lowers the barrier to creating content, so real-world moments stand out more.",
+        "An in-person stunt may not convert on site, but the social post about it can drive more demos.",
+        "Ideas that come organically from your team are worth acting on."
       ],
-      "exercise": "Pick one real-world thing your team could do this month, and plan the post about it before you do it."
+      "exercise": "Pick one real-world thing your team can do this month, even something small. Plan how you'll capture it and post about it before you do it."
     },
     "caption": "The post beat the stunt"
   },
@@ -90,34 +90,34 @@
       "hook_type": "how_to",
       "first_line_words": 12
     },
-    "post_first_line": "Your origin story is your best-performing post.",
+    "post_first_line": "Founder origin stories consistently top the charts.",
     "post_tag": {
       "hook_type": "other",
       "first_line_words": 7
     },
     "hook_score_before": 78,
     "hook_score_after": 81,
-    "linkedin_post": "Your origin story is your best-performing post.\n\nMost founders skip it. That's a mistake.\n\nTommy Clark says this format is consistently among the best performing post types across all the clients they work with. It's why they always start there.\n\nPeople want to hear the story behind your company. It humanizes you, and it's a story only you can tell.\n\nThe format also hits a few checkboxes at once:\n\n\u2192 It works as a milestone announcement, so people celebrate you\n\u2192 It humanizes you\n\u2192 It gives you room for conflict and interesting moments, which almost every founding story has\n\nAustin has posted a few versions of his over time. The earlier one and a more recent edition from a couple of weeks back both show the same format working.\n\nYou don't need a new idea for your first post. You need to answer one question: what's the story behind the start of your company?\n\nWhat was the most interesting moment in your founding story?",
+    "linkedin_post": "Founder origin stories consistently top the charts.\n\nTommy Clark says one post format keeps winning across all the clients the team works with.\n\nIt's the story behind the start of your company. Austin has posted a few versions of it on LinkedIn, including one just a couple weeks back.\n\nTommy Clark explains why it's always where the team starts: people just want to hear the story behind your company.\n\nIt works because it hits a few checkboxes at once:\n\nIt's a milestone announcement, and people like to celebrate you.\n\nIt humanizes you.\n\nIt's a story only you can tell.\n\nAnd if there's conflict or an interesting moment in the founding story, which Tommy Clark says almost every founder has, the post gets even stronger.\n\nWhat's the most interesting moment in your founding story?",
     "carousel": [
-      "Slide 1: Your first LinkedIn post should be your origin story",
-      "Slide 2: It's consistently among the best performing post types for clients",
-      "Slide 3: People want the story behind your company",
-      "Slide 4: Only you can tell it, so it humanizes you",
-      "Slide 5: It works like a milestone announcement people can celebrate",
-      "Slide 6: Conflict and interesting moments make it stick",
-      "Slide 7: Almost every founding story has them",
-      "Slide 8: Start with: what's the story behind your company?"
+      "Slide 1: The first LinkedIn post every founder should write",
+      "Slide 2: Tell the story behind the start of your company",
+      "Slide 3: It's consistently among the best performing post types",
+      "Slide 4: It works as a milestone announcement people can celebrate",
+      "Slide 5: It humanizes you in a way nothing else does",
+      "Slide 6: It's a story only you can tell",
+      "Slide 7: Conflict and interesting moments make it even stronger",
+      "Slide 8: Almost every founder has one. Start there."
     ],
     "lesson": {
       "title": "Start with your origin story",
       "takeaways": [
-        "The origin story is consistently among the best performing post types across clients, so it's the place to start.",
-        "It humanizes you and only you can tell it.",
-        "It doubles as a milestone announcement, and conflict or interesting moments make it stronger."
+        "The story behind your company is consistently among the best performing post types across the clients Tommy Clark works with.",
+        "The format works as a milestone announcement, humanizes you, and is a story only you can tell.",
+        "Conflict or interesting moments in the founding story make the post stronger."
       ],
-      "exercise": "Write down the story behind the start of your company, then circle the moment of conflict or surprise and build your first post around it."
+      "exercise": "Write down the moment your company almost didn't happen or the conflict that shaped its start, then turn it into a first draft of your origin story post."
     },
-    "caption": "Start with your origin story"
+    "caption": "Your origin story post first"
   },
   {
     "id": "m0873",
@@ -127,37 +127,37 @@
     "angle": "The simple monthly update post: one metric, 3 wins, 3 learnings, what's next",
     "judge_score": 77,
     "angle_tag": {
-      "hook_type": "other",
+      "hook_type": "how_to",
       "first_line_words": 13
     },
-    "post_first_line": "The easiest founder post to write.",
+    "post_first_line": "Tommy Clark breaks down the monthly update post.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 6
+      "first_line_words": 8
     },
     "hook_score_before": 77,
     "hook_score_after": 80,
-    "linkedin_post": "The easiest founder post to write.\n\nMost people overthink it, and it still beats the origin story.\n\nIt's the monthly update. The format is simple: one lead metric, 3 highlights, 3 learnings, and what's next.\n\nStart with the thing that happened this month. A growth percentage, a revenue milestone, a big logo landed, a few key hires. Pick whatever will catch attention on the timeline.\n\nThe more specific the metric, the better. This is why these posts work so well for Austin: he's okay sharing specific numbers.\n\nAfter the hook, list 3 key highlights from the past month. Then 3 learnings. Then what's next.\n\nIt's also far easier to execute than an origin story, because there's no narrative through line to build. You have a headline, a list of wins, what you learned, and what comes next.\n\nWhat's the one metric you'd lead with this month?",
+    "linkedin_post": "Tommy Clark breaks down the monthly update post.\n\nThe structure is simple enough that most founders skip right past why it works.\n\nIt starts with one growth metric or exciting moment from the past month. Tommy Clark points to a percentage grown, a revenue milestone, a big logo landed, or a few key hires. Anything that catches attention on the timeline.\n\nThe more specific the metric, the better. Tommy Clark notes that these posts work well for Austin because Austin is okay sharing specific numbers.\n\nAfter the hook, the post has 3 parts: 3 key highlights, 3 learnings from the past month, and what's next.\n\nIt's also much easier to execute than an origin story post. There's no narrative through line to build. It's just a highlight, a list of 3 wins, and what you learned.\n\nWhich metric would you lead with this month?",
     "carousel": [
-      "Slide 1: The easiest founder post you can write",
-      "Slide 2: Start with one metric that catches attention",
-      "Slide 3: Growth, revenue milestone, big logo, or key hires",
-      "Slide 4: The more specific the metric, the better",
-      "Slide 5: Then list 3 key highlights from the month",
+      "Slide 1: The simple monthly update post, in 4 parts",
+      "Slide 2: Start with one metric or exciting moment from the month",
+      "Slide 3: Growth percentage, revenue milestone, big logo, or key hires",
+      "Slide 4: The more specific the metric, the better the hook",
+      "Slide 5: Then share 3 key highlights from the past month",
       "Slide 6: Add 3 learnings from the past month",
       "Slide 7: Close with what's next",
-      "Slide 8: No narrative arc needed, unlike an origin story"
+      "Slide 8: No narrative through line needed, easier than an origin story"
     ],
     "lesson": {
-      "title": "The simple monthly update post",
+      "title": "The Monthly Update Post Formula",
       "takeaways": [
         "Lead with one specific growth metric or exciting event from the past month.",
         "Follow the hook with 3 highlights, 3 learnings, and what's next.",
-        "It's easier than an origin story because it needs no narrative through line."
+        "It's easier to write than an origin story because it needs no narrative through line."
       ],
-      "exercise": "Write your last month as a post: one lead metric, 3 wins, 3 learnings, and one line on what's next. Make the metric as specific as you're comfortable sharing."
+      "exercise": "Write down your single most attention-grabbing metric or milestone from the last month, make it as specific as you can, then list 3 wins, 3 learnings, and what's next."
     },
-    "caption": "The easiest founder post"
+    "caption": "The simple monthly update post"
   },
   {
     "id": "m1844",
@@ -170,32 +170,32 @@
       "hook_type": "contrarian",
       "first_line_words": 14
     },
-    "post_first_line": "Tens of demos booked per month.",
+    "post_first_line": "Tens of demos booked per month from content.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 5
+      "first_line_words": 7
     },
     "hook_score_before": 72,
-    "hook_score_after": 65,
-    "linkedin_post": "Tens of demos booked per month.\n\nThat's what good LinkedIn content can do, and most teams still frame it the wrong way.\n\nContent has asymmetric upside. If you're good at it, it can be by far the best-returning thing you do. It's an order of magnitude of tens plus demos booked per month, and it doesn't take that much time.\n\nThat's been our own lived experience at Unify. It's also a standout case, so I won't pretend it's guaranteed for everyone.\n\nBut the debate of content versus outbound misses the point.\n\nMy belief is that a pipeline strategy has to be multichannel. Don't think this or that. Think about how to keep stacking wins.\n\nOutbound and outreach on LinkedIn is one win. Content on LinkedIn is another.\n\nStack them.\n\nWhich channel are you underinvesting in right now?",
+    "hook_score_after": 67,
+    "linkedin_post": "Tens of demos booked per month from content.\n\nThat's the upside nobody budgets for.\n\nContent has asymmetric upside. If you're good at it, it can be the best-returning thing you do. It doesn't take that much time, either.\n\nThat's been our own lived experience at Unify. But it's a bit of a standout case.\n\nSo I don't think the real question is content or outbound.\n\nMy belief is that a pipeline strategy should be multichannel. Think less about this or that, and more about how you keep stacking wins.\n\nOutbound and outreach on LinkedIn is one win. Content on LinkedIn is another.\n\nStack them. Don't pick one.\n\nWhich channel are you underinvesting in right now?",
     "carousel": [
-      "Slide 1: Content or outbound? You're asking the wrong question.",
-      "Slide 2: LinkedIn content has asymmetric upside when you're good at it.",
-      "Slide 3: It can mean tens plus demos booked per month.",
-      "Slide 4: It doesn't take that much time, either.",
-      "Slide 5: That's our lived experience at Unify, but it's a standout case.",
-      "Slide 6: A pipeline strategy should be multichannel, not either/or.",
-      "Slide 7: Outbound on LinkedIn is one win. Content is another.",
-      "Slide 8: Stop choosing between channels. Keep stacking wins."
+      "Slide 1: Tens of demos a month from content",
+      "Slide 2: Content has asymmetric upside if you're good at it",
+      "Slide 3: It doesn't take that much time",
+      "Slide 4: Our experience at Unify is a bit of a standout case",
+      "Slide 5: Stop asking content or outbound",
+      "Slide 6: Build a multichannel pipeline strategy instead",
+      "Slide 7: Ask how you keep stacking multiple wins",
+      "Slide 8: LinkedIn outreach is one win, LinkedIn content is another"
     ],
     "lesson": {
       "title": "Stack channels instead of choosing one",
       "takeaways": [
-        "Content on LinkedIn has asymmetric upside: if you're good at it, it can be the best-returning thing you do.",
-        "Treat Unify's results as a standout case, not a guarantee.",
-        "Build a multichannel pipeline strategy and keep stacking wins rather than picking this or that."
+        "Content has asymmetric upside: if you're good at it, it can be the best-returning thing you do.",
+        "Our results at Unify are a standout case, so don't assume they're guaranteed.",
+        "A pipeline strategy should be multichannel. Think about stacking wins, not this or that."
       ],
-      "exercise": "List every channel you use for pipeline today. Mark which ones are outbound and which are content. If either column is empty, pick one small experiment to add this month."
+      "exercise": "List every channel generating pipeline for you today. Mark each as running or not, then pick one missing win, like LinkedIn content or LinkedIn outreach, and add it this month."
     },
     "caption": "Content or outbound? Both."
   },
@@ -207,36 +207,35 @@
     "angle": "AI made posting easy. Here's why that makes your stories the only thing worth posting",
     "judge_score": 68,
     "angle_tag": {
-      "hook_type": "other",
+      "hook_type": "contrarian",
       "first_line_words": 15
     },
-    "post_first_line": "Anyone can post on LinkedIn now.",
+    "post_first_line": "Tommy Clark: posting on LinkedIn just got easy.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 6
+      "first_line_words": 8
     },
     "hook_score_before": 68,
-    "hook_score_after": 71,
-    "linkedin_post": "Anyone can post on LinkedIn now.\n\nThat's exactly why most of it is starting to look the same.\n\nIt's so easy to toss a prompt into Claude or ChatGPT and get a pretty okay piece of LinkedIn copy. The barrier to entry has gone down drastically, and the timeline is getting more crowded.\n\nSo the real question is how you stand out with content AI can't copy.\n\nOne answer: shift from how-to content to how-I content.\n\nHow-to content can be generated by anyone with a prompt. How-I content comes from something you actually lived through.\n\nThe rule Tommy Clark uses: pair every single take with a story.\n\nThe take gives people something to think about. The story gives them a reason to believe you.\n\nAI can write the take. It can't write what happened to you.\n\nWhat's one story you could attach to your next post?",
+    "hook_score_after": 68,
+    "linkedin_post": "Tommy Clark: posting on LinkedIn just got easy.\n\nThat changes what's worth posting.\n\nAnyone can toss a prompt into Claude or ChatGPT and get a pretty okay piece of LinkedIn copy. The timeline is getting more crowded as a result.\n\nSo Tommy's advice is to create content AI can't copy.\n\nOne way to do that: shift from how-to, value-oriented content to how-Tommy-did-it content. More narrative. More stories.\n\nThe rule Tommy likes to use: pair every single take with a story.\n\nA take on its own is easy to generate. A story only the author can tell is not.\n\nWhat story could you pair with your next take?",
     "carousel": [
-      "Slide 1: AI made posting easy, so everyone is posting",
-      "Slide 2: A pretty okay LinkedIn post now takes one prompt",
-      "Slide 3: The barrier to entry has dropped drastically",
-      "Slide 4: The timeline is more crowded than ever",
-      "Slide 5: Shift from how-to content to how-I content",
-      "Slide 6: Add narrative and stories to everything you write",
-      "Slide 7: The rule: pair every single take with a story",
-      "Slide 8: AI can write the take, not what happened to you"
+      "Slide 1: AI made posting on LinkedIn easy for everyone.",
+      "Slide 2: A prompt in Claude or ChatGPT gives you okay copy.",
+      "Slide 3: The barrier to entry dropped. The timeline got crowded.",
+      "Slide 4: Standing out now means creating content AI can't copy.",
+      "Slide 5: Shift from how-to content to how-I content.",
+      "Slide 6: Add more narrative and stories to what you post.",
+      "Slide 7: The rule: pair every single take with a story."
     ],
     "lesson": {
-      "title": "Pair Every Take With a Story",
+      "title": "Pair every take with a story",
       "takeaways": [
         "AI lowered the barrier to posting, so the timeline is more crowded.",
-        "Shifting from how-to to how-I content creates something AI can't copy.",
-        "Pairing every take with a story makes your content specific and believable."
+        "Shifting from how-to content to how-I content helps you stand out.",
+        "Pairing every take with a story creates content AI can't copy."
       ],
-      "exercise": "Take your next three post ideas. For each one, write down one real story from your work that backs up the take, then lead with that story."
+      "exercise": "Pick your next LinkedIn take and write down one personal story that illustrates it. Lead with the story, then state the take."
     },
-    "caption": "AI can't copy your stories"
+    "caption": "Pair every take with a story"
   }
 ]

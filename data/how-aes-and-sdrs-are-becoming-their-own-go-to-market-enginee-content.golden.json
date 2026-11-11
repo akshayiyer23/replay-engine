@@ -10,34 +10,33 @@
       "hook_type": "story",
       "first_line_words": 10
     },
-    "post_first_line": "10 hours a month. Just to prioritize accounts.",
+    "post_first_line": "Neema Zarrabian lost 10 hours monthly prioritizing accounts.",
     "post_tag": {
       "hook_type": "stat",
       "first_line_words": 8
     },
     "hook_score_before": 95,
     "hook_score_after": 75,
-    "linkedin_post": "10 hours a month. Just to prioritize accounts.\n\nThat was my life as a BDR, and I didn't see the real problem until later.\n\nSix years ago I ran five tools: an intent tool, a sequencing tool, a data tool, Sales Navigator, and a spreadsheet.\n\nI checked every one of them every single day.\n\nThe first 2 hours of my day went to finding data and writing emails. The last 2 hours went to building my call list for the next day.\n\nIt was manual work, start to finish.\n\nReprioritizing accounts was its own chore. It took me 10 hours every month to look through my new accounts and rank them.\n\nI was doing all of this from my parents' basement, stitching together five tools by hand.\n\nThe work was never the problem. The scattered setup was.\n\nWhat part of your prospecting still lives in a spreadsheet?",
+    "linkedin_post": "Neema Zarrabian lost 10 hours monthly prioritizing accounts.\n\nThe workflow behind those hours is worth a closer look.\n\nSix years ago, Neema Zarrabian was a BDR working with an intent tool, a sequencing tool, a data tool, Sales Navigator, and a spreadsheet. Every single day meant combing through all of them.\n\nThe first 2 hours of the day went to finding data and writing emails. The last 2 hours went to setting up the call list for the next day.\n\nThen came reprioritizing. Looking through new accounts and ranking them took 10 hours every month.\n\nNone of it was strategy. It was manual stitching between tools that never talked to each other.\n\nThat's the problem we think about at Unify. Reps shouldn't spend their best hours moving data between tabs.\n\nWhat's the most manual part of your day?",
     "carousel": [
-      "Slide 1: I was a BDR with 5 tools and a spreadsheet.",
+      "Slide 1: Five tools and a spreadsheet. That was the BDR job.",
       "Slide 2: Intent tool, sequencing tool, data tool, Sales Navigator, spreadsheet.",
-      "Slide 3: I checked every one of them, every single day.",
-      "Slide 4: First 2 hours: finding data and writing emails.",
-      "Slide 5: Last 2 hours: building the next day's call list.",
-      "Slide 6: Reprioritizing new accounts took me 10 hours every month.",
-      "Slide 7: The work wasn't the problem. The scattered setup was.",
-      "Slide 8: What in your workflow still lives in a spreadsheet?"
+      "Slide 3: First 2 hours daily: finding data and writing emails.",
+      "Slide 4: Last 2 hours daily: building tomorrow's call list.",
+      "Slide 5: Reprioritizing new accounts took 10 hours every month.",
+      "Slide 6: The work wasn't selling. It was stitching tools together.",
+      "Slide 7: Your best hours belong with buyers, not tabs."
     ],
     "lesson": {
-      "title": "The hidden cost of a stitched-together sales stack",
+      "title": "Audit the hours your tools quietly cost you",
       "takeaways": [
-        "Five disconnected tools mean daily manual work just to know who to contact.",
-        "Time spent finding data and building call lists is time not spent selling.",
-        "Account prioritization done by hand is slow, and it repeats every month."
+        "Running five tools plus a spreadsheet creates daily manual work that hides in plain sight.",
+        "Prep tasks like finding data and building call lists can take up 4 hours a day.",
+        "Account prioritization done by hand adds up to 10 hours every month."
       ],
-      "exercise": "List every tool you open before your first call or email of the day. Note how many minutes each takes, then circle the steps where you copy data between tools by hand."
+      "exercise": "Track one week of your workday in 30-minute blocks. Label each block as selling or tool-juggling, then pick the biggest tool-juggling block to simplify first."
     },
-    "caption": "5 tools. 1 spreadsheet. 10 hours."
+    "caption": "10 hours a month, wasted"
   },
   {
     "id": "m1156",
@@ -50,34 +49,34 @@
       "hook_type": "story",
       "first_line_words": 15
     },
-    "post_first_line": "6 to 8 discovery calls. One account.",
+    "post_first_line": "Six to eight discovery calls. That's what it took.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 7
+      "first_line_words": 9
     },
     "hook_score_before": 95,
     "hook_score_after": 78,
-    "linkedin_post": "6 to 8 discovery calls. One account.\n\nThat's how long it took to find what mattered.\n\nFive years ago, Boston Public Schools was my white whale. I lived in the Boston area. I wanted in, and I wanted to understand why they needed us.\n\nThrough discovery on 6 to 8 calls, I learned they were unintentionally breaking the law based on their teacher-to-student ratio.\n\nI couldn't find that online. It only surfaced when their chief of human resources told me.\n\nIf you have a named account list of 30 enterprise accounts to break into in a quarter, you know this feeling. You're sure one account is the right one, but you don't know the real reason they'd buy.\n\nThe pain that actually moves a deal is rarely on the homepage. It's buried in news, in compliance gaps, and in what the right person is worried about.\n\nWhat's the best buried insight you've uncovered in discovery?",
+    "linkedin_post": "Six to eight discovery calls. That's what it took.\n\nNeema Zarrabian had one account on the list that was impossible to stop thinking about.\n\nFive years ago, Neema Zarrabian lived in the Boston area and wanted to break into a large school district. The goal was to understand why they would need Unify's product.\n\nThe answer didn't show up online. It surfaced through discovery, over 6 to 8 calls, when the district's chief of human resources shared a problem tied to teacher-to-student ratios.\n\nThe account had a compliance issue it hadn't intended to create.\n\nNeema Zarrabian's takeaway: research with Unify Chats could probably have surfaced news about it much faster. But the real insight came from a conversation with the right person.\n\nWhen you have 30 enterprise accounts to break into in a quarter, or a named account list with one account you're set on, the pattern holds. Research gets you in the door. The buyer tells you what's actually going on.\n\nWhat's the best thing a buyer ever told you on a call?",
     "carousel": [
-      "Slide 1: 6 to 8 discovery calls to find one insight.",
-      "Slide 2: Boston Public Schools was the account I wanted most.",
-      "Slide 3: I knew I wanted in. I didn't know why they'd buy.",
-      "Slide 4: Discovery revealed they were unintentionally breaking the law.",
-      "Slide 5: The issue was their teacher-to-student ratio.",
-      "Slide 6: I couldn't find it online. Their chief of human resources told me.",
-      "Slide 7: Research plus news could have surfaced it sooner.",
-      "Slide 8: The pain that moves a deal is rarely on the homepage."
+      "Slide 1: 6 to 8 discovery calls revealed the real problem",
+      "Slide 2: Neema Zarrabian wanted to break into one dream account",
+      "Slide 3: It was a large school district near Boston",
+      "Slide 4: Online research never showed the real issue",
+      "Slide 5: The chief of human resources finally revealed it",
+      "Slide 6: A teacher-to-student ratio problem was creating a compliance gap",
+      "Slide 7: Faster research could have surfaced news much earlier",
+      "Slide 8: Research opens the door, but buyers explain the problem"
     ],
     "lesson": {
-      "title": "Dig for the pain that isn't public",
+      "title": "Discovery Finds What Research Can't",
       "takeaways": [
-        "Wanting an account isn't the same as knowing why they'd buy.",
-        "The most valuable insight can sit behind compliance or regulatory issues.",
-        "Discovery calls and deep research should work together to surface hidden pain."
+        "Some of the most valuable account insights never appear online and only come from conversations with the right person.",
+        "Research can speed up how you find signals and news, but discovery calls uncover the context behind them.",
+        "Persistence on a named account pays off when you keep asking questions until the real problem surfaces."
       ],
-      "exercise": "Pick one named account. Write down what you assume their biggest problem is, then research recent news and compliance issues to test it. Prepare one discovery question for the right executive."
+      "exercise": "Pick one named account you haven't cracked. List three questions you'd ask a senior stakeholder in a discovery call that no online research could answer, then book one call to ask them."
     },
-    "caption": "The account breaking the law"
+    "caption": "Discovery beats research alone"
   },
   {
     "id": "m0251",
@@ -90,32 +89,32 @@
       "hook_type": "other",
       "first_line_words": 15
     },
-    "post_first_line": "50 tabs open. Every single day.",
+    "post_first_line": "50 browser tabs open at once.",
     "post_tag": {
-      "hook_type": "other",
+      "hook_type": "stat",
       "first_line_words": 6
     },
     "hook_score_before": 72,
-    "hook_score_after": 75,
-    "linkedin_post": "50 tabs open. Every single day.\n\nThat's only half of what's broken in outbound.\n\nAEs and SDRs usually work out of Salesforce reports and LinkedIn Sales Nav. They add a Chrome extension to pull contact info. Then they sift through each data point one by one.\n\nThe result is an extremely manual workflow, with 50 tabs open and navigation across all of them.\n\nThe other path belongs to go-to-market engineers. They build very complicated workflows in a tool like Unify or Clay.\n\nThey have to connect every data point and decide what happens in every column.\n\nSo one side is stuck clicking through tabs. The other is stuck building complex workflows.\n\nNeither path is built for how outbound should work.\n\nWhich path does your team live in today?",
+    "hook_score_after": 70,
+    "linkedin_post": "50 browser tabs open at once.\nThat's what outbound looks like for most reps.\n\nOutbound usually splits into two paths, and both are broken.\n\nPath one: AEs and SDRs working out of Salesforce reports and LinkedIn Sales Nav, with a Chrome extension to pull contact info. The workflow is extremely manual. You sift through each data point one by one, bouncing across tabs.\n\nPath two: GTM engineers building very complicated workflows in a tool like Unify or Clay. You have to connect every data point and decide what happens in every column.\n\nOne side drowns in manual work. The other side takes on a heavy build before anything ships.\n\nNeither path gets reps to the right account quickly.\n\nWhich path does your team live on today?",
     "carousel": [
-      "Slide 1: Outbound has two broken paths. Most teams pick one.",
-      "Slide 2: Path one: AEs and SDRs working out of Salesforce reports.",
-      "Slide 3: Add LinkedIn Sales Nav and a Chrome extension for contacts.",
-      "Slide 4: The workflow is extremely manual. Around 50 tabs open.",
-      "Slide 5: Path two: GTM engineers building very complicated workflows.",
+      "Slide 1: Outbound has two paths, and both are broken.",
+      "Slide 2: Path one: reps living in Salesforce reports and Sales Nav.",
+      "Slide 3: Chrome extensions pull contacts. Everything else is manual.",
+      "Slide 4: The result: sifting data points one by one across 50 tabs.",
+      "Slide 5: Path two: GTM engineers building complex workflows in Unify or Clay.",
       "Slide 6: Every data point and every column needs a decision.",
-      "Slide 7: One side clicks endlessly. The other builds endlessly.",
-      "Slide 8: Which broken path is your team on?"
+      "Slide 7: One side is all manual work. The other is heavy build.",
+      "Slide 8: Which path is your team stuck on?"
     ],
     "lesson": {
       "title": "The two broken paths of outbound",
       "takeaways": [
-        "Reps sift through data points one by one across 50 tabs, which makes the workflow extremely manual.",
-        "GTM engineers build very complicated workflows where every data point and column needs a decision.",
-        "Both paths cost time, just in different places."
+        "Reps working from Salesforce reports, Sales Nav, and Chrome extensions end up with an extremely manual workflow and around 50 tabs open.",
+        "GTM engineers building in tools like Unify or Clay have to decide what happens with every data point and every column.",
+        "Both paths cost time: one in daily manual effort, the other in upfront workflow building."
       ],
-      "exercise": "Map your outbound process from list to first message. Mark each step as manual clicking or workflow building, and note which eats the most time."
+      "exercise": "Map your outbound process this week. Count the tools and tabs a rep touches per account, and list the data points a workflow would need a decision for. See which path you're really on."
     },
     "caption": "Outbound is broken twice"
   },
@@ -130,34 +129,34 @@
       "hook_type": "how_to",
       "first_line_words": 20
     },
-    "post_first_line": "$300M ARR. Fresh Series D. Five minutes left.",
+    "post_first_line": "$300 million ARR. Series D. One prompt.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 8
+      "first_line_words": 7
     },
     "hook_score_before": 69,
     "hook_score_after": 67,
-    "linkedin_post": "$300M ARR. Fresh Series D. Five minutes left.\n\nMost AEs would spend those five minutes doing something else.\n\nThey'd open LinkedIn and start org-charting: who the CRO is, who the VP of sales is, how many BDRs the team has, which verticals to go after.\n\nNeema Zarrabian skips that. Before a call with Vanta, she asks for all the recent news that's relevant, so she can walk in with a point of view on where Unify can help.\n\nWhat came back: Vanta is launching identity trust platforms, which lines up with how Unify thinks about the business. They just announced a Series D and crossed $300 million ARR.\n\nThat tells her they're growing and investing more and more in growth.\n\nEvery claim comes with a timestamp and a source. She can open the article if she wants to read more.\n\nIt also shows whether the company is prioritizing enterprise or SMB, which changes how you frame the whole conversation.\n\nThe prep shifts from \"who works here\" to \"what is happening here, and why does it matter to them.\"\n\nWhat do you check first in your pre-call prep?",
+    "linkedin_post": "$300 million ARR. Series D. One prompt.\n\nNeema Zarrabian shared how an AE preps in the five minutes before a call without opening LinkedIn.\n\nThe scenario: a call with Vanta is about to start. There's no time to org chart the company, map out verticals, find the CRO or VP of sales, or count BDRs.\n\nInstead, the ask is simple: find all the recent news that's relevant, so the call starts with a point of view on where we can help.\n\nThe results in that example:\n\nVanta is already launching identity trust platforms, which aligns with how our business thinks about the space.\n\nThey just announced a Series D and crossed $300 million ARR. That signals growth, and more investment in growth.\n\nEvery data point comes with the exact timestamp. You can query for the exact sources and read the article if you want to.\n\nIt also helps answer a key question: are they prioritizing enterprise or SMB?\n\nThe shift: prep stops being a research project and becomes a point of view you walk in with.\n\nWhat do you check first before a call?",
     "carousel": [
-      "Slide 1: Five minutes before a call. What do you actually do?",
-      "Slide 2: Stop org-charting the account on LinkedIn right before you dial.",
-      "Slide 3: Ask for the recent news that's relevant to your pitch instead.",
-      "Slide 4: Vanta announced a Series D and crossed $300 million ARR.",
-      "Slide 5: That signals growth, and more investment in growth.",
-      "Slide 6: Their new identity trust platform matched how Unify thinks about the business.",
-      "Slide 7: Check the timestamps and sources so you can read the article.",
-      "Slide 8: Enterprise or SMB focus? Know it before you say hello."
+      "Slide 1: Five minutes before a call. No time for LinkedIn.",
+      "Slide 2: Skip the org chart, the verticals, and the BDR headcount.",
+      "Slide 3: Ask for recent news that's relevant to the call.",
+      "Slide 4: Walk in with a point of view on where you can help.",
+      "Slide 5: Series D and $300 million ARR signal growth investment.",
+      "Slide 6: Every data point comes with a timestamp and a source.",
+      "Slide 7: Read the article if you want the full context.",
+      "Slide 8: Know if they're prioritizing enterprise or SMB."
     ],
     "lesson": {
-      "title": "Pre-call prep in five minutes: news over org charts",
+      "title": "Five-minute call prep with news and growth signals",
       "takeaways": [
-        "Recent news and growth signals give you a point of view. An org chart only gives you names.",
-        "A funding round or ARR milestone shows where a company is investing, and you can tie your pitch to it.",
-        "Sourced, timestamped answers let you verify the details before you rely on them in the call."
+        "Org-charting on LinkedIn is slow; recent news gives you a point of view faster.",
+        "Funding and ARR milestones signal that a company is investing in growth.",
+        "Timestamps and sources let you verify any claim before you use it on a call."
       ],
-      "exercise": "Before your next call, spend five minutes finding the account's most recent news. Write down one growth signal and one way it connects to what you sell. Open with that."
+      "exercise": "Before your next call, spend five minutes finding recent news on the account. Write one sentence on where you can help, and note whether they're prioritizing enterprise or SMB."
     },
-    "caption": "Prep with signals, not org charts"
+    "caption": "Call prep in five minutes"
   },
   {
     "id": "m1307",
@@ -170,34 +169,34 @@
       "hook_type": "other",
       "first_line_words": 18
     },
-    "post_first_line": "40 to 50 plus data providers. One workspace.",
+    "post_first_line": "Neema Zarrabian split AI work into two tools.",
     "post_tag": {
-      "hook_type": "stat",
-      "first_line_words": 7
+      "hook_type": "other",
+      "first_line_words": 8
     },
     "hook_score_before": 67,
-    "hook_score_after": 65,
-    "linkedin_post": "40 to 50 plus data providers. One workspace.\n\nThat's why I stopped using one AI tool for everything.\n\nI moved all my Salesforce reporting to Unify: win rates, conversion rates, metrics on the BDR team. I used to run that through Claude.\n\nClaude now does one job. I use it for bulk querying our call recorder to find what was said on each call.\n\nUnify has 40 to 50 plus data providers, so it handles the TAM work. I can slice and dice our TAM in different ways and look at the accounts we're not reaching out to.\n\nThe split is simple. Pipeline and account questions go to the tool that sits on top of the CRM and the data. Conversation questions go to the tool that's good at digging through call text.\n\nMost people pick one AI tool and force it to do every job. Matching the tool to the question works better.\n\nWhich AI tool do you use for CRM reporting?",
+    "hook_score_after": 70,
+    "linkedin_post": "Neema Zarrabian split AI work into two tools.\n\nOne handles CRM reporting. The other handles call analysis. The reason for the split is simple.\n\nNeema Zarrabian moved all Salesforce reporting into Unify: win rates, conversion rates, and metrics on the BDR team. Claude used to handle that.\n\nClaude now does the bulk querying of the call recorder, pulling what was said on each call.\n\nThe pipeline work lives in Unify too. Slicing the TAM in different ways. Looking at the accounts the team isn't reaching out to. Queuing up good accounts for BDRs. Reviewing AE deals.\n\nThe pattern: match the tool to where the data lives. Reporting and account selection sit next to the CRM and TAM. Call questions sit next to the transcripts.\n\nOne tool for everything sounds tidy. Two tools for two jobs works better.\n\nWhich jobs have you split across AI tools?",
     "carousel": [
-      "Slide 1: I split my AI tools by job, not by habit",
-      "Slide 2: Salesforce reporting moved to Unify",
+      "Slide 1: Neema Zarrabian uses two AI tools, not one",
+      "Slide 2: Salesforce reporting moved into Unify",
       "Slide 3: Win rates, conversion rates, BDR team metrics",
-      "Slide 4: Claude handles bulk queries on our call recorder",
+      "Slide 4: Claude handles bulk querying of the call recorder",
       "Slide 5: It surfaces what was said on each call",
-      "Slide 6: Unify has 40 to 50 plus data providers",
-      "Slide 7: Slice and dice your TAM, find accounts you're ignoring",
-      "Slide 8: Match the tool to the question you're asking"
+      "Slide 6: Unify also slices the TAM different ways",
+      "Slide 7: It surfaces accounts the team isn't reaching out to",
+      "Slide 8: Match the tool to where the data lives"
     ],
     "lesson": {
-      "title": "Split your AI tools by the question you're asking",
+      "title": "Split AI tools by job, not by hype",
       "takeaways": [
-        "CRM and pipeline metrics belong in a tool connected to your CRM and data.",
-        "Call analysis is a text-heavy job, so use a tool built for bulk querying.",
-        "Broad data provider access makes TAM slicing and gap-finding much easier."
+        "Reporting and account selection belong near your CRM and TAM data.",
+        "Call analysis belongs in a tool that can query many transcripts in bulk.",
+        "Reviewing which tool you default to can show where a split would help."
       ],
-      "exercise": "List the 5 questions you ask most each week. Label each one pipeline, account, or conversation, then assign each label to the best tool."
+      "exercise": "List your five most frequent AI tasks this week. Mark each as CRM/pipeline data or call/transcript data. Assign each group to one tool and test it for two weeks."
     },
-    "caption": "One AI tool isn't enough"
+    "caption": "Two tools, two jobs"
   },
   {
     "id": "m2003",
@@ -217,26 +216,26 @@
     },
     "hook_score_before": 65,
     "hook_score_after": 58,
-    "linkedin_post": "60-70% open rates. One meeting.\n\nThat number should have told the team something, and it did.\n\nThe setup: about two hundred fifty companies, one to three touches, and only one reply that turned into a meeting.\n\nThe instinct was to ask when to change the messaging, or whether it takes 7 plus touches to get a response.\n\nAustin Hughes' answer was to stop watching open rates. Internally, they focus a lot less on open rates as a performance metric and really focus on reply rates.\n\nAn open only tells you the subject line worked. It says nothing about whether anyone cared what was inside.\n\nSo the job is to bring up the reply rate in particular.\n\nTheir approach is to keep improving the copywriting skills the agent has access to, so the copy gets better and better.\n\nThe core rule: make it as specific as possible.\n\nWhen opens look great and replies don't, the problem is in the body of the message, not the number of touches.\n\nWhich metric do you check first when a campaign stalls?",
+    "linkedin_post": "60-70% open rates. One meeting.\n\nThat gap tells you which number actually matters.\n\nA question came in recently: about 250 companies, one to three touches so far, open rates around sixty to seventy percent, and only one reply that turned into a meeting. When do you change the messaging? Do you wait for 7+ touches?\n\nInternally, we focus a lot less on open rates as a performance metric. We focus on reply rates.\n\nSo the intuition behind the question was right. Don't celebrate the opens. Work on bringing the reply rate up.\n\nHere's what we're doing about it: we're working a lot on the copywriting skills the agent has access to, so the copy keeps getting better.\n\nBut the usual move is simpler. Make the message as specific as possible.\n\nAn open just means someone saw your subject line. A reply means the message gave them a reason to answer.\n\nWhat metric are you watching that isn't moving revenue?",
     "carousel": [
-      "Slide 1: 60-70% open rates. One meeting. Something's off.",
-      "Slide 2: About two hundred fifty companies, one to three touches, one reply.",
-      "Slide 3: Opens only prove the subject line got attention.",
-      "Slide 4: Replies prove the message itself landed with the reader.",
-      "Slide 5: Austin's team focuses a lot less on open rates internally.",
-      "Slide 6: Focus on bringing up the reply rate in particular.",
-      "Slide 7: Keep improving the copywriting skills your agent uses.",
-      "Slide 8: Make the copy as specific as possible."
+      "Slide 1: 60-70% open rates. One meeting.",
+      "Slide 2: Opens tell you the subject line worked.",
+      "Slide 3: Replies tell you the message worked.",
+      "Slide 4: We focus a lot less on open rates internally.",
+      "Slide 5: Reply rate is the number to bring up.",
+      "Slide 6: We keep improving the copywriting skills our agent uses.",
+      "Slide 7: The usual fix: make the message as specific as possible.",
+      "Slide 8: Stop celebrating opens. Start earning replies."
     ],
     "lesson": {
-      "title": "Stop Optimizing Opens, Start Optimizing Replies",
+      "title": "Open rate is not the metric to optimize",
       "takeaways": [
-        "High open rates with almost no replies point to a copy problem, not a touch-count problem.",
-        "Reply rate is the performance metric that matters, and open rate is secondary.",
-        "The fix is better copywriting that is as specific as possible."
+        "High open rates with almost no replies means the subject line works but the message doesn't.",
+        "Focus on reply rate as the performance metric, not open rate.",
+        "Make your copy as specific as possible to lift replies."
       ],
-      "exercise": "Pull your last campaign and compare open rate to reply rate. Pick the weakest-performing email body and rewrite it so every line is specific to the recipient's company, then test it against the original."
+      "exercise": "Pull your last campaign and compare open rate to reply rate. Rewrite the first two lines of your email to be more specific to the recipient, then test it against the original."
     },
-    "caption": "Open rate is the wrong metric"
+    "caption": "Open rates are lying to you"
   }
 ]
