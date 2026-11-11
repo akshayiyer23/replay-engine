@@ -1922,8 +1922,8 @@ def _run_main(args) -> None:
     # ── 3. chunk ──
     chunks = chunk_sentences(sentences, CHUNK_MS)
     n_chunks = len(chunks)
-    workers = min(2, n_chunks)
-    print(f"📦 {n_chunks} chunk(s), mining up to {workers} in parallel…")
+    workers = 1
+    print(f"📦 {n_chunks} chunk(s), mining sequentially (workers={workers})…")
     _emit("mining", f"🔍 Scanning {len(sentences)} sentences across {n_chunks} chunks…", 40)
 
     # ── 4. mine moments (parallel) ──
@@ -1944,6 +1944,7 @@ def _run_main(args) -> None:
             except Exception as exc:
                 i = futures[future]
                 print(f"⚠️  Chunk {i + 1} failed: {exc} — skipping")
+                print(f"[mining-error] chunk={i + 1} error={exc!r}", file=sys.stderr)
                 labels = []
             all_labels_by_chunk[i] = labels
             chunk = chunks[i]
