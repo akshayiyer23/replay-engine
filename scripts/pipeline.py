@@ -696,8 +696,12 @@ def _attribute_top_moments(
     title_speakers: list[dict],
     sentences: list[dict],
 ) -> None:
-    """For each top-8 candidate, batch-call Haiku to attribute to a named speaker.
-    Mutates speaker_name and post_for in place. Skips on failure.
+    """Binary host/guest classification per top-8 moment.
+
+    Only runs when title has exactly one identified guest.
+    guest + conf >= 0.75 + current Unify team → first-person post for that person.
+    host, low-confidence, or anything else → Unify company page (safe default).
+    Never sets speaker_name to 'Guest' or 'Host' — always uses the actual name.
     """
     if not title_speakers:
         return
@@ -705,31 +709,40 @@ def _attribute_top_moments(
     if not top8:
         return
 
+    guests = [p for p in title_speakers if p["role"] == "guest"]
+    if len(guests) != 1:
+        # Ambiguous (0 or 2+ guests) — safe default for all
+        for c in top8:
+            c["post_for"] = "Unify company page"
+        return
+
+    guest = guests[0]
+    guest_name = guest["name"]
+    is_unify_team = guest.get("is_current_unify_team", False)
+
     unify_context = (SKILLS_DIR / "unify-context.md").read_text()
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
-    speaker_lines = "\n".join(
-        f"- {p['name']} ({p['role']})"
-        + (" [current Unify team]" if p.get("is_current_unify_team") else "")
-        for p in title_speakers
-    )
     moment_entries = [
-        {"id": c["id"], "transcript": c.get("transcript", "")[:600]}
+        {"id": c["id"], "transcript": c.get("transcript", "")[:500]}
         for c in top8
     ]
 
     system = (
-        "You determine which speaker said each webinar moment.\n"
-        "Host patterns: asks questions, sets up topics, says 'great point', "
-        "re-phrases or summarises what a guest said.\n"
-        "Guest patterns: shares personal stories ('When I was at...', 'We did X'), "
-        "states their own opinions, cites their company's numbers or results.\n\n"
+        f"You classify each podcast moment as spoken by the guest ({guest_name}) or the host.\n\n"
+        "Guest patterns: shares personal stories and first-hand experiences, "
+        "says 'when I was at [company]', states their own opinions/lessons, "
+        "cites their own company's numbers or results, uses 'I', 'we', 'our' naturally.\n"
+        "Host patterns: asks questions ('So what do you think...', 'Can you walk us through...'), "
+        "sets up topics, re-phrases the guest's point, says 'that's interesting', "
+        "transitions between segments.\n\n"
         "Company context (to identify Unify team members):\n" + unify_context
     )
     user = (
-        f"Speakers in this video:\n{speaker_lines}\n\n"
-        "For EACH moment below, return a JSON array — one entry per moment:\n"
-        '{"id": "mXXXX", "speaker": "Full Name or Unknown", '
+        f"Guest: {guest_name}\n\n"
+        "For EACH moment, classify as 'guest' or 'host'.\n"
+        "Return a JSON array:\n"
+        '{"id": "mXXXX", "role": "guest" or "host", '
         '"confidence": 0.0-1.0, "reason": "one sentence"}\n\n'
         f"Moments:\n{json.dumps(moment_entries, indent=2)}\n\n"
         "Return only the JSON array."
@@ -744,16 +757,19 @@ def _attribute_top_moments(
         tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
         if tb is None:
             for c in top8:
+                c["speaker_name"] = guest_name
                 c["post_for"] = "Unify company page"
             return
         attributions = _extract_json_array(strip_fences(tb.text))
         if not attributions:
             for c in top8:
+                c["speaker_name"] = guest_name
                 c["post_for"] = "Unify company page"
             return
     except Exception as exc:
         print(f"⚠️  Per-moment attribution failed: {exc} — defaulting all to Unify company page")
         for c in top8:
+            c["speaker_name"] = guest_name
             c["post_for"] = "Unify company page"
         return
 
@@ -761,28 +777,24 @@ def _attribute_top_moments(
     for c in top8:
         attr = attr_map.get(c["id"])
         if not attr:
+            # No result → safe default, use guest name for crediting
+            c["speaker_name"] = guest_name
+            c["post_for"] = "Unify company page"
             continue
-        name = (attr.get("speaker") or "").strip()
+        role = (attr.get("role") or "").strip().lower()
         conf = float(attr.get("confidence", 0.0))
         reason = attr.get("reason", "")
-        matched = next(
-            (p for p in title_speakers if p["name"].lower() == name.lower()), None
-        )
-        if conf >= 0.8 and matched:
-            c["speaker_name"] = matched["name"]
-            c["post_for"] = matched["name"] if matched.get("is_current_unify_team") else "Unify company page"
-            print(f"   {c['id']} → {matched['name']} ({int(conf * 100)}%): {reason}")
-        elif conf >= 0.8 and name and name.lower() != "unknown":
-            c["speaker_name"] = name
-            c["post_for"] = "Unify company page"
-            print(f"   {c['id']} → {name} ({int(conf * 100)}%): {reason}")
+
+        if role == "guest" and conf >= 0.75:
+            c["speaker_name"] = guest_name
+            c["post_for"] = guest_name if is_unify_team else "Unify company page"
+            print(f"   {c['id']} → {guest_name} (guest {int(conf * 100)}%): {reason}")
         else:
-            role = next(
-                (p["role"].capitalize() for p in title_speakers), "Guest"
-            )
-            c["speaker_name"] = role
+            # Host or below threshold — credit guest by name, Unify company page
+            c["speaker_name"] = guest_name
             c["post_for"] = "Unify company page"
-            print(f"   {c['id']} → {role} ({int(conf * 100)}%): {reason} — Unify company page")
+            label = "host" if role == "host" else f"guest {int(conf * 100)}% < 75%"
+            print(f"   {c['id']} → {label} → Unify company page: {reason}")
 
 
 # ── housekeeping detection ───────────────────────────────────────────────────
@@ -1242,6 +1254,9 @@ def _run_judge_and_content(
     if post_judge_hook:
         post_judge_hook(candidates)
 
+    # ── de-duplicate moments that cover the same stat or story ──
+    _gate_story_dedup(candidates, qa_entries)
+
     # Save candidates with scores
     out_path = DATA_DIR / f"{slug}-candidates.json"
     out_path.write_text(json.dumps(candidates, indent=2))
@@ -1424,6 +1439,63 @@ def _gate_duration(candidates: list[dict], qa: list) -> None:
                    f"{c.get('duration_s', 0):.0f}s [{c.get('duration_flag', '?')}]")
 
 
+def _gate_story_dedup(candidates: list[dict], qa: list) -> None:
+    """Remove top-8 moments that cover the same stat or story as a higher-scoring one.
+    Uses significant numbers (>= 100, non-year) in hook_line + why + angle as the
+    duplicate signal. Keeps the higher-scoring moment; promotes the next best instead.
+    Applies to every video (not just captions).
+    """
+    top8 = sorted([c for c in candidates if c.get("top8")], key=lambda c: -c.get("score", 0))
+    if len(top8) <= 1:
+        return
+
+    def _sig_numbers(c: dict) -> set[str]:
+        text = " ".join([c.get("hook_line") or "", c.get("why") or "", c.get("angle") or ""])
+        return {n for n in re.findall(r'\b(\d+)\b', text)
+                if int(n) >= 100 and not 1900 <= int(n) <= 2099}
+
+    demoted: set[str] = set()
+    for i, ci in enumerate(top8):
+        if ci["id"] in demoted:
+            continue
+        ni = _sig_numbers(ci)
+        if not ni:
+            continue
+        for cj in top8[i + 1:]:
+            if cj["id"] in demoted:
+                continue
+            shared = ni & _sig_numbers(cj)
+            if shared:
+                demoted.add(cj["id"])
+                qa.append({
+                    "gate": "story_dedup", "action": "demote",
+                    "kept": ci["id"], "demoted": cj["id"], "shared_stat": sorted(shared),
+                    "reason": f"same stat {sorted(shared)}: '{ci['hook_line'][:60]}' vs '{cj['hook_line'][:60]}'",
+                })
+                print(f"   story_dedup: {cj['id']} (score={cj.get('score', 0)}) duplicates "
+                      f"{ci['id']} on stat {sorted(shared)} — demoted")
+
+    if not demoted:
+        return
+
+    for c in candidates:
+        if c["id"] in demoted:
+            c["top8"] = False
+
+    n_to_fill = len(demoted)
+    filled = 0
+    for c in sorted(candidates, key=lambda x: -x.get("score", 0)):
+        if filled >= n_to_fill:
+            break
+        if c.get("top8") or c["id"] in demoted:
+            continue
+        c["top8"] = True
+        filled += 1
+        qa.append({"gate": "story_dedup", "action": "promote", "id": c["id"],
+                   "score": c.get("score", 0)})
+        print(f"   story_dedup: promoted {c['id']} (score={c.get('score', 0)}) to fill gap")
+
+
 def _gate_diversity(candidates: list[dict], qa: list) -> None:
     """Ensure top set has ≥3 moment types and ≤2 of any one type. Fix by swapping."""
     top = sorted([c for c in candidates if c.get("top8")],
@@ -1595,7 +1667,15 @@ def _run_main(args) -> None:
     video_slug_hint: str | None = None
     _video_title: str = ""
     if input_type == "youtube":
-        video_slug_hint, dur_s, _video_title = get_video_info(args.input)
+        try:
+            video_slug_hint, dur_s, _video_title = get_video_info(args.input)
+        except PipelineError as _vinfo_err:
+            # In forced-caption mode, yt-dlp metadata may also be blocked — that's fine
+            if os.environ.get("REPLAY_FORCE_CAPTION_FALLBACK") != "1":
+                raise
+            video_slug_hint = get_video_id(args.input)
+            dur_s = 0
+            _video_title = ""
         dur_min = dur_s / 60
         # Check if transcript is already cached (no download needed)
         transcript_cached = (

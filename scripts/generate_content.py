@@ -152,6 +152,7 @@ _FILLER_RE = re.compile(
     re.I,
 )
 _POV_FIRST_RE = re.compile(r'\bI\b|\bme\b|\bmy\b|\bmyself\b', re.I)
+_SPEAKER_LABEL_RE = re.compile(r'\b(Guest|Host)\b')  # case-sensitive: flags capitalized label usage
 _GENDER_RE = re.compile(r'\b(he|she|his|her|him)\b', re.I)
 _SENSITIVE_RE = re.compile(
     r'\b(breaking the law|violat\w+ (?:the )?law|unintentionally breaking|discriminat\w+)\b',
@@ -234,6 +235,11 @@ def _editor_check(post: str, post_for: str = "", speaker_name: str = "") -> list
     m = _UNIFY_PITCH_RE.search(post)
     if m:
         issues.append(f"Unify feature pitch: '{m.group()[:60]}' — remove or reframe")
+
+    # Never use "Guest" or "Host" as speaker attribution labels
+    m = _SPEAKER_LABEL_RE.search(post)
+    if m:
+        issues.append(f"speaker labeled as '{m.group()}' — use their actual name or rewrite")
 
     return issues
 
