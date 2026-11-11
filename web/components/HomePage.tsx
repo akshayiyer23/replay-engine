@@ -397,12 +397,8 @@ function Library({
 function friendlyError(raw: string): string {
   if (raw === "wrong_passcode") return "Wrong passcode — double-check and try again.";
   if (raw === "rate_limit") return "Daily limit reached (3 runs per day). Come back tomorrow.";
-  if (raw === "youtube_server_blocked")
-    return "YouTube blocked this download from our server. Use the \"Upload file\" tab or paste the transcript instead.";
   if (raw.toLowerCase().includes("too short") || raw.toLowerCase().includes("minimum"))
     return "Video too short — needs at least 15 minutes of content.";
-  if (raw.toLowerCase().includes("download") || raw.toLowerCase().includes("blocked"))
-    return "Could not download that video. Try the \"Upload file\" tab instead.";
   return raw;
 }
 

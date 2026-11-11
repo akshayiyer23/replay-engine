@@ -303,6 +303,54 @@ def migrate_legacy_cache() -> None:
 
 # ── download + transcribe ─────────────────────────────────────────────────────
 
+def _fetch_supadata_captions(video_url: str) -> list[dict]:
+    """Fetch timestamped captions via Supadata API as a fallback when yt-dlp is blocked.
+    Returns sentences-format list with single speaker label 'A'.
+    """
+    import urllib.request as _ureq
+    import urllib.parse as _uparse
+    import urllib.error as _uerr
+
+    api_key = os.environ.get("SUPADATA_API_KEY", "")
+    if not api_key:
+        raise PipelineError("SUPADATA_API_KEY not set — cannot fetch captions.")
+
+    encoded = _uparse.urlencode({"url": video_url})
+    endpoint = f"https://api.supadata.ai/v1/youtube/transcript?{encoded}"
+    req = _ureq.Request(endpoint, headers={"x-api-key": api_key})
+    try:
+        with _ureq.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode())
+    except _uerr.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise PipelineError(f"Supadata API error {exc.code}: {body[:120]}")
+    except Exception as exc:
+        raise PipelineError(f"Supadata request failed: {exc}")
+
+    segments = data.get("content", [])
+    if not segments:
+        raise PipelineError("Supadata returned no captions for this video.")
+
+    sentences = []
+    for seg in segments:
+        text = seg.get("text", "").replace("\n", " ").strip()
+        if not text or re.match(r"^\[.+\]$", text):
+            continue
+        offset_ms = int(seg.get("offset", 0))
+        duration_ms = int(seg.get("duration", 2000))
+        sentences.append({
+            "speaker": "A",
+            "start": offset_ms,
+            "end": offset_ms + duration_ms,
+            "text": text,
+        })
+
+    if not sentences:
+        raise PipelineError("No usable captions found (Supadata returned empty segments).")
+
+    return sentences
+
+
 def download_audio(url: str, out_dir: str) -> str:
     out_template = os.path.join(out_dir, "audio.%(ext)s")
     base_cmd = ["yt-dlp", "-f", "bestaudio", "--no-post-overwrites", "-o", out_template]
@@ -373,14 +421,32 @@ def get_sentences_for_url(
             return json.loads(sentences_path.read_text()), entry["slug"]
 
     slug = slug or get_video_info(url)[0]
-    _emit("download", f"🎧 Downloading audio…", 5)
+    _emit("download", "🎧 Downloading audio…", 5)
     print("🎧 Downloading audio…")
 
-    with tempfile.TemporaryDirectory() as tmp:
-        audio_path = download_audio(url, tmp)
-        _emit("transcribe", "✍️  Transcribing…", 15)
-        print("✍️  Transcribing…")
-        sentences, n_speakers, tid = transcribe_file(audio_path)
+    try:
+        if os.environ.get("REPLAY_FORCE_CAPTION_FALLBACK") == "1":
+            raise PipelineError("YouTube blocked the download — forced for testing.")
+        with tempfile.TemporaryDirectory() as tmp:
+            audio_path = download_audio(url, tmp)
+            _emit("transcribe", "✍️  Transcribing…", 15)
+            print("✍️  Transcribing…")
+            sentences, _, tid = transcribe_file(audio_path)
+    except PipelineError as _exc:
+        if "blocked" not in str(_exc).lower() and "sign-in" not in str(_exc).lower():
+            raise
+        _emit("download", "⚠️  YouTube blocked audio download — using captions instead.", 8)
+        print("⚠️  YouTube blocked audio download — using captions instead.")
+        try:
+            sentences = _fetch_supadata_captions(url)
+        except PipelineError:
+            raise PipelineError(
+                "YouTube blocked this video on our server. "
+                "Upload the file or paste the transcript — takes 10 seconds."
+            )
+        tid = f"captions:{get_video_id(url)}"
+        _emit("transcribe", f"📋 Captions loaded — {len(sentences)} segments", 15)
+        print(f"📋 Captions loaded — {len(sentences)} segments")
 
     sentences_path = DATA_DIR / f"{slug}-sentences.json"
     sentences_path.write_text(json.dumps(sentences, indent=2))

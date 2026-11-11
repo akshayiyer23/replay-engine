@@ -95,13 +95,18 @@ export default function RunPanel({ onRun }: RunPanelProps) {
       {/* Form */}
       <form onSubmit={handleSubmit} className="p-6 space-y-4">
         {tab === "url" && (
-          <input
-            type="url"
-            placeholder="https://youtube.com/watch?v=..."
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-lg border border-[#E8E4DC] text-sm text-[#1A1A1A] placeholder-[#B0A99F] focus:outline-none focus:border-[#F15A24] transition-colors"
-          />
+          <div className="space-y-1.5">
+            <input
+              type="url"
+              placeholder="https://youtube.com/watch?v=..."
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-lg border border-[#E8E4DC] text-sm text-[#1A1A1A] placeholder-[#B0A99F] focus:outline-none focus:border-[#F15A24] transition-colors"
+            />
+            <p className="text-xs text-[#B0A99F]">
+              If YouTube blocks it, use the &ldquo;Upload file&rdquo; tab instead.
+            </p>
+          </div>
         )}
 
         {tab === "transcript" && (

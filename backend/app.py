@@ -209,10 +209,6 @@ async def _stream_pipeline(
                 slug = evt.get("slug")
             if evt.get("step") == "error":
                 saw_error = True
-                # Rewrite the YouTube download-blocked message with cloud context
-                msg = evt.get("message", "")
-                if "YouTube blocked" in msg or "blocked the download" in msg:
-                    evt = {**evt, "message": "youtube_server_blocked"}
             collected_events.append({**evt, "ts": round(time.time() - start_time, 2)})
             yield f"data: {json.dumps(evt)}\n\n"
         except json.JSONDecodeError:
