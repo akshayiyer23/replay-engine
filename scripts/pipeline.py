@@ -1058,17 +1058,27 @@ def mine_chunk(
             f"{sentences_payload}\n\n"
             f"{base_instruction}{extra}"
         )
-        resp = client.messages.create(
-            model=MODEL,
-            max_tokens=16000,
-            temperature=1,
-            thinking={"type": "adaptive"},
-            extra_body={"output_config": {"effort": "low"}},
-            extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
-            system=[{"type": "text", "text": skill_prompt,
-                     "cache_control": {"type": "ephemeral"}}],
-            messages=[{"role": "user", "content": user_msg}],
-        )
+        for _attempt in range(3):
+            try:
+                resp = client.messages.create(
+                    model=MODEL,
+                    max_tokens=16000,
+                    temperature=1,
+                    thinking={"type": "adaptive"},
+                    extra_body={"output_config": {"effort": "low"}},
+                    extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
+                    system=[{"type": "text", "text": skill_prompt,
+                             "cache_control": {"type": "ephemeral"}}],
+                    messages=[{"role": "user", "content": user_msg}],
+                )
+                break
+            except anthropic.RateLimitError:
+                if _attempt < 2:
+                    wait = 15 * (_attempt + 1)
+                    print(f"   ⏳ Rate limited — retrying in {wait}s…")
+                    time.sleep(wait)
+                    continue
+                raise
         tb = next((b for b in resp.content if getattr(b, "type", None) == "text"), None)
         if tb is None:
             return None
@@ -1610,20 +1620,24 @@ def _gate_diversity(candidates: list[dict], qa: list) -> None:
 
 
 def _fallback_min3(candidates: list[dict], qa: list) -> None:
-    """If fewer than 3 candidates score ≥45, mark best 3 lower_confidence."""
-    high = [c for c in candidates if c.get("score", 0) >= 45]
-    if len(high) >= 3:
-        _qa_record(qa, "min3", "top_set", True, f"{len(high)} candidates ≥ 45")
+    """Ensure at least 3 candidates make it to content generation."""
+    top = [c for c in candidates if c.get("top8")]
+    if len(top) >= 3:
+        _qa_record(qa, "min3", "top_set", True, f"{len(top)} top8 candidates")
         return
     best3 = sorted(candidates, key=lambda c: -c.get("score", 0))[:3]
-    _qa_record(qa, "min3", "top_set", False,
-               f"only {len(high)} ≥ 45 — marking best 3 lower_confidence", fixed=True)
+    promoted = []
     for c in best3:
+        if not c.get("top8"):
+            c["top8"] = True
+            promoted.append(c["id"])
         if c.get("score", 0) < 45:
             c["lower_confidence"] = True
             c["lower_confidence_reason"] = (
                 f"best available (score={c['score']}, threshold=45)"
             )
+    _qa_record(qa, "min3", "top_set", False,
+               f"only {len(top)} top8 — promoted {promoted}", fixed=True)
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
@@ -1908,7 +1922,7 @@ def _run_main(args) -> None:
     # ── 3. chunk ──
     chunks = chunk_sentences(sentences, CHUNK_MS)
     n_chunks = len(chunks)
-    workers = min(4, n_chunks)
+    workers = min(2, n_chunks)
     print(f"📦 {n_chunks} chunk(s), mining up to {workers} in parallel…")
     _emit("mining", f"🔍 Scanning {len(sentences)} sentences across {n_chunks} chunks…", 40)
 
