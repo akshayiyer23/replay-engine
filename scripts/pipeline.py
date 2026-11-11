@@ -1111,7 +1111,6 @@ def mine_chunk(
                 resp = client.messages.create(
                     model=MODEL,
                     max_tokens=16000,
-                    temperature=1,
                     thinking={"type": "adaptive"},
                     extra_body={"output_config": {"effort": "low"}},
                     extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
@@ -1303,7 +1302,6 @@ def judge_candidates(
             resp = client.messages.create(
                 model=MODEL,
                 max_tokens=16000,
-                temperature=1,
                 thinking={"type": "adaptive"},
                 extra_body={"output_config": {"effort": "low"}},
                 extra_headers={"anthropic-beta": "prompt-caching-2024-07-31"},
