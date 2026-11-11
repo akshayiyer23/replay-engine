@@ -15,6 +15,7 @@ import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 import RunPanel from "./RunPanel";
 import AgentRunView from "./AgentRunView";
+import ErrorBoundary from "./ErrorBoundary";
 
 // Shared container — every section uses this so left edges align at all widths
 const CONTAINER = "max-w-6xl mx-auto px-6";
@@ -293,17 +294,20 @@ function ResultsSection({
         <div>
           {results && (
             <>
-              <p className="text-xs text-[#6B6560] mb-1">
-                {fmtDate(results.index.date)} · {results.index.duration}
-              </p>
+              {results.index?.date && (
+                <p className="text-xs text-[#6B6560] mb-1">
+                  {fmtDate(results.index.date)}
+                  {results.index.duration ? ` · ${results.index.duration}` : ""}
+                </p>
+              )}
               <h2
                 className="text-2xl md:text-3xl text-[#1A1A1A] leading-tight"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                {results.index.title}
+                {results.index?.title ?? "Live run results"}
               </h2>
               <p className="text-sm text-[#6B6560] mt-1">
-                {results.top_moments?.length} moments · sorted by viral score
+                {results.top_moments?.length ?? 0} moments · sorted by viral score
               </p>
             </>
           )}
@@ -328,14 +332,15 @@ function ResultsSection({
 
       {results && (
         <div className="space-y-6">
-          {results.top_moments.map((moment, i) => {
-            const content = results.content?.find((c) => c.id === moment.id)!;
+          {(results.top_moments ?? []).map((moment, i) => {
+            const content = results.content?.find((c) => c.id === moment.id);
+            if (!content) return null;
             return (
               <MomentCard
                 key={moment.id}
                 moment={moment}
                 content={content}
-                youtubeId={results.index.youtube_id}
+                youtubeId={results.index?.youtube_id ?? ""}
                 rank={i + 1}
               />
             );
@@ -564,11 +569,13 @@ export default function HomePage({
       <div ref={resultsRef}>
         {(loading || results) && (
           <div className="border-t border-[#E8E4DC] mt-2 pt-12">
-            <ResultsSection
-              results={results}
-              loading={loading}
-              onClose={closeResults}
-            />
+            <ErrorBoundary>
+              <ResultsSection
+                results={results}
+                loading={loading}
+                onClose={closeResults}
+              />
+            </ErrorBoundary>
           </div>
         )}
       </div>
@@ -587,16 +594,26 @@ export default function HomePage({
         )}
 
         {(appMode === "running" || appMode === "replaying") && (
-          <AgentRunView
-            mode={appMode === "running" ? "live" : "replay"}
-            input={runInput ?? undefined}
-            replayEvents={replayEvents}
-            replaySlug={replaySlug ?? undefined}
-            onDone={handleAgentDone}
-            onError={handleAgentError}
-            onClose={closeAgent}
-            isReplay={appMode === "replaying"}
-          />
+          <ErrorBoundary
+            fallback={
+              <div className="px-4 py-3 rounded-lg bg-red-50 border border-red-200">
+                <p className="text-sm text-red-700 font-medium">
+                  The run was interrupted — try again or pick one of the 11 webinars above.
+                </p>
+              </div>
+            }
+          >
+            <AgentRunView
+              mode={appMode === "running" ? "live" : "replay"}
+              input={runInput ?? undefined}
+              replayEvents={replayEvents}
+              replaySlug={replaySlug ?? undefined}
+              onDone={handleAgentDone}
+              onError={handleAgentError}
+              onClose={closeAgent}
+              isReplay={appMode === "replaying"}
+            />
+          </ErrorBoundary>
         )}
       </div>
 

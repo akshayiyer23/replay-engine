@@ -13,6 +13,7 @@ Run:
 import asyncio
 import json
 import os
+import re
 import sys
 import tempfile
 import time
@@ -299,6 +300,34 @@ async def _stream_pipeline(
                 result["content"] = json.loads(content_file.read_text())
             except Exception:
                 pass
+
+        # Build an index object so the frontend can render video embeds + headers.
+        # Use the precomputed index.json if it exists, otherwise build a minimal stub.
+        slug_dir = PRECOMPUTED_DIR / slug
+        if (slug_dir / "index.json").exists():
+            try:
+                result["index"] = json.loads((slug_dir / "index.json").read_text())
+            except Exception:
+                pass
+        if "index" not in result:
+            # Extract YouTube ID from the original command args
+            youtube_id = ""
+            for arg in cmd:
+                m = re.search(r"[?&]v=([A-Za-z0-9_-]{11})", arg) or \
+                    re.search(r"youtu\.be/([A-Za-z0-9_-]{11})", arg)
+                if m:
+                    youtube_id = m.group(1)
+                    break
+            top_score = (result.get("top_moments") or [{}])[0].get("score", 0)
+            result["index"] = {
+                "slug": slug,
+                "title": slug.replace("-", " ").title(),
+                "date": "",
+                "youtube_id": youtube_id,
+                "duration": "",
+                "speakers": [],
+                "top_score": top_score,
+            }
 
     yield f"data: {json.dumps({'step': 'results', 'data': result})}\n\n"
     yield "data: {\"step\": \"stream_done\"}\n\n"
