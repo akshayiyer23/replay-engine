@@ -372,8 +372,11 @@ def _fetch_supadata_captions(video_url: str) -> list[dict]:
     # ── disk cache hit ────────────────────────────────────────────────────────
     cached = _supadata_cache_load()
     if video_id in cached and cached[video_id]:
-        print(f"[supadata] cache hit for {video_id} ({len(cached[video_id])} segments)")
-        return cached[video_id]
+        raw_cached = cached[video_id]
+        print(f"[supadata] cache hit for {video_id} ({len(raw_cached)} segments)")
+        # Always re-merge: old cache entries may predate _merge_caption_segments;
+        # the function is idempotent so already-merged segments pass through fine.
+        return _merge_caption_segments(raw_cached)
 
     # ── key check ─────────────────────────────────────────────────────────────
     api_key = os.environ.get("SUPADATA_API_KEY", "")
@@ -1843,10 +1846,23 @@ def _run_main(args) -> None:
         if dur_s and dur_s < 300:
             raise PipelineError(f"Video is {dur_min:.1f} min — too short to find multiple clip moments (min 5 min).")
 
-    # --fresh: wipe pipeline fields but never the golden version
+    # --fresh: wipe pipeline fields but never the golden version.
+    # For caption-based transcripts, also drop the sentences_file so the
+    # merge parameters are always re-applied (Supadata disk cache keeps this
+    # free — no API call is made).
     if args.fresh and cache_key in cache:
+        entry_now = cache[cache_key]
         for field in ("pipeline_complete", "candidates_file", "content_file"):
-            cache[cache_key].pop(field, None)
+            entry_now.pop(field, None)
+        if entry_now.get("source_type") == "captions" or \
+                entry_now.get("transcript_id", "").startswith("captions:"):
+            sf = entry_now.pop("sentences_file", None)
+            if sf:
+                try:
+                    Path(sf).unlink(missing_ok=True)
+                except OSError:
+                    pass
+            print("🔄 --fresh: caption transcript cleared (will re-merge from cache)")
         save_cache(cache)
         print("🔄 --fresh: pipeline cache cleared (transcript reused, golden preserved)")
 
