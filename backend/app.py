@@ -34,6 +34,20 @@ PRECOMPUTED_DIR = DATA_DIR / "precomputed"
 
 load_dotenv(ROOT / ".env")
 
+# Startup key-presence check (values never logged)
+def _check_env() -> None:
+    keys = {
+        "ANTHROPIC_API_KEY": bool(os.environ.get("ANTHROPIC_API_KEY")),
+        "ASSEMBLYAI_API_KEY": bool(os.environ.get("ASSEMBLYAI_API_KEY")),
+        "SUPADATA_API_KEY": bool(os.environ.get("SUPADATA_API_KEY")),
+        "DEMO_PASSCODE": bool(os.environ.get("DEMO_PASSCODE")),
+    }
+    for name, present in keys.items():
+        status = "set" if present else "NOT SET"
+        print(f"[config] {name}: {status}", file=sys.stderr)
+
+_check_env()
+
 DEMO_PASSCODE = os.environ.get("DEMO_PASSCODE", "")
 MAX_VIDEO_HOURS = 2.0
 MAX_RUNS_PER_IP_PER_DAY = 3

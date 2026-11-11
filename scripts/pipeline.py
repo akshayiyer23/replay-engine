@@ -427,27 +427,29 @@ def get_sentences_for_url(
 
     try:
         if os.environ.get("REPLAY_FORCE_CAPTION_FALLBACK") == "1":
-            raise PipelineError("YouTube blocked the download — forced for testing.")
+            raise PipelineError("forced for testing — skipping yt-dlp")
         with tempfile.TemporaryDirectory() as tmp:
             audio_path = download_audio(url, tmp)
             _emit("transcribe", "✍️  Transcribing…", 15)
             print("✍️  Transcribing…")
             sentences, _, tid = transcribe_file(audio_path)
     except PipelineError as _exc:
-        if "blocked" not in str(_exc).lower() and "sign-in" not in str(_exc).lower():
-            raise
+        # ANY yt-dlp/transcription failure → try Supadata captions before giving up
+        _orig_err = str(_exc)
+        print(f"[yt-dlp] download/transcribe failed: {_orig_err}")
         _emit("download", "⚠️  YouTube blocked audio download — using captions instead.", 8)
-        print("⚠️  YouTube blocked audio download — using captions instead.")
+        print("[supadata] trying caption fallback…")
         try:
             sentences = _fetch_supadata_captions(url)
-        except PipelineError:
+        except PipelineError as _sup_err:
+            print(f"[supadata] failed: {_sup_err}")
             raise PipelineError(
                 "YouTube blocked this video on our server. "
                 "Upload the file or paste the transcript — takes 10 seconds."
             )
         tid = f"captions:{get_video_id(url)}"
         _emit("transcribe", f"📋 Captions loaded — {len(sentences)} segments", 15)
-        print(f"📋 Captions loaded — {len(sentences)} segments")
+        print(f"[supadata] loaded {len(sentences)} segments")
 
     sentences_path = DATA_DIR / f"{slug}-sentences.json"
     sentences_path.write_text(json.dumps(sentences, indent=2))
@@ -1670,9 +1672,9 @@ def _run_main(args) -> None:
         try:
             video_slug_hint, dur_s, _video_title = get_video_info(args.input)
         except PipelineError as _vinfo_err:
-            # In forced-caption mode, yt-dlp metadata may also be blocked — that's fine
-            if os.environ.get("REPLAY_FORCE_CAPTION_FALLBACK") != "1":
-                raise
+            # yt-dlp metadata blocked on this server (sign-in, bot check, 403, etc.)
+            # Fall back gracefully — get_sentences_for_url will try Supadata captions
+            print(f"[yt-dlp] metadata failed: {_vinfo_err} — will attempt Supadata fallback")
             video_slug_hint = get_video_id(args.input)
             dur_s = 0
             _video_title = ""
