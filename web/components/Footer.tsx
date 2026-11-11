@@ -6,10 +6,9 @@ export default function Footer() {
           Built for Unify by{" "}
           <span className="text-[#1A1A1A] font-medium">Akshay Iyer</span>
         </p>
+        {/* TODO: add GitHub repo link */}
         <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
           className="inline-flex items-center gap-2 text-sm text-[#6B6560] hover:text-[#F15A24] transition-colors"
         >
           <svg

@@ -1,19 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getWebinars } from "@/lib/api";
-import type { Webinar } from "@/lib/api";
+import { getWebinars, getResults } from "@/lib/api";
+import type { Webinar, WebinarResults } from "@/lib/api";
 import HomePage from "./HomePage";
 
 export default function ClientPage() {
   const [webinars, setWebinars] = useState<Webinar[]>([]);
+  const [featured, setFeatured] = useState<WebinarResults | null>(null);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    getWebinars().then((data) => {
-      setWebinars(data);
-      setReady(true);
-    });
+    Promise.all([getWebinars(), getResults("custom-ai-signals")]).then(
+      ([w, f]) => {
+        setWebinars(w);
+        setFeatured(f);
+        setReady(true);
+      }
+    );
   }, []);
 
   if (!ready) {
@@ -24,5 +28,5 @@ export default function ClientPage() {
     );
   }
 
-  return <HomePage webinars={webinars} />;
+  return <HomePage webinars={webinars} featured={featured} />;
 }

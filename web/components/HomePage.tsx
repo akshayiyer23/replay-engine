@@ -1,53 +1,143 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import type { Webinar, WebinarResults } from "@/lib/api";
+import type { Webinar, WebinarResults, ContentItem, Moment } from "@/lib/api";
 import { getResults, fmtDate } from "@/lib/api";
 import MomentCard from "./MomentCard";
 import HowItWorks from "./HowItWorks";
 import Footer from "./Footer";
 
+// Shared container — every section uses this so left edges align at all widths
+const CONTAINER = "max-w-6xl mx-auto px-6";
+
+// ─── Hero preview card ────────────────────────────────────────────────────────
+
+function HeroPreviewCard({
+  moment,
+  content,
+  youtubeId,
+  onClick,
+}: {
+  moment: Moment;
+  content: ContentItem;
+  youtubeId: string;
+  onClick: () => void;
+}) {
+  const thumbUrl = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+  const firstLine = content.linkedin_post.split("\n")[0];
+
+  return (
+    <button
+      onClick={onClick}
+      className="text-left w-full rounded-xl border border-[#E8E4DC] bg-white overflow-hidden hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all group"
+    >
+      {/* Thumbnail */}
+      <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={thumbUrl}
+          alt="Custom AI Signals"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
+        {/* Score badge */}
+        <div
+          className="absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center shadow-md"
+          style={{ backgroundColor: "#F15A24" }}
+        >
+          <span className="text-sm font-semibold text-white">
+            {moment.score}
+          </span>
+        </div>
+      </div>
+
+      {/* Meta */}
+      <div className="p-4 space-y-2">
+        <div className="flex flex-wrap gap-1.5">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-[#F15A24] text-[#F15A24] bg-[#FEF0EB] capitalize">
+            {moment.moment_type}
+          </span>
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs border border-[#E8E4DC] text-[#6B6560]">
+            Post for: {moment.post_for}
+          </span>
+        </div>
+        <p className="text-sm font-medium text-[#1A1A1A] leading-snug">
+          {firstLine}
+        </p>
+        <p className="text-xs text-[#6B6560]">
+          {content.linkedin_post.split("\n").slice(1, 3).join(" ").slice(0, 100)}…
+        </p>
+      </div>
+    </button>
+  );
+}
+
 // ─── Hero ────────────────────────────────────────────────────────────────────
 
-function Hero({ onOpenWebinar }: { onOpenWebinar: (slug: string) => void }) {
+function Hero({
+  onOpenWebinar,
+  featured,
+}: {
+  onOpenWebinar: (slug: string) => void;
+  featured: WebinarResults | null;
+}) {
+  const topMoment = featured?.top_moments[0];
+  const topContent = topMoment
+    ? featured?.content.find((c) => c.id === topMoment.id)
+    : undefined;
+
   return (
-    <section className="pt-24 pb-20 px-6 max-w-6xl mx-auto">
-      <div className="max-w-3xl">
-        <h1
-          className="text-5xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight text-[#1A1A1A] mb-6"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          Unify&apos;s webinars get under 200 views.
-          <br />
-          <span className="text-[#F15A24]">They deserve millions.</span>
-        </h1>
-        <p className="text-lg text-[#6B6560] leading-relaxed mb-8 max-w-2xl">
-          An AI agent that finds the moments that should go viral — scored
-          against{" "}
-          <span className="text-[#1A1A1A] font-medium">
-            861 real GTM LinkedIn posts
-          </span>
-          .
-        </p>
-        <button
-          onClick={() => onOpenWebinar("custom-ai-signals")}
-          className="inline-flex items-center gap-2 bg-[#F15A24] text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-[#d94e1f] active:scale-[0.98] transition-all"
-        >
-          See it on The Power of Custom AI Signals
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
+    <section className="pt-20 pb-16">
+      <div className={`${CONTAINER} grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
+        {/* Left: headline + subline + CTA */}
+        <div>
+          <h1
+            className="text-5xl md:text-6xl leading-[1.08] tracking-tight text-[#1A1A1A] mb-5"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 9l-7 7-7-7"
+            Every Unify webinar has{" "}
+            <span className="text-[#F15A24]">6 viral moments</span> hiding in
+            it.
+          </h1>
+          <p className="text-lg text-[#6B6560] leading-relaxed mb-8">
+            This agent finds them, scores them against 861 real GTM LinkedIn
+            posts, and writes the posts.
+          </p>
+          <button
+            onClick={() => onOpenWebinar("custom-ai-signals")}
+            className="inline-flex items-center gap-2 bg-[#F15A24] text-white px-6 py-3.5 rounded-lg text-sm font-medium hover:bg-[#d94e1f] active:scale-[0.98] transition-all"
+          >
+            See it on The Power of Custom AI Signals
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        {/* Right: live preview card */}
+        {topMoment && topContent && featured && (
+          <div className="w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+            <p className="text-xs text-[#6B6560] uppercase tracking-wider mb-2 font-medium">
+              Top moment · Custom AI Signals
+            </p>
+            <HeroPreviewCard
+              moment={topMoment}
+              content={topContent}
+              youtubeId={featured.index.youtube_id}
+              onClick={() => onOpenWebinar("custom-ai-signals")}
             />
-          </svg>
-        </button>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -59,11 +149,13 @@ function StatStrip() {
   const stats = [
     { value: "11", label: "webinars" },
     { value: "66", label: "ready-to-post moments" },
-    { value: "861", label: "real GTM posts scored against" },
+    { value: "861", label: "real GTM posts analyzed" },
   ];
   return (
-    <div className="border-y border-[#E8E4DC] py-5 px-6">
-      <div className="max-w-6xl mx-auto flex flex-wrap gap-6 items-center justify-center sm:justify-start">
+    <div className="border-y border-[#E8E4DC] py-5">
+      <div
+        className={`${CONTAINER} flex flex-wrap gap-6 items-center justify-center sm:justify-start`}
+      >
         {stats.map((s, i) => (
           <div key={s.label} className="flex items-center gap-2">
             {i > 0 && (
@@ -91,19 +183,19 @@ function WebinarCard({
   w,
   selected,
   onClick,
+  pinned,
 }: {
   w: Webinar;
   selected: boolean;
   onClick: () => void;
+  pinned?: boolean;
 }) {
   const thumbUrl = `https://img.youtube.com/vi/${w.youtube_id}/hqdefault.jpg`;
   return (
     <button
       onClick={onClick}
       className={`text-left w-full rounded-xl border overflow-hidden hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all ${
-        selected
-          ? "border-[#F15A24] shadow-sm"
-          : "border-[#E8E4DC] bg-white"
+        selected ? "border-[#F15A24] shadow-sm" : "border-[#E8E4DC] bg-white"
       }`}
     >
       {/* Thumbnail */}
@@ -114,9 +206,24 @@ function WebinarCard({
           alt={w.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Score badge */}
-        <div className="absolute top-2 right-2 w-9 h-9 rounded-full bg-[#F15A24] flex items-center justify-center shadow">
-          <span className="text-xs font-semibold text-white">{w.top_score}</span>
+        {/* "Start here" badge */}
+        {pinned && (
+          <div className="absolute top-2 left-2 bg-[#F15A24] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide shadow">
+            Start here
+          </div>
+        )}
+        {/* Score badge with tooltip */}
+        <div className="absolute top-2 right-2 group/score">
+          <div className="w-9 h-9 rounded-full bg-[#F15A24] flex items-center justify-center shadow">
+            <span className="text-xs font-semibold text-white">
+              {w.top_score}
+            </span>
+          </div>
+          <div className="absolute right-0 top-full mt-1 hidden group-hover/score:block z-10">
+            <div className="bg-[#1A1A1A] text-white text-[10px] px-2 py-1 rounded whitespace-nowrap">
+              Top moment score
+            </div>
+          </div>
         </div>
       </div>
 
@@ -155,7 +262,7 @@ function ResultsSection({
   if (!loading && !results) return null;
 
   return (
-    <section className="px-6 max-w-6xl mx-auto pb-16">
+    <section className={`${CONTAINER} pb-16`}>
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-8">
         <div>
@@ -171,8 +278,7 @@ function ResultsSection({
                 {results.index.title}
               </h2>
               <p className="text-sm text-[#6B6560] mt-1">
-                {results.top_moments?.length} top moments · sorted by viral
-                score
+                {results.top_moments?.length} moments · sorted by viral score
               </p>
             </>
           )}
@@ -217,6 +323,8 @@ function ResultsSection({
 
 // ─── Library ─────────────────────────────────────────────────────────────────
 
+const PINNED_SLUG = "custom-ai-signals";
+
 function Library({
   webinars,
   selectedSlug,
@@ -226,8 +334,13 @@ function Library({
   selectedSlug: string | null;
   onSelect: (slug: string) => void;
 }) {
+  // Pin Custom AI Signals first; rest stay in backend order (newest first)
+  const pinned = webinars.find((w) => w.slug === PINNED_SLUG);
+  const rest = webinars.filter((w) => w.slug !== PINNED_SLUG);
+  const ordered = pinned ? [pinned, ...rest] : rest;
+
   return (
-    <section className="py-16 px-6 max-w-6xl mx-auto">
+    <section className={`${CONTAINER} py-16`}>
       <h2
         className="text-3xl md:text-4xl mb-2 text-[#1A1A1A]"
         style={{ fontFamily: "var(--font-serif)" }}
@@ -238,12 +351,13 @@ function Library({
         {webinars.length} episodes · click any card to see the moment breakdown
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {webinars.map((w) => (
+        {ordered.map((w) => (
           <WebinarCard
             key={w.slug}
             w={w}
             selected={w.slug === selectedSlug}
             onClick={() => onSelect(w.slug)}
+            pinned={w.slug === PINNED_SLUG}
           />
         ))}
       </div>
@@ -253,7 +367,13 @@ function Library({
 
 // ─── HomePage (root client component) ────────────────────────────────────────
 
-export default function HomePage({ webinars }: { webinars: Webinar[] }) {
+export default function HomePage({
+  webinars,
+  featured,
+}: {
+  webinars: Webinar[];
+  featured: WebinarResults | null;
+}) {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [results, setResults] = useState<WebinarResults | null>(null);
   const [loading, setLoading] = useState(false);
@@ -262,21 +382,29 @@ export default function HomePage({ webinars }: { webinars: Webinar[] }) {
   const openWebinar = useCallback(
     async (slug: string) => {
       if (slug === selectedSlug && results) {
-        // already loaded — just scroll
         resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
+
+      // If clicking the featured webinar and we already have its data, reuse it
+      if (slug === PINNED_SLUG && featured) {
+        setSelectedSlug(slug);
+        setResults(featured);
+        setLoading(false);
+        setTimeout(
+          () =>
+            resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+          50
+        );
+        return;
+      }
+
       setSelectedSlug(slug);
       setResults(null);
       setLoading(true);
-
-      // Scroll to results section immediately so the spinner is visible
       setTimeout(
         () =>
-          resultsRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          }),
+          resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
         50
       );
 
@@ -284,7 +412,7 @@ export default function HomePage({ webinars }: { webinars: Webinar[] }) {
       setResults(data);
       setLoading(false);
     },
-    [selectedSlug, results]
+    [selectedSlug, results, featured]
   );
 
   const closeResults = useCallback(() => {
@@ -295,7 +423,7 @@ export default function HomePage({ webinars }: { webinars: Webinar[] }) {
 
   return (
     <main className="flex-1 flex flex-col">
-      <Hero onOpenWebinar={openWebinar} />
+      <Hero onOpenWebinar={openWebinar} featured={featured} />
       <StatStrip />
       <Library
         webinars={webinars}

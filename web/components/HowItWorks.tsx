@@ -2,7 +2,7 @@ const STEPS = [
   {
     n: "01",
     label: "Transcribe",
-    sub: "AssemblyAI speaker diarisation — every sentence timestamped",
+    sub: "Transcribes every word and knows who said what.",
   },
   {
     n: "02",
@@ -73,10 +73,9 @@ export default function HowItWorks() {
           Honest caveat
         </p>
         <p className="text-sm text-[#1A1A1A] leading-relaxed">
-          Backtested on 168 real posts: ranking tracks real performance on
-          Unify&apos;s own team (ρ ≈ 0.5). Not perfect, but meaningfully better
-          than random. v2 learns from Unify&apos;s own posted results every
-          week.
+          Backtested on 168 real posts. On Austin&apos;s posts, the ranking
+          tracks real performance (ρ ≈ 0.5). v2 learns from Unify&apos;s own
+          posted results every week.
         </p>
       </div>
     </section>
