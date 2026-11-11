@@ -167,8 +167,6 @@ export default function AgentRunView({
   const processEvent = useCallback(
     (evt: AgentEvent) => {
       if (evt.step === "stream_done") return;
-      if (evt.step !== "mining_hook") console.log("[SSE]", evt.step, evt.message ?? "");
-
       setPercent(evt.percent);
 
       if (evt.step === "mining_hook") {
