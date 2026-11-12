@@ -8,34 +8,34 @@
     "judge_score": 78,
     "angle_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 11
+      "first_line_words": 12
     },
-    "post_first_line": "Our ICP was wrong.",
+    "post_first_line": "Our ICP was wrong. Closed-won data said so.",
     "post_tag": {
       "hook_type": "contrarian",
       "first_line_words": 4
     },
     "hook_score_before": 78,
     "hook_score_after": 79,
-    "linkedin_post": "Our ICP was wrong.\n\nNot completely wrong. But the closed-won data told a different story than the one we'd been telling ourselves.\n\nWe assumed our ICP was pretty standard: the usual top segments, the usual types of businesses we sell into.\n\nThen we looked back at our closed-won customers and dug into the conversation transcripts from those deals. We were hunting for specific moments that kept showing up.\n\nOne of them was a recent product launch. When a company had just launched a product, they were looking at Unify at a higher clip.\n\nThat's not a firmographic. You won't find it in a segment filter on company size or industry. It's a moment, and you only see it when you read what buyers actually said.\n\nMost teams define ICP once, from a whiteboard, and then never test it against who actually buys.\n\nYour closed-won deals are already telling you who your buyer is and when they show up. The transcripts are sitting in your call recorder.\n\nWhen did you last compare your ICP to your closed-won data?",
+    "linkedin_post": "Our ICP was wrong. Closed-won data said so.\n\nThe gap between who we assumed we sold to and who actually bought was bigger than I expected.\n\nWe thought our ICP was pretty standard: a set of top segments and the kinds of businesses we sell into.\n\nThen we looked back at our closed-won customers. We pulled the conversation intelligence from those deals and read the transcripts, looking for particular moments.\n\nOne of them was a recent product launch.\n\nIf a company had just launched a product, they were looking at Unify at a higher clip.\n\nThat's not a segment on a slide. It's a moment in time. And it's something a static ICP list never captures.\n\nWhat I took from it: your ICP isn't only who the company is. It's also what's happening to them right now.\n\nThe closed-won transcripts told us more than our assumptions did.\n\nWhat signal showed up in your closed-won deals?",
     "carousel": [
       "Slide 1: We thought we knew our ICP. The data disagreed.",
-      "Slide 2: We assumed a standard ICP: the usual top segments.",
-      "Slide 3: Then we reviewed our closed-won customers.",
-      "Slide 4: We read the call transcripts for recurring moments.",
-      "Slide 5: Recent product launches kept showing up in those deals.",
-      "Slide 6: Companies with a recent launch looked at Unify at a higher clip.",
-      "Slide 7: That's a timing signal, not a firmographic filter.",
-      "Slide 8: Your closed-won data already knows your real ICP."
+      "Slide 2: Our ICP looked standard: top segments, familiar business types.",
+      "Slide 3: Then we looked back at our closed-won customers.",
+      "Slide 4: We read the conversation intelligence from those deal transcripts.",
+      "Slide 5: We looked for particular moments, not just company attributes.",
+      "Slide 6: Recent product launch showed up as a real pattern.",
+      "Slide 7: Those companies looked at Unify at a higher clip.",
+      "Slide 8: ICP isn't just who they are. It's what's happening now."
     ],
     "lesson": {
-      "title": "Let closed-won data rewrite your ICP",
+      "title": "Your ICP is a moment, not just a segment",
       "takeaways": [
-        "An assumed ICP is a hypothesis, and closed-won deals are how you test it.",
-        "Call transcripts reveal moments, like a recent product launch, that firmographics miss.",
-        "Buyers with a specific recent event can show interest in your product at a higher clip."
+        "Assumed ICPs often reflect habit, not closed-won evidence.",
+        "Conversation transcripts from won deals reveal moments that predict buying interest.",
+        "A trigger like a recent product launch can matter as much as firmographics."
       ],
-      "exercise": "Pull your last 10 closed-won deals, read the call transcripts, and list any moment or event that shows up in more than one. Compare that list to your current ICP definition."
+      "exercise": "Pull transcripts from your last 10 closed-won deals and list every recurring moment or event the buyer mentioned. Pick the most common one and test it as a targeting signal."
     },
     "caption": "Our ICP was wrong"
   },
@@ -50,34 +50,34 @@
       "hook_type": "how_to",
       "first_line_words": 11
     },
-    "post_first_line": "Delay your first send by 10 minutes.",
+    "post_first_line": "Delay your launch by 10 to 20 minutes.",
     "post_tag": {
       "hook_type": "how_to",
-      "first_line_words": 7
+      "first_line_words": 8
     },
     "hook_score_before": 69,
     "hook_score_after": 72,
-    "linkedin_post": "Delay your first send by 10 minutes.\n\nThat one setting is how I launch an automated play without sending anything embarrassing.\n\nWhen a new play goes live, I hold the sequence for around 10 to 20 minutes. Delaying a sequence is something you can do natively in Unify.\n\nThen I read through the sample emails and check for accuracy. I'm making sure nothing wacky is going out.\n\nBy that point we've already tested the agents and the snippets at a smaller scale. The delay is the last check before volume.\n\nIf a sample shows something off, like a reply saying we didn't launch that product, or a reference to something from months ago, I tweak the agent and keep testing.\n\nAnd there will be edge cases. We'll probably get one every few thousand emails.\n\nBased on the success we've seen, it's well worth it.\n\nThe goal isn't a perfect launch. It's catching the obvious problems before they hit thousands of inboxes.\n\nWhat's your last check before launching a play?",
+    "linkedin_post": "Delay your launch by 10 to 20 minutes.\n\nThat one setting is how I keep automated outbound from sending anything embarrassing.\n\nBefore a play goes live, I've already tested the agents and the snippets at a smaller scale. But small-scale tests don't catch everything.\n\nSo when we launch, I delay the sequence. You can do this natively in Unify. Then I read through the sample emails and check the accuracy. I'm looking for anything wacky.\n\nSometimes a sample reply comes back saying \"we didn't launch this product\" or \"this is from months ago.\" When that happens, I tweak the agent and keep testing.\n\nEdge cases will still slip through. We probably get one every few thousand emails.\n\nBased on the results, it's well worth it.\n\nThe goal isn't zero mistakes. It's catching the systematic ones before they hit thousands of inboxes.\n\nWhat's your pre-launch check for automated outreach?",
     "carousel": [
-      "Slide 1: Launch an automated play without embarrassing yourself",
+      "Slide 1: Launch automated outbound without sending anything embarrassing",
       "Slide 2: Test your agents and snippets at small scale first",
       "Slide 3: At launch, delay the sequence by 10 to 20 minutes",
-      "Slide 4: Read the sample emails and check for accuracy",
-      "Slide 5: Look for anything wacky before it goes out",
-      "Slide 6: Bad reply about a product or old news? Tweak the agent",
+      "Slide 4: Read through the sample emails and check accuracy",
+      "Slide 5: Watch for outdated claims or products you never launched",
+      "Slide 6: Found something off? Tweak the agent and keep testing",
       "Slide 7: Expect an edge case every few thousand emails",
-      "Slide 8: It's well worth it based on the success"
+      "Slide 8: Catch the systematic errors before they scale"
     ],
     "lesson": {
       "title": "Launching an automated outbound play safely",
       "takeaways": [
-        "Test agents and snippets at a smaller scale before going wide.",
-        "Delay the first send by 10 to 20 minutes so you can review sample emails.",
-        "When a sample is off, tweak the agent and keep testing rather than pausing the whole play."
+        "Small-scale testing of agents and snippets comes before any full launch.",
+        "Delaying the sequence 10 to 20 minutes gives you a window to review real sample emails.",
+        "Edge cases are inevitable, roughly one every few thousand, but worth the tradeoff given the results."
       ],
-      "exercise": "Before your next play goes live, add a 10 to 20 minute delay to the sequence and review a handful of sample emails for accuracy, outdated references, and anything odd."
+      "exercise": "For your next automated play, add a 20-minute delay at launch, read 10 sample emails for accuracy, and note any fix the agent needs before the delay ends."
     },
-    "caption": "Delay your first send"
+    "caption": "Delay launch. Check everything."
   },
   {
     "id": "m0252",
@@ -93,31 +93,31 @@
     "post_first_line": "20+ meetings last month from one signal.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 7
+      "first_line_words": 6
     },
     "hook_score_before": 67,
     "hook_score_after": 62,
-    "linkedin_post": "20+ meetings last month from one signal.\n\nIt wasn't a fancy intent vendor or a new data source.\n\nIt was someone sitting on our pricing page. Over 20 meetings last month came from website intent plus prospecting into those accounts.\n\nThat first-party signal still works for us. A person already on your site, looking at pricing, is showing high intent.\n\nBut it's not the only first-party signal we use. We also watch:\n\n- MQLs that come in from gated content\n- Product tour views\n- CRM data, like close lost opportunities based on the loss reason\n\nWe can run all of that inside Unify.\n\nEveryone chases the new, exciting third-party signal. The boring stuff already sitting in your own systems is still booking the meetings.\n\nWhat's your most underrated first-party signal?",
+    "linkedin_post": "20+ meetings last month from one signal.\n\nIt's not a fancy one, and it's not a new one.\n\nSomeone sitting on our pricing page. That's still one of the most successful signals we have. Last month, website intent plus prospecting into those accounts drove over 20 meetings.\n\nThe rest of our first-party stack is just as unglamorous:\n\n- MQLs that come in from gated content\n- People viewing our product tour\n- CRM data, like close lost opportunities sorted by loss reason\n\nEveryone wants the clever third-party trigger. Meanwhile, the people already on your site, showing high intent, are the ones getting ignored.\n\nI'd start with what buyers are already doing on your own properties before buying another data source.\n\nWhat's your best-performing first-party signal right now?",
     "carousel": [
       "Slide 1: 20+ meetings last month from one boring signal",
-      "Slide 2: Someone sitting on our pricing page. That's it.",
-      "Slide 3: Website intent plus prospecting inside those accounts",
-      "Slide 4: Pricing page visits still show high intent for us",
-      "Slide 5: Gated content MQLs and product tour views count too",
-      "Slide 6: CRM data matters: close lost deals by loss reason",
-      "Slide 7: Everyone chases new signals. Your own data still books meetings.",
-      "Slide 8: What's your most underrated first-party signal?"
+      "Slide 2: The signal: someone sitting on your pricing page",
+      "Slide 3: Website intent plus prospecting into those accounts did it",
+      "Slide 4: Gated content MQLs are still a real signal",
+      "Slide 5: Product tour views show intent worth acting on",
+      "Slide 6: Close lost deals, sorted by loss reason, are a hidden list",
+      "Slide 7: Mine your own properties before buying more data",
+      "Slide 8: What first-party signal are you ignoring right now?"
     ],
     "lesson": {
-      "title": "Start with first-party signals before buying new ones",
+      "title": "Start with first-party signals",
       "takeaways": [
-        "Pricing page visits are a high-intent signal that still books meetings: over 20 last month from website intent and prospecting.",
+        "A pricing page visit is still a high-intent signal that books real meetings: over 20 last month for us.",
         "First-party signals go beyond the website: gated content MQLs, product tour views, and CRM data.",
-        "Close lost opportunities, segmented by loss reason, are a signal source you already own."
+        "Close lost opportunities can be segmented by loss reason and worked as their own signal."
       ],
-      "exercise": "List every first-party signal you already have (pricing page, product tour, gated content, close lost reasons). Pick the one with the highest intent and build one outbound play against the accounts showing it this week."
+      "exercise": "List every first-party signal you have today (pricing page, product tour, gated content, close lost by reason). Mark which ones have an owner and a follow-up play, then build one for the top unworked signal this week."
     },
-    "caption": "The boring signal that books meetings"
+    "caption": "Pricing page visitors book meetings"
   },
   {
     "id": "m0995",
@@ -137,27 +137,27 @@
     },
     "hook_score_before": 65,
     "hook_score_after": 51,
-    "linkedin_post": "Pricing changes are not major launches.\n\nMy AI signal kept getting this wrong, and the fix was simpler than I expected.\n\nWhile testing it early on, I noticed it was pulling in a lot of lighter announcements that we wouldn't consider launches. Pricing changes. Internal tools. Internal hiring news.\n\nThe problem was that I never defined what a \"major launch\" actually meant. The model filled in the blanks on its own.\n\nSo I gave it specific criteria and structure.\n\nWhat counts: a major feature, a significant go-to-market shift, or a net new customer-facing product.\n\nWhat gets ignored: pricing-only announcements and similar lighter news.\n\nSame model, same data. The only change was a clearer definition of what counts and what doesn't.\n\nIf your signal is noisy, the prompt is usually the first place to look. Tell it what to include, and be just as explicit about what to ignore.\n\nWhat's the noisiest signal in your workflow right now?",
+    "linkedin_post": "Pricing changes are not major launches.\n\nMy AI signal didn't know that, and it took testing to catch it.\n\nI built a signal to flag when a company ships a major launch. In early tests, it kept pulling in things we would never call a launch.\n\nPricing changes. Internal tools. Internal hiring news.\n\nThe model wasn't broken. My definition of \"major launch\" was vague, so it filled the gaps on its own.\n\nThe fix was giving it specific criteria and structure.\n\nWhat counts: a major feature, a significant go-to-market shift, or a net new customer-facing product.\n\nWhat to ignore: things like pricing-only announcements.\n\nIf your signal is noisy, the prompt is usually the problem. Define what counts and what doesn't, and the output gets a lot cleaner.\n\nWhat's the noisiest signal in your stack right now?",
     "carousel": [
-      "Slide 1: My AI signal kept flagging pricing changes as major launches",
-      "Slide 2: In testing, it pulled in pricing updates, internal tools, and hiring news",
-      "Slide 3: The model wasn't broken. I never defined 'major launch.'",
-      "Slide 4: Fix one: spell out what counts as a major launch",
-      "Slide 5: A major feature, a big go-to-market shift, a net new customer-facing product",
-      "Slide 6: Fix two: spell out what to ignore, like pricing-only announcements",
-      "Slide 7: Same model, same data, far less noise",
-      "Slide 8: Vague criteria in means noisy signals out"
+      "Slide 1: My AI signal kept calling pricing changes major launches.",
+      "Slide 2: It also flagged internal tools and hiring news as launches.",
+      "Slide 3: The model wasn't broken. My definition was too vague.",
+      "Slide 4: Vague criteria means the AI fills the gaps itself.",
+      "Slide 5: So I defined what counts: major feature, GTM shift, new product.",
+      "Slide 6: Then I defined what to ignore: pricing-only announcements.",
+      "Slide 7: Specific criteria plus structure gave a much cleaner signal.",
+      "Slide 8: Noisy signal? Fix the definition before you blame the model."
     ],
     "lesson": {
-      "title": "Define 'major' before your AI does it for you",
+      "title": "Define 'major launch' before your AI does it for you",
       "takeaways": [
-        "Vague terms like 'major launch' get interpreted loosely by the model, which creates noise.",
-        "Early testing surfaces false positives such as pricing changes, internal tools, and hiring news.",
-        "Explicit include and exclude criteria give the signal structure to work from."
+        "Testing early surfaces false positives like pricing changes, internal tools, and hiring news.",
+        "Vague terms like 'major launch' get interpreted loosely unless you give criteria and structure.",
+        "Spell out both what counts (major feature, GTM shift, net new customer-facing product) and what to ignore (pricing-only announcements)."
       ],
-      "exercise": "Pick one AI signal you run. List 5 recent false positives, then rewrite the prompt with a clear 'counts as' list and an 'ignore' list, and rerun it."
+      "exercise": "Pull 10 recent outputs from one of your AI signals and mark the false positives. Then rewrite the prompt with an explicit 'counts' list and an 'ignore' list based on those misses."
     },
-    "caption": "Pricing isn't a launch"
+    "caption": "Fixing a noisy AI signal"
   },
   {
     "id": "m1540",
@@ -170,34 +170,34 @@
       "hook_type": "other",
       "first_line_words": 11
     },
-    "post_first_line": "Hiring a ton for BD means pipeline pain.",
+    "post_first_line": "Hiring heavily for BD? That's a pipeline problem.",
     "post_tag": {
-      "hook_type": "other",
+      "hook_type": "contrarian",
       "first_line_words": 8
     },
     "hook_score_before": 65,
-    "hook_score_after": 68,
-    "linkedin_post": "Hiring a ton for BD means pipeline pain.\n\nThat's one of the signals I watch when a company's real problem isn't public.\n\nNobody posts \"our pipeline is broken\" on their website. So I infer it from what they do instead.\n\nHiring a lot for the BD team? They probably need more pipeline.\n\nThen I read inside the job description. It gives a sense of their tech stack, which shows their current workflow and the potential pains to go after.\n\nHeadcount growth is another signal. So is divestment in certain areas.\n\nWhat counts will look different depending on the type of business. But the pattern holds: a lot of external signals, and inferring from there.\n\nWhat's the best buying signal you've found?",
+    "hook_score_after": 71,
+    "linkedin_post": "Hiring heavily for BD? That's a pipeline problem.\n\nMost of the best buying signals aren't announced anywhere. Nobody posts \"our pipeline is broken.\"\n\nSo I look at what a company does instead of what it says. Hiring is the clearest one. If a team is hiring heavily for BD, they probably need more pipeline.\n\nThen I open the job description. It gives a sense of their tech stack, which tells me about their current workflow and the potential pains I can go after.\n\nHeadcount growth is another one. So is divestment in certain areas.\n\nWhat counts as a signal will look different depending on the type of business. But the pattern holds: lean on external signals and infer from there.\n\nYou're not waiting for a company to tell you the pain. You're reading it from the outside.\n\nWhat's the best non-obvious signal you track?",
     "carousel": [
-      "Slide 1: The real pain usually isn't public",
-      "Slide 2: So watch what companies do, not what they say",
-      "Slide 3: Hiring a ton for BD? They likely need pipeline",
-      "Slide 4: Read the job description for their tech stack",
-      "Slide 5: Tech stack hints at current workflow and pains",
-      "Slide 6: Headcount growth and divestment are signals too",
-      "Slide 7: Signals differ by business type",
-      "Slide 8: Gather external signals, then infer the pain"
+      "Slide 1: The real pain is rarely public. Read the signals instead.",
+      "Slide 2: Hiring a ton for BD? They probably need more pipeline.",
+      "Slide 3: Open the job description. It's more than a role listing.",
+      "Slide 4: The JD hints at their tech stack and current workflow.",
+      "Slide 5: Workflow gaps point to potential pains you can go after.",
+      "Slide 6: Headcount growth and divestment in certain areas are signals too.",
+      "Slide 7: Signals look different for every type of business.",
+      "Slide 8: Use external signals, then infer the pain from there."
     ],
     "lesson": {
-      "title": "Inferring pain from external signals",
+      "title": "Inferring Buyer Pain From External Signals",
       "takeaways": [
-        "When pain isn't public, infer it from external signals like hiring.",
-        "Job descriptions reveal tech stack, which hints at workflow and potential pains.",
-        "Headcount growth and divestment in certain areas are signals worth tracking."
+        "Heavy hiring for a BD team suggests a company probably needs more pipeline.",
+        "Job descriptions reveal tech stack, which hints at current workflow and potential pains.",
+        "Headcount growth and divestment in certain areas are signals worth tracking, and they vary by business type."
       ],
-      "exercise": "Pick one target account, read its open BD job description, and write down the tech stack and likely pain it suggests."
+      "exercise": "Pick five target accounts. For each, read one open job description and write down the tech stack mentioned, the workflow it implies, and one pain you could plausibly address."
     },
-    "caption": "Find pain that isn't public"
+    "caption": "Read the pain from outside"
   },
   {
     "id": "m1432",
@@ -207,35 +207,34 @@
     "angle": "Spotting the signal is only half the job. The other half is the message",
     "judge_score": 56,
     "angle_tag": {
-      "hook_type": "contrarian",
+      "hook_type": "other",
       "first_line_words": 8
     },
-    "post_first_line": "Intent signals only solve half the problem.",
+    "post_first_line": "Half the signal workflow is the message.",
     "post_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 6
+      "first_line_words": 7
     },
     "hook_score_before": 56,
-    "hook_score_after": 56,
-    "linkedin_post": "Intent signals only solve half the problem.\n\nThe other half is what happens after the signal fires.\n\nQuintin Smith made a point worth calling out: the power comes from two things working together. First, taking signals and using them as intent triggers for specific plays, with always-on monitoring behind them.\n\nSecond, customizing the copy for each of those plays.\n\nMost teams stop at the first part. They spot the signal, then a seller has to go build the message by hand.\n\nThat's where the manual work creeps back in. A seller looks at the intent signal, then writes the outreach from scratch.\n\nQuintin's point is that both pieces can be automated. The action follows the trigger, and the outreach is personalized to be hyper relevant at scale.\n\nSo nobody has to customize every single message, and nobody has to interpret every signal.\n\nA great signal with generic copy is still a generic email.\n\nWhere does your signal-to-message handoff break down?",
+    "hook_score_after": 59,
+    "linkedin_post": "Half the signal workflow is the message.\n\nMost teams stop at detecting the trigger and miss where the leverage actually sits.\n\nQuintin Smith made a point that gets overlooked: the power isn't only in turning signals into intent triggers that fire specific plays. It's also in the customization of the copy.\n\nYou get two things working together. Always-on monitoring for the trigger, and outreach that's personalized to it.\n\nThat means no seller has to look at an intent signal, then go build the copy by hand. Both pieces are automated.\n\nA signal without a relevant message is just a notification. A message without a signal is just a guess.\n\nPersonalization that's hyper relevant at scale only happens when the trigger and the copy are connected.\n\nWhere does your signal workflow break down: detection or messaging?",
     "carousel": [
       "Slide 1: Spotting the signal is only half the job.",
-      "Slide 2: The other half is the message that follows.",
-      "Slide 3: Signals can trigger specific plays through always-on monitoring.",
-      "Slide 4: Most teams stop there and hand off to a seller.",
-      "Slide 5: Then the seller builds the copy by hand.",
-      "Slide 6: Quintin Smith: automate the trigger and the copy.",
-      "Slide 7: Outreach becomes hyper relevant at scale.",
-      "Slide 8: A great signal with generic copy is still generic."
+      "Slide 2: The other half is the message that follows it.",
+      "Slide 3: Signals can trigger specific plays automatically.",
+      "Slide 4: Always-on monitoring catches the trigger without manual checking.",
+      "Slide 5: The copy gets customized to that trigger too.",
+      "Slide 6: No seller has to hand-build outreach per signal.",
+      "Slide 7: Trigger plus relevant copy makes personalization work at scale."
     ],
     "lesson": {
-      "title": "Automate the Signal and the Message",
+      "title": "Signals Need Messages, Not Just Alerts",
       "takeaways": [
-        "Intent signals work best as triggers for specific plays, monitored always-on.",
-        "Personalized copy is the second half of the job, not an afterthought.",
-        "Automating both the trigger and the copy removes manual seller work and keeps outreach relevant at scale."
+        "Intent signals are most useful as triggers for specific plays, not just things to watch.",
+        "Customizing the copy to the trigger is as important as detecting the trigger.",
+        "Automating both the action and the message removes manual seller work and makes outreach relevant at scale."
       ],
-      "exercise": "Map one intent signal you track today. Write down what action it triggers and who writes the message. If a person writes it by hand every time, draft a template that adapts to that signal."
+      "exercise": "Pick one intent signal you track today. Write down what action it triggers and what message goes out. If a seller has to write that message manually, draft a copy template that adapts to the signal."
     },
     "caption": "Signal is only half the job"
   }

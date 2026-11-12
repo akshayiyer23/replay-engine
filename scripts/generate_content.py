@@ -44,6 +44,12 @@ Write like a sharp practitioner sharing real insight — no corporate tone, no m
 
 {pov_block}
 
+## Name usage — HARD RULE
+Use the speaker's full name on first reference only. After that, use their first name only.
+Wrong: "Burns mentioned" / "Burns said" after first use. Right: "Stephanie mentioned".
+Never construct awkward pronoun-avoidance phrases like "in the phone" or "in the conversation".
+Rephrase the sentence naturally instead.
+
 ## Pronouns — HARD RULE
 Never use gendered pronouns. Never write he, she, his, her, him.
 Use the person's name on first reference, then rewrite around it ("the approach", "that answer").
@@ -53,6 +59,12 @@ Never name a real company, school, or person in a negative, legal, or compliance
 If the transcript says a named org "was breaking the law" or "violated" something,
 anonymize: write "a large school district" / "one company" instead, or drop the detail entirely.
 If the moment can't stand without the sensitive claim, skip it and return a minimal placeholder.
+
+## Transcript meta-commentary — HARD RULE
+Never reference the transcript, the recording, or uncertainty about source accuracy.
+Wrong: "the transcript puts that number at…", "treat it as approximate", "based on the transcript",
+"not entirely clear from the recording", "the recording suggests".
+Right: Express uncertainty naturally inline: "around 420", "roughly 30%", "about 10 minutes".
 
 ## Grounding — HARD RULE
 Every factual claim (not just numbers) must be directly in the transcript — no inference,
@@ -162,6 +174,12 @@ _UNIFY_PITCH_RE = re.compile(
     r'\bUnify has\b|\d+\s*(?:to\s*\d+\s*)?\+?\s*data providers?\b',
     re.I,
 )
+_META_RE = re.compile(
+    r'\b(the transcript|based on the transcript|treat it as approximate'
+    r'|not entirely clear from the recording|the recording (?:puts|suggests|shows)'
+    r'|from the recording|transcript puts)\b',
+    re.I,
+)
 
 _REWRITE_USER = """\
 This LinkedIn post needs editing. Fix ALL issues listed below:
@@ -178,7 +196,9 @@ Point of view rule:
 
 Rules: hook ≤ 8 words; no product pitch; no filler phrases; ≤ 1,300 chars total; \
 end with exactly one question (≤ 10 words); no gendered pronouns (he/she/his/her/him); \
-no sensitive claims about real named entities in legal/compliance/negative context.
+no sensitive claims about real named entities in legal/compliance/negative context; \
+no transcript meta-commentary ("the transcript puts…", "treat it as approximate") — express uncertainty naturally; \
+full name on first reference only, then first name only; no awkward pronoun-avoidance phrases.
 Return ONLY the rewritten post text — no JSON, no preamble.\
 """
 
@@ -240,6 +260,11 @@ def _editor_check(post: str, post_for: str = "", speaker_name: str = "") -> list
     m = _SPEAKER_LABEL_RE.search(post)
     if m:
         issues.append(f"speaker labeled as '{m.group()}' — use their actual name or rewrite")
+
+    # Transcript meta-commentary
+    m = _META_RE.search(post)
+    if m:
+        issues.append(f"transcript meta-commentary: '{m.group()}' — express uncertainty naturally instead")
 
     return issues
 

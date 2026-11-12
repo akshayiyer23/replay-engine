@@ -10,34 +10,34 @@
       "hook_type": "story",
       "first_line_words": 6
     },
-    "post_first_line": "3 months from first session to leading a webinar.",
+    "post_first_line": "Three months from first session to leading a webinar.",
     "post_tag": {
       "hook_type": "story",
       "first_line_words": 9
     },
     "hook_score_before": 91,
     "hook_score_after": 91,
-    "linkedin_post": "3 months from first session to leading a webinar.\n\nMatt Stinson didn't plan on that timeline.\n\nMatt Stinson's first session in an agent harness, like Claude Code or Cowork, was in February. Then came an invite from Nima and the team at Unify to join a webinar on the topic.\n\nMatt Stinson's first reaction: it felt kind of ridiculous to be asked, given how recently the journey started.\n\nThen Matt Stinson looked at the calendar. February to now. Still early, and yet remarkable, with plenty to share and plenty left to learn.\n\nThe lesson Matt Stinson took from it: if you haven't gotten started with vibe coding, you may be 3 months away from leading a webinar on the topic.\n\nNobody in this space has a decade head start. The gap between beginner and the person teaching others is smaller than it looks.\n\nWhat's stopping you from starting this week?",
+    "linkedin_post": "Three months from first session to leading a webinar.\n\nMatt Stinson's timeline on vibe coding is the part worth paying attention to.\n\nMatt's first session in an agent harness, like Claude Code or Cowork, was in February. By May, Nima and the team at Unify asked Matt to join a webinar on the topic.\n\nMatt's first reaction was that it felt ridiculous to be asked, given how little time had passed since starting.\n\nThen Matt looked at the calendar and called it remarkable. There's a lot to share and a lot to learn, and both can be true at once.\n\nThe lesson Matt took from it: if you haven't gotten started, you may be 3 months away from leading a webinar on the topic.\n\nYou don't need years of experience to have something worth teaching. You need a first session.\n\nWhen was your first session?",
     "carousel": [
-      "Slide 1: 3 months from first session to leading a webinar.",
-      "Slide 2: Matt Stinson's first agent harness session was in February.",
-      "Slide 3: Then came an invite to lead a webinar on it.",
-      "Slide 4: His first thought: it's kind of ridiculous to be asked.",
-      "Slide 5: Then he checked the timeline. Remarkable, and still early.",
-      "Slide 6: He has plenty to share and plenty left to learn.",
-      "Slide 7: Haven't started? You may be 3 months from teaching it.",
-      "Slide 8: What's stopping you from starting this week?"
+      "Slide 1: Matt Stinson's first vibe coding session was in February.",
+      "Slide 2: By May, Matt was invited to lead a webinar on it.",
+      "Slide 3: Matt's first reaction: this feels kind of ridiculous.",
+      "Slide 4: Then Matt checked the timeline and called it remarkable.",
+      "Slide 5: Having a lot to share and a lot to learn are both true.",
+      "Slide 6: Haven't started yet? You may be 3 months away.",
+      "Slide 7: Claude Code and Cowork are the agent harnesses Matt started in.",
+      "Slide 8: The hardest step is the first session."
     ],
     "lesson": {
       "title": "You're closer to expert than you think",
       "takeaways": [
-        "Matt Stinson's first session in a tool like Claude Code or Cowork was in February, and a webinar invite followed within about 3 months.",
-        "Feeling too new to teach is common, but the timeline can be shorter than expected.",
-        "You can share what you know and keep learning at the same time."
+        "Matt's first session was in February and a webinar invite came by May.",
+        "Feeling like it's too early is normal, even when others see value in what you know.",
+        "Sharing and learning can happen at the same time."
       ],
-      "exercise": "Open Claude Code or Cowork today and run your first session on one small task. Write down what you learned afterward to start building something you can share."
+      "exercise": "Open an agent harness like Claude Code or Cowork today and run your first session on a real task. Note the date, then check back in 3 months."
     },
-    "caption": "3 months from beginner to webinar"
+    "caption": "3 months from first session"
   },
   {
     "id": "m1161",
@@ -57,27 +57,26 @@
     },
     "hook_score_before": 88,
     "hook_score_after": 73,
-    "linkedin_post": "10 minutes. One agent. One CEO question answered.\n\nJeff Kirchick got a market question that would normally turn into a week-long analysis.\n\nThe CEO pointed out that the company sells an ICHRA, a healthcare benefit that works better in some states than others. Some states are friendlier to it than others.\n\nSo Jeff Kirchick built an agent to analyze the company's HubSpot data. It compared the number of quotes being run against how friendly each market is, and showed where the company is underinvesting.\n\nThe team is hiring right now, so the answer had an immediate use: a clearer sense of where to place a new hire.\n\nThe whole thing took all of 10 minutes.\n\nThe lesson is not about the agent. A CEO's question is usually a data question in disguise, and the data is already sitting in your CRM.\n\nWhat question would you answer from your CRM today?",
+    "linkedin_post": "10 minutes. One agent. One CEO question answered.\n\nJeff Kirchick got a market question that most teams would turn into a week-long analysis project.\n\nThe CEO pointed out that the company sells an ICHRA, a healthcare benefit that works better in some states than others. Some states are friendlier to it than others.\n\nSo Jeff built an agent on top of the company's HubSpot data. It compared the number of quotes being run in each state against how friendly that market is to the product.\n\nThe output showed where the company is underinvesting in its market.\n\nThat matters right now because the team is hiring. Jeff now has a data-backed sense of where a new person should sit.\n\nThe whole thing took about 10 minutes.\n\nThe CRM data was already there. The question was already clear. What changed is how fast one person can connect the two.\n\nWhat's the last question you answered by gut instead of data?",
     "carousel": [
       "Slide 1: The CEO asked a market question. It took 10 minutes to answer.",
-      "Slide 2: The company sells an ICHRA, a healthcare benefit that works better in some states.",
-      "Slide 3: Jeff Kirchick built an agent on top of the HubSpot data.",
-      "Slide 4: It compared quotes being run against how friendly each market is.",
-      "Slide 5: The output showed where the company is underinvesting in its market.",
-      "Slide 6: The team was hiring, so the answer shaped where to place someone.",
-      "Slide 7: Your CRM already holds answers to your leadership's questions.",
-      "Slide 8: What question would you answer from your CRM today?"
+      "Slide 2: The product works better in some states than others.",
+      "Slide 3: Jeff Kirchick built an agent on top of HubSpot data.",
+      "Slide 4: It compared quote volume against how friendly each market is.",
+      "Slide 5: The gap showed where the company is underinvesting.",
+      "Slide 6: The team is hiring, so the answer fed a real decision.",
+      "Slide 7: The data already existed. Connecting it is the new skill."
     ],
     "lesson": {
-      "title": "Turn a CEO question into a CRM-powered answer",
+      "title": "Turn CRM data into a headcount decision",
       "takeaways": [
-        "Strategic questions from leadership are often questions your existing CRM data can already answer.",
-        "Comparing your activity (quotes run) against market conditions (state friendliness) exposes where you're underinvesting.",
-        "An agent can compress an analysis into about 10 minutes, which makes it usable for live decisions like hiring."
+        "A good market question plus data you already own can become an agent in minutes.",
+        "Comparing effort (quotes run) against opportunity (market friendliness) exposes where you are underinvesting.",
+        "Tie the analysis to a live decision, like where to place a new hire, so it gets used."
       ],
-      "exercise": "Pick one open question from your leadership team. Write down the two data sets that would answer it (for example, activity volume in your CRM versus an external market factor), then build an agent or query that compares them and bring the result to your next planning meeting."
+      "exercise": "Pick one question leadership has asked this quarter. Write down the two data points that would answer it, then build a quick agent over your CRM to compare them."
     },
-    "caption": "CEO question. 10 minutes. Answered."
+    "caption": "CEO question, answered in 10 minutes"
   },
   {
     "id": "m3072",
@@ -88,7 +87,7 @@
     "judge_score": 76,
     "angle_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 6
+      "first_line_words": 9
     },
     "post_first_line": "Neema Zarrabian has 30 to 50 coaching rules.",
     "post_tag": {
@@ -97,27 +96,27 @@
     },
     "hook_score_before": 76,
     "hook_score_after": 68,
-    "linkedin_post": "Neema Zarrabian has 30 to 50 coaching rules.\n\nThat is enough to automate every coaching conversation. So why walk it back?\n\nNeema built 7 customer stories and a long list of things reps should hit on every call. For a month, Neema made a Notion for each rep covering the questions they couldn't answer, then sent it to them directly in Slack.\n\nIt worked on paper. But nothing beats talking to a rep about a deal and watching a call together: taking notes, hearing how they phrase things, and asking why they went one direction and not another.\n\nNeema still does some of the async version. But the core of coaching now happens live. Notes go into one-on-one docs, and the conversation covers whether the rep feels good about the approach.\n\nThe takeaway: reps are held accountable and coachable through a human conversation, not a document.\n\nWhat part of coaching would you never automate?",
+    "linkedin_post": "Neema Zarrabian has 30 to 50 coaching rules.\n\nThat's the setup for why Neema stopped short of automating all of it.\n\nNeema could automate every bit of coaching: 30, 40, 50 rules, 7 customer stories, and all the points reps should hit on a call.\n\nFor a month, Neema built Notion docs for each rep covering the questions they couldn't answer, then sent them over in Slack.\n\nThen came the shift. Neema still does some of that, but now goes through it live with the rep.\n\nWatching a call together. Taking notes. Hearing how a rep says things. Asking why they went one direction and not another.\n\nThe findings also go into one-on-one docs, along with a simple check: do you feel good about this?\n\nThe takeaway from Neema: there is something human about coaching. Reps get held accountable and become coachable through live conversation, not a doc dropped in Slack.\n\nAutomation can handle the rules. The conversation about a real deal is what builds the rep.\n\nWhat part of coaching have you refused to automate?",
     "carousel": [
       "Slide 1: Neema Zarrabian could automate all of the coaching.",
-      "Slide 2: 30 to 50 rules. 7 customer stories. Everything documented.",
-      "Slide 3: For a month, every rep got a Notion of unanswered questions.",
-      "Slide 4: Then came the call reviews: live, with notes, side by side.",
-      "Slide 5: Hearing how a rep says things shows what a doc can't.",
-      "Slide 6: Asking why they went one way beats handing over an answer.",
-      "Slide 7: Now the coaching happens live and lands in one-on-one docs.",
-      "Slide 8: Reps get held accountable through people, not documents."
+      "Slide 2: 30, 40, 50 rules and 7 customer stories, ready to go.",
+      "Slide 3: For a month, Neema sent reps Notion docs via Slack.",
+      "Slide 4: Each doc covered questions the rep couldn't answer.",
+      "Slide 5: Then Neema moved back to live conversations with reps.",
+      "Slide 6: Watch the call together. Ask why they went that direction.",
+      "Slide 7: Capture it in one-on-one docs. Ask if they feel good.",
+      "Slide 8: Reps get coachable through human conversation, not just docs."
     ],
     "lesson": {
-      "title": "Automate the prep, keep the coaching human",
+      "title": "Why live coaching beats automated coaching",
       "takeaways": [
-        "Documenting rules and answers is easy to scale, but it doesn't replace talking through a real deal.",
-        "Watching a call with a rep shows how they say things and why they chose a direction.",
-        "Reps are held accountable and coachable through live conversation, backed by one-on-one docs."
+        "Rules and customer stories can be documented, but they don't replace talking through a real deal with a rep.",
+        "Watching a call together shows how a rep says things and why they chose one direction over another.",
+        "One-on-one docs plus a check on how the rep feels keep coaching accountable and human."
       ],
-      "exercise": "Pick one rep's recent call this week. Watch it together, take notes, and ask why they went one direction and not another. Then log the takeaways in your one-on-one doc."
+      "exercise": "Pick one rep and one recent call. Watch it together, ask why they made two key choices, and log the answers in your one-on-one doc."
     },
-    "caption": "I could automate coaching. Didn't."
+    "caption": "Why I walked back automation"
   },
   {
     "id": "m1949",
@@ -130,32 +129,32 @@
       "hook_type": "story",
       "first_line_words": 17
     },
-    "post_first_line": "Matt Stinson didn't know Apex 3 months ago.",
+    "post_first_line": "45 minutes to run one simple Salesforce report.",
     "post_tag": {
-      "hook_type": "story",
+      "hook_type": "stat",
       "first_line_words": 8
     },
     "hook_score_before": 73,
-    "hook_score_after": 76,
-    "linkedin_post": "Matt Stinson didn't know Apex 3 months ago.\n\nThen one Claude Code session produced a working bot.\n\nMatt Stinson described exactly what the bot should do, and the session planned out the infrastructure from there. The result: a custom Apex class in Salesforce posts a webhook that acts as the trigger. Railway hosts the interface that monitors that trigger. That pushes to a Slack bot where the end user interacts. Gmail handles the final mile, and the result flows back into Salesforce.\n\nThe backstory matters. Matt Stinson barely knew how to run customized reports in Salesforce and used to take 45 minutes on a fairly simple report.\n\nNow the thinking is that the only real limit is having a good idea.\n\nThe skill that mattered here was describing the outcome clearly and planning the infrastructure before building. Not writing code from scratch.\n\nWhat would you build if you had one session?",
+    "hook_score_after": 56,
+    "linkedin_post": "45 minutes to run one simple Salesforce report.\n\nThat was Matt Stinson's starting point, and three months later Matt had a working bot built in a single Claude Code session.\n\nMatt described exactly what the bot should do, then planned out the infrastructure with Claude Code. Here's how the pieces fit together:\n\n1. Custom Apex class code in Salesforce posts a webhook that acts as the trigger.\n2. Railway hosts the interface that monitors that trigger.\n3. The trigger pushes to a Slack bot, where the end user interacts with it.\n4. Gmail handles the final mile, and the result flows back into Salesforce.\n\nThree months earlier, Matt didn't know what Apex class code was and barely knew how to run customized reports in Salesforce.\n\nMatt's take: the only limit now is having a good idea.\n\nWhat would you build if setup stopped being the barrier?",
     "carousel": [
-      "Slide 1: Matt Stinson didn't know Apex class code 3 months ago.",
-      "Slide 2: One Claude Code session. Described exactly what the bot should do.",
-      "Slide 3: Step one: custom Apex class in Salesforce posts a webhook trigger.",
-      "Slide 4: Step two: Railway hosts the interface monitoring that trigger.",
-      "Slide 5: Step three: a Slack bot is where the end user interacts.",
-      "Slide 6: Final mile: Gmail, then the result goes back into Salesforce.",
-      "Slide 7: A 45-minute simple report used to be the baseline.",
-      "Slide 8: The only limit now is having a good idea."
+      "Slide 1: 45 minutes to run one simple Salesforce report",
+      "Slide 2: Three months later, Matt Stinson built a working bot",
+      "Slide 3: It started with describing exactly what he wanted in Claude Code",
+      "Slide 4: Salesforce Apex class code posts a webhook as the trigger",
+      "Slide 5: Railway hosts the interface monitoring that trigger",
+      "Slide 6: A Slack bot is where the end user interacts",
+      "Slide 7: Gmail handles the final mile, then it flows back to Salesforce",
+      "Slide 8: The only limit now is having a good idea"
     ],
     "lesson": {
-      "title": "Plan the infrastructure, then let Claude Code build it",
+      "title": "Describe the workflow, then let Claude Code plan the infrastructure",
       "takeaways": [
-        "Start by describing exactly what you want the tool to do, then plan the infrastructure in the same session.",
-        "A Salesforce trigger, a hosted monitor, a Slack interface, and Gmail can chain into one workflow.",
-        "Prior engineering knowledge matters less than a clear idea of the outcome."
+        "You don't need to know the technical terms up front. Describe exactly what you want and plan the infrastructure from there.",
+        "A simple chain can carry a whole workflow: a Salesforce trigger, a hosted monitor, a Slack interface, Gmail, and back into Salesforce.",
+        "Matt didn't know what Apex class code was three months earlier, so the limit is the idea, not the background."
       ],
-      "exercise": "Write a one-paragraph description of a repetitive task in your CRM, then walk through it in a Claude Code session and ask it to map the trigger, hosting, interface, and final action before building anything."
+      "exercise": "Write one paragraph describing a manual task you repeat weekly, from trigger to final result. Paste it into Claude Code and ask it to plan the infrastructure before building anything."
     },
     "caption": "No engineer. One session."
   },
@@ -170,33 +169,34 @@
       "hook_type": "other",
       "first_line_words": 16
     },
-    "post_first_line": "5 months changed Matt Stinson's job entirely.",
+    "post_first_line": "5 months changed Matt Stinson's job completely.",
     "post_tag": {
       "hook_type": "story",
       "first_line_words": 7
     },
     "hook_score_before": 73,
     "hook_score_after": 91,
-    "linkedin_post": "5 months changed Matt Stinson's job entirely.\n\nIf you screen-recorded the workday then and now, it would look like two different professions.\n\nMatt Stinson put it plainly: it's absolutely bonkers how much has shifted in that short window.\n\nThe tools tell the story. Matt Stinson used to live in Salesforce, and a big part of the day was spent there. Notion was another home base.\n\nNow a Claude window, a Cowork window, is up all day.\n\nMatt Stinson couldn't name much else that has changed how we work. Maybe the internet. Maybe mobile, to some degree. Since the internet, nothing else comes close.\n\nThe shift isn't a new feature in an old tool. It's a different place where the work happens.\n\nWhat does your screen look like compared to 5 months ago?",
+    "linkedin_post": "5 months changed Matt Stinson's job completely.\n\nWatch a screen recording of Matt's work today next to one from before, and it looks like a different profession.\n\nMatt put it this way: it's absolutely bonkers. Nothing else has shifted the way we work like this, except maybe the internet and mobile to some degree.\n\nMatt used to live in Salesforce. A lot of the day was spent there. Matt also used to live in Notion.\n\nNow there's a Claude window and a Cowork window open all day.\n\nThe tools that used to anchor the workday aren't the home base anymore.\n\nWhat tool did you live in a year ago?",
     "carousel": [
-      "Slide 1: Matt Stinson's job looks different than 5 months ago.",
-      "Slide 2: Screen-record the workday then and now. Two professions.",
-      "Slide 3: Before: a big part of the day lived in Salesforce.",
-      "Slide 4: Before: Notion was another home base.",
-      "Slide 5: Now: a Claude window and a Cowork window, open all day.",
-      "Slide 6: Only the internet, maybe mobile, shifted work this much.",
-      "Slide 7: The change isn't a feature. It's where the work happens."
+      "Slide 1: Five months ago and today look like different jobs.",
+      "Slide 2: Matt Stinson says a screen recording would prove it.",
+      "Slide 3: A lot of Matt's day used to be spent in Salesforce.",
+      "Slide 4: Matt also used to live in Notion.",
+      "Slide 5: Now a Claude window and a Cowork window stay open all day.",
+      "Slide 6: Only the internet and mobile come close to this shift.",
+      "Slide 7: The home base of the workday has moved.",
+      "Slide 8: What tool did you live in a year ago?"
     ],
     "lesson": {
-      "title": "Your workday may already be a different profession",
+      "title": "Your home base tool can change fast",
       "takeaways": [
-        "Matt Stinson says a screen recording of today versus 5 months ago would look like a different profession.",
-        "The home base moved: from living in Salesforce and Notion to keeping a Claude and Cowork window up all day.",
-        "Matt Stinson can't think of anything else besides maybe the internet and mobile that has shifted work this much."
+        "Matt Stinson says work today looks like a different profession than it did 5 months ago.",
+        "Tools Matt used to live in, like Salesforce and Notion, are no longer where the day is spent.",
+        "A Claude window and a Cowork window now stay open all day."
       ],
-      "exercise": "List the 3 tools you had open most often 5 months ago and the 3 you have open now. Note what moved and what work shifted with it."
+      "exercise": "Look at your screen time or open tabs from the last week. List the 3 tools you spend the most time in, then compare against the 3 you spent the most time in a year ago."
     },
-    "caption": "Same job, different profession"
+    "caption": "A different profession in 5 months"
   },
   {
     "id": "m3372",
@@ -209,33 +209,33 @@
       "hook_type": "how_to",
       "first_line_words": 7
     },
-    "post_first_line": "Matt Stinson's first AI workflow began with one CSV.",
+    "post_first_line": "Matt Stinson asked Claude what Matt wasn't thinking about.",
     "post_tag": {
       "hook_type": "story",
       "first_line_words": 9
     },
     "hook_score_before": 72,
     "hook_score_after": 87,
-    "linkedin_post": "Matt Stinson's first AI workflow began with one CSV.\n\nThe prompt that kicked it off is the part most people skip.\n\nMatt Stinson hadn't connected Claude or any AI tool to Salesforce yet. So the first step was to download some rep data, conversion data, and funnel data.\n\nThen came a chat with Claude Code. The ask: tell me something I'm not thinking about. Matt Stinson shared the things already on the radar and went back and forth from there.\n\nSomewhere in that back and forth, a pattern showed up. This could be bundled into a skill or a flow. Run it every week before a one-on-one, same process each time.\n\nThat's the move. Start on a specific micro problem, then scale it from there.\n\nIt's a good process to follow when deciding where to build in general.\n\nWhat micro problem would you hand to AI first?",
+    "linkedin_post": "Matt Stinson asked Claude what Matt wasn't thinking about.\n\nThat one question turned a pile of raw data into a repeatable workflow.\n\nMatt hadn't connected any AI tool to Salesforce yet. So Matt downloaded rep data, conversion data, and funnel data, then opened a chat with Claude Code.\n\nThe prompt was simple: here are the things Matt is thinking about, now tell Matt something new.\n\nThey went back and forth. Somewhere in that loop, a pattern showed up. It could be bundled into a skill or a flow.\n\nNow the plan is to run the same process every week before one-on-ones.\n\nMatt's takeaway: start with a specific micro problem, then scale from there. It's a good process to follow when deciding where to build.\n\nNo big architecture plan. No full integration first. Just one small problem and a conversation.\n\nWhat's your one micro problem to start with?",
     "carousel": [
-      "Slide 1: Don't start by connecting AI to everything.",
-      "Slide 2: Download some rep, conversion, and funnel data.",
-      "Slide 3: Tell Claude what you're already thinking about.",
-      "Slide 4: Then ask: what am I not thinking about?",
-      "Slide 5: Go back and forth. Let the patterns surface.",
-      "Slide 6: Spot something repeatable? Bundle it into a skill or flow.",
-      "Slide 7: Run it weekly, like before a one-on-one.",
-      "Slide 8: Start micro. Scale from there."
+      "Slide 1: Ask AI what you're not thinking about.",
+      "Slide 2: Matt Stinson hadn't connected any AI tool to Salesforce yet.",
+      "Slide 3: He downloaded rep, conversion, and funnel data instead.",
+      "Slide 4: Then he shared what he was already thinking about.",
+      "Slide 5: He asked Claude to surface what was missing.",
+      "Slide 6: Back and forth revealed a repeatable skill or flow.",
+      "Slide 7: Now it runs weekly, before every one-on-one.",
+      "Slide 8: Start with one micro problem. Scale from there."
     ],
     "lesson": {
-      "title": "Start Micro: Find Your First AI Workflow",
+      "title": "Start micro: find your AI workflow through one small problem",
       "takeaways": [
-        "Begin with real data exports, not a full integration.",
-        "Ask AI what you're not thinking about, after sharing what you are.",
-        "Repeatable patterns from the conversation become skills or flows you run on a schedule."
+        "You don't need a full integration to start. Downloaded data and a chat with Claude is enough.",
+        "Tell AI what you're already thinking, then ask it to surface what you're not.",
+        "Repeatable patterns emerge through iteration, and those become skills or flows."
       ],
-      "exercise": "Export one small dataset you review regularly, share your current thinking with an AI tool, ask what you're missing, then note one part you could repeat weekly."
+      "exercise": "Export one small dataset you review regularly, such as rep or funnel data. Share your current thoughts with Claude and ask what you're missing. Then pick one part of the conversation you'd repeat weekly and turn it into a saved flow."
     },
-    "caption": "Start with one micro problem"
+    "caption": "Ask AI what you're missing"
   }
 ]

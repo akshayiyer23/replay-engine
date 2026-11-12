@@ -10,34 +10,34 @@
       "hook_type": "contrarian",
       "first_line_words": 9
     },
-    "post_first_line": "The weirdest use cases are often the best.",
+    "post_first_line": "The best outbound signals are the weird ones.",
     "post_tag": {
       "hook_type": "contrarian",
       "first_line_words": 8
     },
     "hook_score_before": 66,
     "hook_score_after": 66,
-    "linkedin_post": "The weirdest use cases are often the best.\n\nSkyler Mickunas says the most successful customer plays are often the most nuanced ones, not the templated ones.\n\nTake Delve, a partner that has seen a lot of success. Delve wants to know if a target account is already SOC 2 compliant.\n\nThat isn't an out-of-the-box signal everyone in the audience will find valuable. It's specific to one business.\n\nThat's why Unify doesn't have a full set of templated use cases. It would be a lot of work for Ethan, and not all of them would be widely applicable for the average user.\n\nCustom signals are a bit of a black box once you open it up.\n\nThe takeaway: the signal that matters most to your pipeline may not be one anyone else would think to track.\n\nWhat's the most unusual signal you track?",
+    "linkedin_post": "The best outbound signals are the weird ones.\n\nSkyler Mickunas sees a pattern in which customer use cases actually work best, and it's not the templated ones.\n\nDelve, a partner seeing a lot of success, wanted to know whether a target account is already SOC 2 compliant. That's not an out-of-the-box signal most teams would find valuable.\n\nBut for Delve, it's exactly the right one.\n\nThat's also why there isn't a full library of templated use cases. It would be a lot of work, and not all of them would apply to the average user.\n\nSome of the most successful use cases are the most nuanced. Custom signals are a bit of a black box once you open them up.\n\nThe signal that wins for you may look useless to everyone else.\n\nWhat's the weirdest signal your team has ever used?",
     "carousel": [
       "Slide 1: The best outbound plays aren't the templated ones.",
-      "Slide 2: Skyler Mickunas says the most successful use cases are often the most nuanced.",
-      "Slide 3: Delve wants to know if a target account is already SOC 2 compliant.",
-      "Slide 4: That signal won't be valuable to everyone in the audience.",
-      "Slide 5: That's why a full set of templates isn't the goal.",
-      "Slide 6: Not every template would apply to the average user.",
+      "Slide 2: Some of the most successful use cases are the most nuanced.",
+      "Slide 3: Delve wanted to know if a target account is SOC 2 compliant.",
+      "Slide 4: That signal isn't valuable to most teams out of the box.",
+      "Slide 5: For Delve, it's exactly the signal that matters.",
+      "Slide 6: Templates can't cover every use case, and many wouldn't apply broadly.",
       "Slide 7: Custom signals are a bit of a black box once opened.",
-      "Slide 8: Build the signal only your business needs."
+      "Slide 8: Build the signal that fits your business, not everyone's."
     ],
     "lesson": {
-      "title": "Nuanced signals beat templated plays",
+      "title": "Why nuanced signals beat templated plays",
       "takeaways": [
         "Some of the most successful customer use cases are the most nuanced ones.",
-        "A signal like SOC 2 compliance status is valuable to one business but not to everyone.",
-        "Templates can't cover every use case, since many aren't widely applicable to the average user."
+        "A signal can be hugely valuable to one company and irrelevant to most others.",
+        "Templated use cases won't cover everything, and not all would apply to the average user."
       ],
-      "exercise": "Write down one question about a target account that only your business cares about, then work out how to turn it into a custom signal."
+      "exercise": "Write down one question about your target accounts that only your business cares about (like whether they already have a specific compliance in place), then work out how you could detect the answer and use it as a signal."
     },
-    "caption": "Weird signals win"
+    "caption": "Weird signals win outbound"
   },
   {
     "id": "m0689",
@@ -47,37 +47,37 @@
     "angle": "We track about 100 signals, but the rep decides what to do with each one",
     "judge_score": 64,
     "angle_tag": {
-      "hook_type": "stat",
+      "hook_type": "contrarian",
       "first_line_words": 15
     },
-    "post_first_line": "We track close to 100 signals. Each one routes to a rep.",
+    "post_first_line": "Close to 100 signals. Zero one-size-fits-all plays.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 6
+      "first_line_words": 7
     },
     "hook_score_before": 64,
-    "hook_score_after": 67,
-    "linkedin_post": "We track close to 100 signals. Each one routes to a rep.\n\nThe interesting part is what happens after the signal fires.\n\nWhen a company hits one of those signals, we don't force a single playbook. The rep chooses the path.\n\nSome reps want an auto email, with phone call tasks and LinkedIn tasks layered in so they can work out of Unify.\n\nSome want a manual email where we hand over all the context, so they can write something specific as a sniper shot.\n\nSome just want different alerts.\n\nWhatever workflow the rep wants, we work backwards from that.\n\nThe goal is to maximize our share on each prospect and account.\n\nSignals tell you when to act. The rep still decides how.\n\nHow much control do your reps have over signal response?",
+    "hook_score_after": 59,
+    "linkedin_post": "Close to 100 signals. Zero one-size-fits-all plays.\n\nThe signals aren't the interesting part. What happens after one fires is.\n\nWe track probably close to 100 signals. When a company hits one, it gets routed to a rep, and the rep chooses the path.\n\nSometimes that's an auto email, with phone call and LinkedIn tasks layered in so the rep can work from Unify.\n\nSometimes it's a manual email where we hand the rep all the context, and they tailor something specific. A sniper shot.\n\nSometimes it's a different alert entirely.\n\nWe don't force one workflow on everyone. We start with the workflow the rep wants and work backwards from there.\n\nThe goal is to maximize our share on each prospect and account.\n\nSignals tell you when to act. The rep still decides how.\n\nHow much control do your reps have over signal plays?",
     "carousel": [
-      "Slide 1: We track close to 100 signals",
-      "Slide 2: Every signal gets routed to a rep",
-      "Slide 3: The rep chooses the path, not the system",
-      "Slide 4: Option one: auto email plus phone and LinkedIn tasks",
-      "Slide 5: Option two: manual email with full context, a sniper shot",
-      "Slide 6: Option three: different alerts for the rep",
-      "Slide 7: We work backwards from the rep's desired workflow",
-      "Slide 8: Signals tell you when. Reps decide how."
+      "Slide 1: We track close to 100 signals. Reps still choose the play.",
+      "Slide 2: A signal fires and gets routed straight to a rep.",
+      "Slide 3: Path one: auto email, plus phone and LinkedIn tasks.",
+      "Slide 4: Path two: manual email with full context for a sniper shot.",
+      "Slide 5: Path three: a different alert, based on what the rep wants.",
+      "Slide 6: We work backwards from the rep's desired workflow.",
+      "Slide 7: The goal is maximum share on each prospect and account.",
+      "Slide 8: Signals say when to act. Reps decide how."
     ],
     "lesson": {
-      "title": "Let reps choose the response to each signal",
+      "title": "Let reps choose the play for each signal",
       "takeaways": [
-        "Routing signals to reps is step one; the response should fit how each rep works.",
-        "Offer a range: auto email with added call and LinkedIn tasks, manual email with context, or alerts.",
-        "Work backwards from the rep's desired workflow to maximize share on each prospect and account."
+        "Routing a signal to a rep beats forcing every signal into one automated sequence.",
+        "Different signals call for different plays: auto email, manual sniper shot, or an alert.",
+        "Work backwards from the workflow the rep wants to maximize share of each account."
       ],
-      "exercise": "Pick your top 5 signals. For each, write down the response paths a rep could take (auto, manual, alert only), then ask your reps which they would choose and why."
+      "exercise": "List your top 5 signals. For each one, write down the play a rep would pick (auto email, manual sniper shot, or alert), then check whether your routing supports that choice."
     },
-    "caption": "100 signals, rep decides"
+    "caption": "100 signals, rep picks the play"
   },
   {
     "id": "m0845",
@@ -90,34 +90,34 @@
       "hook_type": "contrarian",
       "first_line_words": 15
     },
-    "post_first_line": "200 accounts per AE, 500 to 600 per MBR.",
+    "post_first_line": "Account ownership beats every number below.",
     "post_tag": {
-      "hook_type": "stat",
+      "hook_type": "contrarian",
       "first_line_words": 6
     },
     "hook_score_before": 64,
-    "hook_score_after": 59,
-    "linkedin_post": "200 accounts per AE, 500 to 600 per MBR.\n\nThe rule that sits on top of those numbers is the one that matters most.\n\nHere's how we split ownership: each account executive owns around 200 accounts. Each MBR owns around 500 to 600. We also have shared accounts by segment, and an inbound MBR who handles our warmer, inbound-driven signals.\n\nThe automated plays run outside all of that. They go after signals where an account might be a good fit for Unify.\n\nOne rule beats everything else in our setup: account ownership trumps all.\n\nIf Audrey, an MBR on our team, owns an account, we don't funnel it into an automated play. We route Audrey the signal instead. Audrey decides what to do with it based on how Audrey likes to work.\n\nAutomation should fill the gaps reps don't cover. It shouldn't step on accounts they own.\n\nHow do you handle rep-owned accounts in automation?",
+    "hook_score_after": 67,
+    "linkedin_post": "Account ownership beats every number below.\n\n200 accounts per AE. 500 to 600 per MBR.\n\nOur outbound runs on one rule: if a rep owns an account, it never goes into an automated play.\n\nHere's how our setup works. Each account executive owns around 200 accounts. Each MBR owns around 500 to 600. We also have shared accounts based on segment, and an inbound MBR who handles the warmer, inbound-driven signals.\n\nThe automated plays run outside all of that. They go after accounts nobody owns, find signals where it's relevant, and look for companies that might be a good fit for Unify.\n\nBut when a signal fires on an owned account, it doesn't get funneled into a sequence. It goes straight to the rep who owns it.\n\nSay Audrey, an MBR on our team, owns an account. We don't automate against it. We route Audrey the signal, and Audrey decides what to do with it based on how Audrey likes to work.\n\nAutomation should fill the gaps in coverage, not override the people who own the relationship.\n\nHow do you handle owned accounts in your automations?",
     "carousel": [
-      "Slide 1: Each AE owns around 200 accounts.",
-      "Slide 2: Each MBR owns around 500 to 600 accounts.",
-      "Slide 3: Shared accounts by segment, plus an inbound MBR for warm signals.",
-      "Slide 4: Automated plays run outside all of those owned accounts.",
-      "Slide 5: Our rule: account ownership trumps all.",
-      "Slide 6: Rep owns it? It never enters an automated play.",
-      "Slide 7: The rep gets the signal and decides what to do.",
-      "Slide 8: Automation fills the gaps. Reps own the relationships."
+      "Slide 1: Account ownership trumps every automated play we run.",
+      "Slide 2: Each AE owns around 200 accounts.",
+      "Slide 3: Each MBR owns around 500 to 600 accounts.",
+      "Slide 4: An inbound MBR handles the warmer, inbound-driven signals.",
+      "Slide 5: Automated plays run outside all owned accounts.",
+      "Slide 6: Signal fires on an owned account? It goes to the rep.",
+      "Slide 7: The rep decides what to do, based on their setup.",
+      "Slide 8: Automation fills coverage gaps. It never overrides ownership."
     ],
     "lesson": {
-      "title": "Account ownership trumps automation",
+      "title": "Let account ownership override automation",
       "takeaways": [
-        "Define clear account ownership by role before building any automated plays.",
-        "Run automation only on accounts no rep owns.",
-        "When a signal fires on an owned account, route it to the rep instead of an automated sequence."
+        "Automated plays should target accounts no rep owns, not compete with reps for owned ones.",
+        "When a signal hits an owned account, route it to the owner instead of enrolling it in a sequence.",
+        "Let reps decide how to act on signals, based on their own preferred setup."
       ],
-      "exercise": "Export your current automated plays and check how many target accounts a rep already owns. Pull those accounts out and set up a signal alert to the owner instead."
+      "exercise": "Audit your current automated plays this week and check whether any of them are touching accounts a rep owns. Add an exclusion rule, then route those signals to the owner as alerts instead."
     },
-    "caption": "Ownership trumps automation"
+    "caption": "Ownership beats automation. Always."
   },
   {
     "id": "m1746",
@@ -137,25 +137,25 @@
     },
     "hook_score_before": 62,
     "hook_score_after": 62,
-    "linkedin_post": "Skyler Mickunas tells AEs to skip automated outreach.\n\nThe reason has to do with who ends up doing the high-volume work instead.\n\nAccording to Skyler Mickunas, AEs can run automated plays to pick up on signals, like new hires at target accounts. We encourage that. What we steer them away from is automating engagement itself.\n\nAEs have a strong grasp of the value prop and of what different decision makers care about. That means they run a much lower volume of really high converting outreach.\n\nOur AEs are closed lost circle back specialists. When a prospect says the timing is off, they set a reminder. Then a prospect mentions hiring a head of demand gen, and the AE knows that person would want a look.\n\nIf AEs started running automated email sequences, their time would be better spent on what we call sniper work. Automated sequences are something Ethan could replicate.\n\nSignals can be automated. Judgment stays with the AE.\n\nWhere do you draw the line on automation?",
+    "linkedin_post": "Skyler Mickunas tells AEs to skip automated outreach.\n\nThe reason has to do with where automation actually belongs.\n\nAt Unify, AEs are encouraged to run automated plays that pick up signals, like new hires at target accounts. The automation sits upstream, surfacing the moment.\n\nBut at the engagement level, the AE takes over. Because AEs have a strong grasp of the value prop and what different decision makers care about, they send a much lower volume of outreach that converts at a much higher rate.\n\nSo our AEs are closed lost circle back specialists. A prospect says the timing is off, and the AE sets a reminder. Then the prospect mentions hiring a head of demand gen, and that's the cue to reach back out.\n\nIf AEs started running automated email sequences instead, it would be a worse use of their time. Skyler's team calls the better alternative sniper work.\n\nAutomated sequences are something Ethan can replicate, so AEs should spend their time on the work only a human with context can do.\n\nWhere do you draw the line on automation?",
     "carousel": [
-      "Slide 1: We tell our AEs to avoid automating outreach.",
-      "Slide 2: Automating signals is encouraged. Automating engagement is not.",
-      "Slide 3: AEs know what each decision maker cares about.",
-      "Slide 4: That means lower volume and higher converting outreach.",
-      "Slide 5: Our AEs are closed lost circle back specialists.",
-      "Slide 6: Timing off today? They set a reminder to return.",
-      "Slide 7: A new demand gen hire is their cue to reach out.",
+      "Slide 1: We tell our AEs to avoid automating engagement.",
+      "Slide 2: Automating signals is encouraged, like new hires at target accounts.",
+      "Slide 3: Automation finds the moment. The AE owns the conversation.",
+      "Slide 4: AEs know what each decision maker cares about.",
+      "Slide 5: That means lower volume, much higher converting outreach.",
+      "Slide 6: Our AEs are closed lost circle back specialists.",
+      "Slide 7: Timing's off? Set a reminder and return when they hire.",
       "Slide 8: Automated sequences are replicable. Sniper work is the better use of time."
     ],
     "lesson": {
       "title": "Automate the signal, not the conversation",
       "takeaways": [
-        "Automated plays that catch signals, like new hires at target accounts, are worth running.",
-        "AEs who know the value prop and each decision maker can run lower volume, higher converting outreach.",
-        "Circling back on closed lost deals when timing changes is work AEs do well."
+        "Use automation to detect signals like new hires at target accounts.",
+        "AEs with deep value prop knowledge win with low-volume, high-converting outreach.",
+        "Closed lost deals are best revived with well-timed, personal follow-up."
       ],
-      "exercise": "List your AEs' outreach tasks and mark each as signal detection or engagement. Automate the signal tasks and keep the engagement ones manual."
+      "exercise": "List your current outreach plays and mark each as signal detection or engagement. Keep automation on the first, and move the second back to a human with a reminder tied to a trigger."
     },
     "caption": "Don't automate your AEs"
   },
@@ -170,32 +170,32 @@
       "hook_type": "contrarian",
       "first_line_words": 15
     },
-    "post_first_line": "Reps do their best work at 200 to 300 accounts weekly.",
+    "post_first_line": "500 to 1,000 accounts a week per rep.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 11
+      "first_line_words": 8
     },
     "hook_score_before": 55,
-    "hook_score_after": 47,
-    "linkedin_post": "Reps do their best work at 200 to 300 accounts weekly.\n\nPush past that and something quietly breaks.\n\nSkyler Mickunas pointed out that it's naive to expect a rep to work 500 to 1,000 accounts per week as diligently as 200 to 300.\n\nWhen volume expectations get too high, conversion on average activity pays the price.\n\nAnd the goal is the outcome. If volume goes up and conversion goes down, the outcome probably doesn't move in any meaningful way.\n\nSo on the Unify team, reps work about 500 to 600 accounts per month diligently. That keeps enough tender loving care in each individual outbound effort.\n\nThe math will vary case by case. But the principle holds: more accounts touched is not the same as more pipeline created.\n\nWhat's your rep's real account capacity?",
+    "hook_score_after": 50,
+    "linkedin_post": "500 to 1,000 accounts a week per rep.\n\nThat's the volume some teams expect, and it quietly breaks the thing they care about most.\n\nSkyler Mickunas sees it as naive to expect a human rep to work that many accounts as diligently as they'd work 200 to 300 accounts a week.\n\nPush volume expectations too high on individual reps and conversion on average activity pays the price.\n\nAnd the goal is the outcome. If volume goes up and conversion goes down, the outcome probably doesn't move in any meaningful way.\n\nSo at Unify, we have reps working about 500 to 600 accounts per month, diligently. That gives enough tender loving care to each individual outbound effort.\n\nSkyler is clear that this math will vary case by case. The principle holds: more volume doesn't buy more results if quality drops.\n\nWhat's your rep's real account capacity?",
     "carousel": [
-      "Slide 1: 200 to 300 accounts a week is where reps work best.",
-      "Slide 2: Some teams push reps to 500 to 1,000 a week.",
-      "Slide 3: Humans can't work that many accounts as diligently.",
-      "Slide 4: Volume goes up. Conversion on average activity drops.",
-      "Slide 5: If conversion falls, the outcome barely moves.",
-      "Slide 6: Our reps work about 500 to 600 accounts per month.",
+      "Slide 1: Rep capacity is not a number you can just raise.",
+      "Slide 2: Expecting 500 to 1,000 accounts a week is naive.",
+      "Slide 3: Reps work 200 to 300 accounts a week far more diligently.",
+      "Slide 4: Push volume too high and conversion pays the price.",
+      "Slide 5: Volume up, conversion down: the outcome barely moves.",
+      "Slide 6: Our reps work about 500 to 600 accounts a month.",
       "Slide 7: That leaves real care in every outbound effort.",
-      "Slide 8: Your math will vary. Optimize for outcomes, not volume."
+      "Slide 8: The math varies by team. Optimize for outcomes, not activity."
     ],
     "lesson": {
-      "title": "Account volume is not the goal. Outcomes are.",
+      "title": "Volume Isn't the Outcome",
       "takeaways": [
-        "Expecting reps to work 500 to 1,000 accounts per week as diligently as 200 to 300 is naive.",
-        "When volume pressure rises too high, conversion of average activity pays the price.",
-        "If volume rises while conversion falls, the outcome likely won't move much."
+        "Expecting reps to work 500 to 1,000 accounts a week at the same diligence as 200 to 300 is unrealistic.",
+        "When volume rises and conversion falls, the outcome barely moves.",
+        "Set account load so each outbound effort gets real attention; Unify's reps work about 500 to 600 accounts a month."
       ],
-      "exercise": "Pull your reps' accounts worked versus conversion rate for the last quarter. Find the volume level where conversion starts to drop, then set your account target just below it."
+      "exercise": "Pull your reps' account counts and conversion rates side by side. Find the load level where conversion starts to drop, and set your target capacity just below it."
     },
     "caption": "More accounts, worse conversion"
   },
@@ -210,33 +210,33 @@
       "hook_type": "stat",
       "first_line_words": 12
     },
-    "post_first_line": "10,000 target accounts. Good coverage on about 6,000.",
+    "post_first_line": "10,000 accounts. Coverage on 6,000.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 3
+      "first_line_words": 5
     },
     "hook_score_before": 55,
     "hook_score_after": 56,
-    "linkedin_post": "10,000 target accounts. Good coverage on about 6,000.\n\nThe gap between those two numbers is where most outbound teams quietly lose pipeline.\n\nSkyler Mickunas works with Ethan on exactly this problem. Too much AI and automation, and the conversion rate pays the price. Too much manual effort, and a coverage gap opens up.\n\nSkyler Mickunas put it plainly: everybody wants a fully automatic sniper rifle, but that does not exist.\n\nSo the two of them split the list. Ethan, on the growth and RevOps side, helps work out that not every account in the 10,000 is equally attractive. Together they identify the top half, the tier 1 and tier 2 accounts, where human attention goes.\n\nThen they build automated coverage over everything else.\n\nAs human headcount scales, more of tier 1 and tier 2 can be worked by hand.\n\nThe point isn't choosing between automation and people. It's deciding which accounts earn which.\n\nHow do you split accounts between human and automated coverage?",
+    "linkedin_post": "10,000 accounts. Coverage on 6,000.\n\nThe other 4,000 are where the real decision gets made.\n\nSkyler Mickunas works with Ethan on a target list of 10,000 accounts. With the current team, they can reasonably get really good coverage over about 6,000 of them.\n\nToo much AI and automation, and the conversion rate pays the price. Too much manual human effort, and you run into a coverage gap. Everybody wants a fully automatic sniper rifle, but that does not exist.\n\nSo Ethan does the growth and RevOps work to figure out that not every account on the list is equally attractive. Then Skyler and Ethan split the list: tier 1 and tier 2 make up the top half, and everything else needs automated coverage.\n\nAs human headcount scales, the team can attack more of that tier 1 and tier 2 bucket by hand.\n\nThe goal isn't to automate everything or to touch everything personally. It's to decide which accounts earn a human and which ones get a system.\n\nHow do you decide which accounts get a human?",
     "carousel": [
-      "Slide 1: 10,000 target accounts. Reasonable coverage on about 6,000.",
-      "Slide 2: Too much automation, and conversion rate pays the price.",
-      "Slide 3: Too much manual effort, and a coverage gap opens up.",
-      "Slide 4: A fully automatic sniper rifle does not exist.",
-      "Slide 5: Not every account on the list is equally attractive.",
-      "Slide 6: Humans take tier 1 and tier 2 accounts.",
-      "Slide 7: Automation covers everything else on the list.",
-      "Slide 8: Add headcount, and humans take on more of the top tiers."
+      "Slide 1: 10,000 target accounts. Coverage on about 6,000.",
+      "Slide 2: Too much automation and conversion rate pays the price.",
+      "Slide 3: Too much manual effort and you hit a coverage gap.",
+      "Slide 4: The fully automatic sniper rifle does not exist.",
+      "Slide 5: Not every account on your list is equally attractive.",
+      "Slide 6: Tier 1 and tier 2 get the human attention.",
+      "Slide 7: Everything else gets automated coverage.",
+      "Slide 8: As headcount grows, humans take on more of the top tiers."
     ],
     "lesson": {
       "title": "Split your account list between humans and automation",
       "takeaways": [
-        "Too much automation hurts conversion; too much manual effort creates a coverage gap.",
-        "Not every target account is equally attractive, so tier the list.",
-        "Put human effort on tier 1 and tier 2, automate coverage on the rest, and shift as headcount grows."
+        "Too much automation hurts conversion, and too much manual work creates a coverage gap.",
+        "Not every account on a target list is equally attractive, so tier the list.",
+        "Tier 1 and tier 2 get human effort, the rest gets automated coverage, and humans take on more as headcount scales."
       ],
-      "exercise": "Take your target account list and mark the top half as tier 1 and tier 2. Then write down which accounts get human outreach and which get automated coverage."
+      "exercise": "Take your target account list and rank it. Mark the top half as tier 1 and tier 2, then write down how each remaining account will get automated coverage."
     },
-    "caption": "Automation vs. human coverage"
+    "caption": "10,000 accounts, 6,000 covered"
   }
 ]

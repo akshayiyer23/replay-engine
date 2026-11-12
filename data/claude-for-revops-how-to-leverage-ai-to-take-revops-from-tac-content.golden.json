@@ -10,34 +10,34 @@
       "hook_type": "story",
       "first_line_words": 20
     },
-    "post_first_line": "Three years of renewal data. Nobody tracked it.",
+    "post_first_line": "3 years of renewals went untracked.",
     "post_tag": {
-      "hook_type": "contrarian",
-      "first_line_words": 7
+      "hook_type": "story",
+      "first_line_words": 6
     },
     "hook_score_before": 80,
-    "hook_score_after": 71,
-    "linkedin_post": "Three years of renewal data. Nobody tracked it.\n\nThe real renewal rate was worse than anyone had told the board.\n\nJeff Ignacio cleaned up a company's renewal database after the renewal process had been neglected for the last 3 years. Renewals were missing from 2023 to 2024.\n\nThe fix started with reconciling the records against Stripe data. Customers were still paying, so the payments showed what had actually happened.\n\nFrom there, Jeff rebuilt the 2025 renewal base from those payments. Then came the closed-lost opportunities, so the team could run win rate analysis on renewals.\n\nThe result: the renewal rate was much worse than the company thought. It was also worse than the way the company had been pitching it to the board.\n\nNot a happy outcome. But it's the moment the whole team realizes they're churning customers and need to plug the gap.\n\nThat's the ROI of clean data. You can't fix a leak you can't see.\n\nWhen did you last audit your renewal data?",
+    "hook_score_after": 83,
+    "linkedin_post": "3 years of renewals went untracked.\n\nThen an AI cleanup showed the real renewal rate.\n\nJeff Ignacio cleaned up a company's renewal database after the renewal process had been neglected for 3 years. Renewals from 2023 to 2024 were missing entirely.\n\nThe fix started with reconciling against Stripe data. Customers were still paying, so payments became the source of truth.\n\nFrom there, Jeff rebuilt the 2025 renewal base from those payments. Then built closed-lost opportunities so win rate analysis on renewals was possible.\n\nThe result: the renewal rate was much worse than the company had been telling its board.\n\nNot a happy outcome. But that's the ROI of clean data. The reaction goes from \"we think we're fine\" to \"we're churning customers, hands on deck, plug this gap.\"\n\nYou can't fix a leak you aren't measuring.\n\nWhen did you last audit your renewal data?",
     "carousel": [
-      "Slide 1: 3 years of renewal data had been neglected",
-      "Slide 2: Renewals from 2023 to 2024 were missing entirely",
-      "Slide 3: Jeff Ignacio reconciled the records against Stripe payments",
-      "Slide 4: Paying customers revealed what actually happened",
-      "Slide 5: The 2025 renewal base was rebuilt from those payments",
-      "Slide 6: Closed-lost opps made renewal win rate analysis possible",
-      "Slide 7: The real renewal rate was worse than the board was told",
-      "Slide 8: You can't fix a leak you can't see"
+      "Slide 1: A company neglected its renewal process for 3 years.",
+      "Slide 2: Renewals from 2023 to 2024 were missing entirely.",
+      "Slide 3: Jeff Ignacio reconciled the gaps against Stripe payment data.",
+      "Slide 4: Customers were still paying, so payments became the truth.",
+      "Slide 5: The 2025 renewal base was rebuilt from those payments.",
+      "Slide 6: Closed-lost opps were built to run renewal win rates.",
+      "Slide 7: The renewal rate was far worse than the board was told.",
+      "Slide 8: Bad news, but it put hands on deck to plug the gap."
     ],
     "lesson": {
-      "title": "Clean renewal data shows the real churn problem",
+      "title": "Clean renewal data shows the real churn story",
       "takeaways": [
-        "Neglected renewal records can hide a renewal rate worse than leadership believes.",
-        "Payment data like Stripe is a reliable source of truth for reconciling who actually renewed.",
-        "Closed-lost tracking on renewals enables win rate analysis and shows where to plug the gap."
+        "When CRM data is neglected, billing data like Stripe can serve as the source of truth for who is actually paying.",
+        "Rebuilding renewal records and closed-lost opportunities makes renewal win rate analysis possible.",
+        "Uncomfortable numbers are the ROI: they trigger action before more customers churn."
       ],
-      "exercise": "Pull your last 12 months of renewals and compare them to payment data. Flag every account where the CRM and payments disagree, then recalculate your renewal rate."
+      "exercise": "Pick your last 12 months of renewals and match each one against billing data. Count how many are missing or wrong in your CRM, then recalculate your renewal rate from payments."
     },
-    "caption": "Renewal rate was worse than reported"
+    "caption": "Renewals were worse than reported"
   },
   {
     "id": "m1339",
@@ -47,35 +47,35 @@
     "angle": "The deals that 'close this month' and never do: how I stopped doing slipped-deal postmortems by hand",
     "judge_score": 72,
     "angle_tag": {
-      "hook_type": "how_to",
+      "hook_type": "story",
       "first_line_words": 17
     },
-    "post_first_line": "Every deal in commit says \"closes this month.\"",
+    "post_first_line": "Every week, the same deal slips.",
     "post_tag": {
       "hook_type": "other",
-      "first_line_words": 8
+      "first_line_words": 6
     },
     "hook_score_before": 72,
-    "hook_score_after": 75,
-    "linkedin_post": "Every deal in commit says \"closes this month.\"\n\nSome of them never do, and the way I used to deal with it was painful.\n\nAnyone who's worked in RevOps knows this one. A rep calls a deal for the month, it sits in commit, and then it slips.\n\nEvery week we have a leadership call on forecast. I used to bring up the slipped deals myself and say, \"this one actually slipped.\" Then I'd ask the rep why, which only gets you the rep's version of the story.\n\nI wanted more context than that, so I changed how I run the analysis.\n\nNow I have an agent go through all the calls in Attention. It does a postmortem on the deal and reads the SPICED notes. Then it tells me what was missing and what risk the rep had actually flagged.\n\nIt also checks my calendar for the next forecast leadership meeting. Before that meeting, the analysis lands in my Slack.\n\nThe summary covers the original close date and the root cause, plus where the rep missed something.\n\nI used to walk into the forecast call with a list of slipped deals. Now I walk in with the reasons they slipped.\n\nWhat's your process for slipped deals?",
+    "hook_score_after": 60,
+    "linkedin_post": "Every week, the same deal slips.\n\nI used to walk into forecast calls with the postmortem done by hand, and it never told me enough.\n\nAnyone who's worked in RevOps knows the pattern. A rep says it will close this month. It's sitting in commit. It never closes.\n\nMy old process was asking the rep why it slipped, then bringing that answer to the leadership call. That gives you one person's version of the story.\n\nSo I built something different. I point an agent at the Attention calls and tell it to run a postmortem on every call tied to the deal. It reads the SPICE notes and tells me what was missing. It also tells me what risk the rep actually flagged.\n\nThen it checks my calendar for the next forecast leadership meeting. Before that meeting, it drops the analysis into Slack.\n\nThe write-up covers the original close date, the root cause, and where the rep missed something.\n\nI no longer walk in saying \"this deal slipped.\" I walk in with the reason it slipped, backed by the calls.\n\nThe rep's explanation is only one input. The calls tell you the rest.\n\nHow do you review slipped deals today?",
     "carousel": [
-      "Slide 1: Deals in commit say \"closes this month\" and slip.",
-      "Slide 2: I used to bring slipped deals to forecast myself.",
-      "Slide 3: Asking the rep why only gets you one version.",
-      "Slide 4: Now an agent reviews every call on the deal.",
-      "Slide 5: It reads the SPICED notes and flags missing risk.",
+      "Slide 1: Deals that 'close this month' and never do.",
+      "Slide 2: Asking the rep why it slipped gives you one version.",
+      "Slide 3: I pointed an agent at every call on the deal.",
+      "Slide 4: It reads the SPICE notes and finds what was missing.",
+      "Slide 5: It surfaces the risk the rep actually flagged.",
       "Slide 6: It checks my calendar for the next forecast meeting.",
-      "Slide 7: The postmortem lands in Slack before that meeting.",
+      "Slide 7: The postmortem lands in Slack before that meeting starts.",
       "Slide 8: Original close date, root cause, and where the rep missed."
     ],
     "lesson": {
       "title": "Automate the slipped-deal postmortem",
       "takeaways": [
-        "Asking the rep why a deal slipped only gives you their version. Call data gives you more context.",
-        "Time the analysis to your forecast meeting calendar so it arrives before the conversation.",
-        "A good postmortem covers the original close date, the root cause, and what the rep missed or flagged."
+        "Rep explanations are one input. Call recordings and notes give the fuller picture.",
+        "Timing matters: deliver the analysis before the forecast meeting, in the place people already read.",
+        "A consistent format (original close date, root cause, rep miss) makes slippage patterns easy to compare."
       ],
-      "exercise": "Pick one deal that slipped last month. Read its calls and notes, then write down the original close date, the root cause, and the risk the rep flagged. Use that as the template for automating the process."
+      "exercise": "Pick the last three deals that slipped out of commit. Go through the calls and notes on each, and write down the original close date, the root cause, and the risk the rep flagged or missed. Then see which steps you could hand to an agent."
     },
     "caption": "Stop hand-writing slipped deal postmortems"
   },
@@ -87,37 +87,37 @@
     "angle": "I vibe coded my own Salesforce MCP connector so you don't have to. Here's the workaround",
     "judge_score": 69,
     "angle_tag": {
-      "hook_type": "how_to",
+      "hook_type": "story",
       "first_line_words": 13
     },
-    "post_first_line": "I vibe coded my own Salesforce MCP connector.",
+    "post_first_line": "I vibe coded a Salesforce MCP connector.",
     "post_tag": {
       "hook_type": "story",
-      "first_line_words": 8
+      "first_line_words": 7
     },
     "hook_score_before": 69,
-    "hook_score_after": 87,
-    "linkedin_post": "I vibe coded my own Salesforce MCP connector.\n\nI wouldn't recommend it.\n\nI went deep down a rabbit hole trying to get an AI tool to read Salesforce data. The first thing you need is a connector with an MCP that can read a database, so the schema comes through. CData is one of those connectors.\n\nI skipped past that and built my own anyway.\n\nIt meant a lot of building out Apex code and then deploying it. That's a lot of work for something a connector already does.\n\nThe better path is a middleware layer. Feed the data in through the middleware, and get your analysis in the meantime.\n\nThis was a real pain for me, and I'm sharing it so you can skip it.\n\nBuilding it yourself feels like progress. It's mostly a detour.\n\nWhat's a build you wish you'd bought instead?",
+    "hook_score_after": 72,
+    "linkedin_post": "I vibe coded a Salesforce MCP connector.\n\nI would not recommend it to anyone.\n\nI went deep down this rabbit hole because I needed an MCP that could read Salesforce data and give me real analysis. Not a demo. The real thing.\n\nThe first thing you need is a connector with an MCP that can read a database, so you get the schema. CData is one of those connectors.\n\nI skipped that path and built my own instead. That meant writing Apex code and deploying it. A lot of grinding for something that already had an easier route.\n\nThere are better ways. You can put a middleware layer in between that feeds the data in, and you still get the analysis in the meantime.\n\nThis was a real pain I went through, so you don't have to repeat it.\n\nWhere have you over-built something that already existed?",
     "carousel": [
-      "Slide 1: I vibe coded my own Salesforce MCP connector",
-      "Slide 2: Step one: find a connector with an MCP that reads a database",
-      "Slide 3: That gives you the schema. CData is one example",
-      "Slide 4: I ignored that and built my own anyway",
-      "Slide 5: It meant writing and deploying a lot of Apex code",
-      "Slide 6: A middleware layer can feed the data in instead",
-      "Slide 7: You still get your analysis in the meantime",
-      "Slide 8: Building it yourself feels like progress. It's a detour."
+      "Slide 1: I vibe coded my own Salesforce MCP connector. Don't.",
+      "Slide 2: The goal: an MCP that reads Salesforce and gives real analysis.",
+      "Slide 3: Step one is a connector with an MCP that reads a database.",
+      "Slide 4: That gives you the schema. CData is one option.",
+      "Slide 5: I went deeper and built my own, writing Apex code.",
+      "Slide 6: Then I had to deploy it. Far more work than expected.",
+      "Slide 7: The workaround: middleware that feeds the data in for analysis.",
+      "Slide 8: Buy the plumbing. Spend your time on the analysis."
     ],
     "lesson": {
       "title": "Don't build the Salesforce MCP connector yourself",
       "takeaways": [
-        "You need a connector with an MCP that can read the database so the schema comes through.",
-        "Vibe coding your own Salesforce connector means building out and deploying Apex code, which is a lot of effort.",
-        "A middleware layer can feed the data in so you get analysis without a custom build."
+        "You need a connector with an MCP that can read a database so you get the schema. CData is one example.",
+        "Building your own means writing and deploying Apex code, which is a rabbit hole.",
+        "Middleware that feeds data in lets you get analysis in the meantime."
       ],
-      "exercise": "Before building a custom integration, list the existing connectors and middleware options that could feed your data in. Only build if none of them work."
+      "exercise": "List the data connections your AI workflow needs. For each one, check for an existing connector or middleware option before you write any code."
     },
-    "caption": "I built it. Don't."
+    "caption": "Don't vibe code this"
   },
   {
     "id": "m1269",
@@ -127,7 +127,7 @@
     "angle": "Stop writing your own prompts: have Claude rewrite them using your CRM schema",
     "judge_score": 66,
     "angle_tag": {
-      "hook_type": "how_to",
+      "hook_type": "contrarian",
       "first_line_words": 13
     },
     "post_first_line": "Stop writing your own prompts.",
@@ -136,26 +136,26 @@
       "first_line_words": 4
     },
     "hook_score_before": 66,
-    "hook_score_after": 70,
-    "linkedin_post": "Stop writing your own prompts.\n\nI hand that job to Claude now, and the output is better than what I'd write.\n\nI built a skill I call prompt enhancer. I drop in a rough prompt with a fair amount of context, and Claude reads my metadata and the Salesforce schema before rewriting it.\n\nWhen I wrote \"new business,\" Claude figured out I meant opportunity type new business. That alone excludes expansions, renewals, and all of that.\n\nIt also picked up forecast category names without me spelling them out.\n\nThen it restructured the prompt into the original request, the intent, and the action that needs to happen.\n\nWe use SPICE internally, and I had notes on it in there. Claude went in and started finding the fields that apply to it. That part was mind-blowing.\n\nThe lesson: your CRM schema already holds the vocabulary your prompt is missing. Let the model read it instead of guessing at field names from memory.\n\nWhat's one prompt you'd hand off first?",
+    "hook_score_after": 67,
+    "linkedin_post": "Stop writing your own prompts.\nI let Claude rewrite mine, and the result was better than anything I'd have typed.\n\nI have a skill I call with a prompt enhancer command. I give it my rough prompt, and I'd say there's a fair amount of context in it already.\n\nClaude went into my metadata and the Salesforce schema. It figured out that when I say \"new business,\" I'm referring to opportunity type: new business.\n\nThat one translation matters. It excludes expansions, renewals, and all of that. It also pulled in the forecast category names.\n\nThen it broke the prompt apart into the original ask, the intent, and the action that needs to happen.\n\nWe use SPICE internally, and there are notes for it in the setup. Claude went in and found the fields that apply to it. That part was mind-blowing.\n\nI used to think good prompting meant getting better at wording. Now I think it means giving the model your schema and letting it do the translating.\n\nWhat's one prompt you'd hand off to Claude first?",
     "carousel": [
       "Slide 1: Stop writing your own prompts. Delegate it to Claude.",
-      "Slide 2: Build a skill that rewrites your rough prompt for you.",
-      "Slide 3: Claude reads your metadata and your Salesforce schema first.",
-      "Slide 4: \"New business\" becomes opportunity type new business. Renewals drop out.",
-      "Slide 5: It picks up forecast category names without being told.",
-      "Slide 6: Your prompt gets restructured: intent first, then the action.",
-      "Slide 7: It even found the fields that apply to our SPICE notes.",
-      "Slide 8: Your schema holds the vocabulary. Let the model read it."
+      "Slide 2: I built a skill that acts as a prompt enhancer.",
+      "Slide 3: Claude reads your metadata and the Salesforce schema first.",
+      "Slide 4: \"New business\" becomes opportunity type: new business.",
+      "Slide 5: Expansions and renewals get excluded automatically.",
+      "Slide 6: It splits your prompt into original ask, intent, and action.",
+      "Slide 7: It even finds the fields that apply to SPICE.",
+      "Slide 8: Give the model your schema. Let it translate."
     ],
     "lesson": {
       "title": "Let Claude rewrite your prompts using your CRM schema",
       "takeaways": [
-        "Your rough prompt can be enhanced by a skill that reads your metadata and Salesforce schema.",
-        "Claude maps casual language like \"new business\" to exact fields like opportunity type, excluding expansions and renewals.",
-        "Structuring a prompt as original request, intent, and action makes the output clearer."
+        "Claude can read your metadata and Salesforce schema to turn vague wording into precise CRM terms, like mapping \"new business\" to opportunity type new business.",
+        "A good enhanced prompt separates the original ask, the intent, and the action needed.",
+        "If you have an internal methodology like SPICE, Claude can find the relevant fields on its own."
       ],
-      "exercise": "Write a rough prompt for a pipeline question you ask often. Give Claude your CRM schema and ask it to rewrite the prompt with exact field names, intent, and action. Compare the results of both versions."
+      "exercise": "Create a prompt enhancer skill in Claude. Run one rough CRM prompt through it and compare the rewrite with your original. Note which fields and filters it added."
     },
     "caption": "Let Claude write your prompts"
   },
@@ -170,32 +170,32 @@
       "hook_type": "contrarian",
       "first_line_words": 8
     },
-    "post_first_line": "$30 to score 15,000 accounts.",
+    "post_first_line": "$30 to score 15,000 accounts of sales calls.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 5
+      "first_line_words": 8
     },
     "hook_score_before": 64,
-    "hook_score_after": 54,
-    "linkedin_post": "$30 to score 15,000 accounts.\n\nThe trick is knowing which step doesn't need your smartest model.\n\nJeff Ignacio's advice for the classification step: skip Claude Sonnet and use a lower-level model like Claude Haiku. If you're bold, something like DeepSeek on a Fireworks API works too. That dramatically brings down costs.\n\nJeff Ignacio's estimate was $30 to analyze the entire history of one sales team's calls across those 15,000 accounts.\n\nThen the real questions open up:\n\nWhat did the average MEDDIC score look like? Did each rep improve over time? Was there a difference between regrettable and non-regrettable attrition? Did improvement in MEDDIC correlate with improvement in performance?\n\nThose are second, third, and fourth order questions. Most teams never get to them because they're still stuck building surface-level reporting.\n\nCheap models handle the repetitive step. That frees up time for the analysis that actually matters.\n\nWhich step in your workflow is overpaying for a model?",
+    "hook_score_after": 56,
+    "linkedin_post": "$30 to score 15,000 accounts of sales calls.\n\nThe trick is knowing which step does not need your smartest model.\n\nJeff Ignacio shared how to run this kind of analysis without burning budget. For the classification step, skip Claude Sonnet. Use a lower-level model like Claude Haiku. If you're bold, something like DeepSeek on a Fireworks API works too.\n\nThat swap dramatically brings down costs. Jeff's estimate was about $30 to analyze the entire history of one sales team's calls.\n\nThen the interesting part starts. You can see what the MEDDIC score averaged across the team, then run a time series. Did this rep improve over time?\n\nYou can compare regrettable attrition against non-regrettable attrition. Was there a difference between the two? Did improvement in MEDDIC correlate with improvement in performance?\n\nThose are second, third, and fourth order questions. Most teams never get to them because they are still busy building surface level reporting.\n\nCheap models for the repetitive steps. Save the expensive thinking for the questions that matter.\n\nWhich step in your workflow is overpaying for intelligence?",
     "carousel": [
-      "Slide 1: $30 to analyze 15,000 accounts of sales calls.",
-      "Slide 2: Stop using your smartest model for every step.",
-      "Slide 3: Classification is repetitive. A lower-level model like Claude Haiku can handle it.",
-      "Slide 4: Bold? Try DeepSeek on a Fireworks API to cut costs further.",
-      "Slide 5: Cheap classification lets you analyze a team's entire call history.",
-      "Slide 6: Track MEDDIC averages, then chart each rep's improvement over time.",
-      "Slide 7: Compare regrettable versus non-regrettable attrition. Does MEDDIC growth track performance?",
-      "Slide 8: Stop stopping at surface-level reporting. Ask the deeper questions."
+      "Slide 1: Scoring 15,000 accounts of sales calls cost about $30.",
+      "Slide 2: Don't use your smartest model for every step.",
+      "Slide 3: Classification is a job for Claude Haiku, not Sonnet.",
+      "Slide 4: Feeling bold? Try DeepSeek on a Fireworks API.",
+      "Slide 5: Cheaper models dramatically bring down your costs.",
+      "Slide 6: Then run a time series: did each rep improve?",
+      "Slide 7: Compare regrettable and non-regrettable attrition. Spot any difference?",
+      "Slide 8: Stop stopping at surface level reporting. Ask deeper questions."
     ],
     "lesson": {
       "title": "Match the model to the step",
       "takeaways": [
         "Classification steps don't need your most powerful model. A lower-level model like Claude Haiku can do the job.",
-        "Cheaper models dramatically cut costs. The estimate for 15,000 accounts of one sales team's history was $30.",
-        "Low cost frees you to ask second, third, and fourth order questions beyond surface-level reporting."
+        "Lower model costs make large-scale analysis practical: about $30 for 15,000 accounts in Jeff's estimate.",
+        "Cheap analysis frees you to ask second, third, and fourth order questions beyond surface level reporting."
       ],
-      "exercise": "List every step in one AI workflow you run. Mark the ones that are pure classification, then rerun those on a lower-level model and compare cost and output quality."
+      "exercise": "List the steps in one AI workflow you run today. Mark which are simple classification and test a cheaper model on those, then compare cost and output quality."
     },
     "caption": "$30 for 15,000 accounts"
   },
@@ -210,32 +210,32 @@
       "hook_type": "stat",
       "first_line_words": 19
     },
-    "post_first_line": "A week of analysis now takes hours.",
+    "post_first_line": "One week down to a couple of hours.",
     "post_tag": {
-      "hook_type": "other",
-      "first_line_words": 7
+      "hook_type": "story",
+      "first_line_words": 8
     },
     "hook_score_before": 63,
-    "hook_score_after": 71,
-    "linkedin_post": "A week of analysis now takes hours.\n\nThat shift is how RevOps actually proves AI ROI.\n\nThe analyses I spin up for leadership used to take me about a week to put together. Now they take a couple of hours.\n\nLeadership makes decisions much faster than they used to. That speed is the proof.\n\nThen go one step further. Put a dollar amount on it. Have Claude do that for you.\n\nWhen you bring leadership an ROI number they can read in dollars, you're speaking their language. That's when the ROI starts to get proven.\n\nHow are you proving AI ROI to leadership?",
+    "hook_score_after": 86,
+    "linkedin_post": "One week down to a couple of hours.\n\nThat's the shift I'm seeing in how RevOps proves AI ROI.\n\nThe analyses I put together for leadership used to take me about a week. Now they take a couple of hours.\n\nThe result is that leadership makes decisions much faster than they used to. That speed is the ROI, and leadership can see it.\n\nThen I take it one step further. I put a dollar amount on it, and I have Claude help me do that.\n\nWhen you show the ROI in dollars, you're speaking the language leadership already uses. That's when the ROI starts to get proven.\n\nHow are you proving AI ROI to your leadership?",
     "carousel": [
       "Slide 1: Leadership analyses used to take me a week.",
       "Slide 2: Now they take a couple of hours.",
       "Slide 3: Leadership makes decisions much faster than before.",
-      "Slide 4: That speed is the first proof of AI ROI.",
-      "Slide 5: Next, put a dollar amount on that speed.",
-      "Slide 6: Have Claude help you calculate that number.",
+      "Slide 4: That speed is how you prove AI ROI.",
+      "Slide 5: Then put a dollar amount on that speed.",
+      "Slide 6: Have Claude help you build that number.",
       "Slide 7: Dollars are the language leadership speaks.",
-      "Slide 8: Speak it, and the ROI gets proven."
+      "Slide 8: How are you proving AI ROI?"
     ],
     "lesson": {
-      "title": "Prove AI ROI in Leadership's Language",
+      "title": "Prove AI ROI in leadership's language",
       "takeaways": [
-        "Time saved on recurring analyses is concrete evidence of AI ROI.",
-        "Faster analysis means leadership decides faster, and that is the real payoff.",
-        "Attaching a dollar amount to the ROI makes it land with leadership."
+        "Faster analysis turns into faster leadership decisions, and that speed is the ROI.",
+        "Time saved on a recurring analysis, such as a week down to a couple of hours, is concrete proof.",
+        "Putting a dollar amount on the ROI speaks the language leadership uses."
       ],
-      "exercise": "Pick one leadership analysis you run regularly. Note how long it took before AI and how long it takes now, then ask Claude to help put a dollar figure on the difference."
+      "exercise": "Pick one recurring analysis you deliver to leadership. Write down how long it took before AI and how long it takes now, then ask Claude to help you turn that time savings into a dollar amount."
     },
     "caption": "A week became two hours"
   }

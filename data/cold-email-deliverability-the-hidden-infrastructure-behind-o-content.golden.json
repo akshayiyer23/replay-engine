@@ -17,25 +17,25 @@
     },
     "hook_score_before": 73,
     "hook_score_after": 56,
-    "linkedin_post": "40 people at one company. One week.\n\nThat's what quietly wrecked a team's deliverability.\n\nA couple of reps on a team saw the ticket price on enterprise deals and got excited. Really excited. Some of them got jealous of the reps closing those deals.\n\nSo they started sending to 40 different people at the same large company in the same week.\n\nThe data had been fine. We had two cohorts, mid-market and enterprise, and things were going well for both. Then behavior changed, and enterprise recipients stopped receiving emails at the same rate.\n\nThe dashboards told us something broke. They didn't tell us why.\n\nWe had to open up the actual sequences and look at what changed from a sending perspective. That's where we saw it: certain sending behaviors led to a deliverability problem.\n\nThe lesson for me: when a cohort drops off, don't just stare at the metric. Compare it to the prior history where things worked, then inspect what reps actually did differently.\n\nThe cause was rep behavior, not the list or the copy.\n\nWhere have you seen rep behavior break your metrics?",
+    "linkedin_post": "40 people at one company. One week.\n\nThat's what quietly tanked a team's deliverability.\n\nA couple of reps on one team saw the ticket price on enterprise deals and got very excited. Jealous, honestly, of the reps working those accounts.\n\nSo they started sending to 40 different people at the same large company in the same week.\n\nWe had two cohorts, mid-market and enterprise. Prior data showed things going well. Then behavior changed, and enterprise recipients stopped receiving emails at the same rate.\n\nThe dashboard told us something broke. It didn't tell us why.\n\nWe had to inspect the actual sequences and look at what changed from a sending perspective. That's where we found it: certain sending behaviors were driving the deliverability problem.\n\nBig deal sizes make reps do irrational things. Nobody was being malicious. They were chasing the bigger payout.\n\nIf you only watch the aggregate numbers, you'll miss this. You have to go look at the sends.\n\nHave your reps ever over-blasted one account?",
     "carousel": [
       "Slide 1: 40 people at one company in a single week",
-      "Slide 2: Reps saw enterprise ticket prices and got jealous",
-      "Slide 3: Enterprise recipients stopped receiving emails like before",
-      "Slide 4: Prior data looked healthy, then behavior suddenly shifted",
-      "Slide 5: The dashboard showed the drop, not the reason why",
-      "Slide 6: We had to inspect the actual sequences being sent",
-      "Slide 7: Certain sending behaviors caused the deliverability problem",
-      "Slide 8: Compare against prior history, then check rep behavior"
+      "Slide 2: Reps saw enterprise ticket sizes and got jealous",
+      "Slide 3: Enterprise recipients stopped receiving emails at the same rate",
+      "Slide 4: Prior data looked healthy, so the cause wasn't obvious",
+      "Slide 5: We had to inspect the actual sequences that went out",
+      "Slide 6: Certain sending behaviors were driving the deliverability problem",
+      "Slide 7: Big deal sizes change rep behavior, so watch the sends",
+      "Slide 8: Aggregate metrics tell you something broke, not why"
     ],
     "lesson": {
-      "title": "When deliverability drops, look at rep behavior",
+      "title": "When Enterprise Envy Wrecks Deliverability",
       "takeaways": [
-        "Enterprise excitement can push reps to over-send to many contacts at one company in a short window.",
-        "Metrics show that something changed, but only inspecting actual sequences shows why.",
-        "Prior history where things went well is your baseline for spotting what changed."
+        "Large deal sizes can push reps to over-send to one account, and that hurts deliverability.",
+        "A cohort-level drop tells you something changed but not what. You have to inspect the actual sequences.",
+        "Compare against prior history when things were going well to pinpoint the moment behavior shifted."
       ],
-      "exercise": "Pull the last 30 days of sends for one cohort that dropped, then count how many contacts each rep emailed per account per week and compare it to a period when results were healthy."
+      "exercise": "Pull last week's sends for your enterprise accounts and count how many people each rep emailed per company. Flag any account with a spike compared to your normal pattern."
     },
     "caption": "40 emails. One company."
   },
@@ -50,31 +50,31 @@
       "hook_type": "contrarian",
       "first_line_words": 13
     },
-    "post_first_line": "Sending 10,000 identical emails is a deliverability problem.",
+    "post_first_line": "10,000 identical emails is a deliverability problem.",
     "post_tag": {
-      "hook_type": "contrarian",
-      "first_line_words": 8
+      "hook_type": "stat",
+      "first_line_words": 7
     },
     "hook_score_before": 65,
-    "hook_score_after": 68,
-    "linkedin_post": "Sending 10,000 identical emails is a deliverability problem.\n\nMost people think first name fixes it. It doesn't.\n\nCopy variation helps deliverability. You don't want the same email going out to every recipient, no matter how many people it's spread across.\n\nSo in every case, I recommend templated variables. First name. The mailboxes you're sending from. Those are the easy ones.\n\nThey should also feed into sequences with copy that uses spin syntax or is uniquely generated.\n\nVariation beats static every time. Variables are an easy path to some degree of variation.\n\nBut here's my caveat: if your only variable is the recipient's first name, you have work to do.\n\nWhat's your go-to variable beyond first name?",
+    "hook_score_after": 60,
+    "linkedin_post": "10,000 identical emails is a deliverability problem.\n\nMost teams think they've solved it with one variable.\n\nCopy variation matters for deliverability. You don't want to send the same email thousands of times across your recipients.\n\nSo I always recommend templated variables. First name, and the mailboxes you're sending from.\n\nThe mailboxes should feed into sequences with copy that uses spin tax or is uniquely generated.\n\nVariation beats static every time. Variables are the easy path to adding some degree of it.\n\nBut here's my caveat: if your only variable is the recipient's first name, you have work to do.\n\nFirst name is the floor, not the strategy.\n\nWhat variables are you using beyond first name?",
     "carousel": [
-      "Slide 1: If your only email variable is first name, you have work to do.",
-      "Slide 2: Sending 10,000 of the same email hurts deliverability.",
-      "Slide 3: Variation beats static copy. Every time.",
-      "Slide 4: Template your variables: first name, sending mailbox, and more.",
-      "Slide 5: Variables are the easy path to some variation.",
-      "Slide 6: Link them to sequences with spin syntax or uniquely generated copy.",
-      "Slide 7: First name alone isn't variation. It's the bare minimum."
+      "Slide 1: 10,000 identical emails is a deliverability problem.",
+      "Slide 2: Copy variation protects your deliverability. Static copy at scale doesn't.",
+      "Slide 3: Use templated variables in every send, without exception.",
+      "Slide 4: Variables should cover first name and the sending mailbox.",
+      "Slide 5: Link mailboxes to sequences with spin tax or uniquely generated copy.",
+      "Slide 6: Variation beats static. Variables are the easy way in.",
+      "Slide 7: If first name is your only variable, you have work to do."
     ],
     "lesson": {
-      "title": "First Name Isn't Personalization: Variation for Deliverability",
+      "title": "First Name Isn't Personalization, It's the Floor",
       "takeaways": [
-        "Sending thousands of identical emails creates a deliverability risk, regardless of how many recipients they're spread across.",
-        "Templated variables like first name and sending mailbox are an easy way to add some variation.",
-        "Pair variables with sequences that use spin syntax or uniquely generated copy. First name alone means you have work to do."
+        "Sending thousands of identical emails hurts deliverability, so copy variation matters.",
+        "Templated variables like first name and sending mailbox are an easy path to variation.",
+        "Pair variables with sequences using spin tax or uniquely generated copy."
       ],
-      "exercise": "Pull up your live sequence. Count the variables in it. If first name is the only one, add at least one more and rewrite one email using spin syntax or uniquely generated copy."
+      "exercise": "Open your live sequence and count the variables. If first name is the only one, add at least one more source of variation, such as spin tax in the opening line, before your next send."
     },
     "caption": "First name isn't enough"
   },
@@ -89,32 +89,32 @@
       "hook_type": "other",
       "first_line_words": 11
     },
-    "post_first_line": "Four teams own cold email health.",
+    "post_first_line": "Four teams. One cold email program.",
     "post_tag": {
       "hook_type": "other",
       "first_line_words": 6
     },
     "hook_score_before": 64,
     "hook_score_after": 67,
-    "linkedin_post": "Four teams own cold email health.\nMost companies assign it to none of them.\n\nWhen replies start slipping, everyone points at everyone else. Here's the split I'd use.\n\nSales owns the sending plan. That means how many emails go out and, at the rep level, how we ramp people up to full volume.\n\nRevOps owns list quality. Make sure the people you're sending to have legitimate mailboxes. When replies drop, RevOps should be able to inspect which segments are actually taking the hit.\n\nIT owns domain setup. Are your domains authenticated properly and set up to send? IT can also answer the question: what changed?\n\nThen there's the sending vendor. Someone has to check who is sending from which domains and whether those domains are healthy. That could be RevOps, or maybe you have deliverability in-house.\n\nWhen each piece has an owner, a reply drop becomes a diagnosis instead of a blame game.\n\nWho owns deliverability at your company today?",
+    "linkedin_post": "Four teams. One cold email program.\n\nMost programs slip because nobody knows which team owns which piece.\n\nHere's the split I'd use.\n\nSales owns the sending plan. That means how many emails go out, and at the rep level, how you ramp people up to full volume.\n\nRevOps owns list quality. Make sure the people you're sending to have legitimate mailboxes. When replies drop, RevOps can inspect which segments are actually taking the hit.\n\nIT owns domain setup. Are your domains authenticated properly and set up to send? IT is also the team that can answer the question: what changed?\n\nThen there's the sending vendor. Someone has to check who is sending from which domains and whether those domains are healthy. That could be RevOps, or deliverability if you have it in-house.\n\nWhen replies fall off, you don't want four teams guessing. You want each team checking its own piece.\n\nWho owns domain health on your team today?",
     "carousel": [
-      "Slide 1: Four teams own cold email health. Most companies assign none.",
-      "Slide 2: Sales owns the sending plan: volume and rep-level ramp.",
-      "Slide 3: RevOps owns list quality: legitimate mailboxes only.",
-      "Slide 4: When replies drop, RevOps inspects which segments are affected.",
-      "Slide 5: IT owns domain setup and proper authentication.",
-      "Slide 6: IT also answers the question: what changed?",
-      "Slide 7: Someone must check which domains send, and if they're healthy.",
-      "Slide 8: Clear owners turn a reply drop into a diagnosis."
+      "Slide 1: Cold email slipping? Start by asking who owns what.",
+      "Slide 2: Sales owns the sending plan and volume.",
+      "Slide 3: Sales also owns rep-level ramp to full volume.",
+      "Slide 4: RevOps owns list quality and legitimate mailboxes.",
+      "Slide 5: When replies drop, RevOps inspects which segments are affected.",
+      "Slide 6: IT owns domain setup and authentication.",
+      "Slide 7: IT also answers the question: what changed?",
+      "Slide 8: Someone must own sending vendor and domain health."
     ],
     "lesson": {
-      "title": "Who Owns What When Cold Email Slips",
+      "title": "Assign owners before cold email performance drops",
       "takeaways": [
-        "Sales owns the sending plan: email volume and how reps ramp to full volume.",
-        "RevOps owns list quality and should be able to inspect which segments show reply drops; IT owns domain setup and authentication, and can answer what changed.",
-        "Someone must own the sending vendor: who sends from which domains and whether those domains are healthy. That could be RevOps or in-house deliverability."
+        "Sales owns the sending plan: total volume and how reps ramp to full volume.",
+        "RevOps owns list quality and can inspect which segments are seeing reply drops.",
+        "IT owns domain setup and authentication, and can help answer what changed; someone must also monitor sending vendor and domain health."
       ],
-      "exercise": "Write down the four areas (sending plan, list quality, domain setup, sending vendor) and put one named owner next to each. Any blank is where your next reply drop will stall."
+      "exercise": "Write a four-row table: sending plan, list quality, domain setup, sending vendor health. Put one named owner next to each, then share it with those teams this week."
     },
     "caption": "Who owns cold email?"
   },
@@ -132,29 +132,29 @@
     "post_first_line": "New mailbox. Reply rates tanked.",
     "post_tag": {
       "hook_type": "story",
-      "first_line_words": 5
+      "first_line_words": 2
     },
     "hook_score_before": 62,
     "hook_score_after": 78,
-    "linkedin_post": "New mailbox. Reply rates tanked.\n\nThe cause is usually simpler than people think.\n\nWhen reply rates drop on fresh mailboxes, I start with one hypothesis: we started sending too soon.\n\nThe quality of the mailbox didn't match the aspirational target of our sending volume.\n\nI know people have pipeline targets. But this is a deliverability problem, and more volume won't fix it.\n\nThe fix is quick. Warm the mailboxes further, ramp actual sends more slowly, and adjust from there.\n\nModify your daily sending volume first. Then look at everything else.\n\nWhat's your rule for ramping a new mailbox?",
+    "linkedin_post": "New mailbox. Reply rates tanked.\n\nThe cause is probably simpler than you think.\n\nMaybe you just started sending too soon. That can be the whole finding.\n\nThe fix is to modify your daily sending volume. I know people have pipeline targets. This is getting deliverability granular, but the mailbox quality probably didn't match the aspirational target of your sending.\n\nSo warm the mailboxes further. Ramp your actual sends more slowly.\n\nThen adjust from there.\n\nIt's a quick change, and it beats rewriting copy or blaming the list when the real issue is the mailbox.\n\nWhat's your ramp schedule for new mailboxes?",
     "carousel": [
       "Slide 1: New mailbox, reply rates tanked. Check this first.",
       "Slide 2: Maybe you just started sending too soon.",
-      "Slide 3: Mailbox quality didn't match your aspirational sending target.",
-      "Slide 4: Pipeline targets don't change how deliverability works.",
-      "Slide 5: Adjust your daily sending volume first.",
-      "Slide 6: Warm the mailboxes further before sending more.",
-      "Slide 7: Ramp your actual sends more slowly.",
+      "Slide 3: That can be the finding. Not the copy, not the list.",
+      "Slide 4: The fix: modify your daily sending volume.",
+      "Slide 5: Pipeline targets are real. Mailbox quality still sets the ceiling.",
+      "Slide 6: Your sending target outran what the mailbox could handle.",
+      "Slide 7: Warm the mailboxes further. Ramp sends more slowly.",
       "Slide 8: Then adjust from there."
     ],
     "lesson": {
-      "title": "When a New Mailbox Underperforms, Slow Down",
+      "title": "When reply rates tank on a new mailbox, slow down",
       "takeaways": [
-        "Tanked reply rates on new mailboxes can simply mean you started sending too soon.",
-        "The gap is often between mailbox quality and your aspirational sending target.",
-        "The quick fix is to warm the mailboxes further and ramp sends more slowly."
+        "Sending too soon is a valid finding when a new mailbox underperforms.",
+        "Mailbox quality needs to match the aspirational target of your sending.",
+        "The quick fix is more warming and a slower ramp of daily sends."
       ],
-      "exercise": "Pull the daily send volume for your newest mailboxes. Cut it back, keep warming, and raise volume in small steps while tracking reply rates."
+      "exercise": "Pull the daily send volume for your newest mailbox. Cut it back, extend warming, and ramp up gradually while you watch reply rates."
     },
     "caption": "Started sending too soon?"
   },
@@ -172,31 +172,31 @@
     "post_first_line": "3 things to do this week.",
     "post_tag": {
       "hook_type": "how_to",
-      "first_line_words": 5
+      "first_line_words": 6
     },
     "hook_score_before": 62,
-    "hook_score_after": 63,
-    "linkedin_post": "3 things to do this week.\n\nIf your reply rates dropped, start here before you rewrite everything.\n\nFirst, pull up one email, or a couple. Check how many of the faux pas are in there. Count the links. Look at how much of the copy adds no value.\n\nSecond, run one split test against an existing sequence. Take your lead list, split it in half, and test the change. One test, one sequence.\n\nThird, decide who owns the investigation when a drop happens. Name one person.\n\nThe drop alone won't tell you the full story. You have to see what changed at the same time as the drop.\n\nMost teams skip that last step, and it's the one that makes the other two useful.\n\nWho owns reply rate investigations on your team?",
+    "hook_score_after": 65,
+    "linkedin_post": "3 things to do this week.\n\nReplies dropped and nobody knows why? Start here.\n\nFirst, pull up one email, or a couple. Check how many faux pas are in there. Count the links. Look at how much of the copy adds zero value.\n\nSecond, run one split test against an existing sequence. Take your lead list, split it in half, and test one change against the other.\n\nThird, decide who owns the investigation when a drop happens. Name one person.\n\nThe drop alone won't tell you the full story. You have to see what changed at the same time as the drop.\n\nMost teams skip that last part. They see the number fall and start guessing.\n\nWho owns reply drops on your team?",
     "carousel": [
-      "Slide 1: Reply rates dropped? Do these 3 things this week.",
-      "Slide 2: Step 1: Review one or two of your emails.",
+      "Slide 1: Replies dropped? Do these 3 things this week.",
+      "Slide 2: First, review one email, or a couple, honestly.",
       "Slide 3: Count the links and the faux pas in the copy.",
-      "Slide 4: Cut copy that adds no value for the reader.",
-      "Slide 5: Step 2: Split test against an existing sequence.",
-      "Slide 6: Split your lead list in half and run the test.",
-      "Slide 7: Step 3: Name one owner for every drop investigation.",
-      "Slide 8: A drop alone won't tell you what actually changed."
+      "Slide 4: Flag any copy that adds no value for the reader.",
+      "Slide 5: Second, split test against an existing sequence.",
+      "Slide 6: Split your lead list in half and test one change.",
+      "Slide 7: Third, name one owner for every drop investigation.",
+      "Slide 8: A drop alone doesn't tell you what changed."
     ],
     "lesson": {
-      "title": "How to Investigate a Drop in Replies",
+      "title": "How to investigate a drop in email replies",
       "takeaways": [
-        "Audit your emails for faux pas, too many links, and copy that adds little value.",
-        "Split your lead list in half and run one split test against an existing sequence.",
-        "Assign an owner for investigations, because the drop alone doesn't explain what changed."
+        "Review a few emails for faux pas, too many links, and copy that adds little value.",
+        "Run one split test on an existing sequence by splitting your lead list in half.",
+        "Assign a clear owner for investigating drops, because the drop alone doesn't explain what changed."
       ],
-      "exercise": "Open one live email today and count the links and the lines that add no value. Then split your lead list in half and set up one split test on that sequence."
+      "exercise": "Pick one live sequence this week. Count the links and flag low-value lines in one email, split the lead list in half to test one change, and write down who owns the investigation the next time replies drop."
     },
-    "caption": "Replies dropped? Do this."
+    "caption": "Replies dropped? Do these 3 things"
   },
   {
     "id": "m0174",
@@ -209,32 +209,32 @@
       "hook_type": "stat",
       "first_line_words": 12
     },
-    "post_first_line": "8 meetings. Same 10,000 emails.",
+    "post_first_line": "10,000 emails. 36 meetings or 28.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 5
+      "first_line_words": 6
     },
     "hook_score_before": 57,
-    "hook_score_after": 58,
-    "linkedin_post": "8 meetings. Same 10,000 emails.\n\nThe only thing that changed was where the emails landed.\n\nTake an illustrative example. One team gets a 90% placement rate, meaning emails reach the primary tab and the inbox. Based on some reply rate assumptions, 10,000 emails turn into 36 meetings.\n\nNow change one variable: the percentage of emails that reach the recipient's inbox in the first place. Same 10,000 sent, same copy, same list. That team books 28 meetings.\n\nThat's a delta of 8 meetings.\n\nDepending on your price point, that gap could be hundreds of thousands of ARR that never converts into deals.\n\nFewer emails in the inbox means fewer meetings and less revenue. Most teams I talk to optimize subject lines and copy while the real leak sits upstream.\n\nWhen did you last check your inbox placement?",
+    "hook_score_after": 60,
+    "linkedin_post": "10,000 emails. 36 meetings or 28.\n\nThe only thing that changed was where the emails landed.\n\nTake two teams sending the exact same volume. One gets about 90% of its emails into the inbox and primary tab. The other gets fewer to the recipient's inbox in the first place.\n\nBased on some reply rate assumptions, the first team turns 10,000 sends into 36 meetings. The second turns them into 28.\n\nThat's a gap of 8 meetings, and it's an illustrative example. Same list, same copy, same effort.\n\nDepending on your price point, that gap could be hundreds of thousands of ARR that never converts into deals.\n\nFewer emails in the inbox means fewer meetings and less revenue. Most teams only look at reply rate and never ask how many emails actually arrived.\n\nWhen did you last check your inbox placement?",
     "carousel": [
       "Slide 1: Same 10,000 emails. 36 meetings versus 28.",
-      "Slide 2: The difference isn't copy, list, or offer.",
-      "Slide 3: It's how many emails reach the inbox.",
-      "Slide 4: Team A: 90% placement, 10,000 sent, 36 meetings.",
-      "Slide 5: Team B: lower placement, same send, 28 meetings.",
-      "Slide 6: That's an 8-meeting gap from placement alone.",
-      "Slide 7: At the right price point, that's hundreds of thousands in ARR.",
-      "Slide 8: Fewer emails in the inbox means less revenue."
+      "Slide 2: The only variable that changed was inbox placement.",
+      "Slide 3: Team one reaches the inbox and primary tab about 90% of the time.",
+      "Slide 4: Team two reaches fewer inboxes, so fewer people ever see the email.",
+      "Slide 5: The result is a gap of 8 meetings from identical effort.",
+      "Slide 6: At the right price point, that's hundreds of thousands in ARR.",
+      "Slide 7: Fewer emails in the inbox means less revenue.",
+      "Slide 8: Check placement before you rewrite your copy."
     ],
     "lesson": {
       "title": "Inbox placement is a revenue lever",
       "takeaways": [
-        "Fewer emails reaching the inbox means fewer meetings and less revenue.",
-        "In the illustrative example, 10,000 emails produced 36 meetings at 90% placement versus 28 with lower placement.",
-        "An 8-meeting gap can represent hundreds of thousands of ARR, depending on price point."
+        "Holding volume, copy, and reply rate constant, placement alone moved 10,000 emails from 36 meetings to 28.",
+        "An 8-meeting delta can mean hundreds of thousands of ARR, depending on your price point.",
+        "Fewer emails reaching the inbox and primary tab means fewer meetings and less revenue."
       ],
-      "exercise": "Take your last 10,000 sends and your reply-to-meeting rates, then model how many meetings you'd lose if placement dropped. Multiply the gap by your average deal size."
+      "exercise": "Take your last 10,000 sends and estimate what share reached the inbox. Then multiply your reply-to-meeting rates by a 10-point lower placement rate and price the meeting gap in ARR."
     },
     "caption": "Same emails, 8 fewer meetings"
   }

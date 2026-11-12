@@ -21,6 +21,8 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.parse
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -177,6 +179,19 @@ def get_video_id(url: str) -> str:
     return m.group(1) if m else "unknown"
 
 
+def _fetch_oembed_title(url: str) -> str:
+    """Return video title from YouTube oEmbed API, or "" on failure."""
+    try:
+        encoded = urllib.parse.quote(url, safe="")
+        oembed_url = f"https://www.youtube.com/oembed?url={encoded}&format=json"
+        req = urllib.request.Request(oembed_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode())
+        return data.get("title", "")
+    except Exception:
+        return ""
+
+
 def get_video_info(url: str) -> tuple[str, int, str]:
     """Return (slug, duration_seconds, original_title) via a fast yt-dlp metadata call.
     duration_seconds is 0 if unavailable. original_title is "" on failure.
@@ -191,7 +206,9 @@ def get_video_info(url: str) -> tuple[str, int, str]:
     except FileNotFoundError:
         raise PipelineError("yt-dlp not found — install it with: pip install yt-dlp")
     except subprocess.TimeoutExpired:
-        return get_video_id(url), 0, ""
+        title = _fetch_oembed_title(url)
+        slug = slugify(title) if title else get_video_id(url)
+        return slug, 0, title
 
     if result.returncode != 0:
         err = (result.stderr or "").lower()
@@ -199,11 +216,15 @@ def get_video_info(url: str) -> tuple[str, int, str]:
             raise PipelineError("Video is private or unavailable — check the URL and permissions.")
         if "sign in" in err or "403" in err:
             raise PipelineError("YouTube requires sign-in for this video — upload the file directly.")
-        # Non-fatal: fall back to ID-based slug
-        return get_video_id(url), 0, ""
+        # Non-fatal: try oEmbed before falling back to video ID
+        title = _fetch_oembed_title(url)
+        slug = slugify(title) if title else get_video_id(url)
+        return slug, 0, title
 
     lines = result.stdout.strip().split("\n")
     original_title = lines[0].strip() if lines else ""
+    if not original_title:
+        original_title = _fetch_oembed_title(url)
     slug = slugify(original_title) if original_title else get_video_id(url)
     try:
         dur_s = int(lines[1].strip()) if len(lines) > 1 else 0

@@ -307,7 +307,7 @@ function ResultsSection({
                 {results.index?.title ?? "Live run results"}
               </h2>
               <p className="text-sm text-[#6B6560] mt-1">
-                {results.top_moments?.length ?? 0} moments · sorted by viral score
+                {(results.top_moments ?? []).filter(m => results.content?.some(c => c.id === m.id)).length} moments · sorted by viral score
               </p>
             </>
           )}
@@ -332,19 +332,20 @@ function ResultsSection({
 
       {results && (
         <div className="space-y-6">
-          {(results.top_moments ?? []).map((moment, i) => {
-            const content = results.content?.find((c) => c.id === moment.id);
-            if (!content) return null;
-            return (
-              <MomentCard
-                key={moment.id}
-                moment={moment}
-                content={content}
-                youtubeId={results.index?.youtube_id ?? ""}
-                rank={i + 1}
-              />
-            );
-          })}
+          {(results.top_moments ?? [])
+            .filter((m) => results.content?.some((c) => c.id === m.id))
+            .map((moment, i) => {
+              const content = results.content!.find((c) => c.id === moment.id)!;
+              return (
+                <MomentCard
+                  key={moment.id}
+                  moment={moment}
+                  content={content}
+                  youtubeId={results.index?.youtube_id ?? ""}
+                  rank={i + 1}
+                />
+              );
+            })}
         </div>
       )}
     </section>

@@ -109,6 +109,12 @@ export function parseWhy(why: string): WhyChip[] {
     .split(/[+;]/)
     .map((p) => p.trim())
     .filter(Boolean)
+    .filter((part) => {
+      // Drop penalty chips (negative scores) and debug text
+      if (/\([−\-]\d/.test(part)) return false;
+      if (/trim not found|trimmed past/i.test(part)) return false;
+      return true;
+    })
     .map((part) => {
       const m = part.match(/^(.+?)\s*\((\d+\.\d+)[×x]\)$/);
       if (m) return { label: m[1].trim(), mult: parseFloat(m[2]) };
