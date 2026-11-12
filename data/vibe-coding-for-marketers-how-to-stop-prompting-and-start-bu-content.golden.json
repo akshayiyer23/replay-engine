@@ -10,34 +10,34 @@
       "hook_type": "contrarian",
       "first_line_words": 5
     },
-    "post_first_line": "Humans bring 2 or 3 ideas. AI does the rest.",
+    "post_first_line": "Start with 2 or 3 ideas. They have to be yours.",
     "post_tag": {
-      "hook_type": "contrarian",
-      "first_line_words": 10
+      "hook_type": "how_to",
+      "first_line_words": 6
     },
     "hook_score_before": 68,
-    "hook_score_after": 70,
-    "linkedin_post": "Humans bring 2 or 3 ideas. AI does the rest.\n\nAI gets you the rest, but only if you start the right way.\n\nA couple weeks ago, Sarah came by our office and we ran a brainstorming session on how we could be betting more broadly as a team.\n\nWe went through every channel we run today, where we're seeing success, and where we're not. We left with a bunch of ideas on what to improve.\n\nAI can amplify a session like that. But the kernels of insight still need to come from people.\n\nThe first 2 or 3 ideas are what give Claude something to work with. From there, it can help you get to 7 through 10.\n\nAsk AI to brainstorm from a blank page and you get generic output. Give it a few real ideas from people who know the business and it has something to build on.\n\nHumans plant the seeds. Claude helps you grow the garden.\n\nWhere do your best ideas come from today?",
+    "hook_score_after": 67,
+    "linkedin_post": "Start with 2 or 3 ideas. They have to be yours.\n\nA couple weeks ago, Sarah came by our office and we ran a brainstorming session on how we can be betting more broadly as a team.\n\nWe walked through the business, every channel we run today, where we're seeing success and where we're not. We left with a bunch of ideas on how to improve what we're doing.\n\nAI can amplify a session like that. But the kernels of insight still need to come from people.\n\nThe first 2 or 3 ideas are what give Claude something real to work with. From there, it can get you to ideas 7 through 10.\n\nGive it nothing and you get generic output. Give it a few sharp ideas from people who know the channels and the results, and it builds on them.\n\nSo my process is simple: humans start the list, Claude extends it.\n\nWho's doing the first draft of your brainstorms?",
     "carousel": [
       "Slide 1: AI can't brainstorm from a blank page.",
-      "Slide 2: Sarah and I ran a team brainstorm recently.",
-      "Slide 3: We reviewed every channel: what works, what doesn't.",
-      "Slide 4: AI can amplify brainstorming sessions like that.",
-      "Slide 5: But the kernels of insight still come from people.",
-      "Slide 6: Humans bring the first 2 or 3 ideas.",
-      "Slide 7: Those ideas help Claude get you to 7 through 10.",
-      "Slide 8: Start with your own insight, then scale it."
+      "Slide 2: Sarah and I ran a team brainstorm on our channels.",
+      "Slide 3: We covered what's working and what isn't.",
+      "Slide 4: The kernels of insight still come from people.",
+      "Slide 5: Bring the first 2 or 3 ideas yourself.",
+      "Slide 6: Those ideas give Claude something real to build on.",
+      "Slide 7: Then Claude helps you get to ideas 7 through 10.",
+      "Slide 8: Humans start the list. Claude extends it."
     ],
     "lesson": {
-      "title": "Humans seed the ideas, AI scales them",
+      "title": "Seed the brainstorm before you hand it to AI",
       "takeaways": [
-        "AI amplifies brainstorming, but the kernels of insight still need to come from people.",
-        "The first 2 or 3 ideas give Claude the context to get you to 7 through 10.",
-        "Reviewing what's working and what's not across channels gives the session real material."
+        "AI amplifies brainstorming, but the kernels of insight still come from people.",
+        "The first 2 or 3 human ideas give Claude direction.",
+        "With that seed, Claude can help you reach ideas 7 through 10."
       ],
-      "exercise": "Before your next brainstorm, write down 2 or 3 ideas of your own about a channel or problem. Give them to Claude as context and ask it to extend the list to 10. Then compare that to what a blank-prompt request gives you."
+      "exercise": "Before your next brainstorm, write down 2 or 3 ideas from your own experience with your channels and results. Give them to Claude as context and ask it to extend the list to 10. Compare that to a prompt with no seed ideas."
     },
-    "caption": "Humans seed. AI scales."
+    "caption": "AI needs your first ideas"
   },
   {
     "id": "m0533",
@@ -50,32 +50,32 @@
       "hook_type": "how_to",
       "first_line_words": 13
     },
-    "post_first_line": "Months of using AI tools internally. Still anxious.",
+    "post_first_line": "Most people feel behind on AI.",
     "post_tag": {
-      "hook_type": "story",
+      "hook_type": "other",
       "first_line_words": 6
     },
     "hook_score_before": 65,
-    "hook_score_after": 83,
-    "linkedin_post": "Months of using AI tools internally. Still anxious.\n\nThe anxiety is real, and I think it's coming from the wrong place.\n\nA lot of people feel behind right now. What should I be doing? How is this supposed to work? Those questions stall people before they start.\n\nMy advice: start small. Don't force yourself into some crazy complicated use case.\n\nRun a few chats in Claude. Then move into building your first skill.\n\nIt doesn't need to be perfect. The intuition comes from trying things, not from reading about them as a third party.\n\nNobody gets caught up by reading another thread about AI. You get caught up by opening the tool and messing around.\n\nWhat's the first thing you'd try this week?",
+    "hook_score_after": 68,
+    "linkedin_post": "Most people feel behind on AI.\n\nI've watched that anxiety show up on our own team over the past few months.\n\nThe instinct is to dive into some huge, complicated use case. Don't.\n\nStart with small chats in Claude. Then move on to building your first skill.\n\nIt doesn't need to be perfect.\n\nThe intuition comes from trying things, not from reading about them as a third party.\n\nNobody gets good at this by watching from the sidelines.\n\nWhat's the first small thing you tried in Claude?",
     "carousel": [
-      "Slide 1: Feel behind on AI? You're not alone.",
-      "Slide 2: The anxiety comes from not knowing where to start.",
-      "Slide 3: Skip the crazy, complicated use case.",
-      "Slide 4: Start by running a few chats in Claude.",
-      "Slide 5: Then build your first skill.",
+      "Slide 1: Feeling behind on AI? You're not alone.",
+      "Slide 2: Lots of people feel anxious using these products right now.",
+      "Slide 3: Don't force yourself into a complicated use case.",
+      "Slide 4: Start by running small chats in Claude.",
+      "Slide 5: Then move on to building your first skill.",
       "Slide 6: It doesn't need to be perfect.",
-      "Slide 7: Intuition comes from trying, not reading.",
-      "Slide 8: Open the tool and try something today."
+      "Slide 7: Intuition is built by trying, not by reading.",
+      "Slide 8: Stop watching from the sidelines. Try something today."
     ],
     "lesson": {
-      "title": "Feeling Behind on AI? Start Small",
+      "title": "Getting Unstuck on AI: Start Small and Build Intuition",
       "takeaways": [
-        "Anxiety about being behind is common, and it comes from not knowing where to start.",
-        "Skip the complicated use case. Begin with simple chats in Claude, then build your first skill.",
-        "Intuition is built by trying things yourself, not by reading about them as a third party."
+        "Feeling behind on AI is common, and it comes from trying to figure it all out at once.",
+        "Start with small chats in Claude, then build your first skill.",
+        "Intuition comes from trying things yourself, not from reading about them as a third party."
       ],
-      "exercise": "Open Claude today and run three chats on real work you're already doing. Then pick one repeatable task and turn it into your first skill, even if it's imperfect."
+      "exercise": "Open Claude today and run three small chats on real work you already do. Then pick one task you repeat and build your first skill for it, even if it's imperfect."
     },
     "caption": "Feel behind on AI? Start small."
   },
@@ -90,32 +90,32 @@
       "hook_type": "contrarian",
       "first_line_words": 12
     },
-    "post_first_line": "Built a full page concept in under 30 seconds.",
+    "post_first_line": "30 seconds to build a lead magnet page.",
     "post_tag": {
-      "hook_type": "stat",
-      "first_line_words": 9
+      "hook_type": "how_to",
+      "first_line_words": 8
     },
     "hook_score_before": 65,
-    "hook_score_after": 60,
-    "linkedin_post": "Built a full page concept in under 30 seconds.\n\nBut the speed isn't the part worth copying.\n\nSarah Charlton built a page with a hero image, a toggle, a headline, customer quotes, and inputs Quentin asked for. It looked polished, and it took less than 30 seconds.\n\nThe first thing Sarah added was a talk to sales button. Sarah's reasoning: you've always got to have a CTA.\n\nThe page exists to be a lead magnet, not a beautiful page.\n\nSarah also had the page email results to visitors, with a second CTA at the end. So there are two chances to convert: one up top, one after the value is delivered.\n\nWhen building a page takes seconds, the design stops being the hard part. The hard part is deciding what the page is supposed to make someone do.\n\nWhat's the CTA on your last lead magnet?",
+    "hook_score_after": 65,
+    "linkedin_post": "30 seconds to build a lead magnet page.\n\nThe build time wasn't the interesting part. What Sarah Charlton put on the page was.\n\nSarah Charlton started with a talk to sales button, because a page like this always needs a CTA. The goal is a lead magnet, not a beautiful page.\n\nFrom there, the page came together in pieces: a hero image, a fun toggle, the inputs Quentin asked for, a headline with supporting detail, and some customer quotes.\n\nThe ending matters most. Visitors can email themselves their results, and that step carries a second CTA.\n\nSarah called it a concept of a page. You wouldn't know from looking at it, but it took under 30 seconds to build.\n\nWhen a page takes seconds to build, polish stops being the bottleneck. What the page is built to do becomes the real question.\n\nWhat's the first CTA on your latest landing page?",
     "carousel": [
-      "Slide 1: This page took under 30 seconds to build.",
-      "Slide 2: Sarah Charlton started with the CTA, not the design.",
-      "Slide 3: A talk to sales button goes on every page.",
-      "Slide 4: The goal is a lead magnet, not a beautiful page.",
-      "Slide 5: Hero image, toggle, headline, inputs, customer quotes.",
-      "Slide 6: Results get emailed to the visitor.",
-      "Slide 7: That email carries a second CTA.",
-      "Slide 8: Fast builds make the conversion goal the real work."
+      "Slide 1: This lead magnet page took under 30 seconds to build.",
+      "Slide 2: Sarah Charlton's rule: you always need a CTA.",
+      "Slide 3: The goal is a lead magnet, not a beautiful page.",
+      "Slide 4: Start with a hero image and a fun toggle.",
+      "Slide 5: Add the inputs your team actually asked for.",
+      "Slide 6: Layer in a headline, detail, and customer quotes.",
+      "Slide 7: Let visitors email themselves their results.",
+      "Slide 8: Put a second CTA at the very end."
     ],
     "lesson": {
-      "title": "Build the lead magnet, not a beautiful page",
+      "title": "Build the Lead Magnet, Not a Beautiful Page",
       "takeaways": [
-        "Put a CTA on the page first, then design around it.",
-        "A lead magnet is judged by whether it converts, not how it looks.",
-        "Emailing results to visitors creates a second CTA moment."
+        "Every lead magnet needs a CTA. Decide on it before anything else.",
+        "Interactive elements like toggles and inputs make the page more fun to use.",
+        "Emailing results to the visitor creates a natural spot for a second CTA."
       ],
-      "exercise": "Open your current lead magnet page and count the CTAs. If there are fewer than two, add one at the top and one in the results email."
+      "exercise": "Sketch a lead magnet page on one sheet of paper. Write the top CTA, the input fields, and the post-results CTA before designing anything else."
     },
     "caption": "Always include a CTA"
   },
@@ -130,34 +130,34 @@
       "hook_type": "contrarian",
       "first_line_words": 13
     },
-    "post_first_line": "Zero AI-written posts. Ever.",
+    "post_first_line": "Zero AI-written posts. Years of LinkedIn.",
     "post_tag": {
-      "hook_type": "contrarian",
-      "first_line_words": 4
+      "hook_type": "other",
+      "first_line_words": 6
     },
     "hook_score_before": 64,
-    "hook_score_after": 65,
-    "linkedin_post": "Zero AI-written posts. Ever.\n\nI've written on LinkedIn for the past couple years, and there's one rule I've never broken.\n\nWe have never taken a post straight out of AI and published it. Not once.\n\nIt's just not good enough. It isn't interesting.\n\nAI doesn't have the taste and care that someone good at marketing has. It doesn't understand what's happening in the zeitgeist right now, or how people are feeling about things.\n\nAnd I'm not confident it's going to take a lot to close that gap. But today, that's one area where I don't personally get any leverage out of it.\n\nI use AI plenty elsewhere. Writing the final post isn't where it earns its keep for me.\n\nWhere do you draw the line with AI?",
+    "hook_score_after": 64,
+    "linkedin_post": "Zero AI-written posts. Years of LinkedIn.\n\nI have a specific reason for holding that line, and it's not what you'd expect.\n\nI've written on LinkedIn for the past couple years. In that time, we have never once taken a post straight out of AI and published it.\n\nIt's just not good enough. It isn't interesting.\n\nAI doesn't have the taste or care that someone good at marketing brings. It doesn't understand what's happening in the zeitgeist right now, or how people are feeling about things.\n\nAnd I'm not confident that closing that gap is going to be quick.\n\nSo this is one area where I personally get no leverage out of it.\n\nI'm not saying AI is useless for GTM. I use it in plenty of places. But the writing that earns attention depends on judgment about the moment, and that's still a human job.\n\nWhere has AI actually failed you in your content?",
     "carousel": [
-      "Slide 1: We've never posted AI-written LinkedIn content. Not once.",
-      "Slide 2: I've written on LinkedIn for a couple of years.",
-      "Slide 3: Not a single post came straight out of AI.",
-      "Slide 4: It's just not good enough. It isn't interesting.",
-      "Slide 5: AI lacks the taste and care a good marketer has.",
+      "Slide 1: We've never posted an AI-written LinkedIn post. Not once.",
+      "Slide 2: I've been writing on LinkedIn for a couple of years.",
+      "Slide 3: Every time, the raw AI output wasn't good enough.",
+      "Slide 4: It's not interesting. It reads like everyone else.",
+      "Slide 5: It lacks the taste and care a good marketer brings.",
       "Slide 6: It misses the zeitgeist and how people feel right now.",
-      "Slide 7: The gap may not take much to close. It's still there.",
-      "Slide 8: For now, writing posts is where I get no leverage."
+      "Slide 7: I'm not confident that gap closes quickly.",
+      "Slide 8: So here, I get no leverage from AI. Where do you?"
     ],
     "lesson": {
-      "title": "Taste is the part AI can't write for you yet",
+      "title": "Why raw AI output doesn't make good LinkedIn posts",
       "takeaways": [
-        "AI-generated posts miss the taste and care a good marketer brings.",
-        "AI doesn't grasp the zeitgeist or how people feel about things right now.",
-        "The gap may close soon, but today it's still a real limit on posting."
+        "AI lacks the taste and care that a good marketer brings to a post.",
+        "It doesn't understand the zeitgeist or how people are feeling right now.",
+        "Knowing where AI gives you no leverage is as useful as knowing where it does."
       ],
-      "exercise": "Take your last AI-drafted post and mark every line that shows no awareness of what your audience is feeling this week. Rewrite those lines yourself before publishing."
+      "exercise": "Take your last three LinkedIn drafts and mark every line that reflects a current mood or opinion in your market. Check whether AI could have written those lines on its own."
     },
-    "caption": "We never post raw AI"
+    "caption": "Never posted straight from AI"
   },
   {
     "id": "m1441",
@@ -177,24 +177,25 @@
     },
     "hook_score_before": 58,
     "hook_score_after": 50,
-    "linkedin_post": "12 pages of size 12 font.\n\nThat was the ROI calculator Sarah Charlton started with.\n\nSarah Charlton's rule for AI and ROI: you don't tell AI to figure out the ROI on Unify. That isn't something you can delegate, and you don't want AI running that logic for you.\n\nSo the logic came from Quentin, who put together a calculator alongside a detailed diagram. It was 12 pages of very detailed instructions.\n\nThe session was only 15 minutes. So Sarah asked Claude to turn it into something much simpler that could be built in the time available.\n\nClaude came back with a really simple calculator. That simplified Unify ROI calculator is what the session used.\n\nThe split is clear. Humans own the math and the reasoning. AI handles the build and the simplification.\n\nIf the logic is wrong, a nicer page won't fix it.\n\nWhere do you draw the line with AI?",
+    "linkedin_post": "12 pages of size 12 font.\n\nThat was the ROI calculator Sarah Charlton started with, and the way it got used is the real lesson.\n\nSarah Charlton was building a simplified Unify ROI calculator with Claude in a 15-minute session. The first move was not asking AI to figure out the ROI on Unify. That doesn't make sense, and it's not something to delegate.\n\nThe ROI logic came from Quentin: a detailed calculator paired with a diagram, written up as 12 pages of very detailed instructions.\n\nThat was far too much for 15 minutes. So Sarah asked Claude to make it something much simpler to build in the session.\n\nClaude came back with a really simple calculator. That became the simplified Unify ROI calculator used for the day.\n\nThe split is clear. A human owns the math and the logic. AI handles the simplifying and the building.\n\nHand AI a blank page and ask it to invent your ROI, and you get numbers nobody can defend. Hand it your logic and ask it to build the page, and you get speed without losing the thinking.\n\nWhere do you draw the line with AI?",
     "carousel": [
       "Slide 1: Don't ask AI to invent your ROI math.",
-      "Slide 2: ROI logic isn't something you can delegate to AI.",
-      "Slide 3: Quentin's original calculator ran 12 pages of detailed instructions.",
-      "Slide 4: The session had only 15 minutes to build.",
-      "Slide 5: So Sarah asked Claude to simplify it.",
-      "Slide 6: Claude turned it into a really simple calculator.",
-      "Slide 7: You bring the logic. AI builds the page."
+      "Slide 2: Sarah Charlton started with 12 pages of detailed instructions.",
+      "Slide 3: The logic came from Quentin, not from the AI.",
+      "Slide 4: With only 15 minutes, that doc was too big.",
+      "Slide 5: So Claude was asked to simplify it into something buildable.",
+      "Slide 6: The result: one simple ROI calculator, built in session.",
+      "Slide 7: Humans own the logic. AI builds the page.",
+      "Slide 8: Where do you draw the line with AI?"
     ],
     "lesson": {
-      "title": "Own the logic, let AI build the page",
+      "title": "Bring the ROI logic, let AI build the page",
       "takeaways": [
-        "ROI reasoning is yours to define. Don't delegate it to AI.",
-        "Detailed source logic can be simplified by AI to fit your time limit.",
-        "Start with a human-built framework, then ask AI to make it buildable."
+        "ROI math is not something to delegate to AI; the logic has to come from people who understand it.",
+        "A detailed source document can be too heavy for the time you have, so ask AI to simplify it.",
+        "AI is strongest at turning your logic into a simple, usable build."
       ],
-      "exercise": "Write down your ROI logic in a few plain steps. Then ask AI to turn only those steps into a simple calculator."
+      "exercise": "Write down your ROI logic in a short doc, then ask AI to turn it into a simple one-page calculator you can use in a 15-minute session."
     },
     "caption": "Don't let AI invent your ROI"
   },
@@ -209,31 +210,32 @@
       "hook_type": "contrarian",
       "first_line_words": 6
     },
-    "post_first_line": "Sarah Charlton heard a take worth pausing on.",
+    "post_first_line": "Sarah Charlton says AI is now table stakes.",
     "post_tag": {
-      "hook_type": "story",
+      "hook_type": "other",
       "first_line_words": 8
     },
     "hook_score_before": 56,
-    "hook_score_after": 68,
-    "linkedin_post": "Sarah Charlton heard a take worth pausing on.\n\nThe AI-versus-human debate in sales may already be over.\n\nA year or two ago, the story was that AI would replace sales. That story has faded. The current one is sales plus AI, where AI absorbs the research and administration.\n\nSarah's view: AI is now table stakes. Having it isn't the edge anymore.\n\nThe more interesting question is how the best sellers use AI to get leverage. Selling is inherently human-to-human, and that isn't going anywhere.\n\nSo the gap won't come from who uses AI. It will come from what sellers do with the time AI gives back.\n\nWhere has AI freed up the most time on your team?",
+    "hook_score_after": 53,
+    "linkedin_post": "Sarah Charlton says AI is now table stakes.\n\nThe old story about AI replacing sales has quietly flipped.\n\nA year or two ago, the debate was AI versus human. Now it's a human plus AI story.\n\nAI should absorb the research and administration work.\n\nSarah's sharper take is that the best sellers think about AI as a way to get leverage. Selling itself is inherently human-to-human, and that isn't going anywhere.\n\nSo the question isn't whether to use AI. Everyone will. The edge comes from what you do with the time it gives back.\n\nWhere is AI giving you the most leverage right now?",
     "carousel": [
-      "Slide 1: Sales is no longer AI versus human.",
-      "Slide 2: The AI-replaces-sales story has faded in the past year or two.",
-      "Slide 3: Now it's sales plus AI, with AI absorbing research and admin.",
-      "Slide 4: AI is table stakes. It's no longer an edge.",
+      "Slide 1: AI replacing sales was last year's story.",
+      "Slide 2: Today it's a human plus AI story.",
+      "Slide 3: AI should absorb research and administration.",
+      "Slide 4: AI is now table stakes in sales.",
       "Slide 5: The best sellers use AI to get leverage.",
-      "Slide 6: Selling is inherently human-to-human. That isn't going anywhere.",
-      "Slide 7: Use AI for the grunt work. Spend the time on buyers."
+      "Slide 6: Selling is inherently human-to-human.",
+      "Slide 7: That part isn't going anywhere.",
+      "Slide 8: Where is AI giving you leverage?"
     ],
     "lesson": {
-      "title": "AI Is Table Stakes. Selling Stays Human.",
+      "title": "Sales is human plus AI, not human versus AI",
       "takeaways": [
-        "The narrative has shifted from AI replacing sales to sales plus AI.",
+        "The narrative has shifted from AI replacing sales to AI working alongside sellers.",
         "AI should absorb research and administration work.",
-        "The best sellers use AI for leverage, while the selling itself stays human-to-human."
+        "The best sellers use AI for leverage, while selling stays human-to-human."
       ],
-      "exercise": "List your team's weekly tasks and mark each as research/admin or buyer-facing. Hand the research/admin ones to AI, and use the time saved on more human conversations."
+      "exercise": "List your weekly tasks and mark which are research or administration. Pick one to hand to AI this week, and spend the time saved on a direct conversation with a buyer."
     },
     "caption": "AI is table stakes"
   }

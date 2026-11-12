@@ -44,6 +44,9 @@ Write like a sharp practitioner sharing real insight — no corporate tone, no m
 
 {pov_block}
 
+## Company name — HARD RULE
+The company name is always "Unify" — never "UniFi", "Unifi", or any other variant.
+
 ## Name usage — HARD RULE
 Use the speaker's full name on first reference only. After that, use their first name only.
 Wrong: "Burns mentioned" / "Burns said" after first use. Right: "Stephanie mentioned".
@@ -166,12 +169,21 @@ _FILLER_RE = re.compile(
 _POV_FIRST_RE = re.compile(r'\bI\b|\bme\b|\bmy\b|\bmyself\b', re.I)
 _SPEAKER_LABEL_RE = re.compile(r'\b(Guest|Host)\b')  # case-sensitive: flags capitalized label usage
 _GENDER_RE = re.compile(r'\b(he|she|his|her|him)\b', re.I)
+# Leaked model reasoning: "Wait,", "Corrected version:", "Note:", meta-preambles, etc.
+_LEAKED_RE = re.compile(
+    r'(?:^|\n)(?:Wait[,\s]|Corrected version:|This violates\b|Note:\s|\[Note\b'
+    r'|The issue list says\b|The original post\b|I\'ll keep it\b|I will keep\b'
+    r'|The post (?:is already|already|needs to)\b|Since this\b is already\b)',
+    re.MULTILINE | re.I,
+)
+# Wrong Unify spelling: UniFi or Unifi (case-sensitive — "unify" is fine)
+_UNIFY_SPELL_RE = re.compile(r'\bUniFi\b|\bUnifi\b')
 _SENSITIVE_RE = re.compile(
     r'\b(breaking the law|violat\w+ (?:the )?law|unintentionally breaking|discriminat\w+)\b',
     re.I,
 )
 _UNIFY_PITCH_RE = re.compile(
-    r'\bUnify has\b|\d+\s*(?:to\s*\d+\s*)?\+?\s*data providers?\b',
+    r'\bUnify has\s+\d+|\bUnify has\s+\d+\s*to\s*\d+|\d+\s*(?:to\s*\d+\s*)?\+?\s*data providers?\b',
     re.I,
 )
 _META_RE = re.compile(
@@ -180,6 +192,35 @@ _META_RE = re.compile(
     r'|from the recording|transcript puts)\b',
     re.I,
 )
+
+def _clean_post(text: str) -> str:
+    """Strip any leaked model reasoning/self-correction from a post.
+
+    Handles: 'Corrected version:' splits, reasoning paragraphs, duplicate paras.
+    """
+    # If the model included a corrected version, keep only what follows the LAST marker
+    for marker in ("Corrected version:", "CORRECTED VERSION:", "corrected version:"):
+        if marker in text:
+            text = text.split(marker)[-1].strip()
+
+    # Remove any paragraph that starts with a reasoning pattern
+    paragraphs = re.split(r'\n\n+', text)
+    clean = [p for p in paragraphs if not _LEAKED_RE.search(p)]
+
+    # Deduplicate exact paragraphs (keep first occurrence only)
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for para in clean:
+        key = para.strip()
+        if not key:
+            deduped.append(para)
+        elif key not in seen:
+            deduped.append(para)
+            seen.add(key)
+        # else: silently drop duplicate
+
+    return "\n\n".join(deduped).strip()
+
 
 _REWRITE_USER = """\
 This LinkedIn post needs editing. Fix ALL issues listed below:
@@ -198,7 +239,8 @@ Rules: hook ≤ 8 words; no product pitch; no filler phrases; ≤ 1,300 chars to
 end with exactly one question (≤ 10 words); no gendered pronouns (he/she/his/her/him); \
 no sensitive claims about real named entities in legal/compliance/negative context; \
 no transcript meta-commentary ("the transcript puts…", "treat it as approximate") — express uncertainty naturally; \
-full name on first reference only, then first name only; no awkward pronoun-avoidance phrases.
+full name on first reference only, then first name only; no awkward pronoun-avoidance phrases; \
+no leaked reasoning ("Wait,", "Corrected version:", "Note:"); company is "Unify" not "UniFi"/"Unifi".
 Return ONLY the rewritten post text — no JSON, no preamble.\
 """
 
@@ -265,6 +307,25 @@ def _editor_check(post: str, post_for: str = "", speaker_name: str = "") -> list
     m = _META_RE.search(post)
     if m:
         issues.append(f"transcript meta-commentary: '{m.group()}' — express uncertainty naturally instead")
+
+    # Leaked model reasoning
+    m = _LEAKED_RE.search(post)
+    if m:
+        issues.append(f"leaked reasoning: '{m.group().strip()[:40]}' — model self-correction in output")
+
+    # Wrong Unify spelling
+    m = _UNIFY_SPELL_RE.search(post)
+    if m:
+        issues.append(f"wrong company name: '{m.group()}' — should be 'Unify'")
+
+    # Duplicated paragraphs
+    paras = [p.strip() for p in re.split(r'\n\n+', post) if p.strip()]
+    _seen_paras: set[str] = set()
+    for para in paras:
+        if para in _seen_paras and len(para) > 20:
+            issues.append(f"duplicated paragraph: '{para[:50]}…'")
+            break
+        _seen_paras.add(para)
 
     return issues
 
@@ -436,6 +497,9 @@ def generate_for_candidates(
             print(f"⚠️  {exc}")
             continue
 
+        # Strip any leaked reasoning/duplicates before editor check
+        content["linkedin_post"] = _clean_post(content["linkedin_post"])
+
         # ── 3. tag generated post first line (after) ──
         post_first_line = content["linkedin_post"].split("\n")[0].strip()
         try:
@@ -458,6 +522,7 @@ def generate_for_candidates(
                 post_for, speaker_name,
                 client,
             )
+            post = _clean_post(post)  # strip any leaked reasoning from the rewrite
             content["linkedin_post"] = post
             remaining = _editor_check(post, post_for, speaker_name)
             editor_fixed = len(remaining) == 0

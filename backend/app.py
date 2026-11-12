@@ -17,6 +17,8 @@ import re
 import sys
 import tempfile
 import time
+import urllib.parse
+import urllib.request
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -318,10 +320,27 @@ async def _stream_pipeline(
                 if m:
                     youtube_id = m.group(1)
                     break
+            # Fetch real title via oEmbed; fall back to slug-derived title
+            title = ""
+            if youtube_id:
+                try:
+                    encoded = urllib.parse.quote(
+                        f"https://www.youtube.com/watch?v={youtube_id}", safe=""
+                    )
+                    req = urllib.request.Request(
+                        f"https://www.youtube.com/oembed?url={encoded}&format=json",
+                        headers={"User-Agent": "Mozilla/5.0"},
+                    )
+                    with urllib.request.urlopen(req, timeout=5) as resp:
+                        title = json.loads(resp.read().decode()).get("title", "")
+                except Exception:
+                    pass
+            if not title:
+                title = slug.replace("-", " ").title() if slug else "YouTube video"
             top_score = (result.get("top_moments") or [{}])[0].get("score", 0)
             result["index"] = {
                 "slug": slug,
-                "title": slug.replace("-", " ").title(),
+                "title": title,
                 "date": "",
                 "youtube_id": youtube_id,
                 "duration": "",

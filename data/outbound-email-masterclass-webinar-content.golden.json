@@ -10,34 +10,34 @@
       "hook_type": "other",
       "first_line_words": 9
     },
-    "post_first_line": "3 buckets cover every signal we use.",
+    "post_first_line": "3 buckets of signals. That's the whole model.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 7
+      "first_line_words": 4
     },
     "hook_score_before": 72,
-    "hook_score_after": 67,
-    "linkedin_post": "3 buckets cover every signal we use.\n\nCole Courson says there could be more, but simplifying into three makes the whole thing usable.\n\nBucket one is out-of-the-box signals. These are things providers like Unify, Clay, and Sixsense give you with a flip of a switch: website intent tracking, persona-level tracking, champion tracking, new hires, and job changes.\n\nCole's take is that these are interesting at layer one, but they get more interesting when compounded with other signals.\n\nBucket two is custom signals. Think technographics, job scraping for hiring in specific roles, and social listening on Reddit, GitHub, or Glassdoor to find pain.\n\nCole called these really, really important to dive into.\n\nThe out-of-the-box layer gets everyone started. The custom layer is where a team starts to build something nobody else has.\n\nWhich bucket is your team leaning on most?",
+    "hook_score_after": 65,
+    "linkedin_post": "3 buckets of signals. That's the whole model.\n\nCole Courson breaks every signal into three categories, and the third one is where it gets interesting.\n\nBucket one is out-of-the-box signals. Website intent tracking, persona-level tracking, champion tracking, new hires, job changes. Providers like Unify, Clay, and 6sense offer these. Flip the switch and they work.\n\nCole says they're interesting at layer 1, but they get more valuable when compounded with other signals.\n\nBucket two is custom signals. Technographics. Job scraping, like hiring for specific roles. Social listening on Reddit, GitHub, and Glassdoor to find pain.\n\nCole calls these really important to dive into.\n\nThere could be more than three buckets. Cole prefers to simplify into three.\n\nWhich bucket is your team leaning on most?",
     "carousel": [
-      "Slide 1: Cole Courson sorts every signal into 3 buckets.",
-      "Slide 2: Bucket one: out-of-the-box signals you flip on.",
-      "Slide 3: Website intent, persona tracking, champion tracking, new hires, job changes.",
-      "Slide 4: Interesting alone, but more powerful when compounded.",
-      "Slide 5: Bucket two: custom signals built around your market.",
-      "Slide 6: Technographics, job scraping, and hiring for specific roles.",
-      "Slide 7: Social listening on Reddit, GitHub, and Glassdoor surfaces pain.",
-      "Slide 8: Simplify to buckets so your team can actually act."
+      "Slide 1: Cole Courson sorts every GTM signal into 3 buckets",
+      "Slide 2: Bucket one: out-of-the-box signals you can switch on fast",
+      "Slide 3: Website intent, persona tracking, champion tracking, new hires, job changes",
+      "Slide 4: Interesting at layer 1, more valuable when compounded",
+      "Slide 5: Bucket two: custom signals built around your own market",
+      "Slide 6: Technographics, job scraping, and hiring for specific roles",
+      "Slide 7: Social listening on Reddit, GitHub, Glassdoor to find pain",
+      "Slide 8: There could be more buckets. Simple beats complete."
     ],
     "lesson": {
-      "title": "Organizing signals into simple buckets",
+      "title": "Simplify your signals into buckets",
       "takeaways": [
-        "Out-of-the-box signals like intent, champion tracking, new hires, and job changes are quick to turn on and interesting at layer one.",
-        "Custom signals like technographics, job scraping, and social listening on Reddit, GitHub, or Glassdoor are worth diving into.",
-        "Signals get more interesting when you compound them rather than use them alone."
+        "Out-of-the-box signals like intent, champion tracking, and job changes are quick to turn on but are just layer 1.",
+        "Custom signals like technographics, job scraping, and social listening on Reddit, GitHub, and Glassdoor surface pain.",
+        "Signals get more interesting when compounded rather than used alone."
       ],
-      "exercise": "List every signal your team tracks today and sort each into out-of-the-box or custom. Then pick one custom signal, like hiring for a specific role, to pair with an out-of-the-box one."
+      "exercise": "List every signal your team currently tracks. Sort each into out-of-the-box or custom, then pick one signal from each bucket to combine."
     },
-    "caption": "Signals, simplified into buckets"
+    "caption": "3 buckets of GTM signals"
   },
   {
     "id": "m0608",
@@ -50,34 +50,34 @@
       "hook_type": "how_to",
       "first_line_words": 13
     },
-    "post_first_line": "Cole Courson sends 200k+ emails monthly.",
+    "post_first_line": "400k emails a month changes how Google sees you.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 6
+      "first_line_words": 9
     },
     "hook_score_before": 69,
     "hook_score_after": 67,
-    "linkedin_post": "Cole Courson sends 200k+ emails monthly.\n\nGoogle flags two things at that volume, and most senders miss the second one.\n\nThe first is sameness. When every email looks identical to the next, filters notice. Cole's fix is small, deliberate variability in each message.\n\nThat means dynamic snippets: first name, last name, company name, sender name, and spintax.\n\nNone of these changes the offer. Together they make each email a little different from the one before it, which helps at large scale.\n\nThe second is a subject line that disconnects from the body. If the subject says one thing and the message says another, Google treats it as spam.\n\nSo the subject line has to match what the email actually talks about.\n\nBroad, high-volume campaigns don't need to look like blasts. They need variation and a subject line that tells the truth.\n\nWhat's your go-to snippet for adding variability?",
+    "linkedin_post": "400k emails a month changes how Google sees you.\n\nThat's 9 words, so it needs trimming to 8 or fewer. \n\nRevised:\n\nHigh volume changes how Google sees you.\n\nCole Courson shared two things Google flags in high-volume cold email, and one of them is easy to miss.\n\nThe first is sameness. When every email looks identical to the next, that's a signal. Cole's fix for broader campaigns in the 200k to 400k a month range is to build in variability with dynamic snippets: first name, last name, company name, sender name, and spintax.\n\nSmall differences from one email to the next make it much easier to land at scale.\n\nThe second is a mismatch between subject line and body. If the subject line says one thing and the message is about something else, Google can flag it as spam.\n\nSo the subject has to match what the email actually delivers.\n\nNeither fix is complicated. Both are easy to skip when you're pushing volume.\n\nWhat's your go-to snippet for adding variability?",
     "carousel": [
-      "Slide 1: Sending 200 to 400k cold emails a month?",
-      "Slide 2: Google flags two things at that volume.",
-      "Slide 3: Flag one: every email looks like the last one.",
-      "Slide 4: Add variability with first name, last name, and company.",
-      "Slide 5: Add the sender name and spintax snippets too.",
-      "Slide 6: Flag two: the subject line disconnects from the body.",
-      "Slide 7: A subject that doesn't match the message reads as spam.",
-      "Slide 8: Vary each email and keep subject and body aligned."
+      "Slide 1: Sending 200k to 400k emails a month? Read this.",
+      "Slide 2: Google flags emails that look identical to each other.",
+      "Slide 3: Fix it with variability from one email to the next.",
+      "Slide 4: Use first name, last name, company, and sender name snippets.",
+      "Slide 5: Add spintax to vary the copy itself.",
+      "Slide 6: Google also flags subject lines that don't match the body.",
+      "Slide 7: If the subject promises one thing, the email must deliver it.",
+      "Slide 8: Small details decide whether you land at scale."
     ],
     "lesson": {
-      "title": "Two things Google flags in high-volume cold email",
+      "title": "Two Spam Flags in High-Volume Cold Email",
       "takeaways": [
-        "Low variability from one email to the next gets flagged, so use dynamic snippets like first name, last name, company name, sender name, and spintax.",
-        "Small variations add up and help broad campaigns land at large scale.",
-        "A subject line that disconnects from the body of the message gets flagged as spam."
+        "Google flags a lack of variability between one email and the next, so build it in with dynamic snippets.",
+        "Snippets like first name, last name, company name, sender name, and spintax make large campaigns land better.",
+        "A subject line that disconnects from the body of the message can also be flagged as spam."
       ],
-      "exercise": "Open your highest-volume campaign and add at least three dynamic snippets, such as first name, company name, and sender name. Then read each subject line next to its body and rewrite any that don't match."
+      "exercise": "Open your highest-volume campaign and add at least three variable elements, such as first name, company name, and a spintax phrase. Then reread each subject line against its body and rewrite any that don't match."
     },
-    "caption": "Google flags these two things"
+    "caption": "Two things Google flags"
   },
   {
     "id": "m2013",
@@ -90,32 +90,32 @@
       "hook_type": "contrarian",
       "first_line_words": 17
     },
-    "post_first_line": "100,000 emails after weeks of 50 a day?",
+    "post_first_line": "One big send day can cost a month.",
     "post_tag": {
-      "hook_type": "stat",
+      "hook_type": "other",
       "first_line_words": 8
     },
     "hook_score_before": 69,
-    "hook_score_after": 64,
-    "linkedin_post": "100,000 emails after weeks of 50 a day?\n\nThat one decision can wipe out a month of work.\n\nCole Courson has seen what happens when sending volume jumps overnight. Google flags the break in pattern. Mailboxes get cancelled and domains get shut down.\n\nSay a team sends 50 emails a day, every day. Then a webinar comes along and the list goes out in one blast. Every one of those messages gets flagged.\n\nThe damage doesn't stop at spam folders. Those messages disappear into the ether, and the domains need to be warmed up again. Warming up typically takes 2 to 3 weeks, so the recovery runs about a month.\n\nCole has been through it, and called it a really painful process.\n\nGoogle watches for consistency. Steady volume looks normal, and a sudden spike looks like a problem.\n\nWant to send more? Scale up gradually instead of in one jump.\n\nWhat's the biggest send spike you've ever tried?",
+    "hook_score_after": 69,
+    "linkedin_post": "One big send day can cost a month.\n\nCole Courson has seen how one decision like that plays out.\n\nSay a team sends 50 emails a day, every day. Then someone decides to promote a webinar to 100,000 people. Google flags the break in the pattern.\n\nThe result: mailboxes get cancelled and domains get shut down.\n\nWarming up domains typically takes 2 to 3 weeks. So the damage goes beyond messages landing in spam or disappearing into the ether. The team then spends a month warming everything back up.\n\nCole has been through that process and calls it really, really painful.\n\nGoogle watches for consistency in daily send volume. Treat that consistency as an asset you protect.\n\nTo push toward larger volumes, scale up gradually instead of in one jump.\n\nHave you ever had to rebuild a burned domain?",
     "carousel": [
-      "Slide 1: 50 emails a day, then 100,000 in one day.",
-      "Slide 2: Google flags sudden breaks in your daily send volume.",
-      "Slide 3: Flagged mailboxes get cancelled and domains get shut down.",
-      "Slide 4: Warming up domains typically takes 2 to 3 weeks.",
-      "Slide 5: One big blast can cost you a full month.",
-      "Slide 6: Messages sent during the spike vanish into the ether.",
-      "Slide 7: Cole Courson has been through it. Painful process.",
+      "Slide 1: One big send day can cost you a month.",
+      "Slide 2: Say you send 50 emails a day, every day.",
+      "Slide 3: Then a 100,000-person webinar blast goes out in one day.",
+      "Slide 4: Google flags the break in your consistent send pattern.",
+      "Slide 5: Mailboxes get cancelled. Domains get shut down.",
+      "Slide 6: Warming domains takes 2 to 3 weeks, typically.",
+      "Slide 7: Recovery means roughly a month of warming back up.",
       "Slide 8: Want bigger volume? Scale it out gradually."
     ],
     "lesson": {
-      "title": "Why Send Volume Consistency Protects Your Mailboxes",
+      "title": "Consistent send volume protects your mailboxes",
       "takeaways": [
-        "Google flags sudden jumps from your normal daily send volume, such as going from 50 a day to 100,000.",
-        "Cancelled mailboxes and shut-down domains mean restarting warmup, which typically takes 2 to 3 weeks.",
-        "To send larger volumes, scale up gradually instead of in one big day."
+        "Google flags sudden changes in daily send volume, not just high volume.",
+        "A single spike can get mailboxes cancelled and domains shut down.",
+        "Warming domains typically takes 2 to 3 weeks, so recovery costs about a month."
       ],
-      "exercise": "Write down your current daily send volume per mailbox, then plan a step-by-step ramp for any upcoming campaign or webinar send instead of one big blast."
+      "exercise": "Write down your current daily send volume per mailbox, then plan a gradual ramp toward your target volume instead of one large jump."
     },
     "caption": "One send day, one month lost"
   },
@@ -130,34 +130,34 @@
       "hook_type": "contrarian",
       "first_line_words": 16
     },
-    "post_first_line": "Bobby Foose rejects \"saw you on our website.\"",
+    "post_first_line": "\"Saw you on our website\" is lazy.",
     "post_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 8
+      "first_line_words": 7
     },
     "hook_score_before": 68,
     "hook_score_after": 71,
-    "linkedin_post": "Bobby Foose rejects \"saw you on our website.\"\n\nIt's the most common cold opener, and it says the least.\n\nBobby's point: put yourself in the other person's shoes. Why would they want to talk to you? A very valid answer is that they don't.\n\nSo the job is to give them a reason that has nothing to do with the pitch.\n\n\"Saw you on our website\" is lazy. It doesn't show any homework at all.\n\nCompare that to something personal. Something like: \"You're from Bobby's hometown. Bobby is out in San Francisco now, working at a startup called Unify.\"\n\nThat opener gives the reader a reason to keep reading before the pitch even starts.\n\nThe bar for a first message is not \"relevant.\" It's \"worth a reply from someone who owes you nothing.\"\n\nWhat's the best opener you've ever received?",
+    "linkedin_post": "\"Saw you on our website\" is lazy.\n\nBobby Foose has a blunt take on why most outreach gets ignored.\n\nBobby's starting point: put yourself in the other person's shoes. Why would they want to talk to you? A very valid answer is that they don't.\n\nSo the job is to give them a reason that goes beyond \"saw you on our website.\" That line shows zero homework.\n\nBobby's example is much simpler and more human: \"Hey, you're from the same hometown as Bobby. Bobby is out in San Francisco now, working at a startup called Unify.\"\n\nA real connection comes first. The rest can follow.\n\nThe bar for a good opener isn't high. It takes a few minutes of actual effort to show the person on the other end the work was done.\n\nWhat's the best cold opener you've ever received?",
     "carousel": [
       "Slide 1: \"Saw you on our website\" is a lazy opener.",
-      "Slide 2: It tells the prospect you did zero homework.",
-      "Slide 3: Put yourself in their shoes: why would they talk to you?",
-      "Slide 4: A very valid answer is that they wouldn't.",
-      "Slide 5: So find a reason that goes beyond your website.",
-      "Slide 6: Try a real connection, like a shared hometown.",
-      "Slide 7: Then say who you are and what you do.",
-      "Slide 8: Earn the reply before you make the pitch."
+      "Slide 2: Put yourself in the prospect's shoes first.",
+      "Slide 3: Why would they want to talk to you? Maybe they don't.",
+      "Slide 4: That opener shows you did no homework at all.",
+      "Slide 5: Find a real reason for them to want the conversation.",
+      "Slide 6: Bobby Foose's example: \"You're from my hometown.\"",
+      "Slide 7: Then say where you work and what you do.",
+      "Slide 8: Connection first. Pitch second."
     ],
     "lesson": {
       "title": "Give prospects a real reason to talk to you",
       "takeaways": [
-        "\"Saw you on our website\" signals no homework and gives the prospect no reason to engage.",
-        "Assume the prospect has no desire to talk to you, then work to change that.",
-        "A genuine personal connection, like a shared hometown, earns attention before the pitch."
+        "Assume the prospect has no inherent reason to talk to you.",
+        "\"Saw you on our website\" signals zero homework.",
+        "A genuine personal connection earns attention before the pitch."
       ],
-      "exercise": "Rewrite your last three cold openers. Replace any \"saw you on your website\" line with one specific, personal connection to the prospect, then follow with one sentence on who you are and what you do."
+      "exercise": "Pick five prospects you plan to contact this week. For each one, find one real personal or professional connection, like a hometown, shared background, or mutual interest, and rewrite your opener around it."
     },
-    "caption": "Stop saying \"saw your website\""
+    "caption": "Stop opening with 'saw your website'"
   },
   {
     "id": "m2336",
@@ -170,34 +170,34 @@
       "hook_type": "contrarian",
       "first_line_words": 17
     },
-    "post_first_line": "Cole Courson: stop obsessing over Gmail vs Outlook.",
+    "post_first_line": "Gmail vs Outlook is the wrong deliverability fight.",
     "post_tag": {
       "hook_type": "contrarian",
       "first_line_words": 8
     },
     "hook_score_before": 68,
     "hook_score_after": 71,
-    "linkedin_post": "Cole Courson: stop obsessing over Gmail vs Outlook.\n\nThe bigger deliverability problem sits somewhere else.\n\nAccording to Cole, org size matters more. Emailing into large organizations is just tougher. They have spam checkers and blockers, and sometimes they pay for platforms that don't let your emails through.\n\nBest practices are still best practices. Get those right first.\n\nBut after that, Cole would worry more about these nuances than about which inbox provider the buyer uses.\n\nThat's where multichannel comes in. Use signals and intent to send a good email, then refer to that email in a cold call so the rep gets a real opportunity.\n\nCole acknowledged it was an email course. The recommendation was still to use all channels, and there are 3 of them.\n\nWhat channel do you lean on too heavily?",
+    "linkedin_post": "Gmail vs Outlook is the wrong deliverability fight.\n\nCole Courson sees a bigger variable most teams skip past.\n\nOrg size. Emailing into large organizations is just tougher. They run spam checkers and blockers, and sometimes pay for platforms that stop outside emails from getting through.\n\nSo Cole's advice: keep the best practices as your first focus, then worry more about those nuances than which inbox provider sits on the other end.\n\nThe other piece is channel. Email alone is a narrow bet.\n\nUse signals and intent to send a strong email. Then refer to that email in a cold call, so the rep gets a real opening instead of a cold start.\n\nCole called it out directly: even in an email course, the recommendation is to use all three channels.\n\nWhen email stalls at a big account, which channel do you add first?",
     "carousel": [
-      "Slide 1: Gmail vs Outlook is not your real deliverability problem",
-      "Slide 2: Org size makes a bigger difference than inbox provider",
-      "Slide 3: Large orgs run spam checkers and blockers",
-      "Slide 4: Some pay for platforms that stop your emails entirely",
-      "Slide 5: Get the email best practices right first",
-      "Slide 6: Then stop relying on email alone",
-      "Slide 7: Use signals and intent to send a good email",
-      "Slide 8: Reference that email in a cold call to open the door"
+      "Slide 1: Gmail vs Outlook is the wrong deliverability fight.",
+      "Slide 2: Org size is the bigger variable most teams overlook.",
+      "Slide 3: Large companies run spam checkers and blockers on inbound email.",
+      "Slide 4: Some even pay for platforms that stop your emails.",
+      "Slide 5: Best practices still come first. Get those right.",
+      "Slide 6: Then use signals and intent to send a good email.",
+      "Slide 7: Reference that email in a cold call to open the conversation.",
+      "Slide 8: Email-only is a narrow bet. Use all three channels."
     ],
     "lesson": {
       "title": "Deliverability Is Bigger Than Your Inbox Provider",
       "takeaways": [
         "Emailing into large organizations is tougher because of spam checkers, blockers, and paid filtering platforms.",
-        "Best practices come first, but org size nuances deserve more worry than Gmail vs Outlook.",
-        "Multichannel helps: send a good email based on signals and intent, then reference it in a cold call."
+        "Best practices remain the first place to focus, before chasing nuances.",
+        "Multichannel lets a signal-driven email set up a cold call that gets a real opportunity."
       ],
-      "exercise": "List your target accounts by org size. For the largest ones, plan a follow-up cold call that references the email you sent."
+      "exercise": "Pick five large accounts where email is getting no replies. For each, write one email based on a signal, then draft a cold call opener that references that email."
     },
-    "caption": "Gmail vs Outlook? Wrong focus"
+    "caption": "Org size beats Gmail vs Outlook"
   },
   {
     "id": "m0355",
@@ -210,33 +210,33 @@
       "hook_type": "stat",
       "first_line_words": 20
     },
-    "post_first_line": "300-400K emails a month. One orchestrator.",
+    "post_first_line": "300 to 400K emails a month. One orchestrator.",
     "post_tag": {
       "hook_type": "stat",
       "first_line_words": 6
     },
     "hook_score_before": 64,
     "hook_score_after": 67,
-    "linkedin_post": "300-400K emails a month. One orchestrator.\n\nThat's the case study Cole Courson says belongs in your email framework before you write a single email.\n\nCole works with one POC at Guru, who sends roughly 300 to 400K emails a month. With one orchestrator and Cole running it, the whole thing stays clean.\n\nThe result: saved time, saved energy, and marketing results still moving. That becomes a story you can tell other prospects.\n\nA typical email framework includes the question: what type of story have we helped them draw away from? A case study like this answers it.\n\nCole's point is that before email one of founder-led sales, you need to know where you want to start. That means the personas, the splits, the pains, and the stories.\n\nThe stories come first. The copy comes after.\n\nWhat story would you lead your first email with?",
+    "linkedin_post": "300 to 400K emails a month. One orchestrator.\n\nCole Courson says that setup is exactly the kind of story that belongs in your email framework.\n\nFor one Guru point of contact, Cole runs roughly 300 to 400K emails a month with a single orchestrator. That saves time and energy, and still drives marketing results.\n\nCole's point: a result like that becomes a clean case study. A typical email framework includes the question of what story you've already helped a company like that tell.\n\nBut the story is not where you start. Before writing email one for founder-led sales, Cole says you need to know where you want to begin.\n\nThat means getting clear on the personas, the splits, the pains, and the stories.\n\nThe copy comes after that groundwork.\n\nWhat's your strongest case study for outbound?",
     "carousel": [
-      "Slide 1: 300-400K emails a month. One orchestrator.",
-      "Slide 2: Cole Courson shares what to settle before email one.",
-      "Slide 3: Guru's POC sends roughly 300 to 400K emails monthly.",
-      "Slide 4: One orchestrator plus Cole keeps that volume clean.",
-      "Slide 5: Result: time saved, energy saved, marketing results intact.",
-      "Slide 6: That outcome becomes a case study for your framework.",
-      "Slide 7: Before email one, define personas, splits, pains, and stories.",
-      "Slide 8: Stories first. Copy second."
+      "Slide 1: 300 to 400K emails a month, one orchestrator",
+      "Slide 2: Cole Courson runs that volume for one Guru POC",
+      "Slide 3: It saves time and energy and still drives results",
+      "Slide 4: That result becomes a clean case study",
+      "Slide 5: Your email framework needs a story like this",
+      "Slide 6: Before email one, decide where you want to start",
+      "Slide 7: Know your personas, splits, pains, and stories",
+      "Slide 8: Copy comes after the groundwork"
     ],
     "lesson": {
-      "title": "Pick your stories before you write email one",
+      "title": "Build the story layer before email one",
       "takeaways": [
-        "An email framework should include the story of what you've helped others move away from.",
-        "A strong case study can be as simple as less time, less energy, and the same marketing results.",
-        "For founder-led sales, define personas, splits, pains, and stories before drafting email one."
+        "A clean, high-volume result makes a strong case study for your email framework.",
+        "Efficiency counts as proof: one orchestrator handling 300 to 400K emails a month saves time and energy while driving results.",
+        "Founder-led sales emails start with clarity on personas, splits, pains, and stories, not copy."
       ],
-      "exercise": "Write down one customer result in a sentence: what they were doing before, what changed, and the outcome. Then map it to a persona and a pain you'd target in email one."
+      "exercise": "Write down your top customer result in one sentence, then map it to a persona and a pain. Place it in your email framework as the story step before drafting email one."
     },
-    "caption": "300-400K emails, one orchestrator"
+    "caption": "300K emails, one orchestrator"
   }
 ]

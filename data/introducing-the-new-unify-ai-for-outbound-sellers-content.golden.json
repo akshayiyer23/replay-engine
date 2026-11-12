@@ -10,32 +10,32 @@
       "hook_type": "contrarian",
       "first_line_words": 9
     },
-    "post_first_line": "8 minutes. That's Zach Herman's entire outreach flow.",
+    "post_first_line": "8 minutes. That's how long Zach Herman's flow took.",
     "post_tag": {
       "hook_type": "stat",
-      "first_line_words": 8
+      "first_line_words": 9
     },
     "hook_score_before": 85,
     "hook_score_after": 77,
-    "linkedin_post": "8 minutes. That's Zach Herman's entire outreach flow.\n\nThe real story is what happened to the time that came back.\n\nZach put it toward more volume, mid-funnel deals, and enablement with reps on the team. Outreach quality stayed very high the whole time.\n\nHere's the part that matters: volume for the sake of volume worked great in 2022. Zach was loading up Outreach and sending 1,000 emails a day out of a primary mailbox, and it worked.\n\nThat doesn't work today.\n\nWhat works now is quality volume, done at scale. Personalization at scale comes up constantly, and Zach sees this kind of flow as how to actually accomplish it.\n\nThe shift isn't send less or send more. It's removing the tradeoff between the two.\n\nWhat changed most in your outbound since 2022?",
+    "linkedin_post": "8 minutes. That's how long Zach Herman's flow took.\n\nThe real story is what happened to the time that came back.\n\nZach said the flow took probably 8 minutes total, maybe less. That time now goes to running more volume, focusing on mid-funnel deals, or working with reps on enablement.\n\nThe quality of the outreach stays very high throughout.\n\nHere's the part that stands out. Volume for the sake of volume worked awesome in 2022. Zach loaded up Outreach and sent 1,000 emails a day out of a primary mailbox, and it worked great.\n\nThat doesn't work today.\n\nWhat works now is quality volume, done at scale. Personalization at scale comes up constantly, and Zach sees this flow as the way to actually accomplish it.\n\nThe old playbook was about sending more. The new one is about keeping quality high while sending a lot.\n\nWhere are you spending the time you save?",
     "carousel": [
-      "Slide 1: Volume for volume's sake worked great in 2022.",
+      "Slide 1: Volume for volume's sake worked in 2022.",
       "Slide 2: Zach Herman sent 1,000 emails a day from one mailbox.",
-      "Slide 3: It worked then. It doesn't work today.",
-      "Slide 4: Now you need quality volume, and you need it at scale.",
-      "Slide 5: Zach's end-to-end flow took around 8 minutes, maybe less.",
+      "Slide 3: It worked great then. It doesn't work today.",
+      "Slide 4: Now you need quality volume, done at scale.",
+      "Slide 5: Zach's end-to-end flow took about 8 minutes, maybe less.",
       "Slide 6: That time goes to mid-funnel deals and rep enablement.",
-      "Slide 7: Personalization at scale is the answer everyone keeps asking about.",
-      "Slide 8: Stop choosing between volume and quality. Get both."
+      "Slide 7: Outreach quality stays very high while volume scales.",
+      "Slide 8: Personalization at scale is the real unlock."
     ],
     "lesson": {
-      "title": "Quality volume beats raw volume",
+      "title": "Quality Volume Beats Volume for Volume's Sake",
       "takeaways": [
-        "Sending 1,000 emails a day from one mailbox worked in 2022 but doesn't work today.",
-        "The goal now is quality volume at scale, not volume alone.",
-        "Time saved on outreach can go to mid-funnel deals and rep enablement."
+        "Blasting 1,000 emails a day from one mailbox worked in 2022 but doesn't work today.",
+        "The goal now is quality volume at scale, with personalization built into the process.",
+        "A faster end-to-end flow gives time back for mid-funnel deals and rep enablement."
       ],
-      "exercise": "Time your current outreach flow from start to finish. Then list what you'd do with the hours back, and pick one item (mid-funnel deals or rep enablement) to start on this week."
+      "exercise": "Time your current outreach flow from start to finish. Pick one step that could be streamlined, then decide where you'd spend the saved time, such as mid-funnel deals or coaching reps."
     },
     "caption": "Volume alone stopped working"
   },
@@ -48,35 +48,36 @@
     "judge_score": 83,
     "angle_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 9
+      "first_line_words": 17
     },
-    "post_first_line": "Zach Herman spent 10 to 12 hours daily on outbound.",
+    "post_first_line": "Outbound used to eat 10 to 12 hour days.",
     "post_tag": {
       "hook_type": "story",
-      "first_line_words": 10
+      "first_line_words": 9
     },
     "hook_score_before": 83,
     "hook_score_after": 95,
-    "linkedin_post": "Zach Herman spent 10 to 12 hours daily on outbound.\n\nThe tools Zach tried to fix that made the work worse, not better.\n\nIn the past, Zach stitched ChatGPT and Claude together to make outbound as easy as possible. The output was not even remotely as good as what came from doing it by hand.\n\nSo the manual work stayed. Writing stronger emails. Making more targeted calls. Long days, just to keep quality up.\n\nWhat changed is that work now takes a couple of minutes. Zach keeps coming back to one point: the quality stays strong, and it picks up on almost all of the context.\n\nThat's the bar. Faster only counts if the output is as good as what you'd do manually.\n\nMost people accept the tradeoff between speed and quality. Zach's experience says you shouldn't have to.\n\nHave you ever abandoned an AI workflow because quality dropped?",
+    "linkedin_post": "Outbound used to eat 10 to 12 hour days.\n\nZach Herman tried a different fix first, and it backfired.\n\nZach stitched ChatGPT and Claude together to make outbound easier. The output was not even remotely as good as what Zach was doing by hand.\n\nSo Zach kept doing it by hand. That meant longer days spent writing stronger emails and making more targeted calls.\n\nNow work that used to take a ton of time takes Zach a couple of minutes. The quality stays strong, and the process picks up on almost all of Zach's context.\n\nThe lesson: speed was never the hard part. Keeping quality while saving time was.\n\nA stack of disconnected tools can be faster and still worse. Context is what made the difference.\n\nWhat did you stop automating because quality dropped?",
     "carousel": [
-      "Slide 1: Stitching ChatGPT and Claude into outbound made it worse",
-      "Slide 2: The output wasn't remotely as good as manual work",
-      "Slide 3: So the 10 to 12 hour days continued",
-      "Slide 4: Stronger emails and targeted calls took real time",
-      "Slide 5: Now the same work takes a couple of minutes",
-      "Slide 6: The quality stays strong, and context carries through",
-      "Slide 7: Speed without quality is just faster mediocrity"
+      "Slide 1: Outbound used to mean 10 to 12 hour days.",
+      "Slide 2: Zach Herman tried stitching ChatGPT and Claude together.",
+      "Slide 3: The result was not remotely as good as manual work.",
+      "Slide 4: So the long days continued, writing emails and making targeted calls.",
+      "Slide 5: Speed was never the problem. Quality was.",
+      "Slide 6: Now the same work takes a couple of minutes.",
+      "Slide 7: The quality stays strong because it picks up on context.",
+      "Slide 8: Fast and worse is not a win."
     ],
     "lesson": {
-      "title": "Speed Only Counts If Quality Holds",
+      "title": "Faster outbound only counts if quality holds",
       "takeaways": [
-        "Stitching together general-purpose AI tools can produce worse outbound than doing it by hand.",
-        "Context is what separates strong outreach from generic output.",
-        "The goal is saving hours without lowering the quality bar."
+        "Stitching separate AI tools together can produce output worse than manual work.",
+        "Time saved means nothing if email and call quality drop.",
+        "Carrying your context into the process is what keeps quality strong."
       ],
-      "exercise": "Pick one outbound task you do manually. Run it through your AI workflow and compare the result side by side with your manual version. If the AI version is weaker, note what context it missed."
+      "exercise": "Take one outbound task you do by hand, like writing a first email. Run it through your current automated setup and compare the two side by side. Note what context the automated version missed."
     },
-    "caption": "Faster, but not better"
+    "caption": "Stitching AI tools made it worse"
   },
   {
     "id": "m1315",
@@ -96,27 +97,27 @@
     },
     "hook_score_before": 82,
     "hook_score_after": 80,
-    "linkedin_post": "17 titles in one Boolean search.\n\nZach Herman used to start every account list with that, and hope it worked.\n\nZach had 25 accounts to work through, one at a time, in LinkedIn Sales Navigator. Each one meant a crazy Boolean string and a quiet bet that it pulled every relevant contact.\n\nIf the search didn't turn up enough people, Zach ran it again. Then came pushing the results back to ZoomInfo and walking through the same process all over.\n\nThe new version looks different. Zach took the top 10 accounts from the list to keep it simple, then looked at the suggested contacts.\n\nFrom there, the accounts can be ranked on whatever matters to you. Maybe it's funding amount. Maybe it's how many jobs they're hiring for.\n\nThe rule could be as specific as: hiring for more than 200 jobs and raised a Series C in the last 3 months. The list ranks itself on that.\n\nThe old process was not hard work. It was repetitive work that sat between SDRs and actual conversations.\n\nWhat's the most tedious step in your prospecting?",
+    "linkedin_post": "17 titles in one Boolean search.\n\nThat was the old way Zach Herman built account lists, and it only worked if the search caught everyone.\n\nZach Herman used to take 25 accounts and run each one individually through LinkedIn Sales Navigator. Every search carried a long Boolean string with 17 different titles, and then it was a matter of hoping for the best.\n\nIf the results looked thin, Zach ran it again. Then the contacts had to be pushed back to ZoomInfo, and the whole process started over.\n\nThe new version looks different. Zach took the top 10 contacts from the list to keep it simple, and the suggestions came back automatically.\n\nFrom there, the list can be ranked on whatever matters. Funding amount. How many jobs a company is hiring for. Something as specific as more than 200 open jobs and a Series C raised in the last 3 months.\n\nThe work shifted from digging for contacts to deciding what makes an account worth calling first.\n\nWhat's the longest Boolean string you've ever written?",
     "carousel": [
-      "Slide 1: One Boolean search. 17 titles. Fingers crossed.",
-      "Slide 2: Zach Herman ran that search on 25 accounts, one by one.",
-      "Slide 3: Not enough contacts? Run it again, then push to ZoomInfo.",
-      "Slide 4: Now the top 10 accounts come up with suggested contacts.",
-      "Slide 5: Rank them on funding amount or number of open jobs.",
-      "Slide 6: Try this rule: 200+ jobs and a Series C in 3 months.",
-      "Slide 7: The list ranks itself against your own criteria.",
-      "Slide 8: The old process was repetitive, and it stood between SDRs and conversations."
+      "Slide 1: One Boolean search. 17 job titles. Hope for the best.",
+      "Slide 2: Zach Herman ran this on 25 accounts, one at a time.",
+      "Slide 3: Thin results meant running the search all over again.",
+      "Slide 4: Then the contacts got pushed back to ZoomInfo.",
+      "Slide 5: The new way starts with the top 10 contacts per list.",
+      "Slide 6: Suggestions show up without writing a single Boolean string.",
+      "Slide 7: Rank by funding amount or number of open jobs.",
+      "Slide 8: Example: 200+ jobs open and a Series C in 3 months."
     ],
     "lesson": {
-      "title": "From Boolean guesswork to ranked accounts",
+      "title": "Stop hunting for contacts, start ranking accounts",
       "takeaways": [
-        "Long Boolean title searches run account by account, and you can't be sure they caught everyone.",
-        "Re-running searches and pushing results back into another tool adds repeated steps to every list.",
-        "Ranking accounts on your own criteria, like funding or hiring volume, turns a big list into a short one."
+        "Long Boolean searches across many titles are slow and unreliable, and often need to be repeated.",
+        "Moving contacts between tools adds steps that rebuild the same process each time.",
+        "Ranking on specific criteria like funding amount or hiring volume tells reps where to focus first."
       ],
-      "exercise": "Write down your three strongest buying signals, such as funding stage or open roles, and turn them into one ranking rule. Apply it to your next 10 accounts."
+      "exercise": "Pick one account list you work this week. Write down two criteria, such as funding stage and open jobs, that would make an account a priority, then rank the list on them before pulling any contacts."
     },
-    "caption": "Goodbye 17-title Boolean search"
+    "caption": "17 titles. One Boolean search."
   },
   {
     "id": "m0437",
@@ -127,34 +128,34 @@
     "judge_score": 79,
     "angle_tag": {
       "hook_type": "contrarian",
-      "first_line_words": 14
+      "first_line_words": 13
     },
-    "post_first_line": "Zach Herman's ChatGPT experiment slowed outreach down.",
+    "post_first_line": "Zach Herman tried ChatGPT as an SDR. Outreach got slower.",
     "post_tag": {
-      "hook_type": "contrarian",
+      "hook_type": "story",
       "first_line_words": 7
     },
     "hook_score_before": 79,
-    "hook_score_after": 82,
-    "linkedin_post": "Zach Herman's ChatGPT experiment slowed outreach down.\n\nThe reason had nothing to do with the AI being bad at writing.\n\nThis was around 2022 or 2023, when the first version of ChatGPT came out. The stack was already crowded: outreach tools, Zoom info, Sales Nav, Six Sense, Demandbase across the board. Then AI got thrown into the mix and everybody tried to use it.\n\nZach's plan was simple: get it to write better basic copy.\n\nBut it didn't remember who Zach was or how Zach talks. So the time went into coaching the tool to sound right, and the edits kept piling up.\n\nEventually it took more time to get the AI to write the way Zach wanted than to just write it. So Zach went back to doing it manually.\n\nThe takeaway: a general tool wasn't purpose-built for sellers. If it can't carry your voice, it adds a step instead of removing one.\n\nAnd according to Zach, that hasn't changed much.\n\nWhere has AI cost you more time than it saved?",
+    "hook_score_after": 94,
+    "linkedin_post": "Zach Herman tried ChatGPT as an SDR. Outreach got slower.\n\nThe tool wasn't the problem. The fit was.\n\nThis was around 2022, '23, when the first version of ChatGPT came out. The stack was already full: Outreach, ZoomInfo, Sales Navigator, Six Sense, Demandbase. Then AI got thrown into the mix and everybody tried to use it effectively.\n\nZach tried to get it to write better basic copy. It couldn't remember who Zach was or how Zach talks.\n\nSo every draft took more time to coax into shape. Getting the tool to write the way Zach wanted took longer than just writing it. Zach ended up back to doing it manually.\n\nThe lesson: a general-purpose AI tool isn't built for sellers. If it doesn't know your voice, you're editing instead of selling.\n\nWhen did an AI tool last cost you time?",
     "carousel": [
-      "Slide 1: Zach Herman tried ChatGPT as an SDR. It slowed things down.",
-      "Slide 2: The stack was already crowded: Sales Nav, Six Sense, Demandbase.",
-      "Slide 3: Then AI got thrown in, and everybody tried to use it.",
+      "Slide 1: An SDR tried ChatGPT and got slower, not faster.",
+      "Slide 2: Around 2022, '23, the first ChatGPT version landed on top of a full stack.",
+      "Slide 3: Outreach, ZoomInfo, Sales Nav, Six Sense, Demandbase were already in the mix.",
       "Slide 4: The goal was simple: write better basic copy, faster.",
-      "Slide 5: But it didn't remember Zach or how Zach talks.",
-      "Slide 6: Getting the copy right took more time than writing it.",
-      "Slide 7: So Zach went back to doing it manually.",
-      "Slide 8: A tool that isn't built for sellers adds steps."
+      "Slide 5: But it couldn't remember how Zach actually talks.",
+      "Slide 6: Coaxing the tool took longer than writing the message.",
+      "Slide 7: So Zach went back to writing outreach manually.",
+      "Slide 8: General AI isn't built for sellers. Fit matters more than hype."
     ],
     "lesson": {
-      "title": "When AI Slows Your Outreach Down",
+      "title": "When AI Slows You Down",
       "takeaways": [
-        "A general-purpose AI tool wasn't built for sellers, and it shows in the workflow.",
-        "If the tool can't remember your voice, you spend your time correcting it.",
-        "If prompting and editing takes longer than writing, the tool is costing you speed."
+        "A tool that isn't purpose-built for sellers can add work instead of removing it.",
+        "If AI can't remember your voice, you spend your time editing and re-prompting.",
+        "Speed gains only count if the total time to a sendable message drops."
       ],
-      "exercise": "Time yourself writing one outreach email manually, then time it again using your AI tool, including every edit. If the AI version takes longer, write down what the tool is missing about you or your buyer."
+      "exercise": "Time yourself writing five outreach messages with your AI tool and five by hand. Compare total time to a message you'd actually send."
     },
     "caption": "AI made outreach slower"
   },
@@ -169,34 +170,34 @@
       "hook_type": "other",
       "first_line_words": 16
     },
-    "post_first_line": "Six tools to send one email.",
+    "post_first_line": "Six tools just to send one email.",
     "post_tag": {
-      "hook_type": "how_to",
-      "first_line_words": 6
+      "hook_type": "other",
+      "first_line_words": 7
     },
     "hook_score_before": 79,
     "hook_score_after": 82,
-    "linkedin_post": "Six tools to send one email.\n\nSpeaker D admits the old prospecting workflow is a little embarrassing to look back on.\n\nIt started in Salesforce, with a report of accounts to reach out to. Then it was on to LinkedIn Sales Navigator to find prospects at each account and build a list.\n\nFrom there, ZoomInfo imported that list into Salesforce. Then back to Salesforce, then into Outreach, where a sequence got built and the emails went out.\n\nBecause the process was so long, there was little time left to personalize. Speaker D describes the result as a spray and pray strategy.\n\nSpeaker D also points out that this is probably what a lot of people were doing. It wasn't a one-off.\n\nThe lesson: when a workflow has this many handoffs, the effort goes into moving data around instead of writing something worth reading.\n\nSpeaker D says the team is in a much better spot now.\n\nHow many tools does your outbound touch today?",
+    "linkedin_post": "Six tools just to send one email.\n\nSpeaker D admits the old prospecting workflow is a little embarrassing to look back on.\n\nIt went like this: build an account report in Salesforce. Open LinkedIn Sales Nav to find prospects at those accounts and create a list. Use ZoomInfo to import that list into Salesforce. Go back to Salesforce. Add the people to Outreach. Build a sequence in Outreach. Then finally get the emails out.\n\nBecause the process was so long, personalization took a back seat. The result was a spray and pray strategy, with far less tailoring than the outreach deserved.\n\nSpeaker D points out that this is probably what a lot of people were doing. It wasn't a one-off mistake. It was the standard playbook.\n\nThe lesson isn't that reps were lazy. The process itself made good outreach nearly impossible, because every extra handoff ate time that should have gone into research and personalization.\n\nSpeaker D says things are in a much better spot now.\n\nHow many steps are in your prospecting workflow today?",
     "carousel": [
-      "Slide 1: Six tools to send a single prospecting email.",
-      "Slide 2: Step one: build a Salesforce report of target accounts.",
-      "Slide 3: Step two: find prospects in LinkedIn Sales Navigator.",
-      "Slide 4: Step three: import the list through ZoomInfo into Salesforce.",
-      "Slide 5: Step four: add contacts to Outreach and build a sequence.",
+      "Slide 1: Six tools just to send one email.",
+      "Slide 2: Step one: build an account report in Salesforce.",
+      "Slide 3: Step two: find prospects and build a list in Sales Nav.",
+      "Slide 4: Step three: import that list through ZoomInfo, back into Salesforce.",
+      "Slide 5: Step four: add people to Outreach and build a sequence.",
       "Slide 6: The process was so long that personalization got skipped.",
-      "Slide 7: The result was spray and pray, and plenty of people did it.",
-      "Slide 8: Count your handoffs. That's where personalization disappears."
+      "Slide 7: Spray and pray became the default, not the choice.",
+      "Slide 8: Speaker D says teams are in a much better spot now."
     ],
     "lesson": {
-      "title": "Long workflows kill personalization",
+      "title": "When the workflow kills personalization",
       "takeaways": [
-        "Every handoff between tools costs time that could go into personalizing outreach.",
-        "A long process pushes reps toward spray and pray, even when they know better.",
-        "Many teams ran this same workflow, so it's worth auditing your own."
+        "A long chain of tools leaves less time for personalization, even when reps want to do it.",
+        "Spray and pray is often a symptom of a slow process, not a lack of effort.",
+        "Many teams ran this same workflow, so admitting it is the first step to fixing it."
       ],
-      "exercise": "Write down every tool and manual step between picking a target account and sending the email. Circle the steps that only move data, then ask which ones could go."
+      "exercise": "Write down every tool and handoff between picking an account and sending the first email. Circle the steps that add no personalization, then cut or combine one this week."
     },
-    "caption": "Six tools. One email."
+    "caption": "Six tools for one email"
   },
   {
     "id": "m2371",
@@ -206,35 +207,35 @@
     "angle": "Strategic account research used to take weeks. I built a full plan and sequence in 3 minutes.",
     "judge_score": 77,
     "angle_tag": {
-      "hook_type": "other",
+      "hook_type": "story",
       "first_line_words": 7
     },
-    "post_first_line": "3 minutes. A full outbound plan, done.",
+    "post_first_line": "3 minutes. One full outbound plan and sequence.",
     "post_tag": {
-      "hook_type": "other",
-      "first_line_words": 7
+      "hook_type": "how_to",
+      "first_line_words": 8
     },
     "hook_score_before": 77,
-    "hook_score_after": 77,
-    "linkedin_post": "3 minutes. A full outbound plan, done.\n\nZach Herman used to spend weeks on a single strategic account.\n\nAs an SDR working strategic accounts, Zach read 10K reports. Just to send one email meant hours of research. Figuring out who to reach out to at a company like Nike and how to tee it up could take weeks.\n\nThen Zach built a full outbound plan and a sequence for Airbnb, a massive company, in about 3 minutes. The contacts looked good, so they went straight into the sequence after one more once-over.\n\nTeams have told us they go from list to sequence around 90% faster. The end-to-end outbound workflow is what makes that possible.\n\nThe research was never the job. Getting the right message to the right person was.\n\nWhat's the slowest part of your outbound today?",
+    "hook_score_after": 62,
+    "linkedin_post": "3 minutes. One full outbound plan and sequence.\n\nIt used to take weeks to get there.\n\nZach Herman used to work strategic accounts as an SDR. Just sending one email meant hours of research and reading 10K reports.\n\nYou could spend weeks figuring out who to reach out to at Nike and how to tee it up.\n\nIn a recent demo, Zach built a full outbound plan and a sequence for Airbnb in about 3 minutes. Then pushed the contacts straight into the sequence after one more once-over.\n\nTeams using this end-to-end workflow have told us they go from list to sequence 90% faster.\n\nThe gain isn't just speed on one step. It's removing the handoffs between research, contacts, and sequencing.\n\nWhen was the last time research stalled your outreach?",
     "carousel": [
       "Slide 1: Strategic account research used to take weeks.",
       "Slide 2: Zach Herman worked strategic accounts as an SDR.",
-      "Slide 3: Reading 10K reports just to send one email.",
-      "Slide 4: Hours of research before a single message went out.",
-      "Slide 5: Then Zach built a full plan and sequence in about 3 minutes.",
-      "Slide 6: Teams report going from list to sequence around 90% faster.",
-      "Slide 7: End-to-end workflow is what removes the bottleneck.",
-      "Slide 8: Research was never the job. Reaching the right person was."
+      "Slide 3: Sending one email meant hours of research and 10K reports.",
+      "Slide 4: Figuring out who to contact at Nike could take weeks.",
+      "Slide 5: Zach built a full plan and sequence for Airbnb in 3 minutes.",
+      "Slide 6: Good contacts went straight into the sequence after a final review.",
+      "Slide 7: Teams report going from list to sequence 90% faster.",
+      "Slide 8: The real win is one end-to-end outbound workflow."
     ],
     "lesson": {
-      "title": "Collapse the gap between research and outreach",
+      "title": "Collapse the research-to-sequence gap",
       "takeaways": [
-        "Manual account research can eat hours per email and weeks per strategic account.",
-        "The speed gain comes from connecting list, plan, and sequence in one workflow.",
-        "A quick human review before sending keeps quality while cutting the time."
+        "Strategic account research used to cost SDRs hours per email and weeks per account.",
+        "The biggest speed gain comes from an end-to-end workflow, not from speeding up one step.",
+        "Keep a human review before contacts go into the sequence."
       ],
-      "exercise": "Time how long it takes you to go from a target account to a sequence-ready contact list for one strategic account. Write down each step, then mark which ones could be handled in a single workflow."
+      "exercise": "Time how long it takes your team to go from a target account to a live sequence. List each handoff along the way and cut one this week."
     },
     "caption": "Weeks of research. 3 minutes."
   }
