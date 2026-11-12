@@ -42,6 +42,9 @@ from generate_content import (  # noqa: E402
     _SENSITIVE_RE,
     _UNIFY_PITCH_RE,
     _POV_FIRST_RE,
+    _SUBJECTLESS_RE,
+    _AWKWARD_PREP_RE,
+    _TRANSCRIPTION_ERROR_RE,
 )
 import anthropic
 import os
@@ -156,6 +159,21 @@ def audit_post(item: dict) -> list[str]:
     cleaned = _clean_post(post)
     if cleaned != post.strip() and not any("leaked" in i or "duplicated" in i for i in issues):
         issues.append("leaked/duplicated content detected by _clean_post")
+
+    # Subject-less present-participle opener
+    m = _SUBJECTLESS_RE.search(post)
+    if m:
+        issues.append(f"subject-less sentence: '{m.group().strip()[:50]}' — start with a subject")
+
+    # Awkward preposition
+    m = _AWKWARD_PREP_RE.search(post)
+    if m:
+        issues.append(f"awkward phrasing: '{m.group()}' — rephrase naturally")
+
+    # Transcription error survived to post ("Rampit", etc.)
+    m = _TRANSCRIPTION_ERROR_RE.search(post)
+    if m:
+        issues.append(f"transcription error: '{m.group()}' — fix company/person name")
 
     return issues
 

@@ -93,6 +93,12 @@ Right: Mention Unify by name as context ("a Unify workflow", "inside Unify") —
   "I mean", "sort of", "pretty much", "essentially", "obviously").
 - Carousel: each slide = one punchy line (8–12 words). No bullets inside a slide.
 - Caption: 3–6 words max for the on-screen text that appears first 3 seconds.
+
+## Sentence construction — HARD RULE
+Never start a sentence with a subject-less present participle.
+Wrong: "Sitting down to plan…", "Walking into meetings…", "Building the list…"
+Right: "Every Sunday I sit down to plan…", "When I walk into meetings…"
+Never write "in the phone" or "in the call" — rephrase naturally: "on the phone", "during the call", or restructure.
 {voice_block}\
 """
 
@@ -192,6 +198,21 @@ _META_RE = re.compile(
     r'|from the recording|transcript puts)\b',
     re.I,
 )
+# Subject-less present-participle sentence openers ("Sitting down to plan…")
+_SUBJECTLESS_RE = re.compile(
+    r'(?:^|\n)(?:Sitting|Walking|Working|Running|Going|Starting|Building|Using|Looking|'
+    r'Trying|Taking|Spending|Making|Thinking|Standing|Coming|Joining|Hiring|Scaling|'
+    r'Moving|Switching|Turning|Realizing|Learning|Managing|Growing|Watching|Winning|'
+    r'Finding|Reaching|Pulling|Pushing|Seeing|Stepping|Sending|Sending|Tracking)\b',
+    re.MULTILINE,
+)
+# Awkward prepositions: "in the phone/call" should be rephrased
+_AWKWARD_PREP_RE = re.compile(r'\bin the (?:phone|call|conversation|meeting|room)\b', re.I)
+# Hook overclaim: strong quantified scope in first line ("Half our conversations", "Most of our X")
+_HOOK_QUANTIFIED_RE = re.compile(r'(?:half|most|all) (?:our|my|of our|of my) \w+', re.I)
+# Known transcription errors: ASR mishears that must be corrected if they reach content generation
+_TRANSCRIPTION_ERROR_RE = re.compile(r'\bRampit\b')
+
 
 def _clean_post(text: str) -> str:
     """Strip any leaked model reasoning/self-correction from a post.
@@ -240,12 +261,16 @@ end with exactly one question (≤ 10 words); no gendered pronouns (he/she/his/h
 no sensitive claims about real named entities in legal/compliance/negative context; \
 no transcript meta-commentary ("the transcript puts…", "treat it as approximate") — express uncertainty naturally; \
 full name on first reference only, then first name only; no awkward pronoun-avoidance phrases; \
-no leaked reasoning ("Wait,", "Corrected version:", "Note:"); company is "Unify" not "UniFi"/"Unifi".
+no leaked reasoning ("Wait,", "Corrected version:", "Note:"); company is "Unify" not "UniFi"/"Unifi"; \
+no subject-less present-participle openers ("Sitting down to…" → "Every Sunday I sit down to…"); \
+no "in the phone/call" — rephrase naturally; \
+hook must not overclaim scope vs transcript — match what was actually said (who, what, how often).
 Return ONLY the rewritten post text — no JSON, no preamble.\
 """
 
 
-def _editor_check(post: str, post_for: str = "", speaker_name: str = "") -> list[str]:
+def _editor_check(post: str, post_for: str = "", speaker_name: str = "",
+                  transcript: str = "") -> list[str]:
     """Return list of issue strings. Empty list = passes all checks."""
     issues = []
     lines = [ln for ln in post.split("\n") if ln.strip()]
@@ -326,6 +351,34 @@ def _editor_check(post: str, post_for: str = "", speaker_name: str = "") -> list
             issues.append(f"duplicated paragraph: '{para[:50]}…'")
             break
         _seen_paras.add(para)
+
+    # Subject-less present-participle sentence opener
+    m = _SUBJECTLESS_RE.search(post)
+    if m:
+        issues.append(f"subject-less sentence: '{m.group().strip()[:50]}' — start with a subject")
+
+    # Awkward preposition ("in the phone/call")
+    m = _AWKWARD_PREP_RE.search(post)
+    if m:
+        issues.append(f"awkward phrasing: '{m.group()}' — rephrase naturally")
+
+    # Transcription error survived to content generation
+    m = _TRANSCRIPTION_ERROR_RE.search(post)
+    if m:
+        issues.append(f"transcription error: '{m.group()}' — fix company/person name")
+
+    # Hook overclaim: quantified scope in first line not supported by transcript
+    if transcript:
+        first_line = post.split("\n")[0].strip()
+        m = _HOOK_QUANTIFIED_RE.match(first_line)
+        if m:
+            # First 3 words of the hook form the claim phrase (e.g. "half our conversations")
+            claim_tokens = first_line.lower().split()[:3]
+            claim_phrase = " ".join(claim_tokens)
+            if claim_phrase not in transcript.lower():
+                issues.append(
+                    f"hook may overclaim: '{first_line[:70]}' — verify claim matches transcript"
+                )
 
     return issues
 
@@ -512,7 +565,8 @@ def generate_for_candidates(
 
         # ── 4. editor pass (check + one rewrite if needed) ──
         post = content["linkedin_post"]
-        issues = _editor_check(post, post_for, speaker_name)
+        transcript_excerpt = c.get("transcript", "")[:300]
+        issues = _editor_check(post, post_for, speaker_name, transcript=transcript_excerpt)
         editor_fixed = False
         if issues:
             print(f"\n      ✍️  editor rewrites ({len(issues)} issue(s)): {issues[0][:60]}…", end=" ", flush=True)
@@ -524,7 +578,7 @@ def generate_for_candidates(
             )
             post = _clean_post(post)  # strip any leaked reasoning from the rewrite
             content["linkedin_post"] = post
-            remaining = _editor_check(post, post_for, speaker_name)
+            remaining = _editor_check(post, post_for, speaker_name, transcript=transcript_excerpt)
             editor_fixed = len(remaining) == 0
             _QA_ENTRIES.append({
                 "gate": "editor", "item_id": cid,

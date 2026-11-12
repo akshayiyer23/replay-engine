@@ -99,6 +99,38 @@ def _count_gtm_posts() -> int:
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
+# Known ASR transcription errors → canonical forms.
+# Applied to sentence .text fields before mining so the model never sees bad names.
+_TRANSCRIPTION_CORRECTIONS: list[tuple[re.Pattern, str]] = [
+    # "Rampit" = ASR mishear of "Ramp" (the company)
+    (re.compile(r'\bRampit\b'), 'Ramp'),
+    # Wrong Unify spelling (belt + suspenders; also caught by generate_content editor gate)
+    (re.compile(r'\bUnifi\b|\bUniFi\b'), 'Unify'),
+]
+
+# Known company and person names from unify-context.md — used for the transcription correction list
+_KNOWN_NAMES = [
+    # Companies mentioned in webinars
+    "Ramp", "Unify", "Clay", "Apollo", "Outreach", "Salesloft", "Carta",
+    "Juicebox", "Perplexity", "Navattic", "Gumloop", "Spellbook", "Campfire",
+    "AssemblyAI", "Zorro", "Starbridge",
+    # Current Unify team
+    "Austin Hughes", "Ethan Dursht", "Hassan Irshad", "Owen Polk", "Kyle Tymo",
+    # Guests
+    "Jeff Ignacio", "Tommy Clark", "Sarah Charlton", "Jay Desai", "Dima Khlopkov",
+    "Jeff Kirchick", "Matt Stinson",
+]
+
+
+def _normalize_transcript_text(sentences: list[dict]) -> None:
+    """Correct known ASR transcription errors in sentence text fields (in-place)."""
+    for s in sentences:
+        text = s.get("text", "")
+        for pattern, replacement in _TRANSCRIPTION_CORRECTIONS:
+            text = pattern.sub(replacement, text)
+        s["text"] = text
+
+
 def _normalize_name(detected: str, known_names: list[str]) -> str:
     """Return canonical spelling from known_names if detected name is very close."""
     if not detected:
@@ -1976,6 +2008,8 @@ def _run_main(args) -> None:
 
     if len(sentences) == 0:
         raise PipelineError("No speech detected — confirm the file contains a voice track.")
+
+    _normalize_transcript_text(sentences)
 
     n_speakers = len({s["speaker"] for s in sentences})
     duration_min = sentences[-1]["end"] / 60_000
