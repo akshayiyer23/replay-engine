@@ -45,6 +45,8 @@ from generate_content import (  # noqa: E402
     _SUBJECTLESS_RE,
     _AWKWARD_PREP_RE,
     _TRANSCRIPTION_ERROR_RE,
+    _COUNT_PROMISE_RE,
+    _count_delivered_items,
 )
 import anthropic
 import os
@@ -174,6 +176,17 @@ def audit_post(item: dict) -> list[str]:
     m = _TRANSCRIPTION_ERROR_RE.search(post)
     if m:
         issues.append(f"transcription error: '{m.group()}' — fix company/person name")
+
+    # Count-promise vs delivery
+    m = _COUNT_PROMISE_RE.search(post)
+    if m:
+        promised = int(m.group(1))
+        delivered = _count_delivered_items(post)
+        if delivered > 0 and delivered != promised:
+            issues.append(
+                f"count mismatch: promises {promised} {m.group().split()[-1]} "
+                f"but delivers {delivered} — rewrite to say '{delivered}' or add the missing item(s)"
+            )
 
     return issues
 

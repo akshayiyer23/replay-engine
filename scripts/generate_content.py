@@ -94,6 +94,11 @@ Right: Mention Unify by name as context ("a Unify workflow", "inside Unify") —
 - Carousel: each slide = one punchy line (8–12 words). No bullets inside a slide.
 - Caption: 3–6 words max for the on-screen text that appears first 3 seconds.
 
+## Count-promise — HARD RULE
+If the post says "3 ways", "5 signals", "2 steps", etc., it must deliver exactly that many items.
+Either enumerate all promised items OR change the number to match what you actually write.
+Never promise N and deliver N−1 or N+1.
+
 ## Sentence construction — HARD RULE
 Never start a sentence with a subject-less present participle.
 Wrong: "Sitting down to plan…", "Walking into meetings…", "Building the list…"
@@ -212,6 +217,48 @@ _AWKWARD_PREP_RE = re.compile(r'\bin the (?:phone|call|conversation|meeting|room
 _HOOK_QUANTIFIED_RE = re.compile(r'(?:half|most|all) (?:our|my|of our|of my) \w+', re.I)
 # Known transcription errors: ASR mishears that must be corrected if they reach content generation
 _TRANSCRIPTION_ERROR_RE = re.compile(r'\bRampit\b')
+# Count-promise pattern: "3 ways", "5 steps", "2 signals", etc.
+_COUNT_PROMISE_RE = re.compile(
+    r'\b([2-9])\s+(?:ways?|steps?|signals?|things?|reasons?|buckets?|types?|areas?|'
+    r'principles?|rules?|tactics?|tips?|keys?|lessons?|moves?|points?|pillars?|'
+    r'components?|signals?|mistakes?|habits?)\b',
+    re.I,
+)
+
+
+def _count_delivered_items(post: str) -> int:
+    """Count explicitly listed items in a post.
+
+    Recognises three enumeration styles:
+      1. Numbered lines: "1. something" or "1) something"
+      2. Sentence-start ordinals: "First, ..." / "Second, ..." (at line start)
+      3. Labelled sections: "Bucket one / Signal two / Step three / ..."
+    Returns 0 when no explicit enumeration is found (skips the promise check).
+    """
+    # Style 1: numbered lines
+    numbered = len(re.findall(r'(?:^|\n)\s*\d+[.)]\s+\S', post))
+    if numbered > 0:
+        return numbered
+
+    # Style 2: ordinals at the START of a line/sentence only
+    # (e.g. "First, do X" but NOT "first-party" or "the third one")
+    sentence_ordinals = len(re.findall(
+        r'(?:^|\n)\s*(?:First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth)'
+        r'(?:[,:\s])',
+        post, re.I,
+    ))
+    if sentence_ordinals > 0:
+        return sentence_ordinals
+
+    # Style 3: labelled sections — "<label> <number-word>:"
+    # e.g. "Bucket one is …", "Signal two:", "Step three —"
+    _NUM_WORDS = r'(?:one|two|three|four|five|six|seven|eight|nine|ten)'
+    _LABELS = r'(?:bucket|signal|step|reason|thing|way|rule|tip|key|point|habit|mistake|move|tactic|type|area|pillar)'
+    labelled = len(re.findall(
+        rf'\b{_LABELS}\s+{_NUM_WORDS}\b',
+        post, re.I,
+    ))
+    return labelled
 
 
 def _clean_post(text: str) -> str:
@@ -264,7 +311,8 @@ full name on first reference only, then first name only; no awkward pronoun-avoi
 no leaked reasoning ("Wait,", "Corrected version:", "Note:"); company is "Unify" not "UniFi"/"Unifi"; \
 no subject-less present-participle openers ("Sitting down to…" → "Every Sunday I sit down to…"); \
 no "in the phone/call" — rephrase naturally; \
-hook must not overclaim scope vs transcript — match what was actually said (who, what, how often).
+hook must not overclaim scope vs transcript — match what was actually said (who, what, how often); \
+if the post promises N items (e.g. "3 signals"), it must deliver exactly N — either add the missing item(s) or change the count.
 Return ONLY the rewritten post text — no JSON, no preamble.\
 """
 
@@ -379,6 +427,17 @@ def _editor_check(post: str, post_for: str = "", speaker_name: str = "",
                 issues.append(
                     f"hook may overclaim: '{first_line[:70]}' — verify claim matches transcript"
                 )
+
+    # Count-promise vs delivery: "3 ways/signals/steps" must deliver exactly that many
+    m = _COUNT_PROMISE_RE.search(post)
+    if m:
+        promised = int(m.group(1))
+        delivered = _count_delivered_items(post)
+        if delivered > 0 and delivered != promised:
+            issues.append(
+                f"count mismatch: promises {promised} {m.group().split()[-1]} "
+                f"but delivers {delivered} — rewrite to say '{delivered}' or add the missing item(s)"
+            )
 
     return issues
 
