@@ -213,13 +213,40 @@ export default function AgentRunView({
     return () => clearTimeout(tid);
   }, [isDone, onDone]);
 
-  // ── LIVE mode: SSE stream ─────────────────────────────────────────────────
+  // ── LIVE mode: background job + 2-second poll ────────────────────────────
   useEffect(() => {
     if (mode !== "live" || !input) return;
 
-    const ctrl = new AbortController();
+    let jobId: string | null = null;
+    let nextIndex = 0;
+    let stopped = false;
+    let intervalId: ReturnType<typeof setInterval> | null = null;
 
-    async function stream() {
+    function stop() {
+      stopped = true;
+      if (intervalId) clearInterval(intervalId);
+    }
+
+    async function poll() {
+      if (!jobId || stopped) return;
+      try {
+        const res = await fetch(`${API_BASE}/jobs/${jobId}?since=${nextIndex}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        for (const evt of data.events as AgentEvent[]) processEvent(evt);
+        nextIndex = data.total_events;
+        if (data.status === "done" || data.status === "error") {
+          stop();
+          if (data.status === "error" && !gotTerminalRef.current) {
+            onError("run_interrupted");
+          }
+        }
+      } catch {
+        // network hiccup — keep polling
+      }
+    }
+
+    async function start() {
       try {
         const form = new FormData();
         if (input!.type === "url") form.set("url", input!.url);
@@ -230,7 +257,6 @@ export default function AgentRunView({
           method: "POST",
           headers: { "X-Passcode": input!.passcode },
           body: form,
-          signal: ctrl.signal,
         });
 
         if (!res.ok) {
@@ -242,46 +268,20 @@ export default function AgentRunView({
           return;
         }
 
-        const reader = res.body!.getReader();
-        const decoder = new TextDecoder();
-        let buf = "";
+        if (stopped) return;
+        const { job_id } = await res.json();
+        jobId = job_id;
 
-        while (!ctrl.signal.aborted) {
-          let chunk: ReadableStreamReadResult<Uint8Array>;
-          try {
-            chunk = await reader.read();
-          } catch {
-            break; // stream aborted or network error
-          }
-          if (chunk.done) break;
-          buf += decoder.decode(chunk.value, { stream: true });
-          const parts = buf.split("\n\n");
-          buf = parts.pop() ?? "";
-          for (const part of parts) {
-            // Skip SSE comments (keep-alive pings start with ":")
-            if (part.trimStart().startsWith(":")) continue;
-            const line = part.split("\n").find((l) => l.startsWith("data: "));
-            if (!line) continue;
-            try {
-              processEvent(JSON.parse(line.slice(6)));
-            } catch {}
-          }
-        }
-
-        // Stream ended without a done/error event — connection was dropped
-        if (!ctrl.signal.aborted && !gotTerminalRef.current) {
-          onError("stream_interrupted");
-        }
+        // First poll immediately, then every 2 s
+        await poll();
+        if (!stopped) intervalId = setInterval(poll, 2000);
       } catch (e: unknown) {
-        const name = (e as Error)?.name;
-        if (name !== "AbortError") {
-          onError((e as Error).message || "Connection error");
-        }
+        if (!stopped) onError((e as Error).message || "Connection error");
       }
     }
 
-    stream();
-    return () => ctrl.abort();
+    start();
+    return stop;
   }, []); // eslint-disable-line
 
   // ── REPLAY mode: schedule pre-recorded events ─────────────────────────────

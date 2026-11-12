@@ -31,7 +31,7 @@ Every Unify webinar has 6 high-signal moments — a stat, a story, a framework, 
 | Layer | Technology |
 |---|---|
 | Frontend | Next.js 16 (App Router), React 19, Tailwind CSS 4, TypeScript |
-| Backend | FastAPI (Python), SSE streaming, Railway |
+| Backend | FastAPI (Python), background jobs + polling, Railway |
 | AI | Anthropic Claude (claude-sonnet-4-6), extended thinking, structured JSON output |
 | Transcription | AssemblyAI (speaker diarization, sentence-level timestamps) |
 | Video | yt-dlp (audio extraction), Supadata (YouTube metadata fallback) |
