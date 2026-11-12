@@ -6,6 +6,7 @@ export type Webinar = {
   duration: string;
   speakers: string[];
   top_score: number;
+  quality_checked?: boolean;
 };
 
 export type WhyChip = { label: string; mult?: number };

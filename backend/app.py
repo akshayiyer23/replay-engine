@@ -173,8 +173,12 @@ def get_results(slug: str):
         if c.get("top8") and c["id"] in content_ids
     ]
 
+    # quality_checked: True if every content post has quality_passed=True (or flag absent → golden)
+    quality_checked = all(item.get("quality_passed", True) for item in content)
+    index_with_qc = {**index, "quality_checked": quality_checked}
+
     return {
-        "index": index,
+        "index": index_with_qc,
         "top_moments": top,
         "content": content,
     }
@@ -347,6 +351,12 @@ async def _stream_pipeline(
                 "speakers": [],
                 "top_score": top_score,
             }
+
+        # Compute quality_checked from content (quality_passed on each item, absent = golden)
+        content_items = result.get("content") or []
+        result["index"]["quality_checked"] = all(
+            item.get("quality_passed", True) for item in content_items
+        )
 
     yield f"data: {json.dumps({'step': 'results', 'data': result})}\n\n"
     yield "data: {\"step\": \"stream_done\"}\n\n"

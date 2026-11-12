@@ -26,7 +26,54 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).parent.parent
 DATA_DIR = ROOT / "data"
 JUDGE_DIR = ROOT / "skills" / "gtm-viral-judge"
+_RULES_DIR = ROOT / "skills" / "content-rules"
+_CONTEXT_DIR = ROOT / "skills" / "unify-moment-miner"
 load_dotenv(ROOT / ".env")
+
+# ── load single-source-of-truth content rules ─────────────────────────────────
+_CONTENT_RULES_PATH = _RULES_DIR / "CONTENT_RULES.md"
+_CONTENT_RULES: str = _CONTENT_RULES_PATH.read_text() if _CONTENT_RULES_PATH.exists() else ""
+
+
+def _load_known_people() -> frozenset[str]:
+    """Return canonical first+last names and first-names-only from unify-context.md.
+
+    Only reads the Speakers section (## 7) and the Guests paragraph to avoid
+    matching webinar titles or company names from other sections.
+    """
+    ctx = _CONTEXT_DIR / "unify-context.md"
+    if not ctx.exists():
+        return frozenset()
+    text = ctx.read_text()
+    names: set[str] = set()
+
+    # Extract just the speakers section (## 7. Speakers through the next ##)
+    speakers_m = re.search(r'## 7\. Speakers.*?(?=\n## )', text, re.DOTALL)
+    speakers_block = speakers_m.group(0) if speakers_m else ""
+
+    # Table rows in speakers section: | Name | Role | URL |
+    # Match "Firstname Lastname" and optionally "Firstname (nickname) Lastname"
+    for m in re.finditer(
+        r'\|\s*([A-Z][a-z]+(?:\([a-z]+\))?\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s*\|',
+        speakers_block,
+    ):
+        name = re.sub(r'\(.*?\)', '', m.group(1)).strip()
+        # Skip if looks like a column header or non-person word
+        if name.lower() not in ('name', 'role', 'linkedin') and ' ' in name:
+            names.add(name)
+
+    # Comma-separated names in "Former Unify speakers" and "Guests seen" paragraphs
+    for m in re.finditer(r'([A-Z][a-z]+(?:\([a-zA-Z]+\))?\s+[A-Z][a-z]+)\s*[,(]', speakers_block):
+        name = re.sub(r'\(.*?\)', '', m.group(1)).strip()
+        if ' ' in name:
+            names.add(name)
+
+    # First names for fast lookup
+    firsts = {n.split()[0] for n in names}
+    return frozenset(names | firsts)
+
+
+_KNOWN_PEOPLE: frozenset[str] = _load_known_people()
 
 MODEL = "claude-sonnet-5-5"
 HAIKU = "claude-haiku-5-5"
@@ -44,66 +91,7 @@ Write like a sharp practitioner sharing real insight — no corporate tone, no m
 
 {pov_block}
 
-## Company name — HARD RULE
-The company name is always "Unify" — never "UniFi", "Unifi", or any other variant.
-
-## Name usage — HARD RULE
-Use the speaker's full name on first reference only. After that, use their first name only.
-Wrong: "Burns mentioned" / "Burns said" after first use. Right: "Stephanie mentioned".
-Never construct awkward pronoun-avoidance phrases like "in the phone" or "in the conversation".
-Rephrase the sentence naturally instead.
-
-## Pronouns — HARD RULE
-Never use gendered pronouns. Never write he, she, his, her, him.
-Use the person's name on first reference, then rewrite around it ("the approach", "that answer").
-
-## Sensitive claims — HARD RULE
-Never name a real company, school, or person in a negative, legal, or compliance context.
-If the transcript says a named org "was breaking the law" or "violated" something,
-anonymize: write "a large school district" / "one company" instead, or drop the detail entirely.
-If the moment can't stand without the sensitive claim, skip it and return a minimal placeholder.
-
-## Transcript meta-commentary — HARD RULE
-Never reference the transcript, the recording, or uncertainty about source accuracy.
-Wrong: "the transcript puts that number at…", "treat it as approximate", "based on the transcript",
-"not entirely clear from the recording", "the recording suggests".
-Right: Express uncertainty naturally inline: "around 420", "roughly 30%", "about 10 minutes".
-
-## Grounding — HARD RULE
-Every factual claim (not just numbers) must be directly in the transcript — no inference,
-no extrapolation. If a claim isn't supported by the transcript, remove it from the post.
-Numbers must preserve qualifiers exactly: "close to 30", "around 40%" — not "30" or "40%".
-
-## No feature pitches — HARD RULE
-Never describe Unify's product capabilities in a sales context.
-Wrong: "Unify has 40 to 50 data providers." "Unify connects every data point and signals."
-Right: Mention Unify by name as context ("a Unify workflow", "inside Unify") — never sell it.
-
-## Formatting rules
-- LinkedIn post first line: ≤ 8 words. Never start with "I". Direct. No question marks.
-- STAT openers preferred: if the transcript has a specific number (accounts, meetings, days,
-  dollars, percent), LEAD WITH IT as a stat hook. Fall back to contrarian/story only if no
-  strong number exists.
-- Line 2 (second paragraph, 1 sentence): open loop — tease the insight without delivering it.
-  No "Here's what I mean." Create curiosity. No payoff yet.
-- Short paragraphs (1–3 sentences). Blank line between paragraphs. Plain text only.
-- Zero explicit pitches: never "sign up", "try X", "book a demo", "check out".
-- End every post with one short question (≤ 10 words) that invites a real comment.
-- Written prose, not spoken transcript: cut all filler ("and so", "you know", "right?",
-  "I mean", "sort of", "pretty much", "essentially", "obviously").
-- Carousel: each slide = one punchy line (8–12 words). No bullets inside a slide.
-- Caption: 3–6 words max for the on-screen text that appears first 3 seconds.
-
-## Count-promise — HARD RULE
-If the post says "3 ways", "5 signals", "2 steps", etc., it must deliver exactly that many items.
-Either enumerate all promised items OR change the number to match what you actually write.
-Never promise N and deliver N−1 or N+1.
-
-## Sentence construction — HARD RULE
-Never start a sentence with a subject-less present participle.
-Wrong: "Sitting down to plan…", "Walking into meetings…", "Building the list…"
-Right: "Every Sunday I sit down to plan…", "When I walk into meetings…"
-Never write "in the phone" or "in the call" — rephrase naturally: "on the phone", "during the call", or restructure.
+{content_rules}
 {voice_block}\
 """
 
@@ -217,6 +205,30 @@ _AWKWARD_PREP_RE = re.compile(r'\bin the (?:phone|call|conversation|meeting|room
 _HOOK_QUANTIFIED_RE = re.compile(r'(?:half|most|all) (?:our|my|of our|of my) \w+', re.I)
 # Known transcription errors: ASR mishears that must be corrected if they reach content generation
 _TRANSCRIPTION_ERROR_RE = re.compile(r'\bRampit\b')
+# Disclaimer / meta sentences (R19)
+_DISCLAIMER_RE = re.compile(
+    r'(?:^|\n)'
+    r'(?:It\'s worth (?:noting|mentioning|emphasizing|pointing out)|'
+    r'[A-Za-z]+ was (?:clear|specific|explicit|candid) about|'
+    r'To be (?:fair|clear|honest)|'
+    r'Worth (?:noting|mentioning|emphasizing)|'
+    r'It should be (?:noted|mentioned|said)|'
+    r'[Ii]t\'s important to (?:note|mention)|'
+    r'(?:As|While) it\'s (?:true|clear|worth))',
+    re.MULTILINE | re.I,
+)
+# Attribution verbs — used to find named persons in the post
+_ATTR_VERB_RE = re.compile(
+    r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)\s+'
+    r'(?:says?|said|shared|explained|mentioned|noted|added|argues?|'
+    r'believes?|thinks?|calls?|recommends?|found|learned|discovered|puts? it|puts? it)\b',
+)
+# Companies / products that may appear as grammatical subjects — not person names
+_KNOWN_COMPANIES: frozenset[str] = frozenset({
+    'Unify', 'Gumloop', 'Navattic', 'Ramp', 'Salesforce', 'LinkedIn',
+    'HubSpot', 'Outreach', 'Salesloft', 'Apollo', 'Clearbit', 'ZoomInfo',
+    'ChatGPT', 'Claude', 'OpenAI', 'Anthropic', 'Google', 'Slack', 'Notion',
+})
 # Count-promise pattern: "3 ways", "5 steps", "2 signals", etc.
 _COUNT_PROMISE_RE = re.compile(
     r'\b([2-9])\s+(?:ways?|steps?|signals?|things?|reasons?|buckets?|types?|areas?|'
@@ -261,6 +273,45 @@ def _count_delivered_items(post: str) -> int:
     return labelled
 
 
+_OPEN_STOP = frozenset({
+    'the', 'a', 'an', 'is', 'it', 'in', 'of', 'to', 'that', 'this', 'and', 'or',
+    'at', 'with', 'for', 'by', 'as', 'on', 'was', 'are', 'be', 'were', 'my', 'our',
+    'i', 'we', 'they', 'you', 'we', 'had', 'have', 'has', 'not', 'but', 'so', 'then',
+    'when', 'just', 'now', 'even', 'one', 'do', 'did',
+})
+
+
+def _has_repetitive_opening(post: str) -> bool:
+    """Return True if the first paragraphs restate the same idea (not just share topic words).
+
+    A paragraph is a restatement when: key-word overlap with the hook > 65% AND
+    the paragraph does not add significant new vocabulary (new words <= 65% of its total).
+    Short hooks (< 3 unique words, e.g. stat-hooks) are always skipped.
+    """
+    paras = [p.strip() for p in re.split(r'\n\n+', post) if p.strip()][:3]
+    if len(paras) < 2:
+        return False
+    word_sets = []
+    for p in paras:
+        ws = {w.lower().strip('.,!?;:"\'-') for w in p.split() if len(w) > 3
+              and w.lower().strip('.,!?;:"\'-') not in _OPEN_STOP}
+        word_sets.append(ws)
+    hook_ws = word_sets[0]
+    if len(hook_ws) < 3:
+        return False
+    for ws in word_sets[1:]:
+        if not ws:
+            continue
+        overlap = hook_ws & ws
+        if len(overlap) / len(hook_ws) <= 0.65:
+            continue
+        # High overlap — but is this paragraph mostly new content (explanation)?
+        new_vocab_ratio = len(ws - hook_ws) / len(ws)
+        if new_vocab_ratio > 0.65:
+            continue  # Explanatory paragraph; not a restatement
+        return True
+    return False
+
 def _clean_post(text: str) -> str:
     """Strip any leaked model reasoning/self-correction from a post.
 
@@ -303,16 +354,14 @@ Context (angle and transcript excerpt):
 Point of view rule:
 {pov_rule}
 
-Rules: hook ≤ 8 words; no product pitch; no filler phrases; ≤ 1,300 chars total; \
-end with exactly one question (≤ 10 words); no gendered pronouns (he/she/his/her/him); \
-no sensitive claims about real named entities in legal/compliance/negative context; \
-no transcript meta-commentary ("the transcript puts…", "treat it as approximate") — express uncertainty naturally; \
-full name on first reference only, then first name only; no awkward pronoun-avoidance phrases; \
-no leaked reasoning ("Wait,", "Corrected version:", "Note:"); company is "Unify" not "UniFi"/"Unifi"; \
-no subject-less present-participle openers ("Sitting down to…" → "Every Sunday I sit down to…"); \
-no "in the phone/call" — rephrase naturally; \
-hook must not overclaim scope vs transcript — match what was actually said (who, what, how often); \
-if the post promises N items (e.g. "3 signals"), it must deliver exactly N — either add the missing item(s) or change the count.
+Apply ALL content rules (R01–R21 from CONTENT_RULES.md). Key rules:
+hook ≤ 8 words; ≤ 1,300 chars; ends with one question ≤ 10 words; no gendered pronouns; \
+no sensitive claims; no transcript meta; full name first reference then first name only; \
+no leaked reasoning; company is "Unify"; no subject-less participle openers; \
+no "in the phone/call"; hook scope matches transcript; count-promises delivered; \
+no disclaimer/meta sentences ("It's worth noting", "[Name] was clear about"); \
+first 3 paragraphs must not restate the same idea; \
+unknown person names → replace with role ("a teammate", "the growth lead").
 Return ONLY the rewritten post text — no JSON, no preamble.\
 """
 
@@ -415,6 +464,33 @@ def _editor_check(post: str, post_for: str = "", speaker_name: str = "",
     if m:
         issues.append(f"transcription error: '{m.group()}' — fix company/person name")
 
+    # Disclaimer / meta sentences (R19)
+    m = _DISCLAIMER_RE.search(post)
+    if m:
+        issues.append(f"disclaimer/meta sentence: '{m.group().strip()[:60]}' — cut it entirely")
+
+    # Repetitive opening — first 3 paragraphs restate same idea (R20)
+    if _has_repetitive_opening(post):
+        first_lines = " / ".join(
+            p.split("\n")[0].strip()[:40] for p in re.split(r'\n\n+', post) if p.strip()
+        )[:120]
+        issues.append(f"repetitive opening: first 3 paragraphs repeat same idea ({first_lines})")
+
+    # Unknown person names (R21): named with attribution verb, not in known list
+    for m in _ATTR_VERB_RE.finditer(post):
+        name = m.group(1).strip()
+        first = name.split()[0]
+        if first not in _KNOWN_PEOPLE and name not in _KNOWN_PEOPLE:
+            if (len(first) > 2
+                    and first not in ("It", "She", "He", "They", "This", "That")
+                    and first not in _KNOWN_COMPANIES
+                    and name not in _KNOWN_COMPANIES):
+                issues.append(
+                    f"unknown person name: '{name}' — replace with role "
+                    f'("a teammate", "the growth lead", etc.)'
+                )
+                break  # one flag per post is enough
+
     # Hook overclaim: quantified scope in first line not supported by transcript
     if transcript:
         first_line = post.split("\n")[0].strip()
@@ -498,7 +574,12 @@ def _build_system(hooks_md: str, post_for: str, speaker_name: str = "") -> str:
         if posts_path.exists():
             voice = _VOICE_BLOCK.format(examples=_ethan_examples(posts_path))
 
-    return _SYSTEM_BASE.format(hooks=hooks_md.strip(), pov_block=pov, voice_block=voice)
+    return _SYSTEM_BASE.format(
+        hooks=hooks_md.strip(),
+        pov_block=pov,
+        voice_block=voice,
+        content_rules=_CONTENT_RULES,
+    )
 
 
 def _call_sonnet(system: str, user: str, client: anthropic.Anthropic) -> str:
@@ -553,21 +634,22 @@ def generate_for_candidates(
     if out_dir is None:
         out_dir = DATA_DIR
 
-    # Use the judged top set (top8=True); fall back to score-based if no top8 flags present
+    # Use the judged top set (top8=True); fall back to score-based if no top8 flags present.
+    # Generate for the full top-8 pool so failing posts can be replaced by the next best.
     top8_set = [c for c in candidates if c.get("top8", False)]
     if top8_set:
-        qualifying = sorted(top8_set, key=lambda c: -c.get("score", 0))[:MAX_MOMENTS]
+        qualifying = sorted(top8_set, key=lambda c: -c.get("score", 0))
     else:
         qualifying = sorted(
             [c for c in candidates if c.get("score", 0) >= SCORE_THRESHOLD],
             key=lambda c: -c["score"],
-        )[:MAX_MOMENTS]
+        )[:MAX_MOMENTS * 2]  # extra bench when no top8 flag
 
     if not qualifying:
         print("💡 No moments in judged top set — content generation skipped")
         return []
 
-    print(f"💡 Generating content for {len(qualifying)} moments (judged top set)…")
+    print(f"💡 Generating content for {len(qualifying)} moments (top-{MAX_MOMENTS} target, bench included)…")
 
     hooks_md = (JUDGE_DIR / "hooks.md").read_text()
     rubric = json.loads((JUDGE_DIR / "rubric.json").read_text())
@@ -672,6 +754,11 @@ def generate_for_candidates(
         if not issues:
             print(f"hook {score_before}→{score_after} [{post_tag.get('hook_type','?')}] ✓")
 
+        # Final quality check: does the post pass all checks?
+        final_issues = _editor_check(
+            content["linkedin_post"], post_for, speaker_name,
+            transcript=c.get("transcript", "")[:300],
+        )
         results.append({
             "id": cid,
             "moment_type": c["moment_type"],
@@ -688,14 +775,30 @@ def generate_for_candidates(
             "carousel": content["carousel"],
             "lesson": content["lesson"],
             "caption": content["caption"],
+            "quality_passed": len(final_issues) == 0,
+            "_quality_issues": final_issues,
         })
+
+    # ── filter to best MAX_MOMENTS passing posts ──
+    passing = [r for r in results if r.get("quality_passed")]
+    failing = [r for r in results if not r.get("quality_passed")]
+    if failing:
+        print(f"\n   ⚠️  {len(failing)} post(s) dropped (still failing after rewrite): "
+              f"{[r['id'] for r in failing]}")
+    # Take best MAX_MOMENTS from passing; fall back to failing if we're short
+    final_results = (passing + failing)[:MAX_MOMENTS]
+    for r in final_results:
+        r.pop("_quality_issues", None)  # don't expose internal field
+    all_quality_passed = all(r.get("quality_passed", False) for r in final_results)
+    if all_quality_passed:
+        print(f"   ✅  All {len(final_results)} posts passed quality gate")
 
     # ── save ──
     json_path = out_dir / f"{slug}-content.json"
-    json_path.write_text(json.dumps(results, indent=2))
+    json_path.write_text(json.dumps(final_results, indent=2))
 
     md_lines = [f"# {slug} — Generated Content\n"]
-    for r in results:
+    for r in final_results:
         md_lines.append(
             f"## {r['id']} · score {r['judge_score']} · {r['moment_type']}"
         )
@@ -723,7 +826,7 @@ def generate_for_candidates(
 
     print(f"💾 Saved → {json_path}")
     print(f"💾 Saved → {md_path}")
-    return results
+    return final_results
 
 
 # ── pipeline-facing wrapper ───────────────────────────────────────────────────

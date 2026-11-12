@@ -47,6 +47,11 @@ from generate_content import (  # noqa: E402
     _TRANSCRIPTION_ERROR_RE,
     _COUNT_PROMISE_RE,
     _count_delivered_items,
+    _DISCLAIMER_RE,
+    _ATTR_VERB_RE,
+    _KNOWN_PEOPLE,
+    _KNOWN_COMPANIES,
+    _has_repetitive_opening,
 )
 import anthropic
 import os
@@ -187,6 +192,29 @@ def audit_post(item: dict) -> list[str]:
                 f"count mismatch: promises {promised} {m.group().split()[-1]} "
                 f"but delivers {delivered} — rewrite to say '{delivered}' or add the missing item(s)"
             )
+
+    # Disclaimer/meta sentences (R19)
+    m = _DISCLAIMER_RE.search(post)
+    if m:
+        issues.append(f"disclaimer/meta sentence: '{m.group().strip()[:60]}' — cut it")
+
+    # Repetitive opening (R20)
+    if _has_repetitive_opening(post):
+        issues.append("repetitive opening: first 3 paragraphs restate same idea")
+
+    # Unknown person names (R21)
+    for m in _ATTR_VERB_RE.finditer(post):
+        name = m.group(1).strip()
+        first = name.split()[0]
+        if first not in _KNOWN_PEOPLE and name not in _KNOWN_PEOPLE:
+            if (len(first) > 2
+                    and first not in ("It", "She", "He", "They", "This", "That")
+                    and first not in _KNOWN_COMPANIES
+                    and name not in _KNOWN_COMPANIES):
+                issues.append(
+                    f"unknown person name: '{name}' — replace with role"
+                )
+                break
 
     return issues
 
