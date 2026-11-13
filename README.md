@@ -19,6 +19,9 @@ Built for **Unify** ($40M Series B, backed by the OpenAI Startup Fund).
 | Quality audit | **0 critical issues** across **72** generated posts |
 | Speed | **48-min video → results in ~5 min**, fully automated |
 
+![Webinar library — 11 episodes, each ranked by viral score](docs/library.png)
+*11 webinars in the library, each ranked by viral score — click any card to view the full moment breakdown.*
+
 ## The problem
 
 Unify's webinars hold the team's best thinking, but the recordings rarely travel beyond the live audience. Meanwhile, LinkedIn is Unify's highest-leverage channel: one seed-round announcement drove ~420 demo requests in 48 hours. The best moments were sitting unused.
@@ -32,6 +35,9 @@ Unify's webinars hold the team's best thinking, but the recordings rarely travel
 5. **Scores every moment against a data-backed virality rubric,** re-cuts weak openings to start on the hook, and picks a diverse top 6
 6. **Writes the content:** LinkedIn post, carousel outline, Unify University lesson, and on-screen caption
 7. **Runs automated quality gates** before anything is shown
+
+![Run the agent on any YouTube link, transcript, or file](docs/run-panel.png)
+*Submit any YouTube link, paste a transcript, or upload a file — results arrive in ~5 min.*
 
 ![Results card](docs/results.png)
 
