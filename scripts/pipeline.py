@@ -1572,7 +1572,7 @@ def _print_qa_summary(qa_entries: list) -> None:
         g = e["gate"]
         if e.get("fixed"):
             counts[g]["fixed"] += 1
-        elif e["passed"]:
+        elif e.get("passed"):
             counts[g]["passed"] += 1
         else:
             counts[g]["failed"] += 1
