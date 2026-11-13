@@ -277,7 +277,8 @@ def _run_job(job_id: str, cmd: list[str], tmp_path: str | None) -> None:
                     if evt.get("message") == "credits_exhausted":
                         print("[CREDITS_EXHAUSTED] Anthropic credits exhausted", file=sys.stderr)
             except json.JSONDecodeError:
-                pass
+                # Non-JSON pipeline output (tracebacks, debug prints) — echo to our stderr
+                print(f"[pipeline-stderr] {text}", file=sys.stderr, flush=True)
 
         proc.wait()
 

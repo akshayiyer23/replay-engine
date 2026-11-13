@@ -1868,6 +1868,14 @@ def main() -> None:
     except anthropic.RateLimitError:
         _emit("error", "❌  Anthropic rate limit hit — wait a moment and retry.", 0)
         sys.exit("❌  Anthropic rate limit hit — wait a moment and retry.")
+    except Exception as exc:
+        import traceback as _tb
+        exc_type = type(exc).__name__
+        exc_short = str(exc)[:300]
+        print(f"[pipeline-unhandled] {exc_type}: {exc_short}", file=sys.stderr)
+        print(_tb.format_exc(), file=sys.stderr, flush=True)
+        _emit("error", f"❌  Unexpected error ({exc_type}): {exc_short}", 0)
+        sys.exit(f"❌  Unexpected error: {exc}")
 
 
 def _run_main(args) -> None:

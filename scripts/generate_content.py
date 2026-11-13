@@ -711,14 +711,19 @@ def generate_for_candidates(
         editor_fixed = False
         if issues:
             print(f"\n      ✍️  editor rewrites ({len(issues)} issue(s)): {issues[0][:60]}…", end=" ", flush=True)
-            post = _editor_rewrite(
-                post, issues,
-                f"Angle: {c.get('angle','')}\nTranscript: {c.get('transcript','')[:300]}",
-                post_for, speaker_name,
-                client,
-            )
-            post = _clean_post(post)  # strip any leaked reasoning from the rewrite
-            content["linkedin_post"] = post
+            try:
+                post = _editor_rewrite(
+                    post, issues,
+                    f"Angle: {c.get('angle','')}\nTranscript: {c.get('transcript','')[:300]}",
+                    post_for, speaker_name,
+                    client,
+                )
+            except Exception as _er_exc:
+                print(f"\n      ⚠️  editor rewrite failed ({type(_er_exc).__name__}): {_er_exc}", flush=True)
+                _er_exc = None
+            else:
+                post = _clean_post(post)  # strip any leaked reasoning from the rewrite
+                content["linkedin_post"] = post
             remaining = _editor_check(post, post_for, speaker_name, transcript=transcript_excerpt)
             editor_fixed = len(remaining) == 0
             _QA_ENTRIES.append({
