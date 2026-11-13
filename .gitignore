@@ -1,3 +1,11 @@
+# ── Claude Code local settings ────────────────────────────────────────────────
+.claude/
+
+# ── raw scraped post data (never re-commit) ───────────────────────────────────
+data/posts.json
+data/labels-part1.json
+data/candidates-part1.json
+
 # ── secrets ───────────────────────────────────────────────────────────────────
 .env
 

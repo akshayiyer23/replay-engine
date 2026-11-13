@@ -1,64 +1,81 @@
 # Replay Engine
 
-Finds the 6 best LinkedIn moments hidden inside any Unify webinar, scores them against 861 real GTM posts, and writes ready-to-post content — in under 4 minutes.
+**An end-to-end AI agent that turns any GTM webinar into ranked, ready-to-post LinkedIn content, scored against 861 real GTM LinkedIn posts.**
 
-**Live:** https://replay-engine-eta.vercel.app
+Built for **Unify** ($40M Series B, backed by the OpenAI Startup Fund).
 
----
+**[Live demo](https://replay-engine-eta.vercel.app)** · **[2-min walkthrough](LOOM_LINK)**
 
-## What it does
-
-Every Unify webinar has 6 high-signal moments — a stat, a story, a framework, a hot take — buried inside 30 minutes of conversation. Replay Engine finds them, ranks them by predicted virality, and produces four content formats for each one: a LinkedIn post, a carousel outline, a Unify University lesson, and a clip caption.
-
----
-
-## How it works
-
-**Step 1 — Transcribe.** yt-dlp downloads the audio; AssemblyAI returns a sentence-level JSON transcript with speaker diarization. Every word is timestamped and attributed.
-
-**Step 2 — Find moments.** A Claude agent (the "moment miner") reads the transcript and labels candidates with moment type (story, stat, framework, contrarian, tactical), pillar, persona, and angle. It runs in extended thinking mode so it reasons before it commits.
-
-**Step 3 — Score vs real posts.** A second Claude agent (the "viral judge") scores the top candidates against a rulebook derived from 861 real GTM LinkedIn posts. Each moment gets a numeric score and a written rationale explaining what makes it viral or why it falls short.
-
-**Step 4 — Write content.** A third Claude agent writes a LinkedIn post, carousel outline, Unify University lesson, and clip caption for each of the top 6 moments. An editor gate checks every post against 21 canonical content rules (CONTENT_RULES.md) and rewrites on failure. Posts that still fail are dropped and replaced by the next-best moment.
-
-**Step 5 — Ship.** Results are returned as structured JSON. The frontend shows each clip with its trimmed timestamp, viral score, why-chips, and all four content formats. Posts can be copied in one click.
-
----
-
-## Stack
-
-| Layer | Technology |
-|---|---|
-| Frontend | Next.js 16 (App Router), React 19, Tailwind CSS 4, TypeScript |
-| Backend | FastAPI (Python), background jobs + polling, Railway |
-| AI | Anthropic Claude (claude-sonnet-4-6), extended thinking, structured JSON output |
-| Transcription | AssemblyAI (speaker diarization, sentence-level timestamps) |
-| Video | yt-dlp (audio extraction), Supadata (YouTube metadata fallback) |
-| Hosting | Vercel (frontend + static bake), Railway (backend API) |
-| Data | 861 real GTM LinkedIn posts, 11 locked golden webinar result sets |
-
----
+![Replay Engine homepage](docs/hero.png)
 
 ## Results
 
-| Metric | Value |
+| Metric | Result |
 |---|---|
-| Webinars processed | 11 |
-| Ready-to-post moments | 66 |
-| Real GTM posts analyzed | 861 |
-| Content formats per moment | 4 (LinkedIn post, carousel, lesson, caption) |
-| Avg processing time | ~3 min for a 30-min webinar |
-| Backtest | Scoring correlates with real post performance on Austin Hughes's posts (ρ ≈ 0.5 on 168 posts) |
+| Webinars processed | **11** (every Unify webinar) |
+| Ready-to-post moments | **66** (each with a LinkedIn post, carousel, Unify University lesson, and clip caption) |
+| LinkedIn posts analyzed | **861** across Unify's team and top GTM creators |
+| Backtest | **168** real posts; ranking tracks real performance on the CEO's posts (**ρ ≈ 0.5**) |
+| Quality audit | **0 critical issues** across **72** generated posts |
+| Speed | **48-min video → results in ~5 min**, fully automated |
 
-All 66 posts pass a 21-rule quality audit: no leaked reasoning, no gendered pronouns, no Unify product pitches, no count-promise mismatches, no unknown person names, no disclaimer sentences, no repetitive openings.
+## The problem
+
+Unify's webinars hold the team's best thinking, but the recordings rarely travel beyond the live audience. Meanwhile, LinkedIn is Unify's highest-leverage channel: one seed-round announcement drove ~420 demo requests in 48 hours. The best moments were sitting unused.
+
+## What it does
+
+1. **Takes any input:** YouTube link, uploaded video/audio, or pasted transcript
+2. **Transcribes with speaker labels** (AssemblyAI), with an automatic caption fallback (Supadata) when YouTube blocks cloud servers
+3. **Identifies every speaker and routes posts correctly:** current team members post in first person; former speakers and guests are credited on the company page
+4. **Mines 15–25 standalone 30–90 second moments** with a custom Claude skill, skipping intros, polls, and housekeeping
+5. **Scores every moment against a data-backed virality rubric,** re-cuts weak openings to start on the hook, and picks a diverse top 6
+6. **Writes the content:** LinkedIn post, carousel outline, Unify University lesson, and on-screen caption
+7. **Runs automated quality gates** before anything is shown
+
+![Results card](docs/results.png)
+
+## The data: what actually goes viral in GTM
+
+- **Scraped 861 LinkedIn posts** (Apify) from Unify's team and leading GTM creators
+- **Defined "viral" relative to each creator:** an outlier is 3x+ that author's median engagement, which removes big-account bias
+- **Tagged every post with Claude** (hook type, topic, specificity, format) and computed lift per feature
+- **Key finding:** story hooks earn **1.70x** lift and personal stories **1.74x**, while how-to hooks earn just **0.31x**
+- **Why it matters:** Claude's unguided picks skewed toward how-tos. The data re-ranked them, and one trimmed clip jumped from a score of **18 → 73**
+- **Backtested on 168 real posts** with engagement hidden: the ranking tracks real performance on the CEO's posts (ρ ≈ 0.5), and is weaker on relationship-driven creators, which v2 addresses
+
+## Architecture
+
+```mermaid
+flowchart LR
+  A[YouTube link / upload / transcript] --> B[AssemblyAI or Supadata captions]
+  B --> C[Speaker ID + routing]
+  C --> D[Moment miner skill]
+  D --> E[Viral judge: 861-post rubric]
+  E --> F[Content writer]
+  F --> G[Quality gates + audit]
+  G --> H[Next.js results UI]
+```
+
+## Key engineering decisions
+
+- **Background jobs + polling:** hosting cuts requests at ~5 min, so long runs execute in a background job. A 48-min video now completes in ~5 min instead of timing out.
+- **Caption fallback:** when YouTube blocks server downloads, the agent switches to timestamped captions automatically.
+- **Quality gates on every run:** every number and claim is grounded in the transcript; point of view, pronouns, count promises ("3 ways" must deliver 3), sensitive claims, and name spelling (e.g. "Rampit" → "Ramp") are all enforced. Any post that fails is rewritten or replaced, never shown.
+- **Golden-file locking:** demo results are locked, so every viewer sees the same verified output.
+- **Speed + cost:** parallel chunk mining and prompt caching; a passcode and per-IP limits protect API spend.
+
+## Stack
+
+Python · FastAPI · Next.js · TypeScript · Tailwind · Claude API (Sonnet + Haiku) · AssemblyAI · Supadata · Apify · yt-dlp · Railway · Vercel
+
+## v2 roadmap
+
+- **Closed loop:** pull the real performance of posted clips each week and retrain the rubric on Unify's own results, so the system compounds
+- **Competitor + PII detection:** flag competitor speakers and strip personal info
+- **Rendered 9:16 clips** with burned-in captions
+- **Auto-run on every new webinar** with a weekly Slack drop of the best moments
 
 ---
 
-## v2 Roadmap
-
-**Weekly learning loop.** After a post is published, pull the actual LinkedIn engagement (likes, comments, reposts). Feed that signal back into the judge's scoring weights. The model gets smarter every week from Unify's own results rather than the static backtest corpus.
-
-**Rendered 9:16 clips.** Auto-generate a vertical clip for each moment: speaker footage, animated captions, Unify brand frame. Ready to post to LinkedIn video and Reels without any editing.
-
-**Auto-run on new webinars.** Watch the Unify YouTube channel. When a new webinar drops, trigger the full pipeline automatically and deliver results to a Slack channel before the team has had their morning coffee.
+Built by **Akshay Iyer** · [LinkedIn](https://www.linkedin.com/in/akshay-iyer-ab64ba259)
